@@ -338,7 +338,7 @@ function App() {
 
         <div className="grid gap-8 max-w-4xl mx-auto">
           {newsData.map((news, index) => (
-            <NewsCard key={index} news={news} index={index} language={language} />
+            <NewsCard key={index} news={news} index={index} language={language} isDark={isDark} />
           ))}
         </div>
       </div>
