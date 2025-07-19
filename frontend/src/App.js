@@ -31,7 +31,7 @@ function App() {
     },
     {
       date: "2024-09-02",
-      title: "Our paper on "Fast coherent control of nitrogen-14 spins associated with nitrogen-vacancy centers in diamonds using dynamical decoupling" has been published in Journal of Physics Communications.",
+      title: "Our paper on \"Fast coherent control of nitrogen-14 spins associated with nitrogen-vacancy centers in diamonds using dynamical decoupling\" has been published in Journal of Physics Communications.",
       link: "https://iopscience.iop.org/article/10.1088/2399-6528/ad6ea6"
     },
     {
