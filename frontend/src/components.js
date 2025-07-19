@@ -696,19 +696,22 @@ export const MissionSection = ({ language, isDark }) => {
           </h3>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {researchTopics.map((topic, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                className={`px-6 py-3 rounded-full bg-gradient-to-r ${topic.color} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
-                whileHover={{ scale: 1.05 }}
-              >
-                <span className="mr-2">{topic.icon}</span>
-                {topic.title[language]}
-              </motion.div>
-            ))}
+            {researchTopics.map((topic, index) => {
+              const IconComponent = topic.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                  className={`px-6 py-3 rounded-full bg-gradient-to-r ${topic.color} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center`}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <IconComponent className="mr-2" size={18} />
+                  {topic.title[language]}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
