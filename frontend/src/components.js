@@ -451,7 +451,72 @@ export const HeroSection = ({ language, isDark }) => {
   );
 };
 
-// Mission Section Component  
+// Recent News Section Component
+export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }) => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <section className={`py-24 px-6 relative overflow-hidden ${
+      isDark ? 'bg-black/10' : 'bg-gray-50'
+    }`} ref={ref}>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className={`text-5xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Recent News' : '最新ニュース'}
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
+        </motion.div>
+
+        <div className="grid gap-6 max-w-4xl mx-auto">
+          {newsData.slice(0, 3).map((news, index) => (
+            <NewsCard key={index} news={news} index={index} language={language} isDark={isDark} />
+          ))}
+        </div>
+
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            onClick={() => setCurrentPage('news')}
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {language === 'EN' ? 'View All News' : '全てのニュースを見る'}
+            <ExternalLink className="ml-2" size={20} />
+          </motion.button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};  
 export const MissionSection = ({ language, isDark }) => {
   const controls = useAnimation();
   const ref = useRef(null);
