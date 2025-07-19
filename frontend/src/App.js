@@ -699,6 +699,7 @@ function App() {
         isOpen={sidebarOpen}
         setIsOpen={setSidebarOpen}
         language={language}
+        isDark={isDark}
       />
       
       <div className="lg:ml-80 transition-all duration-300">
