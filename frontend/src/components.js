@@ -209,7 +209,7 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
 };
 
 // Sidebar Navigation Component
-export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language }) => {
+export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language, isDark }) => {
   const menuItems = [
     { id: 'home', label: { EN: 'TOP', JP: 'トップ' }, icon: Atom },
     { id: 'news', label: { EN: 'News', JP: 'ニュース' }, icon: Calendar },
@@ -223,7 +223,11 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
     <>
       {/* Mobile Menu Button */}
       <button
-        className="lg:hidden fixed top-6 left-6 z-50 p-3 bg-black/20 backdrop-blur-md rounded-xl border border-purple-500/20 text-white"
+        className={`lg:hidden fixed top-6 left-6 z-50 p-3 backdrop-blur-md rounded-xl border transition-all ${
+          isDark 
+            ? 'bg-black/20 border-purple-500/20 text-white'
+            : 'bg-white/80 border-purple-300/30 text-gray-800 shadow-lg'
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="w-6 h-6 flex flex-col justify-center">
@@ -238,18 +242,48 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         initial={{ x: 0 }}
         animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -320 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-black/90 via-purple-900/80 to-black/90 backdrop-blur-xl border-r border-purple-500/20 z-40"
+        className={`fixed left-0 top-0 h-full w-80 backdrop-blur-xl border-r z-40 ${
+          isDark
+            ? 'bg-gradient-to-b from-black/90 via-purple-900/80 to-black/90 border-purple-500/20'
+            : 'bg-gradient-to-b from-white/95 via-blue-50/90 to-white/95 border-purple-200/30 shadow-2xl'
+        }`}
       >
         <div className="p-8">
-          <div className="mb-12">
-            <h1 className="text-3xl font-bold text-white mb-2">
-              {language === 'EN' ? 'Arai Group' : '荒井研究室'}
-            </h1>
-            <p className="text-purple-300 text-sm">
-              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
-            </p>
-            <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mt-4" />
+          {/* Tokyo Tech Logo */}
+          <div className="mb-8 flex items-center space-x-4">
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
+              isDark ? 'bg-purple-600' : 'bg-purple-100'
+            }`}>
+              <img 
+                src="https://www.titech.ac.jp/english/0/english/images/emblem.svg" 
+                alt="Tokyo Tech"
+                className="w-12 h-12"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <div className={`hidden text-2xl font-bold ${
+                isDark ? 'text-white' : 'text-purple-600'
+              }`}>
+                TIT
+              </div>
+            </div>
+            <div>
+              <h1 className={`text-2xl font-bold ${
+                isDark ? 'text-white' : 'text-gray-800'
+              }`}>
+                {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
+              </h1>
+              <p className={`text-sm ${
+                isDark ? 'text-purple-300' : 'text-purple-600'
+              }`}>
+                {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+              </p>
+            </div>
           </div>
+          
+          <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mb-8" />
 
           <nav className="space-y-2">
             {menuItems.map((item) => {
@@ -264,7 +298,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   className={`w-full text-left p-4 rounded-xl transition-all duration-200 flex items-center space-x-3 group ${
                     currentPage === item.id
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
-                      : 'text-purple-200 hover:bg-white/10 hover:text-white'
+                      : isDark
+                        ? 'text-purple-200 hover:bg-white/10 hover:text-white'
+                        : 'text-gray-600 hover:bg-purple-50 hover:text-purple-700'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -276,14 +312,20 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             })}
           </nav>
 
-          <div className="mt-16 pt-8 border-t border-purple-500/20">
+          <div className={`mt-16 pt-8 border-t ${
+            isDark ? 'border-purple-500/20' : 'border-purple-200/40'
+          }`}>
             <div className="flex space-x-4">
-              <a href="https://www.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:text-white transition-colors">
+              <a href="https://www.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className={`transition-colors ${
+                isDark ? 'text-purple-300 hover:text-white' : 'text-purple-500 hover:text-purple-700'
+              }`}>
                 <ExternalLink size={16} />
               </a>
             </div>
-            <p className="text-xs text-purple-400 mt-4">
-              © 2025 {language === 'EN' ? 'The Arai Group' : '荒井研究室'}<br />
+            <p className={`text-xs mt-4 ${
+              isDark ? 'text-purple-400' : 'text-gray-500'
+            }`}>
+              © 2025 {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}<br />
               {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
             </p>
           </div>
