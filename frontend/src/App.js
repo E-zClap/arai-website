@@ -670,7 +670,7 @@ function App() {
 
   return (
     <div className={`App min-h-screen text-white overflow-x-hidden transition-all duration-300 ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-800'
     }`}>
       <FloatingControls 
         isDark={isDark}
