@@ -409,7 +409,7 @@ export const MissionSection = ({ language, isDark }) => {
 
   return (
     <section className={`py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black/20' : 'bg-gray-900/30'
+      isDark ? 'bg-black/20' : 'bg-white/80'
     }`} ref={ref}>
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -423,7 +423,9 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-white mb-6">
+          <h2 className={`text-5xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Our Mission' : '私たちの使命'}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
@@ -437,9 +439,15 @@ export const MissionSection = ({ language, isDark }) => {
             visible: { opacity: 1, y: 0 }
           }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-black/40 backdrop-blur-lg rounded-3xl p-12 border border-purple-500/20"
+          className={`backdrop-blur-lg rounded-3xl p-12 border ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20' 
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
         >
-          <p className="text-xl text-gray-200 leading-relaxed text-center max-w-4xl mx-auto">
+          <p className={`text-xl leading-relaxed text-center max-w-4xl mx-auto ${
+            isDark ? 'text-gray-200' : 'text-gray-700'
+          }`}>
             {missionText[language]}
           </p>
         </motion.div>
