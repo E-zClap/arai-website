@@ -23,7 +23,9 @@ import {
   Zap,
   Laptop,
   Dna,
-  TestTube
+  TestTube,
+  Maximize2,
+  Info
 } from 'lucide-react';
 
 // Quantum Particle Animation Component
