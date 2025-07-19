@@ -517,6 +517,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
     </section>
   );
 };  
+// Mission Section Component  
 export const MissionSection = ({ language, isDark }) => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -533,12 +534,40 @@ export const MissionSection = ({ language, isDark }) => {
     JP: "東京工業大学荒井研究室は2022年4月に量子技術をテーマとして設立されました。多くの量子技術の中でも、私たちは量子センシングに焦点を当てています。これを情報科学（インフォマティクス）と組み合わせることで、「クォンタム変革」と呼ばれるイノベーションの創出を目指しています。"
   };
 
+  const researchTopics = [
+    { 
+      title: { EN: 'Quantum Physics', JP: '量子物理学' },
+      icon: '🔬',
+      color: 'from-purple-500 to-pink-500'
+    },
+    { 
+      title: { EN: 'Nanoscale Magnetometry', JP: 'ナノスケール磁気測定' },
+      icon: '🧲',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    { 
+      title: { EN: 'Diamond Science', JP: 'ダイヤモンド科学' },
+      icon: '💎',
+      color: 'from-indigo-500 to-purple-500'
+    },
+    { 
+      title: { EN: 'Biomedical Sensing', JP: '生体医学センシング' },
+      icon: '🧬',
+      color: 'from-green-500 to-teal-500'
+    },
+    { 
+      title: { EN: 'Material Analysis', JP: '材料解析' },
+      icon: '⚗️',
+      color: 'from-orange-500 to-red-500'
+    }
+  ];
+
   return (
     <section className={`py-24 px-6 relative overflow-hidden ${
       isDark ? 'bg-black/20' : 'bg-white/80'
     }`} ref={ref}>
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial="hidden"
           animate={controls}
@@ -557,6 +586,92 @@ export const MissionSection = ({ language, isDark }) => {
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
         </motion.div>
 
+        {/* Enhanced Mission Content */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className={`backdrop-blur-lg rounded-3xl p-8 border ${
+              isDark 
+                ? 'bg-black/40 border-purple-500/20' 
+                : 'bg-white/70 border-purple-300/30 shadow-xl'
+            }`}>
+              <p className={`text-lg leading-relaxed mb-6 ${
+                isDark ? 'text-gray-200' : 'text-gray-700'
+              }`}>
+                {missionText[language]}
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  <span className={isDark ? 'text-purple-300' : 'text-purple-600'}>
+                    {language === 'EN' ? 'Quantum Sensing Technologies' : '量子センシング技術'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                  <span className={isDark ? 'text-blue-300' : 'text-blue-600'}>
+                    {language === 'EN' ? 'Information Science Integration' : '情報科学との統合'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                  <span className={isDark ? 'text-pink-300' : 'text-pink-600'}>
+                    {language === 'EN' ? 'Quantum Transformation Innovation' : 'クォンタム変革イノベーション'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+          >
+            {[
+              { icon: '🔬', title: { EN: 'Quantum Sensing', JP: '量子センシング' } },
+              { icon: '💻', title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' } },
+              { icon: '⚡', title: { EN: 'Quantum Transformation', JP: 'クォンタム変革' } },
+              { icon: '🧲', title: { EN: 'Magnetometry', JP: '磁気測定' } },
+              { icon: '💎', title: { EN: 'Diamond NV', JP: 'ダイヤモンドNV' } },
+              { icon: '🧬', title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                className={`p-4 rounded-2xl text-center backdrop-blur-lg border ${
+                  isDark 
+                    ? 'bg-black/30 border-purple-500/20 hover:bg-purple-900/30'
+                    : 'bg-white/60 border-purple-200/30 hover:bg-purple-50/80'
+                } transition-all duration-300 hover:scale-105`}
+              >
+                <div className="text-3xl mb-2">{item.icon}</div>
+                <p className={`text-sm font-medium ${
+                  isDark ? 'text-gray-200' : 'text-gray-700'
+                }`}>
+                  {item.title[language]}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Research Topics */}
         <motion.div
           initial="hidden"
           animate={controls}
@@ -564,18 +679,30 @@ export const MissionSection = ({ language, isDark }) => {
             hidden: { opacity: 0, y: 30 },
             visible: { opacity: 1, y: 0 }
           }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className={`backdrop-blur-lg rounded-3xl p-12 border ${
-            isDark 
-              ? 'bg-black/40 border-purple-500/20' 
-              : 'bg-white/70 border-purple-300/30 shadow-xl'
-          }`}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center"
         >
-          <p className={`text-xl leading-relaxed text-center max-w-4xl mx-auto ${
-            isDark ? 'text-gray-200' : 'text-gray-700'
+          <h3 className={`text-3xl font-bold mb-8 ${
+            isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            {missionText[language]}
-          </p>
+            {language === 'EN' ? 'Research Topics along Quantum' : '量子に沿った研究トピック'}
+          </h3>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {researchTopics.map((topic, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                className={`px-6 py-3 rounded-full bg-gradient-to-r ${topic.color} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
+                whileHover={{ scale: 1.05 }}
+              >
+                <span className="mr-2">{topic.icon}</span>
+                {topic.title[language]}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
