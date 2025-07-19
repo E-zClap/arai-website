@@ -13,7 +13,10 @@ import {
   Atom,
   Sparkles,
   Github,
-  Scholar
+  Scholar,
+  Sun,
+  Moon,
+  Globe
 } from 'lucide-react';
 
 // Quantum Particle Animation Component
@@ -124,7 +127,7 @@ export const QuantumNetwork = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 opacity-30">
+    <div className="absolute inset-0 opacity-20">
       <svg className="w-full h-full">
         {connections.map(conn => (
           <motion.line
@@ -175,15 +178,45 @@ export const QuantumNetwork = () => {
   );
 };
 
+// Theme and Language Toggle Buttons
+export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) => {
+  return (
+    <div className="fixed top-6 right-6 z-50 flex space-x-3">
+      {/* Theme Toggle */}
+      <motion.button
+        onClick={() => setIsDark(!isDark)}
+        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-purple-500/20 text-white hover:bg-purple-500/20 transition-all duration-300"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {isDark ? <Sun size={20} /> : <Moon size={20} />}
+      </motion.button>
+
+      {/* Language Toggle */}
+      <motion.button
+        onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
+        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-purple-500/20 text-white hover:bg-blue-500/20 transition-all duration-300 min-w-[50px]"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <div className="flex items-center space-x-1">
+          <Globe size={16} />
+          <span className="text-sm font-medium">{language}</span>
+        </div>
+      </motion.button>
+    </div>
+  );
+};
+
 // Sidebar Navigation Component
-export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
+export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language }) => {
   const menuItems = [
-    { id: 'home', label: 'TOP', icon: Atom },
-    { id: 'news', label: 'News', icon: Calendar },
-    { id: 'research', label: 'Research', icon: FlaskConical },
-    { id: 'publications', label: 'Publications', icon: BookOpen },
-    { id: 'team', label: 'Team', icon: Users },
-    { id: 'contact', label: 'Contact', icon: Mail }
+    { id: 'home', label: { EN: 'TOP', JP: 'トップ' }, icon: Atom },
+    { id: 'news', label: { EN: 'News', JP: 'ニュース' }, icon: Calendar },
+    { id: 'research', label: { EN: 'Research', JP: '研究' }, icon: FlaskConical },
+    { id: 'publications', label: { EN: 'Publications', JP: '論文' }, icon: BookOpen },
+    { id: 'team', label: { EN: 'Team', JP: 'メンバー' }, icon: Users },
+    { id: 'contact', label: { EN: 'Contact', JP: '連絡先' }, icon: Mail }
   ];
 
   return (
@@ -200,17 +233,21 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
         </div>
       </button>
 
-      {/* Sidebar */}
+      {/* Sidebar - Always visible on desktop */}
       <motion.div
-        initial={{ x: -320 }}
-        animate={{ x: isOpen ? 0 : -320 }}
+        initial={{ x: 0 }}
+        animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -320 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-black/90 via-purple-900/80 to-black/90 backdrop-blur-xl border-r border-purple-500/20 z-40 lg:translate-x-0"
+        className="fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-black/90 via-purple-900/80 to-black/90 backdrop-blur-xl border-r border-purple-500/20 z-40"
       >
         <div className="p-8">
           <div className="mb-12">
-            <h1 className="text-3xl font-bold text-white mb-2">Arai Group</h1>
-            <p className="text-purple-300 text-sm">Tokyo Institute of Technology</p>
+            <h1 className="text-3xl font-bold text-white mb-2">
+              {language === 'EN' ? 'Arai Group' : '荒井研究室'}
+            </h1>
+            <p className="text-purple-300 text-sm">
+              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+            </p>
             <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mt-4" />
           </div>
 
@@ -233,7 +270,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Icon size={20} className="flex-shrink-0" />
-                  <span className="font-medium">{item.label}</span>
+                  <span className="font-medium">{item.label[language]}</span>
                 </motion.button>
               );
             })}
@@ -246,8 +283,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
               </a>
             </div>
             <p className="text-xs text-purple-400 mt-4">
-              © 2025 The Arai Group<br />
-              Tokyo Institute of Technology
+              © 2025 {language === 'EN' ? 'The Arai Group' : '荒井研究室'}<br />
+              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
             </p>
           </div>
         </div>
@@ -269,26 +306,24 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
   );
 };
 
-// Hero Section Component
-export const HeroSection = () => {
+// Hero Section Component - Updated without orange and with new background
+export const HeroSection = ({ language, isDark }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1659092836100-f854337c7c27?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxxdWFudHVtJTIwcGh5c2ljc3xlbnwwfHx8cHVycGxlfDE3NTI5MzU1NTV8MA&ixlib=rb-4.1.0&q=85)'
-        }}
-      />
-      
-      {/* Quantum Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-purple-900/60 to-blue-900/70" />
+      {/* Clean Gradient Background */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-black via-purple-900/40 to-blue-900/60' 
+          : 'bg-gradient-to-br from-gray-900 via-purple-800/50 to-blue-800/70'
+      }`} />
       
       {/* Quantum Particles */}
-      <QuantumParticles intensity={60} />
+      <QuantumParticles intensity={40} />
       
-      {/* Quantum Network */}
-      <QuantumNetwork />
+      {/* Quantum Network - More subtle */}
+      <div className="absolute inset-0 opacity-10">
+        <QuantumNetwork />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
@@ -308,7 +343,7 @@ export const HeroSection = () => {
               ease: "easeInOut"
             }}
           >
-            Quantum Sensing
+            {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
           </motion.h1>
           
           <motion.h2 
@@ -317,7 +352,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            and Informatics for
+            {language === 'EN' ? 'and Informatics for' : 'と情報科学による'}
           </motion.h2>
           
           <motion.div
@@ -326,10 +361,10 @@ export const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text">
-              Quantum Transformation
+            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">
+              {language === 'EN' ? 'Quantum Transformation' : 'クォンタム変革'}
             </h3>
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-400/20 to-red-500/20 blur-xl" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-purple-500/20 blur-xl" />
           </motion.div>
         </motion.div>
 
@@ -350,7 +385,7 @@ export const HeroSection = () => {
 };
 
 // Mission Section Component  
-export const MissionSection = () => {
+export const MissionSection = ({ language, isDark }) => {
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -361,15 +396,15 @@ export const MissionSection = () => {
     }
   }, [controls, inView]);
 
+  const missionText = {
+    EN: "The Arai group at the Tokyo Institute of Technology was established in April 2022 with the theme of quantum technology. Among the many quantum technologies, we focus on quantum sensing. By combining it with information science (informatics), we aim to create an innovation called 'quantum transformation'.",
+    JP: "東京工業大学荒井研究室は2022年4月に量子技術をテーマとして設立されました。多くの量子技術の中でも、私たちは量子センシングに焦点を当てています。これを情報科学（インフォマティクス）と組み合わせることで、「クォンタム変革」と呼ばれるイノベーションの創出を目指しています。"
+  };
+
   return (
-    <section className="py-24 px-6 relative overflow-hidden" ref={ref}>
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1621435410670-0839654680da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxxdWFudHVtJTIwcGh5c2ljc3xlbnwwfHx8cHVycGxlfDE3NTI5MzU1NTV8MA&ixlib=rb-4.1.0&q=85)'
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/30 to-black/50" />
+    <section className={`py-24 px-6 relative overflow-hidden ${
+      isDark ? 'bg-black/20' : 'bg-gray-900/30'
+    }`} ref={ref}>
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -382,7 +417,9 @@ export const MissionSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-white mb-6">Our Mission</h2>
+          <h2 className="text-5xl font-bold text-white mb-6">
+            {language === 'EN' ? 'Our Mission' : '私たちの使命'}
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
         </motion.div>
 
@@ -397,10 +434,7 @@ export const MissionSection = () => {
           className="bg-black/40 backdrop-blur-lg rounded-3xl p-12 border border-purple-500/20"
         >
           <p className="text-xl text-gray-200 leading-relaxed text-center max-w-4xl mx-auto">
-            The Arai group at the Tokyo Institute of Technology was established in April 2022 with the theme of quantum technology. 
-            Among the many quantum technologies, we focus on <span className="text-purple-400 font-semibold">quantum sensing</span>. 
-            By combining it with information science (informatics), we aim to create an innovation called 
-            <span className="text-orange-400 font-semibold"> 'quantum transformation'</span>.
+            {missionText[language]}
           </p>
         </motion.div>
       </div>
@@ -409,7 +443,7 @@ export const MissionSection = () => {
 };
 
 // News Card Component
-export const NewsCard = ({ news, index }) => {
+export const NewsCard = ({ news, index, language }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -428,7 +462,7 @@ export const NewsCard = ({ news, index }) => {
             {news.date}
           </div>
           <h3 className="text-white text-lg font-semibold mb-4 group-hover:text-purple-300 transition-colors">
-            {news.title}
+            {news.title[language] || news.title}
           </h3>
           <a 
             href={news.link}
@@ -436,7 +470,7 @@ export const NewsCard = ({ news, index }) => {
             rel="noopener noreferrer"
             className="text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center text-sm"
           >
-            Read more
+            {language === 'EN' ? 'Read more' : '続きを読む'}
             <ExternalLink size={14} className="ml-1" />
           </a>
         </div>
@@ -446,7 +480,7 @@ export const NewsCard = ({ news, index }) => {
 };
 
 // Research Card Component
-export const ResearchCard = ({ title, description, image, index }) => {
+export const ResearchCard = ({ title, description, image, index, language }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -458,17 +492,17 @@ export const ResearchCard = ({ title, description, image, index }) => {
       <div className="h-64 bg-cover bg-center relative overflow-hidden">
         <img 
           src={image} 
-          alt={title}
+          alt={title[language] || title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
       <div className="p-8">
         <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
-          {title}
+          {title[language] || title}
         </h3>
         <p className="text-gray-300 leading-relaxed">
-          {description}
+          {description[language] || description}
         </p>
       </div>
     </motion.div>
@@ -476,7 +510,7 @@ export const ResearchCard = ({ title, description, image, index }) => {
 };
 
 // Team Member Card
-export const TeamMemberCard = ({ name, position, education, image, index }) => {
+export const TeamMemberCard = ({ name, position, education, image, index, language }) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -488,16 +522,16 @@ export const TeamMemberCard = ({ name, position, education, image, index }) => {
       <div className="h-80 bg-cover bg-center relative overflow-hidden">
         <img 
           src={image} 
-          alt={name}
+          alt={name[language] || name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
       <div className="p-8">
-        <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
-        <p className="text-purple-400 font-semibold mb-4">{position}</p>
+        <h3 className="text-2xl font-bold text-white mb-2">{name[language] || name}</h3>
+        <p className="text-purple-400 font-semibold mb-4">{position[language] || position}</p>
         <div className="space-y-2 text-gray-300 text-sm">
-          {education.map((edu, idx) => (
+          {(education[language] || education).map((edu, idx) => (
             <p key={idx}>{edu}</p>
           ))}
         </div>
@@ -507,7 +541,7 @@ export const TeamMemberCard = ({ name, position, education, image, index }) => {
 };
 
 // Contact Info Card
-export const ContactCard = ({ icon: Icon, title, content, link }) => {
+export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -516,7 +550,7 @@ export const ContactCard = ({ icon: Icon, title, content, link }) => {
       <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
         <Icon size={24} className="text-white" />
       </div>
-      <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
+      <h3 className="text-xl font-semibold text-white mb-4">{title[language] || title}</h3>
       {link ? (
         <a 
           href={link}
