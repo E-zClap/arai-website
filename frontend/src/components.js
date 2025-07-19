@@ -314,7 +314,7 @@ export const HeroSection = ({ language, isDark }) => {
       <div className={`absolute inset-0 ${
         isDark 
           ? 'bg-gradient-to-br from-black via-purple-900/40 to-blue-900/60' 
-          : 'bg-gradient-to-br from-gray-900 via-purple-800/50 to-blue-800/70'
+          : 'bg-gradient-to-br from-white via-blue-100/80 to-purple-200/60'
       }`} />
       
       {/* Quantum Particles */}
@@ -333,7 +333,7 @@ export const HeroSection = ({ language, isDark }) => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-300 to-blue-400 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -347,7 +347,9 @@ export const HeroSection = ({ language, isDark }) => {
           </motion.h1>
           
           <motion.h2 
-            className="text-3xl md:text-5xl font-semibold mb-8 text-white"
+            className={`text-3xl md:text-5xl font-semibold mb-8 ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -361,10 +363,12 @@ export const HeroSection = ({ language, isDark }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">
+            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text">
               {language === 'EN' ? 'Quantum Transformation' : 'クォンタム変革'}
             </h3>
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-purple-500/20 blur-xl" />
+            <div className={`absolute -inset-1 bg-gradient-to-r ${
+              isDark ? 'from-blue-400/20 to-purple-500/20' : 'from-blue-300/30 to-purple-400/30'
+            } blur-xl`} />
           </motion.div>
         </motion.div>
 
@@ -376,7 +380,9 @@ export const HeroSection = ({ language, isDark }) => {
         >
           <ChevronDown 
             size={32} 
-            className="text-white/70 animate-bounce mx-auto"
+            className={`animate-bounce mx-auto ${
+              isDark ? 'text-white/70' : 'text-gray-600/70'
+            }`}
           />
         </motion.div>
       </div>
