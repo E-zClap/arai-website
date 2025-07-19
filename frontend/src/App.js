@@ -4,6 +4,7 @@ import {
   Sidebar, 
   HeroSection, 
   MissionSection, 
+  RecentNewsSection,
   NewsCard, 
   ResearchCard, 
   TeamMemberCard, 
