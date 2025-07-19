@@ -665,8 +665,8 @@ export const MissionSection = ({ language, isDark }) => {
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                   className={`p-4 rounded-2xl text-center backdrop-blur-lg border ${
                     isDark 
-                      ? 'bg-black/30 border-purple-500/20 hover:bg-purple-900/30'
-                      : 'bg-white/60 border-purple-200/30 hover:bg-purple-50/80'
+                      ? 'bg-black/10 border-purple-500/20 hover:bg-purple-900/20'
+                      : 'bg-white/70 border-purple-200/30 hover:bg-purple-50/90'
                   } transition-all duration-300 hover:scale-105`}
                 >
                   <div className="flex justify-center mb-2">
