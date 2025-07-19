@@ -649,32 +649,37 @@ export const MissionSection = ({ language, isDark }) => {
             className="grid grid-cols-2 sm:grid-cols-3 gap-4"
           >
             {[
-              { icon: '🔬', title: { EN: 'Quantum Sensing', JP: '量子センシング' } },
-              { icon: '💻', title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' } },
-              { icon: '⚡', title: { EN: 'Quantum Transformation', JP: 'クォンタム変革' } },
-              { icon: '🧲', title: { EN: 'Magnetometry', JP: '磁気測定' } },
-              { icon: '💎', title: { EN: 'Diamond NV', JP: 'ダイヤモンドNV' } },
-              { icon: '🧬', title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                className={`p-4 rounded-2xl text-center backdrop-blur-lg border ${
-                  isDark 
-                    ? 'bg-black/30 border-purple-500/20 hover:bg-purple-900/30'
-                    : 'bg-white/60 border-purple-200/30 hover:bg-purple-50/80'
-                } transition-all duration-300 hover:scale-105`}
-              >
-                <div className="text-3xl mb-2">{item.icon}</div>
-                <p className={`text-sm font-medium ${
-                  isDark ? 'text-gray-200' : 'text-gray-700'
-                }`}>
-                  {item.title[language]}
-                </p>
-              </motion.div>
-            ))}
+              { icon: Microscope, title: { EN: 'Quantum Sensing', JP: '量子センシング' } },
+              { icon: Laptop, title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' } },
+              { icon: Zap, title: { EN: 'Quantum Transformation', JP: 'クォンタム変革' } },
+              { icon: Magnet, title: { EN: 'Magnetometry', JP: '磁気測定' } },
+              { icon: Diamond, title: { EN: 'Diamond NV', JP: 'ダイヤモンドNV' } },
+              { icon: Dna, title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
+            ].map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                  className={`p-4 rounded-2xl text-center backdrop-blur-lg border ${
+                    isDark 
+                      ? 'bg-black/30 border-purple-500/20 hover:bg-purple-900/30'
+                      : 'bg-white/60 border-purple-200/30 hover:bg-purple-50/80'
+                  } transition-all duration-300 hover:scale-105`}
+                >
+                  <div className="flex justify-center mb-2">
+                    <IconComponent className="text-purple-400" size={24} />
+                  </div>
+                  <p className={`text-sm font-medium ${
+                    isDark ? 'text-gray-200' : 'text-gray-700'
+                  }`}>
+                    {item.title[language]}
+                  </p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
 
