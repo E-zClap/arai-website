@@ -315,6 +315,12 @@ function App() {
     <div className={isDark ? 'bg-black' : 'bg-gray-50'}>
       <HeroSection language={language} isDark={isDark} />
       <MissionSection language={language} isDark={isDark} />
+      <RecentNewsSection 
+        language={language} 
+        isDark={isDark} 
+        newsData={newsData}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 
