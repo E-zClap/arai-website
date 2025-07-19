@@ -394,6 +394,9 @@ function App() {
           </p>
         </motion.div>
 
+        {/* NV Center Visualization */}
+        <NVCenterVisualization language={language} isDark={isDark} />
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {researchData.map((research, index) => (
             <ResearchCard key={index} {...research} index={index} language={language} />
