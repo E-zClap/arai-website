@@ -571,7 +571,7 @@ export const MissionSection = ({ language, isDark }) => {
 
   return (
     <section className={`py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black/10' : 'bg-white/90'
+      isDark ? 'bg-gray-800/20' : 'bg-white/90'
     }`} ref={ref}>
       
       <div className="max-w-7xl mx-auto relative z-10">
