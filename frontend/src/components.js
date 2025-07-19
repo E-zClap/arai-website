@@ -711,6 +711,8 @@ export const MissionSection = ({ language, isDark }) => {
 
 // News Card Component
 export const NewsCard = ({ news, index, language, isDark = true }) => {
+  const tags = news.tags || [];
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -734,6 +736,25 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             <Calendar size={14} className="mr-2" />
             {news.date}
           </div>
+          
+          {/* Tags */}
+          {tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {tags.map((tag, tagIndex) => (
+                <span
+                  key={tagIndex}
+                  className={`px-2 py-1 text-xs rounded-full ${
+                    isDark
+                      ? 'bg-purple-900/50 text-purple-300 border border-purple-500/30'
+                      : 'bg-purple-100 text-purple-700 border border-purple-300/50'
+                  }`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          
           <h3 className={`text-lg font-semibold mb-4 transition-colors ${
             isDark 
               ? 'text-white group-hover:text-purple-300' 
