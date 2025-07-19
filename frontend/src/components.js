@@ -16,7 +16,14 @@ import {
   Scholar,
   Sun,
   Moon,
-  Globe
+  Globe,
+  Microscope,
+  Magnet,
+  Diamond,
+  Zap,
+  Laptop,
+  Dna,
+  TestTube
 } from 'lucide-react';
 
 // Quantum Particle Animation Component
