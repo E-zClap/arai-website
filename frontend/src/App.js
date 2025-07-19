@@ -304,7 +304,7 @@ function App() {
 
   // Page Components
   const HomePage = () => (
-    <div className={isDark ? 'bg-black' : 'bg-gray-900'}>
+    <div className={isDark ? 'bg-black' : 'bg-gray-50'}>
       <HeroSection language={language} isDark={isDark} />
       <MissionSection language={language} isDark={isDark} />
     </div>
@@ -312,9 +312,13 @@ function App() {
 
   const NewsPage = () => (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
       <QuantumParticles intensity={30} />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -324,7 +328,9 @@ function App() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold text-white mb-6">
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Latest News' : '最新ニュース'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto" />
@@ -341,9 +347,13 @@ function App() {
 
   const ResearchPage = () => (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
       <QuantumParticles intensity={30} />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -353,11 +363,15 @@ function App() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold text-white mb-6">
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Research Areas' : '研究分野'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className={`text-xl max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             {language === 'EN' 
               ? "Our research focuses on quantum sensing technologies and their integration with informatics to drive quantum transformation in various applications."
               : "私たちの研究は量子センシング技術とインフォマティクスの統合に焦点を当て、様々な応用分野における量子変革を推進しています。"
@@ -376,9 +390,13 @@ function App() {
 
   const PublicationsPage = () => (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
       <QuantumParticles intensity={30} />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -388,7 +406,9 @@ function App() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold text-white mb-6">
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Publications' : '論文・出版物'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto" />
@@ -401,22 +421,30 @@ function App() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
+              className={`backdrop-blur-lg rounded-2xl p-8 border transition-all duration-300 ${
+                isDark 
+                  ? 'bg-black/40 border-purple-500/20 hover:border-purple-400/40'
+                  : 'bg-white/70 border-purple-300/30 hover:border-purple-400/50 shadow-lg'
+              }`}
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className={`text-xl font-semibold mb-3 ${
+                    isDark ? 'text-white' : 'text-gray-800'
+                  }`}>
                     {pub.title[language] || pub.title}
                   </h3>
-                  <p className="text-purple-300 mb-2">{pub.authors}</p>
-                  <p className="text-gray-400 text-sm mb-4">{pub.journal} ({pub.year})</p>
+                  <p className="text-purple-500 mb-2">{pub.authors}</p>
+                  <p className={`text-sm mb-4 ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>{pub.journal} ({pub.year})</p>
                 </div>
                 <a 
                   href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-purple-400 hover:text-purple-300 transition-colors ml-4"
+                  className="text-purple-500 hover:text-purple-600 transition-colors ml-4"
                 >
                   <ExternalLink size={20} />
                 </a>
@@ -430,9 +458,13 @@ function App() {
 
   const TeamPage = () => (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
       <QuantumParticles intensity={30} />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -442,11 +474,15 @@ function App() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold text-white mb-6">
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Our Team' : '私たちのチーム'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className={`text-xl max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             {language === 'EN' 
               ? "Meet the brilliant minds driving quantum transformation through cutting-edge research and innovation."
               : "最先端の研究と革新によって量子変革を推進する優秀な人材をご紹介します。"
@@ -465,9 +501,15 @@ function App() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 bg-black/40 backdrop-blur-lg rounded-3xl p-12 border border-purple-500/20"
+          className={`mt-20 backdrop-blur-lg rounded-3xl p-12 border ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
         >
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          <h2 className={`text-3xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Professional Experience (Prof. Arai)' : '職歴（荒井教授）'}
           </h2>
           <div className="space-y-6 max-w-4xl mx-auto">
@@ -498,12 +540,16 @@ function App() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-8 p-6 bg-white/5 rounded-xl"
+                className={`flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-8 p-6 rounded-xl ${
+                  isDark ? 'bg-white/5' : 'bg-gray-100/70'
+                }`}
               >
-                <div className="text-purple-300 font-medium md:w-64 flex-shrink-0">{exp.period}</div>
+                <div className="text-purple-500 font-medium md:w-64 flex-shrink-0">{exp.period}</div>
                 <div className="flex-1">
-                  <div className="text-white font-semibold">{exp.position}</div>
-                  <div className="text-gray-400">{exp.institution}</div>
+                  <div className={`font-semibold ${
+                    isDark ? 'text-white' : 'text-gray-800'
+                  }`}>{exp.position}</div>
+                  <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>{exp.institution}</div>
                 </div>
               </motion.div>
             ))}
@@ -515,9 +561,13 @@ function App() {
 
   const ContactPage = () => (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gray-900'
+      isDark ? 'bg-black' : 'bg-gray-50'
     }`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20" />
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
       <QuantumParticles intensity={30} />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -527,11 +577,15 @@ function App() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-6xl font-bold text-white mb-6">
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Contact & Openings' : 'お問い合わせ・募集'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className={`text-xl max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             {language === 'EN' 
               ? "Join our research team and contribute to the quantum transformation. We welcome passionate researchers and students interested in quantum sensing and informatics."
               : "私たちの研究チームに参加し、量子変革に貢献してください。量子センシングとインフォマティクスに興味のある情熱的な研究者や学生を歓迎します。"
@@ -567,12 +621,20 @@ function App() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-black/40 backdrop-blur-lg rounded-3xl p-12 border border-purple-500/20"
+          className={`backdrop-blur-lg rounded-3xl p-12 border ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
         >
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+          <h2 className={`text-3xl font-bold mb-6 text-center ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
             {language === 'EN' ? 'Research Openings' : '研究員募集'}
           </h2>
-          <p className="text-gray-300 text-lg text-center mb-8 max-w-3xl mx-auto">
+          <p className={`text-lg text-center mb-8 max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             {language === 'EN' 
               ? "We are always recruiting new members to our laboratory. If you are interested in the fusion research of quantum sensing and information science, please feel free to contact us."
               : "当研究室では、メンバーを随時募集しています。量子センシングと情報科学の融合研究に興味のある方は、ぜひお気軽にお問い合わせください。"
