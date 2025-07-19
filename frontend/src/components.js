@@ -457,13 +457,17 @@ export const MissionSection = ({ language, isDark }) => {
 };
 
 // News Card Component
-export const NewsCard = ({ news, index, language }) => {
+export const NewsCard = ({ news, index, language, isDark = true }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group"
+      className={`backdrop-blur-lg rounded-2xl p-8 border transition-all duration-300 group ${
+        isDark 
+          ? 'bg-black/40 border-purple-500/20 hover:border-purple-400/40'
+          : 'bg-white/70 border-purple-300/30 hover:border-purple-400/50 shadow-lg'
+      }`}
       whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-start space-x-4">
@@ -471,18 +475,28 @@ export const NewsCard = ({ news, index, language }) => {
           <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2" />
         </div>
         <div className="flex-1">
-          <div className="text-sm text-purple-300 mb-3 flex items-center">
+          <div className={`text-sm mb-3 flex items-center ${
+            isDark ? 'text-purple-300' : 'text-purple-600'
+          }`}>
             <Calendar size={14} className="mr-2" />
             {news.date}
           </div>
-          <h3 className="text-white text-lg font-semibold mb-4 group-hover:text-purple-300 transition-colors">
+          <h3 className={`text-lg font-semibold mb-4 transition-colors ${
+            isDark 
+              ? 'text-white group-hover:text-purple-300' 
+              : 'text-gray-800 group-hover:text-purple-600'
+          }`}>
             {news.title[language] || news.title}
           </h3>
           <a 
             href={news.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center text-sm"
+            className={`transition-colors inline-flex items-center text-sm ${
+              isDark 
+                ? 'text-purple-400 hover:text-purple-300'
+                : 'text-purple-600 hover:text-purple-700'
+            }`}
           >
             {language === 'EN' ? 'Read more' : '続きを読む'}
             <ExternalLink size={14} className="ml-1" />
