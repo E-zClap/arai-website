@@ -21,7 +21,7 @@ function App() {
   const newsData = [
     {
       date: "2024-12-23",
-      title: "Our paper on "Coherent control of solid-state defect spins via patterned boron-doped diamond circuit" has been published in arXiv.",
+      title: "Our paper on \"Coherent control of solid-state defect spins via patterned boron-doped diamond circuit\" has been published in arXiv.",
       link: "https://arxiv.org/abs/2412.17123"
     },
     {
