@@ -374,6 +374,25 @@ export const HeroSection = ({ language, isDark }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
+          {/* Laboratory Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mb-8"
+          >
+            <h3 className={`text-2xl md:text-3xl font-semibold ${
+              isDark ? 'text-purple-300' : 'text-purple-600'
+            }`}>
+              {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
+            </h3>
+            <p className={`text-lg mt-2 ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+            </p>
+          </motion.div>
+
           <motion.h1 
             className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent"
             animate={{
