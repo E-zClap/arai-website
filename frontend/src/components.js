@@ -888,6 +888,9 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
 export const NVCenterVisualization = ({ language, isDark }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   
+  // Choose the appropriate HTML file based on theme
+  const nvCenterUrl = isDark ? "/nv_center_dark.html" : "/nv_center_light.html";
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -960,7 +963,9 @@ export const NVCenterVisualization = ({ language, isDark }) => {
               </p>
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+                  <div className={`w-3 h-3 rounded-full ${
+                    isDark ? 'bg-gray-500' : 'bg-gray-600'
+                  }`}></div>
                   <span className={isDark ? 'text-gray-300' : 'text-gray-600'}>
                     {language === 'EN' ? 'Carbon atoms' : '炭素原子'}
                   </span>
@@ -999,11 +1004,10 @@ export const NVCenterVisualization = ({ language, isDark }) => {
             : 'h-96 md:h-[500px] lg:h-[600px]'
         }`}>
           <iframe
-            src="/nv_center_web.html"
+            src={nvCenterUrl}
             title="NV Center Visualization"
             className="w-full h-full border-0 rounded-xl"
             style={{ 
-              background: isDark ? '#000000' : '#ffffff',
               minHeight: isFullscreen ? '100vh' : '400px'
             }}
           />
