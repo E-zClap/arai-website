@@ -10,7 +10,8 @@ import {
   TeamMemberCard, 
   ContactCard,
   QuantumParticles,
-  FloatingControls
+  FloatingControls,
+  NVCenterVisualization
 } from './components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Calendar, FlaskConical, BookOpen, ExternalLink, Github } from 'lucide-react';
