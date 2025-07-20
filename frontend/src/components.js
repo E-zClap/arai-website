@@ -503,7 +503,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
           }`}>
             {language === 'EN' ? 'Recent News' : '最新ニュース'}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
         </motion.div>
 
         <div className="grid gap-6 max-w-4xl mx-auto">
