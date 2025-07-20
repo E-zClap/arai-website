@@ -302,7 +302,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             </div>
           </div>
           
-          <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mb-8" />
+          <div className="w-12 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-8" />
 
           <nav className="space-y-2">
             {menuItems.map((item) => {
