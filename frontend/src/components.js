@@ -374,8 +374,8 @@ export const HeroSection = ({ language, isDark }) => {
       {/* Clean Gradient Background */}
       <div className={`absolute inset-0 ${
         isDark 
-          ? 'bg-gradient-to-br from-black via-purple-900/40 to-blue-900/60' 
-          : 'bg-gradient-to-br from-white via-blue-100/80 to-purple-200/60'
+          ? 'bg-gradient-to-br from-black via-slate-900/40 to-slate-800/60' 
+          : 'bg-gradient-to-br from-white via-slate-100/80 to-teal-200/60'
       }`} />
       
       {/* Quantum Particles */}
