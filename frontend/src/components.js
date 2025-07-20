@@ -218,93 +218,125 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
   );
 };
 
-// Sidebar Navigation Component
+// Sidebar Navigation Component - Enhanced Professional Academic Design
 export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language, isDark }) => {
   const menuItems = [
-    { id: 'home', label: { EN: 'TOP', JP: 'トップ' }, icon: Atom },
-    { id: 'news', label: { EN: 'News', JP: 'ニュース' }, icon: Calendar },
-    { id: 'research', label: { EN: 'Research', JP: '研究' }, icon: FlaskConical },
-    { id: 'publications', label: { EN: 'Publications', JP: '論文' }, icon: BookOpen },
-    { id: 'team', label: { EN: 'Team', JP: 'メンバー' }, icon: Users },
-    { id: 'join', label: { EN: 'Join Us', JP: '参加する' }, icon: UserPlus },
-    { id: 'contact', label: { EN: 'Contact', JP: '連絡先' }, icon: Mail }
+    { id: 'home', label: { EN: 'HOME', JP: 'ホーム' }, icon: Atom },
+    { id: 'news', label: { EN: 'NEWS', JP: 'ニュース' }, icon: Calendar },
+    { id: 'research', label: { EN: 'RESEARCH', JP: '研究' }, icon: FlaskConical },
+    { id: 'publications', label: { EN: 'PUBLICATIONS', JP: '論文' }, icon: BookOpen },
+    { id: 'team', label: { EN: 'TEAM', JP: 'メンバー' }, icon: Users },
+    { id: 'join', label: { EN: 'JOIN US', JP: '参加' }, icon: UserPlus },
+    { id: 'contact', label: { EN: 'CONTACT', JP: '連絡先' }, icon: Mail }
   ];
 
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button - Professional Design */}
       <button
-        className={`lg:hidden fixed top-6 left-6 z-50 p-3 backdrop-blur-md rounded-xl border transition-all ${
+        className={`lg:hidden fixed top-6 left-6 z-50 p-3 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${
           isDark 
-            ? 'bg-black/20 border-teal-500/20 text-white'
-            : 'bg-white/80 border-teal-300/30 text-gray-800 shadow-lg'
+            ? 'bg-slate-900/80 border-teal-500/20 text-white hover:bg-slate-800/80'
+            : 'bg-white/90 border-teal-200/30 text-slate-800 shadow-xl hover:bg-white/95'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="w-6 h-6 flex flex-col justify-center">
-          <span className={`block h-0.5 w-6 bg-current transition-all ${isOpen ? 'rotate-45 translate-y-1' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-current transition-all mt-1 ${isOpen ? 'opacity-0' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-current transition-all mt-1 ${isOpen ? '-rotate-45 -translate-y-1' : ''}`} />
+          <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1' : ''}`} />
+          <span className={`block h-0.5 w-6 bg-current transition-all duration-300 mt-1 ${isOpen ? 'opacity-0' : ''}`} />
+          <span className={`block h-0.5 w-6 bg-current transition-all duration-300 mt-1 ${isOpen ? '-rotate-45 -translate-y-1' : ''}`} />
         </div>
       </button>
 
-      {/* Sidebar - Always visible on desktop */}
+      {/* Enhanced Professional Sidebar */}
       <motion.div
         initial={{ x: 0 }}
-        animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -320 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed left-0 top-0 h-full w-80 backdrop-blur-xl border-r z-40 ${
+        animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -400 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className={`fixed left-0 top-0 h-full w-96 backdrop-blur-2xl border-r z-40 ${
           isDark
-            ? 'bg-gradient-to-b from-black/90 via-slate-900/80 to-black/90 border-teal-500/20'
-            : 'bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-teal-200/30 shadow-2xl'
+            ? 'bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-slate-900/95 border-teal-500/20'
+            : 'bg-gradient-to-b from-white/98 via-slate-50/95 to-white/98 border-teal-200/30 shadow-2xl'
         }`}
       >
-        <div className="p-8">
-          {/* Tokyo Tech Logo */}
-          <div className="mb-8 flex items-center space-x-4">
-            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-              isDark ? 'bg-teal-600' : 'bg-teal-100'
-            }`}>
-              <img 
-                src="https://www.titech.ac.jp/english/0/english/images/emblem.svg" 
-                alt="Tokyo Tech"
-                className="w-12 h-12"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <div className={`hidden text-2xl font-bold ${
-                isDark ? 'text-white' : 'text-teal-600'
+        <div className="p-8 h-full flex flex-col">
+          {/* Enhanced Tokyo Tech Institutional Header */}
+          <div className="mb-10">
+            {/* Tokyo Tech Official Logo */}
+            <div className="flex items-center space-x-4 mb-6">
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border-2 ${
+                isDark 
+                  ? 'bg-teal-600/20 border-teal-500/30' 
+                  : 'bg-teal-100 border-teal-200'
               }`}>
-                TIT
+                <img 
+                  src="https://www.titech.ac.jp/english/0/english/images/emblem.svg" 
+                  alt="Tokyo Tech"
+                  className="w-10 h-10"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className={`hidden w-10 h-10 text-lg font-bold items-center justify-center ${
+                  isDark ? 'text-teal-400' : 'text-teal-600'
+                }`}>
+                  東工大
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className={`text-xs font-medium tracking-widest uppercase mb-1 ${
+                  isDark ? 'text-teal-400' : 'text-teal-600'
+                }`}>
+                  {language === 'EN' ? 'TOKYO INSTITUTE OF TECHNOLOGY' : '東京工業大学'}
+                </div>
+                <div className={`text-sm font-light ${
+                  isDark ? 'text-slate-400' : 'text-slate-500'
+                }`}>
+                  {language === 'EN' ? 'National University Corporation' : '国立大学法人'}
+                </div>
               </div>
             </div>
-            <div>
-              <h1 className={`text-2xl font-bold ${
-                isDark ? 'text-white' : 'text-gray-800'
-              }`}>
-                {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
-              </h1>
-              <p className={`text-sm ${
-                isDark ? 'text-teal-300' : 'text-teal-600'
-              }`}>
-                {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
-              </p>
-              <p className={`text-xs mt-1 ${
-                isDark ? 'text-gray-400' : 'text-gray-500'
+            
+            {/* Department Information */}
+            <div className={`p-4 rounded-2xl border ${
+              isDark 
+                ? 'bg-slate-800/40 border-slate-700/50' 
+                : 'bg-slate-50/80 border-slate-200/50'
+            }`}>
+              <div className={`text-sm font-medium mb-1 ${
+                isDark ? 'text-white' : 'text-slate-800'
               }`}>
                 {language === 'EN' 
-                  ? 'Dept. of Electrical & Electronic Engineering' 
+                  ? 'Department of Electrical & Electronic Engineering'
                   : '電気電子系'
                 }
-              </p>
+              </div>
+              <div className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                {language === 'EN' ? 'School of Engineering' : '工学院'}
+              </div>
             </div>
+            
+            {/* Laboratory Identity */}
+            <div className="mt-6">
+              <h1 className={`text-3xl font-bold mb-2 ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+                {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+              </h1>
+              <div className={`text-sm font-medium ${
+                isDark ? 'text-teal-300' : 'text-teal-600'
+              }`}>
+                {language === 'EN' ? 'Quantum Sensing & Informatics' : '量子センシング・情報科学'}
+              </div>
+            </div>
+            
+            {/* Professional Accent Line */}
+            <div className="mt-6 w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full" />
           </div>
-          
-          <div className="w-12 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-8" />
 
-          <nav className="space-y-2">
+          {/* Enhanced Navigation Menu */}
+          <nav className="space-y-1 flex-1">
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -314,44 +346,72 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                     setCurrentPage(item.id);
                     setIsOpen(false);
                   }}
-                  className={`w-full text-left p-4 rounded-xl transition-all duration-200 flex items-center space-x-3 group ${
+                  className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-300 flex items-center space-x-4 group ${
                     currentPage === item.id
-                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg transform scale-[1.02]'
                       : isDark
-                        ? 'text-teal-200 hover:bg-white/10 hover:text-white'
-                        : 'text-gray-600 hover:bg-teal-50 hover:text-teal-700'
+                        ? 'text-slate-300 hover:bg-slate-800/50 hover:text-white'
+                        : 'text-slate-600 hover:bg-teal-50/80 hover:text-teal-700'
                   }`}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: currentPage === item.id ? 1.02 : 1.01 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Icon size={20} className="flex-shrink-0" />
-                  <span className="font-medium">{item.label[language]}</span>
+                  <Icon size={18} className="flex-shrink-0" />
+                  <span className="font-medium text-sm tracking-wide" style={{ fontFamily: '"Inter", system-ui' }}>
+                    {item.label[language]}
+                  </span>
+                  {currentPage === item.id && (
+                    <div className="ml-auto w-2 h-2 bg-white rounded-full shadow-lg" />
+                  )}
                 </motion.button>
               );
             })}
           </nav>
 
-          <div className={`mt-16 pt-8 border-t ${
-            isDark ? 'border-teal-500/20' : 'border-teal-200/40'
+          {/* Enhanced Footer with Professional Credentials */}
+          <div className={`mt-8 pt-6 border-t space-y-4 ${
+            isDark ? 'border-slate-700/50' : 'border-slate-200/50'
           }`}>
-            <div className="flex space-x-4">
-              <a href="https://www.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className={`transition-colors ${
-                isDark ? 'text-teal-300 hover:text-white' : 'text-teal-500 hover:text-teal-700'
+            {/* Quick Links */}
+            <div className="flex items-center justify-between">
+              <span className={`text-xs font-medium tracking-wide ${
+                isDark ? 'text-slate-400' : 'text-slate-500'
               }`}>
-                <ExternalLink size={16} />
-              </a>
+                {language === 'EN' ? 'OFFICIAL LINKS' : '公式リンク'}
+              </span>
+              <div className="flex space-x-3">
+                <a 
+                  href="https://www.titech.ac.jp/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`p-2 rounded-lg transition-colors ${
+                    isDark ? 'text-teal-400 hover:text-white hover:bg-slate-800/50' : 'text-teal-500 hover:text-teal-700 hover:bg-teal-50'
+                  }`}
+                >
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
-            <p className={`text-xs mt-4 ${
-              isDark ? 'text-teal-400' : 'text-gray-500'
-            }`}>
-              © 2025 {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}<br />
-              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
-            </p>
+            
+            {/* Academic Credentials */}
+            <div className={`text-xs leading-relaxed ${
+              isDark ? 'text-slate-400' : 'text-slate-500'
+            }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              <div className="font-medium mb-1">
+                © 2025 {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+              </div>
+              <div className="opacity-80">
+                {language === 'EN' 
+                  ? 'Tokyo Institute of Technology • National University Corporation'
+                  : '東京工業大学・国立大学法人'
+                }
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
 
-      {/* Overlay for mobile */}
+      {/* Enhanced Mobile Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -359,7 +419,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden"
           />
         )}
       </AnimatePresence>
