@@ -413,7 +413,7 @@ export const HeroSection = ({ language, isDark }) => {
           </motion.div>
 
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent"
+            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-teal-600 via-emerald-500 to-cyan-600 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
