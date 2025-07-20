@@ -225,6 +225,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
     { id: 'research', label: { EN: 'Research', JP: '研究' }, icon: FlaskConical },
     { id: 'publications', label: { EN: 'Publications', JP: '論文' }, icon: BookOpen },
     { id: 'team', label: { EN: 'Team', JP: 'メンバー' }, icon: Users },
+    { id: 'join', label: { EN: 'Join Us', JP: '参加する' }, icon: Users },
     { id: 'contact', label: { EN: 'Contact', JP: '連絡先' }, icon: Mail }
   ];
 
