@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import List
-from ..models.status_check import StatusCheck, StatusCheckCreate
-from ..services.status_service import status_service
+from models.status_check import StatusCheck, StatusCheckCreate
+from services.status_service import status_service
 
 router = APIRouter(prefix="/api", tags=["status"])
 
