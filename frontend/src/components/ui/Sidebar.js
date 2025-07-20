@@ -107,7 +107,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               </div>
               <div>
                 <h1 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>
-                  {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+                  {language === 'EN' ? "Arai's Laboratory" : '荒井研究室'}
                 </h1>
                 <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                   {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
