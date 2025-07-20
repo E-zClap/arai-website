@@ -255,8 +255,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`fixed left-0 top-0 h-full w-80 backdrop-blur-xl border-r z-40 ${
           isDark
-            ? 'bg-gradient-to-b from-black/90 via-purple-900/80 to-black/90 border-purple-500/20'
-            : 'bg-gradient-to-b from-white/95 via-blue-50/90 to-white/95 border-purple-200/30 shadow-2xl'
+            ? 'bg-gradient-to-b from-black/90 via-slate-900/80 to-black/90 border-teal-500/20'
+            : 'bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-teal-200/30 shadow-2xl'
         }`}
       >
         <div className="p-8">
