@@ -35,6 +35,11 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   // Mock data based on the original website with bilingual support and tags
   const newsData = [
     {
