@@ -100,18 +100,23 @@ export const HeroSection = ({ language, isDark }) => {
                 }
               </p>
               
-              {/* Professional Research Emphasis */}
-              <div className={`inline-flex items-center px-6 py-3 rounded-2xl ${
+              {/* Professional Research Emphasis with Different Styling */}
+              <div className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
                 isDark 
-                  ? 'bg-gradient-to-r from-slate-800/60 to-slate-700/40 border border-teal-500/20' 
-                  : 'bg-gradient-to-r from-slate-50 to-white border border-teal-200/50 shadow-lg'
+                  ? 'bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border-teal-400/50' 
+                  : 'bg-gradient-to-r from-teal-50/80 to-cyan-50/80 border-teal-400/60 shadow-xl'
               }`}>
-                <div className="w-2 h-2 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full mr-3 animate-pulse" />
-                <span className={`text-lg font-medium ${
-                  isDark ? 'text-teal-300' : 'text-teal-700'
+                <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
+                  isDark ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-gradient-to-r from-teal-500 to-cyan-500'
+                }`} />
+                <span className={`text-xl font-bold tracking-wide ${
+                  isDark ? 'text-teal-100' : 'text-teal-800'
                 }`}>
                   {language === 'EN' ? 'Quantum Transformation Research' : '量子変革研究'}
                 </span>
+                <div className={`w-3 h-3 rounded-full ml-4 animate-pulse ${
+                  isDark ? 'bg-gradient-to-r from-cyan-400 to-teal-400' : 'bg-gradient-to-r from-cyan-500 to-teal-500'
+                }`} style={{ animationDelay: '0.5s' }} />
               </div>
             </div>
           </motion.div>
