@@ -707,68 +707,11 @@ function App() {
           </p>
         </motion.div>
 
-        {/* Prospective Postdoctoral Researchers */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
-            isDark 
-              ? 'bg-black/40 border-purple-500/20'
-              : 'bg-white/70 border-purple-300/30 shadow-xl'
-          }`}
-        >
-          <h2 className={`text-3xl font-bold mb-6 ${
-            isDark ? 'text-white' : 'text-gray-800'
-          }`}>
-            {language === 'EN' ? 'Prospective Postdoctoral Researchers' : '博士研究員候補者'}
-          </h2>
-          <p className={`text-lg mb-6 ${
-            isDark ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            {language === 'EN' 
-              ? "Our group welcomes candidates for a postdoctoral research position in quantum sensing and informatics. Potential research topics include diamond quantum sensing, machine learning, and quantum computation. Post-doc candidates who are interested in our group should send a curriculum vitae."
-              : "当研究室では、量子センシングとインフォマティクスの博士研究員候補者を歓迎します。研究テーマには、ダイヤモンド量子センシング、機械学習、量子計算が含まれます。当研究室にご興味のある博士研究員候補者は履歴書をお送りください。"
-            }
-          </p>
-          <p className={`text-lg mb-6 ${
-            isDark ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            {language === 'EN' 
-              ? "Candidates are encouraged to apply for research funding. Please feel free to contact us to discuss potential research topics for the funding proposal."
-              : "候補者には研究資金への申請を推奨しています。資金提案のための研究テーマについてお気軽にご相談ください。"
-            }
-          </p>
-          <div className="space-y-4">
-            <h3 className={`text-xl font-semibold ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
-              {language === 'EN' ? 'Funding Opportunities:' : '資金獲得の機会:'}
-            </h3>
-            <ul className={`space-y-2 ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              <li className="flex items-center space-x-2">
-                <ExternalLink size={16} />
-                <a href="https://www.jsps.go.jp/j-pd/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
-                  {language === 'EN' ? 'JSPS Research Fellowship for Young Scientists (学振特別研究員)' : 'JSPS研究奨励費（学振特別研究員）'}
-                </a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <ExternalLink size={16} />
-                <a href="https://www.jsps.go.jp/english/e-fellow/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
-                  {language === 'EN' ? 'JSPS Postdoctoral Fellowships for Research in Japan' : 'JSPS外国人特別研究員'}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
-
         {/* Prospective Students */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
             isDark 
               ? 'bg-black/40 border-purple-500/20'
@@ -821,6 +764,63 @@ function App() {
                 <ExternalLink size={16} />
                 <a href="https://www.jasso.go.jp/en/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
                   {language === 'EN' ? 'Japan Student Services Organization' : '日本学生支援機構'}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* Prospective Postdoctoral Researchers */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
+        >
+          <h2 className={`text-3xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Prospective Postdoctoral Researchers' : '博士研究員候補者'}
+          </h2>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "Our group welcomes candidates for a postdoctoral research position in quantum sensing and informatics. Potential research topics include diamond quantum sensing, machine learning, and quantum computation. Post-doc candidates who are interested in our group should send a curriculum vitae."
+              : "当研究室では、量子センシングとインフォマティクスの博士研究員候補者を歓迎します。研究テーマには、ダイヤモンド量子センシング、機械学習、量子計算が含まれます。当研究室にご興味のある博士研究員候補者は履歴書をお送りください。"
+            }
+          </p>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "Candidates are encouraged to apply for research funding. Please feel free to contact us to discuss potential research topics for the funding proposal."
+              : "候補者には研究資金への申請を推奨しています。資金提案のための研究テーマについてお気軽にご相談ください。"
+            }
+          </p>
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Funding Opportunities:' : '資金獲得の機会:'}
+            </h3>
+            <ul className={`space-y-2 ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.jsps.go.jp/j-pd/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'JSPS Research Fellowship for Young Scientists (学振特別研究員)' : 'JSPS研究奨励費（学振特別研究員）'}
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.jsps.go.jp/english/e-fellow/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'JSPS Postdoctoral Fellowships for Research in Japan' : 'JSPS外国人特別研究員'}
                 </a>
               </li>
             </ul>
