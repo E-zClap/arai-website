@@ -1247,7 +1247,7 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
               style={{ fontFamily: '"Inter", system-ui' }}
             >
               {name[language] || name}
-              <User size={18} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+              <ExternalLink size={18} className="opacity-70 group-hover:opacity-100 transition-opacity" />
             </button>
           ) : (
             <h3 className="text-2xl font-bold text-white" style={{ fontFamily: '"Inter", system-ui' }}>
