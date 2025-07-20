@@ -138,10 +138,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 </a>
               </div>
               <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
-                {language === 'EN' 
-                  ? 'School of Engineering' 
-                  : '工学院'
-                }
+                {/* Removed School of Engineering as requested */}
               </div>
             </div>
           </div>
