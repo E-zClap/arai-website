@@ -942,8 +942,8 @@ export const NVCenterVisualization = ({ language, isDark }) => {
             onClick={() => setIsFullscreen(!isFullscreen)}
             className={`p-3 rounded-xl transition-all duration-300 ${
               isDark 
-                ? 'bg-purple-600/20 text-purple-400 hover:bg-purple-600/30'
-                : 'bg-purple-100 text-purple-600 hover:bg-purple-200'
+                ? 'bg-teal-600/20 text-teal-400 hover:bg-teal-600/30'
+                : 'bg-teal-100 text-teal-600 hover:bg-teal-200'
             }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
