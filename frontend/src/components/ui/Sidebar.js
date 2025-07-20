@@ -156,7 +156,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       setIsOpen(false);
                     }
                   }}
-                  className={`w-full text-left p-4 rounded-2xl transition-all duration-300 group relative ${
+                  className={`w-full text-left p-4 rounded-2xl transition-colors duration-150 group relative ${
                     isActive
                       ? (isDark 
                           ? 'bg-gradient-to-r from-teal-600/30 to-cyan-600/20 border border-teal-400/40 text-teal-300 shadow-lg shadow-teal-500/10' 
