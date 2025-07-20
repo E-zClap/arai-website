@@ -975,7 +975,7 @@ function App() {
           </h2>
           <div className="flex justify-center mb-12">
             <div className="max-w-md">
-              <TeamMemberCard {...principalInvestigator} index={0} language={language} />
+              <TeamMemberCard {...principalInvestigator} index={0} language={language} setCurrentPage={setCurrentPage} />
             </div>
           </div>
 
