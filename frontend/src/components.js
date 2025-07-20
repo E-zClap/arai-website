@@ -981,7 +981,7 @@ export const MissionSection = ({ language, isDark }) => {
           </motion.div>
         </div>
 
-        {/* Research Excellence Badges */}
+        {/* Enhanced Research Excellence Section */}
         <motion.div
           initial="hidden"
           animate={controls}
@@ -992,13 +992,14 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
         >
-          <h3 className={`text-3xl font-bold mb-10 ${
+          <h3 className={`text-3xl font-bold mb-12 ${
             isDark ? 'text-white' : 'text-slate-800'
           }`}>
-            {language === 'EN' ? 'Quantum Research Specializations' : '量子研究専門分野'}
+            {language === 'EN' ? 'Research Excellence Areas' : '研究卓越分野'}
           </h3>
           
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* Professional Grid Layout for Research Areas */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {researchTopics.map((topic, index) => {
               const IconComponent = topic.icon;
               return (
@@ -1007,17 +1008,70 @@ export const MissionSection = ({ language, isDark }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                  className={`group px-6 py-4 rounded-2xl bg-gradient-to-r ${topic.color} text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'bg-slate-900/60 border-slate-700/50 hover:border-teal-400/50 hover:bg-slate-800/70'
+                      : 'bg-white/80 border-slate-200/50 hover:border-teal-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
+                  }`}
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <IconComponent size={20} />
-                  <span>{topic.title[language]}</span>
-                  <div className="w-2 h-2 bg-white/50 rounded-full group-hover:bg-white/80 transition-colors" />
+                  {/* Icon Section */}
+                  <div className="flex justify-center mb-4">
+                    <div className={`p-4 rounded-xl bg-gradient-to-r ${topic.color} shadow-lg group-hover:shadow-teal-500/30 transition-all duration-300`}>
+                      <IconComponent size={28} className="text-white" />
+                    </div>
+                  </div>
+                  
+                  {/* Research Area Title */}
+                  <h4 className={`text-lg font-semibold mb-2 ${
+                    isDark ? 'text-white group-hover:text-teal-300' : 'text-slate-800 group-hover:text-teal-700'
+                  } transition-colors`}>
+                    {topic.title[language]}
+                  </h4>
+                  
+                  {/* Professional Status Indicator */}
+                  <div className="flex items-center justify-center space-x-2 pt-2">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                    <span className={`text-xs font-medium ${
+                      isDark ? 'text-slate-400' : 'text-slate-500'
+                    }`}>
+                      {language === 'EN' ? 'Active Research' : 'アクティブ研究'}
+                    </span>
+                  </div>
                 </motion.div>
               );
             })}
           </div>
+          
+          {/* Professional Research Statement */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className={`mt-12 p-8 rounded-3xl border backdrop-blur-xl ${
+              isDark 
+                ? 'bg-slate-900/40 border-teal-500/20'
+                : 'bg-white/70 border-teal-200/30 shadow-xl'
+            }`}
+          >
+            <p className={`text-lg italic font-light ${
+              isDark ? 'text-slate-300' : 'text-slate-600'
+            }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              {language === 'EN' 
+                ? '"Advancing the frontiers of quantum science through interdisciplinary excellence and innovative research methodologies."'
+                : '「学際的な卓越性と革新的な研究手法を通じて量子科学の最前線を推進する。」'
+              }
+            </p>
+            <div className="mt-4 flex items-center justify-center space-x-4">
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-teal-500" />
+              <span className={`text-sm font-medium ${
+                isDark ? 'text-teal-400' : 'text-teal-600'
+              }`}>
+                {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+              </span>
+              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-teal-500" />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
