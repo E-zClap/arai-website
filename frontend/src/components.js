@@ -783,8 +783,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
           
           <h3 className={`text-lg font-semibold mb-4 transition-colors ${
             isDark 
-              ? 'text-white group-hover:text-purple-300' 
-              : 'text-gray-800 group-hover:text-purple-600'
+              ? 'text-white group-hover:text-teal-300' 
+              : 'text-gray-800 group-hover:text-teal-600'
           }`}>
             {news.title[language] || news.title}
           </h3>
