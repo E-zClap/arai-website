@@ -246,6 +246,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully removed problematic animations from sidebar navigation. Fixed issues: 1) Removed sliding active indicator animation with layoutId that caused jarring transitions between pages, 2) Removed hover animations (x: 4, scale: 1.02) that made UI feel unresponsive, 3) Removed tap animations (scale: 0.98) that added unnecessary motion, 4) Changed transition duration from 300ms to 150ms and from transition-all to transition-colors for faster response, 5) Changed navigation buttons from motion.button to regular button elements to eliminate framer-motion effects. Navigation now provides immediate, clean page switching with instant visual feedback."
+  - task: "Add interactive map to Contact page for laboratory address"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/ContactPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully added comprehensive map section to Contact page. Features implemented: 1) Interactive OpenStreetMap showing Tokyo Institute of Technology location with precise coordinates (35.6085°N, 139.6858°E), 2) Professional address information panel with lab details (Arai's Laboratory, Department of Electrical & Electronic Engineering, full address), 3) Access information with transportation details (Ookayama Station 5min walk, Ishikawa-dai Station 10min walk), 4) Map control buttons (Open in Google Maps, View Larger Map), 5) Responsive grid layout with side-by-side design on large screens, 6) Full bilingual support (EN/JP) for all text, 7) Consistent styling with teal/cyan theme and backdrop blur effects, 8) Smooth framer-motion animations. The map provides visitors with clear location information and easy access to navigation tools."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
