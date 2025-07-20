@@ -870,7 +870,7 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 text-center"
+      className="bg-black/40 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20 hover:border-teal-400/40 transition-all duration-300 text-center"
     >
       <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
         <Icon size={24} className="text-white" />
