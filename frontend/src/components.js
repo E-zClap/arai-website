@@ -1212,7 +1212,16 @@ export const ResearchCard = ({ title, description, image, index, language }) => 
 };
 
 // Enhanced Professional Team Member Card
-export const TeamMemberCard = ({ name, position, education, image, index, language }) => {
+export const TeamMemberCard = ({ name, position, education, image, index, language, setCurrentPage }) => {
+  // Check if this is Keigo Arai's card
+  const isKeigoArai = name.EN === "Keigo Arai, Ph.D." || name.JP === "荒井 慧悟 博士";
+  
+  const handleNameClick = () => {
+    if (isKeigoArai && setCurrentPage) {
+      setCurrentPage('profile-keigo-arai');
+    }
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, scale: 0.8 }}
@@ -1246,9 +1255,19 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
       <div className="p-8 space-y-6">
         {/* Name and Title */}
         <div className="text-center space-y-3">
-          <h3 className="text-2xl font-bold text-white" style={{ fontFamily: '"Inter", system-ui' }}>
-            {name[language] || name}
-          </h3>
+          {isKeigoArai && setCurrentPage ? (
+            <button
+              onClick={handleNameClick}
+              className="text-2xl font-bold text-white hover:text-teal-300 transition-colors duration-300 cursor-pointer"
+              style={{ fontFamily: '"Inter", system-ui' }}
+            >
+              {name[language] || name}
+            </button>
+          ) : (
+            <h3 className="text-2xl font-bold text-white" style={{ fontFamily: '"Inter", system-ui' }}>
+              {name[language] || name}
+            </h3>
+          )}
           
           {/* Professional Title with Enhanced Styling */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600/20 to-cyan-600/20 rounded-full border border-teal-500/30">
