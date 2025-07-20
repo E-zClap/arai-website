@@ -216,6 +216,9 @@
         -working: false
         -agent: "main"
         -comment: "Updated per user feedback: 1) Removed Professional Experience section from team page as this information is now available on the dedicated profile page, 2) Verified that Professor Arai's name is clickable in the team member card to navigate to his profile. The team page is now cleaner with just the basic team member information, and detailed career information is accessible through the profile page link."
+        -working: false
+        -agent: "main"
+        -comment: "Enhanced visual feedback for clickable name: 1) Changed Professor Arai's name color to teal-300 (distinctive from other white names), 2) Added underline with teal decoration to indicate it's a link, 3) Added User icon next to the name for clear visual indication, 4) Added hover effects including scale transform and color changes, 5) Added group hover effects for the icon. Now users can immediately see that his name is clickable without needing to hover first."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
