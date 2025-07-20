@@ -794,8 +794,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             rel="noopener noreferrer"
             className={`transition-colors inline-flex items-center text-sm ${
               isDark 
-                ? 'text-purple-400 hover:text-purple-300'
-                : 'text-purple-600 hover:text-purple-700'
+                ? 'text-teal-400 hover:text-teal-300'
+                : 'text-teal-600 hover:text-teal-700'
             }`}
           >
             {language === 'EN' ? 'Read more' : '続きを読む'}
