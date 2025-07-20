@@ -4,8 +4,6 @@ import { Diamond, Info } from 'lucide-react';
 
 // NV Center Visualization Component
 export const NVCenterVisualization = ({ language, isDark }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  
   // Choose the appropriate HTML file based on theme
   const nvCenterUrl = isDark ? "/nv_center_dark.html" : "/nv_center_light.html";
   
