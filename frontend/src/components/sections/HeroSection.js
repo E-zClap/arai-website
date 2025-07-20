@@ -75,7 +75,7 @@ export const HeroSection = ({ language, isDark }) => {
               <h1 className={`text-7xl lg:text-8xl font-bold mb-6 ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
-                {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+                {language === 'EN' ? "Arai's Laboratory" : '荒井研究室'}
               </h1>
               
               {/* Professional Academic Subtitle */}
