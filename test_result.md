@@ -202,17 +202,17 @@
         -working: true
         -agent: "main"
         -comment: "Elevated all interface components to professional academic standards: 1) News Cards: Enhanced with article semantic markup, professional date formatting, publication type badges, improved tags design, enhanced read more links with hover effects, 2) Team Member Cards: Professional presentation with overlay badges, academic credentials section, enhanced image handling, contact availability indicators, sophisticated hover effects, 3) Research Cards: Scientific research presentation with research area badges, category indicators, professional metrics display, enhanced visual hierarchy, 4) Contact Cards: Professional contact interface with enhanced icon sections, availability indicators, structured content display, professional glow effects, 5) Floating Controls: Academic-style controls with professional Tokyo Tech institution badge, enhanced tooltips, sophisticated hover animations."
-  - task: "Compress Quantum Sensing with Diamond NV Centers image to reduce file size"
+  - task: "Update sidebar to replace National University Corporation with Department link"
     implemented: true
     working: true
-    file: "frontend/src/App.js"
+    file: "frontend/src/components.js"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
         -working: true
         -agent: "main"
-        -comment: "Successfully replaced the large Quantum Sensing with Diamond NV Centers image with a more compressed alternative. Changed from the original large image to a professionally optimized Unsplash image with compression parameters (q=85) that significantly reduces file size while maintaining visual quality. The new image shows actual diamond crystals which is more scientifically accurate and relevant for Diamond NV Centers research. File size reduced from several MB to a more reasonable compressed size suitable for web loading."
+        -comment: "Successfully updated the sidebar institutional information. Replaced 'National University Corporation' text with clickable 'Department of Electrical & Electronic Engineering' link that opens the Tokyo Tech department page in a new tab. Also removed the separate department information mini section to avoid duplication. The link includes proper hover effects and bilingual support (EN: 'Department of Electrical & Electronic Engineering', JP: '電気電子系'). The link opens to: https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
   - task: "Fix navigation bar color issue on small devices in light theme - remove grayish appearance"
     implemented: true
     working: true
