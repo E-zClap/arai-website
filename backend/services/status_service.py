@@ -1,6 +1,6 @@
 from typing import List
-from ..models.status_check import StatusCheck, StatusCheckCreate
-from ..database import get_database
+from models.status_check import StatusCheck, StatusCheckCreate
+from database import get_database
 
 class StatusService:
     def __init__(self):
