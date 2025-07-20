@@ -257,6 +257,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully added comprehensive map section to Contact page. Features implemented: 1) Interactive OpenStreetMap showing Tokyo Institute of Technology location with precise coordinates (35.6085°N, 139.6858°E), 2) Professional address information panel with lab details (Arai's Laboratory, Department of Electrical & Electronic Engineering, full address), 3) Access information with transportation details (Ookayama Station 5min walk, Ishikawa-dai Station 10min walk), 4) Map control buttons (Open in Google Maps, View Larger Map), 5) Responsive grid layout with side-by-side design on large screens, 6) Full bilingual support (EN/JP) for all text, 7) Consistent styling with teal/cyan theme and backdrop blur effects, 8) Smooth framer-motion animations. The map provides visitors with clear location information and easy access to navigation tools."
+  - task: "Remove fullscreen button from NV center 3D visualization"
+    implemented: true
+    working: true
+    file: "frontend/src/components/visualizations/NVCenterVisualization.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully removed fullscreen functionality from the nitrogen vacancy center 3D visualization. Changes implemented: 1) Removed fullscreen toggle button (Maximize2 icon) from the header, 2) Removed useState and isFullscreen state management, 3) Eliminated fullscreen overlay and modal functionality, 4) Simplified visualization container to use fixed dimensions, 5) Updated control text to remove fullscreen references (now shows only 'Click and drag to rotate • Scroll to zoom'), 6) Cleaned up imports by removing Maximize2 icon and useState hook. The 3D visualization maintains all its interactive functionality (drag-to-rotate, scroll-to-zoom) while presenting a cleaner, more streamlined interface without the fullscreen option."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
