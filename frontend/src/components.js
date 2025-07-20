@@ -854,7 +854,6 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
           alt={name[language] || name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
       <div className="p-8">
         <h3 className="text-2xl font-bold text-white mb-2">{name[language] || name}</h3>
