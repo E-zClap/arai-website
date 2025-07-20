@@ -401,7 +401,7 @@ export const HeroSection = ({ language, isDark }) => {
             className="mb-8"
           >
             <h3 className={`text-2xl md:text-3xl font-semibold ${
-              isDark ? 'text-purple-300' : 'text-purple-600'
+              isDark ? 'text-teal-300' : 'text-teal-600'
             }`}>
               {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
             </h3>
