@@ -112,7 +112,7 @@ function App() {
       isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'
     }`}>
       {/* Background Particles */}
-      <QuantumParticles intensity={40} />
+      <QuantumParticles intensity={50} />
       
       {/* Sidebar */}
       <Sidebar 
