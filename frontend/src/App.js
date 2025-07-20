@@ -14,7 +14,7 @@ import {
   NVCenterVisualization
 } from './components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Calendar, FlaskConical, BookOpen, ExternalLink, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Calendar, FlaskConical, BookOpen, ExternalLink, Github, Users, UserPlus } from 'lucide-react';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
