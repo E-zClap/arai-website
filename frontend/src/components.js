@@ -854,7 +854,7 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
       </div>
       <div className="p-8">
         <h3 className="text-2xl font-bold text-white mb-2">{name[language] || name}</h3>
-        <p className="text-purple-400 font-semibold mb-4">{position[language] || position}</p>
+        <p className="text-teal-400 font-semibold mb-4">{position[language] || position}</p>
         <div className="space-y-2 text-gray-300 text-sm">
           {(education[language] || education).map((edu, idx) => (
             <p key={idx}>{edu}</p>
