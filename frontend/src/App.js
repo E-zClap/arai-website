@@ -684,18 +684,90 @@ function App() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamData.map((member, index) => (
-            <TeamMemberCard key={index} {...member} index={index} language={language} />
-          ))}
-        </div>
+        {/* Principal Investigator Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-16"
+        >
+          <h2 className={`text-3xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Principal Investigator' : '主任研究員'}
+          </h2>
+          <div className="flex justify-center">
+            <div className="max-w-md">
+              <TeamMemberCard {...principalInvestigator} index={0} language={language} />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Staff and Postdocs Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-16"
+        >
+          <h2 className={`text-3xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Staff & Postdoctoral Researchers' : 'スタッフ・博士研究員'}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {staffAndPostdocs.map((member, index) => (
+              <TeamMemberCard key={index} {...member} index={index} language={language} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Students Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className={`text-3xl font-bold mb-8 text-center ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Students' : '学生'}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {students.map((member, index) => (
+              <TeamMemberCard key={index} {...member} index={index} language={language} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Alumni Section (if there are alumni) */}
+        {alumni.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mb-16"
+          >
+            <h2 className={`text-3xl font-bold mb-8 text-center ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Alumni' : '卒業生'}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {alumni.map((member, index) => (
+                <TeamMemberCard key={index} {...member} index={index} language={language} />
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Experience Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className={`mt-20 backdrop-blur-lg rounded-3xl p-12 border ${
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border ${
             isDark 
               ? 'bg-black/40 border-purple-500/20'
               : 'bg-white/70 border-purple-300/30 shadow-xl'
@@ -733,7 +805,7 @@ function App() {
                 key={index}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
                 className={`flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-8 p-6 rounded-xl ${
                   isDark ? 'bg-white/5' : 'bg-gray-100/70'
                 }`}
