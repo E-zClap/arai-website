@@ -870,7 +870,7 @@ export const MissionSection = ({ language, isDark }) => {
         </motion.div>
 
         {/* Enhanced Mission Content with Academic Layout */}
-        <div className="grid xl:grid-cols-3 gap-12 items-start mb-20">
+        <div className="grid xl:grid-cols-1 gap-12 items-start mb-20">
           {/* Main Mission Statement */}
           <motion.div
             initial="hidden"
@@ -880,7 +880,6 @@ export const MissionSection = ({ language, isDark }) => {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="xl:col-span-2"
           >
             <div className={`backdrop-blur-xl rounded-3xl p-10 border ${
               isDark 
@@ -894,7 +893,7 @@ export const MissionSection = ({ language, isDark }) => {
               </div>
               
               {/* Key Principles Grid */}
-              <div className="grid gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 {keyPrinciples.map((principle, index) => {
                   const IconComponent = principle.icon;
                   return (
@@ -903,15 +902,15 @@ export const MissionSection = ({ language, isDark }) => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                      className={`flex items-center space-x-4 p-5 rounded-2xl ${
+                      className={`flex flex-col items-center text-center space-y-4 p-6 rounded-2xl ${
                         isDark ? 'bg-slate-800/40' : 'bg-slate-50/80'
                       }`}
                     >
-                      <div className={`p-3 rounded-xl bg-gradient-to-r ${principle.color}`}>
-                        <IconComponent className="text-white" size={24} />
+                      <div className={`p-4 rounded-xl bg-gradient-to-r ${principle.color}`}>
+                        <IconComponent className="text-white" size={28} />
                       </div>
-                      <div className="flex-1">
-                        <h4 className={`font-semibold text-lg mb-1 ${
+                      <div>
+                        <h4 className={`font-semibold text-lg mb-2 ${
                           isDark ? 'text-white' : 'text-slate-800'
                         }`}>
                           {principle.title[language]}
@@ -920,64 +919,6 @@ export const MissionSection = ({ language, isDark }) => {
                           {principle.description[language]}
                         </p>
                       </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Research Highlights Sidebar */}
-          <motion.div
-            initial="hidden"
-            animate={controls}
-            variants={{
-              hidden: { opacity: 0, x: 50 },
-              visible: { opacity: 1, x: 0 }
-            }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-6"
-          >
-            <div className={`backdrop-blur-xl rounded-3xl p-8 border ${
-              isDark 
-                ? 'bg-slate-900/60 border-teal-500/20' 
-                : 'bg-white/90 border-teal-200/30 shadow-xl'
-            }`}>
-              <h3 className={`text-2xl font-bold mb-6 text-center ${
-                isDark ? 'text-white' : 'text-slate-800'
-              }`}>
-                {language === 'EN' ? 'Core Research Areas' : '主要研究分野'}
-              </h3>
-              
-              <div className="space-y-3">
-                {[
-                  { icon: Diamond, title: { EN: 'NV Centers', JP: 'NVセンター' } },
-                  { icon: Magnet, title: { EN: 'Magnetometry', JP: '磁気測定' } },
-                  { icon: Dna, title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
-                  { icon: TestTube, title: { EN: 'Materials', JP: '材料科学' } },
-                  { icon: Laptop, title: { EN: 'Informatics', JP: '情報科学' } }
-                ].map((item, index) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                      className={`flex items-center space-x-3 p-4 rounded-xl transition-all duration-300 hover:scale-105 ${
-                        isDark 
-                          ? 'bg-slate-800/40 hover:bg-slate-700/50' 
-                          : 'bg-slate-50/80 hover:bg-teal-50/90'
-                      }`}
-                    >
-                      <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500">
-                        <IconComponent className="text-white" size={18} />
-                      </div>
-                      <span className={`text-sm font-medium ${
-                        isDark ? 'text-slate-200' : 'text-slate-700'
-                      }`}>
-                        {item.title[language]}
-                      </span>
                     </motion.div>
                   );
                 })}
