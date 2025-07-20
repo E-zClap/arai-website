@@ -9,6 +9,7 @@ import {
   Calendar,
   Users,
   UserPlus,
+  User,
   BookOpen,
   FlaskConical,
   Atom,
