@@ -15,7 +15,7 @@ export const PublicationsPage = ({ language, isDark, publicationsData }) => (
     }`} />
     <QuantumParticles intensity={30} />
     
-    <div className="max-w-6xl mx-auto relative z-10">
+    <div className="max-w-7xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export const PublicationsPage = ({ language, isDark, publicationsData }) => (
         <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto" />
       </motion.div>
 
-      <div className="grid gap-6 max-w-5xl mx-auto">
+      <div className="grid gap-6">
         {publicationsData.map((pub, index) => (
           <motion.div
             key={index}
