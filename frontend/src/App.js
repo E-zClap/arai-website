@@ -1091,13 +1091,13 @@ function App() {
             }`}>
               <li className="flex items-center space-x-2">
                 <ExternalLink size={16} />
-                <a href="https://www.jsps.go.jp/j-pd/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                <a href="https://www.jsps.go.jp/j-pd/" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">
                   {language === 'EN' ? 'JSPS Research Fellowship for Young Scientists (学振特別研究員)' : 'JSPS研究奨励費（学振特別研究員）'}
                 </a>
               </li>
               <li className="flex items-center space-x-2">
                 <ExternalLink size={16} />
-                <a href="https://www.jsps.go.jp/english/e-fellow/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                <a href="https://www.jsps.go.jp/english/e-fellow/" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">
                   {language === 'EN' ? 'JSPS Postdoctoral Fellowships for Research in Japan' : 'JSPS外国人特別研究員'}
                 </a>
               </li>
