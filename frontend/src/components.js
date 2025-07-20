@@ -602,7 +602,7 @@ export const MissionSection = ({ language, isDark }) => {
           }`}>
             {language === 'EN' ? 'Our Mission' : '私たちの使命'}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
         </motion.div>
 
         {/* Enhanced Mission Content */}
