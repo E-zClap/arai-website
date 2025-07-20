@@ -195,7 +195,7 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
       {/* Theme Toggle */}
       <motion.button
         onClick={() => setIsDark(!isDark)}
-        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-purple-500/20 text-white hover:bg-purple-500/20 transition-all duration-300"
+        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-teal-500/20 text-white hover:bg-teal-500/20 transition-all duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -205,7 +205,7 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
       {/* Language Toggle */}
       <motion.button
         onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
-        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-purple-500/20 text-white hover:bg-blue-500/20 transition-all duration-300 min-w-[50px]"
+        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-teal-500/20 text-white hover:bg-cyan-500/20 transition-all duration-300 min-w-[50px]"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
