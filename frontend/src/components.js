@@ -958,7 +958,7 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         }`}>
           <div className="flex items-start space-x-4">
             <Info className={`${
-              isDark ? 'text-blue-400' : 'text-blue-600'
+              isDark ? 'text-cyan-400' : 'text-cyan-600'
             } flex-shrink-0 mt-1`} size={20} />
             <div className="space-y-2">
               <p className={`${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
