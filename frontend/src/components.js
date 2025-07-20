@@ -999,7 +999,7 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         {isFullscreen && (
           <button
             onClick={() => setIsFullscreen(false)}
-            className="absolute top-6 right-6 z-10 p-3 bg-purple-600/20 text-purple-400 hover:bg-purple-600/30 rounded-xl transition-all duration-300"
+            className="absolute top-6 right-6 z-10 p-3 bg-teal-600/20 text-teal-400 hover:bg-teal-600/30 rounded-xl transition-all duration-300"
           >
             <Maximize2 size={20} />
           </button>
