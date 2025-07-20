@@ -70,7 +70,7 @@ export const QuantumParticles = ({ intensity = 50 }) => {
       {particles.map(particle => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-blue-500"
+          className="absolute rounded-full bg-gradient-to-r from-teal-400 to-cyan-500"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
