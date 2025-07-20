@@ -147,7 +147,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               const isActive = currentPage === item.id;
               
               return (
-                <motion.button
+                <button
                   key={item.id}
                   onClick={() => {
                     setCurrentPage(item.id);
