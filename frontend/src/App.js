@@ -128,7 +128,7 @@ function App() {
         EN: "Integration of quantum sensing with advanced information processing techniques to create next-generation quantum technologies and control systems.",
         JP: "量子センシングと先進的な情報処理技術を統合し、次世代量子技術と制御システムを創出しています。"
       },
-      image: "https://images.unsplash.com/photo-1584268211932-3f86894cbfee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxxdWFudHVtJTIwcGh5c2ljc3xlbnwwfHx8cHVycGxlfDE3NTI5MzU1NTV8MA&ixlib=rb-4.1.0&q=85"
+      image: "https://images.unsplash.com/photo-1726601057260-e8095dad345a"
     },
     {
       title: {
