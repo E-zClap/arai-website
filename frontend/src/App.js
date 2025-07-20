@@ -181,29 +181,30 @@ function App() {
     }
   ];
 
-  // Real team data from keigoarai.net
-  const teamData = [
-    {
-      name: {
-        EN: "Keigo Arai, Ph.D.",
-        JP: "荒井 慧悟 博士"
-      },
-      position: {
-        EN: "Principal Investigator",
-        JP: "主任研究員"
-      },
-      education: {
-        EN: [
-          "Ph.D. in Physics, MIT (2016)",
-          "B.A. in Physics, University of Tokyo (2008)"
-        ],
-        JP: [
-          "博士（物理学）、MIT（2016年）",
-          "学士（物理学）、東京大学（2008年）"
-        ]
-      },
-      image: "https://keigoarai.net/wp-content/uploads/2023/11/Arai-square.jpg"
+  // Organized team data by category
+  const principalInvestigator = {
+    name: {
+      EN: "Keigo Arai, Ph.D.",
+      JP: "荒井 慧悟 博士"
     },
+    position: {
+      EN: "Principal Investigator",
+      JP: "主任研究員"
+    },
+    education: {
+      EN: [
+        "Ph.D. in Physics, MIT (2016)",
+        "B.A. in Physics, University of Tokyo (2008)"
+      ],
+      JP: [
+        "博士（物理学）、MIT（2016年）",
+        "学士（物理学）、東京大学（2008年）"
+      ]
+    },
+    image: "https://keigoarai.net/wp-content/uploads/2023/11/Arai-square.jpg"
+  };
+
+  const staffAndPostdocs = [
     {
       name: {
         EN: "Yu Saito",
@@ -246,6 +247,72 @@ function App() {
       },
       image: "https://keigoarai.net/wp-content/uploads/2024/04/%E3%81%8A%E3%81%8A%E3%81%8F%E3%81%BE%E3%81%95%E3%82%93-783x1024.jpg"
     },
+    {
+      name: {
+        EN: "Toyonobu Nakagawa",
+        JP: "中川 豊信"
+      },
+      position: {
+        EN: "Technical Support Staff",
+        JP: "技術サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Technical Engineering",
+          "Laboratory Equipment Specialist"
+        ],
+        JP: [
+          "技術工学",
+          "実験装置専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/ToyonobuNakagawa.jpg"
+    },
+    {
+      name: {
+        EN: "Yoshie Yanagida",
+        JP: "柳田 良江"
+      },
+      position: {
+        EN: "Administrative Support Staff",
+        JP: "事務サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Administrative Management",
+          "Research Support Specialist"
+        ],
+        JP: [
+          "事務管理",
+          "研究サポート専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/YoshieYanagida.png"
+    },
+    {
+      name: {
+        EN: "Yasuko Shirasu",
+        JP: "白須 康子"
+      },
+      position: {
+        EN: "Administrative Support Staff",
+        JP: "事務サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Administrative Management",
+          "Office Operations Specialist"
+        ],
+        JP: [
+          "事務管理",
+          "オフィス業務専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/YasukoShirasu.jpg"
+    }
+  ];
+
+  const students = [
     {
       name: {
         EN: "Eisuke Oba",
@@ -413,70 +480,11 @@ function App() {
         ]
       },
       image: "https://keigoarai.net/wp-content/uploads/2023/11/Person-9.png"
-    },
-    {
-      name: {
-        EN: "Toyonobu Nakagawa",
-        JP: "中川 豊信"
-      },
-      position: {
-        EN: "Technical Support Staff",
-        JP: "技術サポートスタッフ"
-      },
-      education: {
-        EN: [
-          "Technical Engineering",
-          "Laboratory Equipment Specialist"
-        ],
-        JP: [
-          "技術工学",
-          "実験装置専門家"
-        ]
-      },
-      image: "https://keigoarai.net/wp-content/uploads/2023/11/ToyonobuNakagawa.jpg"
-    },
-    {
-      name: {
-        EN: "Yoshie Yanagida",
-        JP: "柳田 良江"
-      },
-      position: {
-        EN: "Administrative Support Staff",
-        JP: "事務サポートスタッフ"
-      },
-      education: {
-        EN: [
-          "Administrative Management",
-          "Research Support Specialist"
-        ],
-        JP: [
-          "事務管理",
-          "研究サポート専門家"
-        ]
-      },
-      image: "https://keigoarai.net/wp-content/uploads/2023/11/YoshieYanagida.png"
-    },
-    {
-      name: {
-        EN: "Yasuko Shirasu",
-        JP: "白須 康子"
-      },
-      position: {
-        EN: "Administrative Support Staff",
-        JP: "事務サポートスタッフ"
-      },
-      education: {
-        EN: [
-          "Administrative Management",
-          "Office Operations Specialist"
-        ],
-        JP: [
-          "事務管理",
-          "オフィス業務専門家"
-        ]
-      },
-      image: "https://keigoarai.net/wp-content/uploads/2023/11/YasukoShirasu.jpg"
     }
+  ];
+
+  const alumni = [
+    // Alumni section - can be populated with former members
   ];
 
   // Page Components
