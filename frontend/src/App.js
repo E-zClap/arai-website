@@ -139,7 +139,7 @@ function App() {
         EN: "State-of-the-art experimental setups and measurement techniques for quantum systems research and development.",
         JP: "量子システムの研究開発のための最先端実験装置と測定技術を開発しています。"
       },
-      image: "https://images.unsplash.com/photo-1562411053-1d8bdfe771c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
+      image: "https://images.unsplash.com/photo-1602052577122-f73b9710adba"
     }
   ];
 
