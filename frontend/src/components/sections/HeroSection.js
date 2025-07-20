@@ -123,46 +123,9 @@ export const HeroSection = ({ language, isDark }) => {
               visible: { opacity: 1, y: 0 }
             }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 space-y-8"
+            className="mt-16"
           >
-            {/* Professional Metrics Display */}
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {[
-                { 
-                  value: language === 'EN' ? '15+' : '15+', 
-                  label: language === 'EN' ? 'Research Members' : '研究メンバー',
-                  color: 'from-teal-500 to-cyan-500'
-                },
-                { 
-                  value: language === 'EN' ? '50+' : '50+', 
-                  label: language === 'EN' ? 'Publications' : '論文',
-                  color: 'from-cyan-500 to-emerald-500'
-                },
-                { 
-                  value: language === 'EN' ? '2024' : '2024', 
-                  label: language === 'EN' ? 'Laboratory Est.' : '研究室設立',
-                  color: 'from-emerald-500 to-teal-500'
-                }
-              ].map((metric, index) => (
-                <div
-                  key={index}
-                  className={`text-center p-6 rounded-2xl border backdrop-blur-xl ${
-                    isDark 
-                      ? 'bg-slate-900/40 border-slate-700/50' 
-                      : 'bg-white/70 border-slate-200/50 shadow-lg'
-                  }`}
-                >
-                  <div className={`text-4xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent mb-2`}>
-                    {metric.value}
-                  </div>
-                  <div className={`text-sm font-medium tracking-wider ${
-                    isDark ? 'text-slate-400' : 'text-slate-600'
-                  }`}>
-                    {metric.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Removed metrics display as requested */}
           </motion.div>
         </motion.div>
       </div>
