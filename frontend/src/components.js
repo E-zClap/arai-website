@@ -817,6 +817,11 @@ export const MissionSection = ({ language, isDark }) => {
       title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' },
       icon: Laptop,
       color: 'from-slate-600 to-cyan-700'
+    },
+    { 
+      title: { EN: 'Quantum Computing', JP: '量子コンピューティング' },
+      icon: Zap,
+      color: 'from-cyan-700 to-emerald-700'
     }
   ];
 
