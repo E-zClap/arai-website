@@ -825,7 +825,7 @@ export const ResearchCard = ({ title, description, image, index, language }) => 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
       <div className="p-8">
-        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-300 transition-colors">
           {title[language] || title}
         </h3>
         <p className="text-gray-300 leading-relaxed">
