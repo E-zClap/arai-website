@@ -852,10 +852,10 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border backdrop-blur-sm mb-8 ${
+          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
             isDark 
-              ? 'bg-slate-900/60 border-teal-500/30 text-teal-300'
-              : 'bg-white/80 border-teal-200/50 text-teal-700 shadow-lg'
+              ? 'backdrop-blur-sm bg-slate-900/60 border-teal-500/30 text-teal-300'
+              : 'bg-white border-teal-200/50 text-teal-700 shadow-lg'
           }`}>
             <FlaskConical className="mr-3" size={20} />
             <span className="text-sm font-medium tracking-wider uppercase">
