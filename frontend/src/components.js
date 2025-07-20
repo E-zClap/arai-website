@@ -524,7 +524,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
         >
           <motion.button
             onClick={() => setCurrentPage('news')}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
