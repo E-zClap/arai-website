@@ -258,10 +258,10 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
       {/* Language Toggle - Enhanced Academic Style */}
       <motion.button
         onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
-        className={`px-4 py-3 backdrop-blur-xl rounded-2xl border transition-all duration-300 shadow-lg min-w-[64px] ${
+        className={`px-4 py-3 rounded-2xl border transition-all duration-300 shadow-lg min-w-[64px] ${
           isDark
-            ? 'bg-slate-900/80 border-cyan-500/20 text-cyan-400 hover:bg-slate-800/90 hover:border-cyan-400/40'
-            : 'bg-white/90 border-cyan-200/30 text-cyan-600 hover:bg-white/95 hover:border-cyan-300/50 shadow-xl'
+            ? 'backdrop-blur-xl bg-slate-900/80 border-cyan-500/20 text-cyan-400 hover:bg-slate-800/90 hover:border-cyan-400/40'
+            : 'bg-white border-cyan-200/30 text-cyan-600 hover:bg-white hover:border-cyan-300/50 shadow-xl'
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
