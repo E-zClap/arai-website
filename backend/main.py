@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-from .database import db_instance
-from .routes.status import router as status_router
-from .utils.logging import setup_logging
-from .config.settings import settings
+from database import db_instance
+from routes.status import router as status_router
+from utils.logging import setup_logging
+from config.settings import settings
 
 # Setup logging
 setup_logging()
