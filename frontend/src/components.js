@@ -234,32 +234,61 @@ export const QuantumNetwork = () => {
   );
 };
 
-// Theme and Language Toggle Buttons
+// Enhanced Professional Theme and Language Controls
 export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) => {
   return (
-    <div className="fixed top-6 right-6 z-50 flex space-x-3">
-      {/* Theme Toggle */}
+    <div className="fixed top-6 right-6 z-50 flex flex-col space-y-3">
+      {/* Theme Toggle - Professional Design */}
       <motion.button
         onClick={() => setIsDark(!isDark)}
-        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-teal-500/20 text-white hover:bg-teal-500/20 transition-all duration-300"
-        whileHover={{ scale: 1.05 }}
+        className={`p-4 backdrop-blur-xl rounded-2xl border transition-all duration-300 shadow-lg ${
+          isDark
+            ? 'bg-slate-900/80 border-teal-500/20 text-teal-400 hover:bg-slate-800/90 hover:border-teal-400/40'
+            : 'bg-white/90 border-teal-200/30 text-teal-600 hover:bg-white/95 hover:border-teal-300/50 shadow-xl'
+        }`}
+        whileHover={{ scale: 1.05, rotate: 180 }}
         whileTap={{ scale: 0.95 }}
+        title={language === 'EN' ? (isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode') : (isDark ? 'ライトモードに切替' : 'ダークモードに切替')}
       >
         {isDark ? <Sun size={20} /> : <Moon size={20} />}
       </motion.button>
 
-      {/* Language Toggle */}
+      {/* Language Toggle - Enhanced Academic Style */}
       <motion.button
         onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
-        className="p-3 bg-black/20 backdrop-blur-md rounded-xl border border-teal-500/20 text-white hover:bg-cyan-500/20 transition-all duration-300 min-w-[50px]"
+        className={`px-4 py-3 backdrop-blur-xl rounded-2xl border transition-all duration-300 shadow-lg min-w-[64px] ${
+          isDark
+            ? 'bg-slate-900/80 border-cyan-500/20 text-cyan-400 hover:bg-slate-800/90 hover:border-cyan-400/40'
+            : 'bg-white/90 border-cyan-200/30 text-cyan-600 hover:bg-white/95 hover:border-cyan-300/50 shadow-xl'
+        }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        title={language === 'EN' ? 'Switch to Japanese' : '英語に切替'}
       >
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center justify-center space-x-2">
           <Globe size={16} />
-          <span className="text-sm font-medium">{language}</span>
+          <span className="text-sm font-bold tracking-wider">{language}</span>
         </div>
       </motion.button>
+
+      {/* Professional Institution Badge */}
+      <motion.div
+        className={`px-3 py-2 backdrop-blur-xl rounded-2xl border text-center shadow-lg ${
+          isDark
+            ? 'bg-slate-900/60 border-slate-700/30 text-slate-400'
+            : 'bg-white/80 border-slate-200/30 text-slate-500 shadow-xl'
+        }`}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <div className="text-xs font-medium tracking-wider">
+          {language === 'EN' ? 'Tokyo Tech' : '東工大'}
+        </div>
+        <div className="text-[10px] opacity-60 mt-0.5">
+          {language === 'EN' ? 'Est. 1881' : '創立1881年'}
+        </div>
+      </motion.div>
     </div>
   );
 };
