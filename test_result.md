@@ -202,6 +202,17 @@
         -working: true
         -agent: "main"
         -comment: "Elevated all interface components to professional academic standards: 1) News Cards: Enhanced with article semantic markup, professional date formatting, publication type badges, improved tags design, enhanced read more links with hover effects, 2) Team Member Cards: Professional presentation with overlay badges, academic credentials section, enhanced image handling, contact availability indicators, sophisticated hover effects, 3) Research Cards: Scientific research presentation with research area badges, category indicators, professional metrics display, enhanced visual hierarchy, 4) Contact Cards: Professional contact interface with enhanced icon sections, availability indicators, structured content display, professional glow effects, 5) Floating Controls: Academic-style controls with professional Tokyo Tech institution badge, enhanced tooltips, sophisticated hover animations."
+  - task: "Add external link icon to Professor Keigo Arai's name for better clickability indication"
+    implemented: true
+    working: true
+    file: "frontend/src/components.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully replaced the User icon with ExternalLink icon next to Professor Keigo Arai's name on the team page. This makes it immediately clear to users that his name is clickable and will navigate to his detailed profile page. The icon (18px size) has proper opacity transitions (70% normal, 100% on hover) and maintains the professional appearance. Users no longer need to guess or hover to discover the clickability - the external link icon provides instant visual indication that clicking the name will open additional content."
   - task: "Update sidebar to replace National University Corporation with Department link"
     implemented: true
     working: true
