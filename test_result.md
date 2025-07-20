@@ -213,6 +213,9 @@
         -working: false
         -agent: "main"
         -comment: "Successfully implemented comprehensive profile page system for Keigo Arai: 1) Created detailed keigoAraiProfile data structure with career timeline, research milestones, research evolution, and major publications in both English and Japanese, 2) Built ProfilePage component with sections for career timeline, research milestones, evolution of research interests, and major publications, 3) Modified TeamMemberCard to detect Keigo Arai and make his name clickable, 4) Added profile-keigo-arai route to renderPage function, 5) Updated all TeamMemberCard usages to pass setCurrentPage prop. The profile page includes comprehensive academic content, professional animations, dark/light theme support, and maintains design consistency with the rest of the website. Ready for testing."
+        -working: false
+        -agent: "main"
+        -comment: "Updated per user feedback: 1) Removed Professional Experience section from team page as this information is now available on the dedicated profile page, 2) Verified that Professor Arai's name is clickable in the team member card to navigate to his profile. The team page is now cleaner with just the basic team member information, and detailed career information is accessible through the profile page link."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
