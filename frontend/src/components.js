@@ -275,10 +275,10 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
 
       {/* Professional Institution Badge */}
       <motion.div
-        className={`px-3 py-2 backdrop-blur-xl rounded-2xl border text-center shadow-lg ${
+        className={`px-3 py-2 rounded-2xl border text-center shadow-lg ${
           isDark
-            ? 'bg-slate-900/60 border-slate-700/30 text-slate-400'
-            : 'bg-white/80 border-slate-200/30 text-slate-500 shadow-xl'
+            ? 'backdrop-blur-xl bg-slate-900/60 border-slate-700/30 text-slate-400'
+            : 'bg-white border-slate-200/30 text-slate-500 shadow-xl'
         }`}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
