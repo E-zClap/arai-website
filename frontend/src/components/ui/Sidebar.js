@@ -147,7 +147,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           </div>
 
           {/* Enhanced Navigation with Professional Design */}
-          <nav className="p-6 space-y-2">
+          <nav className="p-6 space-y-2 flex-1 overflow-y-auto">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = currentPage === item.id;
