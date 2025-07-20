@@ -93,7 +93,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           initial={{ x: -320 }}
           animate={{ x: isOpen ? 0 : -320 }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 ${
+          className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 flex flex-col ${
             isDark 
               ? 'bg-slate-900/98 backdrop-blur-2xl border-r border-teal-500/20' 
               : 'bg-white backdrop-blur-2xl border-r border-teal-200/50 shadow-xl'
