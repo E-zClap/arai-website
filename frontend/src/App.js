@@ -181,16 +181,16 @@ function App() {
     }
   ];
 
-  // Extended team data with more members
+  // Real team data from keigoarai.net
   const teamData = [
     {
       name: {
-        EN: "Prof. Keigo Arai",
-        JP: "荒井 慧悟 教授"
+        EN: "Keigo Arai, Ph.D.",
+        JP: "荒井 慧悟 博士"
       },
       position: {
-        EN: "Associate Professor & Principal Investigator",
-        JP: "准教授・主任研究員"
+        EN: "Principal Investigator",
+        JP: "主任研究員"
       },
       education: {
         EN: [
@@ -202,12 +202,12 @@ function App() {
           "学士（物理学）、東京大学（2008年）"
         ]
       },
-      image: "https://images.unsplash.com/photo-1537992303656-1d044b3e0bf0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/Arai-square.jpg"
     },
     {
       name: {
-        EN: "Dr. Yasuko Tanaka",
-        JP: "田中 康子 博士"
+        EN: "Yu Saito",
+        JP: "斉藤 優"
       },
       position: {
         EN: "Postdoctoral Researcher",
@@ -215,15 +215,141 @@ function App() {
       },
       education: {
         EN: [
-          "Ph.D. in Quantum Physics, Kyoto University (2021)",
-          "M.S. in Applied Physics, Osaka University (2018)"
+          "Ph.D. in Quantum Physics",
+          "Research in quantum sensing"
         ],
         JP: [
-          "博士（量子物理学）、京都大学（2021年）",
-          "修士（応用物理学）、大阪大学（2018年）"
+          "博士（量子物理学）",
+          "量子センシング研究"
         ]
       },
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
+      image: "https://keigoarai.net/wp-content/uploads/2024/05/IMG_1491_3-1-800x1024.jpg"
+    },
+    {
+      name: {
+        EN: "Masahiro Ohkuma",
+        JP: "大熊 正寛"
+      },
+      position: {
+        EN: "Postdoctoral Researcher",
+        JP: "博士研究員"
+      },
+      education: {
+        EN: [
+          "Ph.D. in Applied Physics",
+          "Research in quantum technologies"
+        ],
+        JP: [
+          "博士（応用物理学）",
+          "量子技術研究"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2024/04/%E3%81%8A%E3%81%8A%E3%81%8F%E3%81%BE%E3%81%95%E3%82%93-783x1024.jpg"
+    },
+    {
+      name: {
+        EN: "Eisuke Oba",
+        JP: "小場 瑛介"
+      },
+      position: {
+        EN: "Graduate Student (RA/TA)",
+        JP: "大学院生（RA/TA）"
+      },
+      education: {
+        EN: [
+          "M.S. in Quantum Engineering (ongoing)",
+          "Research Assistant/Teaching Assistant"
+        ],
+        JP: [
+          "修士（量子工学）履修中",
+          "リサーチアシスタント・ティーチングアシスタント"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/%E5%B0%8F%E5%A0%B4%E7%91%9B%E4%BB%8B-1024x1024-1.jpg"
+    },
+    {
+      name: {
+        EN: "Eikichi Kimura",
+        JP: "木村 栄吉"
+      },
+      position: {
+        EN: "Graduate Student (RA/TA)",
+        JP: "大学院生（RA/TA）"
+      },
+      education: {
+        EN: [
+          "M.S. in Quantum Informatics (ongoing)",
+          "Research Assistant/Teaching Assistant"
+        ],
+        JP: [
+          "修士（量子インフォマティクス）履修中",
+          "リサーチアシスタント・ティーチングアシスタント"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/EikichiKimura-1024x1024.jpg"
+    },
+    {
+      name: {
+        EN: "Shuhei Ohyama",
+        JP: "大山 修平"
+      },
+      position: {
+        EN: "Graduate Student",
+        JP: "大学院生"
+      },
+      education: {
+        EN: [
+          "M.S. in Applied Physics (ongoing)",
+          "Tokyo Institute of Technology"
+        ],
+        JP: [
+          "修士（応用物理学）履修中",
+          "東京工業大学"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/SyuheiOhyama.jpg"
+    },
+    {
+      name: {
+        EN: "Yuto Yamakawa",
+        JP: "山川 裕斗"
+      },
+      position: {
+        EN: "Graduate Student",
+        JP: "大学院生"
+      },
+      education: {
+        EN: [
+          "M.S. in Quantum Sensing (ongoing)",
+          "Tokyo Institute of Technology"
+        ],
+        JP: [
+          "修士（量子センシング）履修中",
+          "東京工業大学"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2024/04/%E5%B1%B1%E5%B7%9D%E5%90%9B-1024x1024.jpg"
+    },
+    {
+      name: {
+        EN: "Haizen Chou",
+        JP: "周 海禅"
+      },
+      position: {
+        EN: "Graduate Student",
+        JP: "大学院生"
+      },
+      education: {
+        EN: [
+          "M.S. in Quantum Engineering (ongoing)",
+          "Tokyo Institute of Technology"
+        ],
+        JP: [
+          "修士（量子工学）履修中",
+          "東京工業大学"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2024/04/chou%E3%81%95%E3%82%93.jpg"
     },
     {
       name: {
@@ -231,71 +357,29 @@ function App() {
         JP: "ウー・ジアバオ"
       },
       position: {
-        EN: "YSEP Graduate Student",
-        JP: "YSEP大学院生"
+        EN: "YSEP Student",
+        JP: "YSEP学生"
       },
       education: {
         EN: [
           "M.S. in Quantum Engineering (ongoing)",
-          "B.S. in Physics, Tsinghua University (2023)"
+          "International Exchange Program"
         ],
         JP: [
           "修士（量子工学）履修中",
-          "学士（物理学）、清華大学（2023年）"
+          "国際交換プログラム"
         ]
       },
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw1fHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/Person-9.png"
     },
     {
       name: {
-        EN: "Takeshi Yamamoto",
-        JP: "山本 武志"
+        EN: "Saki Tsuchiya",
+        JP: "土屋 沙輝"
       },
       position: {
-        EN: "Ph.D. Student",
-        JP: "博士課程学生"
-      },
-      education: {
-        EN: [
-          "Ph.D. in Quantum Sensing (ongoing)",
-          "M.S. in Applied Physics, Tokyo Tech (2022)"
-        ],
-        JP: [
-          "博士（量子センシング）履修中",
-          "修士（応用物理学）、東京工業大学（2022年）"
-        ]
-      },
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw2fHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
-    },
-    {
-      name: {
-        EN: "Mei Chen",
-        JP: "陳 美"
-      },
-      position: {
-        EN: "Master's Student",
-        JP: "修士課程学生"
-      },
-      education: {
-        EN: [
-          "M.S. in Quantum Informatics (ongoing)",
-          "B.S. in Physics, University of Tokyo (2023)"
-        ],
-        JP: [
-          "修士（量子インフォマティクス）履修中",
-          "学士（物理学）、東京大学（2023年）"
-        ]
-      },
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw3fHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
-    },
-    {
-      name: {
-        EN: "Hiroshi Nakamura",
-        JP: "中村 寛"
-      },
-      position: {
-        EN: "Undergraduate Researcher",
-        JP: "学部研究生"
+        EN: "Undergraduate Student",
+        JP: "学部生"
       },
       education: {
         EN: [
@@ -307,7 +391,91 @@ function App() {
           "東京工業大学"
         ]
       },
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw4fHxsYWJvcmF0b3J5JTIwcmVzZWFyY2h8ZW58MHx8fHB1cnBsZXwxNzUyOTM0OTk0fDA&ixlib=rb-4.1.0&q=85"
+      image: "https://keigoarai.net/wp-content/uploads/2024/04/%E5%9C%9F%E5%B1%8B%E6%B2%99%E8%BC%9D-768x1024.jpg"
+    },
+    {
+      name: {
+        EN: "Ryuki Motonaga",
+        JP: "本永 龍輝"
+      },
+      position: {
+        EN: "Undergraduate Student",
+        JP: "学部生"
+      },
+      education: {
+        EN: [
+          "B.S. in Applied Physics (ongoing)",
+          "Tokyo Institute of Technology"
+        ],
+        JP: [
+          "学士（応用物理学）履修中",
+          "東京工業大学"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/Person-9.png"
+    },
+    {
+      name: {
+        EN: "Toyonobu Nakagawa",
+        JP: "中川 豊信"
+      },
+      position: {
+        EN: "Technical Support Staff",
+        JP: "技術サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Technical Engineering",
+          "Laboratory Equipment Specialist"
+        ],
+        JP: [
+          "技術工学",
+          "実験装置専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/ToyonobuNakagawa.jpg"
+    },
+    {
+      name: {
+        EN: "Yoshie Yanagida",
+        JP: "柳田 良江"
+      },
+      position: {
+        EN: "Administrative Support Staff",
+        JP: "事務サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Administrative Management",
+          "Research Support Specialist"
+        ],
+        JP: [
+          "事務管理",
+          "研究サポート専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/YoshieYanagida.png"
+    },
+    {
+      name: {
+        EN: "Yasuko Shirasu",
+        JP: "白須 康子"
+      },
+      position: {
+        EN: "Administrative Support Staff",
+        JP: "事務サポートスタッフ"
+      },
+      education: {
+        EN: [
+          "Administrative Management",
+          "Office Operations Specialist"
+        ],
+        JP: [
+          "事務管理",
+          "オフィス業務専門家"
+        ]
+      },
+      image: "https://keigoarai.net/wp-content/uploads/2023/11/YasukoShirasu.jpg"
     }
   ];
 
