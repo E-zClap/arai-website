@@ -618,8 +618,8 @@ export const MissionSection = ({ language, isDark }) => {
           >
             <div className={`backdrop-blur-lg rounded-3xl p-8 border ${
               isDark 
-                ? 'bg-gray-800/40 border-purple-500/30' 
-                : 'bg-white/90 border-purple-300/30 shadow-xl'
+                ? 'bg-gray-800/40 border-teal-500/30' 
+                : 'bg-white/90 border-teal-300/30 shadow-xl'
             }`}>
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
