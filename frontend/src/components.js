@@ -557,27 +557,27 @@ export const MissionSection = ({ language, isDark }) => {
     { 
       title: { EN: 'Quantum Physics', JP: '量子物理学' },
       icon: Microscope,
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-teal-500 to-cyan-500'
     },
     { 
       title: { EN: 'Nanoscale Magnetometry', JP: 'ナノスケール磁気測定' },
       icon: Magnet,
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-cyan-500 to-emerald-500'
     },
     { 
       title: { EN: 'Diamond Science', JP: 'ダイヤモンド科学' },
       icon: Diamond,
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-emerald-500 to-teal-500'
     },
     { 
       title: { EN: 'Biomedical Sensing', JP: '生体医学センシング' },
       icon: Dna,
-      color: 'from-green-500 to-teal-500'
+      color: 'from-teal-600 to-slate-500'
     },
     { 
       title: { EN: 'Material Analysis', JP: '材料解析' },
       icon: TestTube,
-      color: 'from-orange-500 to-red-500'
+      color: 'from-slate-500 to-cyan-600'
     }
   ];
 
