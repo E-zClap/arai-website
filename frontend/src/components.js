@@ -771,8 +771,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
                   key={tagIndex}
                   className={`px-2 py-1 text-xs rounded-full ${
                     isDark
-                      ? 'bg-purple-900/50 text-purple-300 border border-purple-500/30'
-                      : 'bg-purple-100 text-purple-700 border border-purple-300/50'
+                      ? 'bg-teal-900/50 text-teal-300 border border-teal-500/30'
+                      : 'bg-teal-100 text-teal-700 border border-teal-300/50'
                   }`}
                 >
                   {tag}
