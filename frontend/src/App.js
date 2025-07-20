@@ -822,7 +822,7 @@ function App() {
           </motion.div>
         )}
 
-        {/* Experience Section */}
+        {/* Research Achievements Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -833,53 +833,19 @@ function App() {
               : 'bg-white/70 border-purple-300/30 shadow-xl'
           }`}
         >
-          <h2 className={`text-3xl font-bold mb-8 text-center ${
+          <h2 className={`text-3xl font-bold mb-6 text-center ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            {language === 'EN' ? 'Professional Experience (Prof. Arai)' : '職歴（荒井教授）'}
+            {language === 'EN' ? 'Research Excellence' : '研究実績'}
           </h2>
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {[
-              { 
-                period: language === 'EN' ? "April 2022 – Present" : "2022年4月 – 現在", 
-                position: language === 'EN' ? "Associate Professor" : "准教授", 
-                institution: language === 'EN' ? "Tokyo Institute of Technology" : "東京工業大学" 
-              },
-              { 
-                period: language === 'EN' ? "February 2020 – March 2022" : "2020年2月 – 2022年3月", 
-                position: language === 'EN' ? "Assistant Professor" : "助教", 
-                institution: language === 'EN' ? "Tokyo Institute of Technology" : "東京工業大学" 
-              },
-              { 
-                period: language === 'EN' ? "January 2017 – January 2020" : "2017年1月 – 2020年1月", 
-                position: language === 'EN' ? "Consulting Staff" : "コンサルタント", 
-                institution: language === 'EN' ? "Boston Consulting Group, Tokyo" : "ボストンコンサルティンググループ、東京" 
-              },
-              { 
-                period: language === 'EN' ? "April 2016 – December 2016" : "2016年4月 – 2016年12月", 
-                position: language === 'EN' ? "Postdoctoral Fellow" : "博士研究員", 
-                institution: language === 'EN' ? "Harvard-Smithsonian Center for Astrophysics" : "ハーバード・スミソニアン天体物理学センター" 
-              }
-            ].map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                className={`flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-8 p-6 rounded-xl ${
-                  isDark ? 'bg-white/5' : 'bg-gray-100/70'
-                }`}
-              >
-                <div className="text-purple-500 font-medium md:w-64 flex-shrink-0">{exp.period}</div>
-                <div className="flex-1">
-                  <div className={`font-semibold ${
-                    isDark ? 'text-white' : 'text-gray-800'
-                  }`}>{exp.position}</div>
-                  <div className={isDark ? 'text-gray-400' : 'text-gray-600'}>{exp.institution}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <p className={`text-lg text-center mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "Our team is dedicated to advancing quantum sensing technologies and their integration with informatics to drive quantum transformation across various applications."
+              : "当チームは量子センシング技術とインフォマティクスの統合を推進し、様々な応用分野における量子変革に取り組んでいます。"
+            }
+          </p>
         </motion.div>
       </div>
     </div>
