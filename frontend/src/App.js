@@ -642,7 +642,7 @@ function App() {
                   href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-purple-500 hover:text-purple-600 transition-colors ml-4"
+                  className="text-teal-500 hover:text-teal-600 transition-colors ml-4"
                 >
                   <ExternalLink size={20} />
                 </a>
