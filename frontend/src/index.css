@@ -88,24 +88,28 @@ code {
 
 /* Custom text selection colors to match website theme */
 ::selection {
-    background-color: rgba(20, 184, 166, 0.3); /* Teal with transparency */
+    background-color: rgba(20, 184, 166, 0.25); /* Teal with better transparency */
     color: #0f172a; /* Dark slate for better contrast */
+    text-shadow: none; /* Remove text shadow on selection */
 }
 
 ::-moz-selection {
-    background-color: rgba(20, 184, 166, 0.3); /* Teal with transparency */
+    background-color: rgba(20, 184, 166, 0.25); /* Teal with better transparency */
     color: #0f172a; /* Dark slate for better contrast */
+    text-shadow: none; /* Remove text shadow on selection */
 }
 
 /* Dark mode text selection */
 .dark ::selection,
 [data-theme="dark"] ::selection {
-    background-color: rgba(20, 184, 166, 0.4); /* Slightly more opaque for dark mode */
+    background-color: rgba(20, 184, 166, 0.35); /* More visible for dark mode */
     color: #f8fafc; /* Light text for dark backgrounds */
+    text-shadow: none; /* Remove text shadow on selection */
 }
 
 .dark ::-moz-selection,
 [data-theme="dark"] ::-moz-selection {
-    background-color: rgba(20, 184, 166, 0.4); /* Slightly more opaque for dark mode */
+    background-color: rgba(20, 184, 166, 0.35); /* More visible for dark mode */
     color: #f8fafc; /* Light text for dark backgrounds */
+    text-shadow: none; /* Remove text shadow on selection */
 }
