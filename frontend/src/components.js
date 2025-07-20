@@ -753,11 +753,11 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
     >
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
-          <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2" />
+          <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full mt-2" />
         </div>
         <div className="flex-1">
           <div className={`text-sm mb-3 flex items-center ${
-            isDark ? 'text-purple-300' : 'text-purple-600'
+            isDark ? 'text-teal-300' : 'text-teal-600'
           }`}>
             <Calendar size={14} className="mr-2" />
             {news.date}
