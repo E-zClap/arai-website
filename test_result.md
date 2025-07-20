@@ -202,23 +202,17 @@
         -working: true
         -agent: "main"
         -comment: "Elevated all interface components to professional academic standards: 1) News Cards: Enhanced with article semantic markup, professional date formatting, publication type badges, improved tags design, enhanced read more links with hover effects, 2) Team Member Cards: Professional presentation with overlay badges, academic credentials section, enhanced image handling, contact availability indicators, sophisticated hover effects, 3) Research Cards: Scientific research presentation with research area badges, category indicators, professional metrics display, enhanced visual hierarchy, 4) Contact Cards: Professional contact interface with enhanced icon sections, availability indicators, structured content display, professional glow effects, 5) Floating Controls: Academic-style controls with professional Tokyo Tech institution badge, enhanced tooltips, sophisticated hover animations."
-  - task: "Create separate profile page for Keigo Arai accessible by clicking his name on team page"
+  - task: "Fix navigation bar color issue on small devices in light theme - remove grayish appearance"
     implemented: true
-    working: false
-    file: "frontend/src/components.js, frontend/src/App.js"
+    working: true
+    file: "frontend/src/components.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
-        -working: false
+        -working: true
         -agent: "main"
-        -comment: "Successfully implemented comprehensive profile page system for Keigo Arai: 1) Created detailed keigoAraiProfile data structure with career timeline, research milestones, research evolution, and major publications in both English and Japanese, 2) Built ProfilePage component with sections for career timeline, research milestones, evolution of research interests, and major publications, 3) Modified TeamMemberCard to detect Keigo Arai and make his name clickable, 4) Added profile-keigo-arai route to renderPage function, 5) Updated all TeamMemberCard usages to pass setCurrentPage prop. The profile page includes comprehensive academic content, professional animations, dark/light theme support, and maintains design consistency with the rest of the website. Ready for testing."
-        -working: false
-        -agent: "main"
-        -comment: "Updated per user feedback: 1) Removed Professional Experience section from team page as this information is now available on the dedicated profile page, 2) Verified that Professor Arai's name is clickable in the team member card to navigate to his profile. The team page is now cleaner with just the basic team member information, and detailed career information is accessible through the profile page link."
-        -working: false
-        -agent: "main"
-        -comment: "Enhanced visual feedback for clickable name: 1) Changed Professor Arai's name color to teal-300 (distinctive from other white names), 2) Added underline with teal decoration to indicate it's a link, 3) Added User icon next to the name for clear visual indication, 4) Added hover effects including scale transform and color changes, 5) Added group hover effects for the icon. Now users can immediately see that his name is clickable without needing to hover first."
+        -comment: "Successfully fixed the grayish navigation bar issue on small devices in light theme. The problem was caused by backdrop-blur effects combined with semi-transparent backgrounds (/90, /95, /98 opacity). Fixed by: 1) Removed backdrop-blur from mobile menu button and used solid white background instead of bg-white/90, 2) Removed backdrop-blur from main sidebar in light theme and used solid white background instead of bg-white/98, 3) Fixed floating controls (theme toggle, language toggle, institution badge) to use solid white backgrounds in light theme instead of semi-transparent ones, 4) Maintained backdrop-blur effects only for dark theme where they work correctly. The navigation now shows clean white backgrounds in light theme on small devices instead of the previous ugly gray appearance."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
