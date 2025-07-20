@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Globe, FlaskConical } from 'lucide-react';
+import { Sun, Moon, Globe } from 'lucide-react';
 
 // Enhanced Professional Floating Controls
 export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) => {
