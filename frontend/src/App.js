@@ -665,7 +665,7 @@ function App() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Users className="mr-2" size={20} />
+            <UserPlus className="mr-2" size={20} />
             {language === 'EN' ? 'Join Us' : '参加する'}
           </motion.button>
         </motion.div>
