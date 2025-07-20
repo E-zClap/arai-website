@@ -211,7 +211,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           </nav>
 
           {/* Professional Footer */}
-          <div className={`absolute bottom-0 left-0 right-0 p-6 border-t ${
+          <div className={`mt-auto p-6 border-t ${
             isDark ? 'border-slate-700/50' : 'border-slate-200/50'
           }`}>
             <div className={`text-center text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
