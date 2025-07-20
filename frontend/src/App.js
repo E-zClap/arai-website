@@ -622,8 +622,8 @@ function App() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`backdrop-blur-lg rounded-2xl p-8 border transition-all duration-300 ${
                 isDark 
-                  ? 'bg-black/40 border-purple-500/20 hover:border-purple-400/40'
-                  : 'bg-white/70 border-purple-300/30 hover:border-purple-400/50 shadow-lg'
+                  ? 'bg-black/40 border-teal-500/20 hover:border-teal-400/40'
+                  : 'bg-white/70 border-teal-300/30 hover:border-teal-400/50 shadow-lg'
               }`}
             >
               <div className="flex items-start justify-between">
