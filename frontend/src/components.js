@@ -629,20 +629,20 @@ export const MissionSection = ({ language, isDark }) => {
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
-                  <span className={isDark ? 'text-purple-300' : 'text-purple-600'}>
+                  <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full"></div>
+                  <span className={isDark ? 'text-teal-300' : 'text-teal-600'}>
                     {language === 'EN' ? 'Quantum Sensing Technologies' : '量子センシング技術'}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
-                  <span className={isDark ? 'text-blue-300' : 'text-blue-600'}>
+                  <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></div>
+                  <span className={isDark ? 'text-cyan-300' : 'text-cyan-600'}>
                     {language === 'EN' ? 'Information Science Integration' : '情報科学との統合'}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
-                  <span className={isDark ? 'text-pink-300' : 'text-pink-600'}>
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
+                  <span className={isDark ? 'text-emerald-300' : 'text-emerald-600'}>
                     {language === 'EN' ? 'Quantum Transformation Innovation' : 'クォンタム変革イノベーション'}
                   </span>
                 </div>
