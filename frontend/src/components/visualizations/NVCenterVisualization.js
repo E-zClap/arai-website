@@ -93,44 +93,30 @@ export const NVCenterVisualization = ({ language, isDark }) => {
       </div>
       
       {/* Visualization */}
-      <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-black/95' : 'relative'}`}>
-        {isFullscreen && (
-          <button
-            onClick={() => setIsFullscreen(false)}
-            className="absolute top-6 right-6 z-10 p-3 bg-teal-600/20 text-teal-400 hover:bg-teal-600/30 rounded-xl transition-all duration-300"
-          >
-            <Maximize2 size={20} />
-          </button>
-        )}
-        <div className={`${
-          isFullscreen 
-            ? 'w-full h-full p-8' 
-            : 'h-96 md:h-[500px] lg:h-[600px]'
-        }`}>
+      <div className="relative">
+        <div className="h-96 md:h-[500px] lg:h-[600px]">
           <iframe
             src={nvCenterUrl}
             title="NV Center Visualization"
             className="w-full h-full border-0 rounded-xl"
             style={{ 
-              minHeight: isFullscreen ? '100vh' : '400px'
+              minHeight: '400px'
             }}
           />
         </div>
       </div>
       
       {/* Controls/Info */}
-      {!isFullscreen && (
-        <div className="p-6 pt-0">
-          <div className={`text-sm text-center ${
-            isDark ? 'text-gray-400' : 'text-gray-600'
-          }`}>
-            {language === 'EN' 
-              ? 'Click and drag to rotate • Scroll to zoom • Click fullscreen for detailed view'
-              : 'クリックしてドラッグで回転 • スクロールでズーム • フルスクリーンで詳細表示'
-            }
-          </div>
+      <div className="p-6 pt-0">
+        <div className={`text-sm text-center ${
+          isDark ? 'text-gray-400' : 'text-gray-600'
+        }`}>
+          {language === 'EN' 
+            ? 'Click and drag to rotate • Scroll to zoom'
+            : 'クリックしてドラッグで回転 • スクロールでズーム'
+          }
         </div>
-      )}
+      </div>
     </motion.div>
   );
 };
