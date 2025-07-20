@@ -716,7 +716,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
     </section>
   );
 };  
-// Mission Section Component  
+// Enhanced Professional Mission Section Component  
 export const MissionSection = ({ language, isDark }) => {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -729,64 +729,115 @@ export const MissionSection = ({ language, isDark }) => {
   }, [controls, inView]);
 
   const missionText = {
-    EN: "The Arai group at the Tokyo Institute of Technology was established in April 2022 with the theme of quantum technology. Among the many quantum technologies, we focus on quantum sensing. By combining it with information science (informatics), we aim to create an innovation called 'quantum transformation'.",
-    JP: "東京工業大学荒井研究室は2022年4月に量子技術をテーマとして設立されました。多くの量子技術の中でも、私たちは量子センシングに焦点を当てています。これを情報科学（インフォマティクス）と組み合わせることで、「クォンタム変革」と呼ばれるイノベーションの創出を目指しています。"
+    EN: "The Arai Laboratory at Tokyo Institute of Technology was established in April 2022 with the central theme of advancing quantum technologies. Our research concentrates on quantum sensing, uniquely integrated with computational informatics to pioneer transformative innovations in what we term 'Quantum Transformation' — a paradigm shift in how quantum physics applications drive technological advancement.",
+    JP: "東京工業大学荒井研究室は2022年4月に量子技術の発展を中心テーマとして設立されました。私たちの研究は量子センシングに特化し、計算情報学と独自に統合することで、「クォンタム変革」と呼ぶ変革的イノベーションの開拓を目指しています。これは量子物理学応用が技術進歩を推進する新たなパラダイムです。"
   };
 
-  const researchTopics = [
+  const keyPrinciples = [
     { 
-      title: { EN: 'Quantum Physics', JP: '量子物理学' },
+      title: { EN: 'Quantum Sensing Excellence', JP: '量子センシング最適化' },
       icon: Microscope,
+      description: { 
+        EN: 'Pioneering high-precision quantum measurement technologies',
+        JP: '高精度量子測定技術の先駆的研究'
+      },
       color: 'from-teal-500 to-cyan-500'
     },
     { 
-      title: { EN: 'Nanoscale Magnetometry', JP: 'ナノスケール磁気測定' },
-      icon: Magnet,
+      title: { EN: 'Computational Integration', JP: '計算統合' },
+      icon: Laptop,
+      description: { 
+        EN: 'Advanced informatics and quantum computing convergence',
+        JP: '先進情報学と量子コンピューティングの融合'
+      },
       color: 'from-cyan-500 to-emerald-500'
     },
     { 
-      title: { EN: 'Diamond Science', JP: 'ダイヤモンド科学' },
-      icon: Diamond,
+      title: { EN: 'Transformative Innovation', JP: '変革的イノベーション' },
+      icon: Zap,
+      description: { 
+        EN: 'Revolutionary applications across multiple scientific domains',
+        JP: '複数の科学領域における革新的応用'
+      },
       color: 'from-emerald-500 to-teal-500'
+    }
+  ];
+
+  const researchTopics = [
+    { 
+      title: { EN: 'Diamond NV Centers', JP: 'ダイヤモンドNVセンター' },
+      icon: Diamond,
+      color: 'from-teal-600 to-cyan-600'
     },
     { 
-      title: { EN: 'Biomedical Sensing', JP: '生体医学センシング' },
+      title: { EN: 'Quantum Magnetometry', JP: '量子磁気測定' },
+      icon: Magnet,
+      color: 'from-cyan-600 to-emerald-600'
+    },
+    { 
+      title: { EN: 'Biomedical Applications', JP: '生体医学応用' },
       icon: Dna,
-      color: 'from-teal-600 to-slate-500'
+      color: 'from-emerald-600 to-teal-600'
     },
     { 
-      title: { EN: 'Material Analysis', JP: '材料解析' },
+      title: { EN: 'Material Characterization', JP: '材料特性解析' },
       icon: TestTube,
-      color: 'from-slate-500 to-cyan-600'
+      color: 'from-teal-700 to-slate-600'
+    },
+    { 
+      title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' },
+      icon: Laptop,
+      color: 'from-slate-600 to-cyan-700'
     }
   ];
 
   return (
-    <section className={`py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-gray-800/20' : 'bg-white/90'
+    <section className={`py-32 px-8 relative overflow-hidden ${
+      isDark ? 'bg-gradient-to-b from-slate-900/30 to-slate-800/20' : 'bg-gradient-to-b from-slate-50/80 to-white/95'
     }`} ref={ref}>
       
+      {/* Scientific Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(45deg, transparent 35%, ${isDark ? '#14b8a6' : '#0f766e'} 35%, ${isDark ? '#14b8a6' : '#0f766e'} 65%, transparent 65%), linear-gradient(-45deg, transparent 35%, ${isDark ? '#06b6d4' : '#0891b2'} 35%, ${isDark ? '#06b6d4' : '#0891b2'} 65%, transparent 65%)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Enhanced Academic Header */}
         <motion.div
           initial="hidden"
           animate={controls}
           variants={{
-            hidden: { opacity: 0, y: 50 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 }
           }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className={`text-5xl font-bold mb-6 ${
-            isDark ? 'text-white' : 'text-gray-800'
+          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border backdrop-blur-sm mb-8 ${
+            isDark 
+              ? 'bg-slate-900/60 border-teal-500/30 text-teal-300'
+              : 'bg-white/80 border-teal-200/50 text-teal-700 shadow-lg'
           }`}>
-            {language === 'EN' ? 'Our Mission' : '私たちの使命'}
+            <FlaskConical className="mr-3" size={20} />
+            <span className="text-sm font-medium tracking-wider uppercase">
+              {language === 'EN' ? 'RESEARCH MISSION' : '研究ミッション'}
+            </span>
+          </div>
+          
+          <h2 className={`text-6xl font-bold mb-8 ${
+            isDark ? 'text-white' : 'text-slate-900'
+          }`} style={{ fontFamily: '"Inter", system-ui' }}>
+            {language === 'EN' ? 'Our Scientific Mission' : '私たちの科学的使命'}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full" />
         </motion.div>
 
-        {/* Enhanced Mission Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        {/* Enhanced Mission Content with Academic Layout */}
+        <div className="grid xl:grid-cols-3 gap-12 items-start mb-20">
+          {/* Main Mission Statement */}
           <motion.div
             initial="hidden"
             animate={controls}
@@ -795,41 +846,54 @@ export const MissionSection = ({ language, isDark }) => {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.8, delay: 0.3 }}
+            className="xl:col-span-2"
           >
-            <div className={`backdrop-blur-lg rounded-3xl p-8 border ${
+            <div className={`backdrop-blur-xl rounded-3xl p-10 border ${
               isDark 
-                ? 'bg-gray-800/40 border-teal-500/30' 
-                : 'bg-white/90 border-teal-300/30 shadow-xl'
+                ? 'bg-slate-900/60 border-teal-500/20' 
+                : 'bg-white/90 border-teal-200/30 shadow-2xl'
             }`}>
-              <p className={`text-lg leading-relaxed mb-6 ${
-                isDark ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+              <div className={`text-lg md:text-xl leading-relaxed mb-8 ${
+                isDark ? 'text-slate-200' : 'text-slate-700'
+              }`} style={{ fontFamily: '"Inter", system-ui' }}>
                 {missionText[language]}
-              </p>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full"></div>
-                  <span className={isDark ? 'text-teal-300' : 'text-teal-600'}>
-                    {language === 'EN' ? 'Quantum Sensing Technologies' : '量子センシング技術'}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></div>
-                  <span className={isDark ? 'text-cyan-300' : 'text-cyan-600'}>
-                    {language === 'EN' ? 'Information Science Integration' : '情報科学との統合'}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
-                  <span className={isDark ? 'text-emerald-300' : 'text-emerald-600'}>
-                    {language === 'EN' ? 'Quantum Transformation Innovation' : 'クォンタム変革イノベーション'}
-                  </span>
-                </div>
+              {/* Key Principles Grid */}
+              <div className="grid gap-6">
+                {keyPrinciples.map((principle, index) => {
+                  const IconComponent = principle.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                      className={`flex items-center space-x-4 p-5 rounded-2xl ${
+                        isDark ? 'bg-slate-800/40' : 'bg-slate-50/80'
+                      }`}
+                    >
+                      <div className={`p-3 rounded-xl bg-gradient-to-r ${principle.color}`}>
+                        <IconComponent className="text-white" size={24} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-semibold text-lg mb-1 ${
+                          isDark ? 'text-white' : 'text-slate-800'
+                        }`}>
+                          {principle.title[language]}
+                        </h4>
+                        <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                          {principle.description[language]}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
 
+          {/* Research Highlights Sidebar */}
           <motion.div
             initial="hidden"
             animate={controls}
@@ -838,44 +902,57 @@ export const MissionSection = ({ language, isDark }) => {
               visible: { opacity: 1, x: 0 }
             }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+            className="space-y-6"
           >
-            {[
-              { icon: Microscope, title: { EN: 'Quantum Sensing', JP: '量子センシング' } },
-              { icon: Laptop, title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' } },
-              { icon: Zap, title: { EN: 'Quantum Transformation', JP: 'クォンタム変革' } },
-              { icon: Magnet, title: { EN: 'Magnetometry', JP: '磁気測定' } },
-              { icon: Diamond, title: { EN: 'Diamond NV', JP: 'ダイヤモンドNV' } },
-              { icon: Dna, title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
-            ].map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                  className={`p-4 rounded-2xl text-center backdrop-blur-lg border ${
-                    isDark 
-                      ? 'bg-gray-700/40 border-teal-400/30 hover:bg-gray-600/50'
-                      : 'bg-white/80 border-teal-200/30 hover:bg-teal-50/90'
-                  } transition-all duration-300 hover:scale-105`}
-                >
-                  <div className="flex justify-center mb-2">
-                    <IconComponent className="text-teal-400" size={24} />
-                  </div>
-                  <p className={`text-sm font-medium ${
-                    isDark ? 'text-gray-200' : 'text-gray-700'
-                  }`}>
-                    {item.title[language]}
-                  </p>
-                </motion.div>
-              );
-            })}
+            <div className={`backdrop-blur-xl rounded-3xl p-8 border ${
+              isDark 
+                ? 'bg-slate-900/60 border-teal-500/20' 
+                : 'bg-white/90 border-teal-200/30 shadow-xl'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 text-center ${
+                isDark ? 'text-white' : 'text-slate-800'
+              }`}>
+                {language === 'EN' ? 'Core Research Areas' : '主要研究分野'}
+              </h3>
+              
+              <div className="space-y-3">
+                {[
+                  { icon: Diamond, title: { EN: 'NV Centers', JP: 'NVセンター' } },
+                  { icon: Magnet, title: { EN: 'Magnetometry', JP: '磁気測定' } },
+                  { icon: Dna, title: { EN: 'Biosensing', JP: 'バイオセンシング' } },
+                  { icon: TestTube, title: { EN: 'Materials', JP: '材料科学' } },
+                  { icon: Laptop, title: { EN: 'Informatics', JP: '情報科学' } }
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                      className={`flex items-center space-x-3 p-4 rounded-xl transition-all duration-300 hover:scale-105 ${
+                        isDark 
+                          ? 'bg-slate-800/40 hover:bg-slate-700/50' 
+                          : 'bg-slate-50/80 hover:bg-teal-50/90'
+                      }`}
+                    >
+                      <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-500">
+                        <IconComponent className="text-white" size={18} />
+                      </div>
+                      <span className={`text-sm font-medium ${
+                        isDark ? 'text-slate-200' : 'text-slate-700'
+                      }`}>
+                        {item.title[language]}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Research Topics */}
+        {/* Research Excellence Badges */}
         <motion.div
           initial="hidden"
           animate={controls}
@@ -886,10 +963,10 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
         >
-          <h3 className={`text-3xl font-bold mb-8 ${
-            isDark ? 'text-white' : 'text-gray-800'
+          <h3 className={`text-3xl font-bold mb-10 ${
+            isDark ? 'text-white' : 'text-slate-800'
           }`}>
-            {language === 'EN' ? 'Research Topics along Quantum' : '量子に沿った研究トピック'}
+            {language === 'EN' ? 'Quantum Research Specializations' : '量子研究専門分野'}
           </h3>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -901,11 +978,13 @@ export const MissionSection = ({ language, isDark }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                  className={`px-6 py-3 rounded-full bg-gradient-to-r ${topic.color} text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center`}
+                  className={`group px-6 py-4 rounded-2xl bg-gradient-to-r ${topic.color} text-white font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3`}
                   whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <IconComponent className="mr-2" size={18} />
-                  {topic.title[language]}
+                  <IconComponent size={20} />
+                  <span>{topic.title[language]}</span>
+                  <div className="w-2 h-2 bg-white/50 rounded-full group-hover:bg-white/80 transition-colors" />
                 </motion.div>
               );
             })}
