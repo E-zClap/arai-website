@@ -1028,7 +1028,7 @@ function App() {
             }`}>
               <li className="flex items-center space-x-2">
                 <ExternalLink size={16} />
-                <a href="https://admissions.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                <a href="https://admissions.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">
                   {language === 'EN' ? '東京工業大学 大学院課程入学案内' : '東京工業大学 大学院課程入学案内'}
                 </a>
               </li>
