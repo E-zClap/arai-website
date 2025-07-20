@@ -15,8 +15,8 @@ export const MissionSection = ({ language, isDark }) => {
   }, [controls, isInView]);
 
   const missionText = {
-    EN: "The Arai Laboratory at Tokyo Institute of Technology was established in 2024 with quantum sensing as our core theme. Our research specializes in quantum sensing and uniquely integrates with computational informatics to pioneer transformative innovation we call 'Quantum Transformation' - a new paradigm where quantum physics applications drive technological advancement.",
-    JP: "東京工業大学の荒井研究室は、量子センシングを中心テーマとして2024年に設立されました。私たちの研究は量子センシングに特化し、計算情報学と独自に統合することで、「クォンタム変革」と呼ぶ変革的イノベーションの開拓を目指しています。これは量子物理学応用が技術進歩を推進する新たなパラダイムです。"
+    EN: "The Arai's Laboratory at Tokyo Institute of Technology was established in 2022 with quantum sensing as our core theme. Our research specializes in quantum sensing and uniquely integrates with computational informatics to pioneer transformative innovation we call 'Quantum Transformation' - a new paradigm where quantum physics applications drive technological advancement.",
+    JP: "東京工業大学の荒井研究室は、量子センシングを中心テーマとして2022年に設立されました。私たちの研究は量子センシングに特化し、計算情報学と独自に統合することで、「クォンタム変革」と呼ぶ変革的イノベーションの開拓を目指しています。これは量子物理学応用が技術進歩を推進する新たなパラダイムです。"
   };
 
   const keyPrinciples = [
