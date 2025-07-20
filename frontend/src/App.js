@@ -598,15 +598,15 @@ function App() {
           <h1 className={`text-6xl font-bold mb-6 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            {language === 'EN' ? 'Contact & Openings' : 'お問い合わせ・募集'}
+            {language === 'EN' ? 'Contact' : 'お問い合わせ'}
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
           <p className={`text-xl max-w-3xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
             {language === 'EN' 
-              ? "Join our research team and contribute to the quantum transformation. We welcome passionate researchers and students interested in quantum sensing and informatics."
-              : "私たちの研究チームに参加し、量子変革に貢献してください。量子センシングとインフォマティクスに興味のある情熱的な研究者や学生を歓迎します。"
+              ? "Get in touch with the Arai Group. For joining opportunities, please visit our Join Us page."
+              : "荒井研究室へのお問い合わせ。参加の機会については、Join Usページをご覧ください。"
             }
           </p>
         </motion.div>
@@ -634,42 +634,258 @@ function App() {
           />
         </div>
 
-        {/* Openings Section */}
+        {/* Join Us Link Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className={`backdrop-blur-lg rounded-3xl p-12 border ${
+          className={`backdrop-blur-lg rounded-3xl p-12 border text-center ${
             isDark 
               ? 'bg-black/40 border-purple-500/20'
               : 'bg-white/70 border-purple-300/30 shadow-xl'
           }`}
         >
-          <h2 className={`text-3xl font-bold mb-6 text-center ${
+          <h2 className={`text-3xl font-bold mb-6 ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
-            {language === 'EN' ? 'Research Openings' : '研究員募集'}
+            {language === 'EN' ? 'Interested in Joining Us?' : '参加をご希望ですか？'}
           </h2>
-          <p className={`text-lg text-center mb-8 max-w-3xl mx-auto ${
+          <p className={`text-lg mb-8 max-w-3xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
             {language === 'EN' 
-              ? "We are always recruiting new members to our laboratory. If you are interested in the fusion research of quantum sensing and information science, please feel free to contact us."
-              : "当研究室では、メンバーを随時募集しています。量子センシングと情報科学の融合研究に興味のある方は、ぜひお気軽にお問い合わせください。"
+              ? "Explore opportunities for postdoctoral researchers, graduate students, undergraduate students, and corporate collaborations."
+              : "博士研究員、大学院生、学部生、企業連携の機会をご覧ください。"
             }
           </p>
           
-          <div className="text-center">
-            <motion.a
-              href="mailto:arai.k.ar@m.titech.ac.jp"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="mr-2" size={20} />
-              {language === 'EN' ? 'Get in Touch' : 'お問い合わせ'}
-            </motion.a>
+          <motion.button
+            onClick={() => setCurrentPage('join')}
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Users className="mr-2" size={20} />
+            {language === 'EN' ? 'Join Us' : '参加する'}
+          </motion.button>
+        </motion.div>
+      </div>
+    </div>
+  );
+
+  const JoinUsPage = () => (
+    <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
+      isDark ? 'bg-black' : 'bg-gray-50'
+    }`}>
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
+          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+      }`} />
+      <QuantumParticles intensity={30} />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className={`text-6xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Join Us' : '参加する'}
+          </h1>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
+          <p className={`text-xl max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "If you are interested in working in/with our group, please contact Keigo Arai (arai.k.ar[at]m.titech.ac.jp)."
+              : "当研究室で働く、または共同研究にご興味がありましたら、荒井慧悟 (arai.k.ar[at]m.titech.ac.jp) までご連絡ください。"
+            }
+          </p>
+        </motion.div>
+
+        {/* Prospective Postdoctoral Researchers */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
+        >
+          <h2 className={`text-3xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Prospective Postdoctoral Researchers' : '博士研究員候補者'}
+          </h2>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "Our group welcomes candidates for a postdoctoral research position in quantum sensing and informatics. Potential research topics include diamond quantum sensing, machine learning, and quantum computation. Post-doc candidates who are interested in our group should send a curriculum vitae."
+              : "当研究室では、量子センシングとインフォマティクスの博士研究員候補者を歓迎します。研究テーマには、ダイヤモンド量子センシング、機械学習、量子計算が含まれます。当研究室にご興味のある博士研究員候補者は履歴書をお送りください。"
+            }
+          </p>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "Candidates are encouraged to apply for research funding. Please feel free to contact us to discuss potential research topics for the funding proposal."
+              : "候補者には研究資金への申請を推奨しています。資金提案のための研究テーマについてお気軽にご相談ください。"
+            }
+          </p>
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Funding Opportunities:' : '資金獲得の機会:'}
+            </h3>
+            <ul className={`space-y-2 ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.jsps.go.jp/j-pd/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'JSPS Research Fellowship for Young Scientists (学振特別研究員)' : 'JSPS研究奨励費（学振特別研究員）'}
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.jsps.go.jp/english/e-fellow/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'JSPS Postdoctoral Fellowships for Research in Japan' : 'JSPS外国人特別研究員'}
+                </a>
+              </li>
+            </ul>
           </div>
+        </motion.div>
+
+        {/* Prospective Students */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
+        >
+          <h2 className={`text-3xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Prospective Students' : '学生候補者'}
+          </h2>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "We are happy to have both graduate and undergraduate students involved in our group. Please check our Education page for what you will be able to learn in our group."
+              : "大学院生と学部生の両方に当研究室に参加していただけることを嬉しく思います。当研究室で学べることについては、教育ページをご確認ください。"
+            }
+          </p>
+          <p className={`text-lg mb-6 ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "学部生のリサーチアシスタント(RA)も随時募集しています。"
+              : "学部生のリサーチアシスタント(RA)も随時募集しています。"
+            }
+          </p>
+          <div className="space-y-4">
+            <h3 className={`text-xl font-semibold ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Resources:' : 'リソース:'}
+            </h3>
+            <ul className={`space-y-2 ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://admissions.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? '東京工業大学 大学院課程入学案内' : '東京工業大学 大学院課程入学案内'}
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.titech.ac.jp/english/admissions" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'For international students - Tokyo Tech' : '留学生向け - 東京工業大学'}
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ExternalLink size={16} />
+                <a href="https://www.jasso.go.jp/en/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                  {language === 'EN' ? 'Japan Student Services Organization' : '日本学生支援機構'}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* Corporates */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
+        >
+          <h2 className={`text-3xl font-bold mb-6 ${
+            isDark ? 'text-white' : 'text-gray-800'
+          }`}>
+            {language === 'EN' ? 'Corporates' : '企業連携'}
+          </h2>
+          <p className={`text-lg ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "We are interested in collaborating with corporates."
+              : "企業との連携に興味を持っています。"
+            }
+          </p>
+        </motion.div>
+
+        {/* Diversity Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
+            isDark 
+              ? 'bg-black/40 border-purple-500/20'
+              : 'bg-white/70 border-purple-300/30 shadow-xl'
+          }`}
+        >
+          <p className={`text-lg italic ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {language === 'EN' 
+              ? "To ensure a diverse workforce and further reinforce its education quality, research capabilities, and organizational strength, Tokyo Institute of Technology guarantees equal opportunities and treatment for individuals regardless of nationality or gender in all areas of research."
+              : "多様な労働力を確保し、教育の質、研究能力、組織力をさらに強化するため、東京工業大学は研究のすべての領域において、国籍や性別に関係なく個人に平等な機会と待遇を保証します。"
+            }
+          </p>
+        </motion.div>
+
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="text-center"
+        >
+          <p className={`text-sm ${
+            isDark ? 'text-gray-400' : 'text-gray-500'
+          }`}>
+            © Copyright 2023 The Arai Group / Tokyo Institute of Technology.
+          </p>
         </motion.div>
       </div>
     </div>
