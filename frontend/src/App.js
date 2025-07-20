@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { 
-  Sidebar, 
-  HeroSection, 
-  MissionSection, 
-  RecentNewsSection,
-  NewsCard, 
-  ResearchCard, 
-  TeamMemberCard, 
-  ContactCard,
-  QuantumParticles,
-  FloatingControls,
-  NVCenterVisualization,
-  ProfilePage
-} from './components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Calendar, FlaskConical, BookOpen, ExternalLink, Github, Users, UserPlus } from 'lucide-react';
+
+// Import UI Components
+import { Sidebar } from './components/ui/Sidebar';
+import { FloatingControls } from './components/ui/FloatingControls';
+import { QuantumParticles } from './components/animations/QuantumParticles';
+
+// Import Page Components
+import { HomePage } from './pages/HomePage';
+import { NewsPage } from './pages/NewsPage';
+import { ResearchPage } from './pages/ResearchPage';
+import { PublicationsPage } from './pages/PublicationsPage';
+import { TeamPage } from './pages/TeamPage';
+import { ContactPage } from './pages/ContactPage';
+import { JoinUsPage } from './pages/JoinUsPage';
+import { ProfilePage } from './pages/ProfilePage';
+
+// Import Data
+import { newsData } from './data/newsData';
+import { researchData } from './data/researchData';
+import { publicationsData } from './data/publicationsData';
+import { principalInvestigator, staffAndPostdocs, students, alumni } from './data/teamData';
+import { keigoAraiProfile } from './data/profileData';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
