@@ -195,7 +195,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       </div>
                     </div>
                   </div>
-                </motion.button>
+                </button>
               );
             })}
           </nav>
