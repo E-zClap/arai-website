@@ -978,6 +978,7 @@ function App() {
               <TeamMemberCard {...principalInvestigator} index={0} language={language} setCurrentPage={setCurrentPage} />
             </div>
           </div>
+        </motion.div>
 
         {/* Staff and Postdocs Section */}
         <motion.div
