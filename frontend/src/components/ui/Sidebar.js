@@ -217,8 +217,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             <div className={`text-center text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
               <div className="mb-2">
                 {language === 'EN' 
-                  ? '© 2024 Quantum Sensing Laboratory' 
-                  : '© 2024 量子センシング研究室'
+                  ? '© 2022 Quantum Sensing Laboratory' 
+                  : '© 2022 量子センシング研究室'
                 }
               </div>
               <div className="text-xs opacity-70">
