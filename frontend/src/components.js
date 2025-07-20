@@ -291,6 +291,14 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               }`}>
                 {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
               </p>
+              <p className={`text-xs mt-1 ${
+                isDark ? 'text-gray-400' : 'text-gray-500'
+              }`}>
+                {language === 'EN' 
+                  ? 'Dept. of Electrical & Electronic Engineering' 
+                  : '電気電子系'
+                }
+              </p>
             </div>
           </div>
           
