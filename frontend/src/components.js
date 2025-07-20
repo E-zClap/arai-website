@@ -879,7 +879,7 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
       {link ? (
         <a 
           href={link}
-          className="text-purple-300 hover:text-purple-200 transition-colors"
+          className="text-teal-300 hover:text-teal-200 transition-colors"
         >
           {content}
         </a>
