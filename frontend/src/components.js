@@ -236,8 +236,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       <button
         className={`lg:hidden fixed top-6 left-6 z-50 p-3 backdrop-blur-md rounded-xl border transition-all ${
           isDark 
-            ? 'bg-black/20 border-purple-500/20 text-white'
-            : 'bg-white/80 border-purple-300/30 text-gray-800 shadow-lg'
+            ? 'bg-black/20 border-teal-500/20 text-white'
+            : 'bg-white/80 border-teal-300/30 text-gray-800 shadow-lg'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
