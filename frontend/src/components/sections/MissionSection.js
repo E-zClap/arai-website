@@ -68,12 +68,12 @@ export const MissionSection = ({ language, isDark }) => {
     { 
       title: { EN: 'Material Characterization', JP: '材料特性解析' },
       icon: TestTube,
-      color: 'from-teal-700 to-slate-600'
+      color: 'from-teal-600 to-cyan-600'
     },
     { 
       title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' },
       icon: Laptop,
-      color: 'from-slate-600 to-cyan-700'
+      color: 'from-cyan-600 to-teal-600'
     },
     { 
       title: { EN: 'Quantum Computing', JP: '量子コンピューティング' },
