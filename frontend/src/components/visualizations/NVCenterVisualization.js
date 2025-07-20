@@ -48,18 +48,6 @@ export const NVCenterVisualization = ({ language, isDark }) => {
               </p>
             </div>
           </div>
-          <motion.button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            className={`p-3 rounded-xl transition-all duration-300 ${
-              isDark 
-                ? 'bg-teal-600/20 text-teal-400 hover:bg-teal-600/30'
-                : 'bg-teal-100 text-teal-600 hover:bg-teal-200'
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Maximize2 size={20} />
-          </motion.button>
         </div>
         
         {/* Description */}
