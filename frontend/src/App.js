@@ -1034,13 +1034,13 @@ function App() {
               </li>
               <li className="flex items-center space-x-2">
                 <ExternalLink size={16} />
-                <a href="https://www.titech.ac.jp/english/admissions" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                <a href="https://www.titech.ac.jp/english/admissions" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">
                   {language === 'EN' ? 'For international students - Tokyo Tech' : '留学生向け - 東京工業大学'}
                 </a>
               </li>
               <li className="flex items-center space-x-2">
                 <ExternalLink size={16} />
-                <a href="https://www.jasso.go.jp/en/" target="_blank" rel="noopener noreferrer" className="text-purple-500 hover:text-purple-600 transition-colors">
+                <a href="https://www.jasso.go.jp/en/" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-600 transition-colors">
                   {language === 'EN' ? 'Japan Student Services Organization' : '日本学生支援機構'}
                 </a>
               </li>
