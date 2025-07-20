@@ -118,7 +118,7 @@ function App() {
         EN: "We develop novel quantum sensing techniques using nitrogen-vacancy centers in diamond for high-precision magnetic field detection and quantum information processing.",
         JP: "高精度磁場検出と量子情報処理のために、ダイヤモンド中の窒素空孔センターを用いた新しい量子センシング技術を開発しています。"
       },
-      image: "https://images.unsplash.com/photo-1737908820885-f5acf114722a"
+      image: "https://images.unsplash.com/photo-1596213411964-ee96819a396c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHhkaWFtb25kfGVufDB8fHxibHVlfDE3NTMwNDI2Mzd8MA&ixlib=rb-4.1.0&q=85"
     },
     {
       title: {
