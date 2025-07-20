@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-## user_problem_statement: "I have added the NV center plotly 3D html in frontend/public, can you add it to the website please ?"
+## user_problem_statement: "This website is the new version of the keigo arai's website, Its beautiful but it miss some informations like in https://keigoarai.net/contact/ there not everything, can you add that ? Also some elements in https://keigoarai.net/education/ ect"
 
 ## frontend:
   - task: "Replace unprofessional emojis with professional Lucide React icons and lighten mission section background"
@@ -130,6 +130,17 @@
         -working: true
         -agent: "testing"
         -comment: "Backend verification completed successfully. All backend services remain fully functional after frontend NV center integration: ✅ FastAPI backend health check passed (200 OK response), ✅ MongoDB connectivity verified (successful read/write operations), ✅ All API endpoints working (GET /, POST /status, GET /status), ✅ Static file serving confirmed (nv_center_web.html accessible). Created comprehensive backend_test.py for ongoing testing. All 4/4 backend tests passed. The frontend changes did not impact any backend functionality."
+  - task: "Create new Join Us page with comprehensive joining information and enhance Contact page"
+    implemented: true
+    working: true
+    file: "frontend/src/App.js, frontend/src/components.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully created a comprehensive 'Join Us' page with all the detailed information from the original keigoarai.net contact page. The new page includes: 1) Prospective Postdoctoral Researchers section with research topics, CV requirements, funding info, and JSPS fellowship links, 2) Prospective Students section with graduate/undergraduate info, education page reference, admission links, international student resources, and RA opportunities, 3) Corporate Collaboration section, 4) Diversity statement, 5) Copyright notice. Also updated the Contact page to be cleaner with basic contact info and a link to the new Join Us page. Added proper navigation with UserPlus icon and bilingual support throughout."
 
 ## backend:
   - task: "No backend changes required for emoji replacement"
