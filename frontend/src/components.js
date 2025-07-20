@@ -367,103 +367,177 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
   );
 };
 
-// Hero Section Component - Updated without orange and with new background
+// Hero Section Component - Enhanced Professional Academic Design
 export const HeroSection = ({ language, isDark }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Clean Gradient Background */}
+      {/* Professional Academic Background */}
       <div className={`absolute inset-0 ${
         isDark 
-          ? 'bg-gradient-to-br from-black via-slate-900/40 to-slate-800/60' 
-          : 'bg-gradient-to-br from-white via-slate-100/80 to-teal-200/60'
+          ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800' 
+          : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
       }`} />
       
-      {/* Quantum Particles */}
-      <QuantumParticles intensity={40} />
+      {/* Subtle Scientific Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, ${isDark ? '#14b8a6' : '#0f766e'} 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
       
-      {/* Quantum Network - More subtle */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Enhanced Quantum Particles with Scientific Precision */}
+      <QuantumParticles intensity={25} />
+      
+      {/* Professional Quantum Network */}
+      <div className="absolute inset-0 opacity-8">
         <QuantumNetwork />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      {/* Academic Content Layout */}
+      <div className="relative z-10 text-center px-8 max-w-7xl mx-auto">
+        {/* Institutional Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-12"
         >
-          {/* Laboratory Title */}
+          {/* Tokyo Tech Institutional Badge */}
+          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border backdrop-blur-sm mb-6 ${
+            isDark 
+              ? 'bg-slate-900/80 border-teal-500/30 text-teal-300'
+              : 'bg-white/90 border-teal-200/50 text-teal-700 shadow-lg'
+          }`}>
+            <div className={`w-8 h-8 rounded-lg mr-3 flex items-center justify-center ${
+              isDark ? 'bg-teal-600/20' : 'bg-teal-100'
+            }`}>
+              <span className={`text-sm font-bold ${
+                isDark ? 'text-teal-400' : 'text-teal-600'
+              }`}>東工大</span>
+            </div>
+            <span className="text-sm font-medium tracking-wide">
+              {language === 'EN' ? 'TOKYO INSTITUTE OF TECHNOLOGY' : '東京工業大学'}
+            </span>
+          </div>
+          
+          {/* Laboratory Title with Academic Hierarchy */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="mb-8"
+            transition={{ duration: 1, delay: 0.3 }}
           >
-            <h3 className={`text-2xl md:text-3xl font-semibold ${
-              isDark ? 'text-teal-300' : 'text-teal-600'
+            <h2 className={`text-2xl md:text-4xl font-light tracking-wide mb-2 ${
+              isDark ? 'text-slate-300' : 'text-slate-600'
+            }`} style={{ fontFamily: '"Inter", "Noto Sans", system-ui' }}>
+              {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
+            </h2>
+            <div className={`text-sm font-medium tracking-widest uppercase ${
+              isDark ? 'text-teal-400' : 'text-teal-600'
             }`}>
-              {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
-            </h3>
-            <p className={`text-lg mt-2 ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
-            </p>
+              {language === 'EN' 
+                ? 'Department of Electrical & Electronic Engineering'
+                : '電気電子系'
+              }
+            </div>
           </motion.div>
+        </motion.div>
 
+        {/* Main Scientific Titles */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+        >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-teal-600 via-emerald-500 to-cyan-600 bg-clip-text text-transparent"
+            className={`text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight ${
+              isDark ? 'text-white' : 'text-slate-900'
+            }`}
+            style={{ 
+              fontFamily: '"Inter", system-ui',
+              textShadow: isDark ? '0 0 40px rgba(20, 184, 166, 0.3)' : '0 0 40px rgba(15, 118, 110, 0.1)'
+            }}
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              textShadow: [
+                isDark ? '0 0 40px rgba(20, 184, 166, 0.3)' : '0 0 40px rgba(15, 118, 110, 0.1)',
+                isDark ? '0 0 60px rgba(20, 184, 166, 0.5)' : '0 0 60px rgba(15, 118, 110, 0.2)',
+                isDark ? '0 0 40px rgba(20, 184, 166, 0.3)' : '0 0 40px rgba(15, 118, 110, 0.1)'
+              ]
             }}
             transition={{
-              duration: 5,
+              duration: 4,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           >
-            {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
+            <span className="bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
+              {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
+            </span>
           </motion.h1>
           
-          <motion.h2 
-            className={`text-3xl md:text-5xl font-semibold mb-8 ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            {language === 'EN' ? 'and Informatics for' : 'と情報科学による'}
-          </motion.h2>
-          
+          {/* Academic Subtitle with Professional Typography */}
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mb-8"
           >
-            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-teal-700 bg-clip-text">
-              {language === 'EN' ? 'Quantum Transformation' : 'クォンタム変革'}
-            </h3>
-            <div className={`absolute -inset-1 bg-gradient-to-r ${
-              isDark ? 'from-cyan-400/20 to-teal-500/20' : 'from-cyan-300/30 to-teal-400/30'
-            } blur-xl`} />
+            <h2 className={`text-2xl md:text-4xl font-light mb-4 ${
+              isDark ? 'text-slate-200' : 'text-slate-700'
+            }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              {language === 'EN' ? '& Informatics for' : 'と情報科学による'}
+            </h2>
+            
+            <div className="relative inline-block">
+              <h3 className={`text-3xl md:text-5xl font-bold tracking-wide ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+                <span className="bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                  {language === 'EN' ? 'Quantum Transformation' : 'クォンタム変革'}
+                </span>
+              </h3>
+              {/* Professional underline accent */}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full"></div>
+            </div>
+          </motion.div>
+
+          {/* Scientific Research Focus Statement */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.1 }}
+            className={`max-w-4xl mx-auto text-lg md:text-xl font-light leading-relaxed ${
+              isDark ? 'text-slate-300' : 'text-slate-600'
+            }`}
+            style={{ fontFamily: '"Inter", system-ui' }}
+          >
+            {language === 'EN' 
+              ? 'Pioneering quantum sensing technologies and information science integration to drive revolutionary advances in quantum physics applications'
+              : '量子センシング技術と情報科学の統合により、量子物理学応用における革新的な進歩を推進'
+            }
           </motion.div>
         </motion.div>
 
+        {/* Professional Academic Navigation Hint */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-16"
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-20"
         >
-          <ChevronDown 
-            size={32} 
-            className={`animate-bounce mx-auto ${
-              isDark ? 'text-white/70' : 'text-gray-600/70'
-            }`}
-          />
+          <div className="flex flex-col items-center space-y-2">
+            <span className={`text-xs tracking-wider uppercase ${
+              isDark ? 'text-slate-400' : 'text-slate-500'
+            }`}>
+              {language === 'EN' ? 'Explore Research' : '研究を探索'}
+            </span>
+            <ChevronDown 
+              size={24} 
+              className={`animate-bounce ${
+                isDark ? 'text-teal-400' : 'text-teal-500'
+              }`}
+            />
+          </div>
         </motion.div>
       </div>
     </section>
