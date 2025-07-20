@@ -983,7 +983,7 @@ export const NVCenterVisualization = ({ language, isDark }) => {
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
                   <span className={isDark ? 'text-gray-300' : 'text-gray-600'}>
                     {language === 'EN' ? 'Vacancy' : '空孔'}
                   </span>
