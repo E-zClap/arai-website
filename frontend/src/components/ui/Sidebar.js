@@ -157,7 +157,10 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   key={item.id}
                   onClick={() => {
                     setCurrentPage(item.id);
-                    setIsOpen(false);
+                    // Only close sidebar on mobile devices (screen width < 1024px)
+                    if (window.innerWidth < 1024) {
+                      setIsOpen(false);
+                    }
                   }}
                   className={`w-full text-left p-4 rounded-2xl transition-all duration-300 group relative ${
                     isActive
