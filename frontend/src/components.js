@@ -92,7 +92,7 @@ export const QuantumParticles = ({ intensity = 30 }) => {
   );
 };
 
-// Quantum Network Animation
+// Enhanced Professional Quantum Network Animation
 export const QuantumNetwork = () => {
   const [nodes, setNodes] = useState([]);
   const [connections, setConnections] = useState([]);
@@ -100,16 +100,19 @@ export const QuantumNetwork = () => {
   useEffect(() => {
     const generateNodes = () => {
       const newNodes = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 20; i++) {
         newNodes.push({
           id: i,
-          x: Math.random() * 90 + 5,
-          y: Math.random() * 90 + 5,
-          size: Math.random() * 8 + 4
+          x: Math.random() * 85 + 7.5, // Keep nodes away from edges
+          y: Math.random() * 85 + 7.5,
+          size: Math.random() * 8 + 6, // Larger, more varied sizes
+          energy: Math.random(),
+          type: Math.random() > 0.6 ? 'quantum' : 'classical'
         });
       }
       setNodes(newNodes);
 
+      // Generate more sophisticated connections
       const newConnections = [];
       for (let i = 0; i < newNodes.length; i++) {
         for (let j = i + 1; j < newNodes.length; j++) {
@@ -117,14 +120,22 @@ export const QuantumNetwork = () => {
             Math.pow(newNodes[i].x - newNodes[j].x, 2) + 
             Math.pow(newNodes[i].y - newNodes[j].y, 2)
           );
-          if (distance < 30 && Math.random() > 0.6) {
+          
+          // Create connections based on distance and quantum properties
+          if (distance < 35 && Math.random() > 0.4) {
+            const strength = Math.max(0.1, 1 - distance / 35);
+            const isQuantumLink = newNodes[i].type === 'quantum' || newNodes[j].type === 'quantum';
+            
             newConnections.push({
               id: `${i}-${j}`,
               x1: newNodes[i].x,
               y1: newNodes[i].y,
               x2: newNodes[j].x,
               y2: newNodes[j].y,
-              opacity: Math.max(0.1, 1 - distance / 30)
+              opacity: strength,
+              strength: strength,
+              type: isQuantumLink ? 'quantum' : 'classical',
+              phase: Math.random() * Math.PI * 2
             });
           }
         }
@@ -136,8 +147,9 @@ export const QuantumNetwork = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 opacity-20">
+    <div className="absolute inset-0 opacity-15">
       <svg className="w-full h-full">
+        {/* Enhanced connection lines with quantum effects */}
         {connections.map(conn => (
           <motion.line
             key={conn.id}
@@ -145,41 +157,76 @@ export const QuantumNetwork = () => {
             y1={`${conn.y1}%`}
             x2={`${conn.x2}%`}
             y2={`${conn.y2}%`}
-            stroke="url(#gradient)"
-            strokeWidth="1"
+            stroke={conn.type === 'quantum' ? "url(#quantumGradient)" : "url(#classicalGradient)"}
+            strokeWidth={conn.strength * 2 + 0.5}
             opacity={conn.opacity}
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ 
+              pathLength: 1, 
+              opacity: conn.opacity,
+              strokeDasharray: conn.type === 'quantum' ? [5, 5] : [0, 0]
+            }}
+            transition={{ 
+              duration: 2 + conn.strength, 
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: conn.phase
+            }}
           />
         ))}
+        
+        {/* Enhanced gradient definitions for quantum effects */}
         <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="quantumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#0891b2" />
-            <stop offset="100%" stopColor="#0e7490" />
+            <stop offset="50%" stopColor="#06b6d4" />
+            <stop offset="100%" stopColor="#10b981" />
           </linearGradient>
+          <linearGradient id="classicalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0e7490" />
+            <stop offset="100%" stopColor="#0f766e" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
       </svg>
+      
+      {/* Enhanced nodes with quantum properties */}
       {nodes.map(node => (
         <motion.div
           key={node.id}
-          className="absolute rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 shadow-lg"
+          className={`absolute rounded-full shadow-lg ${
+            node.type === 'quantum' 
+              ? 'bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400' 
+              : 'bg-gradient-to-r from-teal-500 to-cyan-500'
+          }`}
           style={{
             left: `${node.x}%`,
             top: `${node.y}%`,
             width: `${node.size}px`,
             height: `${node.size}px`,
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            boxShadow: node.type === 'quantum' 
+              ? `0 0 ${node.size}px rgba(20, 184, 166, 0.6)` 
+              : `0 0 ${node.size * 0.5}px rgba(14, 116, 144, 0.4)`,
+            filter: 'url(#glow)'
           }}
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.7, 1, 0.7]
+            scale: node.type === 'quantum' ? [1, 1.4, 1] : [1, 1.2, 1],
+            opacity: [0.6, 1, 0.6],
+            rotate: node.type === 'quantum' ? [0, 360] : [0, 180, 0]
           }}
           transition={{
-            duration: 4,
+            duration: node.type === 'quantum' ? 3 + node.energy : 4 + node.energy,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: node.id * 0.2
+            delay: node.id * 0.15
           }}
         />
       ))}
