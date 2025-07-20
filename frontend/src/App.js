@@ -529,7 +529,7 @@ function App() {
           }`}>
             {language === 'EN' ? 'Latest News' : '最新ニュース'}
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto" />
+          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto" />
         </motion.div>
 
         <div className="grid gap-8 max-w-4xl mx-auto">
