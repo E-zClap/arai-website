@@ -735,7 +735,7 @@ function App() {
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
             {language === 'EN' 
-              ? "学部生のリサーチアシスタント(RA)も随時募集しています。"
+              ? "We also welcome undergraduate Research Assistants (RA) to join our team."
               : "学部生のリサーチアシスタント(RA)も随時募集しています。"
             }
           </p>
