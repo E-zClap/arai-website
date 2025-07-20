@@ -330,10 +330,10 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         initial={{ x: 0 }}
         animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -400 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className={`fixed left-0 top-0 h-full w-96 backdrop-blur-2xl border-r z-40 ${
+        className={`fixed left-0 top-0 h-full w-96 border-r z-40 ${
           isDark
-            ? 'bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-slate-900/95 border-teal-500/20'
-            : 'bg-gradient-to-b from-white/98 via-slate-50/95 to-white/98 border-teal-200/30 shadow-2xl'
+            ? 'backdrop-blur-2xl bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-slate-900/95 border-teal-500/20'
+            : 'bg-gradient-to-b from-white via-slate-50/50 to-white border-teal-200/30 shadow-2xl'
         }`}
       >
         <div className="p-8 h-full flex flex-col">
