@@ -48,8 +48,109 @@ function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  // Mock data based on the original website with bilingual support and tags
-  const newsData = [
+  // Page rendering logic
+  const renderPage = () => {
+    const commonProps = { language, isDark, setCurrentPage };
+    
+    switch (currentPage) {
+      case 'home':
+        return (
+          <HomePage 
+            {...commonProps}
+            newsData={newsData}
+          />
+        );
+      case 'news':
+        return (
+          <NewsPage 
+            {...commonProps}
+            newsData={newsData}
+          />
+        );
+      case 'research':
+        return (
+          <ResearchPage 
+            {...commonProps}
+            researchData={researchData}
+          />
+        );
+      case 'publications':
+        return (
+          <PublicationsPage 
+            {...commonProps}
+            publicationsData={publicationsData}
+          />
+        );
+      case 'team':
+        return (
+          <TeamPage 
+            {...commonProps}
+            principalInvestigator={principalInvestigator}
+            staffAndPostdocs={staffAndPostdocs}
+            students={students}
+            alumni={alumni}
+          />
+        );
+      case 'contact':
+        return <ContactPage {...commonProps} />;
+      case 'join-us':
+        return <JoinUsPage {...commonProps} />;
+      case 'profile-keigo-arai':
+        return (
+          <ProfilePage 
+            {...commonProps}
+            profileData={keigoAraiProfile}
+          />
+        );
+      default:
+        return <HomePage {...commonProps} newsData={newsData} />;
+    }
+  };
+
+  return (
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'
+    }`}>
+      {/* Background Particles */}
+      <QuantumParticles intensity={20} />
+      
+      {/* Sidebar */}
+      <Sidebar 
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        isOpen={sidebarOpen}
+        setIsOpen={setSidebarOpen}
+        language={language}
+        isDark={isDark}
+      />
+
+      {/* Floating Controls */}
+      <FloatingControls 
+        isDark={isDark}
+        setIsDark={setIsDark}
+        language={language}
+        setLanguage={setLanguage}
+      />
+
+      {/* Main Content */}
+      <main className={`transition-all duration-300 ${
+        sidebarOpen ? 'lg:ml-80' : 'ml-0'
+      }`}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {renderPage()}
+          </motion.div>
+        </AnimatePresence>
+      </main>
+    </div>
+  );
+}
     {
       date: "2024-12-23",
       title: {
