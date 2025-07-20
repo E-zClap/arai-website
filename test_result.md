@@ -235,6 +235,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully fixed all website issues: 1) Changed lab name from 'Arai Laboratory' to 'Arai's Laboratory' in both Sidebar.js and HeroSection.js, 2) Updated year from 2024 to 2022 in sidebar footer copyright, 3) Completely removed the stats section (15+ Research Members, 50+ Publications, 2024 Laboratory Est.) from HeroSection.js, 4) Enhanced quantum particles animation visibility by increasing opacity (0.4-1.2 vs 0.2-0.8), size (3-11px vs 2-8px), glow effects (3x vs 2x multiplier), and overall intensity (40 vs 20 particles), 5) Made sidebar institutional information more compact by reducing padding, font sizes, and using 'Dept. of EE Engineering' abbreviation instead of full department name, 6) Expanded news and publications sections to use max-w-7xl (full screen width) instead of max-w-4xl/5xl/6xl constraints."
+  - task: "Remove bad sidebar page navigation animations"
+    implemented: true
+    working: true
+    file: "frontend/src/components/ui/Sidebar.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully removed problematic animations from sidebar navigation. Fixed issues: 1) Removed sliding active indicator animation with layoutId that caused jarring transitions between pages, 2) Removed hover animations (x: 4, scale: 1.02) that made UI feel unresponsive, 3) Removed tap animations (scale: 0.98) that added unnecessary motion, 4) Changed transition duration from 300ms to 150ms and from transition-all to transition-colors for faster response, 5) Changed navigation buttons from motion.button to regular button elements to eliminate framer-motion effects. Navigation now provides immediate, clean page switching with instant visual feedback."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
