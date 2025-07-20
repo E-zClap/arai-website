@@ -1450,6 +1450,7 @@ function App() {
       case 'team': return <TeamPage />;
       case 'contact': return <ContactPage />;
       case 'join': return <JoinUsPage />;
+      case 'profile-keigo-arai': return <ProfilePage profileData={keigoAraiProfile} language={language} isDark={isDark} setCurrentPage={setCurrentPage} />;
       default: return <HomePage />;
     }
   };
