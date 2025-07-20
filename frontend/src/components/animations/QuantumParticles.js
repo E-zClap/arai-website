@@ -13,8 +13,8 @@ export const QuantumParticles = ({ intensity = 30 }) => {
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * 6 + 2,
-          opacity: Math.random() * 0.6 + 0.2,
+          size: Math.random() * 8 + 3,
+          opacity: Math.random() * 0.8 + 0.4,
           speed: Math.random() * 2 + 1,
           phase: Math.random() * Math.PI * 2,
           type: Math.random() > 0.7 ? 'energy' : 'particle' // Different types for variety
