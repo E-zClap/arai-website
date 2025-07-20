@@ -268,6 +268,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully removed fullscreen functionality from the nitrogen vacancy center 3D visualization. Changes implemented: 1) Removed fullscreen toggle button (Maximize2 icon) from the header, 2) Removed useState and isFullscreen state management, 3) Eliminated fullscreen overlay and modal functionality, 4) Simplified visualization container to use fixed dimensions, 5) Updated control text to remove fullscreen references (now shows only 'Click and drag to rotate • Scroll to zoom'), 6) Cleaned up imports by removing Maximize2 icon and useState hook. The 3D visualization maintains all its interactive functionality (drag-to-rotate, scroll-to-zoom) while presenting a cleaner, more streamlined interface without the fullscreen option."
+  - task: "Customize text selection colors to match main website theme"
+    implemented: true
+    working: true
+    file: "frontend/src/index.css"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully implemented custom text selection colors that match the website's teal/cyan theme. Features added: 1) Custom selection background using teal color rgba(20, 184, 166, 0.25) for light mode and rgba(20, 184, 166, 0.35) for dark mode, 2) Proper text colors (#0f172a for light, #f8fafc for dark) ensuring excellent readability, 3) Cross-browser compatibility with both ::selection and ::-moz-selection pseudo-elements, 4) Text shadow removal for clean appearance, 5) Dark mode support with adjusted opacity and text colors. The selection colors now perfectly integrate with the existing teal/cyan color scheme used throughout the website (matching scrollbars and accent elements), providing a cohesive and professional user experience when selecting text."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
