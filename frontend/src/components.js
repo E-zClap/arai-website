@@ -332,17 +332,17 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           </nav>
 
           <div className={`mt-16 pt-8 border-t ${
-            isDark ? 'border-purple-500/20' : 'border-purple-200/40'
+            isDark ? 'border-teal-500/20' : 'border-teal-200/40'
           }`}>
             <div className="flex space-x-4">
               <a href="https://www.titech.ac.jp/" target="_blank" rel="noopener noreferrer" className={`transition-colors ${
-                isDark ? 'text-purple-300 hover:text-white' : 'text-purple-500 hover:text-purple-700'
+                isDark ? 'text-teal-300 hover:text-white' : 'text-teal-500 hover:text-teal-700'
               }`}>
                 <ExternalLink size={16} />
               </a>
             </div>
             <p className={`text-xs mt-4 ${
-              isDark ? 'text-purple-400' : 'text-gray-500'
+              isDark ? 'text-teal-400' : 'text-gray-500'
             }`}>
               © 2025 {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}<br />
               {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
