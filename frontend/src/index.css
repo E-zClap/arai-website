@@ -85,3 +85,27 @@ code {
     scrollbar-width: thin;
     scrollbar-color: #14b8a6 rgba(30, 41, 59, 0.1);
 }
+
+/* Custom text selection colors to match website theme */
+::selection {
+    background-color: rgba(20, 184, 166, 0.3); /* Teal with transparency */
+    color: #0f172a; /* Dark slate for better contrast */
+}
+
+::-moz-selection {
+    background-color: rgba(20, 184, 166, 0.3); /* Teal with transparency */
+    color: #0f172a; /* Dark slate for better contrast */
+}
+
+/* Dark mode text selection */
+.dark ::selection,
+[data-theme="dark"] ::selection {
+    background-color: rgba(20, 184, 166, 0.4); /* Slightly more opaque for dark mode */
+    color: #f8fafc; /* Light text for dark backgrounds */
+}
+
+.dark ::-moz-selection,
+[data-theme="dark"] ::-moz-selection {
+    background-color: rgba(20, 184, 166, 0.4); /* Slightly more opaque for dark mode */
+    color: #f8fafc; /* Light text for dark backgrounds */
+}
