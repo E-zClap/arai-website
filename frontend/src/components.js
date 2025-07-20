@@ -541,10 +541,10 @@ export const HeroSection = ({ language, isDark }) => {
           className="mb-12"
         >
           {/* Tokyo Tech Institutional Badge */}
-          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border backdrop-blur-sm mb-6 ${
+          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-6 ${
             isDark 
-              ? 'bg-slate-900/80 border-teal-500/30 text-teal-300'
-              : 'bg-white/90 border-teal-200/50 text-teal-700 shadow-lg'
+              ? 'backdrop-blur-sm bg-slate-900/80 border-teal-500/30 text-teal-300'
+              : 'bg-white border-teal-200/50 text-teal-700 shadow-lg'
           }`}>
             <div className={`w-8 h-8 rounded-lg mr-3 flex items-center justify-center ${
               isDark ? 'bg-teal-600/20' : 'bg-teal-100'
