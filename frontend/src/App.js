@@ -564,7 +564,7 @@ function App() {
           }`}>
             {language === 'EN' ? 'Research Areas' : '研究分野'}
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
           <p className={`text-xl max-w-3xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
