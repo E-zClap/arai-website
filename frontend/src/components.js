@@ -682,7 +682,7 @@ export const MissionSection = ({ language, isDark }) => {
                   } transition-all duration-300 hover:scale-105`}
                 >
                   <div className="flex justify-center mb-2">
-                    <IconComponent className="text-purple-400" size={24} />
+                    <IconComponent className="text-teal-400" size={24} />
                   </div>
                   <p className={`text-sm font-medium ${
                     isDark ? 'text-gray-200' : 'text-gray-700'
