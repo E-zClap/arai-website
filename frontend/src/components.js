@@ -311,10 +311,10 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
     <>
       {/* Mobile Menu Button - Professional Design */}
       <button
-        className={`lg:hidden fixed top-6 left-6 z-50 p-3 backdrop-blur-xl rounded-2xl border transition-all duration-300 ${
+        className={`lg:hidden fixed top-6 left-6 z-50 p-3 rounded-2xl border transition-all duration-300 ${
           isDark 
-            ? 'bg-slate-900/80 border-teal-500/20 text-white hover:bg-slate-800/80'
-            : 'bg-white/90 border-teal-200/30 text-slate-800 shadow-xl hover:bg-white/95'
+            ? 'backdrop-blur-xl bg-slate-900/80 border-teal-500/20 text-white hover:bg-slate-800/80'
+            : 'bg-white border-teal-200/30 text-slate-800 shadow-xl hover:bg-white'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
