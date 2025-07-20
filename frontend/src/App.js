@@ -633,7 +633,7 @@ function App() {
                   }`}>
                     {pub.title[language] || pub.title}
                   </h3>
-                  <p className="text-purple-500 mb-2">{pub.authors}</p>
+                  <p className="text-teal-500 mb-2">{pub.authors}</p>
                   <p className={`text-sm mb-4 ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}>{pub.journal} ({pub.year})</p>
