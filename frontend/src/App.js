@@ -547,8 +547,8 @@ function App() {
     }`}>
       <div className={`absolute inset-0 ${
         isDark 
-          ? 'bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20'
-          : 'bg-gradient-to-br from-purple-100/40 via-transparent to-blue-100/40'
+          ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-teal-900/20'
+          : 'bg-gradient-to-br from-slate-100/40 via-transparent to-teal-100/40'
       }`} />
       <QuantumParticles intensity={30} />
       
