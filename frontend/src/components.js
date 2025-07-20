@@ -243,10 +243,10 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
       {/* Theme Toggle - Professional Design */}
       <motion.button
         onClick={() => setIsDark(!isDark)}
-        className={`p-4 backdrop-blur-xl rounded-2xl border transition-all duration-300 shadow-lg ${
+        className={`p-4 rounded-2xl border transition-all duration-300 shadow-lg ${
           isDark
-            ? 'bg-slate-900/80 border-teal-500/20 text-teal-400 hover:bg-slate-800/90 hover:border-teal-400/40'
-            : 'bg-white/90 border-teal-200/30 text-teal-600 hover:bg-white/95 hover:border-teal-300/50 shadow-xl'
+            ? 'backdrop-blur-xl bg-slate-900/80 border-teal-500/20 text-teal-400 hover:bg-slate-800/90 hover:border-teal-400/40'
+            : 'bg-white border-teal-200/30 text-teal-600 hover:bg-white hover:border-teal-300/50 shadow-xl'
         }`}
         whileHover={{ scale: 1.05, rotate: 180 }}
         whileTap={{ scale: 0.95 }}
