@@ -316,10 +316,10 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   }}
                   className={`w-full text-left p-4 rounded-xl transition-all duration-200 flex items-center space-x-3 group ${
                     currentPage === item.id
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg'
                       : isDark
-                        ? 'text-purple-200 hover:bg-white/10 hover:text-white'
-                        : 'text-gray-600 hover:bg-purple-50 hover:text-purple-700'
+                        ? 'text-teal-200 hover:bg-white/10 hover:text-white'
+                        : 'text-gray-600 hover:bg-teal-50 hover:text-teal-700'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
