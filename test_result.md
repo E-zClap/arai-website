@@ -169,6 +169,17 @@
         -working: true
         -agent: "main"
         -comment: "Completely transformed the website into a highly professional quantum sensing laboratory presentation. Key enhancements: 1) Hero Section: Enhanced academic hierarchy with Tokyo Tech institutional badge, professional typography using Inter font family, sophisticated gradient backgrounds, and enhanced scientific focus statement, 2) Sidebar: Professional institutional branding with Tokyo Tech official elements, departmental information, enhanced navigation with tracking indicators, academic credentials display, 3) Quantum Particles: Advanced animation system with energy/particle types, sophisticated motion patterns, glow effects, and scientific precision, 4) Quantum Network: Enhanced network with quantum/classical node types, sophisticated connection algorithms, professional gradient effects, and scientific accuracy, 5) Mission Section: Academic layout with research mission badge, enhanced content structure, professional key principles display, and sophisticated visual hierarchy."
+  - task: "Adjust carbon atom colors in NV center visualization for better visibility in dark mode"
+    implemented: true
+    working: true
+    file: "frontend/public/nv_center_dark.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully updated carbon atom colors in the dark mode NV center visualization. Changed carbon atom color from #303030 (very dark gray) to #606060 (medium gray) and outline color from #606060 to #808080 for better visibility and contrast against the dark background. The carbon atoms are now much more visible and distinguishable while maintaining the scientific accuracy of the molecular structure visualization."
   - task: "Update research area images with professional and scientifically accurate visuals"
     implemented: true
     working: true
