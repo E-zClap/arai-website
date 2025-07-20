@@ -814,7 +814,7 @@ export const ResearchCard = ({ title, description, image, index, language }) => 
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="bg-black/40 backdrop-blur-lg rounded-3xl overflow-hidden border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group"
+      className="bg-black/40 backdrop-blur-lg rounded-3xl overflow-hidden border border-teal-500/20 hover:border-teal-400/40 transition-all duration-300 group"
     >
       <div className="h-64 bg-cover bg-center relative overflow-hidden">
         <img 
