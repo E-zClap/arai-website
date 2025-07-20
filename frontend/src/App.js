@@ -11,7 +11,8 @@ import {
   ContactCard,
   QuantumParticles,
   FloatingControls,
-  NVCenterVisualization
+  NVCenterVisualization,
+  ProfilePage
 } from './components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Calendar, FlaskConical, BookOpen, ExternalLink, Github, Users, UserPlus } from 'lucide-react';
