@@ -26,7 +26,8 @@ import {
   Dna,
   TestTube,
   Maximize2,
-  Info
+  Info,
+  ArrowLeft
 } from 'lucide-react';
 
 // Enhanced Professional Quantum Particles Animation
