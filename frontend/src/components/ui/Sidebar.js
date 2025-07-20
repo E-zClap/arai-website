@@ -165,8 +165,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                           ? 'hover:bg-slate-800/60 text-slate-300 hover:text-white hover:border-slate-600/50 border border-transparent' 
                           : 'hover:bg-slate-50/80 text-slate-600 hover:text-slate-800 hover:border-slate-200/50 border border-transparent')
                   }`}
-                  whileHover={{ x: 4, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+
                 >
                   {/* Professional Active Indicator */}
                   {isActive && (
