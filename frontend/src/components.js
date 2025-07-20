@@ -263,7 +263,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           {/* Tokyo Tech Logo */}
           <div className="mb-8 flex items-center space-x-4">
             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-              isDark ? 'bg-purple-600' : 'bg-purple-100'
+              isDark ? 'bg-teal-600' : 'bg-teal-100'
             }`}>
               <img 
                 src="https://www.titech.ac.jp/english/0/english/images/emblem.svg" 
