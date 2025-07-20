@@ -61,13 +61,7 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
             </h3>
           )}
           
-          {/* Professional Title with Enhanced Styling */}
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600/20 to-cyan-600/20 rounded-full border border-teal-500/30">
-            <div className="w-2 h-2 bg-teal-400 rounded-full mr-2" />
-            <span className="text-teal-300 font-medium text-sm tracking-wide">
-              {position[language] || position}
-            </span>
-          </div>
+          {/* Removed redundant position display since section headers already indicate roles */}
         </div>
         
         {/* Academic Credentials */}
