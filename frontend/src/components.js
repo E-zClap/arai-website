@@ -8,6 +8,7 @@ import {
   ExternalLink, 
   Calendar,
   Users,
+  UserPlus,
   BookOpen,
   FlaskConical,
   Atom,
