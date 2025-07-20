@@ -754,7 +754,7 @@ function App() {
                     isDark ? 'bg-white/5' : 'bg-gray-100/70'
                   }`}
                 >
-                  <div className="text-purple-500 font-medium md:w-56 flex-shrink-0 text-sm">{exp.period}</div>
+                  <div className="text-teal-500 font-medium md:w-56 flex-shrink-0 text-sm">{exp.period}</div>
                   <div className="flex-1">
                     <div className={`font-semibold ${
                       isDark ? 'text-white' : 'text-gray-800'
