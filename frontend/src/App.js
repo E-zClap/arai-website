@@ -898,6 +898,7 @@ function App() {
       case 'publications': return <PublicationsPage />;
       case 'team': return <TeamPage />;
       case 'contact': return <ContactPage />;
+      case 'join': return <JoinUsPage />;
       default: return <HomePage />;
     }
   };
