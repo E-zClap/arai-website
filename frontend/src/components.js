@@ -750,7 +750,6 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
           ? 'bg-black/40 border-purple-500/20 hover:border-purple-400/40'
           : 'bg-white/70 border-purple-300/30 hover:border-purple-400/50 shadow-lg'
       }`}
-      whileHover={{ scale: 1.02 }}
     >
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
