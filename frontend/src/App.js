@@ -1138,8 +1138,8 @@ function App() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className={`backdrop-blur-lg rounded-3xl p-12 border mb-12 ${
             isDark 
-              ? 'bg-black/40 border-purple-500/20'
-              : 'bg-white/70 border-purple-300/30 shadow-xl'
+              ? 'bg-black/40 border-teal-500/20'
+              : 'bg-white/70 border-teal-300/30 shadow-xl'
           }`}
         >
           <p className={`text-lg italic ${
