@@ -116,15 +116,15 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             </div>
             
             {/* Professional Institution Information */}
-            <div className={`mt-6 p-4 rounded-2xl border ${
+            <div className={`mt-4 p-3 rounded-xl border ${
               isDark 
                 ? 'bg-slate-800/50 border-slate-700/50' 
                 : 'bg-slate-50/80 border-slate-200/50'
             }`}>
-              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-teal-300' : 'text-teal-700'}`}>
+              <div className={`text-xs font-semibold mb-1 ${isDark ? 'text-teal-300' : 'text-teal-700'}`}>
                 {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
               </div>
-              <div className={`text-xs mb-2 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+              <div className={`text-xs mb-1 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 <a 
                   href="https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
                   target="_blank"
@@ -133,8 +133,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                     isDark ? 'text-slate-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                   } transition-colors`}
                 >
-                  {language === 'EN' ? 'Department of Electrical & Electronic Engineering' : '電気電子系'}
-                  <ExternalLink size={12} />
+                  {language === 'EN' ? 'Dept. of EE Engineering' : '電気電子系'}
+                  <ExternalLink size={10} />
                 </a>
               </div>
               <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
