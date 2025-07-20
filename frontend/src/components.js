@@ -843,7 +843,7 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="bg-black/40 backdrop-blur-lg rounded-3xl overflow-hidden border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group text-center"
+      className="bg-black/40 backdrop-blur-lg rounded-3xl overflow-hidden border border-teal-500/20 hover:border-teal-400/40 transition-all duration-300 group text-center"
     >
       <div className="h-80 bg-cover bg-center relative overflow-hidden">
         <img 
