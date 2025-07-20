@@ -43,7 +43,7 @@ export const QuantumParticles = ({ intensity = 30 }) => {
             height: `${particle.size}px`,
             opacity: particle.opacity,
             borderRadius: particle.type === 'energy' ? '50%' : '2px',
-            boxShadow: `0 0 ${particle.size * 2}px ${particle.type === 'energy' ? 'rgba(20, 184, 166, 0.6)' : 'rgba(16, 185, 129, 0.6)'}`
+            boxShadow: `0 0 ${particle.size * 3}px ${particle.type === 'energy' ? 'rgba(20, 184, 166, 0.8)' : 'rgba(16, 185, 129, 0.8)'}`
           }}
           animate={{
             scale: [1, 1.3, 1],
