@@ -1258,7 +1258,7 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
           {isKeigoArai && setCurrentPage ? (
             <button
               onClick={handleNameClick}
-              className="text-2xl font-bold text-white hover:text-teal-300 transition-colors duration-300 cursor-pointer"
+              className="text-2xl font-bold text-teal-300 hover:text-teal-200 transition-all duration-300 cursor-pointer underline decoration-teal-400/50 hover:decoration-teal-300 underline-offset-4 transform hover:scale-105"
               style={{ fontFamily: '"Inter", system-ui' }}
             >
               {name[language] || name}
