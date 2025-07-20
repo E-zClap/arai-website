@@ -144,6 +144,9 @@
         -working: true
         -agent: "testing"
         -comment: "Backend verification completed successfully after Join Us page implementation. Confirmed that all frontend-only changes did not impact backend functionality. All backend services remain fully operational: ✅ FastAPI backend health check passed (200 OK), ✅ MongoDB connectivity verified with successful read/write operations, ✅ All API endpoints working correctly (GET /, POST /status, GET /status), ✅ Static file serving confirmed (nv_center_web.html accessible), ✅ All supervisor services running properly. Comprehensive backend_test.py executed with 4/4 tests passed. No backend issues introduced by the frontend changes."
+        -working: true
+        -agent: "main"
+        -comment: "Updated per user request: 1) Reordered Join Us page sections - Prospective Students now appears first, followed by Prospective Postdoctoral Researchers, 2) Enhanced navigation sidebar to include Department of Electrical & Electronic Engineering information below Tokyo Institute of Technology. Both changes implemented successfully with proper bilingual support and visual hierarchy maintained."
 
 ## backend:
   - task: "No backend changes required for emoji replacement"
