@@ -919,8 +919,8 @@ function App() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className={`backdrop-blur-lg rounded-3xl p-12 border text-center ${
             isDark 
-              ? 'bg-black/40 border-purple-500/20'
-              : 'bg-white/70 border-purple-300/30 shadow-xl'
+              ? 'bg-black/40 border-teal-500/20'
+              : 'bg-white/70 border-teal-300/30 shadow-xl'
           }`}
         >
           <h2 className={`text-3xl font-bold mb-6 ${
