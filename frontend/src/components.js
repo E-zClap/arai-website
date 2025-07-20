@@ -367,11 +367,14 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 }`}>
                   {language === 'EN' ? 'TOKYO INSTITUTE OF TECHNOLOGY' : '東京工業大学'}
                 </div>
-                <div className={`text-sm font-light ${
-                  isDark ? 'text-slate-400' : 'text-slate-500'
-                }`}>
-                  {language === 'EN' ? 'National University Corporation' : '国立大学法人'}
-                </div>
+                <button 
+                  onClick={() => setCurrentPage('research')}
+                  className={`text-sm font-light cursor-pointer hover:text-teal-400 transition-colors duration-200 text-left ${
+                    isDark ? 'text-slate-400 hover:text-teal-300' : 'text-slate-500 hover:text-teal-600'
+                  }`}
+                >
+                  {language === 'EN' ? 'Quantum Sensing with Diamond NV Centers' : 'ダイヤモンドNVセンター量子センシング'}
+                </button>
               </div>
             </div>
             
