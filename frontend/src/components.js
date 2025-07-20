@@ -378,25 +378,6 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               </div>
             </div>
             
-            {/* Department Information */}
-            <div className={`p-4 rounded-2xl border ${
-              isDark 
-                ? 'bg-slate-800/40 border-slate-700/50' 
-                : 'bg-slate-50/80 border-slate-200/50'
-            }`}>
-              <div className={`text-sm font-medium mb-1 ${
-                isDark ? 'text-white' : 'text-slate-800'
-              }`}>
-                {language === 'EN' 
-                  ? 'Department of Electrical & Electronic Engineering'
-                  : '電気電子系'
-                }
-              </div>
-              <div className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                {language === 'EN' ? 'School of Engineering' : '工学院'}
-              </div>
-            </div>
-            
             {/* Laboratory Identity */}
             <div className="mt-6">
               <h1 className={`text-3xl font-bold mb-2 ${
