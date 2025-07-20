@@ -85,6 +85,149 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           ))}
         </div>
 
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-16"
+        >
+          <div className={`backdrop-blur-lg rounded-3xl p-8 border ${
+            isDark 
+              ? 'bg-black/40 border-teal-500/20'
+              : 'bg-white/70 border-teal-300/30 shadow-xl'
+          }`}>
+            <h2 className={`text-3xl font-bold mb-6 text-center ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Our Location' : '所在地'}
+            </h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
+            
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Address Information */}
+              <div className="space-y-6">
+                <div className={`p-6 rounded-2xl border ${
+                  isDark 
+                    ? 'bg-slate-800/50 border-slate-700/50'
+                    : 'bg-slate-50/80 border-slate-200/50'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-4 flex items-center ${
+                    isDark ? 'text-teal-300' : 'text-teal-700'
+                  }`}>
+                    <MapPin className="mr-2" size={20} />
+                    {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+                  </h3>
+                  <div className={`text-base leading-relaxed ${
+                    isDark ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    {language === 'EN' 
+                      ? (
+                          <div>
+                            <div className="font-medium">Arai's Laboratory</div>
+                            <div className="mt-2">Department of Electrical & Electronic Engineering</div>
+                            <div className="mt-2">2-12-1 Ookayama, Meguro-ku</div>
+                            <div>Tokyo 152-8552, Japan</div>
+                          </div>
+                        )
+                      : (
+                          <div>
+                            <div className="font-medium">荒井研究室</div>
+                            <div className="mt-2">電気電子系</div>
+                            <div className="mt-2">〒152-8552</div>
+                            <div>東京都目黒区大岡山2-12-1</div>
+                          </div>
+                        )
+                    }
+                  </div>
+                </div>
+
+                {/* Transportation Info */}
+                <div className={`p-6 rounded-2xl border ${
+                  isDark 
+                    ? 'bg-slate-800/50 border-slate-700/50'
+                    : 'bg-slate-50/80 border-slate-200/50'
+                }`}>
+                  <h4 className={`text-lg font-semibold mb-3 ${
+                    isDark ? 'text-white' : 'text-gray-800'
+                  }`}>
+                    {language === 'EN' ? 'Access Information' : 'アクセス情報'}
+                  </h4>
+                  <div className={`text-sm space-y-2 ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
+                    {language === 'EN' 
+                      ? (
+                          <div>
+                            <div>• Tokyu Meguro Line / Tokyu Oimachi Line</div>
+                            <div className="ml-4">Ookayama Station (5 min walk)</div>
+                            <div>• JR Keihin-Tohoku Line</div>
+                            <div className="ml-4">Ishikawa-dai Station (10 min walk)</div>
+                          </div>
+                        )
+                      : (
+                          <div>
+                            <div>• 東急目黒線・東急大井町線</div>
+                            <div className="ml-4">大岡山駅より徒歩5分</div>
+                            <div>• JR京浜東北線</div>
+                            <div className="ml-4">石川台駅より徒歩10分</div>
+                          </div>
+                        )
+                    }
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="relative">
+                <div className={`rounded-2xl overflow-hidden border-2 ${
+                  isDark ? 'border-teal-500/30' : 'border-teal-300/50'
+                } shadow-lg`}>
+                  <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=139.6808%2C35.6050%2C139.6908%2C35.6120&layer=mapnik&marker=35.6085%2C139.6858"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-96"
+                    title={language === 'EN' ? 'Tokyo Institute of Technology Location' : '東京工業大学の場所'}
+                  />
+                </div>
+                
+                {/* Map Controls */}
+                <div className="mt-4 flex gap-3 justify-center">
+                  <a
+                    href="https://maps.google.com/?q=Tokyo+Institute+of+Technology,+Ookayama"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                      isDark 
+                        ? 'bg-teal-600/20 text-teal-300 hover:bg-teal-600/30 border border-teal-500/30'
+                        : 'bg-teal-50 text-teal-700 hover:bg-teal-100 border border-teal-200'
+                    }`}
+                  >
+                    {language === 'EN' ? 'Open in Google Maps' : 'Googleマップで開く'}
+                  </a>
+                  <a
+                    href="https://www.openstreetmap.org/?mlat=35.6085&mlon=139.6858#map=16/35.6085/139.6858"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                      isDark 
+                        ? 'bg-slate-600/20 text-slate-300 hover:bg-slate-600/30 border border-slate-500/30'
+                        : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    }`}
+                  >
+                    {language === 'EN' ? 'View Larger Map' : '大きな地図で見る'}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Join Us CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
