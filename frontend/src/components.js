@@ -275,7 +275,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 }}
               />
               <div className={`hidden text-2xl font-bold ${
-                isDark ? 'text-white' : 'text-purple-600'
+                isDark ? 'text-white' : 'text-teal-600'
               }`}>
                 TIT
               </div>
@@ -287,7 +287,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 {language === 'EN' ? 'Arai\'s Laboratory' : '荒井研究室'}
               </h1>
               <p className={`text-sm ${
-                isDark ? 'text-purple-300' : 'text-purple-600'
+                isDark ? 'text-teal-300' : 'text-teal-600'
               }`}>
                 {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
               </p>
