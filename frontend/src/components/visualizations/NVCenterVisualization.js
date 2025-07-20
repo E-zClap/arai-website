@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Diamond, Maximize2, Info } from 'lucide-react';
+import { Diamond, Info } from 'lucide-react';
 
 // NV Center Visualization Component
 export const NVCenterVisualization = ({ language, isDark }) => {
