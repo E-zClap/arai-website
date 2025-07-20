@@ -696,11 +696,71 @@ function App() {
           }`}>
             {language === 'EN' ? 'Principal Investigator' : '主任研究員'}
           </h2>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-12">
             <div className="max-w-md">
               <TeamMemberCard {...principalInvestigator} index={0} language={language} />
             </div>
           </div>
+
+          {/* Professor Arai's Professional Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className={`backdrop-blur-lg rounded-3xl p-8 border max-w-5xl mx-auto ${
+              isDark 
+                ? 'bg-black/40 border-purple-500/20'
+                : 'bg-white/70 border-purple-300/30 shadow-xl'
+            }`}
+          >
+            <h3 className={`text-2xl font-bold mb-6 text-center ${
+              isDark ? 'text-white' : 'text-gray-800'
+            }`}>
+              {language === 'EN' ? 'Professional Experience' : '職歴'}
+            </h3>
+            <div className="space-y-4">
+              {[
+                { 
+                  period: language === 'EN' ? "April 2022 – Present" : "2022年4月 – 現在", 
+                  position: language === 'EN' ? "Associate Professor" : "准教授", 
+                  institution: language === 'EN' ? "Tokyo Institute of Technology" : "東京工業大学" 
+                },
+                { 
+                  period: language === 'EN' ? "February 2020 – March 2022" : "2020年2月 – 2022年3月", 
+                  position: language === 'EN' ? "Assistant Professor" : "助教", 
+                  institution: language === 'EN' ? "Tokyo Institute of Technology" : "東京工業大学" 
+                },
+                { 
+                  period: language === 'EN' ? "January 2017 – January 2020" : "2017年1月 – 2020年1月", 
+                  position: language === 'EN' ? "Consulting Staff" : "コンサルタント", 
+                  institution: language === 'EN' ? "Boston Consulting Group, Tokyo" : "ボストンコンサルティンググループ、東京" 
+                },
+                { 
+                  period: language === 'EN' ? "April 2016 – December 2016" : "2016年4月 – 2016年12月", 
+                  position: language === 'EN' ? "Postdoctoral Fellow" : "博士研究員", 
+                  institution: language === 'EN' ? "Harvard-Smithsonian Center for Astrophysics" : "ハーバード・スミソニアン天体物理学センター" 
+                }
+              ].map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  className={`flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6 p-4 rounded-xl ${
+                    isDark ? 'bg-white/5' : 'bg-gray-100/70'
+                  }`}
+                >
+                  <div className="text-purple-500 font-medium md:w-56 flex-shrink-0 text-sm">{exp.period}</div>
+                  <div className="flex-1">
+                    <div className={`font-semibold ${
+                      isDark ? 'text-white' : 'text-gray-800'
+                    }`}>{exp.position}</div>
+                    <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{exp.institution}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Staff and Postdocs Section */}
