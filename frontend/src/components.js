@@ -443,11 +443,11 @@ export const HeroSection = ({ language, isDark }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text">
+            <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-cyan-600 to-teal-700 bg-clip-text">
               {language === 'EN' ? 'Quantum Transformation' : 'クォンタム変革'}
             </h3>
             <div className={`absolute -inset-1 bg-gradient-to-r ${
-              isDark ? 'from-blue-400/20 to-purple-500/20' : 'from-blue-300/30 to-purple-400/30'
+              isDark ? 'from-cyan-400/20 to-teal-500/20' : 'from-cyan-300/30 to-teal-400/30'
             } blur-xl`} />
           </motion.div>
         </motion.div>
