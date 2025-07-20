@@ -169,11 +169,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 >
                   {/* Professional Active Indicator */}
                   {isActive && (
-                    <motion.div
-                      layoutId="activeIndicator"
+                    <div
                       className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-teal-400 to-cyan-400 rounded-r-full"
-                      initial={false}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
                   
