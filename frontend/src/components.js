@@ -156,15 +156,15 @@ export const QuantumNetwork = () => {
         ))}
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#a855f7" />
-            <stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#0891b2" />
+            <stop offset="100%" stopColor="#0e7490" />
           </linearGradient>
         </defs>
       </svg>
       {nodes.map(node => (
         <motion.div
           key={node.id}
-          className="absolute rounded-full bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg"
+          className="absolute rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 shadow-lg"
           style={{
             left: `${node.x}%`,
             top: `${node.y}%`,
