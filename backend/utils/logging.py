@@ -1,5 +1,5 @@
 import logging
-from ..config.settings import settings
+from config.settings import settings
 
 def setup_logging():
     """Setup application logging"""
