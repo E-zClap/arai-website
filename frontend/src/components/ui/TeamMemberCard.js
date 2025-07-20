@@ -32,11 +32,11 @@ export const TeamMemberCard = ({ name, position, education, image, index, langua
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
         
-        {/* Professional Overlay Badge */}
+        {/* Professional Overlay Badge - Removed position since it's redundant with section headers */}
         <div className="absolute bottom-4 left-4 right-4">
           <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-4 py-2 border border-teal-500/30">
             <div className="text-teal-400 text-xs font-medium tracking-wider">
-              {position[language] || position}
+              {language === 'EN' ? 'Team Member' : 'チームメンバー'}
             </div>
           </div>
         </div>
