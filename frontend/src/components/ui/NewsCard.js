@@ -79,22 +79,24 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             {news.title[language] || news.title}
           </h3>
           
-          {/* Enhanced Read More Link */}
-          <div className="pt-2">
-            <a 
-              href={news.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                isDark 
-                  ? 'text-teal-400 hover:text-white hover:bg-teal-600/20 border border-teal-500/30 hover:border-teal-400/50'
-                  : 'text-teal-600 hover:text-teal-800 hover:bg-teal-50 border border-teal-200/50 hover:border-teal-300/70'
-              }`}
-            >
-              <span>{language === 'EN' ? 'Read Full Article' : '全文を読む'}</span>
-              <ExternalLink size={14} className="ml-2 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-          </div>
+          {/* Enhanced Read More Link - Only show if there's a valid link */}
+          {news.link && news.link !== '#' && (
+            <div className="pt-2">
+              <a 
+                href={news.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  isDark 
+                    ? 'text-teal-400 hover:text-white hover:bg-teal-600/20 border border-teal-500/30 hover:border-teal-400/50'
+                    : 'text-teal-600 hover:text-teal-800 hover:bg-teal-50 border border-teal-200/50 hover:border-teal-300/70'
+                }`}
+              >
+                <span>{language === 'EN' ? 'Read Full Article' : '全文を読む'}</span>
+                <ExternalLink size={14} className="ml-2 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </motion.article>
