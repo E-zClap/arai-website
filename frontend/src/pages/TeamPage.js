@@ -90,7 +90,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {students.map((member, index) => (
-            <TeamMemberCard key={index} {...member} index={index} language={language} setCurrentPage={setCurrentPage} />
+            <TeamMemberCard key={index} member={member} index={index} language={language} setCurrentPage={setCurrentPage} />
           ))}
         </div>
       </motion.div>
