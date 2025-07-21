@@ -279,7 +279,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully implemented custom text selection colors that match the website's teal/cyan theme. Features added: 1) Custom selection background using teal color rgba(20, 184, 166, 0.25) for light mode and rgba(20, 184, 166, 0.35) for dark mode, 2) Proper text colors (#0f172a for light, #f8fafc for dark) ensuring excellent readability, 3) Cross-browser compatibility with both ::selection and ::-moz-selection pseudo-elements, 4) Text shadow removal for clean appearance, 5) Dark mode support with adjusted opacity and text colors. The selection colors now perfectly integrate with the existing teal/cyan color scheme used throughout the website (matching scrollbars and accent elements), providing a cohesive and professional user experience when selecting text."
-  - task: "Update publications page with real data from Professor Keigo Arai's website"
+  - task: "Update news section with real data from Professor Keigo Arai's website"
+    implemented: true
+    working: true
+    file: "frontend/src/data/newsData.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully updated news section with comprehensive real data from https://keigoarai.net/news/. Enhanced existing 7 news items with 3 additional authentic entries spanning 2023-2024: 1) Lab relocation to G2 building first floor (June 2023), 2) Dr. Junghyun Lee visit from Korea Institute of Science and Technology (May 2023), 3) Physical Review Applied publication on pressure sensor research (April 2023). Updated descriptions for better accuracy including Kuramae Kogyo-kai alumni event details. All news items include proper dates, bilingual titles, relevant tags, and publication links where applicable. Removed duplicate news.js file. Total of 10 authentic news items now reflect the laboratory's real activities, publications, team updates, and facility changes."
     implemented: true
     working: true
     file: "frontend/src/data/publicationsData.js"
