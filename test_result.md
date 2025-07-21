@@ -279,6 +279,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully implemented custom text selection colors that match the website's teal/cyan theme. Features added: 1) Custom selection background using teal color rgba(20, 184, 166, 0.25) for light mode and rgba(20, 184, 166, 0.35) for dark mode, 2) Proper text colors (#0f172a for light, #f8fafc for dark) ensuring excellent readability, 3) Cross-browser compatibility with both ::selection and ::-moz-selection pseudo-elements, 4) Text shadow removal for clean appearance, 5) Dark mode support with adjusted opacity and text colors. The selection colors now perfectly integrate with the existing teal/cyan color scheme used throughout the website (matching scrollbars and accent elements), providing a cohesive and professional user experience when selecting text."
+  - task: "Remove 'Read Full Article' buttons for news items without actual article links"
+    implemented: true
+    working: true
+    file: "frontend/src/components/ui/NewsCard.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully updated NewsCard component to only display 'Read Full Article' buttons when news items have valid, actual article links. Added conditional logic (news.link && news.link !== '#') to prevent showing misleading buttons for 7 news items that have placeholder '#' links (team welcomes, internal events, lab relocations, etc.). This matches the existing logic in PublicationCard component. Publications already handle this correctly - the Japanese review article with empty link doesn't show 'View Paper' button. Users now see clean, accurate interface where only items with genuine external links show action buttons, improving UX and preventing confusion when buttons would lead nowhere."
   - task: "Update news section with real data from Professor Keigo Arai's website"
     implemented: true
     working: true
