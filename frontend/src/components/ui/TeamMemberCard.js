@@ -51,7 +51,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
       <div className="relative h-80 bg-cover bg-center overflow-hidden">
         <motion.img 
           src={member.image} 
-          alt={`${member.name[language] || member.name} - ${member.position[language] || member.position}`}
+          alt={`${(member.name && typeof member.name === 'object' ? member.name[language] || member.name.EN : member.name) || 'Team Member'} - ${(member.position && typeof member.position === 'object' ? member.position[language] || member.position.EN : member.position) || 'Position'}`}
           className="w-full h-full object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.8 }}
@@ -68,7 +68,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         >
           <div className="bg-gradient-to-r from-teal-500/90 to-cyan-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
             <span className="text-white text-xs font-bold tracking-wider">
-              {member.position[language] || member.position}
+              {member.position && typeof member.position === 'object' ? 
+                (member.position[language] || member.position.EN) : 
+                (member.position || 'Team Member')
+              }
             </span>
           </div>
         </motion.div>
