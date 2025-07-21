@@ -55,6 +55,15 @@ export const newsData = [
     tags: ["Team", "New Members", "Growth"]
   },
   {
+    date: "2023-11-01",
+    title: {
+      EN: "Keigo Arai has received the Suematsu Award for \"Fundamentals and Developments of Innovative Value Creation\".",
+      JP: "荒井慧悟が「革新的価値創造の基盤と展開」で末松賞を受賞しました。"
+    },
+    link: "https://educ.titech.ac.jp/ee/eng/news/2023_11/065000.html",
+    tags: ["Award", "Suematsu Award", "Recognition", "Tokyo Tech"]
+  },
+  {
     date: "2023-06-02",
     title: {
       EN: "We had a tennis tournament. Yasuko won!",
@@ -89,5 +98,32 @@ export const newsData = [
     },
     link: "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.20.044089",
     tags: ["Publication", "Pressure Sensor", "Diamond NV", "Magnetostriction"]
+  },
+  {
+    date: "2023-04-07",
+    title: {
+      EN: "Keigo Arai has been awarded the MEXT Young Scientists' Prize.",
+      JP: "荒井慧悟が文部科学省若手科学者賞を受賞しました。"
+    },
+    link: "https://keigoarai.net/keigo-arai-has-been-awarded-the-mext-young-scientists-prize/",
+    tags: ["Award", "MEXT", "Young Scientists Prize", "Recognition"]
+  },
+  {
+    date: "2023-04-01",
+    title: {
+      EN: "A warm welcome to Shuhei Ohyama, a graduate student, and Ryuki Motonaga, an undergraduate student.",
+      JP: "大学院生の大山修平さんと学部生の本永琉樹さんを歓迎いたします。"
+    },
+    link: "https://keigoarai.net/a-warm-welcome-to-shuhei-ohyama-a-graduate-student-and-ryuki-motonaga-a-undergraduate-student/",
+    tags: ["Team", "Welcome", "Graduate Student", "Undergraduate Student"]
+  },
+  {
+    date: "2023-03-10",
+    title: {
+      EN: "We had a table tennis tournament. Eikichi won!",
+      JP: "卓球大会を開催しました。Eikichiが優勝！"
+    },
+    link: "https://keigoarai.net/we-had-a-table-tennis-tournament-eikichi-won/",
+    tags: ["Sports", "Team Building", "Table Tennis", "Tournament"]
   }
 ];
