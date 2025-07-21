@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Import UI Components
 import { Sidebar } from './components/ui/Sidebar';
 import { FloatingControls } from './components/ui/FloatingControls';
+import { Breadcrumbs } from './components/ui/Breadcrumbs';
+import { PageTransitionLoader } from './components/ui/LoadingStates';
 import { QuantumParticles } from './components/animations/QuantumParticles';
 
 // Import Page Components
