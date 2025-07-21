@@ -31,6 +31,18 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
   const [language, setLanguage] = useState('EN');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Enhanced page transition with loading state
+  const handlePageChange = (newPage) => {
+    if (newPage !== currentPage) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentPage(newPage);
+        setIsTransitioning(false);
+      }, 200);
+    }
+  };
 
   // Set sidebar to be open by default on desktop
   useEffect(() => {
