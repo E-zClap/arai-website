@@ -131,7 +131,7 @@ function App() {
       {/* Sidebar */}
       <Sidebar 
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
+        setCurrentPage={handlePageChange}
         isOpen={sidebarOpen}
         setIsOpen={setSidebarOpen}
         language={language}
