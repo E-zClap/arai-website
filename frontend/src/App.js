@@ -138,6 +138,11 @@ function App() {
         isDark={isDark}
       />
 
+      {/* Page Transition Loader */}
+      <AnimatePresence>
+        {isTransitioning && <PageTransitionLoader isDark={isDark} />}
+      </AnimatePresence>
+
       {/* Floating Controls */}
       <FloatingControls 
         isDark={isDark}
@@ -150,17 +155,30 @@ function App() {
       <main className={`transition-all duration-300 ${
         sidebarOpen ? 'lg:ml-80' : 'ml-0'
       }`}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {renderPage()}
-          </motion.div>
-        </AnimatePresence>
+        <div className="container mx-auto px-4 py-6 lg:py-8">
+          {/* Breadcrumb Navigation */}
+          {currentPage !== 'home' && (
+            <Breadcrumbs 
+              currentPage={currentPage}
+              setCurrentPage={handlePageChange}
+              language={language}
+              isDark={isDark}
+            />
+          )}
+          
+          {/* Page Content */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              {renderPage()}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </main>
     </div>
   );
