@@ -89,21 +89,152 @@ export const MissionSection = ({ language, isDark }) => {
         : 'bg-gradient-to-br from-slate-50/60 via-white/80 to-slate-100/70'
     }`} ref={ref}>
       
-      {/* Modern Scientific Background Pattern */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, ${isDark ? '#14b8a6' : '#0f766e'} 2px, transparent 2px), radial-gradient(circle at 75% 75%, ${isDark ? '#06b6d4' : '#0891b2'} 1px, transparent 1px)`,
-          backgroundSize: '60px 60px, 40px 40px'
-        }}></div>
-      </div>
-
-      {/* Subtle Quantum Network Background */}
-      <div className="absolute inset-0 opacity-2">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, ${isDark ? '#14b8a6' : '#0f766e'} 1px, transparent 1px)`,
-          backgroundSize: '100px 100px',
-          backgroundPosition: '50px 50px'
-        }}></div>
+      {/* Oscilloscope Sine Wave Background */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        <svg 
+          className="w-full h-full"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Oscilloscope Grid */}
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path 
+                d="M 40 0 L 0 0 0 40" 
+                fill="none" 
+                stroke={isDark ? '#14b8a6' : '#0f766e'} 
+                strokeWidth="0.5"
+                opacity="0.3"
+              />
+            </pattern>
+            <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={isDark ? '#14b8a6' : '#0f766e'} stopOpacity="0.8"/>
+              <stop offset="50%" stopColor={isDark ? '#06b6d4' : '#0891b2'} stopOpacity="1"/>
+              <stop offset="100%" stopColor={isDark ? '#10b981' : '#059669'} stopOpacity="0.8"/>
+            </linearGradient>
+            <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={isDark ? '#06b6d4' : '#0891b2'} stopOpacity="0.6"/>
+              <stop offset="50%" stopColor={isDark ? '#10b981' : '#059669'} stopOpacity="0.9"/>
+              <stop offset="100%" stopColor={isDark ? '#14b8a6' : '#0f766e'} stopOpacity="0.6"/>
+            </linearGradient>
+            <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={isDark ? '#10b981' : '#059669'} stopOpacity="0.4"/>
+              <stop offset="50%" stopColor={isDark ? '#14b8a6' : '#0f766e'} stopOpacity="0.7"/>
+              <stop offset="100%" stopColor={isDark ? '#06b6d4' : '#0891b2'} stopOpacity="0.4"/>
+            </linearGradient>
+          </defs>
+          
+          {/* Grid Background */}
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          
+          {/* Animated Sine Waves */}
+          <g>
+            {/* Primary Wave - High Frequency */}
+            <path
+              d="M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400"
+              fill="none"
+              stroke="url(#waveGradient1)"
+              strokeWidth="2"
+              filter={`drop-shadow(0 0 8px ${isDark ? '#14b8a6' : '#0f766e'})`}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; 300,0; 600,0; 900,0; 1200,0"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="d"
+                values="M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400;
+                        M0,400 Q150,500 300,400 T600,400 T900,400 T1200,400;
+                        M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+            </path>
+            
+            {/* Secondary Wave - Medium Frequency */}
+            <path
+              d="M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350"
+              fill="none"
+              stroke="url(#waveGradient2)"
+              strokeWidth="1.5"
+              filter={`drop-shadow(0 0 6px ${isDark ? '#06b6d4' : '#0891b2'})`}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0"
+                dur="12s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="d"
+                values="M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350;
+                        M0,350 Q100,450 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350;
+                        M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+            </path>
+            
+            {/* Tertiary Wave - Low Frequency */}
+            <path
+              d="M0,450 Q200,350 400,450 T800,450 T1200,450"
+              fill="none"
+              stroke="url(#waveGradient3)"
+              strokeWidth="1"
+              filter={`drop-shadow(0 0 4px ${isDark ? '#10b981' : '#059669'})`}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; 400,0; 800,0; 1200,0"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="d"
+                values="M0,450 Q200,350 400,450 T800,450 T1200,450;
+                        M0,450 Q200,550 400,450 T800,450 T1200,450;
+                        M0,450 Q200,350 400,450 T800,450 T1200,450"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+            </path>
+            
+            {/* Quantum Noise Wave - Very High Frequency */}
+            <path
+              d="M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380"
+              fill="none"
+              stroke={isDark ? '#14b8a6' : '#0f766e'}
+              strokeWidth="0.8"
+              opacity="0.6"
+              filter={`drop-shadow(0 0 3px ${isDark ? '#14b8a6' : '#0f766e'})`}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; 150,0; 300,0; 450,0; 600,0; 750,0; 900,0; 1050,0; 1200,0"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="d"
+                values="M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380;
+                        M0,380 Q75,400 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380;
+                        M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </g>
+          
+          {/* Oscilloscope Center Lines */}
+          <line x1="0" y1="400" x2="1200" y2="400" stroke={isDark ? '#14b8a6' : '#0f766e'} strokeWidth="0.5" opacity="0.4" strokeDasharray="5,5" />
+          <line x1="600" y1="0" x2="600" y2="800" stroke={isDark ? '#14b8a6' : '#0f766e'} strokeWidth="0.5" opacity="0.4" strokeDasharray="5,5" />
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
