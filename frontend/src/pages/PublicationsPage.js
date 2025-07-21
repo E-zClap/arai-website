@@ -10,7 +10,7 @@ import {
   Calendar,
   Users,
   Star,
-  Citation,
+  Quote,
   Download
 } from 'lucide-react';
 import { QuantumParticles } from '../components/animations/QuantumParticles';
