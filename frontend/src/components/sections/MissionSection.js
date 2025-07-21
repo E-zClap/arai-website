@@ -87,11 +87,20 @@ export const MissionSection = ({ language, isDark }) => {
       isDark ? 'bg-gradient-to-b from-slate-900/30 to-slate-800/20' : 'bg-gradient-to-b from-slate-50/80 to-white/95'
     }`} ref={ref}>
       
-      {/* Scientific Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Modern Scientific Background Pattern */}
+      <div className="absolute inset-0 opacity-3">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(45deg, transparent 35%, ${isDark ? '#14b8a6' : '#0f766e'} 35%, ${isDark ? '#14b8a6' : '#0f766e'} 65%, transparent 65%), linear-gradient(-45deg, transparent 35%, ${isDark ? '#06b6d4' : '#0891b2'} 35%, ${isDark ? '#06b6d4' : '#0891b2'} 65%, transparent 65%)`,
-          backgroundSize: '40px 40px'
+          backgroundImage: `radial-gradient(circle at 25% 25%, ${isDark ? '#14b8a6' : '#0f766e'} 2px, transparent 2px), radial-gradient(circle at 75% 75%, ${isDark ? '#06b6d4' : '#0891b2'} 1px, transparent 1px)`,
+          backgroundSize: '60px 60px, 40px 40px'
+        }}></div>
+      </div>
+
+      {/* Subtle Quantum Network Background */}
+      <div className="absolute inset-0 opacity-2">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, ${isDark ? '#14b8a6' : '#0f766e'} 1px, transparent 1px)`,
+          backgroundSize: '100px 100px',
+          backgroundPosition: '50px 50px'
         }}></div>
       </div>
 
