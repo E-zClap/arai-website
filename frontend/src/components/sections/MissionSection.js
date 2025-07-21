@@ -89,7 +89,7 @@ export const MissionSection = ({ language, isDark }) => {
         : 'bg-gradient-to-br from-slate-50/60 via-white/80 to-slate-100/70'
     }`} ref={ref}>
       
-      {/* Oscilloscope Sine Wave Background */}
+      {/* Oscilloscope Sine Wave Background with Continuous Animation */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <svg 
           className="w-full h-full"
@@ -127,94 +127,69 @@ export const MissionSection = ({ language, isDark }) => {
           {/* Grid Background */}
           <rect width="100%" height="100%" fill="url(#grid)" />
           
-          {/* Continuous Animated Sine Waves */}
+          {/* Continuously Moving Sine Waves */}
           <g>
-            {/* Primary Wave - High Frequency - Perfect Sine Wave */}
+            {/* Primary Wave - Smooth Continuous Motion */}
             <path
-              d="M-300,400 C-225,330 -75,330 0,400 C75,470 225,470 300,400 C375,330 525,330 600,400 C675,470 825,470 900,400 C975,330 1125,330 1200,400 C1275,470 1425,470 1500,400"
+              d="M0,400 Q75,330 150,400 T300,400 T450,400 T600,400 T750,400 T900,400 T1050,400 T1200,400"
               fill="none"
               stroke="url(#waveGradient1)"
               strokeWidth="2.5"
               filter={`drop-shadow(0 0 10px ${isDark ? '#14b8a6' : '#0f766e'})`}
-            >
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="-300,0; 0,0; 300,0; 600,0; 900,0; 1200,0; 1500,0"
-                dur="8s"
-                repeatCount="indefinite"
-              />
-            </path>
+              style={{
+                animation: 'oscilloscope-wave-1 6s linear infinite'
+              }}
+            />
             
-            {/* Secondary Wave - Medium Frequency - Continuous Sine */}
+            {/* Secondary Wave - Different Speed */}
             <path
-              d="M-400,350 C-300,280 -100,280 0,350 C100,420 300,420 400,350 C500,280 700,280 800,350 C900,420 1100,420 1200,350 C1300,280 1500,280 1600,350"
+              d="M0,350 Q100,280 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350"
               fill="none"
               stroke="url(#waveGradient2)"
               strokeWidth="2"
               filter={`drop-shadow(0 0 8px ${isDark ? '#06b6d4' : '#0891b2'})`}
-            >
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="-400,0; -200,0; 0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0; 1400,0; 1600,0"
-                dur="12s"
-                repeatCount="indefinite"
-              />
-            </path>
+              style={{
+                animation: 'oscilloscope-wave-2 8s linear infinite'
+              }}
+            />
             
-            {/* Tertiary Wave - Low Frequency - Long Continuous Sine */}
+            {/* Tertiary Wave - Slower Continuous Motion */}
             <path
-              d="M-600,450 C-400,350 0,350 200,450 C400,550 800,550 1000,450 C1200,350 1600,350 1800,450"
+              d="M0,450 Q200,350 400,450 T800,450 T1200,450"
               fill="none"
               stroke="url(#waveGradient3)"
-              strokeWidth="1.5"
+              strokeWidth="1.8"
               filter={`drop-shadow(0 0 6px ${isDark ? '#10b981' : '#059669'})`}
-            >
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="-600,0; -400,0; -200,0; 0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0; 1400,0; 1600,0; 1800,0"
-                dur="16s"
-                repeatCount="indefinite"
-              />
-            </path>
+              style={{
+                animation: 'oscilloscope-wave-3 12s linear infinite'
+              }}
+            />
             
-            {/* High Frequency Quantum Noise - Very Continuous */}
+            {/* High Frequency Quantum Wave */}
             <path
-              d="M-200,380 C-150,360 -50,360 0,380 C50,400 150,400 200,380 C250,360 350,360 400,380 C450,400 550,400 600,380 C650,360 750,360 800,380 C850,400 950,400 1000,380 C1050,360 1150,360 1200,380 C1250,400 1350,400 1400,380"
+              d="M0,380 Q50,360 100,380 T200,380 T300,380 T400,380 T500,380 T600,380 T700,380 T800,380 T900,380 T1000,380 T1100,380 T1200,380"
               fill="none"
               stroke={isDark ? '#14b8a6' : '#0f766e'}
-              strokeWidth="1"
-              opacity="0.7"
+              strokeWidth="1.2"
+              opacity="0.8"
               filter={`drop-shadow(0 0 4px ${isDark ? '#14b8a6' : '#0f766e'})`}
-            >
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="-200,0; -100,0; 0,0; 100,0; 200,0; 300,0; 400,0; 500,0; 600,0; 700,0; 800,0; 900,0; 1000,0; 1100,0; 1200,0; 1300,0; 1400,0"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </path>
+              style={{
+                animation: 'oscilloscope-wave-4 4s linear infinite'
+              }}
+            />
             
-            {/* Ultra High Frequency Detail Wave */}
+            {/* Ultra Fast Detail Wave */}
             <path
-              d="M-100,420 C-75,410 -25,410 0,420 C25,430 75,430 100,420 C125,410 175,410 200,420 C225,430 275,430 300,420 C325,410 375,410 400,420 C425,430 475,430 500,420 C525,410 575,410 600,420 C625,430 675,430 700,420 C725,410 775,410 800,420 C825,430 875,430 900,420 C925,410 975,410 1000,420 C1025,430 1075,430 1100,420 C1125,410 1175,410 1200,420 C1225,430 1275,430 1300,420"
+              d="M0,420 Q25,410 50,420 T100,420 T150,420 T200,420 T250,420 T300,420 T350,420 T400,420 T450,420 T500,420 T550,420 T600,420 T650,420 T700,420 T750,420 T800,420 T850,420 T900,420 T950,420 T1000,420 T1050,420 T1100,420 T1150,420 T1200,420"
               fill="none"
               stroke={isDark ? '#06b6d4' : '#0891b2'}
               strokeWidth="0.8"
-              opacity="0.5"
+              opacity="0.6"
               filter={`drop-shadow(0 0 3px ${isDark ? '#06b6d4' : '#0891b2'})`}
-            >
-              <animateTransform
-                attributeName="transform"
-                type="translate"
-                values="-100,0; -50,0; 0,0; 50,0; 100,0; 150,0; 200,0; 250,0; 300,0; 350,0; 400,0; 450,0; 500,0; 550,0; 600,0; 650,0; 700,0; 750,0; 800,0; 850,0; 900,0; 950,0; 1000,0; 1050,0; 1100,0; 1150,0; 1200,0; 1250,0; 1300,0"
-                dur="4s"
-                repeatCount="indefinite"
-              />
-            </path>
+              style={{
+                animation: 'oscilloscope-wave-5 3s linear infinite'
+              }}
+            />
           </g>
           
           {/* Oscilloscope Center Lines */}
@@ -222,6 +197,34 @@ export const MissionSection = ({ language, isDark }) => {
           <line x1="600" y1="0" x2="600" y2="800" stroke={isDark ? '#14b8a6' : '#0f766e'} strokeWidth="0.5" opacity="0.4" strokeDasharray="5,5" />
         </svg>
       </div>
+
+      {/* CSS Animation Keyframes for Continuous Motion */}
+      <style jsx>{`
+        @keyframes oscilloscope-wave-1 {
+          0% { transform: translateX(-150px); }
+          100% { transform: translateX(150px); }
+        }
+        
+        @keyframes oscilloscope-wave-2 {
+          0% { transform: translateX(-200px); }
+          100% { transform: translateX(200px); }
+        }
+        
+        @keyframes oscilloscope-wave-3 {
+          0% { transform: translateX(-400px); }
+          100% { transform: translateX(400px); }
+        }
+        
+        @keyframes oscilloscope-wave-4 {
+          0% { transform: translateX(-100px); }
+          100% { transform: translateX(100px); }
+        }
+        
+        @keyframes oscilloscope-wave-5 {
+          0% { transform: translateX(-50px); }
+          100% { transform: translateX(50px); }
+        }
+      `}</style>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Academic Header */}
