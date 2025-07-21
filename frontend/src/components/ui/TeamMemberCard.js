@@ -117,7 +117,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               whileTap={{ scale: 0.95 }}
             >
               <span className="border-b-2 border-teal-400/50 group-hover:border-teal-300 pb-1">
-                {member.name[language] || member.name}
+                {member.name && typeof member.name === 'object' ? 
+                  (member.name[language] || member.name.EN) : 
+                  (member.name || 'Team Member')
+                }
               </span>
               <motion.div
                 animate={{ x: [0, 3, 0] }}
@@ -132,7 +135,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               style={{ fontFamily: '"Inter", system-ui' }}
               whileHover={{ scale: 1.02 }}
             >
-              {member.name[language] || member.name}
+              {member.name && typeof member.name === 'object' ? 
+                (member.name[language] || member.name.EN) : 
+                (member.name || 'Team Member')
+              }
             </motion.h3>
           )}
         </div>
