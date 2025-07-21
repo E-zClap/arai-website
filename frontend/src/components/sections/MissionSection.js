@@ -84,7 +84,9 @@ export const MissionSection = ({ language, isDark }) => {
 
   return (
     <section className={`py-32 px-8 relative overflow-hidden ${
-      isDark ? 'bg-gradient-to-b from-slate-900/30 to-slate-800/20' : 'bg-gradient-to-b from-slate-50/80 to-white/95'
+      isDark 
+        ? 'bg-gradient-to-br from-slate-900/20 via-slate-800/10 to-slate-900/30' 
+        : 'bg-gradient-to-br from-slate-50/60 via-white/80 to-slate-100/70'
     }`} ref={ref}>
       
       {/* Modern Scientific Background Pattern */}
