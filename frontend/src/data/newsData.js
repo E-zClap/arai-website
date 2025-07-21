@@ -1,4 +1,4 @@
-// News data for the application
+// Real News data from Professor Keigo Arai's laboratory website
 export const newsData = [
   {
     date: "2024-12-23",
@@ -39,11 +39,11 @@ export const newsData = [
   {
     date: "2024-06-14",
     title: {
-      EN: "Prof. Arai participated in an alumni discussion event.",
+      EN: "Prof. Arai participated in an alumni discussion event organized by Kuramae Kogyo-kai.",
       JP: "荒井慧悟先生座談会が行われました ★蔵前工業会★"
     },
     link: "#",
-    tags: ["Alumni", "Event", "Discussion"]
+    tags: ["Alumni", "Event", "Discussion", "Kuramae Kogyo-kai"]
   },
   {
     date: "2024-04-05",
@@ -62,5 +62,32 @@ export const newsData = [
     },
     link: "#",
     tags: ["Sports", "Team Building", "Tournament"]
+  },
+  {
+    date: "2023-06-01",
+    title: {
+      EN: "The experimental lab has been relocated to the first floor of the G2 building.",
+      JP: "実験室がG2棟1階に移転しました。"
+    },
+    link: "#",
+    tags: ["Lab", "Relocation", "Facilities", "G2 Building"]
+  },
+  {
+    date: "2023-05-08",
+    title: {
+      EN: "Dr. Junghyun Lee, a senior scientist from the Korea Institute of Science and Technology, visited our laboratory.",
+      JP: "韓国科学技術研究院の主任研究員である李政鉉博士が研究室を訪問されました。"
+    },
+    link: "#",
+    tags: ["Visit", "Collaboration", "Korea Institute", "International"]
+  },
+  {
+    date: "2023-04-27",
+    title: {
+      EN: "Our paper \"Pressure Sensor Using a Hybrid Structure of a Magnetostrictive Layer and Nitrogen-Vacancy Centers in Diamond\" has been published in Physical Review Applied.",
+      JP: "「磁歪層とダイヤモンド中窒素空孔センターのハイブリッド構造を用いた圧力センサ」に関する論文がPhysical Review Appliedに掲載されました。"
+    },
+    link: "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.20.044089",
+    tags: ["Publication", "Pressure Sensor", "Diamond NV", "Magnetostriction"]
   }
 ];
