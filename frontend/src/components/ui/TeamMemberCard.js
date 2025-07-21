@@ -18,8 +18,15 @@ import {
 export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
+  // Ensure member data exists
+  if (!member || !member.name) {
+    return null;
+  }
+  
   // Check if this is Keigo Arai's card
-  const isKeigoArai = member.name.EN === "Keigo Arai, Ph.D." || member.name.JP === "荒井 慧悟 博士";
+  const memberName = typeof member.name === 'string' ? member.name : (member.name.EN || member.name);
+  const isKeigoArai = memberName === "Keigo Arai, Ph.D." || 
+                     (member.name.JP && member.name.JP === "荒井 慧悟 博士");
   
   const handleNameClick = () => {
     if (isKeigoArai && setCurrentPage) {
