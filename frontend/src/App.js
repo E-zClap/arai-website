@@ -64,7 +64,7 @@ function App() {
 
   // Page rendering logic
   const renderPage = () => {
-    const commonProps = { language, isDark, setCurrentPage };
+    const commonProps = { language, isDark, setCurrentPage: handlePageChange };
     
     switch (currentPage) {
       case 'home':
