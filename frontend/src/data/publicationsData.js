@@ -266,7 +266,7 @@ export const publicationsData = [
   }
 ];
 
-// Publication categories for filtering and organization
+// Publication categories based on real research areas
 export const publicationCategories = [
   {
     id: "all",
@@ -284,33 +284,48 @@ export const publicationCategories = [
     count: publicationsData.filter(p => p.category === "Quantum Control").length
   },
   {
-    id: "materials-science",
-    label: { EN: "Materials Science", JP: "材料科学" },
-    count: publicationsData.filter(p => p.category === "Materials Science").length
+    id: "quantum-information",
+    label: { EN: "Quantum Information", JP: "量子情報" },
+    count: publicationsData.filter(p => p.category === "Quantum Information").length
   },
   {
-    id: "quantum-ai",
-    label: { EN: "Quantum AI", JP: "量子AI" },
-    count: publicationsData.filter(p => p.category === "Quantum AI").length
+    id: "applied-quantum-sensing",
+    label: { EN: "Applied Quantum Sensing", JP: "応用量子センシング" },
+    count: publicationsData.filter(p => p.category === "Applied Quantum Sensing").length
   },
   {
-    id: "quantum-networks",
-    label: { EN: "Quantum Networks", JP: "量子ネットワーク" },
-    count: publicationsData.filter(p => p.category === "Quantum Networks").length
+    id: "biomedical-sensing",
+    label: { EN: "Biomedical Sensing", JP: "生体医学センシング" },
+    count: publicationsData.filter(p => p.category === "Biomedical Sensing").length
+  },
+  {
+    id: "biomedical-imaging",
+    label: { EN: "Biomedical Imaging", JP: "生体医学イメージング" },
+    count: publicationsData.filter(p => p.category === "Biomedical Imaging").length
+  },
+  {
+    id: "nanoscale-imaging",
+    label: { EN: "Nanoscale Imaging", JP: "ナノスケールイメージング" },
+    count: publicationsData.filter(p => p.category === "Nanoscale Imaging").length
   },
   {
     id: "quantum-physics",
     label: { EN: "Quantum Physics", JP: "量子物理学" },
     count: publicationsData.filter(p => p.category === "Quantum Physics").length
+  },
+  {
+    id: "review",
+    label: { EN: "Review Articles", JP: "レビュー論文" },
+    count: publicationsData.filter(p => p.category === "Review").length
   }
 ];
 
-// Publication metrics and statistics
+// Real publication metrics based on actual data
 export const publicationMetrics = {
   totalPublications: publicationsData.length,
   totalCitations: publicationsData.reduce((total, pub) => total + pub.citations, 0),
   highImpactPapers: publicationsData.filter(p => p.impact === "Very High").length,
-  recentPublications: publicationsData.filter(p => parseInt(p.year) >= 2023).length,
+  recentPublications: publicationsData.filter(p => parseInt(p.year) >= 2020).length,
   averageCitations: Math.round(publicationsData.reduce((total, pub) => total + pub.citations, 0) / publicationsData.length),
   hIndex: calculateHIndex(publicationsData)
 };
