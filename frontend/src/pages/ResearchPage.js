@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { QuantumParticles } from '../components/animations/QuantumParticles';
 import { ResearchCard } from '../components/ui/ResearchCard';
 import { NVCenterVisualization } from '../components/visualizations/NVCenterVisualization';
+import { ResearchTimeline } from '../components/sections/ResearchTimeline';
+import { InteractiveResearchDashboard } from '../components/sections/InteractiveResearchDashboard';
 
-// Research Page Component
+// Enhanced Research Page Component with Interactive Showcase
 export const ResearchPage = ({ language, isDark, researchData }) => (
-  <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
+  <div className={`min-h-screen py-12 px-6 relative overflow-hidden ${
     isDark ? 'bg-black' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
@@ -17,19 +19,20 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
     <QuantumParticles intensity={30} />
     
     <div className="max-w-7xl mx-auto relative z-10">
-      <motion.div
+      {/* Page Header */}
+      <motion.header
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <h1 className={`text-6xl font-bold mb-6 ${
+        <h1 className={`text-6xl lg:text-7xl font-bold mb-6 ${
           isDark ? 'text-white' : 'text-gray-800'
         }`}>
           {language === 'EN' ? 'Research Areas' : '研究分野'}
         </h1>
         <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
-        <p className={`text-xl max-w-3xl mx-auto ${
+        <p className={`text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed ${
           isDark ? 'text-gray-300' : 'text-gray-600'
         }`}>
           {language === 'EN' 
@@ -37,16 +40,27 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
             : "私たちの研究は量子センシング技術とインフォマティクスの統合に焦点を当て、様々な応用分野における量子変革を推進しています。"
           }
         </p>
+      </motion.header>
+
+      {/* Enhanced NV Center Visualization */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="mb-16"
+      >
+        <NVCenterVisualization language={language} isDark={isDark} />
       </motion.div>
 
-      {/* NV Center Visualization */}
-      <NVCenterVisualization language={language} isDark={isDark} />
+      {/* Research Timeline */}
+      <ResearchTimeline language={language} isDark={isDark} />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {researchData.map((research, index) => (
-          <ResearchCard key={index} {...research} index={index} language={language} />
-        ))}
-      </div>
+      {/* Interactive Research Dashboard */}
+      <InteractiveResearchDashboard 
+        language={language} 
+        isDark={isDark} 
+        researchData={researchData} 
+      />
     </div>
   </div>
 );
