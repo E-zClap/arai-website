@@ -58,8 +58,13 @@ export const HeroSection = ({ language, isDark }) => {
                 ? 'backdrop-blur-2xl bg-slate-900/60 border-teal-500/30 text-teal-300'
                 : 'bg-white border-teal-200/50 text-teal-700 shadow-2xl backdrop-blur-sm'
             }`}
+            role="img"
+            aria-label={language === 'EN' ? 'Tokyo Institute of Technology affiliation' : '東京工業大学所属'}
           >
-            <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full mr-4" />
+            <div 
+              className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full mr-4"
+              aria-hidden="true"
+            />
             <span className="text-sm font-medium tracking-wider uppercase">
               {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
             </span>
@@ -75,16 +80,25 @@ export const HeroSection = ({ language, isDark }) => {
             className="space-y-8"
           >
             <div>
-              <h1 className={`text-7xl lg:text-8xl font-bold mb-6 ${
-                isDark ? 'text-white' : 'text-slate-900'
-              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              <h1 
+                id="hero-title"
+                className={`text-7xl lg:text-8xl font-bold mb-6 ${
+                  isDark ? 'text-white' : 'text-slate-900'
+                }`} 
+                style={{ fontFamily: '"Inter", system-ui' }}
+              >
                 {language === 'EN' ? "Arai's Laboratory" : '荒井研究室'}
               </h1>
               
               {/* Professional Academic Subtitle */}
-              <div className={`text-3xl lg:text-4xl font-light mb-8 ${
-                isDark ? 'text-slate-300' : 'text-slate-600'
-              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              <div 
+                className={`text-3xl lg:text-4xl font-light mb-8 ${
+                  isDark ? 'text-slate-300' : 'text-slate-600'
+                }`} 
+                style={{ fontFamily: '"Inter", system-ui' }}
+                role="doc-subtitle"
+                aria-label={language === 'EN' ? 'Research focus: Quantum Sensing and Informatics' : '研究分野：量子センシング・インフォマティクス'}
+              >
                 <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent font-semibold">
                   {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
                 </span>
@@ -93,9 +107,13 @@ export const HeroSection = ({ language, isDark }) => {
             </div>
 
             {/* Enhanced Scientific Focus Statement */}
-            <div className={`max-w-4xl mx-auto text-xl lg:text-2xl leading-relaxed ${
-              isDark ? 'text-slate-200' : 'text-slate-700'
-            }`} style={{ fontFamily: '"Inter", system-ui' }}>
+            <div 
+              id="hero-description"
+              className={`max-w-4xl mx-auto text-xl lg:text-2xl leading-relaxed ${
+                isDark ? 'text-slate-200' : 'text-slate-700'
+              }`} 
+              style={{ fontFamily: '"Inter", system-ui' }}
+            >
               <p className="mb-6">
                 {language === 'EN' 
                   ? 'Pioneering the frontier of quantum sensing technologies through diamond nitrogen-vacancy centers, integrated with advanced computational informatics to drive scientific innovation and practical applications.'
@@ -104,14 +122,22 @@ export const HeroSection = ({ language, isDark }) => {
               </p>
               
               {/* Professional Research Emphasis with Different Styling */}
-              <div className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
-                isDark 
-                  ? 'bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border-teal-400/50' 
-                  : 'bg-gradient-to-r from-teal-50/80 to-cyan-50/80 border-teal-400/60 shadow-xl'
-              }`}>
+              <motion.div 
+                className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border-teal-400/50' 
+                    : 'bg-gradient-to-r from-teal-50/80 to-cyan-50/80 border-teal-400/60 shadow-xl'
+                }`}
+                whileHover={{ 
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                role="img"
+                aria-label={language === 'EN' ? 'Current research focus: Quantum Transformation Research' : '現在の研究テーマ：量子変革研究'}
+              >
                 <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
                   isDark ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-gradient-to-r from-teal-500 to-cyan-500'
-                }`} />
+                }`} aria-hidden="true" />
                 <span className={`text-xl font-bold tracking-wide ${
                   isDark ? 'text-teal-100' : 'text-teal-800'
                 }`}>
@@ -119,8 +145,8 @@ export const HeroSection = ({ language, isDark }) => {
                 </span>
                 <div className={`w-3 h-3 rounded-full ml-4 animate-pulse ${
                   isDark ? 'bg-gradient-to-r from-cyan-400 to-teal-400' : 'bg-gradient-to-r from-cyan-500 to-teal-500'
-                }`} style={{ animationDelay: '0.5s' }} />
-              </div>
+                }`} style={{ animationDelay: '0.5s' }} aria-hidden="true" />
+              </motion.div>
             </div>
           </motion.div>
 
