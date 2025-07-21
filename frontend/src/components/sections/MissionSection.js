@@ -127,105 +127,91 @@ export const MissionSection = ({ language, isDark }) => {
           {/* Grid Background */}
           <rect width="100%" height="100%" fill="url(#grid)" />
           
-          {/* Animated Sine Waves */}
+          {/* Continuous Animated Sine Waves */}
           <g>
-            {/* Primary Wave - High Frequency */}
+            {/* Primary Wave - High Frequency - Perfect Sine Wave */}
             <path
-              d="M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400"
+              d="M-300,400 C-225,330 -75,330 0,400 C75,470 225,470 300,400 C375,330 525,330 600,400 C675,470 825,470 900,400 C975,330 1125,330 1200,400 C1275,470 1425,470 1500,400"
               fill="none"
               stroke="url(#waveGradient1)"
-              strokeWidth="2"
-              filter={`drop-shadow(0 0 8px ${isDark ? '#14b8a6' : '#0f766e'})`}
+              strokeWidth="2.5"
+              filter={`drop-shadow(0 0 10px ${isDark ? '#14b8a6' : '#0f766e'})`}
             >
               <animateTransform
                 attributeName="transform"
                 type="translate"
-                values="0,0; 300,0; 600,0; 900,0; 1200,0"
+                values="-300,0; 0,0; 300,0; 600,0; 900,0; 1200,0; 1500,0"
                 dur="8s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="d"
-                values="M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400;
-                        M0,400 Q150,500 300,400 T600,400 T900,400 T1200,400;
-                        M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400"
-                dur="4s"
                 repeatCount="indefinite"
               />
             </path>
             
-            {/* Secondary Wave - Medium Frequency */}
+            {/* Secondary Wave - Medium Frequency - Continuous Sine */}
             <path
-              d="M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350"
+              d="M-400,350 C-300,280 -100,280 0,350 C100,420 300,420 400,350 C500,280 700,280 800,350 C900,420 1100,420 1200,350 C1300,280 1500,280 1600,350"
               fill="none"
               stroke="url(#waveGradient2)"
-              strokeWidth="1.5"
-              filter={`drop-shadow(0 0 6px ${isDark ? '#06b6d4' : '#0891b2'})`}
+              strokeWidth="2"
+              filter={`drop-shadow(0 0 8px ${isDark ? '#06b6d4' : '#0891b2'})`}
             >
               <animateTransform
                 attributeName="transform"
                 type="translate"
-                values="0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0"
+                values="-400,0; -200,0; 0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0; 1400,0; 1600,0"
                 dur="12s"
                 repeatCount="indefinite"
               />
-              <animate
-                attributeName="d"
-                values="M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350;
-                        M0,350 Q100,450 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350;
-                        M0,350 Q100,250 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350"
-                dur="6s"
-                repeatCount="indefinite"
-              />
             </path>
             
-            {/* Tertiary Wave - Low Frequency */}
+            {/* Tertiary Wave - Low Frequency - Long Continuous Sine */}
             <path
-              d="M0,450 Q200,350 400,450 T800,450 T1200,450"
+              d="M-600,450 C-400,350 0,350 200,450 C400,550 800,550 1000,450 C1200,350 1600,350 1800,450"
               fill="none"
               stroke="url(#waveGradient3)"
-              strokeWidth="1"
-              filter={`drop-shadow(0 0 4px ${isDark ? '#10b981' : '#059669'})`}
+              strokeWidth="1.5"
+              filter={`drop-shadow(0 0 6px ${isDark ? '#10b981' : '#059669'})`}
             >
               <animateTransform
                 attributeName="transform"
                 type="translate"
-                values="0,0; 400,0; 800,0; 1200,0"
+                values="-600,0; -400,0; -200,0; 0,0; 200,0; 400,0; 600,0; 800,0; 1000,0; 1200,0; 1400,0; 1600,0; 1800,0"
                 dur="16s"
                 repeatCount="indefinite"
               />
-              <animate
-                attributeName="d"
-                values="M0,450 Q200,350 400,450 T800,450 T1200,450;
-                        M0,450 Q200,550 400,450 T800,450 T1200,450;
-                        M0,450 Q200,350 400,450 T800,450 T1200,450"
-                dur="8s"
-                repeatCount="indefinite"
-              />
             </path>
             
-            {/* Quantum Noise Wave - Very High Frequency */}
+            {/* High Frequency Quantum Noise - Very Continuous */}
             <path
-              d="M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380"
+              d="M-200,380 C-150,360 -50,360 0,380 C50,400 150,400 200,380 C250,360 350,360 400,380 C450,400 550,400 600,380 C650,360 750,360 800,380 C850,400 950,400 1000,380 C1050,360 1150,360 1200,380 C1250,400 1350,400 1400,380"
               fill="none"
               stroke={isDark ? '#14b8a6' : '#0f766e'}
-              strokeWidth="0.8"
-              opacity="0.6"
-              filter={`drop-shadow(0 0 3px ${isDark ? '#14b8a6' : '#0f766e'})`}
+              strokeWidth="1"
+              opacity="0.7"
+              filter={`drop-shadow(0 0 4px ${isDark ? '#14b8a6' : '#0f766e'})`}
             >
               <animateTransform
                 attributeName="transform"
                 type="translate"
-                values="0,0; 150,0; 300,0; 450,0; 600,0; 750,0; 900,0; 1050,0; 1200,0"
+                values="-200,0; -100,0; 0,0; 100,0; 200,0; 300,0; 400,0; 500,0; 600,0; 700,0; 800,0; 900,0; 1000,0; 1100,0; 1200,0; 1300,0; 1400,0"
                 dur="6s"
                 repeatCount="indefinite"
               />
-              <animate
-                attributeName="d"
-                values="M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380;
-                        M0,380 Q75,400 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380;
-                        M0,380 Q75,360 150,380 T300,380 T450,380 T600,380 T750,380 T900,380 T1050,380 T1200,380"
-                dur="2s"
+            </path>
+            
+            {/* Ultra High Frequency Detail Wave */}
+            <path
+              d="M-100,420 C-75,410 -25,410 0,420 C25,430 75,430 100,420 C125,410 175,410 200,420 C225,430 275,430 300,420 C325,410 375,410 400,420 C425,430 475,430 500,420 C525,410 575,410 600,420 C625,430 675,430 700,420 C725,410 775,410 800,420 C825,430 875,430 900,420 C925,410 975,410 1000,420 C1025,430 1075,430 1100,420 C1125,410 1175,410 1200,420 C1225,430 1275,430 1300,420"
+              fill="none"
+              stroke={isDark ? '#06b6d4' : '#0891b2'}
+              strokeWidth="0.8"
+              opacity="0.5"
+              filter={`drop-shadow(0 0 3px ${isDark ? '#06b6d4' : '#0891b2'})`}
+            >
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="-100,0; -50,0; 0,0; 50,0; 100,0; 150,0; 200,0; 250,0; 300,0; 350,0; 400,0; 450,0; 500,0; 550,0; 600,0; 650,0; 700,0; 750,0; 800,0; 850,0; 900,0; 950,0; 1000,0; 1050,0; 1100,0; 1150,0; 1200,0; 1250,0; 1300,0"
+                dur="4s"
                 repeatCount="indefinite"
               />
             </path>
