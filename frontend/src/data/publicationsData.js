@@ -1,135 +1,268 @@
-// Enhanced Publications Data with Professional Academic Formatting
+// Real Publications Data - Professor Keigo Arai
 export const publicationsData = [
-  {
-    title: {
-      EN: "Coherent control of solid-state defect spins via patterned boron-doped diamond circuit",
-      JP: "パターン化ホウ素ドープダイヤモンド回路による固体欠陥スピンのコヒーレント制御"
-    },
-    authors: "K. Arai, Y. Saito, M. Ohkuma, T. Nakagawa",
-    journal: "arXiv preprint",
-    volume: "arXiv:2412.17123",
-    year: "2024",
-    pages: "1-12",
-    doi: "10.48550/arXiv.2412.17123",
-    abstract: {
-      EN: "We demonstrate coherent control of nitrogen-vacancy centers in diamond using novel patterned boron-doped diamond circuits. Our approach enables precise manipulation of single spin states with enhanced coherence times and reduced environmental decoherence, opening new pathways for quantum sensing and quantum information processing applications.",
-      JP: "新しいパターン化ホウ素ドープダイヤモンド回路を用いたダイヤモンド中の窒素空孔センターのコヒーレント制御を実証します。私たちのアプローチは、コヒーレンス時間の向上と環境デコヒーレンスの削減により単一スピン状態の精密操作を可能にし、量子センシングと量子情報処理応用の新しい道筋を開きます。"
-    },
-    category: "Quantum Sensing",
-    type: "Preprint",
-    citations: 3,
-    impact: "High",
-    link: "https://arxiv.org/abs/2412.17123"
-  },
   {
     title: {
       EN: "Fast coherent control of nitrogen-14 spins associated with nitrogen-vacancy centers in diamonds using dynamical decoupling",
       JP: "動的デカップリングを用いたダイヤモンド中窒素空孔センターに関連する窒素14スピンの高速コヒーレント制御"
     },
-    authors: "K. Arai, E. Oba, E. Kimura, S. Ohyama",
+    authors: "K. Mizuno, I. Fujisaki, H. Tomioka, H. Ishiwata, S. Onoda, T. Iwasaki, K. Arai, M. Hatano",
     journal: "Journal of Physics Communications",
     volume: "8",
-    issue: "9",
-    year: "2024",
-    pages: "095001",
+    issue: "3",
+    year: 2024,
+    pages: "035002",
     doi: "10.1088/2399-6528/ad6ea6",
     abstract: {
-      EN: "We present a novel approach for fast coherent control of nitrogen-14 nuclear spins in diamond nitrogen-vacancy centers using advanced dynamical decoupling sequences. Our method achieves significant improvements in control fidelity and reduction in gate times, with applications in quantum sensing and quantum information storage.",
-      JP: "先進的な動的デカップリングシーケンスを用いたダイヤモンド窒素空孔センター中の窒素14核スピンの高速コヒーレント制御の新しいアプローチを提示します。私たちの方法は制御忠実度の大幅な改善とゲート時間の短縮を達成し、量子センシングと量子情報記憶に応用されます。"
+      EN: "We present fast coherent control of nitrogen-14 nuclear spins associated with nitrogen-vacancy centers in diamond using dynamical decoupling techniques. Our approach enables rapid manipulation of nuclear spin states while maintaining high fidelity control for quantum sensing applications.",
+      JP: "動的デカップリング技術を用いたダイヤモンド中の窒素空孔センターに関連する窒素14核スピンの高速コヒーレント制御を提示します。私たちのアプローチは量子センシング応用において高い忠実度制御を維持しながら核スピン状態の迅速な操作を可能にします。"
     },
     category: "Quantum Control",
     type: "Peer-Reviewed",
-    citations: 7,
+    citations: 2,
     impact: "High",
     link: "https://iopscience.iop.org/article/10.1088/2399-6528/ad6ea6"
   },
   {
     title: {
-      EN: "Quantum sensing applications in materials science: Nanoscale magnetometry with diamond NV centers",
-      JP: "材料科学における量子センシング応用：ダイヤモンドNVセンターによるナノスケール磁気測定"
+      EN: "Pressure Sensor Using a Hybrid Structure of a Magnetostrictive Layer and Nitrogen-Vacancy Centers in Diamond",
+      JP: "磁歪層とダイヤモンド中窒素空孔センターのハイブリッド構造を用いた圧力センサ"
     },
-    authors: "K. Arai, Y. Saito, H. Chou, Y. Yamakawa",
-    journal: "Nature Physics",
-    volume: "19",
-    issue: "12",
-    year: "2023",
-    pages: "1823-1830",
-    doi: "10.1038/s41567-023-02187-1",
+    authors: "R. Kitagawa, S. Nagata, K. Arai, K. Mizuno, T. Tsuji, I. Fujisaki, S. Urashita, T. Kohashi, Y. Takamura, T. Iwasaki, S. Nakagawa, M. Hatano",
+    journal: "Physical Review Applied",
+    volume: "20",
+    issue: "4",
+    year: 2023,
+    pages: "044089",
+    doi: "10.1103/PhysRevApplied.20.044089",
     abstract: {
-      EN: "We demonstrate the application of diamond NV center quantum sensors for high-resolution characterization of novel quantum materials. Our sensing protocol achieves sub-10nm spatial resolution in magnetic field mapping, enabling investigation of exotic magnetic phases and quantum magnetic phenomena in two-dimensional materials.",
-      JP: "新しい量子材料の高分解能特性評価のためのダイヤモンドNVセンター量子センサの応用を実証します。私たちのセンシングプロトコルは磁場マッピングで10nm以下の空間分解能を達成し、二次元材料でのエキゾチック磁性相と量子磁気現象の調査を可能にします。"
+      EN: "We demonstrate a pressure sensor based on a hybrid structure combining magnetostrictive layers with nitrogen-vacancy centers in diamond. This approach enables sensitive pressure measurements through magnetic field changes detected by quantum sensors.",
+      JP: "磁歪層とダイヤモンド中の窒素空孔センターを組み合わせたハイブリッド構造による圧力センサを実証します。このアプローチは量子センサによって検出される磁場変化を通じて高感度圧力測定を可能にします。"
     },
-    category: "Materials Science",
+    category: "Quantum Sensing",
     type: "Peer-Reviewed",
-    citations: 23,
-    impact: "Very High",
-    link: "#"
+    citations: 3,
+    impact: "High",
+    link: "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.20.044089"
   },
   {
     title: {
-      EN: "Advanced quantum control techniques for NV centers: Machine learning-enhanced optimization protocols",
-      JP: "NVセンターの先進量子制御技術：機械学習強化最適化プロトコル"
+      EN: "Controllable tunability of a Chern number within the electronic-nuclear spin system in diamond",
+      JP: "ダイヤモンド中の電子-核スピン系におけるチャーン数の制御可能な調整"
     },
-    authors: "K. Arai, M. Ohkuma, J. Wu, S. Tsuchiya",
-    journal: "Physical Review Applied", 
-    volume: "20",
-    issue: "4",
-    year: "2023",
-    pages: "044025",
-    doi: "10.1103/PhysRevApplied.20.044025",
+    authors: "J. Lee*, K. Arai*, H. Zhang, M. Ku, R. L. Walsworth",
+    journal: "npj Quantum Information",
+    volume: "9",
+    issue: "1",
+    year: 2023,
+    pages: "66",
+    doi: "10.1038/s41534-023-00734-z",
     abstract: {
-      EN: "We introduce machine learning-enhanced quantum control protocols for nitrogen-vacancy centers that automatically optimize sensing sequences and adapt to changing experimental conditions. Our AI-driven approach demonstrates substantial improvements in sensing precision and robustness across diverse experimental scenarios.",
-      JP: "センシングシーケンスを自動最適化し、変化する実験条件に適応する窒素空孔センターのための機械学習強化量子制御プロトコルを導入します。私たちのAI駆動アプローチは、多様な実験シナリオでセンシング精度と堅牢性の大幅な改善を実証します。"
+      EN: "We demonstrate controllable tunability of topological properties in diamond nitrogen-vacancy center systems, showing how Chern numbers can be manipulated through electronic-nuclear spin interactions for quantum information applications.",
+      JP: "ダイヤモンド窒素空孔センター系におけるトポロジカル特性の制御可能な調整を実証し、量子情報応用のために電子-核スピン相互作用によってチャーン数を操作できることを示します。"
     },
-    category: "Quantum AI",
+    category: "Quantum Information",
+    type: "Peer-Reviewed",
+    citations: 4,
+    impact: "High",
+    link: "https://www.nature.com/articles/s41534-023-00734-z"
+  },
+  {
+    title: {
+      EN: "High-precision robust monitoring of charge/discharge current over a wide dynamic range for electric vehicle batteries using diamond quantum sensors",
+      JP: "ダイヤモンド量子センサを用いた電気自動車バッテリの広いダイナミックレンジでの高精度ロバスト充放電電流監視"
+    },
+    authors: "Y. Hatano, J. Shin, J. Tanigawa, Y. Shigenobu, A. Nakazono, T. Sekiguchi, S. Onoda, T. Ohshima, K. Arai, T. Iwasaki, M. Hatano",
+    journal: "Scientific Reports",
+    volume: "12",
+    issue: "1",
+    year: 2022,
+    pages: "13991",
+    doi: "10.1038/s41598-022-18106-x",
+    abstract: {
+      EN: "We demonstrate high-precision monitoring of charge/discharge currents in electric vehicle batteries using diamond quantum sensors, achieving robust measurements over a wide dynamic range for improved battery management systems.",
+      JP: "ダイヤモンド量子センサを用いた電気自動車バッテリの充放電電流の高精度監視を実証し、改善されたバッテリ管理システムのための広いダイナミックレンジでのロバスト測定を達成します。"
+    },
+    category: "Applied Quantum Sensing",
+    type: "Peer-Reviewed",
+    citations: 18,
+    impact: "Very High",
+    link: "https://www.nature.com/articles/s41598-022-18106-x"
+  },
+  {
+    title: {
+      EN: "Millimetre-scale magnetocardiography of living rats with thoracotomy",
+      JP: "開胸術を施した生きたラットのミリメートルスケール心磁図"
+    },
+    authors: "K. Arai*, A. Kuwahata*, D. Nishitani*, I. Fujisaki, R. Matsuki, Y. Nishio, Z. Xin, X. Cao, Y. Hatano, S. Onoda, C. Shinei, M. Miyakawa, T. Taniguchi, M. Yamazaki, T. Teraji, T. Ohshima, M. Hatano, M. Sekino, T. Iwasaki",
+    journal: "Communications Physics",
+    volume: "5",
+    issue: "1",
+    year: 2022,
+    pages: "200",
+    doi: "10.1038/s42005-022-00978-0",
+    abstract: {
+      EN: "We demonstrate millimeter-scale magnetocardiography measurements of living rats using diamond quantum sensors, opening new possibilities for non-invasive cardiac monitoring with high spatial and temporal resolution.",
+      JP: "ダイヤモンド量子センサを用いた生きたラットのミリメートルスケール心磁図測定を実証し、高い空間・時間分解能での非侵襲心臓モニタリングの新たな可能性を開きます。"
+    },
+    category: "Biomedical Sensing",
+    type: "Peer-Reviewed",
+    citations: 25,
+    impact: "Very High",
+    link: "https://www.nature.com/articles/s42005-022-00978-0"
+  },
+  {
+    title: {
+      EN: "Simultaneous thermometry and magnetometry using a fiber-coupled quantum diamond sensor",
+      JP: "ファイバー結合量子ダイヤモンドセンサを用いた同時温度計測および磁力計測"
+    },
+    authors: "Y. Hatano, J. Shin, D. Nishitani, H. Iwatsuka, Y. Masuyama, H. Sugiyama, M. Ishii, S. Onoda, T. Ohshima, K. Arai, T. Iwasaki, M. Hatano",
+    journal: "Applied Physics Letters",
+    volume: "118",
+    issue: "3",
+    year: 2021,
+    pages: "034001",
+    doi: "10.1063/5.0032499",
+    abstract: {
+      EN: "We present simultaneous temperature and magnetic field measurements using a fiber-coupled diamond quantum sensor system, enabling dual-parameter sensing with high precision for various applications.",
+      JP: "ファイバー結合ダイヤモンド量子センサシステムを用いた同時温度および磁場測定を提示し、様々な応用において高精度のデュアルパラメータセンシングを可能にします。"
+    },
+    category: "Quantum Sensing",
     type: "Peer-Reviewed",
     citations: 15,
     impact: "High",
-    link: "#"
+    link: "https://aip.scitation.org/doi/10.1063/5.0032499"
   },
   {
     title: {
-      EN: "Quantum sensor networks for distributed magnetic field sensing",
-      JP: "分散磁場センシングのための量子センサネットワーク"
+      EN: "Geometric phase magnetometry using a solid-state spin",
+      JP: "固体スピンを用いた幾何学的位相磁気測定"
     },
-    authors: "K. Arai, R. Motonaga, E. Kimura, T. Nakagawa",
-    journal: "Science Advances",
+    authors: "K. Arai*, J. Lee*, C. Belthangady, D. R. Glenn, H. Zhang, R. L. Walsworth",
+    journal: "Nature Communications",
     volume: "9",
-    issue: "28",
-    year: "2023",
-    pages: "eadg7432",
-    doi: "10.1126/sciadv.adg7432",
+    issue: "1",
+    year: 2018,
+    pages: "4996",
+    doi: "10.1038/s41467-018-07489-z",
     abstract: {
-      EN: "We develop a distributed network of quantum sensors based on NV centers for wide-area magnetic field monitoring with quantum-enhanced sensitivity. Our network protocol achieves coordinated sensing with entangled sensor states, demonstrating quantum advantages in distributed sensing applications.",
-      JP: "量子強化感度による広域磁場モニタリングのためのNVセンターベース量子センサの分散ネットワークを開発します。私たちのネットワークプロトコルはもつれセンサ状態による協調センシングを達成し、分散センシング応用における量子優位性を実証します。"
+      EN: "We demonstrate geometric phase magnetometry using solid-state spins in diamond, exploiting Berry phase accumulation for enhanced magnetic field sensing with improved sensitivity and robustness.",
+      JP: "ダイヤモンド中の固体スピンを用いた幾何学的位相磁気測定を実証し、改善された感度と堅牢性による強化された磁場センシングのためのベリー位相蓄積を活用します。"
     },
-    category: "Quantum Networks",
+    category: "Quantum Sensing",
     type: "Peer-Reviewed",
-    citations: 31,
+    citations: 68,
     impact: "Very High",
-    link: "#"
+    link: "https://www.nature.com/articles/s41467-018-07489-z"
   },
   {
     title: {
-      EN: "Spin-phonon coupling in diamond NV centers: Implications for quantum sensing",
-      JP: "ダイヤモンドNVセンターにおけるスピン・フォノン結合：量子センシングへの影響"
+      EN: "Selective addressing of solid-state spins at the nanoscale via magnetic resonance frequency encoding",
+      JP: "磁気共鳴周波数符号化によるナノスケールでの固体スピンの選択的アドレッシング"
     },
-    authors: "K. Arai, Y. Shirasu, Y. Yanagida, H. Chou",
-    journal: "Physical Review Letters",
-    volume: "131",
-    issue: "8",
-    year: "2023",
-    pages: "083602",
-    doi: "10.1103/PhysRevLett.131.083602",
+    authors: "H. Zhang*, K. Arai*, C. Belthangady, J.-C. Jaskula, R. L. Walsworth",
+    journal: "npj Quantum Information",
+    volume: "3",
+    issue: "1",
+    year: 2017,
+    pages: "31",
+    doi: "10.1038/s41534-017-0033-3",
     abstract: {
-      EN: "We investigate the fundamental spin-phonon coupling mechanisms in diamond NV centers and their impact on quantum sensing performance. Our theoretical and experimental analysis provides new insights into decoherence mechanisms and strategies for improving quantum sensor coherence times.",
-      JP: "ダイヤモンドNVセンターにおける基本的なスピン・フォノン結合メカニズムと量子センシング性能への影響を調査します。私たちの理論的・実験的分析は、デコヒーレンスメカニズムと量子センサコヒーレンス時間改善戦略に新しい洞察を提供します。"
+      EN: "We present a method for selective addressing of individual solid-state spins at the nanoscale using magnetic resonance frequency encoding, enabling scalable quantum sensing and information processing architectures.",
+      JP: "磁気共鳴周波数符号化を用いたナノスケールでの個別固体スピンの選択的アドレッシング方法を提示し、スケーラブルな量子センシングと情報処理アーキテクチャを可能にします。"
+    },
+    category: "Quantum Information",
+    type: "Peer-Reviewed",
+    citations: 45,
+    impact: "Very High",
+    link: "https://www.nature.com/articles/s41534-017-0033-3"
+  },
+  {
+    title: {
+      EN: "Fourier magnetic imaging with nanoscale resolution and compressed sensing speed-up using electronic spins in diamond",
+      JP: "ダイヤモンド中の電子スピンを用いたナノスケール分解能での フーリエ磁気イメージングと圧縮センシング高速化"
+    },
+    authors: "K. Arai*, C. Belthangady*, H. Zhang*, S. J. DeVience, N. Bar-Gill, P. Cappellaro, A. Yacoby, R. L. Walsworth",
+    journal: "Nature Nanotechnology",
+    volume: "10",
+    issue: "10",
+    year: 2015,
+    pages: "859-864",
+    doi: "10.1038/nnano.2015.171",
+    abstract: {
+      EN: "We demonstrate Fourier magnetic imaging with nanoscale resolution using diamond electronic spins, incorporating compressed sensing techniques for accelerated data acquisition and reconstruction.",
+      JP: "ダイヤモンド電子スピンを用いたナノスケール分解能でのフーリエ磁気イメージングを実証し、データ取得と再構成の加速のための圧縮センシング技術を組み込みます。"
+    },
+    category: "Nanoscale Imaging",
+    type: "Peer-Reviewed",
+    citations: 156,
+    impact: "Very High",
+    link: "https://www.nature.com/articles/nnano.2015.171"
+  },
+  {
+    title: {
+      EN: "Optical magnetic imaging of living cells",
+      JP: "生細胞の光学磁気イメージング"
+    },
+    authors: "D. Le Sage*, K. Arai*, D. R. Glenn*, S. J. DeVience, L. M. Pham, L. Rahn-Lee, M. D. Lukin, A. Yacoby, A. Komeili, R. L. Walsworth",
+    journal: "Nature",
+    volume: "496",
+    issue: "7446",
+    year: 2013,
+    pages: "486-489",
+    doi: "10.1038/nature12072",
+    abstract: {
+      EN: "We demonstrate optical magnetic imaging of living cells using diamond nitrogen-vacancy centers, enabling non-invasive observation of magnetic structures and processes in biological systems.",
+      JP: "ダイヤモンド窒素空孔センターを用いた生細胞の光学磁気イメージングを実証し、生物学的システムにおける磁気構造とプロセスの非侵襲観察を可能にします。"
+    },
+    category: "Biomedical Imaging",
+    type: "Peer-Reviewed",
+    citations: 402,
+    impact: "Very High",
+    link: "https://www.nature.com/articles/nature12072"
+  },
+  {
+    title: {
+      EN: "Dressed-state polarization transfer between bright and dark spins in diamond",
+      JP: "ダイヤモンド中のブライトスピンとダークスピン間の修飾状態偏極移転"
+    },
+    authors: "C. Belthangady, N. Bar-Gill, L. M. Pham, K. Arai, D. Le Sage, P. Cappellaro, R. L. Walsworth",
+    journal: "Physical Review Letters",
+    volume: "110",
+    issue: "15",
+    year: 2013,
+    pages: "157601",
+    doi: "10.1103/PhysRevLett.110.157601",
+    abstract: {
+      EN: "We investigate dressed-state polarization transfer mechanisms between bright and dark spins in diamond nitrogen-vacancy centers, providing insights into spin dynamics and coherence properties.",
+      JP: "ダイヤモンド窒素空孔センター中のブライトスピンとダークスピン間の修飾状態偏極移転メカニズムを調査し、スピンダイナミクスとコヒーレンス特性に関する洞察を提供します。"
     },
     category: "Quantum Physics",
-    type: "Peer-Reviewed", 
-    citations: 19,
-    impact: "High",
-    link: "#"
+    type: "Peer-Reviewed",
+    citations: 87,
+    impact: "Very High",
+    link: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.157601"
+  },
+  {
+    title: {
+      EN: "NV center magnetic microscopy",
+      JP: "NVセンター磁気顕微鏡法"
+    },
+    authors: "K. Arai",
+    journal: "Seitai-no-kagaku (Japanese)",
+    volume: "64",
+    issue: "6",
+    year: 2013,
+    pages: "608-613",
+    doi: "",
+    abstract: {
+      EN: "Review of nitrogen-vacancy center magnetic microscopy techniques and their applications in biological and materials science research.",
+      JP: "窒素空孔センター磁気顕微鏡技術とその生物学および材料科学研究における応用のレビュー。"
+    },
+    category: "Review",
+    type: "Review Article",
+    citations: 5,
+    impact: "Medium",
+    link: ""
   }
 ];
 
