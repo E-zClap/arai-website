@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 import { QuantumParticles } from '../components/animations/QuantumParticles';
 import { ResearchCard } from '../components/ui/ResearchCard';
 import { NVCenterVisualization } from '../components/visualizations/NVCenterVisualization';
-import { ResearchTimeline } from '../components/sections/ResearchTimeline';
-import { InteractiveResearchDashboard } from '../components/sections/InteractiveResearchDashboard';
 
-// Enhanced Research Page Component with Interactive Showcase
+// Enhanced Research Page Component
 export const ResearchPage = ({ language, isDark, researchData }) => (
   <div className={`min-h-screen py-12 px-6 relative overflow-hidden ${
     isDark ? 'bg-black' : 'bg-gray-50'
@@ -52,15 +50,72 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
         <NVCenterVisualization language={language} isDark={isDark} />
       </motion.div>
 
-      {/* Research Timeline */}
-      <ResearchTimeline language={language} isDark={isDark} />
+      {/* Research Cards Grid */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {researchData.map((research, index) => (
+          <ResearchCard 
+            key={index} 
+            {...research} 
+            index={index} 
+            language={language}
+            isDark={isDark}
+          />
+        ))}
+      </motion.div>
 
-      {/* Interactive Research Dashboard */}
-      <InteractiveResearchDashboard 
-        language={language} 
-        isDark={isDark} 
-        researchData={researchData} 
-      />
+      {/* Research Metrics Summary */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="mt-16 text-center"
+      >
+        <h2 className={`text-3xl font-bold mb-8 ${
+          isDark ? 'text-white' : 'text-gray-800'
+        }`}>
+          {language === 'EN' ? 'Research Impact' : '研究インパクト'}
+        </h2>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { value: '12', label: { EN: 'Active Projects', JP: 'アクティブプロジェクト' } },
+            { value: '8', label: { EN: 'Collaborations', JP: '共同研究' } },
+            { value: '42', label: { EN: 'Publications', JP: '論文数' } },
+            { value: '¥85M', label: { EN: 'Funding', JP: '研究資金' } }
+          ].map((metric, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+              className={`
+                p-6 rounded-xl border text-center backdrop-blur-sm
+                ${isDark 
+                  ? 'bg-slate-900/50 border-slate-700/50 hover:bg-slate-900/70' 
+                  : 'bg-white/80 border-gray-200/80 hover:bg-white shadow-lg'
+                }
+                transition-all duration-300 hover:scale-105
+              `}
+            >
+              <div className={`text-3xl font-bold mb-2 ${
+                isDark ? 'text-teal-400' : 'text-teal-600'
+              }`}>
+                {metric.value}
+              </div>
+              <div className={`text-sm font-medium ${
+                isDark ? 'text-slate-300' : 'text-gray-600'
+              }`}>
+                {metric.label[language]}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   </div>
 );
