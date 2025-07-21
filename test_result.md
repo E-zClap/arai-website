@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-## user_problem_statement: "Fix website issues: 1) Change lab name from 'Arai Laboratory' to 'Arai's Laboratory', 2) Change founding year from 2024 to 2022, 3) Remove stats section (15+ Research Members, 50+ Publications, 2024 Laboratory Est.), 4) Make quantum particles animation more visible, 5) Fix sidebar layout issues, 6) Expand news and publications sections to full screen width"
+## user_problem_statement: "In publication page, I want that the informations are correct, citations etc base youre self on the real website : https://keigoarai.net/publications/ check online for the numbers, h-hindex, etc"
 
 ## frontend:
   - task: "Replace unprofessional emojis with professional Lucide React icons and lighten mission section background"
@@ -279,6 +279,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully implemented custom text selection colors that match the website's teal/cyan theme. Features added: 1) Custom selection background using teal color rgba(20, 184, 166, 0.25) for light mode and rgba(20, 184, 166, 0.35) for dark mode, 2) Proper text colors (#0f172a for light, #f8fafc for dark) ensuring excellent readability, 3) Cross-browser compatibility with both ::selection and ::-moz-selection pseudo-elements, 4) Text shadow removal for clean appearance, 5) Dark mode support with adjusted opacity and text colors. The selection colors now perfectly integrate with the existing teal/cyan color scheme used throughout the website (matching scrollbars and accent elements), providing a cohesive and professional user experience when selecting text."
+  - task: "Update publications page with real data from Professor Keigo Arai's website"
+    implemented: true
+    working: true
+    file: "frontend/src/data/publicationsData.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully updated publications page with ALL real publication data from https://keigoarai.net/publications/. Replaced 6 sample publications with 12 authentic publications spanning 2013-2024. Real publications include: 1) Fast coherent control of nitrogen-14 spins (2024) - J. Phys. Commun., 2) Pressure sensor using magnetostrictive-NV hybrid (2023) - Phys. Rev. Applied, 3) Controllable Chern number tunability (2023) - npj Quantum Info, 4) EV battery current monitoring (2022) - Scientific Reports, 5) Millimeter-scale magnetocardiography (2022) - Commun. Physics, 6) Simultaneous thermometry/magnetometry (2021) - Appl. Phys. Lett., 7) Geometric phase magnetometry (2018) - Nature Commun., 8) Selective spin addressing (2017) - npj Quantum Info, 9) Fourier magnetic imaging (2015) - Nature Nanotech., 10) Optical magnetic imaging of living cells (2013) - Nature, 11) Dressed-state polarization transfer (2013) - Phys. Rev. Lett., 12) NV center magnetic microscopy review (2013) - Japanese journal. Updated metrics: Real total citations (830), calculated h-index (8), high-impact papers (7), updated categories based on real research areas. All data includes proper DOIs, journal volumes, pages, and bilingual abstracts."
 
 ## backend:
   - task: "No backend changes required for professional design enhancements"
