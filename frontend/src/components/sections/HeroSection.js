@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { QuantumNetwork } from '../animations/QuantumNetwork';
 
-// Enhanced Professional Hero Section with Academic Hierarchy
+// Enhanced Professional Hero Section with Academic Hierarchy and Accessibility
 export const HeroSection = ({ language, isDark }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -20,6 +20,9 @@ export const HeroSection = ({ language, isDark }) => {
       className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
         isDark ? 'bg-black' : 'bg-gray-50'
       }`}
+      role="banner"
+      aria-labelledby="hero-title"
+      aria-describedby="hero-description"
     >
       {/* Enhanced Quantum Background */}
       <QuantumNetwork />
