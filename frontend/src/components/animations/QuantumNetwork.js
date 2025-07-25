@@ -146,7 +146,7 @@ export const QuantumNetwork = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Quantum Field Background - Simplified for low performance */}
-      {!performanceSettings.prefersReducedMotion && (
+      {performanceSettings.enableBackgroundEffects && (
         <motion.div
           className={`absolute inset-0 ${
             performanceSettings.enableGlow 
