@@ -167,66 +167,87 @@ export const QuantumNetwork = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Quantum Field Background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-radial from-teal-900/10 via-cyan-900/5 to-transparent"
-        animate={{
-          scale: [1, 1.2, 1.1, 1],
-          rotate: [0, 2, -2, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Quantum Field Background - Simplified for low performance */}
+      {!performanceSettings.prefersReducedMotion && (
+        <motion.div
+          className={`absolute inset-0 ${
+            performanceSettings.enableGlow 
+              ? 'bg-gradient-radial from-teal-900/10 via-cyan-900/5 to-transparent'
+              : 'bg-gradient-radial from-teal-900/5 via-cyan-900/2 to-transparent'
+          }`}
+          animate={performanceSettings.enableComplexAnimations ? {
+            scale: [1, 1.2, 1.1, 1],
+            rotate: [0, 2, -2, 0],
+          } : {
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: performanceSettings.enableComplexAnimations ? 20 : 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      )}
 
-      {/* Quantum Connections with Advanced Effects */}
+      {/* Quantum Connections - Optimized for performance */}
       {connections.map(connection => (
         <motion.div
           key={connection.id}
           className="absolute"
           style={getConnectionStyle(connection)}
-          animate={{
+          animate={performanceSettings.prefersReducedMotion ? {
+            opacity: [connection.strength * 0.5, connection.strength],
+          } : performanceSettings.enableComplexAnimations ? {
             opacity: [connection.strength * 0.3, connection.strength * 1.2, connection.strength * 0.6],
             scaleX: [0.8, 1.1, 0.9, 1],
+          } : {
+            opacity: [connection.strength * 0.4, connection.strength * 0.8, connection.strength * 0.4],
           }}
           transition={{
-            duration: 4 + connection.frequency,
+            duration: performanceSettings.enableComplexAnimations ? 4 + connection.frequency : 3,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: connection.from * 0.1,
+            delay: connection.from * (performanceSettings.enableComplexAnimations ? 0.1 : 0.05),
           }}
         />
       ))}
 
-      {/* Advanced Quantum Nodes */}
+      {/* Optimized Quantum Nodes */}
       {nodes.map(node => (
         <motion.div
           key={node.id}
           className="absolute transform -translate-x-1/2 -translate-y-1/2"
           style={getNodeStyle(node)}
-          animate={{
+          animate={performanceSettings.prefersReducedMotion ? {
+            opacity: [0.6, 0.9, 0.6],
+          } : performanceSettings.enableComplexAnimations ? {
             scale: [1, 1.3, 1.1, 1],
             rotate: node.type === 'quantum' ? [0, 360] : node.type === 'superposition' ? [0, 180, 360] : [0, 90, 180, 270],
             opacity: [0.6, 1, 0.8, 0.6],
-            x: [0, Math.sin(node.phase) * 15, 0],
-            y: [0, Math.cos(node.phase) * 15, 0],
+            x: [0, Math.sin(node.phase) * 12, 0],
+            y: [0, Math.cos(node.phase) * 12, 0],
+          } : {
+            scale: [1, 1.15, 1],
+            opacity: [0.6, 0.9, 0.6],
+            x: [0, Math.sin(node.phase) * 6, 0],
+            y: [0, Math.cos(node.phase) * 6, 0],
           }}
           transition={{
-            duration: node.type === 'quantum' ? 8 : node.type === 'superposition' ? 6 : 4,
+            duration: performanceSettings.enableComplexAnimations 
+              ? (node.type === 'quantum' ? 8 : node.type === 'superposition' ? 6 : 4)
+              : 4,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: node.id * 0.2,
+            delay: node.id * (performanceSettings.enableComplexAnimations ? 0.2 : 0.1),
           }}
         >
-          {/* Quantum State Indicator */}
-          {node.type === 'quantum' && (
+          {/* Quantum State Indicator - Only on high performance */}
+          {node.type === 'quantum' && performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
             <motion.div
-              className="absolute inset-0 rounded-full border-2 border-teal-300/50"
+              className="absolute inset-0 rounded-full border-2 border-teal-300/40"
               animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0, 0.8, 0],
+                scale: [1, 1.4, 1],
+                opacity: [0, 0.6, 0],
               }}
               transition={{
                 duration: 3,
@@ -237,14 +258,15 @@ export const QuantumNetwork = () => {
             />
           )}
           
-          {/* Superposition Effect */}
-          {node.type === 'superposition' && (
+          {/* Superposition Effect - Simplified for performance */}
+          {node.type === 'superposition' && performanceSettings.enableGlow && !performanceSettings.prefersReducedMotion && (
             <motion.div
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/30 to-teal-400/30"
-              animate={{
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20"
+              animate={performanceSettings.enableComplexAnimations ? {
                 rotate: [0, 360],
-                scale: [0.8, 1.2, 0.8],
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                scale: [0.8, 1.1, 0.8],
+              } : {
+                scale: [0.9, 1.05, 0.9],
               }}
               transition={{
                 duration: 4,
@@ -256,23 +278,25 @@ export const QuantumNetwork = () => {
         </motion.div>
       ))}
 
-      {/* Quantum Wave Function */}
-      <motion.div
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.03) 0%, transparent 60%)',
-        }}
-        animate={{
-          scale: [1, 1.3, 1.1, 1],
-          rotate: [0, 1, -1, 0],
-          opacity: [0.5, 0.8, 0.6, 0.5],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Quantum Wave Function - Only on high performance */}
+      {performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.02) 0%, transparent 60%)',
+          }}
+          animate={{
+            scale: [1, 1.2, 1.05, 1],
+            rotate: [0, 0.5, -0.5, 0],
+            opacity: [0.3, 0.6, 0.4, 0.3],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      )}
     </div>
   );
 };
