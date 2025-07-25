@@ -123,11 +123,30 @@ export const QuantumParticles = ({ intensity = 40 }) => {
   };
 
   const getAnimationProps = (particle) => {
+    // Simplified animations for reduced motion preference or low performance
+    if (performanceSettings.prefersReducedMotion) {
+      return {
+        opacity: [particle.opacity * 0.5, particle.opacity, particle.opacity * 0.5],
+        scale: [1, 1.05, 1],
+      };
+    }
+
+    // Simplified animations for low-performance devices
+    if (!performanceSettings.enableComplexAnimations) {
+      return {
+        scale: [1, 1.2, 1],
+        opacity: [particle.opacity, particle.opacity * 0.6, particle.opacity],
+        x: [0, Math.sin(particle.phase) * 15, 0],
+        y: [0, Math.cos(particle.phase) * 15, 0],
+      };
+    }
+
+    // Full-featured animations for high-performance devices
     const baseAnimation = {
       scale: [1, 1.4, 1.1, 1],
       opacity: [particle.opacity, particle.opacity * 0.3, particle.opacity * 0.8, particle.opacity],
-      x: [0, Math.sin(particle.phase) * 30, Math.cos(particle.phase) * 20, 0],
-      y: [0, Math.cos(particle.phase) * 30, Math.sin(particle.phase) * 20, 0],
+      x: [0, Math.sin(particle.phase) * 25, Math.cos(particle.phase) * 15, 0],
+      y: [0, Math.cos(particle.phase) * 25, Math.sin(particle.phase) * 15, 0],
     };
 
     switch (particle.type) {
@@ -135,14 +154,14 @@ export const QuantumParticles = ({ intensity = 40 }) => {
         return {
           ...baseAnimation,
           rotate: [0, 360, 720, 1080],
-          scale: [1, 1.6, 1.2, 1],
+          scale: [1, 1.5, 1.1, 1],
         };
       case 'quantum':
         return {
           ...baseAnimation,
           rotate: [0, 180, 360, 540],
           scale: [1, 1.3, 0.9, 1],
-          skewX: [0, 5, -5, 0],
+          skewX: [0, 3, -3, 0],
         };
       default:
         return {
