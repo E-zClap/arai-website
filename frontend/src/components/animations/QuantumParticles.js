@@ -73,13 +73,33 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       opacity: particle.opacity,
     };
 
+    // Simplified styles for low-performance devices
+    if (!performanceSettings.enableGlow) {
+      const simpleColors = {
+        energy: '#06b6d4',
+        quantum: '#10b981',
+        particle: '#0891b2'
+      };
+      
+      return {
+        ...baseStyles,
+        background: simpleColors[particle.type] || simpleColors.particle,
+        borderRadius: particle.type === 'quantum' ? '30%' : '50%',
+        border: `1px solid ${simpleColors[particle.type] || simpleColors.particle}`,
+        transform: particle.type === 'quantum' ? 'rotate(45deg)' : 'none',
+        // Use CSS transform instead of box-shadow for better performance
+        filter: `brightness(${1 + particle.glowIntensity * 0.1})`,
+      };
+    }
+
+    // Full-featured styles for high-performance devices
     switch (particle.type) {
       case 'energy':
         return {
           ...baseStyles,
           background: 'linear-gradient(45deg, #06b6d4, #14b8a6)',
           borderRadius: '50%',
-          boxShadow: `0 0 ${particle.glowIntensity * 8}px rgba(20, 184, 166, 1.0), 0 0 ${particle.glowIntensity * 16}px rgba(6, 182, 212, 0.6), 0 0 ${particle.glowIntensity * 24}px rgba(20, 184, 166, 0.3)`,
+          boxShadow: `0 0 ${particle.glowIntensity * 6}px rgba(20, 184, 166, 0.8), 0 0 ${particle.glowIntensity * 12}px rgba(6, 182, 212, 0.4)`,
           border: '2px solid rgba(20, 184, 166, 0.6)',
         };
       case 'quantum':
@@ -87,7 +107,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
           ...baseStyles,
           background: 'linear-gradient(135deg, #10b981, #059669)',
           borderRadius: '30%',
-          boxShadow: `0 0 ${particle.glowIntensity * 6}px rgba(16, 185, 129, 1.0), 0 0 ${particle.glowIntensity * 12}px rgba(5, 150, 105, 0.5)`,
+          boxShadow: `0 0 ${particle.glowIntensity * 4}px rgba(16, 185, 129, 0.8), 0 0 ${particle.glowIntensity * 8}px rgba(5, 150, 105, 0.4)`,
           border: '1px solid rgba(16, 185, 129, 0.8)',
           transform: 'rotate(45deg)',
         };
@@ -96,7 +116,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
           ...baseStyles,
           background: 'linear-gradient(90deg, #0891b2, #0e7490)',
           borderRadius: '2px',
-          boxShadow: `0 0 ${particle.glowIntensity * 4}px rgba(8, 145, 178, 0.9), 0 0 ${particle.glowIntensity * 8}px rgba(14, 116, 144, 0.4)`,
+          boxShadow: `0 0 ${particle.glowIntensity * 3}px rgba(8, 145, 178, 0.7), 0 0 ${particle.glowIntensity * 6}px rgba(14, 116, 144, 0.3)`,
           border: '1px solid rgba(8, 145, 178, 0.7)',
         };
     }
