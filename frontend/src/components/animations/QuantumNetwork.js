@@ -1,10 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
-// Ultra-Professional Quantum Network Animation with Advanced Scientific Accuracy
+// Performance-Optimized Quantum Network Animation with Device Detection
 export const QuantumNetwork = () => {
   const [nodes, setNodes] = useState([]);
   const [connections, setConnections] = useState([]);
+
+  // Performance detection and optimization
+  const performanceSettings = useMemo(() => {
+    const hardwareConcurrency = navigator.hardwareConcurrency || 4;
+    const deviceMemory = navigator.deviceMemory || 4;
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    let performanceScore = 1;
+    if (isMobile) performanceScore *= 0.6;
+    if (hardwareConcurrency < 4) performanceScore *= 0.7;
+    if (deviceMemory < 4) performanceScore *= 0.8;
+    if (prefersReducedMotion) performanceScore *= 0.3;
+    
+    return {
+      nodeCount: Math.max(8, Math.floor(24 * performanceScore)),
+      maxConnections: Math.max(5, Math.floor(15 * performanceScore)),
+      enableGlow: performanceScore > 0.5,
+      enableComplexAnimations: performanceScore > 0.7,
+      isMobile,
+      prefersReducedMotion
+    };
+  }, []);
 
   useEffect(() => {
     const generateNetwork = () => {
