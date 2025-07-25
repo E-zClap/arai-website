@@ -1,31 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
-// Ultra-Professional Quantum Particles Animation with Advanced Effects
+// Performance-Optimized Quantum Particles Animation with Device Detection
 export const QuantumParticles = ({ intensity = 40 }) => {
   const [particles, setParticles] = useState([]);
+
+  // Performance detection and optimization
+  const performanceSettings = useMemo(() => {
+    // Detect device capabilities
+    const hardwareConcurrency = navigator.hardwareConcurrency || 4;
+    const deviceMemory = navigator.deviceMemory || 4;
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Performance scoring (0-1, where 1 is highest performance)
+    let performanceScore = 1;
+    
+    if (isMobile) performanceScore *= 0.6;
+    if (hardwareConcurrency < 4) performanceScore *= 0.7;
+    if (deviceMemory < 4) performanceScore *= 0.8;
+    if (prefersReducedMotion) performanceScore *= 0.3;
+    
+    // Calculate optimized settings based on performance
+    const optimizedIntensity = Math.max(10, Math.floor(intensity * performanceScore));
+    const maxConnections = Math.max(3, Math.floor(8 * performanceScore));
+    const enableGlow = performanceScore > 0.5;
+    const enableComplexAnimations = performanceScore > 0.7;
+    const frameRate = performanceScore > 0.8 ? 60 : performanceScore > 0.6 ? 30 : 20;
+    
+    return {
+      intensity: optimizedIntensity,
+      maxConnections,
+      enableGlow,
+      enableComplexAnimations,
+      frameRate,
+      isMobile,
+      prefersReducedMotion
+    };
+  }, [intensity]);
 
   useEffect(() => {
     const generateParticles = () => {
       const newParticles = [];
-      for (let i = 0; i < intensity; i++) {
+      for (let i = 0; i < performanceSettings.intensity; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * 12 + 6,
-          opacity: Math.random() * 1.0 + 0.6,
-          speed: Math.random() * 3 + 2,
+          size: Math.random() * (performanceSettings.isMobile ? 8 : 12) + (performanceSettings.isMobile ? 4 : 6),
+          opacity: Math.random() * 0.8 + 0.4,
+          speed: Math.random() * (performanceSettings.enableComplexAnimations ? 3 : 1.5) + 1,
           phase: Math.random() * Math.PI * 2,
           type: Math.random() > 0.6 ? 'energy' : Math.random() > 0.3 ? 'quantum' : 'particle',
-          glowIntensity: Math.random() * 6 + 4
+          glowIntensity: performanceSettings.enableGlow ? Math.random() * 4 + 2 : 1
         });
       }
       setParticles(newParticles);
     };
 
     generateParticles();
-  }, [intensity]);
+  }, [performanceSettings]);
 
   const getParticleStyle = (particle) => {
     const baseStyles = {
