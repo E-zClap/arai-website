@@ -34,12 +34,12 @@ export const QuantumNetwork = () => {
     const generateNetwork = () => {
       // Enhanced nodes with different quantum states
       const newNodes = [];
-      for (let i = 0; i < 24; i++) {
+      for (let i = 0; i < performanceSettings.nodeCount; i++) {
         newNodes.push({
           id: i,
           x: Math.random() * 95 + 2.5,
           y: Math.random() * 95 + 2.5,
-          size: Math.random() * 8 + 6,
+          size: Math.random() * (performanceSettings.isMobile ? 6 : 8) + (performanceSettings.isMobile ? 4 : 6),
           type: Math.random() > 0.7 ? 'quantum' : Math.random() > 0.4 ? 'classical' : 'superposition',
           energy: Math.random(),
           phase: Math.random() * Math.PI * 2,
@@ -47,21 +47,22 @@ export const QuantumNetwork = () => {
         });
       }
 
-      // Advanced connection algorithm based on quantum correlation
+      // Optimized connection algorithm
       const newConnections = [];
-      for (let i = 0; i < newNodes.length; i++) {
-        for (let j = i + 1; j < newNodes.length; j++) {
+      let connectionCount = 0;
+      for (let i = 0; i < newNodes.length && connectionCount < performanceSettings.maxConnections; i++) {
+        for (let j = i + 1; j < newNodes.length && connectionCount < performanceSettings.maxConnections; j++) {
           const node1 = newNodes[i];
           const node2 = newNodes[j];
           const distance = Math.sqrt((node1.x - node2.x) ** 2 + (node1.y - node2.y) ** 2);
           
-          // Quantum entanglement probability based on distance and type compatibility
+          // Simplified probability calculation for performance
           const entanglementProbability = 
-            (node1.type === 'quantum' && node2.type === 'quantum') ? 0.25 :
-            (node1.type === 'superposition' || node2.type === 'superposition') ? 0.15 :
-            0.08;
+            (node1.type === 'quantum' && node2.type === 'quantum') ? 0.3 :
+            (node1.type === 'superposition' || node2.type === 'superposition') ? 0.2 :
+            0.1;
           
-          if (distance < 35 && Math.random() < entanglementProbability) {
+          if (distance < (performanceSettings.isMobile ? 40 : 35) && Math.random() < entanglementProbability) {
             newConnections.push({
               id: `${i}-${j}`,
               from: i,
@@ -70,6 +71,7 @@ export const QuantumNetwork = () => {
               type: node1.type === 'quantum' && node2.type === 'quantum' ? 'entangled' : 'correlated',
               frequency: Math.random() * 2 + 1
             });
+            connectionCount++;
           }
         }
       }
@@ -79,7 +81,7 @@ export const QuantumNetwork = () => {
     };
 
     generateNetwork();
-  }, []);
+  }, [performanceSettings]);
 
   const getNodeStyle = (node) => {
     const baseStyles = {
