@@ -180,55 +180,65 @@ export const QuantumParticles = ({ intensity = 40 }) => {
           style={getParticleStyle(particle)}
           animate={getAnimationProps(particle)}
           transition={{
-            duration: 6 + particle.speed,
+            duration: performanceSettings.enableComplexAnimations ? 6 + particle.speed : 4 + particle.speed * 0.5,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: particle.id * 0.15,
-            times: [0, 0.3, 0.7, 1]
+            delay: particle.id * (performanceSettings.enableComplexAnimations ? 0.15 : 0.1),
+            times: performanceSettings.prefersReducedMotion ? [0, 0.5, 1] : [0, 0.3, 0.7, 1]
           }}
         />
       ))}
       
-      {/* Advanced Particle Connections */}
-      <div className="absolute inset-0">
-        {particles.filter(p => p.type === 'energy').slice(0, 8).map((particle, index) => (
-          <motion.div
-            key={`connection-${particle.id}`}
-            className="absolute w-px bg-gradient-to-b from-transparent via-teal-400/20 to-transparent"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              height: '200px',
-              transformOrigin: 'top',
-            }}
-            animate={{
-              rotate: [0, 360],
-              scaleY: [0.5, 1.2, 0.8, 0.5],
-              opacity: [0, 0.6, 0.3, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              delay: index * 0.5,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+      {/* Advanced Particle Connections - Only on high performance devices */}
+      {performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
+        <div className="absolute inset-0">
+          {particles.filter(p => p.type === 'energy').slice(0, performanceSettings.maxConnections).map((particle, index) => (
+            <motion.div
+              key={`connection-${particle.id}`}
+              className="absolute w-px bg-gradient-to-b from-transparent via-teal-400/15 to-transparent"
+              style={{
+                left: `${particle.x}%`,
+                top: `${particle.y}%`,
+                height: performanceSettings.isMobile ? '120px' : '180px',
+                transformOrigin: 'top',
+              }}
+              animate={{
+                rotate: [0, 360],
+                scaleY: [0.5, 1.1, 0.7, 0.5],
+                opacity: [0, 0.4, 0.2, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                delay: index * 0.8,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+      )}
       
-      {/* Quantum Field Effect */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-radial from-teal-500/5 via-cyan-500/3 to-transparent"
-        animate={{
-          scale: [1, 1.1, 1.05, 1],
-          opacity: [0.3, 0.6, 0.4, 0.3],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Quantum Field Effect - Simplified for low performance */}
+      {!performanceSettings.prefersReducedMotion && (
+        <motion.div
+          className={`absolute inset-0 ${
+            performanceSettings.enableGlow 
+              ? 'bg-gradient-radial from-teal-500/5 via-cyan-500/3 to-transparent'
+              : 'bg-gradient-radial from-teal-500/2 via-cyan-500/1 to-transparent'
+          }`}
+          animate={performanceSettings.enableComplexAnimations ? {
+            scale: [1, 1.1, 1.05, 1],
+            opacity: [0.3, 0.6, 0.4, 0.3],
+          } : {
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: performanceSettings.enableComplexAnimations ? 10 : 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      )}
     </div>
   );
 };
