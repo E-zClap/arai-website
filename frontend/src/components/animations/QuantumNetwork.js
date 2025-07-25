@@ -220,7 +220,7 @@ export const QuantumNetwork = () => {
           }}
         >
           {/* Quantum State Indicator - Only on high performance */}
-          {node.type === 'quantum' && performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
+          {node.type === 'quantum' && performanceSettings.enableComplexAnimations && performanceSettings.enableBackgroundEffects && (
             <motion.div
               className="absolute inset-0 rounded-full border-2 border-teal-300/40"
               animate={{
@@ -237,7 +237,7 @@ export const QuantumNetwork = () => {
           )}
           
           {/* Superposition Effect - Simplified for performance */}
-          {node.type === 'superposition' && performanceSettings.enableGlow && !performanceSettings.prefersReducedMotion && (
+          {node.type === 'superposition' && performanceSettings.enableGlow && performanceSettings.enableBackgroundEffects && (
             <motion.div
               className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-teal-400/20"
               animate={performanceSettings.enableComplexAnimations ? {
