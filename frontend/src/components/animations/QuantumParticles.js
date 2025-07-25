@@ -1,51 +1,18 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { usePerformanceSettings } from '../../hooks/usePerformanceSettings';
 
 // Performance-Optimized Quantum Particles Animation with Device Detection
 export const QuantumParticles = ({ intensity = 40 }) => {
   const [particles, setParticles] = useState([]);
-
-  // Performance detection and optimization
-  const performanceSettings = useMemo(() => {
-    // Detect device capabilities
-    const hardwareConcurrency = navigator.hardwareConcurrency || 4;
-    const deviceMemory = navigator.deviceMemory || 4;
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-    
-    // Respect user's motion preferences
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    // Performance scoring (0-1, where 1 is highest performance)
-    let performanceScore = 1;
-    
-    if (isMobile) performanceScore *= 0.6;
-    if (hardwareConcurrency < 4) performanceScore *= 0.7;
-    if (deviceMemory < 4) performanceScore *= 0.8;
-    if (prefersReducedMotion) performanceScore *= 0.3;
-    
-    // Calculate optimized settings based on performance
-    const optimizedIntensity = Math.max(10, Math.floor(intensity * performanceScore));
-    const maxConnections = Math.max(3, Math.floor(8 * performanceScore));
-    const enableGlow = performanceScore > 0.5;
-    const enableComplexAnimations = performanceScore > 0.7;
-    const frameRate = performanceScore > 0.8 ? 60 : performanceScore > 0.6 ? 30 : 20;
-    
-    return {
-      intensity: optimizedIntensity,
-      maxConnections,
-      enableGlow,
-      enableComplexAnimations,
-      frameRate,
-      isMobile,
-      prefersReducedMotion
-    };
-  }, [intensity]);
+  const performanceSettings = usePerformanceSettings();
 
   useEffect(() => {
     const generateParticles = () => {
       const newParticles = [];
-      for (let i = 0; i < performanceSettings.intensity; i++) {
+      const optimizedIntensity = Math.max(8, Math.floor(intensity * performanceSettings.performanceScore));
+      
+      for (let i = 0; i < optimizedIntensity; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
@@ -62,7 +29,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
     };
 
     generateParticles();
-  }, [performanceSettings]);
+  }, [intensity, performanceSettings]);
 
   const getParticleStyle = (particle) => {
     const baseStyles = {
