@@ -59,7 +59,7 @@ export const QuantumNetwork = () => {
     };
 
     generateNetwork();
-  }, [performanceSettings]);
+  }, [performanceSettings.nodeCount, performanceSettings.maxConnections, performanceSettings.isMobile]);
 
   const getNodeStyle = (node) => {
     const baseStyles = {
