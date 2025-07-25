@@ -157,7 +157,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       ))}
       
       {/* Advanced Particle Connections - Only on high performance devices */}
-      {performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
+      {performanceSettings.enableParticleConnections && (
         <div className="absolute inset-0">
           {particles.filter(p => p.type === 'energy').slice(0, performanceSettings.maxConnections).map((particle, index) => (
             <motion.div
@@ -186,7 +186,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       )}
       
       {/* Quantum Field Effect - Simplified for low performance */}
-      {!performanceSettings.prefersReducedMotion && (
+      {performanceSettings.enableBackgroundEffects && (
         <motion.div
           className={`absolute inset-0 ${
             performanceSettings.enableGlow 
