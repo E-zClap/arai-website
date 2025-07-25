@@ -257,7 +257,7 @@ export const QuantumNetwork = () => {
       ))}
 
       {/* Quantum Wave Function - Only on high performance */}
-      {performanceSettings.enableComplexAnimations && !performanceSettings.prefersReducedMotion && (
+      {performanceSettings.enableComplexAnimations && performanceSettings.enableBackgroundEffects && (
         <motion.div
           className="absolute inset-0"
           style={{
