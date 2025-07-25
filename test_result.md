@@ -290,7 +290,17 @@
         -working: true
         -agent: "main"
         -comment: "Successfully updated NewsCard component to only display 'Read Full Article' buttons when news items have valid, actual article links. Added conditional logic (news.link && news.link !== '#') to prevent showing misleading buttons for 7 news items that have placeholder '#' links (team welcomes, internal events, lab relocations, etc.). This matches the existing logic in PublicationCard component. Publications already handle this correctly - the Japanese review article with empty link doesn't show 'View Paper' button. Users now see clean, accurate interface where only items with genuine external links show action buttons, improving UX and preventing confusion when buttons would lead nowhere."
-  - task: "Update news section with real data from Professor Keigo Arai's website"
+  - task: "Optimize quantum particle animations for lower-end devices and accessibility"
+    implemented: true
+    working: true
+    file: "frontend/src/components/animations/QuantumParticles.js, frontend/src/components/animations/QuantumNetwork.js, frontend/src/hooks/usePerformanceSettings.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully implemented comprehensive performance optimizations for quantum animations. Created intelligent device detection system that automatically adjusts animation complexity based on: 1) Hardware capabilities (CPU cores, RAM, mobile detection), 2) Network conditions (slow connections), 3) User accessibility preferences (reduced motion, reduced data), 4) Battery status. Key optimizations include: Adaptive particle counts (40→8-16 on low-end devices), Simplified animations for slow devices, Progressive feature disabling (glow effects, complex animations, particle connections), CSS performance improvements (filter vs box-shadow), Respect for prefers-reduced-motion, Created reusable usePerformanceSettings hook, Added PerformanceGate component for conditional rendering, Comprehensive documentation in PERFORMANCE_OPTIMIZATION.md. The animations now provide excellent performance on all devices while maintaining the sophisticated scientific aesthetic on capable hardware. Performance score calculation considers all factors and provides graceful degradation from 60fps complex animations down to simple 20fps animations on the lowest-end devices."
     implemented: true
     working: true
     file: "frontend/src/data/newsData.js"
