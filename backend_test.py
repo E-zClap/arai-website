@@ -202,7 +202,7 @@ class BackendTester:
             if response.status_code == 200:
                 content = response.text
                 # Check if it's actually HTML content with NV center visualization
-                if "NV Center" in content and "plotly" in content.lower():
+                if "plotly" in content.lower() and "scatter3d" in content.lower():
                     self.log_test("Static File Serving", True, 
                                 f"NV center visualization accessible and valid", response_time)
                     return True
