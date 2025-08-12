@@ -239,7 +239,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="p-6 rounded-2xl bg-gradient-to-br from-teal-900/20 to-cyan-900/20 border border-teal-500/30"
+                    className="p-6 rounded-2xl bg-gradient-to-br from-electric-blue-900/20 to-royal-indigo-900/20 border border-electric-blue-600/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
                       <BookOpen size={18} className="text-emerald-400" />
