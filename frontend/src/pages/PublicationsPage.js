@@ -240,7 +240,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                 <motion.div
                   animate={{ 
                     scale: isFilterOpen ? 1.2 : 1,
-                    color: isFilterOpen ? '#14b8a6' : '#64748b'
+                    color: isFilterOpen ? '#1e40af' : '#64748b'
                   }}
                 >
                   <Filter size={16} />
