@@ -128,7 +128,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(6, 182, 212, 0.1)" }}
           >
-            <Zap size={20} className="text-cyan-400 mx-auto mb-2" />
+            <Zap size={20} className="text-royal-indigo-400 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Active' : 'アクティブ'}
             </div>
