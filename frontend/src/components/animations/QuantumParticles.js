@@ -162,7 +162,7 @@ export const QuantumParticles = ({ intensity = 40 }) => {
           {particles.filter(p => p.type === 'energy').slice(0, performanceSettings.maxConnections).map((particle, index) => (
             <motion.div
               key={`connection-${particle.id}`}
-              className="absolute w-px bg-gradient-to-b from-transparent via-teal-400/15 to-transparent"
+              className="absolute w-px bg-gradient-to-b from-transparent via-electric-blue-400/15 to-transparent"
               style={{
                 left: `${particle.x}%`,
                 top: `${particle.y}%`,
