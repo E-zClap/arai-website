@@ -20,9 +20,9 @@ export const PublicationCard = ({ publication, index, language }) => {
   const getImpactColor = (impact) => {
     switch (impact) {
       case 'Very High':
-        return 'from-emerald-500 to-teal-500';
+        return 'from-electric-blue-600 to-royal-indigo-500';
       case 'High':
-        return 'from-teal-500 to-cyan-500';
+        return 'from-electric-blue-500 to-royal-indigo-400';
       default:
         return 'from-slate-500 to-slate-600';
     }
