@@ -180,7 +180,7 @@ export const PublicationCard = ({ publication, index, language }) => {
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-teal-600/20 rounded-2xl border border-slate-700/40 hover:border-teal-500/50 transition-all duration-300"
+            className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-electric-blue-600/20 rounded-2xl border border-slate-700/40 hover:border-electric-blue-500/50 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
