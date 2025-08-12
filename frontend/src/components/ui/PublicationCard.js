@@ -93,7 +93,7 @@ export const PublicationCard = ({ publication, index, language }) => {
           className="text-center p-3 rounded-2xl bg-slate-800/40 border border-slate-700/30"
           whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.1)" }}
         >
-          <div className="text-cyan-400 font-bold text-lg">{publication.citations}</div>
+          <div className="text-royal-indigo-400 font-bold text-lg">{publication.citations}</div>
           <div className="text-slate-400 text-xs">
             {language === 'EN' ? 'Citations' : '引用'}
           </div>
