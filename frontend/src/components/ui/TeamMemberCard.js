@@ -315,8 +315,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <div className="grid gap-3">
                       {(member.achievements[language] || member.achievements).map((achievement, idx) => (
-                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-teal-900/20 border border-teal-500/20">
-                          <Award size={16} className="text-teal-400 mt-0.5 flex-shrink-0" />
+                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-electric-blue-900/20 border border-electric-blue-600/20">
+                          <Award size={16} className="text-electric-blue-500 mt-0.5 flex-shrink-0" />
                           <span className="text-slate-200 text-sm leading-relaxed">{achievement}</span>
                         </div>
                       ))}
