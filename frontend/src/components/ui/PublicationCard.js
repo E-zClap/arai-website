@@ -31,9 +31,9 @@ export const PublicationCard = ({ publication, index, language }) => {
   const getTypeIcon = (type) => {
     switch (type) {
       case 'Peer-Reviewed':
-        return <Award size={16} className="text-emerald-400" />;
+        return <Award size={16} className="text-electric-blue-400" />;
       case 'Preprint':
-        return <FileText size={16} className="text-cyan-400" />;
+        return <FileText size={16} className="text-royal-indigo-400" />;
       default:
         return <BookOpen size={16} className="text-slate-400" />;
     }
