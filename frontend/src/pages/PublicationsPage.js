@@ -104,18 +104,18 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-teal-500/20 shadow-2xl'
-                : 'bg-white/80 border-teal-200/30 shadow-xl'
+                ? 'bg-slate-900/60 border-electric-blue-600/20 shadow-2xl'
+                : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <BookOpen size={24} className="text-teal-500" />
+              <BookOpen size={24} className="text-electric-blue-600" />
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <BarChart3 size={20} className="text-teal-400" />
+                <BarChart3 size={20} className="text-electric-blue-500" />
               </motion.div>
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
