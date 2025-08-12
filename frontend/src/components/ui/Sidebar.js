@@ -291,7 +291,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       </div>
                       <div className={`text-sm mt-1 ${
                         isActive 
-                          ? (isDark ? 'text-teal-200' : 'text-teal-600')
+                          ? (isDark ? 'text-electric-blue-200' : 'text-electric-blue-600')
                           : (isDark ? 'text-slate-500' : 'text-slate-500')
                       }`}>
                         {item.description[language]}
