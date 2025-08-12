@@ -223,8 +223,8 @@ export const PublicationsPage = ({ language, isDark }) => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className={`flex items-center space-x-3 px-6 py-3 rounded-2xl border transition-all duration-300 ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white hover:border-teal-400/60'
-                  : 'bg-white/80 border-slate-300/40 text-slate-900 hover:border-teal-400/60'
+                  ? 'bg-slate-800/50 border-slate-700/40 text-white hover:border-electric-blue-500/60'
+                  : 'bg-white/80 border-slate-300/40 text-slate-900 hover:border-electric-blue-500/60'
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
