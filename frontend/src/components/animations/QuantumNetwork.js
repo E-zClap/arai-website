@@ -127,8 +127,8 @@ export const QuantumNetwork = () => {
     const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
     const colors = {
-      entangled: 'rgba(20, 184, 166, 0.8)',
-      correlated: 'rgba(8, 145, 178, 0.6)',
+      entangled: 'rgba(30, 64, 175, 0.8)',
+      correlated: 'rgba(59, 130, 246, 0.6)',
     };
 
     return {
