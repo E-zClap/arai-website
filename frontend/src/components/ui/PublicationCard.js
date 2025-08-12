@@ -80,8 +80,8 @@ export const PublicationCard = ({ publication, index, language }) => {
             whileHover={{ backgroundColor: "rgba(30, 64, 175, 0.1)" }}
           >
             <div className="flex items-center space-x-2">
-              <TrendingUp size={14} className="text-teal-400" />
-              <span className="text-teal-300 text-xs font-medium">
+              <TrendingUp size={14} className="text-electric-blue-500" />
+              <span className="text-electric-blue-300 text-xs font-medium">
                 {publication.impact} Impact
               </span>
             </div>
