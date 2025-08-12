@@ -364,7 +364,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <a 
                       href={`mailto:${member.contact[language] || member.contact}`}
-                      className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
+                      className="text-royal-indigo-400 hover:text-royal-indigo-300 transition-colors text-sm"
                     >
                       {member.contact[language] || member.contact}
                     </a>
