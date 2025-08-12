@@ -43,9 +43,9 @@ export const QuantumParticles = ({ intensity = 40 }) => {
     // Simplified styles for low-performance devices
     if (!performanceSettings.enableGlow) {
       const simpleColors = {
-        energy: '#06b6d4',
-        quantum: '#10b981',
-        particle: '#0891b2'
+        energy: '#1e40af',
+        quantum: '#4f46e5',
+        particle: '#3b82f6'
       };
       
       return {
