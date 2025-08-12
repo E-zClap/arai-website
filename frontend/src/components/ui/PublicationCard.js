@@ -113,7 +113,7 @@ export const PublicationCard = ({ publication, index, language }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {/* Authors */}
         <div className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/30">
-          <Users size={18} className="text-teal-400 mt-1 flex-shrink-0" />
+          <Users size={18} className="text-electric-blue-500 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
               {language === 'EN' ? 'Authors' : '著者'}
