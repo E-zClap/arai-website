@@ -159,7 +159,7 @@ export const ResearchCard = ({ research, index, language }) => {
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-teal-400" />
+                <ChevronDown size={20} className="text-electric-blue-500" />
               </motion.div>
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Research Details' : '研究詳細'}
