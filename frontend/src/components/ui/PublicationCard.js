@@ -239,7 +239,7 @@ export const PublicationCard = ({ publication, index, language }) => {
                       }}
                       transition={{ duration: 3, repeat: Infinity }}
                     >
-                      <Quote size={24} className="text-teal-400 flex-shrink-0 mt-1" />
+                      <Quote size={24} className="text-electric-blue-500 flex-shrink-0 mt-1" />
                     </motion.div>
                     <div className="flex-1">
                       <p className="text-slate-300 leading-relaxed text-sm italic">
