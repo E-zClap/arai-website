@@ -229,7 +229,7 @@ export const PublicationsPage = ({ language, isDark }) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Filter size={20} className="text-teal-500" />
+              <Filter size={20} className="text-electric-blue-600" />
               <span className="font-medium">
                 {language === 'EN' ? 'Advanced Filters' : '詳細フィルター'}
               </span>
