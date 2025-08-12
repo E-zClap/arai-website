@@ -82,7 +82,7 @@ export const HeroSection = ({ language, isDark }) => {
               <div className={`text-3xl lg:text-4xl font-light mb-8 ${
                 isDark ? 'text-slate-300' : 'text-slate-600'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
-                <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent font-semibold">
+                <span className="bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 bg-clip-text text-transparent font-semibold">
                   {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
                 </span>
                 {language === 'EN' ? ' & Informatics' : ' & インフォマティクス'}
