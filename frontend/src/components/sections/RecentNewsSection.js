@@ -38,7 +38,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
             {language === 'EN' ? 'Recent News' : '最新ニュース'}
           </h2>
           
-          <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto rounded-full mb-6" />
           
           <p className={`text-xl max-w-2xl mx-auto ${
             isDark ? 'text-slate-300' : 'text-slate-600'
@@ -75,8 +75,8 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
             onClick={() => setCurrentPage('news')}
             className={`group inline-flex items-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ${
               isDark 
-                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:from-teal-500 hover:to-cyan-500 shadow-lg hover:shadow-teal-500/25'
-                : 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:from-teal-700 hover:to-cyan-700 shadow-lg hover:shadow-xl'
+                ? 'bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 text-white hover:from-electric-blue-500 hover:to-royal-indigo-400 shadow-lg hover:shadow-electric-blue-500/25'
+                : 'bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 text-white hover:from-electric-blue-700 hover:to-royal-indigo-600 shadow-lg hover:shadow-xl'
             }`}
           >
             <span>{language === 'EN' ? 'View All News' : 'すべてのニュースを見る'}</span>

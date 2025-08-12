@@ -13,14 +13,14 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={`backdrop-blur-xl rounded-3xl p-8 border transition-all duration-300 group ${
         isDark 
-          ? 'bg-slate-900/60 border-teal-500/20 hover:border-teal-400/40 hover:bg-slate-800/70'
-          : 'bg-white/80 border-teal-200/30 hover:border-teal-300/50 shadow-lg hover:shadow-xl'
+          ? 'bg-slate-900/60 border-electric-blue-600/20 hover:border-electric-blue-500/40 hover:bg-slate-800/70'
+          : 'bg-white/80 border-electric-blue-300/30 hover:border-electric-blue-400/50 shadow-lg hover:shadow-xl'
       }`}
     >
       <div className="flex items-start space-x-6">
         {/* Enhanced Visual Indicator */}
         <div className="flex-shrink-0 flex flex-col items-center">
-          <div className="w-4 h-4 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full shadow-lg" />
+          <div className="w-4 h-4 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 rounded-full shadow-lg" />
           <div className={`w-0.5 h-16 mt-2 ${
             isDark ? 'bg-slate-700' : 'bg-slate-200'
           }`} />
@@ -30,7 +30,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
           {/* Enhanced Date and Source */}
           <div className="flex items-center justify-between">
             <div className={`text-sm flex items-center ${
-              isDark ? 'text-teal-300' : 'text-teal-600'
+              isDark ? 'text-electric-blue-300' : 'text-electric-blue-600'
             }`}>
               <Calendar size={16} className="mr-2" />
               <time dateTime={news.date} className="font-medium">
@@ -60,8 +60,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
                   key={tagIndex}
                   className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${
                     isDark
-                      ? 'bg-teal-900/40 text-teal-300 border border-teal-500/30 hover:bg-teal-800/50'
-                      : 'bg-teal-50 text-teal-700 border border-teal-200/50 hover:bg-teal-100'
+                      ? 'bg-electric-blue-900/40 text-electric-blue-300 border border-electric-blue-600/30 hover:bg-electric-blue-800/50'
+                      : 'bg-electric-blue-50 text-electric-blue-700 border border-electric-blue-300/50 hover:bg-electric-blue-100'
                   }`}
                 >
                   {tag}
@@ -73,8 +73,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
           {/* Enhanced Title */}
           <h3 className={`text-xl font-semibold leading-relaxed transition-colors ${
             isDark 
-              ? 'text-white group-hover:text-teal-300' 
-              : 'text-slate-900 group-hover:text-teal-700'
+              ? 'text-white group-hover:text-electric-blue-300' 
+              : 'text-slate-900 group-hover:text-electric-blue-700'
           }`} style={{ fontFamily: '"Inter", system-ui' }}>
             {news.title[language] || news.title}
           </h3>
@@ -88,8 +88,8 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
                 rel="noopener noreferrer"
                 className={`inline-flex items-center px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                   isDark 
-                    ? 'text-teal-400 hover:text-white hover:bg-teal-600/20 border border-teal-500/30 hover:border-teal-400/50'
-                    : 'text-teal-600 hover:text-teal-800 hover:bg-teal-50 border border-teal-200/50 hover:border-teal-300/70'
+                    ? 'text-electric-blue-400 hover:text-white hover:bg-electric-blue-600/20 border border-electric-blue-600/30 hover:border-electric-blue-500/50'
+                    : 'text-electric-blue-600 hover:text-electric-blue-800 hover:bg-electric-blue-50 border border-electric-blue-300/50 hover:border-electric-blue-400/70'
                 }`}
               >
                 <span>{language === 'EN' ? 'Read Full Article' : '全文を読む'}</span>
