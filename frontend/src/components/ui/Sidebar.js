@@ -189,7 +189,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               transition={{ delay: 0.4 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-teal-300' : 'text-teal-700'}`}>
+              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'}`}>
                 {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
               </div>
               <motion.a 
