@@ -109,7 +109,7 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
-      isDark ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'
+      isDark ? 'bg-deep-navy-950 text-white' : 'bg-gray-50 text-gray-900'
     }`}>
       {/* Background Particles */}
       <QuantumParticles intensity={50} />
