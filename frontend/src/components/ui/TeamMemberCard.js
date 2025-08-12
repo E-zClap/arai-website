@@ -308,7 +308,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-gradient-to-br from-electric-blue-900/20 to-royal-indigo-900/20 border border-electric-blue-600/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Award size={18} className="text-teal-400" />
+                      <Award size={18} className="text-electric-blue-500" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Achievements' : '業績'}
                       </h4>
