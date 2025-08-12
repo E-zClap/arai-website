@@ -58,7 +58,7 @@ export const ResearchCard = ({ research, index, language }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <motion.div 
-                className="w-4 h-4 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full shadow-lg"
+                className="w-4 h-4 bg-gradient-to-r from-electric-blue-400 to-royal-indigo-400 rounded-full shadow-lg"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   boxShadow: [
