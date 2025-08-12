@@ -64,10 +64,10 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       case 'energy':
         return {
           ...baseStyles,
-          background: 'linear-gradient(45deg, #06b6d4, #14b8a6)',
+          background: 'linear-gradient(45deg, #1e40af, #4f46e5)',
           borderRadius: '50%',
-          boxShadow: `0 0 ${particle.glowIntensity * 6}px rgba(20, 184, 166, 0.8), 0 0 ${particle.glowIntensity * 12}px rgba(6, 182, 212, 0.4)`,
-          border: '2px solid rgba(20, 184, 166, 0.6)',
+          boxShadow: `0 0 ${particle.glowIntensity * 6}px rgba(30, 64, 175, 0.8), 0 0 ${particle.glowIntensity * 12}px rgba(79, 70, 229, 0.4)`,
+          border: '2px solid rgba(30, 64, 175, 0.6)',
         };
       case 'quantum':
         return {
