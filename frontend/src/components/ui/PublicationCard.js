@@ -213,7 +213,7 @@ export const PublicationCard = ({ publication, index, language }) => {
                 {language === 'EN' ? 'Abstract' : '要約'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-teal-400 transition-colors" />
+            <ChevronRight size={18} className="text-slate-400 group-hover:text-electric-blue-500 transition-colors" />
           </motion.button>
 
           <AnimatePresence>
