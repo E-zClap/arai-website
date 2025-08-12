@@ -230,8 +230,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   className={`w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
                     isActive
                       ? (isDark 
-                          ? 'bg-gradient-to-r from-teal-600/40 to-cyan-600/30 border-2 border-teal-400/50 text-teal-200 shadow-2xl shadow-teal-500/20' 
-                          : 'bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-300/60 text-teal-800 shadow-xl')
+                          ? 'bg-gradient-to-r from-electric-blue-600/40 to-royal-indigo-500/30 border-2 border-electric-blue-400/50 text-electric-blue-200 shadow-2xl shadow-electric-blue-500/20' 
+                          : 'bg-gradient-to-r from-electric-blue-50 to-royal-indigo-50 border-2 border-electric-blue-300/60 text-electric-blue-800 shadow-xl')
                       : (isDark 
                           ? 'hover:bg-slate-800/70 text-slate-300 hover:text-white hover:border-slate-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-slate-900/20' 
                           : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
