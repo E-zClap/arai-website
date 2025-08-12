@@ -61,9 +61,9 @@ export const PublicationCard = ({ publication, index, language }) => {
             whileHover={{ scale: 1.05 }}
             animate={{
               boxShadow: [
-                "0 5px 15px rgba(20, 184, 166, 0.3)",
-                "0 8px 25px rgba(20, 184, 166, 0.4)",
-                "0 5px 15px rgba(20, 184, 166, 0.3)"
+                "0 5px 15px rgba(30, 64, 175, 0.3)",
+                "0 8px 25px rgba(30, 64, 175, 0.4)",
+                "0 5px 15px rgba(30, 64, 175, 0.3)"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
