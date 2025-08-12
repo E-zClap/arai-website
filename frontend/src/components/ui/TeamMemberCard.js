@@ -157,8 +157,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             {(member.education[language] || member.education).slice(0, 2).map((edu, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/30 hover:border-teal-500/40 transition-all duration-300"
-                whileHover={{ scale: 1.01, backgroundColor: "rgba(20, 184, 166, 0.05)" }}
+                className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/30 hover:border-electric-blue-500/40 transition-all duration-300"
+                whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
               >
                 <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full mt-2 flex-shrink-0" />
                 <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
