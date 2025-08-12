@@ -103,8 +103,8 @@ export const HeroSection = ({ language, isDark }) => {
               {/* Professional Research Emphasis with Different Styling */}
               <div className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
                 isDark 
-                  ? 'bg-gradient-to-r from-teal-900/40 to-cyan-900/40 border-teal-400/50' 
-                  : 'bg-gradient-to-r from-teal-50/80 to-cyan-50/80 border-teal-400/60 shadow-xl'
+                  ? 'bg-gradient-to-r from-electric-blue-900/40 to-royal-indigo-900/40 border-electric-blue-400/50' 
+                  : 'bg-gradient-to-r from-electric-blue-50/80 to-royal-indigo-50/80 border-electric-blue-400/60 shadow-xl'
               }`}>
                 <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
                   isDark ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-gradient-to-r from-teal-500 to-cyan-500'
