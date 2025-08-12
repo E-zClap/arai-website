@@ -183,7 +183,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <motion.div 
-              className="w-2.5 h-2.5 bg-emerald-400 rounded-full mr-3"
+              className="w-2.5 h-2.5 bg-electric-blue-400 rounded-full mr-3"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
