@@ -23,10 +23,10 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-4">
             <div className={`p-3 rounded-2xl ${
-              isDark ? 'bg-teal-600/20' : 'bg-teal-100'
+              isDark ? 'bg-electric-blue-600/20' : 'bg-electric-blue-100'
             }`}>
               <Diamond className={`${
-                isDark ? 'text-teal-400' : 'text-teal-600'
+                isDark ? 'text-electric-blue-400' : 'text-electric-blue-600'
               }`} size={24} />
             </div>
             <div>
