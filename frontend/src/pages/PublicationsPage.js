@@ -194,8 +194,8 @@ export const PublicationsPage = ({ language, isDark }) => {
           transition={{ delay: 0.4, duration: 0.6 }}
           className={`p-8 rounded-3xl border backdrop-blur-2xl mb-12 ${
             isDark 
-              ? 'bg-slate-900/60 border-teal-500/20 shadow-2xl'
-              : 'bg-white/80 border-teal-200/30 shadow-xl'
+              ? 'bg-slate-900/60 border-electric-blue-600/20 shadow-2xl'
+              : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
           }`}
         >
           {/* Search Bar */}
