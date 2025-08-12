@@ -52,8 +52,8 @@ export const HeroSection = ({ language, isDark }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`inline-flex items-center px-8 py-4 rounded-3xl border mb-12 ${
               isDark 
-                ? 'backdrop-blur-2xl bg-slate-900/60 border-teal-500/30 text-teal-300'
-                : 'bg-white border-teal-200/50 text-teal-700 shadow-2xl backdrop-blur-sm'
+                ? 'backdrop-blur-2xl bg-slate-900/60 border-electric-blue-600/30 text-electric-blue-300'
+                : 'bg-white border-electric-blue-200/50 text-electric-blue-700 shadow-2xl backdrop-blur-sm'
             }`}
           >
             <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full mr-4" />
