@@ -141,16 +141,16 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           >
             <div className="flex items-center space-x-4">
               <motion.div 
-                className="w-12 h-12 bg-gradient-to-br from-teal-500 via-cyan-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-teal-500/30"
+                className="w-12 h-12 bg-gradient-to-br from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-electric-blue-600/30"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(20, 184, 166, 0.4)"
+                  boxShadow: "0 20px 40px rgba(30, 64, 175, 0.4)"
                 }}
                 animate={{
                   boxShadow: [
-                    "0 10px 20px rgba(20, 184, 166, 0.2)",
-                    "0 15px 30px rgba(20, 184, 166, 0.3)",
-                    "0 10px 20px rgba(20, 184, 166, 0.2)"
+                    "0 10px 20px rgba(30, 64, 175, 0.2)",
+                    "0 15px 30px rgba(30, 64, 175, 0.3)",
+                    "0 10px 20px rgba(30, 64, 175, 0.2)"
                   ]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
