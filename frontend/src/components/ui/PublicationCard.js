@@ -49,7 +49,7 @@ export const PublicationCard = ({ publication, index, language }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-teal-500/20 hover:border-teal-400/50 transition-all duration-700 group shadow-2xl hover:shadow-teal-500/20"
+      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-electric-blue-600/20 hover:border-electric-blue-500/50 transition-all duration-700 group shadow-2xl hover:shadow-electric-blue-500/20"
       whileHover={{ y: -5, scale: 1.01 }}
     >
       {/* Publication Header */}
