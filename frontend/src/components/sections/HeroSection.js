@@ -22,7 +22,7 @@ export const HeroSection = ({ language, isDark }) => {
       }`}
     >
       {/* Enhanced Quantum Background */}
-      <QuantumNetwork />
+      <QuantumNetwork intensity={50} />
       
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 opacity-5">
