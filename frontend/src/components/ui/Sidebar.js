@@ -66,8 +66,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed top-6 left-6 z-50 lg:hidden p-4 rounded-2xl transition-all duration-300 backdrop-blur-2xl border ${
           isDark 
-            ? 'bg-slate-900/90 text-white border-teal-500/30 shadow-2xl shadow-teal-500/10' 
-            : 'bg-white/90 text-slate-800 shadow-2xl border-teal-200/50'
+            ? 'bg-slate-900/90 text-white border-electric-blue-600/30 shadow-2xl shadow-electric-blue-600/10' 
+            : 'bg-white/90 text-slate-800 shadow-2xl border-electric-blue-200/50'
         }`}
         whileHover={{ scale: 1.05, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
