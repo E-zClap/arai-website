@@ -315,7 +315,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                         isDark 
                           ? 'bg-slate-800/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
-                      } focus:outline-none focus:border-teal-400/60`}
+                      } focus:outline-none focus:border-electric-blue-500/60`}
                     >
                       <option value="all">
                         {language === 'EN' ? 'All Years' : '全年'}
