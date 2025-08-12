@@ -124,7 +124,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
         {/* Journal & Year */}
         <div className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/30">
-          <Calendar size={18} className="text-cyan-400 mt-1 flex-shrink-0" />
+          <Calendar size={18} className="text-royal-indigo-400 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
               {language === 'EN' ? 'Publication' : '出版'}
