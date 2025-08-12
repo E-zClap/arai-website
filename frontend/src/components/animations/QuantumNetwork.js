@@ -12,7 +12,7 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const nodeCount = Math.min(intensity, performanceSettings.maxParticles || 30);
+    const nodeCount = Math.min(intensity, performanceSettings.nodeCount || 30);
     console.log('QuantumNetwork Debug:', {
       intensity,
       maxParticles: performanceSettings.maxParticles,
