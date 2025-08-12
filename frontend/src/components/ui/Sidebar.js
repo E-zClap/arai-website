@@ -275,9 +275,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       whileHover={{ rotate: 5 }}
                       animate={isActive ? {
                         boxShadow: [
-                          "0 10px 20px rgba(20, 184, 166, 0.3)",
-                          "0 15px 30px rgba(6, 182, 212, 0.4)",
-                          "0 10px 20px rgba(20, 184, 166, 0.3)"
+                          "0 10px 20px rgba(30, 64, 175, 0.3)",
+                          "0 15px 30px rgba(79, 70, 229, 0.4)",
+                          "0 10px 20px rgba(30, 64, 175, 0.3)"
                         ]
                       } : {}}
                       transition={{ duration: 2, repeat: Infinity }}
