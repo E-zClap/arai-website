@@ -102,7 +102,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
       {/* Publication Title */}
       <motion.h3 
-        className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-teal-200 transition-colors duration-500"
+        className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-electric-blue-300 transition-colors duration-500"
         style={{ fontFamily: '"Inter", system-ui' }}
         whileHover={{ x: 5 }}
       >
