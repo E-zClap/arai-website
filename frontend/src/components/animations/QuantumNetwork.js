@@ -72,9 +72,9 @@ export const QuantumNetwork = () => {
     // Simplified styles for low-performance devices
     if (!performanceSettings.enableGlow) {
       const simpleColors = {
-        quantum: '#14b8a6',
-        superposition: '#10b981',
-        classical: '#0891b2'
+        quantum: '#1e40af',
+        superposition: '#4f46e5',
+        classical: '#3b82f6'
       };
       
       return {
