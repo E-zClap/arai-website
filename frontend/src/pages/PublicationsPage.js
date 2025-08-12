@@ -207,8 +207,8 @@ export const PublicationsPage = ({ language, isDark }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className={`w-full p-5 pl-14 rounded-2xl border transition-all duration-300 text-lg ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-teal-400/60'
-                  : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-teal-400/60'
+                  ? 'bg-slate-800/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-electric-blue-500/60'
+                  : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-electric-blue-500/60'
               } focus:outline-none focus:ring-0`}
               whileFocus={{ scale: 1.01 }}
             />
