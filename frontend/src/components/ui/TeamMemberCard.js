@@ -146,7 +146,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         {/* Academic Background Preview */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2 mb-3">
-            <GraduationCap size={18} className="text-teal-400" />
+            <GraduationCap size={18} className="text-electric-blue-500" />
             <h4 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
               {language === 'EN' ? 'Academic Background' : '学術的背景'}
             </h4>
