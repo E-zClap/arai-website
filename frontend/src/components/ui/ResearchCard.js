@@ -137,7 +137,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(16, 185, 129, 0.1)" }}
           >
-            <BookOpen size={20} className="text-emerald-400 mx-auto mb-2" />
+            <BookOpen size={20} className="text-electric-blue-400 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Research' : '研究'}
             </div>
