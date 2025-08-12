@@ -206,7 +206,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-teal-400" />
+                <ChevronDown size={20} className="text-electric-blue-500" />
               </motion.div>
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Full Profile' : '完全プロフィール'}
