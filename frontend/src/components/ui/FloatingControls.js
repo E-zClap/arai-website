@@ -30,7 +30,7 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
         onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
         className={`w-12 h-12 rounded-xl transition-all duration-300 group ${
           isDark 
-            ? 'bg-slate-800/80 border-slate-600/50 text-cyan-400 hover:bg-slate-700/90' 
+            ? 'bg-slate-800/80 border-slate-600/50 text-electric-blue-400 hover:bg-slate-700/90' 
             : 'bg-white border-slate-200/50 text-slate-600 hover:bg-gray-50 shadow-lg'
         } border backdrop-blur-xl flex items-center justify-center`}
         whileHover={{ scale: 1.05 }}
