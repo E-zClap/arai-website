@@ -129,14 +129,14 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-cyan-500/20 shadow-2xl'
-                : 'bg-white/80 border-cyan-200/30 shadow-xl'
+                ? 'bg-slate-900/60 border-royal-indigo-500/20 shadow-2xl'
+                : 'bg-white/80 border-royal-indigo-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <TrendingUp size={24} className="text-cyan-500" />
-              <Users size={20} className="text-cyan-400" />
+              <TrendingUp size={24} className="text-royal-indigo-500" />
+              <Users size={20} className="text-royal-indigo-400" />
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
               {publicationMetrics.totalCitations}
