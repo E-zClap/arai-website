@@ -72,10 +72,10 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       case 'quantum':
         return {
           ...baseStyles,
-          background: 'linear-gradient(135deg, #10b981, #059669)',
+          background: 'linear-gradient(135deg, #4f46e5, #3b82f6)',
           borderRadius: '30%',
-          boxShadow: `0 0 ${particle.glowIntensity * 4}px rgba(16, 185, 129, 0.8), 0 0 ${particle.glowIntensity * 8}px rgba(5, 150, 105, 0.4)`,
-          border: '1px solid rgba(16, 185, 129, 0.8)',
+          boxShadow: `0 0 ${particle.glowIntensity * 4}px rgba(79, 70, 229, 0.8), 0 0 ${particle.glowIntensity * 8}px rgba(59, 130, 246, 0.4)`,
+          border: '1px solid rgba(79, 70, 229, 0.8)',
           transform: 'rotate(45deg)',
         };
       default:
