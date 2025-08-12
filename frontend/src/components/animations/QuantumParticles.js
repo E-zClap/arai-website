@@ -190,8 +190,8 @@ export const QuantumParticles = ({ intensity = 40 }) => {
         <motion.div
           className={`absolute inset-0 ${
             performanceSettings.enableGlow 
-              ? 'bg-gradient-radial from-teal-500/5 via-cyan-500/3 to-transparent'
-              : 'bg-gradient-radial from-teal-500/2 via-cyan-500/1 to-transparent'
+              ? 'bg-gradient-radial from-electric-blue-600/5 via-royal-indigo-500/3 to-transparent'
+              : 'bg-gradient-radial from-electric-blue-600/2 via-royal-indigo-500/1 to-transparent'
           }`}
           animate={performanceSettings.enableComplexAnimations ? {
             scale: [1, 1.1, 1.05, 1],
