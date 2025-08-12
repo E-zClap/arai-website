@@ -13,13 +13,6 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
     if (!containerRef.current) return;
 
     const nodeCount = Math.min(intensity, performanceSettings.nodeCount || 30);
-    console.log('QuantumNetwork Debug:', {
-      intensity,
-      maxNodeCount: performanceSettings.nodeCount,
-      actualNodeCount: nodeCount,
-      performanceScore: performanceSettings.performanceScore
-    });
-    
     const newNodes = {};
     const newConnections = [];
     
