@@ -258,7 +258,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Target size={18} className="text-cyan-400" />
+                      <Target size={18} className="text-royal-indigo-400" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Research Interests' : '研究関心'}
                       </h4>
