@@ -248,7 +248,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   {/* Advanced Active Indicator */}
                   {isActive && (
                     <motion.div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-teal-400 via-cyan-400 to-emerald-400 rounded-r-full shadow-lg shadow-teal-400/50"
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-electric-blue-400 via-royal-indigo-400 to-electric-blue-500 rounded-r-full shadow-lg shadow-electric-blue-400/50"
                       layoutId="activeIndicator"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
