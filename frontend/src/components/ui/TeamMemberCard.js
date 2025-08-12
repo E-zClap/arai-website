@@ -233,7 +233,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <GraduationCap size={18} className="text-teal-400" />
+                      <GraduationCap size={18} className="text-electric-blue-500" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Complete Education' : '完全な教育歴'}
                       </h4>
