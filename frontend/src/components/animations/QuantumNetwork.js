@@ -15,8 +15,8 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
     const nodeCount = Math.min(intensity, performanceSettings.nodeCount || 30);
     console.log('QuantumNetwork Debug:', {
       intensity,
-      maxParticles: performanceSettings.maxParticles,
-      nodeCount,
+      maxNodeCount: performanceSettings.nodeCount,
+      actualNodeCount: nodeCount,
       performanceScore: performanceSettings.performanceScore
     });
     
