@@ -208,7 +208,7 @@ export const PublicationCard = ({ publication, index, language }) => {
               >
                 <ChevronDown size={20} className="text-electric-blue-500" />
               </motion.div>
-              <Quote size={18} className="text-cyan-400" />
+              <Quote size={18} className="text-royal-indigo-400" />
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Abstract' : '要約'}
               </span>
