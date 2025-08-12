@@ -267,7 +267,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                     <motion.div 
                       className={`p-3 rounded-2xl transition-all duration-300 ${
                         isActive 
-                          ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-2xl shadow-teal-500/30' 
+                          ? 'bg-gradient-to-r from-electric-blue-500 to-royal-indigo-500 text-white shadow-2xl shadow-electric-blue-500/30' 
                           : (isDark 
                               ? 'bg-slate-700/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
                               : 'bg-slate-100 group-hover:bg-slate-200 text-slate-600 group-hover:text-slate-700')
