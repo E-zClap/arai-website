@@ -111,7 +111,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           {isKeigoArai && setCurrentPage ? (
             <motion.button
               onClick={handleNameClick}
-              className="group text-2xl font-bold text-teal-300 hover:text-teal-200 transition-all duration-500 cursor-pointer flex items-center justify-center gap-3"
+              className="group text-2xl font-bold text-electric-blue-300 hover:text-electric-blue-200 transition-all duration-500 cursor-pointer flex items-center justify-center gap-3"
               style={{ fontFamily: '"Inter", system-ui' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
