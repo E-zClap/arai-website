@@ -149,14 +149,14 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-emerald-500/20 shadow-2xl'
-                : 'bg-white/80 border-emerald-200/30 shadow-xl'
+                ? 'bg-slate-900/60 border-electric-blue-500/20 shadow-2xl'
+                : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <Award size={24} className="text-emerald-500" />
-              <Calendar size={20} className="text-emerald-400" />
+              <Award size={24} className="text-electric-blue-500" />
+              <Calendar size={20} className="text-electric-blue-400" />
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
               {publicationMetrics.hIndex}
