@@ -333,7 +333,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <User size={18} className="text-emerald-400" />
+                      <User size={18} className="text-electric-blue-400" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Skills & Expertise' : 'スキル・専門性'}
                       </h4>
