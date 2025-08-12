@@ -115,7 +115,7 @@ export const HeroSection = ({ language, isDark }) => {
                   {language === 'EN' ? 'Quantum Transformation Research' : '量子変革研究'}
                 </span>
                 <div className={`w-3 h-3 rounded-full ml-4 animate-pulse ${
-                  isDark ? 'bg-gradient-to-r from-cyan-400 to-teal-400' : 'bg-gradient-to-r from-cyan-500 to-teal-500'
+                  isDark ? 'bg-gradient-to-r from-royal-indigo-400 to-electric-blue-400' : 'bg-gradient-to-r from-royal-indigo-500 to-electric-blue-600'
                 }`} style={{ animationDelay: '0.5s' }} />
               </div>
             </div>
