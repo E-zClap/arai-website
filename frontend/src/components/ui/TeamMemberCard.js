@@ -78,7 +78,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
 
         {/* Join Date or Academic Status */}
         <div className="absolute bottom-6 left-6 right-6">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-teal-400/30">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-electric-blue-500/30">
             <div className="flex items-center justify-between">
               {member.joinDate && (
                 <div className="flex items-center space-x-2">
