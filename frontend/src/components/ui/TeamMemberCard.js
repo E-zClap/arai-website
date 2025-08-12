@@ -90,8 +90,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               )}
               {(member.publications || member.yearsOfExperience) && (
                 <div className="flex items-center space-x-2">
-                  <BookOpen size={14} className="text-cyan-400" />
-                  <span className="text-cyan-300 text-sm font-medium">
+                  <BookOpen size={14} className="text-royal-indigo-400" />
+                  <span className="text-royal-indigo-300 text-sm font-medium">
                     {member.publications ? 
                       `${member.publications} ${language === 'EN' ? 'Publications' : '論文'}` :
                       `${member.yearsOfExperience} ${language === 'EN' ? 'Years' : '年間'}`
