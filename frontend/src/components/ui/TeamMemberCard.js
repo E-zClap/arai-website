@@ -116,7 +116,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="border-b-2 border-teal-400/50 group-hover:border-teal-300 pb-1">
+              <span className="border-b-2 border-electric-blue-500/50 group-hover:border-electric-blue-300 pb-1">
                 {member.name && typeof member.name === 'object' ? 
                   (member.name[language] || member.name.EN) : 
                   (member.name || 'Team Member')
