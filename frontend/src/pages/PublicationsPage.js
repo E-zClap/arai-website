@@ -87,7 +87,7 @@ export const PublicationsPage = ({ language, isDark }) => {
 
           {/* Professional Underline */}
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 rounded-full mx-auto"
+            className="w-32 h-1 bg-gradient-to-r from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-full mx-auto"
             initial={{ width: 0 }}
             animate={{ width: 128 }}
             transition={{ delay: 0.5, duration: 0.8 }}
