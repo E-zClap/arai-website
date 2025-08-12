@@ -258,7 +258,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   
                   {/* Hover Effect Background */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 opacity-0 rounded-2xl"
+                    className="absolute inset-0 bg-gradient-to-r from-electric-blue-500/10 to-royal-indigo-500/10 opacity-0 rounded-2xl"
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
