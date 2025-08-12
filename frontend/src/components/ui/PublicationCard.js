@@ -77,7 +77,7 @@ export const PublicationCard = ({ publication, index, language }) => {
           {/* Impact Level */}
           <motion.div 
             className="px-3 py-1.5 rounded-xl bg-slate-800/50 border border-slate-700/40"
-            whileHover={{ backgroundColor: "rgba(20, 184, 166, 0.1)" }}
+            whileHover={{ backgroundColor: "rgba(30, 64, 175, 0.1)" }}
           >
             <div className="flex items-center space-x-2">
               <TrendingUp size={14} className="text-teal-400" />
