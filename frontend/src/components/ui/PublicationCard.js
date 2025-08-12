@@ -169,8 +169,8 @@ export const PublicationCard = ({ publication, index, language }) => {
       {/* Category & Link */}
       <div className="flex items-center justify-between mb-6">
         <motion.span 
-          className="px-4 py-2 bg-gradient-to-r from-teal-900/40 to-cyan-900/40 text-teal-300 rounded-full text-sm font-medium border border-teal-500/30"
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(20, 184, 166, 0.2)" }}
+          className="px-4 py-2 bg-gradient-to-r from-electric-blue-900/40 to-royal-indigo-900/40 text-electric-blue-300 rounded-full text-sm font-medium border border-electric-blue-600/30"
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.2)" }}
         >
           {publication.category}
         </motion.span>
