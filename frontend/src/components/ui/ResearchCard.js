@@ -96,7 +96,7 @@ export const ResearchCard = ({ research, index, language }) => {
           
           {/* Dynamic Underline */}
           <motion.div 
-            className="h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 rounded-full"
+            className="h-1 bg-gradient-to-r from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-full"
             initial={{ width: "20%" }}
             whileHover={{ width: "40%" }}
             transition={{ duration: 0.5 }}
