@@ -107,7 +107,7 @@ export const HeroSection = ({ language, isDark }) => {
                   : 'bg-gradient-to-r from-electric-blue-50/80 to-royal-indigo-50/80 border-electric-blue-400/60 shadow-xl'
               }`}>
                 <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
-                  isDark ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-gradient-to-r from-teal-500 to-cyan-500'
+                  isDark ? 'bg-gradient-to-r from-electric-blue-400 to-royal-indigo-400' : 'bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500'
                 }`} />
                 <span className={`text-xl font-bold tracking-wide ${
                   isDark ? 'text-teal-100' : 'text-teal-800'
