@@ -187,7 +187,7 @@ export const PublicationCard = ({ publication, index, language }) => {
             <span className="text-slate-300 text-sm font-medium">
               {language === 'EN' ? 'View Paper' : '論文を見る'}
             </span>
-            <ExternalLink size={16} className="text-teal-400" />
+            <ExternalLink size={16} className="text-electric-blue-500" />
           </motion.a>
         )}
       </div>
