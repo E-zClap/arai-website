@@ -224,7 +224,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                      <Zap size={18} className="text-cyan-400" />
+                      <Zap size={18} className="text-royal-indigo-400" />
                       <span>{language === 'EN' ? 'Applications' : '応用'}</span>
                     </h4>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line">
