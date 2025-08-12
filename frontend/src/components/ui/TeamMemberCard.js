@@ -82,8 +82,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             <div className="flex items-center justify-between">
               {member.joinDate && (
                 <div className="flex items-center space-x-2">
-                  <Calendar size={14} className="text-teal-400" />
-                  <span className="text-teal-300 text-sm font-medium">
+                  <Calendar size={14} className="text-electric-blue-500" />
+                  <span className="text-electric-blue-300 text-sm font-medium">
                     {language === 'EN' ? 'Since' : '着任'} {member.joinDate}
                   </span>
                 </div>
