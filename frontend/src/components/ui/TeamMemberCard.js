@@ -266,7 +266,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     <div className="grid gap-2">
                       {(member.researchInterests[language] || member.researchInterests).map((interest, idx) => (
                         <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-slate-700/30">
-                          <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full" />
                           <span className="text-slate-300 text-sm">{interest}</span>
                         </div>
                       ))}
