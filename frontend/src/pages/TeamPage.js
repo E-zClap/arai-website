@@ -6,12 +6,12 @@ import { TeamMemberCard } from '../components/ui/TeamMemberCard';
 // Team Page Component
 export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPostdocs, students, alumni, setCurrentPage }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-black' : 'bg-gray-50'
+    isDark ? 'bg-deep-navy-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
-        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-teal-900/20'
-        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-teal-100/40'
+        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-electric-blue-900/20'
+        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-electric-blue-100/40'
     }`} />
     <QuantumParticles intensity={30} />
     
@@ -27,7 +27,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         }`}>
           {language === 'EN' ? 'Our Team' : '私たちのチーム'}
         </h1>
-        <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mb-8" />
+        <div className="w-20 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto mb-8" />
         <p className={`text-xl max-w-3xl mx-auto ${
           isDark ? 'text-gray-300' : 'text-gray-600'
         }`}>
@@ -123,8 +123,8 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         transition={{ duration: 0.8, delay: 1.0 }}
         className={`backdrop-blur-lg rounded-3xl p-12 border ${
           isDark 
-            ? 'bg-black/40 border-teal-500/20'
-            : 'bg-white/70 border-teal-300/30 shadow-xl'
+            ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
+            : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
         }`}
       >
         <h2 className={`text-3xl font-bold mb-6 text-center ${

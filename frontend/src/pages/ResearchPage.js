@@ -7,12 +7,12 @@ import { NVCenterVisualization } from '../components/visualizations/NVCenterVisu
 // Enhanced Professional Research Page Component
 export const ResearchPage = ({ language, isDark, researchData }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-black' : 'bg-gray-50'
+    isDark ? 'bg-deep-navy-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
-        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-teal-900/20'
-        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-teal-100/40'
+        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-electric-blue-900/20'
+        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-electric-blue-100/40'
     }`} />
     <QuantumParticles intensity={40} />
     
@@ -35,7 +35,7 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
         </motion.h1>
         
         <motion.div 
-          className="w-32 h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 rounded-full mx-auto mb-10"
+          className="w-32 h-1 bg-gradient-to-r from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-full mx-auto mb-10"
           initial={{ width: 0 }}
           animate={{ width: 128 }}
           transition={{ delay: 0.5, duration: 0.8 }}
