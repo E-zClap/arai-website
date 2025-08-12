@@ -73,8 +73,8 @@ export const ResearchCard = ({ research, index, language }) => {
                 {research.status}
               </span>
             </div>
-            <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-teal-400/30">
-              <span className="text-teal-300 text-xs font-medium">
+            <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-electric-blue-500/30">
+              <span className="text-electric-blue-300 text-xs font-medium">
                 {research.fundingLevel}
               </span>
             </div>
