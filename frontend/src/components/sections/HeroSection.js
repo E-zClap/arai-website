@@ -110,7 +110,7 @@ export const HeroSection = ({ language, isDark }) => {
                   isDark ? 'bg-gradient-to-r from-electric-blue-400 to-royal-indigo-400' : 'bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500'
                 }`} />
                 <span className={`text-xl font-bold tracking-wide ${
-                  isDark ? 'text-teal-100' : 'text-teal-800'
+                  isDark ? 'text-electric-blue-100' : 'text-electric-blue-800'
                 }`}>
                   {language === 'EN' ? 'Quantum Transformation Research' : '量子変革研究'}
                 </span>
