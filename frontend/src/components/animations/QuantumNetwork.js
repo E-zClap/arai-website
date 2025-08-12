@@ -91,26 +91,26 @@ export const QuantumNetwork = () => {
       case 'quantum':
         return {
           ...baseStyles,
-          background: 'radial-gradient(circle, #14b8a6, #0891b2)',
-          boxShadow: `0 0 ${node.size * 2}px rgba(20, 184, 166, 0.6), 0 0 ${node.size * 4}px rgba(20, 184, 166, 0.3)`,
-          border: '2px solid rgba(20, 184, 166, 0.9)',
+          background: 'radial-gradient(circle, #1e40af, #3b82f6)',
+          boxShadow: `0 0 ${node.size * 2}px rgba(30, 64, 175, 0.6), 0 0 ${node.size * 4}px rgba(30, 64, 175, 0.3)`,
+          border: '2px solid rgba(30, 64, 175, 0.9)',
           borderRadius: '50%',
         };
       case 'superposition':
         return {
           ...baseStyles,
-          background: 'linear-gradient(45deg, #10b981, #059669, #14b8a6)',
+          background: 'linear-gradient(45deg, #4f46e5, #3b82f6, #1e40af)',
           backgroundSize: performanceSettings.enableComplexAnimations ? '200% 200%' : '100% 100%',
-          boxShadow: `0 0 ${node.size * 2.5}px rgba(16, 185, 129, 0.5), 0 0 ${node.size * 5}px rgba(5, 150, 105, 0.2)`,
-          border: '2px solid rgba(16, 185, 129, 0.8)',
+          boxShadow: `0 0 ${node.size * 2.5}px rgba(79, 70, 229, 0.5), 0 0 ${node.size * 5}px rgba(59, 130, 246, 0.2)`,
+          border: '2px solid rgba(79, 70, 229, 0.8)',
           borderRadius: '30%',
         };
       default: // classical
         return {
           ...baseStyles,
-          background: 'linear-gradient(135deg, #0891b2, #0e7490)',
-          boxShadow: `0 0 ${node.size * 1.5}px rgba(8, 145, 178, 0.4)`,
-          border: '1px solid rgba(8, 145, 178, 0.7)',
+          background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
+          boxShadow: `0 0 ${node.size * 1.5}px rgba(59, 130, 246, 0.4)`,
+          border: '1px solid rgba(59, 130, 246, 0.7)',
           borderRadius: '20%',
         };
     }
