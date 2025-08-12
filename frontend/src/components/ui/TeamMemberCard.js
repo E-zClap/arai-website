@@ -66,7 +66,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           className="absolute top-6 right-6"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="bg-gradient-to-r from-teal-500/90 to-cyan-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
+          <div className="bg-gradient-to-r from-electric-blue-600/90 to-royal-indigo-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
             <span className="text-white text-xs font-bold tracking-wider">
               {member.position && typeof member.position === 'object' ? 
                 (member.position[language] || member.position.EN) : 
