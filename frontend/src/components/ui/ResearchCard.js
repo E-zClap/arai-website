@@ -119,7 +119,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(20, 184, 166, 0.1)" }}
           >
-            <Target size={20} className="text-teal-400 mx-auto mb-2" />
+            <Target size={20} className="text-electric-blue-500 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Focus Area' : 'フォーカスエリア'}
             </div>
