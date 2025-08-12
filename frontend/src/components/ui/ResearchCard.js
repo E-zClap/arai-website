@@ -87,7 +87,7 @@ export const ResearchCard = ({ research, index, language }) => {
         {/* Research Title with Professional Typography */}
         <div>
           <motion.h3 
-            className="text-2xl font-bold text-white mb-4 group-hover:text-teal-200 transition-colors duration-500"
+            className="text-2xl font-bold text-white mb-4 group-hover:text-electric-blue-300 transition-colors duration-500"
             style={{ fontFamily: '"Inter", system-ui' }}
             whileHover={{ x: 5 }}
           >
