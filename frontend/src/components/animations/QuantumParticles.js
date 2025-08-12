@@ -81,10 +81,10 @@ export const QuantumParticles = ({ intensity = 40 }) => {
       default:
         return {
           ...baseStyles,
-          background: 'linear-gradient(90deg, #0891b2, #0e7490)',
+          background: 'linear-gradient(90deg, #3b82f6, #1e40af)',
           borderRadius: '2px',
-          boxShadow: `0 0 ${particle.glowIntensity * 3}px rgba(8, 145, 178, 0.7), 0 0 ${particle.glowIntensity * 6}px rgba(14, 116, 144, 0.3)`,
-          border: '1px solid rgba(8, 145, 178, 0.7)',
+          boxShadow: `0 0 ${particle.glowIntensity * 3}px rgba(59, 130, 246, 0.7), 0 0 ${particle.glowIntensity * 6}px rgba(30, 64, 175, 0.3)`,
+          border: '1px solid rgba(59, 130, 246, 0.7)',
         };
     }
   };
