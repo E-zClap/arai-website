@@ -340,7 +340,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {(member.skills[language] || member.skills).map((skill, idx) => (
-                        <span key={idx} className="px-3 py-1.5 bg-emerald-900/30 text-emerald-300 text-xs rounded-full border border-emerald-500/30">
+                        <span key={idx} className="px-3 py-1.5 bg-electric-blue-900/30 text-electric-blue-300 text-xs rounded-full border border-electric-blue-600/30">
                           {skill}
                         </span>
                       ))}
