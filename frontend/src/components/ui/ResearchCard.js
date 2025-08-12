@@ -242,7 +242,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     className="p-6 rounded-2xl bg-gradient-to-br from-electric-blue-900/20 to-royal-indigo-900/20 border border-electric-blue-600/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                      <BookOpen size={18} className="text-emerald-400" />
+                      <BookOpen size={18} className="text-electric-blue-400" />
                       <span>{language === 'EN' ? 'Current Projects' : '現在のプロジェクト'}</span>
                     </h4>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line">
