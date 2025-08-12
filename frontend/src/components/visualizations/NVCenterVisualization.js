@@ -14,8 +14,8 @@ export const NVCenterVisualization = ({ language, isDark }) => {
       transition={{ duration: 0.8 }}
       className={`backdrop-blur-lg rounded-3xl border overflow-hidden mb-16 ${
         isDark 
-          ? 'bg-black/40 border-teal-500/20'
-          : 'bg-white/70 border-teal-300/30 shadow-xl'
+          ? 'bg-black/40 border-electric-blue-600/20'
+          : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
       }`}
     >
       {/* Header */}
