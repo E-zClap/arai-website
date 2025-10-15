@@ -57,7 +57,8 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
   }, [intensity, performanceSettings]);
 
   const getNodeStyle = (node) => {
-    const baseStyles = {
+    // Ultra-simplified styles for maximum performance
+    return {
       position: 'absolute',
       left: `${node.x}%`,
       top: `${node.y}%`,
@@ -66,53 +67,10 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
       transform: 'translate(-50%, -50%)',
       zIndex: 10,
       opacity: node.energy,
+      background: '#3b82f6',
+      borderRadius: '50%',
+      willChange: 'opacity, transform',
     };
-
-    // Simplified styles for low-performance devices
-    if (!performanceSettings.enableGlow) {
-      const simpleColors = {
-        quantum: '#1e40af',
-        superposition: '#4f46e5',
-        classical: '#3b82f6'
-      };
-      
-      return {
-        ...baseStyles,
-        background: simpleColors[node.type] || simpleColors.classical,
-        border: `1px solid ${simpleColors[node.type] || simpleColors.classical}`,
-        borderRadius: node.type === 'quantum' ? '50%' : node.type === 'superposition' ? '30%' : '20%',
-        filter: `brightness(${1 + node.energy * 0.2})`,
-      };
-    }
-
-    // Full-featured styles for high-performance devices
-    switch (node.type) {
-      case 'quantum':
-        return {
-          ...baseStyles,
-          background: 'radial-gradient(circle, #1e40af, #3b82f6)',
-          boxShadow: `0 0 ${node.size * 2}px rgba(30, 64, 175, 0.6), 0 0 ${node.size * 4}px rgba(30, 64, 175, 0.3)`,
-          border: '2px solid rgba(30, 64, 175, 0.9)',
-          borderRadius: '50%',
-        };
-      case 'superposition':
-        return {
-          ...baseStyles,
-          background: 'linear-gradient(45deg, #4f46e5, #3b82f6, #1e40af)',
-          backgroundSize: performanceSettings.enableComplexAnimations ? '200% 200%' : '100% 100%',
-          boxShadow: `0 0 ${node.size * 2.5}px rgba(79, 70, 229, 0.5), 0 0 ${node.size * 5}px rgba(59, 130, 246, 0.2)`,
-          border: '2px solid rgba(79, 70, 229, 0.8)',
-          borderRadius: '30%',
-        };
-      default: // classical
-        return {
-          ...baseStyles,
-          background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
-          boxShadow: `0 0 ${node.size * 1.5}px rgba(59, 130, 246, 0.4)`,
-          border: '1px solid rgba(59, 130, 246, 0.7)',
-          borderRadius: '20%',
-        };
-    }
   };
 
   const getConnectionStyle = (connection) => {
