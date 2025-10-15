@@ -111,8 +111,8 @@ function App() {
     <div className={`min-h-screen transition-colors duration-300 ${
       isDark ? 'bg-deep-navy-950 text-white' : 'bg-gray-50 text-gray-900'
     }`}>
-      {/* Background Particles */}
-      <QuantumParticles intensity={50} />
+      {/* Background Particles - Reduced for better performance */}
+      <QuantumParticles intensity={15} />
       
       {/* Sidebar */}
       <Sidebar 
