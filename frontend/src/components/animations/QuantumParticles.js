@@ -32,61 +32,18 @@ export const QuantumParticles = ({ intensity = 15 }) => {
   }, [intensity, performanceSettings]);
 
   const getParticleStyle = (particle) => {
-    const baseStyles = {
+    // Ultra-simplified styles for maximum performance
+    return {
       left: `${particle.x}%`,
       top: `${particle.y}%`,
       width: `${particle.size}px`,
       height: `${particle.size}px`,
       opacity: particle.opacity,
+      background: '#3b82f6',
+      borderRadius: '50%',
+      // No box-shadow for better performance
+      willChange: 'transform, opacity', // Browser hint for optimization
     };
-
-    // Simplified styles for low-performance devices
-    if (!performanceSettings.enableGlow) {
-      const simpleColors = {
-        energy: '#1e40af',
-        quantum: '#4f46e5',
-        particle: '#3b82f6'
-      };
-      
-      return {
-        ...baseStyles,
-        background: simpleColors[particle.type] || simpleColors.particle,
-        borderRadius: particle.type === 'quantum' ? '30%' : '50%',
-        border: `1px solid ${simpleColors[particle.type] || simpleColors.particle}`,
-        transform: particle.type === 'quantum' ? 'rotate(45deg)' : 'none',
-        // Use CSS transform instead of box-shadow for better performance
-        filter: `brightness(${1 + particle.glowIntensity * 0.1})`,
-      };
-    }
-
-    // Full-featured styles for high-performance devices
-    switch (particle.type) {
-      case 'energy':
-        return {
-          ...baseStyles,
-          background: 'linear-gradient(45deg, #1e40af, #4f46e5)',
-          borderRadius: '50%',
-          boxShadow: `0 0 ${particle.glowIntensity * 6}px rgba(30, 64, 175, 0.8), 0 0 ${particle.glowIntensity * 12}px rgba(79, 70, 229, 0.4)`,
-          border: '2px solid rgba(30, 64, 175, 0.6)',
-        };
-      case 'quantum':
-        return {
-          ...baseStyles,
-          background: 'linear-gradient(135deg, #4f46e5, #3b82f6)',
-          borderRadius: '30%',
-          boxShadow: `0 0 ${particle.glowIntensity * 4}px rgba(79, 70, 229, 0.8), 0 0 ${particle.glowIntensity * 8}px rgba(59, 130, 246, 0.4)`,
-          border: '1px solid rgba(79, 70, 229, 0.8)',
-          transform: 'rotate(45deg)',
-        };
-      default:
-        return {
-          ...baseStyles,
-          background: 'linear-gradient(90deg, #3b82f6, #1e40af)',
-          borderRadius: '2px',
-          boxShadow: `0 0 ${particle.glowIntensity * 3}px rgba(59, 130, 246, 0.7), 0 0 ${particle.glowIntensity * 6}px rgba(30, 64, 175, 0.3)`,
-          border: '1px solid rgba(59, 130, 246, 0.7)',
-        };
-    }
   };
 
   const getAnimationProps = (particle) => {
