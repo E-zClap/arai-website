@@ -133,16 +133,16 @@ function App() {
       />
 
       {/* Main Content */}
-      <main className={`transition-all duration-300 ${
+      <main className={`transition-all duration-150 ${
         sidebarOpen ? 'lg:ml-80' : 'ml-0'
       }`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
           >
             {renderPage()}
           </motion.div>
