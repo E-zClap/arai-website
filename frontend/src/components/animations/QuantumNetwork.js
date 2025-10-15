@@ -12,28 +12,27 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const nodeCount = Math.min(intensity, performanceSettings.nodeCount || 30);
+    // Ultra-aggressive performance optimization - max 12 nodes, minimal connections
+    const nodeCount = Math.min(12, Math.max(6, Math.floor(intensity * 0.4)));
     const newNodes = {};
     const newConnections = [];
     
-    // Generate quantum network nodes
+    // Generate simplified network nodes
     for (let i = 0; i < nodeCount; i++) {
-      const nodeType = Math.random() > 0.7 ? 'quantum' : Math.random() > 0.4 ? 'superposition' : 'classical';
       newNodes[i] = {
         id: i,
         x: Math.random() * 90 + 5,
         y: Math.random() * 90 + 5,
-        type: nodeType,
-        energy: Math.random() * 0.8 + 0.2,
-        size: nodeType === 'quantum' ? 12 : nodeType === 'superposition' ? 10 : 8,
-        phase: Math.random() * Math.PI * 2,
-        pulseRate: Math.random() * 2 + 1
+        type: 'node',
+        energy: Math.random() * 0.5 + 0.3,
+        size: 8,
+        pulseRate: Math.random() * 2 + 2
       };
     }
 
-    // Create quantum entanglement connections
+    // Create minimal connections
     Object.values(newNodes).forEach(node => {
-      if (Math.random() > 0.6 && newConnections.length < Math.floor(nodeCount / 2)) {
+      if (Math.random() > 0.7 && newConnections.length < 3) {
         const possibleTargets = Object.values(newNodes).filter(n => 
           n.id !== node.id && 
           !newConnections.some(c => 
@@ -43,12 +42,11 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
         );
         
         if (possibleTargets.length > 0) {
-          const target = possibleTargets[Math.floor(Math.random() * possibleTargets.length)];
+          const target = possibleTargets[0];
           newConnections.push({
             from: node.id,
             to: target.id,
-            type: node.type === 'quantum' && target.type === 'quantum' ? 'entangled' : 'correlated',
-            strength: Math.random() * 0.6 + 0.4
+            strength: 0.5
           });
         }
       }
