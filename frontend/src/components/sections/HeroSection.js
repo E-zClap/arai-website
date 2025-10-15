@@ -21,8 +21,8 @@ export const HeroSection = ({ language, isDark }) => {
         isDark ? 'bg-black' : 'bg-gray-50'
       }`}
     >
-      {/* Enhanced Quantum Background */}
-      <QuantumNetwork intensity={50} />
+      {/* Enhanced Quantum Background - Reduced for performance */}
+      <QuantumNetwork intensity={12} />
       
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 opacity-5">
