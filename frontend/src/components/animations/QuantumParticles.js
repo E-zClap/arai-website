@@ -70,65 +70,13 @@ export const QuantumParticles = ({ intensity = 15 }) => {
           style={getParticleStyle(particle)}
           animate={getAnimationProps(particle)}
           transition={{
-            duration: performanceSettings.enableComplexAnimations ? 6 + particle.speed : 4 + particle.speed * 0.5,
+            duration: 3 + particle.speed,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: particle.id * (performanceSettings.enableComplexAnimations ? 0.15 : 0.1),
-            times: performanceSettings.prefersReducedMotion ? [0, 0.5, 1] : [0, 0.3, 0.7, 1]
+            ease: "linear",
+            delay: particle.id * 0.1,
           }}
         />
       ))}
-      
-      {/* Advanced Particle Connections - Only on high performance devices */}
-      {performanceSettings.enableParticleConnections && (
-        <div className="absolute inset-0">
-          {particles.filter(p => p.type === 'energy').slice(0, performanceSettings.maxConnections).map((particle, index) => (
-            <motion.div
-              key={`connection-${particle.id}`}
-              className="absolute w-px bg-gradient-to-b from-transparent via-electric-blue-400/15 to-transparent"
-              style={{
-                left: `${particle.x}%`,
-                top: `${particle.y}%`,
-                height: performanceSettings.isMobile ? '120px' : '180px',
-                transformOrigin: 'top',
-              }}
-              animate={{
-                rotate: [0, 360],
-                scaleY: [0.5, 1.1, 0.7, 0.5],
-                opacity: [0, 0.4, 0.2, 0],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                delay: index * 0.8,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
-      )}
-      
-      {/* Quantum Field Effect - Simplified for low performance */}
-      {performanceSettings.enableBackgroundEffects && (
-        <motion.div
-          className={`absolute inset-0 ${
-            performanceSettings.enableGlow 
-              ? 'bg-gradient-radial from-electric-blue-600/5 via-royal-indigo-500/3 to-transparent'
-              : 'bg-gradient-radial from-electric-blue-600/2 via-royal-indigo-500/1 to-transparent'
-          }`}
-          animate={performanceSettings.enableComplexAnimations ? {
-            scale: [1, 1.1, 1.05, 1],
-            opacity: [0.3, 0.6, 0.4, 0.3],
-          } : {
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: performanceSettings.enableComplexAnimations ? 10 : 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      )}
     </div>
   );
 };
