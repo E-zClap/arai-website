@@ -94,34 +94,6 @@ export const MissionSection = ({ language, isDark }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-electric-blue-600/20 via-transparent to-royal-indigo-600/20"></div>
       </div>
 
-      {/* CSS Animation Keyframes for Continuous Motion */}
-      <style jsx>{`
-        @keyframes oscilloscope-wave-1 {
-          0% { transform: translateX(-150px); }
-          100% { transform: translateX(150px); }
-        }
-        
-        @keyframes oscilloscope-wave-2 {
-          0% { transform: translateX(-200px); }
-          100% { transform: translateX(200px); }
-        }
-        
-        @keyframes oscilloscope-wave-3 {
-          0% { transform: translateX(-400px); }
-          100% { transform: translateX(400px); }
-        }
-        
-        @keyframes oscilloscope-wave-4 {
-          0% { transform: translateX(-100px); }
-          100% { transform: translateX(100px); }
-        }
-        
-        @keyframes oscilloscope-wave-5 {
-          0% { transform: translateX(-50px); }
-          100% { transform: translateX(50px); }
-        }
-      `}</style>
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Academic Header */}
         <motion.div
