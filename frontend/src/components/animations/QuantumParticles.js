@@ -2,27 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { usePerformanceSettings } from '../../hooks/usePerformanceSettings';
 
-// Performance-Optimized Quantum Particles Animation with Device Detection
-export const QuantumParticles = ({ intensity = 40 }) => {
+// Ultra-Performance-Optimized Quantum Particles - Minimal overhead
+export const QuantumParticles = ({ intensity = 15 }) => {
   const [particles, setParticles] = useState([]);
   const performanceSettings = usePerformanceSettings();
 
   useEffect(() => {
     const generateParticles = () => {
       const newParticles = [];
-      const optimizedIntensity = Math.max(8, Math.floor(intensity * performanceSettings.performanceScore));
+      // Very aggressive performance optimization - max 15 particles
+      const optimizedIntensity = Math.min(15, Math.max(5, Math.floor(intensity * performanceSettings.performanceScore)));
       
       for (let i = 0; i < optimizedIntensity; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          size: Math.random() * (performanceSettings.isMobile ? 8 : 12) + (performanceSettings.isMobile ? 4 : 6),
-          opacity: Math.random() * 0.8 + 0.4,
-          speed: Math.random() * (performanceSettings.enableComplexAnimations ? 3 : 1.5) + 1,
+          size: Math.random() * 6 + 4, // Smaller sizes
+          opacity: Math.random() * 0.5 + 0.3, // Lower opacity
+          speed: Math.random() * 2 + 2, // Faster animations
           phase: Math.random() * Math.PI * 2,
-          type: Math.random() > 0.6 ? 'energy' : Math.random() > 0.3 ? 'quantum' : 'particle',
-          glowIntensity: performanceSettings.enableGlow ? Math.random() * 4 + 2 : 1
+          type: 'particle', // Single type for simplicity
         });
       }
       setParticles(newParticles);
