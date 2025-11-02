@@ -126,16 +126,16 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                           <div>
                             <div className="font-medium">Arai's Laboratory</div>
                             <div className="mt-2">Department of Electrical & Electronic Engineering</div>
-                            <div className="mt-2">2-12-1 Ookayama, Meguro-ku</div>
-                            <div>Tokyo 152-8552, Japan</div>
+                            <div className="mt-2">#1107 G2-7, 4259 Nagatsuta-cho</div>
+                            <div>Midori-ku, Yokohama, Kanagawa 226-8501 JAPAN</div>
                           </div>
                         )
                       : (
                           <div>
                             <div className="font-medium">荒井研究室</div>
                             <div className="mt-2">電気電子系</div>
-                            <div className="mt-2">〒152-8552</div>
-                            <div>東京都目黒区大岡山2-12-1</div>
+                            <div className="mt-2">〒226-8501</div>
+                            <div>神奈川県横浜市緑区長津田町4259 G2-7 #1107</div>
                           </div>
                         )
                     }
