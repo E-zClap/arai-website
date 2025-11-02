@@ -91,7 +91,7 @@ export const MissionSection = ({ language, isDark }) => {
       
       {/* Simplified Background Pattern for Better Performance */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-electric-blue-600/20 via-transparent to-royal-indigo-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-orange-500/20"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
