@@ -66,8 +66,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed top-6 left-6 z-50 lg:hidden p-4 rounded-2xl transition-all duration-300 backdrop-blur-2xl border ${
           isDark 
-            ? 'bg-slate-900/90 text-white border-electric-blue-600/30 shadow-2xl shadow-electric-blue-600/10' 
-            : 'bg-white/90 text-slate-800 shadow-2xl border-electric-blue-200/50'
+            ? 'bg-slate-900/90 text-white border-orange-600/30 shadow-2xl shadow-orange-600/10' 
+            : 'bg-white/90 text-slate-800 shadow-2xl border-orange-200/50'
         }`}
         whileHover={{ scale: 1.05, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
@@ -128,8 +128,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           }}
           className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 lg:opacity-100 flex flex-col ${
             isDark 
-              ? 'bg-slate-900/95 backdrop-blur-3xl border-r border-electric-blue-500/20 shadow-2xl shadow-electric-blue-500/5' 
-              : 'bg-white/95 backdrop-blur-3xl border-r border-electric-blue-200/50 shadow-2xl'
+              ? 'bg-slate-900/95 backdrop-blur-3xl border-r border-orange-500/20 shadow-2xl shadow-orange-500/5' 
+              : 'bg-white/95 backdrop-blur-3xl border-r border-orange-200/50 shadow-2xl'
           }`}
         >
           {/* Premium Academic Header */}
@@ -141,7 +141,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           >
             <div className="flex items-center space-x-4">
               <motion.div 
-                className="w-12 h-12 bg-gradient-to-br from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-electric-blue-600/30"
+                className="w-12 h-12 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-orange-600/30"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(30, 64, 175, 0.4)"
@@ -189,7 +189,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               transition={{ delay: 0.4 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'}`}>
+              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-orange-300' : 'text-orange-700'}`}>
                 {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
               </div>
               <motion.a 
@@ -230,8 +230,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   className={`w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
                     isActive
                       ? (isDark 
-                          ? 'bg-gradient-to-r from-electric-blue-600/40 to-royal-indigo-500/30 border-2 border-electric-blue-400/50 text-electric-blue-200 shadow-2xl shadow-electric-blue-500/20' 
-                          : 'bg-gradient-to-r from-electric-blue-50 to-royal-indigo-50 border-2 border-electric-blue-300/60 text-electric-blue-800 shadow-xl')
+                          ? 'bg-gradient-to-r from-orange-600/40 to-orange-500/30 border-2 border-orange-400/50 text-orange-200 shadow-2xl shadow-orange-500/20' 
+                          : 'bg-gradient-to-r from-orange-50 to-orange-50 border-2 border-orange-300/60 text-orange-800 shadow-xl')
                       : (isDark 
                           ? 'hover:bg-slate-800/70 text-slate-300 hover:text-white hover:border-slate-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-slate-900/20' 
                           : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
@@ -248,7 +248,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   {/* Advanced Active Indicator */}
                   {isActive && (
                     <motion.div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-electric-blue-400 via-royal-indigo-400 to-electric-blue-500 rounded-r-full shadow-lg shadow-electric-blue-400/50"
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-orange-400 via-orange-400 to-orange-500 rounded-r-full shadow-lg shadow-orange-400/50"
                       layoutId="activeIndicator"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -258,7 +258,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   
                   {/* Hover Effect Background */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-electric-blue-500/10 to-royal-indigo-500/10 opacity-0 rounded-2xl"
+                    className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-500/10 opacity-0 rounded-2xl"
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
@@ -267,7 +267,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                     <motion.div 
                       className={`p-3 rounded-2xl transition-all duration-300 ${
                         isActive 
-                          ? 'bg-gradient-to-r from-electric-blue-500 to-royal-indigo-500 text-white shadow-2xl shadow-electric-blue-500/30' 
+                          ? 'bg-gradient-to-r from-orange-500 to-orange-500 text-white shadow-2xl shadow-orange-500/30' 
                           : (isDark 
                               ? 'bg-slate-700/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
                               : 'bg-slate-100 group-hover:bg-slate-200 text-slate-600 group-hover:text-slate-700')
@@ -291,7 +291,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       </div>
                       <div className={`text-sm mt-1 ${
                         isActive 
-                          ? (isDark ? 'text-electric-blue-200' : 'text-electric-blue-600')
+                          ? (isDark ? 'text-orange-200' : 'text-orange-600')
                           : (isDark ? 'text-slate-500' : 'text-slate-500')
                       }`}>
                         {item.description[language]}

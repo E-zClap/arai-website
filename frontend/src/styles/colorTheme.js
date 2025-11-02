@@ -51,10 +51,10 @@ export const colorTheme = {
 
   // Tailwind Class Mappings
   tailwind: {
-    primary: 'electric-blue-600',
-    secondary: 'royal-indigo-500',
-    accent: 'electric-blue-500',
-    dark: 'deep-navy-950',
+    primary: 'orange-600',
+    secondary: 'orange-500',
+    accent: 'orange-500',
+    dark: 'orange-950',
   }
 };
 

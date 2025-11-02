@@ -6,12 +6,12 @@ import { QuantumParticles } from '../components/animations/QuantumParticles';
 // Join Us Page Component
 export const JoinUsPage = ({ language, isDark }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-deep-navy-950' : 'bg-gray-50'
+    isDark ? 'bg-orange-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
-        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-electric-blue-900/20'
-        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-electric-blue-100/40'
+        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
+        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
     }`} />
     <QuantumParticles intensity={30} />
     
@@ -27,7 +27,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         }`}>
           {language === 'EN' ? 'Join Our Team' : '私たちのチームに参加'}
         </h1>
-        <div className="w-20 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto mb-8" />
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto mb-8" />
         <p className={`text-xl max-w-3xl mx-auto ${
           isDark ? 'text-gray-300' : 'text-gray-600'
         }`}>
@@ -45,12 +45,12 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-            : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+            ? 'bg-orange-950/40 border-orange-600/20'
+            : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
         <div className="flex items-center mb-6">
-          <Users className="text-electric-blue-600 mr-4" size={32} />
+          <Users className="text-orange-600 mr-4" size={32} />
           <h2 className={`text-3xl font-bold ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
@@ -61,7 +61,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         <div className="space-y-6">
           <div>
             <h3 className={`text-xl font-semibold mb-3 ${
-              isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+              isDark ? 'text-orange-300' : 'text-orange-700'
             }`}>
               {language === 'EN' ? 'Graduate Students (Master\'s & Ph.D.)' : '大学院生（修士・博士）'}
             </h3>
@@ -77,7 +77,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             </h4>
             <ul className={`space-y-2 mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Applications through Tokyo Institute of Technology graduate admission process"
@@ -86,7 +86,7 @@ export const JoinUsPage = ({ language, isDark }) => (
                 </span>
               </li>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Strong background in physics, electrical engineering, or related fields preferred"
@@ -95,7 +95,7 @@ export const JoinUsPage = ({ language, isDark }) => (
                 </span>
               </li>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Research Assistant (RA) and Teaching Assistant (TA) opportunities available"
@@ -109,7 +109,7 @@ export const JoinUsPage = ({ language, isDark }) => (
               href="https://admissions.titech.ac.jp/graduate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-electric-blue-600 hover:text-royal-indigo-500 font-medium"
+              className="inline-flex items-center text-orange-600 hover:text-orange-500 font-medium"
             >
               {language === 'EN' ? 'Graduate Admission Information' : '大学院入学情報'}
               <ExternalLink size={16} className="ml-2" />
@@ -118,7 +118,7 @@ export const JoinUsPage = ({ language, isDark }) => (
 
           <div>
             <h3 className={`text-xl font-semibold mb-3 ${
-              isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+              isDark ? 'text-orange-300' : 'text-orange-700'
             }`}>
               {language === 'EN' ? 'Undergraduate Students' : '学部生'}
             </h3>
@@ -132,7 +132,7 @@ export const JoinUsPage = ({ language, isDark }) => (
 
           <div>
             <h3 className={`text-xl font-semibold mb-3 ${
-              isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+              isDark ? 'text-orange-300' : 'text-orange-700'
             }`}>
               {language === 'EN' ? 'International Students' : '留学生'}
             </h3>
@@ -147,7 +147,7 @@ export const JoinUsPage = ({ language, isDark }) => (
               href="https://www.titech.ac.jp/english/student_support/international_students"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-electric-blue-600 hover:text-royal-indigo-500 font-medium"
+              className="inline-flex items-center text-orange-600 hover:text-orange-500 font-medium"
             >
               {language === 'EN' ? 'International Student Support' : '留学生サポート'}
               <ExternalLink size={16} className="ml-2" />
@@ -163,12 +163,12 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.4 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-            : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+            ? 'bg-orange-950/40 border-orange-600/20'
+            : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
         <div className="flex items-center mb-6">
-          <BookOpen className="text-electric-blue-600 mr-4" size={32} />
+          <BookOpen className="text-orange-600 mr-4" size={32} />
           <h2 className={`text-3xl font-bold ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
@@ -186,13 +186,13 @@ export const JoinUsPage = ({ language, isDark }) => (
           
           <div>
             <h3 className={`text-xl font-semibold mb-3 ${
-              isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+              isDark ? 'text-orange-300' : 'text-orange-700'
             }`}>
               {language === 'EN' ? 'Research Topics:' : '研究トピック：'}
             </h3>
             <ul className={`space-y-2 mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Diamond nitrogen-vacancy center quantum sensing"
@@ -201,7 +201,7 @@ export const JoinUsPage = ({ language, isDark }) => (
                 </span>
               </li>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Quantum control and quantum information processing"
@@ -210,7 +210,7 @@ export const JoinUsPage = ({ language, isDark }) => (
                 </span>
               </li>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Computational quantum sensing and informatics"
@@ -223,13 +223,13 @@ export const JoinUsPage = ({ language, isDark }) => (
           
           <div>
             <h3 className={`text-xl font-semibold mb-3 ${
-              isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+              isDark ? 'text-orange-300' : 'text-orange-700'
             }`}>
               {language === 'EN' ? 'Funding Opportunities:' : '資金機会：'}
             </h3>
             <ul className={`space-y-2 mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "JSPS Postdoctoral Fellowship for Research in Japan"
@@ -238,7 +238,7 @@ export const JoinUsPage = ({ language, isDark }) => (
                 </span>
               </li>
               <li className="flex items-start">
-                <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full mr-3 mt-2 flex-shrink-0" />
+                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
                     ? "Project-funded research positions"
@@ -252,7 +252,7 @@ export const JoinUsPage = ({ language, isDark }) => (
               href="https://www.jsps.go.jp/english/e-pd/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-electric-blue-600 hover:text-royal-indigo-500 font-medium"
+              className="inline-flex items-center text-orange-600 hover:text-orange-500 font-medium"
             >
               {language === 'EN' ? 'JSPS Fellowship Information' : 'JSPS フェローシップ情報'}
               <ExternalLink size={16} className="ml-2" />
@@ -268,12 +268,12 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.6 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-            : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+            ? 'bg-orange-950/40 border-orange-600/20'
+            : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
         <div className="flex items-center mb-6">
-          <UserPlus className="text-electric-blue-600 mr-4" size={32} />
+          <UserPlus className="text-orange-600 mr-4" size={32} />
           <h2 className={`text-3xl font-bold ${
             isDark ? 'text-white' : 'text-gray-800'
           }`}>
@@ -296,11 +296,11 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.8 }}
         className={`text-center p-12 rounded-3xl backdrop-blur-lg border ${
           isDark 
-            ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-            : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+            ? 'bg-orange-950/40 border-orange-600/20'
+            : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
-        <Mail className="text-electric-blue-600 mx-auto mb-6" size={48} />
+        <Mail className="text-orange-600 mx-auto mb-6" size={48} />
         <h2 className={`text-3xl font-bold mb-6 ${
           isDark ? 'text-white' : 'text-gray-800'
         }`}>
@@ -316,7 +316,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         </p>
         <a
           href="mailto:arai@ee.e.titech.ac.jp"
-          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 text-white rounded-2xl font-semibold text-lg hover:from-electric-blue-500 hover:to-royal-indigo-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-2xl font-semibold text-lg hover:from-orange-500 hover:to-orange-400 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <Mail size={20} className="mr-2" />
           {language === 'EN' ? 'Contact Professor Arai' : '荒井教授にお問い合わせ'}

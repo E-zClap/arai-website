@@ -109,8 +109,8 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
       <motion.div
         className={`absolute inset-0 ${
           performanceSettings.enableGlow 
-            ? 'bg-gradient-radial from-electric-blue-900/10 via-royal-indigo-900/5 to-transparent'
-            : 'bg-gradient-radial from-electric-blue-900/5 via-royal-indigo-900/2 to-transparent'
+            ? 'bg-gradient-radial from-orange-900/10 via-orange-900/5 to-transparent'
+            : 'bg-gradient-radial from-orange-900/5 via-orange-900/2 to-transparent'
         }`}
         animate={performanceSettings.enableComplexAnimations ? {
           scale: [1, 1.1, 1.05, 1],
@@ -175,7 +175,7 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
                 {/* Quantum Ring Effect */}
                 {node.type === 'quantum' && (
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-electric-blue-300/40"
+                    className="absolute inset-0 rounded-full border-2 border-orange-300/40"
                     animate={{
                       scale: [1, 2, 1],
                       opacity: [0.6, 0, 0.6],
@@ -191,7 +191,7 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
                 {/* Superposition Shimmer */}
                 {node.type === 'superposition' && (
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-royal-indigo-400/20 to-electric-blue-400/20"
+                    className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400/20 to-orange-400/20"
                     animate={performanceSettings.enableComplexAnimations ? {
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                       rotate: [0, 180, 360],

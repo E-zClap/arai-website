@@ -6,12 +6,12 @@ import { NewsCard } from '../components/ui/NewsCard';
 // News Page Component
 export const NewsPage = ({ language, isDark, newsData }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-deep-navy-950' : 'bg-gray-50'
+    isDark ? 'bg-orange-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
-        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-electric-blue-900/20'
-        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-electric-blue-100/40'
+        ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
+        : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
     }`} />
     <QuantumParticles intensity={30} />
     
@@ -27,7 +27,7 @@ export const NewsPage = ({ language, isDark, newsData }) => (
         }`}>
           {language === 'EN' ? 'Latest News' : '最新ニュース'}
         </h1>
-        <div className="w-20 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto" />
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto" />
       </motion.div>
 
       <div className="grid gap-8">

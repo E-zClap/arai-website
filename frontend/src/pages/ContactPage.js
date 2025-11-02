@@ -40,12 +40,12 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
 
   return (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-deep-navy-950' : 'bg-gray-50'
+      isDark ? 'bg-orange-950' : 'bg-gray-50'
     }`}>
       <div className={`absolute inset-0 ${
         isDark 
-          ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-electric-blue-900/20'
-          : 'bg-gradient-to-br from-slate-100/40 via-transparent to-electric-blue-100/40'
+          ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
+          : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
       }`} />
       <QuantumParticles intensity={30} />
       
@@ -61,7 +61,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           }`}>
             {language === 'EN' ? 'Contact' : 'お問い合わせ'}
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto mb-8" />
           <p className={`text-xl max-w-3xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
@@ -94,15 +94,15 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
         >
           <div className={`backdrop-blur-lg rounded-3xl p-8 border ${
             isDark 
-              ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-              : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+              ? 'bg-orange-950/40 border-orange-600/20'
+              : 'bg-white/70 border-orange-300/30 shadow-xl'
           }`}>
             <h2 className={`text-3xl font-bold mb-6 text-center ${
               isDark ? 'text-white' : 'text-gray-800'
             }`}>
               {language === 'EN' ? 'Our Location' : '所在地'}
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto mb-8" />
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto mb-8" />
             
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               {/* Address Information */}
@@ -113,7 +113,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     : 'bg-slate-50/80 border-slate-200/50'
                 }`}>
                   <h3 className={`text-xl font-semibold mb-4 flex items-center ${
-                    isDark ? 'text-electric-blue-300' : 'text-electric-blue-700'
+                    isDark ? 'text-orange-300' : 'text-orange-700'
                   }`}>
                     <MapPin className="mr-2" size={20} />
                     {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
@@ -181,7 +181,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
               {/* Map */}
               <div className="relative">
                 <div className={`rounded-2xl overflow-hidden border-2 ${
-                  isDark ? 'border-electric-blue-600/30' : 'border-electric-blue-300/50'
+                  isDark ? 'border-orange-600/30' : 'border-orange-300/50'
                 } shadow-lg`}>
                   <iframe
                     src="https://www.openstreetmap.org/export/embed.html?bbox=139.6808%2C35.6050%2C139.6908%2C35.6120&layer=mapnik&marker=35.6085%2C139.6858"
@@ -204,8 +204,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                       isDark 
-                        ? 'bg-electric-blue-600/20 text-electric-blue-300 hover:bg-electric-blue-600/30 border border-electric-blue-600/30'
-                        : 'bg-electric-blue-50 text-electric-blue-700 hover:bg-electric-blue-100 border border-electric-blue-200'
+                        ? 'bg-orange-600/20 text-orange-300 hover:bg-orange-600/30 border border-orange-600/30'
+                        : 'bg-orange-50 text-orange-700 hover:bg-orange-100 border border-orange-200'
                     }`}
                   >
                     {language === 'EN' ? 'Open in Google Maps' : 'Googleマップで開く'}
@@ -235,8 +235,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className={`text-center p-12 rounded-3xl backdrop-blur-lg border ${
             isDark 
-              ? 'bg-deep-navy-950/40 border-electric-blue-600/20'
-              : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+              ? 'bg-orange-950/40 border-orange-600/20'
+              : 'bg-white/70 border-orange-300/30 shadow-xl'
           }`}
         >
           <h2 className={`text-3xl font-bold mb-6 ${
@@ -254,7 +254,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           </p>
           <button
             onClick={() => setCurrentPage('join-us')}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 text-white rounded-2xl font-semibold text-lg hover:from-electric-blue-500 hover:to-royal-indigo-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-2xl font-semibold text-lg hover:from-orange-500 hover:to-orange-400 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             {language === 'EN' ? 'Join Our Team' : '私たちのチームに参加'}
           </button>

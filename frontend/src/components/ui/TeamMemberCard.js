@@ -44,7 +44,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-electric-blue-600/20 hover:border-electric-blue-500/50 transition-all duration-700 group shadow-2xl hover:shadow-electric-blue-500/20"
+      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
       whileHover={{ y: -10, scale: 1.02 }}
     >
       {/* Premium Image Section */}
@@ -66,7 +66,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           className="absolute top-6 right-6"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="bg-gradient-to-r from-electric-blue-600/90 to-royal-indigo-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
+          <div className="bg-gradient-to-r from-orange-600/90 to-orange-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
             <span className="text-white text-xs font-bold tracking-wider">
               {member.position && typeof member.position === 'object' ? 
                 (member.position[language] || member.position.EN) : 
@@ -78,20 +78,20 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
 
         {/* Join Date or Academic Status */}
         <div className="absolute bottom-6 left-6 right-6">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-electric-blue-500/30">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-orange-500/30">
             <div className="flex items-center justify-between">
               {member.joinDate && (
                 <div className="flex items-center space-x-2">
-                  <Calendar size={14} className="text-electric-blue-500" />
-                  <span className="text-electric-blue-300 text-sm font-medium">
+                  <Calendar size={14} className="text-orange-500" />
+                  <span className="text-orange-300 text-sm font-medium">
                     {language === 'EN' ? 'Since' : '着任'} {member.joinDate}
                   </span>
                 </div>
               )}
               {(member.publications || member.yearsOfExperience) && (
                 <div className="flex items-center space-x-2">
-                  <BookOpen size={14} className="text-royal-indigo-400" />
-                  <span className="text-royal-indigo-300 text-sm font-medium">
+                  <BookOpen size={14} className="text-orange-400" />
+                  <span className="text-orange-300 text-sm font-medium">
                     {member.publications ? 
                       `${member.publications} ${language === 'EN' ? 'Publications' : '論文'}` :
                       `${member.yearsOfExperience} ${language === 'EN' ? 'Years' : '年間'}`
@@ -111,12 +111,12 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           {isKeigoArai && setCurrentPage ? (
             <motion.button
               onClick={handleNameClick}
-              className="group text-2xl font-bold text-electric-blue-300 hover:text-electric-blue-200 transition-all duration-500 cursor-pointer flex items-center justify-center gap-3"
+              className="group text-2xl font-bold text-orange-300 hover:text-orange-200 transition-all duration-500 cursor-pointer flex items-center justify-center gap-3"
               style={{ fontFamily: '"Inter", system-ui' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="border-b-2 border-electric-blue-500/50 group-hover:border-electric-blue-300 pb-1">
+              <span className="border-b-2 border-orange-500/50 group-hover:border-orange-300 pb-1">
                 {member.name && typeof member.name === 'object' ? 
                   (member.name[language] || member.name.EN) : 
                   (member.name || 'Team Member')
@@ -146,7 +146,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         {/* Academic Background Preview */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2 mb-3">
-            <GraduationCap size={18} className="text-electric-blue-500" />
+            <GraduationCap size={18} className="text-orange-500" />
             <h4 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
               {language === 'EN' ? 'Academic Background' : '学術的背景'}
             </h4>
@@ -157,10 +157,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             {(member.education[language] || member.education).slice(0, 2).map((edu, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/30 hover:border-electric-blue-500/40 transition-all duration-300"
+                className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/30 hover:border-orange-500/40 transition-all duration-300"
                 whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
               >
-                <div className="w-2 h-2 bg-gradient-to-r from-royal-indigo-400 to-electric-blue-500 rounded-full mt-2 flex-shrink-0" />
+                <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mt-2 flex-shrink-0" />
                 <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
                   {edu}
                 </p>
@@ -183,7 +183,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             <motion.div 
-              className="w-2.5 h-2.5 bg-electric-blue-400 rounded-full mr-3"
+              className="w-2.5 h-2.5 bg-orange-400 rounded-full mr-3"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -197,7 +197,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         <motion.div className="border-t border-slate-700/50 pt-6">
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-electric-blue-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
@@ -206,13 +206,13 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-electric-blue-500" />
+                <ChevronDown size={20} className="text-orange-500" />
               </motion.div>
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Full Profile' : '完全プロフィール'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-electric-blue-500 transition-colors" />
+            <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
           </motion.button>
 
           <AnimatePresence>
@@ -233,7 +233,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <GraduationCap size={18} className="text-electric-blue-500" />
+                      <GraduationCap size={18} className="text-orange-500" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Complete Education' : '完全な教育歴'}
                       </h4>
@@ -241,7 +241,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     <div className="space-y-3">
                       {(member.education[language] || member.education).slice(2).map((edu, idx) => (
                         <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/30">
-                          <div className="w-1.5 h-1.5 bg-royal-indigo-400 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
                           <p className="text-slate-300 text-sm leading-relaxed">{edu}</p>
                         </div>
                       ))}
@@ -258,7 +258,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Target size={18} className="text-royal-indigo-400" />
+                      <Target size={18} className="text-orange-400" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Research Interests' : '研究関心'}
                       </h4>
@@ -266,7 +266,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     <div className="grid gap-2">
                       {(member.researchInterests[language] || member.researchInterests).map((interest, idx) => (
                         <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-slate-700/30">
-                          <div className="w-1.5 h-1.5 bg-electric-blue-400 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-orange-400 rounded-full" />
                           <span className="text-slate-300 text-sm">{interest}</span>
                         </div>
                       ))}
@@ -305,18 +305,18 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="p-6 rounded-2xl bg-gradient-to-br from-electric-blue-900/20 to-royal-indigo-900/20 border border-electric-blue-600/30"
+                    className="p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-900/20 border border-orange-600/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Award size={18} className="text-electric-blue-500" />
+                      <Award size={18} className="text-orange-500" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Achievements' : '業績'}
                       </h4>
                     </div>
                     <div className="grid gap-3">
                       {(member.achievements[language] || member.achievements).map((achievement, idx) => (
-                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-electric-blue-900/20 border border-electric-blue-600/20">
-                          <Award size={16} className="text-electric-blue-500 mt-0.5 flex-shrink-0" />
+                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-orange-900/20 border border-orange-600/20">
+                          <Award size={16} className="text-orange-500 mt-0.5 flex-shrink-0" />
                           <span className="text-slate-200 text-sm leading-relaxed">{achievement}</span>
                         </div>
                       ))}
@@ -333,14 +333,14 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <User size={18} className="text-electric-blue-400" />
+                      <User size={18} className="text-orange-400" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Skills & Expertise' : 'スキル・専門性'}
                       </h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {(member.skills[language] || member.skills).map((skill, idx) => (
-                        <span key={idx} className="px-3 py-1.5 bg-electric-blue-900/30 text-electric-blue-300 text-xs rounded-full border border-electric-blue-600/30">
+                        <span key={idx} className="px-3 py-1.5 bg-orange-900/30 text-orange-300 text-xs rounded-full border border-orange-600/30">
                           {skill}
                         </span>
                       ))}
@@ -357,14 +357,14 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Mail size={18} className="text-royal-indigo-400" />
+                      <Mail size={18} className="text-orange-400" />
                       <h4 className="text-lg font-semibold text-white">
                         {language === 'EN' ? 'Contact' : '連絡先'}
                       </h4>
                     </div>
                     <a 
                       href={`mailto:${member.contact[language] || member.contact}`}
-                      className="text-royal-indigo-400 hover:text-royal-indigo-300 transition-colors text-sm"
+                      className="text-orange-400 hover:text-orange-300 transition-colors text-sm"
                     >
                       {member.contact[language] || member.contact}
                     </a>

@@ -14,8 +14,8 @@ export const NVCenterVisualization = ({ language, isDark }) => {
       transition={{ duration: 0.8 }}
       className={`backdrop-blur-lg rounded-3xl border overflow-hidden mb-16 ${
         isDark 
-          ? 'bg-black/40 border-electric-blue-600/20'
-          : 'bg-white/70 border-electric-blue-300/30 shadow-xl'
+          ? 'bg-black/40 border-orange-600/20'
+          : 'bg-white/70 border-orange-300/30 shadow-xl'
       }`}
     >
       {/* Header */}
@@ -23,10 +23,10 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-4">
             <div className={`p-3 rounded-2xl ${
-              isDark ? 'bg-electric-blue-600/20' : 'bg-electric-blue-100'
+              isDark ? 'bg-orange-600/20' : 'bg-orange-100'
             }`}>
               <Diamond className={`${
-                isDark ? 'text-electric-blue-400' : 'text-electric-blue-600'
+                isDark ? 'text-orange-400' : 'text-orange-600'
               }`} size={24} />
             </div>
             <div>
@@ -56,7 +56,7 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         }`}>
           <div className="flex items-start space-x-4">
             <Info className={`${
-              isDark ? 'text-royal-indigo-400' : 'text-royal-indigo-600'
+              isDark ? 'text-orange-400' : 'text-orange-600'
             } flex-shrink-0 mt-1`} size={20} />
             <div className="space-y-2">
               <p className={`${isDark ? 'text-gray-200' : 'text-gray-700'}`}>

@@ -56,7 +56,7 @@ export const PublicationsPage = ({ language, isDark }) => {
   };
 
   return (
-    <div className={`min-h-screen p-8 ${isDark ? 'bg-deep-navy-950' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen p-8 ${isDark ? 'bg-orange-950' : 'bg-gray-50'}`}>
       <div className="max-w-7xl mx-auto">
         {/* Enhanced Header with Professional Typography */}
         <motion.div
@@ -87,7 +87,7 @@ export const PublicationsPage = ({ language, isDark }) => {
 
           {/* Professional Underline */}
           <motion.div 
-            className="w-32 h-1 bg-gradient-to-r from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-full mx-auto"
+            className="w-32 h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 rounded-full mx-auto"
             initial={{ width: 0 }}
             animate={{ width: 128 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -104,18 +104,18 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-electric-blue-600/20 shadow-2xl'
-                : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
+                ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+                : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <BookOpen size={24} className="text-electric-blue-600" />
+              <BookOpen size={24} className="text-orange-600" />
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <BarChart3 size={20} className="text-electric-blue-500" />
+                <BarChart3 size={20} className="text-orange-500" />
               </motion.div>
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
@@ -129,14 +129,14 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-royal-indigo-500/20 shadow-2xl'
-                : 'bg-white/80 border-royal-indigo-300/30 shadow-xl'
+                ? 'bg-slate-900/60 border-orange-500/20 shadow-2xl'
+                : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <TrendingUp size={24} className="text-royal-indigo-500" />
-              <Users size={20} className="text-royal-indigo-400" />
+              <TrendingUp size={24} className="text-orange-500" />
+              <Users size={20} className="text-orange-400" />
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
               {publicationMetrics.totalCitations}
@@ -149,14 +149,14 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-electric-blue-500/20 shadow-2xl'
-                : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
+                ? 'bg-slate-900/60 border-orange-500/20 shadow-2xl'
+                : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <Award size={24} className="text-electric-blue-500" />
-              <Calendar size={20} className="text-electric-blue-400" />
+              <Award size={24} className="text-orange-500" />
+              <Calendar size={20} className="text-orange-400" />
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
               {publicationMetrics.hIndex}
@@ -169,14 +169,14 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-electric-blue-600/20 shadow-2xl'
-                : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
+                ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+                : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
           >
             <div className="flex items-center justify-between mb-3">
-              <BookOpen size={24} className="text-electric-blue-600" />
-              <TrendingUp size={20} className="text-electric-blue-500" />
+              <BookOpen size={24} className="text-orange-600" />
+              <TrendingUp size={20} className="text-orange-500" />
             </div>
             <div className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>
               {publicationMetrics.highImpactPapers}
@@ -194,8 +194,8 @@ export const PublicationsPage = ({ language, isDark }) => {
           transition={{ delay: 0.4, duration: 0.6 }}
           className={`p-8 rounded-3xl border backdrop-blur-2xl mb-12 ${
             isDark 
-              ? 'bg-slate-900/60 border-electric-blue-600/20 shadow-2xl'
-              : 'bg-white/80 border-electric-blue-300/30 shadow-xl'
+              ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+              : 'bg-white/80 border-orange-300/30 shadow-xl'
           }`}
         >
           {/* Search Bar */}
@@ -207,8 +207,8 @@ export const PublicationsPage = ({ language, isDark }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className={`w-full p-5 pl-14 rounded-2xl border transition-all duration-300 text-lg ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-electric-blue-500/60'
-                  : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-electric-blue-500/60'
+                  ? 'bg-slate-800/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-orange-500/60'
+                  : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-orange-500/60'
               } focus:outline-none focus:ring-0`}
               whileFocus={{ scale: 1.01 }}
             />
@@ -223,13 +223,13 @@ export const PublicationsPage = ({ language, isDark }) => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className={`flex items-center space-x-3 px-6 py-3 rounded-2xl border transition-all duration-300 ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white hover:border-electric-blue-500/60'
-                  : 'bg-white/80 border-slate-300/40 text-slate-900 hover:border-electric-blue-500/60'
+                  ? 'bg-slate-800/50 border-slate-700/40 text-white hover:border-orange-500/60'
+                  : 'bg-white/80 border-slate-300/40 text-slate-900 hover:border-orange-500/60'
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Filter size={20} className="text-electric-blue-600" />
+              <Filter size={20} className="text-orange-600" />
               <span className="font-medium">
                 {language === 'EN' ? 'Advanced Filters' : '詳細フィルター'}
               </span>
@@ -291,7 +291,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                         isDark 
                           ? 'bg-slate-800/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
-                      } focus:outline-none focus:border-electric-blue-500/60`}
+                      } focus:outline-none focus:border-orange-500/60`}
                     >
                       {publicationCategories.map(category => (
                         <option key={category.id} value={category.id}>
@@ -315,7 +315,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                         isDark 
                           ? 'bg-slate-800/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
-                      } focus:outline-none focus:border-electric-blue-500/60`}
+                      } focus:outline-none focus:border-orange-500/60`}
                     >
                       <option value="all">
                         {language === 'EN' ? 'All Years' : '全年'}
@@ -340,7 +340,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                         isDark 
                           ? 'bg-slate-800/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
-                      } focus:outline-none focus:border-electric-blue-500/60`}
+                      } focus:outline-none focus:border-orange-500/60`}
                     >
                       <option value="all">
                         {language === 'EN' ? 'All Impact Levels' : '全インパクトレベル'}

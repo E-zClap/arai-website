@@ -20,9 +20,9 @@ export const PublicationCard = ({ publication, index, language }) => {
   const getImpactColor = (impact) => {
     switch (impact) {
       case 'Very High':
-        return 'from-electric-blue-600 to-royal-indigo-500';
+        return 'from-orange-600 to-orange-500';
       case 'High':
-        return 'from-electric-blue-500 to-royal-indigo-400';
+        return 'from-orange-500 to-orange-400';
       default:
         return 'from-slate-500 to-slate-600';
     }
@@ -31,9 +31,9 @@ export const PublicationCard = ({ publication, index, language }) => {
   const getTypeIcon = (type) => {
     switch (type) {
       case 'Peer-Reviewed':
-        return <Award size={16} className="text-electric-blue-400" />;
+        return <Award size={16} className="text-orange-400" />;
       case 'Preprint':
-        return <FileText size={16} className="text-royal-indigo-400" />;
+        return <FileText size={16} className="text-orange-400" />;
       default:
         return <BookOpen size={16} className="text-slate-400" />;
     }
@@ -49,7 +49,7 @@ export const PublicationCard = ({ publication, index, language }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-electric-blue-600/20 hover:border-electric-blue-500/50 transition-all duration-700 group shadow-2xl hover:shadow-electric-blue-500/20"
+      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
       whileHover={{ y: -5, scale: 1.01 }}
     >
       {/* Publication Header */}
@@ -80,8 +80,8 @@ export const PublicationCard = ({ publication, index, language }) => {
             whileHover={{ backgroundColor: "rgba(30, 64, 175, 0.1)" }}
           >
             <div className="flex items-center space-x-2">
-              <TrendingUp size={14} className="text-electric-blue-500" />
-              <span className="text-electric-blue-300 text-xs font-medium">
+              <TrendingUp size={14} className="text-orange-500" />
+              <span className="text-orange-300 text-xs font-medium">
                 {publication.impact} Impact
               </span>
             </div>
@@ -93,7 +93,7 @@ export const PublicationCard = ({ publication, index, language }) => {
           className="text-center p-3 rounded-2xl bg-slate-800/40 border border-slate-700/30"
           whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.1)" }}
         >
-          <div className="text-royal-indigo-400 font-bold text-lg">{publication.citations}</div>
+          <div className="text-orange-400 font-bold text-lg">{publication.citations}</div>
           <div className="text-slate-400 text-xs">
             {language === 'EN' ? 'Citations' : '引用'}
           </div>
@@ -102,7 +102,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
       {/* Publication Title */}
       <motion.h3 
-        className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-electric-blue-300 transition-colors duration-500"
+        className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-orange-300 transition-colors duration-500"
         style={{ fontFamily: '"Inter", system-ui' }}
         whileHover={{ x: 5 }}
       >
@@ -113,7 +113,7 @@ export const PublicationCard = ({ publication, index, language }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {/* Authors */}
         <div className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/30">
-          <Users size={18} className="text-electric-blue-500 mt-1 flex-shrink-0" />
+          <Users size={18} className="text-orange-500 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
               {language === 'EN' ? 'Authors' : '著者'}
@@ -124,7 +124,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
         {/* Journal & Year */}
         <div className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-800/40 border border-slate-700/30">
-          <Calendar size={18} className="text-royal-indigo-400 mt-1 flex-shrink-0" />
+          <Calendar size={18} className="text-orange-400 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
               {language === 'EN' ? 'Publication' : '出版'}
@@ -169,7 +169,7 @@ export const PublicationCard = ({ publication, index, language }) => {
       {/* Category & Link */}
       <div className="flex items-center justify-between mb-6">
         <motion.span 
-          className="px-4 py-2 bg-gradient-to-r from-electric-blue-900/40 to-royal-indigo-900/40 text-electric-blue-300 rounded-full text-sm font-medium border border-electric-blue-600/30"
+          className="px-4 py-2 bg-gradient-to-r from-orange-900/40 to-orange-900/40 text-orange-300 rounded-full text-sm font-medium border border-orange-600/30"
           whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.2)" }}
         >
           {publication.category}
@@ -180,14 +180,14 @@ export const PublicationCard = ({ publication, index, language }) => {
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-electric-blue-600/20 rounded-2xl border border-slate-700/40 hover:border-electric-blue-500/50 transition-all duration-300"
+            className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-orange-600/20 rounded-2xl border border-slate-700/40 hover:border-orange-500/50 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="text-slate-300 text-sm font-medium">
               {language === 'EN' ? 'View Paper' : '論文を見る'}
             </span>
-            <ExternalLink size={16} className="text-electric-blue-500" />
+            <ExternalLink size={16} className="text-orange-500" />
           </motion.a>
         )}
       </div>
@@ -197,7 +197,7 @@ export const PublicationCard = ({ publication, index, language }) => {
         <motion.div className="border-t border-slate-700/50 pt-6">
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-electric-blue-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
@@ -206,14 +206,14 @@ export const PublicationCard = ({ publication, index, language }) => {
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-electric-blue-500" />
+                <ChevronDown size={20} className="text-orange-500" />
               </motion.div>
-              <Quote size={18} className="text-royal-indigo-400" />
+              <Quote size={18} className="text-orange-400" />
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Abstract' : '要約'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-electric-blue-500 transition-colors" />
+            <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
           </motion.button>
 
           <AnimatePresence>
@@ -239,7 +239,7 @@ export const PublicationCard = ({ publication, index, language }) => {
                       }}
                       transition={{ duration: 3, repeat: Infinity }}
                     >
-                      <Quote size={24} className="text-electric-blue-500 flex-shrink-0 mt-1" />
+                      <Quote size={24} className="text-orange-500 flex-shrink-0 mt-1" />
                     </motion.div>
                     <div className="flex-1">
                       <p className="text-slate-300 leading-relaxed text-sm italic">

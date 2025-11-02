@@ -52,11 +52,11 @@ export const HeroSection = ({ language, isDark }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`inline-flex items-center px-8 py-4 rounded-3xl border mb-12 ${
               isDark 
-                ? 'backdrop-blur-2xl bg-slate-900/60 border-electric-blue-600/30 text-electric-blue-300'
-                : 'bg-white border-electric-blue-200/50 text-electric-blue-700 shadow-2xl backdrop-blur-sm'
+                ? 'backdrop-blur-2xl bg-slate-900/60 border-orange-600/30 text-orange-300'
+                : 'bg-white border-orange-200/50 text-orange-700 shadow-2xl backdrop-blur-sm'
             }`}
           >
-            <div className="w-3 h-3 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 rounded-full mr-4" />
+            <div className="w-3 h-3 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full mr-4" />
             <span className="text-sm font-medium tracking-wider uppercase">
               {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
             </span>
@@ -82,7 +82,7 @@ export const HeroSection = ({ language, isDark }) => {
               <div className={`text-3xl lg:text-4xl font-light mb-8 ${
                 isDark ? 'text-slate-300' : 'text-slate-600'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
-                <span className="bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 bg-clip-text text-transparent font-semibold">
+                <span className="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent font-semibold">
                   {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
                 </span>
                 {language === 'EN' ? ' & Informatics' : ' & インフォマティクス'}
@@ -103,19 +103,19 @@ export const HeroSection = ({ language, isDark }) => {
               {/* Professional Research Emphasis with Different Styling */}
               <div className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
                 isDark 
-                  ? 'bg-gradient-to-r from-electric-blue-900/40 to-royal-indigo-900/40 border-electric-blue-400/50' 
-                  : 'bg-gradient-to-r from-electric-blue-50/80 to-royal-indigo-50/80 border-electric-blue-400/60 shadow-xl'
+                  ? 'bg-gradient-to-r from-orange-900/40 to-orange-900/40 border-orange-400/50' 
+                  : 'bg-gradient-to-r from-orange-50/80 to-orange-50/80 border-orange-400/60 shadow-xl'
               }`}>
                 <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
-                  isDark ? 'bg-gradient-to-r from-electric-blue-400 to-royal-indigo-400' : 'bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500'
+                  isDark ? 'bg-gradient-to-r from-orange-400 to-orange-400' : 'bg-gradient-to-r from-orange-600 to-orange-500'
                 }`} />
                 <span className={`text-xl font-bold tracking-wide ${
-                  isDark ? 'text-electric-blue-100' : 'text-electric-blue-800'
+                  isDark ? 'text-orange-100' : 'text-orange-800'
                 }`}>
                   {language === 'EN' ? 'Quantum Transformation Research' : '量子変革研究'}
                 </span>
                 <div className={`w-3 h-3 rounded-full ml-4 animate-pulse ${
-                  isDark ? 'bg-gradient-to-r from-royal-indigo-400 to-electric-blue-400' : 'bg-gradient-to-r from-royal-indigo-500 to-electric-blue-600'
+                  isDark ? 'bg-gradient-to-r from-orange-400 to-orange-400' : 'bg-gradient-to-r from-orange-500 to-orange-600'
                 }`} style={{ animationDelay: '0.5s' }} />
               </div>
             </div>

@@ -27,7 +27,7 @@ export const MissionSection = ({ language, isDark }) => {
         EN: 'Pioneering high-precision quantum measurement technologies',
         JP: '高精度量子測定技術の先駆的研究'
       },
-      color: 'from-electric-blue-600 to-royal-indigo-500'
+      color: 'from-orange-600 to-orange-500'
     },
     { 
       title: { EN: 'Computational Integration', JP: '計算統合' },
@@ -36,7 +36,7 @@ export const MissionSection = ({ language, isDark }) => {
         EN: 'Advanced informatics and quantum computing convergence',
         JP: '先進情報学と量子コンピューティングの融合'
       },
-      color: 'from-royal-indigo-500 to-electric-blue-500'
+      color: 'from-orange-500 to-orange-500'
     },
     { 
       title: { EN: 'Transformative Innovation', JP: '変革的イノベーション' },
@@ -45,7 +45,7 @@ export const MissionSection = ({ language, isDark }) => {
         EN: 'Revolutionary applications across multiple scientific domains',
         JP: '複数の科学領域における革新的応用'
       },
-      color: 'from-electric-blue-500 to-royal-indigo-600'
+      color: 'from-orange-500 to-orange-600'
     }
   ];
 
@@ -53,32 +53,32 @@ export const MissionSection = ({ language, isDark }) => {
     { 
       title: { EN: 'Diamond NV Centers', JP: 'ダイヤモンドNVセンター' },
       icon: Diamond,
-      color: 'from-electric-blue-700 to-royal-indigo-700'
+      color: 'from-orange-700 to-orange-700'
     },
     { 
       title: { EN: 'Quantum Magnetometry', JP: '量子磁気測定' },
       icon: Magnet,
-      color: 'from-royal-indigo-700 to-electric-blue-600'
+      color: 'from-orange-700 to-orange-600'
     },
     { 
       title: { EN: 'Biomedical Applications', JP: '生体医学応用' },
       icon: Dna,
-      color: 'from-electric-blue-600 to-royal-indigo-700'
+      color: 'from-orange-600 to-orange-700'
     },
     { 
       title: { EN: 'Material Characterization', JP: '材料特性解析' },
       icon: TestTube,
-      color: 'from-electric-blue-700 to-royal-indigo-700'
+      color: 'from-orange-700 to-orange-700'
     },
     { 
       title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' },
       icon: Laptop,
-      color: 'from-royal-indigo-700 to-electric-blue-700'
+      color: 'from-orange-700 to-orange-700'
     },
     { 
       title: { EN: 'Quantum Computing', JP: '量子コンピューティング' },
       icon: Zap,
-      color: 'from-royal-indigo-800 to-electric-blue-800'
+      color: 'from-orange-800 to-orange-800'
     }
   ];
 
@@ -108,8 +108,8 @@ export const MissionSection = ({ language, isDark }) => {
         >
           <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
             isDark 
-              ? 'backdrop-blur-sm bg-slate-900/60 border-electric-blue-600/30 text-electric-blue-300'
-              : 'bg-white border-electric-blue-200/50 text-electric-blue-700 shadow-lg'
+              ? 'backdrop-blur-sm bg-slate-900/60 border-orange-600/30 text-orange-300'
+              : 'bg-white border-orange-200/50 text-orange-700 shadow-lg'
           }`}>
             <FlaskConical className="mr-3" size={20} />
             <span className="text-sm font-medium tracking-wider uppercase">
@@ -122,7 +122,7 @@ export const MissionSection = ({ language, isDark }) => {
           }`} style={{ fontFamily: '"Inter", system-ui' }}>
             {language === 'EN' ? 'Our Scientific Mission' : '私たちの科学的使命'}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-electric-blue-600 to-royal-indigo-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto rounded-full" />
         </motion.div>
 
         {/* Enhanced Mission Content with Academic Layout */}
@@ -139,8 +139,8 @@ export const MissionSection = ({ language, isDark }) => {
           >
             <div className={`backdrop-blur-xl rounded-3xl p-10 border ${
               isDark 
-                ? 'bg-slate-900/60 border-electric-blue-600/20' 
-                : 'bg-white/90 border-electric-blue-200/30 shadow-2xl'
+                ? 'bg-slate-900/60 border-orange-600/20' 
+                : 'bg-white/90 border-orange-200/30 shadow-2xl'
             }`}>
               <div className={`text-lg md:text-xl leading-relaxed mb-8 ${
                 isDark ? 'text-slate-200' : 'text-slate-700'
@@ -212,28 +212,28 @@ export const MissionSection = ({ language, isDark }) => {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
                     isDark 
-                      ? 'bg-slate-900/60 border-slate-700/50 hover:border-electric-blue-400/50 hover:bg-slate-800/70'
-                      : 'bg-white/80 border-slate-200/50 hover:border-electric-blue-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
+                      ? 'bg-slate-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-slate-800/70'
+                      : 'bg-white/80 border-slate-200/50 hover:border-orange-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
                   }`}
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Icon Section */}
                   <div className="flex justify-center mb-4">
-                    <div className={`p-4 rounded-xl bg-gradient-to-r ${topic.color} shadow-lg group-hover:shadow-electric-blue-500/30 transition-all duration-300`}>
+                    <div className={`p-4 rounded-xl bg-gradient-to-r ${topic.color} shadow-lg group-hover:shadow-orange-500/30 transition-all duration-300`}>
                       <IconComponent size={28} className="text-white" />
                     </div>
                   </div>
                   
                   {/* Research Area Title */}
                   <h4 className={`text-lg font-semibold mb-2 ${
-                    isDark ? 'text-white group-hover:text-electric-blue-300' : 'text-slate-800 group-hover:text-electric-blue-700'
+                    isDark ? 'text-white group-hover:text-orange-300' : 'text-slate-800 group-hover:text-orange-700'
                   } transition-colors`}>
                     {topic.title[language]}
                   </h4>
                   
                   {/* Professional Status Indicator */}
                   <div className="flex items-center justify-center space-x-2 pt-2">
-                    <div className="w-2 h-2 bg-electric-blue-400 rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
                     <span className={`text-xs font-medium ${
                       isDark ? 'text-slate-400' : 'text-slate-500'
                     }`}>
@@ -252,8 +252,8 @@ export const MissionSection = ({ language, isDark }) => {
             transition={{ duration: 0.8, delay: 1.5 }}
             className={`mt-12 p-8 rounded-3xl border backdrop-blur-xl ${
               isDark 
-                ? 'bg-slate-900/40 border-electric-blue-600/20'
-                : 'bg-white/70 border-electric-blue-200/30 shadow-xl'
+                ? 'bg-slate-900/40 border-orange-600/20'
+                : 'bg-white/70 border-orange-200/30 shadow-xl'
             }`}
           >
             <p className={`text-lg italic font-light ${
@@ -265,13 +265,13 @@ export const MissionSection = ({ language, isDark }) => {
               }
             </p>
             <div className="mt-4 flex items-center justify-center space-x-4">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-electric-blue-600" />
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-orange-600" />
               <span className={`text-sm font-medium ${
-                isDark ? 'text-electric-blue-400' : 'text-electric-blue-600'
+                isDark ? 'text-orange-400' : 'text-orange-600'
               }`}>
                 {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
               </span>
-              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-electric-blue-600" />
+              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-orange-600" />
             </div>
           </motion.div>
         </motion.div>

@@ -16,7 +16,7 @@ export const ResearchCard = ({ research, index, language }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-electric-blue-600/20 hover:border-electric-blue-500/50 transition-all duration-700 group shadow-2xl hover:shadow-electric-blue-500/20"
+      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
       whileHover={{ y: -8, scale: 1.02 }}
     >
       {/* Enhanced Image Section with Premium Overlay */}
@@ -36,7 +36,7 @@ export const ResearchCard = ({ research, index, language }) => {
         {/* Premium Research Category Badge */}
         <div className="absolute top-6 right-6">
           <motion.div 
-            className="bg-gradient-to-r from-electric-blue-600/90 to-royal-indigo-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl"
+            className="bg-gradient-to-r from-orange-600/90 to-orange-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl"
             whileHover={{ scale: 1.05 }}
             animate={{
               boxShadow: [
@@ -58,7 +58,7 @@ export const ResearchCard = ({ research, index, language }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <motion.div 
-                className="w-4 h-4 bg-gradient-to-r from-electric-blue-400 to-royal-indigo-400 rounded-full shadow-lg"
+                className="w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-400 rounded-full shadow-lg"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   boxShadow: [
@@ -73,8 +73,8 @@ export const ResearchCard = ({ research, index, language }) => {
                 {research.status}
               </span>
             </div>
-            <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-electric-blue-500/30">
-              <span className="text-electric-blue-300 text-xs font-medium">
+            <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-orange-500/30">
+              <span className="text-orange-300 text-xs font-medium">
                 {research.fundingLevel}
               </span>
             </div>
@@ -87,7 +87,7 @@ export const ResearchCard = ({ research, index, language }) => {
         {/* Research Title with Professional Typography */}
         <div>
           <motion.h3 
-            className="text-2xl font-bold text-white mb-4 group-hover:text-electric-blue-300 transition-colors duration-500"
+            className="text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-500"
             style={{ fontFamily: '"Inter", system-ui' }}
             whileHover={{ x: 5 }}
           >
@@ -96,7 +96,7 @@ export const ResearchCard = ({ research, index, language }) => {
           
           {/* Dynamic Underline */}
           <motion.div 
-            className="h-1 bg-gradient-to-r from-electric-blue-600 via-royal-indigo-500 to-electric-blue-500 rounded-full"
+            className="h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 rounded-full"
             initial={{ width: "20%" }}
             whileHover={{ width: "40%" }}
             transition={{ duration: 0.5 }}
@@ -119,7 +119,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(20, 184, 166, 0.1)" }}
           >
-            <Target size={20} className="text-electric-blue-500 mx-auto mb-2" />
+            <Target size={20} className="text-orange-500 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Focus Area' : 'フォーカスエリア'}
             </div>
@@ -128,7 +128,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(6, 182, 212, 0.1)" }}
           >
-            <Zap size={20} className="text-royal-indigo-400 mx-auto mb-2" />
+            <Zap size={20} className="text-orange-400 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Active' : 'アクティブ'}
             </div>
@@ -137,7 +137,7 @@ export const ResearchCard = ({ research, index, language }) => {
             className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(16, 185, 129, 0.1)" }}
           >
-            <BookOpen size={20} className="text-electric-blue-400 mx-auto mb-2" />
+            <BookOpen size={20} className="text-orange-400 mx-auto mb-2" />
             <div className="text-xs text-slate-400">
               {language === 'EN' ? 'Research' : '研究'}
             </div>
@@ -150,7 +150,7 @@ export const ResearchCard = ({ research, index, language }) => {
         >
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-electric-blue-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
@@ -159,13 +159,13 @@ export const ResearchCard = ({ research, index, language }) => {
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-electric-blue-500" />
+                <ChevronDown size={20} className="text-orange-500" />
               </motion.div>
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Research Details' : '研究詳細'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-electric-blue-500 transition-colors" />
+            <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
           </motion.button>
 
           <AnimatePresence>
@@ -206,7 +206,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                      <Target size={18} className="text-electric-blue-500" />
+                      <Target size={18} className="text-orange-500" />
                       <span>{language === 'EN' ? 'Methodology' : '方法論'}</span>
                     </h4>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line">
@@ -224,7 +224,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                      <Zap size={18} className="text-royal-indigo-400" />
+                      <Zap size={18} className="text-orange-400" />
                       <span>{language === 'EN' ? 'Applications' : '応用'}</span>
                     </h4>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line">
@@ -239,10 +239,10 @@ export const ResearchCard = ({ research, index, language }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="p-6 rounded-2xl bg-gradient-to-br from-electric-blue-900/20 to-royal-indigo-900/20 border border-electric-blue-600/30"
+                    className="p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-900/20 border border-orange-600/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                      <BookOpen size={18} className="text-electric-blue-400" />
+                      <BookOpen size={18} className="text-orange-400" />
                       <span>{language === 'EN' ? 'Current Projects' : '現在のプロジェクト'}</span>
                     </h4>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line">
