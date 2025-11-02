@@ -2,44 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Deep Blue Color Theme System */
+/* Vibrant Orange Color Theme System */
 :root {
   /* Primary Colors */
-  --color-primary: #1e40af;           /* Electric Blue */
-  --color-secondary: #4f46e5;         /* Royal Indigo */
-  --color-accent: #3b82f6;            /* Lighter Electric Blue */
-  --color-dark: #0b1020;              /* Deep Navy */
+  --color-primary: #ea580c;           /* Vibrant Orange */
+  --color-secondary: #f97316;         /* Orange */
+  --color-accent: #fb923c;            /* Lighter Orange */
+  --color-dark: #1a0d08;              /* Deep Dark */
   
   /* Light Mode Colors */
-  --color-primary-light: #3b82f6;
-  --color-secondary-light: #818cf8;
+  --color-primary-light: #f97316;
+  --color-secondary-light: #fb923c;
   --color-background-light: #f8fafc;
   --color-surface-light: #ffffff;
   --color-text-light: #1e293b;
   
   /* Dark Mode Colors */
-  --color-primary-dark: #1e40af;
-  --color-secondary-dark: #4f46e5;
-  --color-background-dark: #0b1020;
+  --color-primary-dark: #ea580c;
+  --color-secondary-dark: #f97316;
+  --color-background-dark: #1a0d08;
   --color-surface-dark: #1e293b;
   --color-text-dark: #f8fafc;
   
   /* Gradient Colors */
-  --gradient-primary: linear-gradient(135deg, #1e40af, #4f46e5);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6, #1e40af);
-  --gradient-accent: linear-gradient(135deg, #4f46e5, #818cf8);
+  --gradient-primary: linear-gradient(135deg, #ea580c, #f97316);
+  --gradient-secondary: linear-gradient(135deg, #f97316, #fb923c);
+  --gradient-accent: linear-gradient(135deg, #fb923c, #fdba74);
   
   /* Shadow Colors */
-  --shadow-primary: rgba(30, 64, 175, 0.3);
-  --shadow-secondary: rgba(79, 70, 229, 0.3);
-  --shadow-accent: rgba(59, 130, 246, 0.3);
+  --shadow-primary: rgba(234, 88, 12, 0.3);
+  --shadow-secondary: rgba(249, 115, 22, 0.3);
+  --shadow-accent: rgba(251, 146, 60, 0.3);
 }
 
 /* Dark theme overrides */
 .dark {
-  --color-primary: #3b82f6;
-  --color-secondary: #818cf8;
-  --color-accent: #60a5fa;
+  --color-primary: #f97316;
+  --color-secondary: #fb923c;
+  --color-accent: #fdba74;
 }
 
 body {
