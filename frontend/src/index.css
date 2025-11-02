@@ -111,7 +111,7 @@ code {
 }
 
 .scrollbar-hide-when-not-needed:hover::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #1e40af, #4f46e5);
+    background: linear-gradient(180deg, #ea580c, #f97316);
     border-radius: 6px;
     border: 2px solid rgba(30, 41, 59, 0.1);
 }
@@ -123,18 +123,18 @@ code {
 
 .scrollbar-hide-when-not-needed:hover {
     scrollbar-width: thin;
-    scrollbar-color: #1e40af rgba(30, 41, 59, 0.1);
+    scrollbar-color: #ea580c rgba(30, 41, 59, 0.1);
 }
 
-/* Custom text selection colors to match deep blue theme */
+/* Custom text selection colors to match orange theme */
 ::selection {
-    background-color: rgba(30, 64, 175, 0.25); /* Electric blue with transparency */
+    background-color: rgba(234, 88, 12, 0.25); /* Vibrant orange with transparency */
     color: #0f172a; /* Dark slate for better contrast */
     text-shadow: none; /* Remove text shadow on selection */
 }
 
 ::-moz-selection {
-    background-color: rgba(30, 64, 175, 0.25); /* Electric blue with transparency */
+    background-color: rgba(234, 88, 12, 0.25); /* Vibrant orange with transparency */
     color: #0f172a; /* Dark slate for better contrast */
     text-shadow: none; /* Remove text shadow on selection */
 }
@@ -142,14 +142,14 @@ code {
 /* Dark mode text selection */
 .dark ::selection,
 [data-theme="dark"] ::selection {
-    background-color: rgba(30, 64, 175, 0.35); /* More visible for dark mode */
+    background-color: rgba(234, 88, 12, 0.35); /* More visible for dark mode */
     color: #f8fafc; /* Light text for dark backgrounds */
     text-shadow: none; /* Remove text shadow on selection */
 }
 
 .dark ::-moz-selection,
 [data-theme="dark"] ::-moz-selection {
-    background-color: rgba(30, 64, 175, 0.35); /* More visible for dark mode */
+    background-color: rgba(234, 88, 12, 0.35); /* More visible for dark mode */
     color: #f8fafc; /* Light text for dark backgrounds */
     text-shadow: none; /* Remove text shadow on selection */
 }
