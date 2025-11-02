@@ -180,7 +180,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                   isDark ? 'border-orange-600/30' : 'border-orange-300/50'
                 } shadow-lg`}>
                   <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=139.6808%2C35.6050%2C139.6908%2C35.6120&layer=mapnik&marker=35.6085%2C139.6858"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=139.5022%2C35.5401%2C139.5122%2C35.5471&layer=mapnik&marker=35.5436%2C139.5072"
                     width="100%"
                     height="400"
                     style={{ border: 0 }}
@@ -188,7 +188,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-96"
-                    title={language === 'EN' ? 'Tokyo Institute of Technology Location' : '東京工業大学の場所'}
+                    title={language === 'EN' ? 'Laboratory Location Map' : '研究室の場所マップ'}
                   />
                 </div>
                 
