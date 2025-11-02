@@ -195,7 +195,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                 {/* Map Controls */}
                 <div className="mt-4 flex gap-3 justify-center">
                   <a
-                    href="https://maps.google.com/?q=Tokyo+Institute+of+Technology,+Ookayama"
+                    href="https://maps.google.com/?q=4259+Nagatsuta-cho,+Midori-ku,+Yokohama,+Kanagawa+226-8501,+Japan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
