@@ -32,8 +32,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
         JP: "住所"
       },
       content: language === 'EN' 
-        ? "2-12-1 Ookayama, Meguro-ku, Tokyo 152-8552, Japan"
-        : "〒152-8552 東京都目黒区大岡山2-12-1",
+        ? "#1107 G2-7, 4259 Nagatsuta-cho, Midori-ku, Yokohama, Kanagawa 226-8501 JAPAN"
+        : "〒226-8501 神奈川県横浜市緑区長津田町4259 G2-7 #1107",
       link: null
     }
   ];
