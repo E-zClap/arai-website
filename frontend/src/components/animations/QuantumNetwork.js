@@ -67,7 +67,7 @@ export const QuantumNetwork = ({ intensity = 30, className = "" }) => {
       transform: 'translate(-50%, -50%)',
       zIndex: 10,
       opacity: node.energy,
-      background: '#3b82f6',
+      background: '#f97316',
       borderRadius: '50%',
       willChange: 'opacity, transform',
     };
