@@ -207,7 +207,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     {language === 'EN' ? 'Open in Google Maps' : 'Googleマップで開く'}
                   </a>
                   <a
-                    href="https://www.openstreetmap.org/?mlat=35.6085&mlon=139.6858#map=16/35.6085/139.6858"
+                    href="https://www.openstreetmap.org/?mlat=35.5436&mlon=139.5072#map=16/35.5436/139.5072"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
