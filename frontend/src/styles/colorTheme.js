@@ -1,20 +1,20 @@
-// Deep Blue Color Theme Configuration
+// Vibrant Orange Color Theme Configuration
 // This file centralizes all color definitions for easy maintenance
 
 export const colorTheme = {
   // Base Colors
   colors: {
-    primary: '#1e40af',      // Electric Blue
-    secondary: '#4f46e5',    // Royal Indigo  
-    accent: '#3b82f6',       // Lighter Electric Blue
-    dark: '#0b1020',         // Deep Navy
+    primary: '#ea580c',      // Vibrant Orange
+    secondary: '#f97316',    // Orange  
+    accent: '#fb923c',       // Lighter Orange
+    dark: '#1a0d08',         // Deep Dark
   },
 
   // Light Mode Palette
   light: {
-    primary: '#3b82f6',
-    secondary: '#818cf8',
-    accent: '#60a5fa',
+    primary: '#f97316',
+    secondary: '#fb923c',
+    accent: '#fdba74',
     background: '#f8fafc',
     surface: '#ffffff',
     text: '#1e293b',
@@ -24,10 +24,10 @@ export const colorTheme = {
 
   // Dark Mode Palette  
   dark: {
-    primary: '#1e40af',
-    secondary: '#4f46e5',
-    accent: '#3b82f6',
-    background: '#0b1020',
+    primary: '#ea580c',
+    secondary: '#f97316',
+    accent: '#fb923c',
+    background: '#1a0d08',
     surface: '#1e293b',
     text: '#f8fafc',
     textSecondary: '#cbd5e1',
@@ -36,17 +36,17 @@ export const colorTheme = {
 
   // Gradient Definitions
   gradients: {
-    primary: 'linear-gradient(135deg, #1e40af, #4f46e5)',
-    secondary: 'linear-gradient(135deg, #3b82f6, #1e40af)',
-    accent: 'linear-gradient(135deg, #4f46e5, #818cf8)',
-    radial: 'radial-gradient(circle, #1e40af, #4f46e5)',
+    primary: 'linear-gradient(135deg, #ea580c, #f97316)',
+    secondary: 'linear-gradient(135deg, #f97316, #fb923c)',
+    accent: 'linear-gradient(135deg, #fb923c, #fdba74)',
+    radial: 'radial-gradient(circle, #ea580c, #f97316)',
   },
 
   // Shadow Colors
   shadows: {
-    primary: 'rgba(30, 64, 175, 0.3)',
-    secondary: 'rgba(79, 70, 229, 0.3)',
-    accent: 'rgba(59, 130, 246, 0.3)',
+    primary: 'rgba(234, 88, 12, 0.3)',
+    secondary: 'rgba(249, 115, 22, 0.3)',
+    accent: 'rgba(251, 146, 60, 0.3)',
   },
 
   // Tailwind Class Mappings
