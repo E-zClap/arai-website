@@ -159,18 +159,14 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     {language === 'EN' 
                       ? (
                           <div>
-                            <div>• Tokyu Meguro Line / Tokyu Oimachi Line</div>
-                            <div className="ml-4">Ookayama Station (5 min walk)</div>
-                            <div>• JR Keihin-Tohoku Line</div>
-                            <div className="ml-4">Ishikawa-dai Station (10 min walk)</div>
+                            <div>• JR Yokohama Line / Tokyu Den-en-toshi Line</div>
+                            <div className="ml-4">Nagatsuta Station (5 min walk)</div>
                           </div>
                         )
                       : (
                           <div>
-                            <div>• 東急目黒線・東急大井町線</div>
-                            <div className="ml-4">大岡山駅より徒歩5分</div>
-                            <div>• JR京浜東北線</div>
-                            <div className="ml-4">石川台駅より徒歩10分</div>
+                            <div>• JR横浜線・東急田園都市線</div>
+                            <div className="ml-4">長津田駅より徒歩5分</div>
                           </div>
                         )
                     }
