@@ -39,7 +39,7 @@ export const QuantumParticles = ({ intensity = 15 }) => {
       width: `${particle.size}px`,
       height: `${particle.size}px`,
       opacity: particle.opacity,
-      background: '#3b82f6',
+      background: '#f97316',
       borderRadius: '50%',
       // No box-shadow for better performance
       willChange: 'transform, opacity', // Browser hint for optimization
