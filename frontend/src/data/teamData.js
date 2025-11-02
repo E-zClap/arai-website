@@ -52,7 +52,7 @@ export const principalInvestigator = {
     ],
     JP: [
       "JSPS科研費基盤研究（A）- 2023年",
-      "東京工業大学研究優秀賞 - 2022年", 
+      "東京科学大学研究優秀賞 - 2022年", 
       "日本物理学会若手研究者賞 - 2021年",
       "トップジャーナルに30本以上の査読付き論文",
       "Nature Physics Spotlight特集研究者 - 2023年"
@@ -85,13 +85,13 @@ export const staffAndPostdocs = [
       EN: [
         "Ph.D. in Quantum Physics, University of Tokyo (2022)",
         "Thesis: 'Coherent control of spin qubits in diamond'",
-        "M.S. in Applied Physics, Tokyo Institute of Technology (2019)",
+        "M.S. in Applied Physics, Institute of Science Tokyo (2019)",
         "B.S. in Physics, Kyoto University (2017)"
       ],
       JP: [
         "博士（量子物理学）、東京大学（2022年）",
         "論文：「ダイヤモンド中のスピン量子ビットのコヒーレント制御」",
-        "修士（応用物理学）、東京工業大学（2019年）",
+        "修士（応用物理学）、東京科学大学（2019年）",
         "学士（物理学）、京都大学（2017年）"
       ]
     },
@@ -140,13 +140,13 @@ export const staffAndPostdocs = [
       EN: [
         "Ph.D. in Applied Physics, Tohoku University (2021)",
         "Thesis: 'Quantum technologies for precision measurement'",
-        "M.S. in Engineering Physics, Tokyo Institute of Technology (2018)",
+        "M.S. in Engineering Physics, Institute of Science Tokyo (2018)",
         "B.S. in Applied Physics, Waseda University (2016)"
       ],
       JP: [
         "博士（応用物理学）、東北大学（2021年）",
         "論文：「精密測定のための量子技術」",
-        "修士（工学物理学）、東京工業大学（2018年）",
+        "修士（工学物理学）、東京科学大学（2018年）",
         "学士（応用物理学）、早稲田大学（2016年）"
       ]
     },
@@ -193,13 +193,13 @@ export const staffAndPostdocs = [
     },
     education: {
       EN: [
-        "M.S. in Electrical Engineering, Tokyo Institute of Technology (1998)",
+        "M.S. in Electrical Engineering, Institute of Science Tokyo (1998)",
         "Specialized in precision instrumentation and measurement",
         "B.S. in Electronic Engineering, Tokyo Denki University (1996)",
         "Advanced Certification in Laboratory Safety Management"
       ],
       JP: [
-        "修士（電気工学）、東京工業大学（1998年）",
+        "修士（電気工学）、東京科学大学（1998年）",
         "精密計測と測定の専門",
         "学士（電子工学）、東京電機大学（1996年）",
         "実験室安全管理上級認定"
@@ -368,13 +368,13 @@ export const students = [
       EN: [
         "M.S. in Quantum Engineering (ongoing, expected 2025)",
         "Research Focus: 'AI-enhanced quantum sensing protocols'",
-        "B.S. in Applied Physics, Tokyo Institute of Technology (2023)",
+        "B.S. in Applied Physics, Institute of Science Tokyo (2023)",
         "Thesis: 'Machine learning optimization of NV center control'"
       ],
       JP: [
         "修士（量子工学）履修中（2025年修了予定）",
         "研究テーマ：「AI強化量子センシングプロトコル」",
-        "学士（応用物理学）、東京工業大学（2023年）",
+        "学士（応用物理学）、東京科学大学（2023年）",
         "論文：「NVセンター制御の機械学習最適化」"
       ]
     },
@@ -403,7 +403,7 @@ export const students = [
         "会議論文2本の筆頭著者",
         "JSPS特別研究員（DC1）",
         "QIS会議2024最優秀学生発表賞",
-        "東京工業大学2023年TA優秀賞"
+        "東京科学大学2023年TA優秀賞"
       ]
     },
     skills: [
@@ -429,13 +429,13 @@ export const students = [
       EN: [
         "M.S. in Quantum Informatics (ongoing, expected 2025)",
         "Research Focus: 'Quantum sensor networks and distributed sensing'",
-        "B.S. in Electrical Engineering, Tokyo Institute of Technology (2023)",
+        "B.S. in Electrical Engineering, Institute of Science Tokyo (2023)",
         "Thesis: 'Optimization of quantum sensor array configurations'"
       ],
       JP: [
         "修士（量子インフォマティクス）履修中（2025年修了予定）",
         "研究テーマ：「量子センサネットワークと分散センシング」",
-        "学士（電気工学）、東京工業大学（2023年）",
+        "学士（電気工学）、東京科学大学（2023年）",
         "論文：「量子センサアレイ構成の最適化」"
       ]
     },
@@ -462,7 +462,7 @@ export const students = [
       ],
       JP: [
         "査読付き論文3本の共著者",
-        "東京工業大学基金学生研究助成",
+        "東京科学大学基金学生研究助成",
         "国際会議発表 - ICQT 2024",
         "実験室安全担当者認定"
       ]
@@ -490,13 +490,13 @@ export const students = [
       EN: [
         "M.S. in Applied Physics (ongoing, expected 2026)",
         "Research Focus: 'Quantum control optimization techniques'",
-        "B.S. in Physics, Tokyo Institute of Technology (2024)",
+        "B.S. in Physics, Institute of Science Tokyo (2024)",
         "Thesis: 'Dynamical decoupling in noisy quantum environments'"
       ],
       JP: [
         "修士（応用物理学）履修中（2026年修了予定）",
         "研究テーマ：「量子制御最適化技術」",
-        "学士（物理学）、東京工業大学（2024年）",
+        "学士（物理学）、東京科学大学（2024年）",
         "論文：「ノイズの多い量子環境での動的デカップリング」"
       ]
     },
@@ -545,13 +545,13 @@ export const students = [
       EN: [
         "M.S. in Quantum Sensing (ongoing, expected 2026)",
         "Research Focus: 'Biological applications of quantum sensing'",
-        "B.S. in Bioengineering, Tokyo Institute of Technology (2024)",
+        "B.S. in Bioengineering, Institute of Science Tokyo (2024)",
         "Thesis: 'Quantum sensors for biological magnetic field detection'"
       ],
       JP: [
         "修士（量子センシング）履修中（2026年修了予定）",
         "研究テーマ：「量子センシングの生物学応用」",
-        "学士（生体工学）、東京工業大学（2024年）",
+        "学士（生体工学）、東京科学大学（2024年）",
         "論文：「生物学的磁場検出のための量子センサ」"
       ]
     },
@@ -607,7 +607,7 @@ export const students = [
         "修士（量子工学）履修中（2026年修了予定）",
         "研究テーマ：「極限環境での量子センシング」",
         "学士（材料科学）、清華大学、中国（2024年）",
-        "交換留学プログラム - 東京工業大学（2022-2023年）"
+        "交換留学プログラム - 東京科学大学（2022-2023年）"
       ]
     },
     researchInterests: {

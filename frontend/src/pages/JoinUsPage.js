@@ -80,8 +80,8 @@ export const JoinUsPage = ({ language, isDark }) => (
                 <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
                 <span>
                   {language === 'EN' 
-                    ? "Applications through Tokyo Institute of Technology graduate admission process"
-                    : "東京工業大学大学院入学プロセスを通じての申請"
+                    ? "Applications through Institute of Science Tokyo graduate admission process"
+                    : "東京科学大学大学院入学プロセスを通じての申請"
                   }
                 </span>
               </li>

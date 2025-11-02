@@ -58,7 +58,7 @@ export const HeroSection = ({ language, isDark }) => {
           >
             <div className="w-3 h-3 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full mr-4" />
             <span className="text-sm font-medium tracking-wider uppercase">
-              {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+              {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
             </span>
           </motion.div>
 

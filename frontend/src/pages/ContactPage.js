@@ -116,7 +116,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     isDark ? 'text-orange-300' : 'text-orange-700'
                   }`}>
                     <MapPin className="mr-2" size={20} />
-                    {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+                    {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
                   </h3>
                   <div className={`text-base leading-relaxed ${
                     isDark ? 'text-gray-300' : 'text-gray-700'

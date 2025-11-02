@@ -190,7 +190,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               whileHover={{ scale: 1.02 }}
             >
               <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-orange-300' : 'text-orange-700'}`}>
-                {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+                {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
               </div>
               <motion.a 
                 href="https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
@@ -334,7 +334,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 }
               </motion.div>
               <div className="text-xs opacity-80">
-                {language === 'EN' ? 'Tokyo Institute of Technology' : '東京工業大学'}
+                {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
               </div>
             </div>
           </motion.div>

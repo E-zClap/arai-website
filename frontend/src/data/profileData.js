@@ -26,13 +26,13 @@ export const keigoAraiProfile = {
       {
         year: "2024-Present",
         position: "Principal Investigator",
-        institution: "Tokyo Institute of Technology",
+        institution: "Institute of Science Tokyo",
         description: "Leading quantum sensing research with diamond NV centers"
       },
       {
         year: "2020-2024",
         position: "Assistant Professor",
-        institution: "Tokyo Institute of Technology",
+        institution: "Institute of Science Tokyo",
         description: "Developed advanced quantum control techniques for NV centers"
       },
       {
@@ -58,13 +58,13 @@ export const keigoAraiProfile = {
       {
         year: "2024年-現在",
         position: "主任研究員",
-        institution: "東京工業大学",
+        institution: "東京科学大学",
         description: "ダイヤモンドNVセンターを用いた量子センシング研究をリード"
       },
       {
         year: "2020-2024年",
         position: "助教",
-        institution: "東京工業大学", 
+        institution: "東京科学大学", 
         description: "NVセンターの先進量子制御技術を開発"
       },
       {

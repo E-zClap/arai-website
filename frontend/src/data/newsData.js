@@ -31,7 +31,7 @@ export const newsData = [
     date: "2024-09-02",
     title: {
       EN: "Keigo Arai has been interviewed as an adopter of Tokyo Tech Gap Fund 2023.",
-      JP: "荒井慧悟が東京工業大学ギャップファンド2023採択者としてインタビューを受けました。"
+      JP: "荒井慧悟が東京科学大学ギャップファンド2023採択者としてインタビューを受けました。"
     },
     link: "#",
     tags: ["Funding", "Tokyo Tech", "Interview"]
