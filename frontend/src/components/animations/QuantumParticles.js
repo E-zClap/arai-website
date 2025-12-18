@@ -14,6 +14,8 @@ export const QuantumParticles = ({ intensity = 15 }) => {
       const optimizedIntensity = Math.min(15, Math.max(5, Math.floor(intensity * performanceSettings.performanceScore)));
       
       for (let i = 0; i < optimizedIntensity; i++) {
+        // Mix of orange and blue particles (60% orange, 40% blue)
+        const isBlue = Math.random() > 0.6;
         newParticles.push({
           id: i,
           x: Math.random() * 100,
@@ -22,7 +24,7 @@ export const QuantumParticles = ({ intensity = 15 }) => {
           opacity: Math.random() * 0.5 + 0.3, // Lower opacity
           speed: Math.random() * 2 + 2, // Faster animations
           phase: Math.random() * Math.PI * 2,
-          type: 'particle', // Single type for simplicity
+          type: isBlue ? 'blue' : 'orange', // Mix of blue and orange particles
         });
       }
       setParticles(newParticles);
