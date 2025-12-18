@@ -47,7 +47,7 @@ module.exports = {
           900: '#7c2d12',
           950: '#431407',
         },
-        // Dark Gray Shades for Professional Dark Theme
+        // Dark Gray Shades for Professional Dark Theme (Lighter)
         'dark-gray': {
           50: '#fafafa',
           100: '#f4f4f5',
@@ -57,11 +57,11 @@ module.exports = {
           500: '#71717a',
           600: '#52525b',
           700: '#3f3f46',
-          800: '#27272a',
-          850: '#1f1f1f',
-          900: '#18181b',
-          925: '#141414',
-          950: '#0a0a0a', // True black
+          800: '#303030',
+          850: '#2a2a2a',
+          900: '#262626',
+          925: '#202020',
+          950: '#1a1a1a', // Dark background (lighter)
         },
         // Convenience aliases for the main theme colors
         'theme': {
