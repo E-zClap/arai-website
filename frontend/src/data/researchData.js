@@ -11,7 +11,7 @@ export const researchData = [
       JP: "制御された量子システムの量子情報学的視点を開発：制御と測定を通じて情報がどのように生成、フィルタリング、安定化されるか。私たちの目標は、脆弱なコヒーレンスを量子センシングと量子技術のための設計可能なリソースに変換することです。"
     },
     description: {
-      EN: "Key concepts include Coherent Population Trapping (CPT) and Electromagnetically Induced Transparency (EIT), which enable long-lived coherence and narrow spectral features even in dissipative environments. We also study Quantum Non-Demolition (QND) measurement and continuous measurement as foundations for precision metrology, feedback control, and quantum state estimation—connecting measurement directly to information flow and engineering utility.",
+      EN: "Key concepts include Coherent Population Trapping (CPT) and Electromagnetically Induced Transparency (EIT), which enable long-lived coherence and narrow spectral features even in dissipative environments. We also study Quantum Non-Demolition (QND) measurement and continuous measurement as foundations for precision metrology, feedback control, and quantum state estimation, connecting measurement directly to information flow and engineering utility.",
       JP: "主要な概念には、散逸環境でも長寿命コヒーレンスと狭いスペクトル特性を可能にするコヒーレント集団トラッピング（CPT）と電磁誘導透明性（EIT）が含まれます。精密計測、フィードバック制御、量子状態推定の基礎として量子非破壊（QND）測定と連続測定も研究し、測定を情報フローと工学的有用性に直接結びつけています。"
     },
     exampleTopics: {
