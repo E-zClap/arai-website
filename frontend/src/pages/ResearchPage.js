@@ -176,7 +176,7 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
           transition={{ delay: 0.6 }}
         >
           {language === 'EN'
-            ? 'Guided by our Purpose—unlocking the potential of quantum science—and our Vision—extending how we describe and understand the world through quantum informatics—we pursue research that connects fundamental physics, quantum devices, materials, and societal applications.'
+            ? 'Guided by our Purpose (unlocking the potential of quantum science) and our Vision (extending how we describe and understand the world through quantum informatics), we pursue research that connects fundamental physics, quantum devices, materials, and societal applications.'
             : '私たちの目的（量子科学の可能性を解き放つこと）と私たちのビジョン（量子情報学を通じて世界を記述し理解する方法を拡張すること）に導かれ、基礎物理学、量子デバイス、材料、社会応用を結びつける研究を追求しています。'
           }
         </motion.p>
