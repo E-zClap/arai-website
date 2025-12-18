@@ -297,7 +297,7 @@ export const AboutUsPage = ({ language, isDark }) => {
               }`}>
                 <p className="text-lg leading-relaxed">
                   {language === 'EN'
-                    ? "By advancing quantum sensing, quantum metrology, and quantum information processing, we aim to access "invisible" quantities and complexities that were previously out of reach."
+                    ? 'By advancing quantum sensing, quantum metrology, and quantum information processing, we aim to access "invisible" quantities and complexities that were previously out of reach.'
                     : "量子センシング、量子計量学、量子情報処理を進歩させることにより、これまで手の届かなかった「見えない」量と複雑さにアクセスすることを目指しています。"
                   }
                 </p>
