@@ -181,7 +181,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             <motion.div 
               className={`mt-4 p-4 rounded-2xl border backdrop-blur-sm ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/50 shadow-xl shadow-slate-900/20' 
+                  ? 'bg-dark-gray-850/50 border-dark-gray-700/50 shadow-xl shadow-black/20' 
                   : 'bg-slate-50/80 border-slate-200/50 shadow-lg'
               }`}
               initial={{ y: 10, opacity: 0 }}
