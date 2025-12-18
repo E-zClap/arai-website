@@ -136,7 +136,7 @@ code {
 
 .scrollbar-hide-when-not-needed:hover {
     scrollbar-width: thin;
-    scrollbar-color: #ea580c rgba(26, 26, 26, 0.5);
+    scrollbar-color: #ea580c rgba(38, 38, 38, 0.5);
 }
 
 /* Custom text selection colors to match orange theme */
