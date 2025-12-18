@@ -14,11 +14,11 @@
   --color-blue-light: #60a5fa;        /* Light Blue */
   --color-blue-dark: #2563eb;         /* Darker Blue */
   
-  /* Dark Gray/Black Backgrounds */
-  --color-dark-primary: #0a0a0a;      /* True Black */
-  --color-dark-secondary: #111111;    /* Very Dark Gray */
-  --color-dark-surface: #1a1a1a;      /* Dark Gray Surface */
-  --color-dark-elevated: #242424;     /* Elevated Surface */
+  /* Dark Gray/Black Backgrounds - Lighter version */
+  --color-dark-primary: #1a1a1a;      /* Dark Background (lighter) */
+  --color-dark-secondary: #202020;    /* Very Dark Gray (lighter) */
+  --color-dark-surface: #262626;      /* Dark Gray Surface (lighter) */
+  --color-dark-elevated: #303030;     /* Elevated Surface (lighter) */
   
   /* Light Mode Colors */
   --color-primary-light: #f97316;
