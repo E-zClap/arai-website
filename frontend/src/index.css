@@ -45,6 +45,7 @@
   --shadow-secondary: rgba(249, 115, 22, 0.3);
   --shadow-accent: rgba(251, 146, 60, 0.3);
   --shadow-dark: rgba(0, 0, 0, 0.5);
+  --shadow-blue: rgba(59, 130, 246, 0.2);
 }
 
 /* Dark theme overrides */
