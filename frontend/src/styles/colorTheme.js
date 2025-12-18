@@ -28,20 +28,20 @@ export const colorTheme = {
     border: '#e2e8f0',
   },
 
-  // Dark Mode Palette - Professional Dark Gray/Black  
+  // Dark Mode Palette - Professional Dark Gray (Lighter)
   dark: {
     primary: '#ea580c',
     secondary: '#f97316',
     accent: '#fb923c',
-    background: '#0a0a0a',      // True black background
-    surface: '#1a1a1a',         // Dark gray surface
-    elevated: '#242424',        // Elevated elements
-    subtle: '#2a2a2a',          // Subtle backgrounds
+    background: '#1a1a1a',      // Dark background (lighter)
+    surface: '#262626',         // Dark gray surface (lighter)
+    elevated: '#303030',        // Elevated elements (lighter)
+    subtle: '#353535',          // Subtle backgrounds (lighter)
     text: '#f8fafc',
     textSecondary: '#cbd5e1',
     textMuted: '#94a3b8',
-    border: '#333333',
-    borderSubtle: '#2a2a2a',
+    border: '#404040',
+    borderSubtle: '#353535',
   },
 
   // Gradient Definitions
