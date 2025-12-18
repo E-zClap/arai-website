@@ -23,6 +23,12 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       description: { EN: 'Laboratory Overview', JP: '研究室概要' }
     },
     { 
+      id: 'about-us', 
+      icon: Info, 
+      label: { EN: 'About Us', JP: '私たちについて' },
+      description: { EN: 'Our Mission & Values', JP: 'ミッションと価値観' }
+    },
+    { 
       id: 'news', 
       icon: BookOpen, 
       label: { EN: 'News', JP: 'ニュース' },
