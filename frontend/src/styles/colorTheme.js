@@ -1,13 +1,16 @@
-// Vibrant Orange Color Theme Configuration
+// Professional Dark Gray/Black Theme with Orange Accents
 // This file centralizes all color definitions for easy maintenance
 
 export const colorTheme = {
   // Base Colors
   colors: {
-    primary: '#ea580c',      // Vibrant Orange
-    secondary: '#f97316',    // Orange  
-    accent: '#fb923c',       // Lighter Orange
-    dark: '#1a0d08',         // Deep Dark
+    primary: '#ea580c',         // Vibrant Orange
+    secondary: '#f97316',       // Orange  
+    accent: '#fb923c',          // Lighter Orange
+    dark: '#0a0a0a',            // True Black
+    darkSurface: '#1a1a1a',     // Dark Gray Surface
+    darkElevated: '#242424',    // Elevated Surface
+    darkSubtle: '#2a2a2a',      // Subtle Dark
   },
 
   // Light Mode Palette
@@ -22,16 +25,20 @@ export const colorTheme = {
     border: '#e2e8f0',
   },
 
-  // Dark Mode Palette  
+  // Dark Mode Palette - Professional Dark Gray/Black  
   dark: {
     primary: '#ea580c',
     secondary: '#f97316',
     accent: '#fb923c',
-    background: '#1a0d08',
-    surface: '#1e293b',
+    background: '#0a0a0a',      // True black background
+    surface: '#1a1a1a',         // Dark gray surface
+    elevated: '#242424',        // Elevated elements
+    subtle: '#2a2a2a',          // Subtle backgrounds
     text: '#f8fafc',
     textSecondary: '#cbd5e1',
-    border: '#475569',
+    textMuted: '#94a3b8',
+    border: '#333333',
+    borderSubtle: '#2a2a2a',
   },
 
   // Gradient Definitions
@@ -40,6 +47,8 @@ export const colorTheme = {
     secondary: 'linear-gradient(135deg, #f97316, #fb923c)',
     accent: 'linear-gradient(135deg, #fb923c, #fdba74)',
     radial: 'radial-gradient(circle, #ea580c, #f97316)',
+    darkSubtle: 'linear-gradient(135deg, #1a1a1a, #242424)',
+    darkElevated: 'linear-gradient(180deg, #242424, #1a1a1a)',
   },
 
   // Shadow Colors
@@ -47,14 +56,17 @@ export const colorTheme = {
     primary: 'rgba(234, 88, 12, 0.3)',
     secondary: 'rgba(249, 115, 22, 0.3)',
     accent: 'rgba(251, 146, 60, 0.3)',
+    dark: 'rgba(0, 0, 0, 0.5)',
+    darkSubtle: 'rgba(0, 0, 0, 0.3)',
   },
 
   // Tailwind Class Mappings
   tailwind: {
     primary: 'orange-600',
     secondary: 'orange-500',
-    accent: 'orange-500',
-    dark: 'orange-950',
+    accent: 'orange-400',
+    dark: 'dark-gray-950',
+    darkSurface: 'dark-gray-900',
   }
 };
 
