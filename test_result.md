@@ -105,6 +105,17 @@
 ## user_problem_statement: "In publication page, I want that the informations are correct, citations etc base youre self on the real website : https://keigoarai.net/publications/ check online for the numbers, h-hindex, etc"
 
 ## frontend:
+  - task: "Add subtle dark-light blue accents and blue particles to background"
+    implemented: true
+    working: true
+    file: "frontend/src/index.css, frontend/tailwind.config.js, frontend/src/styles/colorTheme.js, frontend/src/components/animations/QuantumParticles.js, frontend/src/components/ui/NewsCard.js, frontend/src/components/ui/ResearchCard.js, frontend/src/components/ui/PublicationCard.js, frontend/src/components/ui/FloatingControls.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: true
+        -agent: "main"
+        -comment: "Successfully implemented subtle blue accents and blue particles throughout the website. Added blue accent colors (#3b82f6 dark-light blue, #60a5fa light blue, #2563eb darker blue) to the entire color system. Updated QuantumParticles component to display mixed orange (60%) and blue (40%) particles in the background. Added very minimal blue accents to strategic UI elements: 1) First news tag badge (blue accent in dark mode), 2) Research category badge (blue border with subtle pulsing glow), 3) Language toggle button (blue accent border and text color), 4) Publication citation count badge (blue accent border with pulsing blue glow). The blue accents are EXTREMELY SUBTLE and strategic, maintaining the dominant dark gray/black with orange theme while adding the requested blue highlights. Blue particles now float elegantly in the background alongside orange particles, creating a sophisticated quantum-inspired visual effect. All changes maintain the professional academic appearance."
   - task: "Replace mission section background with oscilloscope-style animated sine waves"
     implemented: true
     working: true
