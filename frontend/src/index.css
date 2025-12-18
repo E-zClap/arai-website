@@ -208,4 +208,20 @@ code {
   .gradient-dark-subtle {
     background: var(--gradient-dark-subtle);
   }
+  
+  .text-blue-accent {
+    color: var(--color-blue-accent);
+  }
+  
+  .border-blue-accent {
+    border-color: var(--color-blue-accent);
+  }
+  
+  .bg-blue-accent {
+    background-color: var(--color-blue-accent);
+  }
+  
+  .shadow-blue-glow {
+    box-shadow: 0 0 10px var(--shadow-blue);
+  }
 }
