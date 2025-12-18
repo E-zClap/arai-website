@@ -50,8 +50,8 @@ export const colorTheme = {
     secondary: 'linear-gradient(135deg, #f97316, #fb923c)',
     accent: 'linear-gradient(135deg, #fb923c, #fdba74)',
     radial: 'radial-gradient(circle, #ea580c, #f97316)',
-    darkSubtle: 'linear-gradient(135deg, #1a1a1a, #242424)',
-    darkElevated: 'linear-gradient(180deg, #242424, #1a1a1a)',
+    darkSubtle: 'linear-gradient(135deg, #262626, #303030)',
+    darkElevated: 'linear-gradient(180deg, #303030, #262626)',
   },
 
   // Shadow Colors
