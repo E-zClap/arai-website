@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-## user_problem_statement: "In publication page, I want that the informations are correct, citations etc base youre self on the real website : https://keigoarai.net/publications/ check online for the numbers, h-hindex, etc"
+## user_problem_statement: "Add an About Us fancy page with comprehensive information about the laboratory's Purpose, Vision (3 research directions), Mission (5 lines of action), and Values (7 core values)"
 
 ## frontend:
   - task: "Completely redesign Research section with 6 comprehensive research themes"
