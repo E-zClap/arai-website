@@ -172,7 +172,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         {/* Professional Status Indicator */}
         <div className="flex justify-center">
           <motion.div 
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-slate-800/60 to-slate-700/40 rounded-full border border-slate-600/40"
+            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-slate-800/60 to-slate-700/40 rounded-full border border-dark-gray-600/40"
             animate={{
               boxShadow: [
                 "0 0 20px rgba(20, 184, 166, 0.1)",
@@ -197,7 +197,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         <motion.div className="border-t border-dark-gray-700/50 pt-6">
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >

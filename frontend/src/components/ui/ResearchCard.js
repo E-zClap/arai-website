@@ -150,7 +150,7 @@ export const ResearchCard = ({ research, index, language }) => {
         >
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >

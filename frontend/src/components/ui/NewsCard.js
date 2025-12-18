@@ -45,7 +45,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             {/* Publication Type Badge */}
             <span className={`px-3 py-1 text-xs rounded-full font-medium ${
               isDark
-                ? 'bg-dark-gray-850/50 text-slate-300 border border-slate-600/30'
+                ? 'bg-dark-gray-850/50 text-slate-300 border border-dark-gray-600/30'
                 : 'bg-slate-100 text-slate-600 border border-slate-200/50'
             }`}>
               {language === 'EN' ? 'Academic News' : 'アカデミック・ニュース'}
