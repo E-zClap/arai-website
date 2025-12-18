@@ -92,7 +92,7 @@ code {
 /* Firefox scrollbar styling */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #ea580c rgba(26, 26, 26, 0.5);
+    scrollbar-color: #ea580c rgba(38, 38, 38, 0.5);
 }
 
 /* Dark mode scrollbar adjustments */
