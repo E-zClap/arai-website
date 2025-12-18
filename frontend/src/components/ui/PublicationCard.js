@@ -88,10 +88,18 @@ export const PublicationCard = ({ publication, index, language }) => {
           </motion.div>
         </div>
 
-        {/* Citation Count */}
+        {/* Citation Count with subtle blue accent */}
         <motion.div 
-          className="text-center p-3 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.1)" }}
+          className="text-center p-3 rounded-2xl bg-dark-gray-850/40 border border-blue-accent/20"
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.1)", borderColor: "rgba(59, 130, 246, 0.4)" }}
+          animate={{
+            boxShadow: [
+              "0 0 0px rgba(59, 130, 246, 0.0)",
+              "0 0 10px rgba(59, 130, 246, 0.2)",
+              "0 0 0px rgba(59, 130, 246, 0.0)"
+            ]
+          }}
+          transition={{ duration: 4, repeat: Infinity }}
         >
           <div className="text-orange-400 font-bold text-lg">{publication.citations}</div>
           <div className="text-slate-400 text-xs">
