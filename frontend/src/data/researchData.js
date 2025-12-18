@@ -1,93 +1,177 @@
-// Enhanced Research Areas Data with Detailed Technical Information
+// Comprehensive Research Themes - Arai Laboratory
 export const researchData = [
   {
+    number: 1,
     title: {
-      EN: "Quantum Sensing with Diamond NV Centers",
-      JP: "ダイヤモンドNVセンターによる量子センシング"
+      EN: "Quantum Control & Measurement Dynamics",
+      JP: "量子制御と測定ダイナミクス"
+    },
+    overview: {
+      EN: "We develop a quantum informatics view of controlled quantum systems: how information is generated, filtered, and stabilized through control and measurement. Our goal is to convert fragile coherence into a designable resource for quantum sensing and quantum technologies.",
+      JP: "制御された量子システムの量子情報学的視点を開発：制御と測定を通じて情報がどのように生成、フィルタリング、安定化されるか。私たちの目標は、脆弱なコヒーレンスを量子センシングと量子技術のための設計可能なリソースに変換することです。"
     },
     description: {
-      EN: "We develop advanced quantum sensing techniques using nitrogen-vacancy (NV) centers in diamond for ultra-high precision magnetic field detection, electric field sensing, and quantum information processing. Our research focuses on nanoscale magnetometry, quantum control protocols, and coherent manipulation of single spin systems for practical quantum sensing applications.",
-      JP: "超高精度磁場検出、電場センシング、量子情報処理のために、ダイヤモンド中の窒素空孔（NV）センターを用いた先進的な量子センシング技術を開発しています。私たちの研究はナノスケール磁気測定、量子制御プロトコル、実用的な量子センシング応用のための単一スピンシステムのコヒーレント操作に焦点を当てています。"
+      EN: "Key concepts include Coherent Population Trapping (CPT) and Electromagnetically Induced Transparency (EIT), which enable long-lived coherence and narrow spectral features even in dissipative environments. We also study Quantum Non-Demolition (QND) measurement and continuous measurement as foundations for precision metrology, feedback control, and quantum state estimation—connecting measurement directly to information flow and engineering utility.",
+      JP: "主要な概念には、散逸環境でも長寿命コヒーレンスと狭いスペクトル特性を可能にするコヒーレント集団トラッピング（CPT）と電磁誘導透明性（EIT）が含まれます。精密計測、フィードバック制御、量子状態推定の基礎として量子非破壊（QND）測定と連続測定も研究し、測定を情報フローと工学的有用性に直接結びつけています。"
     },
-    detailedDescription: {
-      EN: "Our quantum sensing research utilizes the unique properties of nitrogen-vacancy centers in diamond, which serve as atomic-scale quantum sensors with exceptional sensitivity and spatial resolution. We develop novel quantum control sequences, implement dynamical decoupling techniques, and create advanced readout protocols that enable detection of magnetic fields down to the nanotesla level with nanometer spatial resolution.",
-      JP: "私たちの量子センシング研究は、原子スケールの量子センサとして優れた感度と空間分解能を持つダイヤモンド中の窒素空孔センターの独特な性質を利用しています。新しい量子制御シーケンスを開発し、動的デカップリング技術を実装し、ナノテスラレベルの磁場をナノメートル空間分解能で検出可能にする先進的な読み出しプロトコルを作成しています。"
+    exampleTopics: {
+      EN: [
+        "Coherent control and narrow-line spectroscopy using CPT and EIT",
+        "Optimal and robust control of quantum sensors and qubits",
+        "QND and continuous measurements with measurement-based feedback control"
+      ],
+      JP: [
+        "CPTとEITを使用したコヒーレント制御と狭線スペクトロスコピー",
+        "量子センサとキュービットの最適かつロバストな制御",
+        "測定ベースのフィードバック制御によるQNDおよび連続測定"
+      ]
     },
-    methodology: {
-      EN: "• Single-spin coherent control and quantum state manipulation\n• Dynamical decoupling sequences for enhanced coherence\n• Nanoscale magnetometry with sub-10nm spatial resolution\n• Quantum error correction protocols for sensing applications\n• Real-time quantum feedback and adaptive control",
-      JP: "• 単一スピンのコヒーレント制御と量子状態操作\n• コヒーレンス向上のための動的デカップリングシーケンス\n• 10nm以下の空間分解能でのナノスケール磁気測定\n• センシング応用のための量子誤り訂正プロトコル\n• リアルタイム量子フィードバックと適応制御"
-    },
-    applications: {
-      EN: "• Biological magnetic field imaging\n• Quantum material characterization\n• Single molecule detection\n• Quantum computing hardware validation\n• Medical diagnostic applications",
-      JP: "• 生物学的磁場イメージング\n• 量子材料特性評価\n• 単一分子検出\n• 量子コンピューティングハードウェア検証\n• 医療診断応用"
-    },
-    currentProjects: {
-      EN: "• Development of room-temperature quantum sensors\n• Integration with photonic circuits\n• Machine learning-enhanced sensing protocols\n• Quantum sensor networks and entangled sensing",
-      JP: "• 室温動作量子センサの開発\n• フォトニック回路との統合\n• 機械学習強化センシングプロトコル\n• 量子センサネットワークともつれセンシング"
-    },
-    image: "https://images.unsplash.com/photo-1737908820885-f5acf114722a",
-    category: "Quantum Physics",
-    status: "Active Research",
-    fundingLevel: "High Priority"
+    category: "Fundamental Quantum Physics"
   },
   {
+    number: 2,
     title: {
-      EN: "Quantum Informatics & Control",
-      JP: "量子インフォマティクスと制御"
+      EN: "Diamond Quantum Electronics",
+      JP: "ダイヤモンド量子エレクトロニクス"
+    },
+    overview: {
+      EN: "We pursue a platform mission: establishing diamond as technological infrastructure for quantum devices that remain functional in realistic and extreme environments. By integrating dopants, defects, and quantum spins into engineered architectures, we connect materials → devices → measurement in a single stack.",
+      JP: "プラットフォームミッション：現実的で極限的な環境で機能し続ける量子デバイスの技術インフラとしてダイヤモンドを確立すること。ドーパント、欠陥、量子スピンを工学的アーキテクチャに統合することで、材料→デバイス→測定を単一スタックで接続します。"
     },
     description: {
-      EN: "Integration of quantum sensing technologies with advanced computational informatics, machine learning algorithms, and quantum control theory to create next-generation quantum information processing systems. Our work encompasses quantum algorithm development, optimization protocols, and intelligent quantum system control architectures.",
-      JP: "量子センシング技術と先進的な計算情報学、機械学習アルゴリズム、量子制御理論を統合し、次世代量子情報処理システムを創出しています。私たちの研究は量子アルゴリズム開発、最適化プロトコル、インテリジェント量子システム制御アーキテクチャを包含しています。"
+      EN: "This theme embodies \"robustness over ideality\" by design: diamond-based quantum electronics can be engineered for high temperature, high pressure, and harsh chemical conditions, expanding where quantum systems can operate and what they can measure.",
+      JP: "このテーマは設計により「理想性よりも堅牢性」を体現しています：ダイヤモンドベースの量子エレクトロニクスは、高温、高圧、過酷な化学的条件に対応できるよう設計され、量子システムが動作できる場所と測定できる対象を拡大します。"
     },
-    detailedDescription: {
-      EN: "We develop sophisticated quantum information processing protocols that leverage machine learning and AI to optimize quantum sensing performance, control quantum systems with unprecedented precision, and create adaptive quantum algorithms. Our research bridges theoretical quantum information science with practical implementation in quantum sensing and quantum computing systems.",
-      JP: "私たちは機械学習とAIを活用して量子センシング性能を最適化し、前例のない精度で量子システムを制御し、適応的量子アルゴリズムを作成する高度な量子情報処理プロトコルを開発しています。私たちの研究は理論的量子情報科学と量子センシング・量子コンピューティングシステムでの実用的実装を橋渡ししています。"
+    exampleTopics: {
+      EN: [
+        "Quantum circuits and devices based on boron-doped diamond (BDD) and spin defects",
+        "Diamond quantum sensors robust against extreme environments",
+        "Combining diamond surface electrochemistry with quantum measurements"
+      ],
+      JP: [
+        "ホウ素ドープダイヤモンド（BDD）とスピン欠陥に基づく量子回路とデバイス",
+        "極限環境に対して堅牢なダイヤモンド量子センサ",
+        "ダイヤモンド表面電気化学と量子測定の組み合わせ"
+      ]
     },
-    methodology: {
-      EN: "• Quantum machine learning algorithm development\n• Adaptive quantum control and feedback systems\n• Quantum optimization and variational algorithms\n• Hybrid classical-quantum information processing\n• Real-time quantum state estimation and control",
-      JP: "• 量子機械学習アルゴリズム開発\n• 適応的量子制御とフィードバックシステム\n• 量子最適化と変分アルゴリズム\n• 古典・量子ハイブリッド情報処理\n• リアルタイム量子状態推定と制御"
-    },
-    applications: {
-      EN: "• Quantum sensor performance optimization\n• Quantum computing error mitigation\n• Quantum communication protocols\n• Quantum-enhanced metrology\n• Quantum simulation and modeling",
-      JP: "• 量子センサ性能最適化\n• 量子コンピューティング誤り軽減\n• 量子通信プロトコル\n• 量子強化計測\n• 量子シミュレーションとモデリング"
-    },
-    currentProjects: {
-      EN: "• AI-driven quantum control optimization\n• Quantum reinforcement learning\n• Quantum neural networks for sensing\n• Distributed quantum information systems",
-      JP: "• AI駆動量子制御最適化\n• 量子強化学習\n• センシングのための量子ニューラルネットワーク\n• 分散量子情報システム"
-    },
-    image: "https://images.unsplash.com/photo-1726601057260-e8095dad345a",
-    category: "Quantum Computing",
-    status: "Active Research", 
-    fundingLevel: "High Priority"
+    category: "Quantum Materials & Devices"
   },
   {
+    number: 3,
     title: {
-      EN: "Advanced Laboratory Techniques",
-      JP: "先進実験技術"
+      EN: "Quantum Materials Sensing & Extreme-Condition Physics",
+      JP: "量子材料センシングと極限条件物理学"
+    },
+    overview: {
+      EN: "Many quantum states of matter are \"invisible\" to conventional probes. We use quantum sensors to make the invisible visible by spatially resolving magnetic fields, currents, and spin order—turning quantum measurement into a direct window on quantum materials.",
+      JP: "多くの量子物質状態は従来のプローブでは「見えません」。磁場、電流、スピン秩序を空間的に解決することで、量子センサを使用して見えないものを見えるようにし、量子測定を量子材料への直接の窓に変えています。"
     },
     description: {
-      EN: "Development of state-of-the-art experimental methodologies, precision measurement techniques, and custom instrumentation for quantum systems research. Our laboratory capabilities include ultra-low noise environments, high-resolution optical systems, and specialized quantum control hardware for cutting-edge quantum sensing experiments.",
-      JP: "量子システム研究のための最先端実験方法論、精密測定技術、カスタム計測器の開発。私たちの実験室能力には、超低ノイズ環境、高分解能光学システム、最先端量子センシング実験のための特殊量子制御ハードウェアが含まれます。"
+      EN: "Our scope spans superconductors, magnetic materials, and defect physics under extreme conditions. By visualizing phase behavior and local structure (rather than only bulk averages), we aim to extract design principles for new materials and guidelines for quantum devices that must function in real environments.",
+      JP: "私たちの範囲は、極限条件下での超伝導体、磁性材料、欠陥物理学に及びます。相挙動と局所構造を視覚化することで（バルク平均だけでなく）、新材料の設計原理と実環境で機能する必要がある量子デバイスのガイドラインを抽出することを目指しています。"
     },
-    detailedDescription: {
-      EN: "Our advanced laboratory techniques focus on creating the optimal experimental conditions for quantum sensing and quantum information experiments. We develop custom cryogenic systems, ultra-stable laser systems, precision positioning equipment, and specialized electronics that enable quantum experiments with unprecedented control and measurement precision.",
-      JP: "私たちの先進実験技術は、量子センシングと量子情報実験のための最適な実験条件の作成に焦点を当てています。前例のない制御と測定精度で量子実験を可能にするカスタム極低温システム、超安定レーザーシステム、精密位置決め装置、特殊電子機器を開発しています。"
+    exampleTopics: {
+      EN: [
+        "Nanoscale magnetic-field imaging of superconductors and magnetic materials",
+        "Local probing of high-temperature magnetic phase transitions (e.g., Curie transitions)",
+        "High-temperature and high-pressure properties of defects in diamond, including spin and charge dynamics"
+      ],
+      JP: [
+        "超伝導体と磁性材料のナノスケール磁場イメージング",
+        "高温磁気相転移の局所プローブ（例：キュリー転移）",
+        "スピンと電荷ダイナミクスを含むダイヤモンド中の欠陥の高温・高圧特性"
+      ]
     },
-    methodology: {
-      EN: "• Ultra-stable optical and microwave systems\n• Cryogenic quantum sensing platforms\n• High-resolution confocal microscopy\n• Custom quantum control electronics\n• Precision environmental isolation techniques",
-      JP: "• 超安定光・マイクロ波システム\n• 極低温量子センシングプラットフォーム\n• 高分解能共焦点顕微鏡\n• カスタム量子制御電子機器\n• 精密環境分離技術"
+    category: "Condensed Matter Physics"
+  },
+  {
+    number: 4,
+    title: {
+      EN: "Quantum Environmental & Infrastructure Sensing",
+      JP: "量子環境・インフラセンシング"
     },
-    applications: {
-      EN: "• Quantum sensor calibration and characterization\n• Novel quantum material synthesis and testing\n• Precision quantum state preparation\n• Advanced quantum measurement protocols\n• Quantum device fabrication and testing",
-      JP: "• 量子センサ校正と特性評価\n• 新しい量子材料合成と試験\n• 精密量子状態準備\n• 先進量子測定プロトコル\n• 量子デバイス製造と試験"
+    overview: {
+      EN: "This theme is where our Mission becomes explicit: translating quantum measurement into societal monitoring infrastructure. Many critical systems—oceans, underground environments, industrial components—fail silently until damage is advanced. Quantum sensors can detect early, subtle signatures that conventional tools miss.",
+      JP: "このテーマは私たちのミッションが明確になる場所です：量子測定を社会監視インフラに変換すること。多くの重要なシステム（海洋、地下環境、産業部品）は、損傷が進むまで静かに故障します。量子センサは、従来のツールが見逃す初期の微妙な兆候を検出できます。"
     },
-    currentProjects: {
-      EN: "• Next-generation quantum sensing platforms\n• Automated quantum experiment control\n• Machine learning-enhanced measurement\n• Quantum device fabrication optimization",
-      JP: "• 次世代量子センシングプラットフォーム\n• 自動化量子実験制御\n• 機械学習強化測定\n• 量子デバイス製造最適化"
+    description: {
+      EN: "We focus on deployable, interpretable measurement protocols that connect quantum signals to actionable diagnostics for environment and infrastructure health.",
+      JP: "環境とインフラの健全性に対する実行可能な診断に量子信号を接続する、展開可能で解釈可能な測定プロトコルに焦点を当てています。"
     },
-    image: "https://images.unsplash.com/photo-1602052577122-f73b9710adba",
-    category: "Experimental Physics",
-    status: "Active Research",
-    fundingLevel: "Medium Priority"
+    exampleTopics: {
+      EN: [
+        "Quantum sensing of seawater pH and electrochemical processes",
+        "Non-destructive detection of micro-defects and hydrogen embrittlement in metals",
+        "Quantum sensing methods and measurement protocols for field deployment"
+      ],
+      JP: [
+        "海水pHと電気化学プロセスの量子センシング",
+        "金属中の微小欠陥と水素脆化の非破壊検出",
+        "フィールド展開のための量子センシング方法と測定プロトコル"
+      ]
+    },
+    category: "Applied Quantum Sensing"
+  },
+  {
+    number: 5,
+    title: {
+      EN: "Quantum Probability & Social Informatics",
+      JP: "量子確率と社会情報学"
+    },
+    overview: {
+      EN: "To extend \"how we describe and understand the world\" beyond physical systems, we explore whether quantum probability provides a rigorous language for contextuality, order effects, and non-classical correlations in human judgment and social dynamics.",
+      JP: "物理システムを超えて「世界を記述し理解する方法」を拡張するために、量子確率が人間の判断と社会的ダイナミクスにおける文脈性、順序効果、非古典的相関の厳密な言語を提供するかどうかを探求しています。"
+    },
+    description: {
+      EN: "This theme contributes to intellectual infrastructure: a quantum-informatics-inspired framework for modeling decisions, organizations, and socio-economic systems—grounded in data and evaluated by predictive utility rather than analogy alone.",
+      JP: "このテーマは知的インフラに貢献します：意思決定、組織、社会経済システムをモデル化するための量子情報学にインスパイアされたフレームワーク。データに基づき、類推だけでなく予測効用によって評価されます。"
+    },
+    exampleTopics: {
+      EN: [
+        "Quantum-probability models of judgment, bias, and context effects",
+        "Quantum-like modeling of social correlations and information networks",
+        "Applications to policy, finance, and organizational design"
+      ],
+      JP: [
+        "判断、バイアス、文脈効果の量子確率モデル",
+        "社会的相関と情報ネットワークの量子的モデリング",
+        "政策、金融、組織設計への応用"
+      ]
+    },
+    category: "Interdisciplinary Research"
+  },
+  {
+    number: 6,
+    title: {
+      EN: "Machine Learning for NV-Center Metrology & Simulation",
+      JP: "NVセンター計測とシミュレーションのための機械学習"
+    },
+    overview: {
+      EN: "To accelerate the translation of NV-center quantum sensing into reliable metrology, we develop machine-learning-driven simulation and inference workflows that couple first-principles / device-level models with data from real measurements. Our goal is to build \"quantum metrology digital twins\" that predict sensor behavior, optimize protocols, and turn complex NV signals into calibrated, uncertainty-aware physical estimates.",
+      JP: "NVセンター量子センシングを信頼性の高い計測に変換することを加速するために、第一原理/デバイスレベルモデルと実測データを結合する機械学習駆動のシミュレーションと推論ワークフローを開発しています。センサ動作を予測し、プロトコルを最適化し、複雑なNV信号を校正された不確実性認識物理推定に変換する「量子計測デジタルツイン」の構築を目指しています。"
+    },
+    description: {
+      EN: "This theme tightly links simulation → experiment → deployment: physics-guided ML produces fast surrogate models and robust estimators, while real sensor data continuously updates model validity, domain shift, and reliability under extreme and field conditions.",
+      JP: "このテーマはシミュレーション→実験→展開を緊密に結びつけます：物理学ガイドMLは高速代理モデルとロバスト推定器を生成し、実際のセンサデータはモデルの妥当性、ドメインシフト、極限およびフィールド条件下での信頼性を継続的に更新します。"
+    },
+    exampleTopics: {
+      EN: [
+        "Physics-informed and hybrid ML models for NV spin dynamics (Hamiltonian + noise + readout)",
+        "Surrogate simulation models for rapid protocol design (including CPT/EIT/QND-inspired sequences) and device optimization",
+        "Bayesian/ML state estimation for NV-based metrology (field, temperature, strain, pH/electrochemistry) with uncertainty quantification",
+        "Automated calibration and drift compensation using domain adaptation and self-supervised learning on long-term sensor logs",
+        "Reinforcement learning / optimal experimental design for adaptive sensing and measurement-based feedback control",
+        "Synthetic-data generation pipelines (digital twin + measurement model) for robust training and benchmarking of inference algorithms"
+      ],
+      JP: [
+        "NVスピンダイナミクスのための物理情報および混合MLモデル（ハミルトニアン+ノイズ+読み出し）",
+        "迅速なプロトコル設計（CPT/EIT/QNDインスパイアシーケンスを含む）とデバイス最適化のための代理シミュレーションモデル",
+        "不確実性定量化を伴うNVベース計測（場、温度、歪み、pH/電気化学）のためのベイズ/ML状態推定",
+        "長期センサログに対するドメイン適応と自己教師あり学習を使用した自動校正とドリフト補償",
+        "適応センシングと測定ベースフィードバック制御のための強化学習/最適実験設計",
+        "推論アルゴリズムのロバストなトレーニングとベンチマークのための合成データ生成パイプライン（デジタルツイン+測定モデル）"
+      ]
+    },
+    category: "Computational Quantum Science"
   }
 ];
