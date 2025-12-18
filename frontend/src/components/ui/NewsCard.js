@@ -13,7 +13,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={`backdrop-blur-xl rounded-3xl p-8 border transition-all duration-300 group ${
         isDark 
-          ? 'bg-dark-gray-900/60 border-orange-600/20 hover:border-orange-500/40 hover:bg-slate-800/70'
+          ? 'bg-dark-gray-900/60 border-orange-600/20 hover:border-orange-500/40 hover:bg-dark-gray-850/70'
           : 'bg-white/80 border-orange-300/30 hover:border-orange-400/50 shadow-lg hover:shadow-xl'
       }`}
     >
@@ -45,7 +45,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             {/* Publication Type Badge */}
             <span className={`px-3 py-1 text-xs rounded-full font-medium ${
               isDark
-                ? 'bg-slate-800/50 text-slate-300 border border-slate-600/30'
+                ? 'bg-dark-gray-850/50 text-slate-300 border border-slate-600/30'
                 : 'bg-slate-100 text-slate-600 border border-slate-200/50'
             }`}>
               {language === 'EN' ? 'Academic News' : 'アカデミック・ニュース'}

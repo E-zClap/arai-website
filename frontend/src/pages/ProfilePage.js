@@ -30,7 +30,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
           onClick={() => setCurrentPage('team')}
           className={`mb-8 inline-flex items-center px-4 py-2 rounded-xl transition-all duration-300 ${
             isDark 
-              ? 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-white'
+              ? 'bg-dark-gray-850/50 text-slate-300 hover:bg-slate-700/50 hover:text-white'
               : 'bg-white/70 text-slate-600 hover:bg-white hover:text-slate-800'
           }`}
           whileHover={{ scale: 1.02 }}
@@ -120,7 +120,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
                   transition={{ duration: 0.6, delay: 0.1 * idx }}
                   className={`flex gap-6 p-6 rounded-2xl border ${
                     isDark 
-                      ? 'bg-slate-800/40 border-slate-700/50' 
+                      ? 'bg-dark-gray-850/40 border-slate-700/50' 
                       : 'bg-slate-50/80 border-slate-200/50'
                   }`}
                 >
@@ -179,7 +179,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
                   transition={{ duration: 0.6, delay: 0.1 * idx }}
                   className={`p-6 rounded-2xl border ${
                     isDark 
-                      ? 'bg-slate-800/40 border-slate-700/50' 
+                      ? 'bg-dark-gray-850/40 border-slate-700/50' 
                       : 'bg-slate-50/80 border-slate-200/50'
                   }`}
                 >

@@ -116,7 +116,7 @@ export const ResearchCard = ({ research, index, language }) => {
         {/* Professional Research Metrics */}
         <div className="grid grid-cols-3 gap-4 py-4">
           <motion.div 
-            className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
+            className="text-center p-3 rounded-xl bg-dark-gray-850/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(20, 184, 166, 0.1)" }}
           >
             <Target size={20} className="text-orange-500 mx-auto mb-2" />
@@ -125,7 +125,7 @@ export const ResearchCard = ({ research, index, language }) => {
             </div>
           </motion.div>
           <motion.div 
-            className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
+            className="text-center p-3 rounded-xl bg-dark-gray-850/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(6, 182, 212, 0.1)" }}
           >
             <Zap size={20} className="text-orange-400 mx-auto mb-2" />
@@ -134,7 +134,7 @@ export const ResearchCard = ({ research, index, language }) => {
             </div>
           </motion.div>
           <motion.div 
-            className="text-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30"
+            className="text-center p-3 rounded-xl bg-dark-gray-850/40 border border-slate-700/30"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(16, 185, 129, 0.1)" }}
           >
             <BookOpen size={20} className="text-orange-400 mx-auto mb-2" />
@@ -183,7 +183,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 }}
-                    className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <Lightbulb size={18} className="text-yellow-400" />
@@ -203,7 +203,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
                       <Target size={18} className="text-orange-500" />
@@ -221,7 +221,7 @@ export const ResearchCard = ({ research, index, language }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="p-6 rounded-2xl bg-slate-800/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
                   >
                     <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
                       <Zap size={18} className="text-orange-400" />

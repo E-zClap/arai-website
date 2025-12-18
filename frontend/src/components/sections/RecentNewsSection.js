@@ -23,7 +23,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
         >
           <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
             isDark 
-              ? 'backdrop-blur-sm bg-slate-800/60 border-slate-600/30 text-slate-300'
+              ? 'backdrop-blur-sm bg-dark-gray-850/60 border-slate-600/30 text-slate-300'
               : 'bg-slate-50 border-slate-200/50 text-slate-700 shadow-lg'
           }`}>
             <BookOpen className="mr-3" size={20} />

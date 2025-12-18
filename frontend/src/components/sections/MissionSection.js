@@ -159,7 +159,7 @@ export const MissionSection = ({ language, isDark }) => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                       className={`flex flex-col items-center text-center space-y-4 p-6 rounded-2xl ${
-                        isDark ? 'bg-slate-800/40' : 'bg-slate-50/80'
+                        isDark ? 'bg-dark-gray-850/40' : 'bg-slate-50/80'
                       }`}
                     >
                       <div className={`p-4 rounded-xl bg-gradient-to-r ${principle.color}`}>
@@ -212,7 +212,7 @@ export const MissionSection = ({ language, isDark }) => {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
                     isDark 
-                      ? 'bg-dark-gray-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-slate-800/70'
+                      ? 'bg-dark-gray-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-dark-gray-850/70'
                       : 'bg-white/80 border-slate-200/50 hover:border-orange-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
                   }`}
                   whileHover={{ scale: 1.02 }}

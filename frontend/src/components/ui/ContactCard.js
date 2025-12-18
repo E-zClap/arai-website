@@ -28,7 +28,7 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
         {link ? (
           <a 
             href={link}
-            className="block p-4 bg-slate-800/40 rounded-2xl border border-slate-700/50 hover:border-orange-500/40 text-orange-300 hover:text-white transition-all duration-300 group-hover:bg-slate-700/50"
+            className="block p-4 bg-dark-gray-850/40 rounded-2xl border border-slate-700/50 hover:border-orange-500/40 text-orange-300 hover:text-white transition-all duration-300 group-hover:bg-slate-700/50"
           >
             <div className="text-sm font-medium mb-1 text-slate-400">
               {language === 'EN' ? 'Contact via' : '連絡先'}
@@ -38,7 +38,7 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
             </div>
           </a>
         ) : (
-          <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+          <div className="p-4 bg-dark-gray-850/40 rounded-2xl border border-slate-700/50">
             <div className="text-sm font-medium mb-1 text-slate-400">
               {language === 'EN' ? 'Address' : '住所'}
             </div>

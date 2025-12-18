@@ -207,7 +207,7 @@ export const PublicationsPage = ({ language, isDark }) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className={`w-full p-5 pl-14 rounded-2xl border transition-all duration-300 text-lg ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-orange-500/60'
+                  ? 'bg-dark-gray-850/50 border-slate-700/40 text-white placeholder-slate-400 focus:border-orange-500/60'
                   : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-orange-500/60'
               } focus:outline-none focus:ring-0`}
               whileFocus={{ scale: 1.01 }}
@@ -223,7 +223,7 @@ export const PublicationsPage = ({ language, isDark }) => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className={`flex items-center space-x-3 px-6 py-3 rounded-2xl border transition-all duration-300 ${
                 isDark 
-                  ? 'bg-slate-800/50 border-slate-700/40 text-white hover:border-orange-500/60'
+                  ? 'bg-dark-gray-850/50 border-slate-700/40 text-white hover:border-orange-500/60'
                   : 'bg-white/80 border-slate-300/40 text-slate-900 hover:border-orange-500/60'
               }`}
               whileHover={{ scale: 1.02 }}
@@ -289,7 +289,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                       onChange={(e) => setSelectedCategory(e.target.value)}
                       className={`w-full p-3 rounded-2xl border transition-all duration-300 ${
                         isDark 
-                          ? 'bg-slate-800/50 border-slate-700/40 text-white'
+                          ? 'bg-dark-gray-850/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
                       } focus:outline-none focus:border-orange-500/60`}
                     >
@@ -313,7 +313,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                       onChange={(e) => setSelectedYear(e.target.value)}
                       className={`w-full p-3 rounded-2xl border transition-all duration-300 ${
                         isDark 
-                          ? 'bg-slate-800/50 border-slate-700/40 text-white'
+                          ? 'bg-dark-gray-850/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
                       } focus:outline-none focus:border-orange-500/60`}
                     >
@@ -338,7 +338,7 @@ export const PublicationsPage = ({ language, isDark }) => {
                       onChange={(e) => setSelectedImpact(e.target.value)}
                       className={`w-full p-3 rounded-2xl border transition-all duration-300 ${
                         isDark 
-                          ? 'bg-slate-800/50 border-slate-700/40 text-white'
+                          ? 'bg-dark-gray-850/50 border-slate-700/40 text-white'
                           : 'bg-white/80 border-slate-300/40 text-slate-900'
                       } focus:outline-none focus:border-orange-500/60`}
                     >
