@@ -61,6 +61,7 @@ export const colorTheme = {
     accent: 'rgba(251, 146, 60, 0.3)',
     dark: 'rgba(0, 0, 0, 0.5)',
     darkSubtle: 'rgba(0, 0, 0, 0.3)',
+    blue: 'rgba(59, 130, 246, 0.2)',
   },
 
   // Tailwind Class Mappings
