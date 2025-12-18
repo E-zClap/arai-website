@@ -73,7 +73,7 @@ export const HeroSection = ({ language, isDark }) => {
             className="space-y-8"
           >
             <div>
-              <h1 className={`text-7xl lg:text-8xl font-bold mb-6 ${
+              <h1 className={`text-6xl lg:text-7xl font-bold mb-6 ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
                 {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
@@ -84,9 +84,9 @@ export const HeroSection = ({ language, isDark }) => {
                 isDark ? 'text-slate-300' : 'text-slate-600'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
                 <span className="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent font-semibold">
-                  {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
+                  {language === 'EN' ? 'Diamond NV Centers' : 'ダイヤモンドNVセンター'}
                 </span>
-                {language === 'EN' ? ' & Informatics' : ' & インフォマティクス'}
+                {language === 'EN' ? ' & Quantum Metrology' : ' & 量子計測'}
               </div>
             </div>
 
