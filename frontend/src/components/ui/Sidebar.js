@@ -233,7 +233,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                           ? 'bg-gradient-to-r from-orange-600/40 to-orange-500/30 border-2 border-orange-400/50 text-orange-200 shadow-2xl shadow-orange-500/20' 
                           : 'bg-gradient-to-r from-orange-50 to-orange-50 border-2 border-orange-300/60 text-orange-800 shadow-xl')
                       : (isDark 
-                          ? 'hover:bg-slate-800/70 text-slate-300 hover:text-white hover:border-slate-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-slate-900/20' 
+                          ? 'hover:bg-dark-gray-850/70 text-slate-300 hover:text-white hover:border-dark-gray-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-black/20' 
                           : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
                   }`}
                   initial={{ x: -20, opacity: 0 }}
