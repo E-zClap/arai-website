@@ -108,9 +108,16 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDark ? 'bg-dark-gray-950 text-white' : 'bg-gray-50 text-gray-900'
-    }`}>
+    <div 
+      className={`min-h-screen transition-colors duration-300 ${
+        isDark ? 'text-white' : 'bg-gray-50 text-gray-900'
+      }`}
+      style={{
+        background: isDark 
+          ? 'radial-gradient(ellipse at top, #1e293b 0%, #1a1a1a 50%, #0f172a 100%)'
+          : undefined
+      }}
+    >
       {/* Background Particles - Reduced for better performance */}
       <QuantumParticles intensity={15} />
       
