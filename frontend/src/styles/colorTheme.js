@@ -10,10 +10,10 @@ export const colorTheme = {
     blueAccent: '#3b82f6',      // Dark-Light Blue (subtle highlight)
     blueLight: '#60a5fa',       // Light Blue
     blueDark: '#2563eb',        // Darker Blue
-    dark: '#0a0a0a',            // True Black
-    darkSurface: '#1a1a1a',     // Dark Gray Surface
-    darkElevated: '#242424',    // Elevated Surface
-    darkSubtle: '#2a2a2a',      // Subtle Dark
+    dark: '#1a1a1a',            // Dark Background (lighter)
+    darkSurface: '#262626',     // Dark Gray Surface (lighter)
+    darkElevated: '#303030',    // Elevated Surface (lighter)
+    darkSubtle: '#353535',      // Subtle Dark (lighter)
   },
 
   // Light Mode Palette
