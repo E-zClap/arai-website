@@ -96,6 +96,8 @@ function App() {
         return <ContactPage {...commonProps} />;
       case 'join-us':
         return <JoinUsPage {...commonProps} />;
+      case 'about-us':
+        return <AboutUsPage {...commonProps} />;
       case 'profile-keigo-arai':
         return (
           <ProfilePage 
