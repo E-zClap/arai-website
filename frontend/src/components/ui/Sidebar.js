@@ -128,7 +128,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           }}
           className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 lg:opacity-100 flex flex-col ${
             isDark 
-              ? 'bg-slate-900/95 backdrop-blur-3xl border-r border-orange-500/20 shadow-2xl shadow-orange-500/5' 
+              ? 'bg-dark-gray-925/95 backdrop-blur-3xl border-r border-orange-500/20 shadow-2xl shadow-orange-500/5' 
               : 'bg-white/95 backdrop-blur-3xl border-r border-orange-200/50 shadow-2xl'
           }`}
         >
