@@ -9,7 +9,8 @@ import {
   ExternalLink,
   Menu,
   X,
-  ChevronRight
+  ChevronRight,
+  Info
 } from 'lucide-react';
 
 // Ultra-Professional Sidebar with Premium Academic Design
