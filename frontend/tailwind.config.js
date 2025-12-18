@@ -67,9 +67,9 @@ module.exports = {
         'theme': {
           primary: '#ea580c',       // vibrant-orange-600
           secondary: '#f97316',     // orange-500  
-          dark: '#0a0a0a',          // true black
-          'dark-surface': '#1a1a1a', // dark gray surface
-          'dark-elevated': '#242424', // elevated surface
+          dark: '#1a1a1a',          // dark background (lighter)
+          'dark-surface': '#262626', // dark gray surface (lighter)
+          'dark-elevated': '#303030', // elevated surface (lighter)
           accent: '#fb923c',        // orange-400
         },
         // Blue accent colors for subtle highlights
