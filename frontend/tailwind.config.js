@@ -71,6 +71,12 @@ module.exports = {
           'dark-surface': '#1a1a1a', // dark gray surface
           'dark-elevated': '#242424', // elevated surface
           accent: '#fb923c',        // orange-400
+        },
+        // Blue accent colors for subtle highlights
+        'blue-accent': {
+          light: '#60a5fa',
+          DEFAULT: '#3b82f6',
+          dark: '#2563eb',
         }
       },
     },
