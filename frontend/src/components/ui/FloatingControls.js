@@ -25,12 +25,12 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
         )}
       </motion.button>
 
-      {/* Professional Language Toggle */}
+      {/* Professional Language Toggle with subtle blue accent */}
       <motion.button
         onClick={() => setLanguage(language === 'EN' ? 'JP' : 'EN')}
         className={`w-12 h-12 rounded-xl transition-all duration-300 group ${
           isDark 
-            ? 'bg-dark-gray-850/80 border-dark-gray-600/50 text-orange-400 hover:bg-dark-gray-800/90' 
+            ? 'bg-dark-gray-850/80 border-blue-accent/30 text-blue-accent-light hover:bg-dark-gray-800/90 hover:border-blue-accent/50' 
             : 'bg-white border-slate-200/50 text-slate-600 hover:bg-gray-50 shadow-lg'
         } border backdrop-blur-xl flex items-center justify-center`}
         whileHover={{ scale: 1.05 }}
