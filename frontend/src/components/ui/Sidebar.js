@@ -164,7 +164,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  {language === 'EN' ? "Arai's Laboratory" : '荒井研究室'}
+                  {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
                 </motion.h1>
                 <motion.p 
                   className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
@@ -329,8 +329,8 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 {language === 'EN' 
-                  ? '© 2022 Quantum Sensing Laboratory' 
-                  : '© 2022 量子センシング研究室'
+                  ? `© ${new Date().getFullYear()} Quantum Informatics Group` 
+                  : `© ${new Date().getFullYear()} 量子情報学グループ`
                 }
               </motion.div>
               <div className="text-xs opacity-80">
