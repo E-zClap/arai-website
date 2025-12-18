@@ -167,6 +167,32 @@ code {
     text-shadow: none; /* Remove text shadow on selection */
 }
 
+/* Sophisticated Background Animations for Quantum Lab */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 20s ease infinite;
+}
+
+
 /* Utility classes for the new color system */
 @layer utilities {
   .bg-theme-primary {
