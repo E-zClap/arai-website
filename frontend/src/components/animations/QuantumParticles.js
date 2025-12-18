@@ -35,13 +35,16 @@ export const QuantumParticles = ({ intensity = 15 }) => {
 
   const getParticleStyle = (particle) => {
     // Ultra-simplified styles for maximum performance
+    // Use blue color for blue particles, orange for others
+    const particleColor = particle.type === 'blue' ? '#3b82f6' : '#f97316';
+    
     return {
       left: `${particle.x}%`,
       top: `${particle.y}%`,
       width: `${particle.size}px`,
       height: `${particle.size}px`,
       opacity: particle.opacity,
-      background: '#f97316',
+      background: particleColor,
       borderRadius: '50%',
       // No box-shadow for better performance
       willChange: 'transform, opacity', // Browser hint for optimization
