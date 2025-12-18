@@ -97,11 +97,11 @@ code {
 
 /* Dark mode scrollbar adjustments */
 .dark ::-webkit-scrollbar-track {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(26, 26, 26, 0.8);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-    border: 2px solid rgba(10, 10, 10, 0.8);
+    border: 2px solid rgba(26, 26, 26, 0.8);
 }
 
 /* Hide scrollbar when content fits (no overflow needed) */
