@@ -6,7 +6,7 @@ import { TeamMemberCard } from '../components/ui/TeamMemberCard';
 // Team Page Component
 export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPostdocs, students, alumni, setCurrentPage }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-orange-950' : 'bg-gray-50'
+    isDark ? 'bg-dark-gray-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
@@ -123,7 +123,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         transition={{ duration: 0.8, delay: 1.0 }}
         className={`backdrop-blur-lg rounded-3xl p-12 border ${
           isDark 
-            ? 'bg-orange-950/40 border-orange-600/20'
+            ? 'bg-dark-gray-950/40 border-orange-600/20'
             : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >

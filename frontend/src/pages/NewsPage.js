@@ -6,7 +6,7 @@ import { NewsCard } from '../components/ui/NewsCard';
 // News Page Component
 export const NewsPage = ({ language, isDark, newsData }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-orange-950' : 'bg-gray-50'
+    isDark ? 'bg-dark-gray-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 

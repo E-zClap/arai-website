@@ -56,7 +56,7 @@ export const PublicationsPage = ({ language, isDark }) => {
   };
 
   return (
-    <div className={`min-h-screen p-8 ${isDark ? 'bg-orange-950' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen p-8 ${isDark ? 'bg-dark-gray-950' : 'bg-gray-50'}`}>
       <div className="max-w-7xl mx-auto">
         {/* Enhanced Header with Professional Typography */}
         <motion.div

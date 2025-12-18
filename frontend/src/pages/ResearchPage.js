@@ -7,7 +7,7 @@ import { NVCenterVisualization } from '../components/visualizations/NVCenterVisu
 // Enhanced Professional Research Page Component
 export const ResearchPage = ({ language, isDark, researchData }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-orange-950' : 'bg-gray-50'
+    isDark ? 'bg-dark-gray-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 

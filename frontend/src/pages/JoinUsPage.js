@@ -6,7 +6,7 @@ import { QuantumParticles } from '../components/animations/QuantumParticles';
 // Join Us Page Component
 export const JoinUsPage = ({ language, isDark }) => (
   <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-    isDark ? 'bg-orange-950' : 'bg-gray-50'
+    isDark ? 'bg-dark-gray-950' : 'bg-gray-50'
   }`}>
     <div className={`absolute inset-0 ${
       isDark 
@@ -45,7 +45,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-orange-950/40 border-orange-600/20'
+            ? 'bg-dark-gray-950/40 border-orange-600/20'
             : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
@@ -163,7 +163,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.4 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-orange-950/40 border-orange-600/20'
+            ? 'bg-dark-gray-950/40 border-orange-600/20'
             : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
@@ -268,7 +268,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.6 }}
         className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
           isDark 
-            ? 'bg-orange-950/40 border-orange-600/20'
+            ? 'bg-dark-gray-950/40 border-orange-600/20'
             : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
@@ -296,7 +296,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         transition={{ duration: 0.8, delay: 0.8 }}
         className={`text-center p-12 rounded-3xl backdrop-blur-lg border ${
           isDark 
-            ? 'bg-orange-950/40 border-orange-600/20'
+            ? 'bg-dark-gray-950/40 border-orange-600/20'
             : 'bg-white/70 border-orange-300/30 shadow-xl'
         }`}
       >
