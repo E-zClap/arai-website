@@ -18,19 +18,20 @@ export const HeroSection = ({ language, isDark }) => {
     <section 
       ref={ref}
       className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
-        isDark ? 'bg-black' : 'bg-gray-50'
+        isDark ? 'bg-transparent' : 'bg-gray-50'
       }`}
     >
       {/* Enhanced Quantum Background - Reduced for performance */}
       <QuantumNetwork intensity={12} />
       
-      {/* Professional Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, ${isDark ? '#14b8a6' : '#0f766e'} 0%, transparent 50%), radial-gradient(circle at 75% 75%, ${isDark ? '#06b6d4' : '#0891b2'} 0%, transparent 50%)`,
-          backgroundSize: '200px 200px'
-        }}></div>
-      </div>
+      {/* Elegant Radial Overlay for Hero Section */}
+      {isDark && (
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)',
+          }}></div>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-8 relative z-10">
         <motion.div
