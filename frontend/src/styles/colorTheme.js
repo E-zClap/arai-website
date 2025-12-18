@@ -1,4 +1,4 @@
-// Professional Dark Gray/Black Theme with Orange Accents
+// Professional Dark Gray/Black Theme with Orange Accents + Blue Highlights
 // This file centralizes all color definitions for easy maintenance
 
 export const colorTheme = {
@@ -7,6 +7,9 @@ export const colorTheme = {
     primary: '#ea580c',         // Vibrant Orange
     secondary: '#f97316',       // Orange  
     accent: '#fb923c',          // Lighter Orange
+    blueAccent: '#3b82f6',      // Dark-Light Blue (subtle highlight)
+    blueLight: '#60a5fa',       // Light Blue
+    blueDark: '#2563eb',        // Darker Blue
     dark: '#0a0a0a',            // True Black
     darkSurface: '#1a1a1a',     // Dark Gray Surface
     darkElevated: '#242424',    // Elevated Surface
