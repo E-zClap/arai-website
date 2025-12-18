@@ -212,7 +212,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                       isDark 
-                        ? 'bg-slate-600/20 text-slate-300 hover:bg-slate-600/30 border border-slate-500/30'
+                        ? 'bg-slate-600/20 text-slate-300 hover:bg-slate-600/30 border border-dark-gray-500/30'
                         : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
