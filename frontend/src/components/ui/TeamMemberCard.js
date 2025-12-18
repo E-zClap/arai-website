@@ -265,7 +265,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <div className="grid gap-2">
                       {(member.researchInterests[language] || member.researchInterests).map((interest, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-slate-700/30">
+                        <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-dark-gray-800/30">
                           <div className="w-1.5 h-1.5 bg-orange-400 rounded-full" />
                           <span className="text-slate-300 text-sm">{interest}</span>
                         </div>
@@ -290,7 +290,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <div className="grid gap-2">
                       {(member.researchFocus[language] || member.researchFocus).map((focus, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-slate-700/30">
+                        <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-dark-gray-800/30">
                           <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full" />
                           <span className="text-slate-300 text-sm">{focus}</span>
                         </div>

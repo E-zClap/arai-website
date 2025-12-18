@@ -30,7 +30,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
           onClick={() => setCurrentPage('team')}
           className={`mb-8 inline-flex items-center px-4 py-2 rounded-xl transition-all duration-300 ${
             isDark 
-              ? 'bg-dark-gray-850/50 text-slate-300 hover:bg-slate-700/50 hover:text-white'
+              ? 'bg-dark-gray-850/50 text-slate-300 hover:bg-dark-gray-800/50 hover:text-white'
               : 'bg-white/70 text-slate-600 hover:bg-white hover:text-slate-800'
           }`}
           whileHover={{ scale: 1.02 }}

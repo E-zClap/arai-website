@@ -22,7 +22,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
         <div className="flex-shrink-0 flex flex-col items-center">
           <div className="w-4 h-4 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full shadow-lg" />
           <div className={`w-0.5 h-16 mt-2 ${
-            isDark ? 'bg-slate-700' : 'bg-slate-200'
+            isDark ? 'bg-dark-gray-800' : 'bg-slate-200'
           }`} />
         </div>
         

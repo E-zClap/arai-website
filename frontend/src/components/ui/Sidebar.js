@@ -269,7 +269,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                         isActive 
                           ? 'bg-gradient-to-r from-orange-500 to-orange-500 text-white shadow-2xl shadow-orange-500/30' 
                           : (isDark 
-                              ? 'bg-slate-700/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
+                              ? 'bg-dark-gray-800/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
                               : 'bg-slate-100 group-hover:bg-slate-200 text-slate-600 group-hover:text-slate-700')
                       }`}
                       whileHover={{ rotate: 5 }}
