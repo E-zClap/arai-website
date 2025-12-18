@@ -33,16 +33,16 @@ export const ResearchCard = ({ research, index, language }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
         
-        {/* Premium Research Category Badge */}
+        {/* Premium Research Category Badge with subtle blue highlight */}
         <div className="absolute top-6 right-6">
           <motion.div 
-            className="bg-gradient-to-r from-orange-600/90 to-orange-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl"
+            className="bg-gradient-to-r from-orange-600/90 to-orange-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-blue-accent/20 shadow-2xl"
             whileHover={{ scale: 1.05 }}
             animate={{
               boxShadow: [
-                "0 10px 20px rgba(20, 184, 166, 0.3)",
-                "0 15px 30px rgba(6, 182, 212, 0.4)", 
-                "0 10px 20px rgba(20, 184, 166, 0.3)"
+                "0 10px 20px rgba(59, 130, 246, 0.15)",
+                "0 15px 30px rgba(59, 130, 246, 0.25)", 
+                "0 10px 20px rgba(59, 130, 246, 0.15)"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
