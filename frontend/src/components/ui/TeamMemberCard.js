@@ -157,7 +157,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             {(member.education[language] || member.education).slice(0, 2).map((edu, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/50 border border-slate-700/30 hover:border-orange-500/40 transition-all duration-300"
+                className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/50 border border-dark-gray-700/30 hover:border-orange-500/40 transition-all duration-300"
                 whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
               >
                 <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mt-2 flex-shrink-0" />
@@ -194,7 +194,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         </div>
 
         {/* Expandable Details Section */}
-        <motion.div className="border-t border-slate-700/50 pt-6">
+        <motion.div className="border-t border-dark-gray-700/50 pt-6">
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
@@ -230,7 +230,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <GraduationCap size={18} className="text-orange-500" />
@@ -240,7 +240,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     </div>
                     <div className="space-y-3">
                       {(member.education[language] || member.education).slice(2).map((edu, idx) => (
-                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-dark-gray-850/40 border border-slate-700/30">
+                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-dark-gray-850/40 border border-dark-gray-700/30">
                           <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
                           <p className="text-slate-300 text-sm leading-relaxed">{edu}</p>
                         </div>
@@ -255,7 +255,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <Target size={18} className="text-orange-400" />
@@ -280,7 +280,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.25 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <Target size={18} className="text-yellow-400" />
@@ -330,7 +330,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.35 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <User size={18} className="text-orange-400" />
@@ -354,7 +354,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <Mail size={18} className="text-orange-400" />

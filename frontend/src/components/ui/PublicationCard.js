@@ -76,7 +76,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
           {/* Impact Level */}
           <motion.div 
-            className="px-3 py-1.5 rounded-xl bg-dark-gray-850/50 border border-slate-700/40"
+            className="px-3 py-1.5 rounded-xl bg-dark-gray-850/50 border border-dark-gray-700/40"
             whileHover={{ backgroundColor: "rgba(30, 64, 175, 0.1)" }}
           >
             <div className="flex items-center space-x-2">
@@ -90,7 +90,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
         {/* Citation Count */}
         <motion.div 
-          className="text-center p-3 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30"
+          className="text-center p-3 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
           whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.1)" }}
         >
           <div className="text-orange-400 font-bold text-lg">{publication.citations}</div>
@@ -112,7 +112,7 @@ export const PublicationCard = ({ publication, index, language }) => {
       {/* Publication Details */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {/* Authors */}
-        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30">
+        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30">
           <Users size={18} className="text-orange-500 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
@@ -123,7 +123,7 @@ export const PublicationCard = ({ publication, index, language }) => {
         </div>
 
         {/* Journal & Year */}
-        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-slate-700/30">
+        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30">
           <Calendar size={18} className="text-orange-400 mt-1 flex-shrink-0" />
           <div>
             <div className="text-sm font-semibold text-slate-300 mb-1">
@@ -138,7 +138,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
       {/* Journal Details */}
       {(publication.volume || publication.pages) && (
-        <div className="flex items-center space-x-6 mb-6 p-4 rounded-2xl bg-dark-gray-850/30 border border-slate-700/20">
+        <div className="flex items-center space-x-6 mb-6 p-4 rounded-2xl bg-dark-gray-850/30 border border-dark-gray-700/20">
           {publication.volume && (
             <div className="text-sm">
               <span className="text-slate-400">Vol.</span>
@@ -180,7 +180,7 @@ export const PublicationCard = ({ publication, index, language }) => {
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-dark-gray-850/50 hover:bg-orange-600/20 rounded-2xl border border-slate-700/40 hover:border-orange-500/50 transition-all duration-300"
+            className="flex items-center space-x-2 px-4 py-2 bg-dark-gray-850/50 hover:bg-orange-600/20 rounded-2xl border border-dark-gray-700/40 hover:border-orange-500/50 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -194,7 +194,7 @@ export const PublicationCard = ({ publication, index, language }) => {
 
       {/* Expandable Abstract Section */}
       {publication.abstract && (
-        <motion.div className="border-t border-slate-700/50 pt-6">
+        <motion.div className="border-t border-dark-gray-700/50 pt-6">
           <motion.button
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-slate-600/30 hover:border-orange-500/40 transition-all duration-300 group"
@@ -229,7 +229,7 @@ export const PublicationCard = ({ publication, index, language }) => {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/40 border border-slate-700/40"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/40 border border-dark-gray-700/40"
                 >
                   <div className="flex items-start space-x-4">
                     <motion.div

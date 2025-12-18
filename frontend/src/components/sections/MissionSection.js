@@ -212,7 +212,7 @@ export const MissionSection = ({ language, isDark }) => {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
                     isDark 
-                      ? 'bg-dark-gray-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-dark-gray-850/70'
+                      ? 'bg-dark-gray-900/60 border-dark-gray-700/50 hover:border-orange-400/50 hover:bg-dark-gray-850/70'
                       : 'bg-white/80 border-slate-200/50 hover:border-orange-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
                   }`}
                   whileHover={{ scale: 1.02 }}

@@ -134,7 +134,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         >
           {/* Premium Academic Header */}
           <motion.div 
-            className="p-8 border-b border-slate-700/30"
+            className="p-8 border-b border-dark-gray-700/30"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
@@ -316,7 +316,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           {/* Premium Footer */}
           <motion.div 
             className={`mt-auto p-8 border-t ${
-              isDark ? 'border-slate-700/50' : 'border-slate-200/50'
+              isDark ? 'border-dark-gray-700/50' : 'border-slate-200/50'
             }`}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

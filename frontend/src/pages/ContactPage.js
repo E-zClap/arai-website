@@ -109,7 +109,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
               <div className="space-y-6">
                 <div className={`p-6 rounded-2xl border ${
                   isDark 
-                    ? 'bg-dark-gray-850/50 border-slate-700/50'
+                    ? 'bg-dark-gray-850/50 border-dark-gray-700/50'
                     : 'bg-slate-50/80 border-slate-200/50'
                 }`}>
                   <h3 className={`text-xl font-semibold mb-4 flex items-center ${
@@ -145,7 +145,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                 {/* Transportation Info */}
                 <div className={`p-6 rounded-2xl border ${
                   isDark 
-                    ? 'bg-dark-gray-850/50 border-slate-700/50'
+                    ? 'bg-dark-gray-850/50 border-dark-gray-700/50'
                     : 'bg-slate-50/80 border-slate-200/50'
                 }`}>
                   <h4 className={`text-lg font-semibold mb-3 ${

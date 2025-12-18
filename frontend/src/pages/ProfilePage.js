@@ -120,7 +120,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
                   transition={{ duration: 0.6, delay: 0.1 * idx }}
                   className={`flex gap-6 p-6 rounded-2xl border ${
                     isDark 
-                      ? 'bg-dark-gray-850/40 border-slate-700/50' 
+                      ? 'bg-dark-gray-850/40 border-dark-gray-700/50' 
                       : 'bg-slate-50/80 border-slate-200/50'
                   }`}
                 >
@@ -179,7 +179,7 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
                   transition={{ duration: 0.6, delay: 0.1 * idx }}
                   className={`p-6 rounded-2xl border ${
                     isDark 
-                      ? 'bg-dark-gray-850/40 border-slate-700/50' 
+                      ? 'bg-dark-gray-850/40 border-dark-gray-700/50' 
                       : 'bg-slate-50/80 border-slate-200/50'
                   }`}
                 >
