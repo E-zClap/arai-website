@@ -114,7 +114,7 @@ function App() {
       }`}
       style={{
         background: isDark 
-          ? 'linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 25%, #0d1117 50%, #1a1a1a 75%, #0a0a0a 100%)'
+          ? 'linear-gradient(135deg, #0a0a0a 0%, #0f1a2e 25%, #0d1117 50%, #1a1a1a 75%, #0a0a0a 100%)'
           : undefined
       }}
     >
@@ -126,7 +126,7 @@ function App() {
             <div 
               className="absolute inset-0 animate-gradient-shift"
               style={{
-                background: 'radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(234, 88, 12, 0.12) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)',
+                background: 'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(234, 88, 12, 0.12) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%)',
                 backgroundSize: '200% 200%',
                 animation: 'gradient-shift 20s ease infinite'
               }}
@@ -160,7 +160,7 @@ function App() {
             <div 
               className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl"
               style={{
-                background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%)',
                 animation: 'pulse-glow 8s ease-in-out infinite'
               }}
             />

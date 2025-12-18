@@ -28,7 +28,7 @@ export const HeroSection = ({ language, isDark }) => {
       {isDark && (
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute inset-0" style={{
-            background: 'radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)',
           }}></div>
         </div>
       )}
