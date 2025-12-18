@@ -160,8 +160,6 @@ export const researchData = [
         "Surrogate simulation models for rapid protocol design (including CPT/EIT/QND-inspired sequences) and device optimization",
         "Bayesian/ML state estimation for NV-based metrology (field, temperature, strain, pH/electrochemistry) with uncertainty quantification",
         "Automated calibration and drift compensation using domain adaptation and self-supervised learning on long-term sensor logs",
-        "Reinforcement learning / optimal experimental design for adaptive sensing and measurement-based feedback control",
-        "Synthetic-data generation pipelines (digital twin + measurement model) for robust training and benchmarking of inference algorithms"
       ],
       JP: [
         "NVスピンダイナミクスのための物理情報および混合MLモデル（ハミルトニアン+ノイズ+読み出し）",
