@@ -108,7 +108,7 @@ export const MissionSection = ({ language, isDark }) => {
         >
           <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
             isDark 
-              ? 'backdrop-blur-sm bg-slate-900/60 border-orange-600/30 text-orange-300'
+              ? 'backdrop-blur-sm bg-dark-gray-900/60 border-orange-600/30 text-orange-300'
               : 'bg-white border-orange-200/50 text-orange-700 shadow-lg'
           }`}>
             <FlaskConical className="mr-3" size={20} />
@@ -139,7 +139,7 @@ export const MissionSection = ({ language, isDark }) => {
           >
             <div className={`backdrop-blur-xl rounded-3xl p-10 border ${
               isDark 
-                ? 'bg-slate-900/60 border-orange-600/20' 
+                ? 'bg-dark-gray-900/60 border-orange-600/20' 
                 : 'bg-white/90 border-orange-200/30 shadow-2xl'
             }`}>
               <div className={`text-lg md:text-xl leading-relaxed mb-8 ${
@@ -212,7 +212,7 @@ export const MissionSection = ({ language, isDark }) => {
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
                     isDark 
-                      ? 'bg-slate-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-slate-800/70'
+                      ? 'bg-dark-gray-900/60 border-slate-700/50 hover:border-orange-400/50 hover:bg-slate-800/70'
                       : 'bg-white/80 border-slate-200/50 hover:border-orange-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -252,7 +252,7 @@ export const MissionSection = ({ language, isDark }) => {
             transition={{ duration: 0.8, delay: 1.5 }}
             className={`mt-12 p-8 rounded-3xl border backdrop-blur-xl ${
               isDark 
-                ? 'bg-slate-900/40 border-orange-600/20'
+                ? 'bg-dark-gray-900/40 border-orange-600/20'
                 : 'bg-white/70 border-orange-200/30 shadow-xl'
             }`}
           >

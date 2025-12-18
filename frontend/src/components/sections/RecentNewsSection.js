@@ -10,7 +10,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
 
   return (
     <section className={`py-24 px-8 ${
-      isDark ? 'bg-slate-900/30' : 'bg-white/95'
+      isDark ? 'bg-dark-gray-900/30' : 'bg-white/95'
     }`}>
       <div className="max-w-7xl mx-auto">
         {/* Enhanced Section Header */}

@@ -16,7 +16,7 @@ export const ResearchCard = ({ research, index, language }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
+      className="bg-dark-gray-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
       whileHover={{ y: -8, scale: 1.02 }}
     >
       {/* Enhanced Image Section with Premium Overlay */}
@@ -73,7 +73,7 @@ export const ResearchCard = ({ research, index, language }) => {
                 {research.status}
               </span>
             </div>
-            <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-orange-500/30">
+            <div className="bg-dark-gray-900/80 backdrop-blur-sm rounded-xl px-3 py-1.5 border border-orange-500/30">
               <span className="text-orange-300 text-xs font-medium">
                 {research.fundingLevel}
               </span>

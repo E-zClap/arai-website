@@ -44,7 +44,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-slate-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
+      className="bg-dark-gray-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
       whileHover={{ y: -10, scale: 1.02 }}
     >
       {/* Premium Image Section */}
@@ -78,7 +78,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
 
         {/* Join Date or Academic Status */}
         <div className="absolute bottom-6 left-6 right-6">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-orange-500/30">
+          <div className="bg-dark-gray-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-orange-500/30">
             <div className="flex items-center justify-between">
               {member.joinDate && (
                 <div className="flex items-center space-x-2">

@@ -7,7 +7,7 @@ export const ContactCard = ({ icon: Icon, title, content, link, language }) => {
     <motion.div
       whileHover={{ scale: 1.02, y: -5 }}
       whileTap={{ scale: 0.98 }}
-      className="bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-orange-600/20 hover:border-orange-500/40 transition-all duration-500 text-center group shadow-xl hover:shadow-2xl hover:shadow-orange-500/10"
+      className="bg-dark-gray-900/60 backdrop-blur-xl rounded-3xl p-8 border border-orange-600/20 hover:border-orange-500/40 transition-all duration-500 text-center group shadow-xl hover:shadow-2xl hover:shadow-orange-500/10"
     >
       {/* Enhanced Icon Section */}
       <div className="relative mb-6">

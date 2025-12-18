@@ -13,7 +13,7 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className={`backdrop-blur-xl rounded-3xl p-8 border transition-all duration-300 group ${
         isDark 
-          ? 'bg-slate-900/60 border-orange-600/20 hover:border-orange-500/40 hover:bg-slate-800/70'
+          ? 'bg-dark-gray-900/60 border-orange-600/20 hover:border-orange-500/40 hover:bg-slate-800/70'
           : 'bg-white/80 border-orange-300/30 hover:border-orange-400/50 shadow-lg hover:shadow-xl'
       }`}
     >

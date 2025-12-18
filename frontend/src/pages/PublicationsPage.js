@@ -104,7 +104,7 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+                ? 'bg-dark-gray-900/60 border-orange-600/20 shadow-2xl'
                 : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
@@ -129,7 +129,7 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-orange-500/20 shadow-2xl'
+                ? 'bg-dark-gray-900/60 border-orange-500/20 shadow-2xl'
                 : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
@@ -149,7 +149,7 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-orange-500/20 shadow-2xl'
+                ? 'bg-dark-gray-900/60 border-orange-500/20 shadow-2xl'
                 : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
@@ -169,7 +169,7 @@ export const PublicationsPage = ({ language, isDark }) => {
           <motion.div 
             className={`p-6 rounded-3xl border backdrop-blur-2xl ${
               isDark 
-                ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+                ? 'bg-dark-gray-900/60 border-orange-600/20 shadow-2xl'
                 : 'bg-white/80 border-orange-300/30 shadow-xl'
             }`}
             whileHover={{ scale: 1.02, y: -5 }}
@@ -194,7 +194,7 @@ export const PublicationsPage = ({ language, isDark }) => {
           transition={{ delay: 0.4, duration: 0.6 }}
           className={`p-8 rounded-3xl border backdrop-blur-2xl mb-12 ${
             isDark 
-              ? 'bg-slate-900/60 border-orange-600/20 shadow-2xl'
+              ? 'bg-dark-gray-900/60 border-orange-600/20 shadow-2xl'
               : 'bg-white/80 border-orange-300/30 shadow-xl'
           }`}
         >

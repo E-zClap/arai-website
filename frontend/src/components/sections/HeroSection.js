@@ -52,7 +52,7 @@ export const HeroSection = ({ language, isDark }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`inline-flex items-center px-8 py-4 rounded-3xl border mb-12 ${
               isDark 
-                ? 'backdrop-blur-2xl bg-slate-900/60 border-orange-600/30 text-orange-300'
+                ? 'backdrop-blur-2xl bg-dark-gray-900/60 border-orange-600/30 text-orange-300'
                 : 'bg-white border-orange-200/50 text-orange-700 shadow-2xl backdrop-blur-sm'
             }`}
           >
