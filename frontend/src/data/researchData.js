@@ -63,7 +63,7 @@ export const researchData = [
       JP: "量子材料センシングと極限条件物理学"
     },
     overview: {
-      EN: "Many quantum states of matter are \"invisible\" to conventional probes. We use quantum sensors to make the invisible visible by spatially resolving magnetic fields, currents, and spin order—turning quantum measurement into a direct window on quantum materials.",
+      EN: "Many quantum states of matter are \"invisible\" to conventional probes. We use quantum sensors to make the invisible visible by spatially resolving magnetic fields, currents, and spin order, turning quantum measurement into a direct window on quantum materials.",
       JP: "多くの量子物質状態は従来のプローブでは「見えません」。磁場、電流、スピン秩序を空間的に解決することで、量子センサを使用して見えないものを見えるようにし、量子測定を量子材料への直接の窓に変えています。"
     },
     description: {
