@@ -15,6 +15,7 @@ import { PublicationsPage } from './pages/PublicationsPage';
 import { TeamPage } from './pages/TeamPage';
 import { ContactPage } from './pages/ContactPage';
 import { JoinUsPage } from './pages/JoinUsPage';
+import { AboutUsPage } from './pages/AboutUsPage';
 import { ProfilePage } from './pages/ProfilePage';
 
 // Import Data
