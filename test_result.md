@@ -116,6 +116,9 @@
         -working: true
         -agent: "main"
         -comment: "Successfully implemented subtle blue accents and blue particles throughout the website. Added blue accent colors (#3b82f6 dark-light blue, #60a5fa light blue, #2563eb darker blue) to the entire color system. Updated QuantumParticles component to display mixed orange (60%) and blue (40%) particles in the background. Added very minimal blue accents to strategic UI elements: 1) First news tag badge (blue accent in dark mode), 2) Research category badge (blue border with subtle pulsing glow), 3) Language toggle button (blue accent border and text color), 4) Publication citation count badge (blue accent border with pulsing blue glow). The blue accents are EXTREMELY SUBTLE and strategic, maintaining the dominant dark gray/black with orange theme while adding the requested blue highlights. Blue particles now float elegantly in the background alongside orange particles, creating a sophisticated quantum-inspired visual effect. All changes maintain the professional academic appearance."
+        -working: true
+        -agent: "main"
+        -comment: "Successfully lightened backgrounds and sidebars per user request. User feedback indicated backgrounds were 'too dark' and needed to be lighter 'not to gray'. Made comprehensive lightening changes: Background #0a0a0a → #1a1a1a, Surface #1a1a1a → #262626, Elevated #242424 → #303030, Subtle #2a2a2a → #353535. Updated all color definitions in index.css (CSS variables), colorTheme.js (JavaScript colors), tailwind.config.js (dark-gray scale), and all scrollbar colors. The interface is now noticeably lighter and more comfortable to view while maintaining the dark theme aesthetic without appearing gray or washed out. The changes create a softer, more refined dark experience that's easier on the eyes."
   - task: "Replace mission section background with oscilloscope-style animated sine waves"
     implemented: true
     working: true
