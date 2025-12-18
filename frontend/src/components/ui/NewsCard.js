@@ -52,14 +52,16 @@ export const NewsCard = ({ news, index, language, isDark = true }) => {
             </span>
           </div>
           
-          {/* Enhanced Tags */}
+          {/* Enhanced Tags with subtle blue accent on first tag */}
           {tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
                   className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${
-                    isDark
+                    tagIndex === 0 && isDark
+                      ? 'bg-blue-accent/20 text-blue-accent-light border border-blue-accent/40 hover:bg-blue-accent/30'
+                      : isDark
                       ? 'bg-orange-900/40 text-orange-300 border border-orange-600/30 hover:bg-orange-800/50'
                       : 'bg-orange-50 text-orange-700 border border-orange-300/50 hover:bg-orange-100'
                   }`}
