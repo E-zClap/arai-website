@@ -123,7 +123,7 @@ export const researchData = [
       JP: "物理システムを超えて「世界を記述し理解する方法」を拡張するために、量子確率が人間の判断と社会的ダイナミクスにおける文脈性、順序効果、非古典的相関の厳密な言語を提供するかどうかを探求しています。"
     },
     description: {
-      EN: "This theme contributes to intellectual infrastructure: a quantum-informatics-inspired framework for modeling decisions, organizations, and socio-economic systems—grounded in data and evaluated by predictive utility rather than analogy alone.",
+      EN: "This theme contributes to intellectual infrastructure: a quantum-informatics-inspired framework for modeling decisions, organizations, and socio-economic systems, grounded in data and evaluated by predictive utility rather than analogy alone.",
       JP: "このテーマは知的インフラに貢献します：意思決定、組織、社会経済システムをモデル化するための量子情報学にインスパイアされたフレームワーク。データに基づき、類推だけでなく予測効用によって評価されます。"
     },
     exampleTopics: {
