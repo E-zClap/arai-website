@@ -176,7 +176,7 @@ export const staffAndPostdocs = [
     },
     yearsOfExperience: 25,
     joinDate: "2020-03",
-    image: "https://keigoarai.net/wp-content/uploads/2023/11/ToyonobuNakagawa.jpg"
+    image: "/team_images/Nakagawa.jpg"  // Will show personalized placeholder
   },
   {
     name: {
