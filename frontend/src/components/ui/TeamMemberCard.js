@@ -76,15 +76,18 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           </div>
         </motion.div>
 
-        {/* Join Date or Academic Status */}
+        {/* Join Date, Period, or Academic Status */}
         <div className="absolute bottom-6 left-6 right-6">
           <div className="bg-dark-gray-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-orange-500/30">
             <div className="flex items-center justify-between">
-              {member.joinDate && (
+              {(member.joinDate || member.period) && (
                 <div className="flex items-center space-x-2">
                   <Calendar size={14} className="text-orange-500" />
                   <span className="text-orange-300 text-sm font-medium">
-                    {language === 'EN' ? 'Since' : '着任'} {member.joinDate}
+                    {member.period ? 
+                      (typeof member.period === 'object' ? member.period[language] || member.period.EN : member.period) :
+                      `${language === 'EN' ? 'Since' : '着任'} ${member.joinDate}`
+                    }
                   </span>
                 </div>
               )}
