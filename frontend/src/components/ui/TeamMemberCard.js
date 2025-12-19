@@ -71,7 +71,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         ) : (
           <ProfilePlaceholder name={member.name} position={member.position} size="large" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
         
         {/* Professional Status Badge */}
         <motion.div 
