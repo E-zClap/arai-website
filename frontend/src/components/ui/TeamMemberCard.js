@@ -13,6 +13,7 @@ import {
   BookOpen,
   Mail
 } from 'lucide-react';
+import { ProfilePlaceholder } from './ProfilePlaceholder';
 
 // Ultra-Professional Team Member Card with Expandable Profile
 export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
