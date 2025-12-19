@@ -384,11 +384,16 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                       </h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {(member.skills[language] || member.skills).map((skill, idx) => (
-                        <span key={idx} className="px-3 py-1.5 bg-orange-900/30 text-orange-300 text-xs rounded-full border border-orange-600/30">
-                          {skill}
-                        </span>
-                      ))}
+                      {(() => {
+                        const skills = typeof member.skills === 'object' && member.skills[language] 
+                          ? member.skills[language] 
+                          : member.skills;
+                        return skills.map((skill, idx) => (
+                          <span key={idx} className="px-3 py-1.5 bg-orange-900/30 text-orange-300 text-xs rounded-full border border-orange-600/30">
+                            {skill}
+                          </span>
+                        ));
+                      })()}
                     </div>
                   </motion.div>
                 )}
