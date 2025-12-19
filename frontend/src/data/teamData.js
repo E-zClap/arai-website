@@ -582,7 +582,7 @@ export const students = [
       ]
     },
     joinDate: "2024-04",
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop"
+    image: "/team_images/Koga.jpg"  // This image doesn't exist - will show placeholder
   }
 ];
 
