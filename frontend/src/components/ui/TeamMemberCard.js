@@ -240,30 +240,44 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="mt-6 space-y-6 overflow-hidden"
               >
-                {/* Complete Education */}
-                {(member.education[language] || member.education).length > 2 && (
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
-                  >
-                    <div className="flex items-center space-x-2 mb-4">
-                      <GraduationCap size={18} className="text-orange-500" />
-                      <h4 className="text-lg font-semibold text-white">
-                        {language === 'EN' ? 'Complete Education' : '完全な教育歴'}
-                      </h4>
-                    </div>
-                    <div className="space-y-3">
-                      {(member.education[language] || member.education).slice(2).map((edu, idx) => (
-                        <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-dark-gray-850/40 border border-dark-gray-700/30">
-                          <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
-                          <p className="text-slate-300 text-sm leading-relaxed">{edu}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
+                {/* Complete Education / Expertise / Responsibilities */}
+                {(() => {
+                  const dataSource = member.education || member.expertise || member.responsibilities || member.researchActivities;
+                  if (!dataSource) return null;
+                  const items = typeof dataSource === 'object' && dataSource[language] ? dataSource[language] : dataSource;
+                  if (items.length <= 2) return null;
+                  
+                  return (
+                    <motion.div
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 }}
+                      className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                    >
+                      <div className="flex items-center space-x-2 mb-4">
+                        <GraduationCap size={18} className="text-orange-500" />
+                        <h4 className="text-lg font-semibold text-white">
+                          {member.education 
+                            ? (language === 'EN' ? 'Complete Education' : '完全な教育歴')
+                            : member.expertise
+                            ? (language === 'EN' ? 'Complete Expertise' : '完全な専門知識')
+                            : member.responsibilities
+                            ? (language === 'EN' ? 'All Responsibilities' : 'すべての責任')
+                            : (language === 'EN' ? 'All Research Activities' : 'すべての研究活動')
+                          }
+                        </h4>
+                      </div>
+                      <div className="space-y-3">
+                        {items.slice(2).map((item, idx) => (
+                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-dark-gray-850/40 border border-dark-gray-700/30">
+                            <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
+                            <p className="text-slate-300 text-sm leading-relaxed">{item}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  );
+                })()}
 
                 {/* Research Interests */}
                 {member.researchInterests && (
