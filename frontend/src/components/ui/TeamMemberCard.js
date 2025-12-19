@@ -413,10 +413,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                       </h4>
                     </div>
                     <a 
-                      href={`mailto:${member.contact[language] || member.contact}`}
+                      href={`mailto:${typeof member.contact === 'object' && member.contact[language] ? member.contact[language] : member.contact}`}
                       className="text-orange-400 hover:text-orange-300 transition-colors text-sm"
                     >
-                      {member.contact[language] || member.contact}
+                      {typeof member.contact === 'object' && member.contact[language] ? member.contact[language] : member.contact}
                     </a>
                   </motion.div>
                 )}
