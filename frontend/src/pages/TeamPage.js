@@ -109,9 +109,9 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
           }`}>
             {language === 'EN' ? 'Alumni' : '卒業生'}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {alumni.map((member, index) => (
-              <TeamMemberCard key={index} member={member} index={index} language={language} setCurrentPage={setCurrentPage} />
+              <AlumniCard key={index} member={member} index={index} language={language} />
             ))}
           </div>
         </motion.div>
