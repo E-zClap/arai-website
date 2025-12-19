@@ -50,16 +50,27 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
     >
       {/* Premium Image Section */}
       <div className="relative h-80 bg-cover bg-center overflow-hidden">
-        <motion.img 
-          src={member.image} 
-          alt={`${(member.name && typeof member.name === 'object' ? member.name[language] || member.name.EN : member.name) || 'Team Member'} - ${(member.position && typeof member.position === 'object' ? member.position[language] || member.position.EN : member.position) || 'Position'}`}
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.8 }}
-          onError={(e) => {
-            e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face';
-          }}
-        />
+        {member.image && !member.image.includes('unsplash.com') ? (
+          <>
+            <motion.img 
+              src={member.image} 
+              alt={`${(member.name && typeof member.name === 'object' ? member.name[language] || member.name.EN : member.name) || 'Team Member'} - ${(member.position && typeof member.position === 'object' ? member.position[language] || member.position.EN : member.position) || 'Position'}`}
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.8 }}
+              onError={(e) => {
+                // Hide image and show placeholder on error
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'block';
+              }}
+            />
+            <div style={{ display: 'none' }}>
+              <ProfilePlaceholder name={member.name} position={member.position} size="large" />
+            </div>
+          </>
+        ) : (
+          <ProfilePlaceholder name={member.name} position={member.position} size="large" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
         
         {/* Professional Status Badge */}
