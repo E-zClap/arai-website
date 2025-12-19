@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { QuantumParticles } from '../components/animations/QuantumParticles';
 import { TeamMemberCard } from '../components/ui/TeamMemberCard';
+import { AlumniCard } from '../components/ui/AlumniCard';
 
 // Team Page Component
 export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPostdocs, students, alumni, setCurrentPage }) => (
