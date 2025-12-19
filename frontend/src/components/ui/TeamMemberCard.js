@@ -146,31 +146,44 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           )}
         </div>
         
-        {/* Academic Background Preview */}
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2 mb-3">
-            <GraduationCap size={18} className="text-orange-500" />
-            <h4 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
-              {language === 'EN' ? 'Academic Background' : '学術的背景'}
-            </h4>
+        {/* Academic Background / Expertise / Responsibilities Preview */}
+        {(member.education || member.expertise || member.responsibilities || member.researchActivities) && (
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2 mb-3">
+              <GraduationCap size={18} className="text-orange-500" />
+              <h4 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
+                {member.education 
+                  ? (language === 'EN' ? 'Academic Background' : '学術的背景')
+                  : member.expertise
+                  ? (language === 'EN' ? 'Expertise' : '専門知識')
+                  : member.responsibilities
+                  ? (language === 'EN' ? 'Responsibilities' : '責任')
+                  : (language === 'EN' ? 'Research Activities' : '研究活動')
+                }
+              </h4>
+            </div>
+            
+            {/* Show first 2 entries as preview */}
+            <div className="space-y-3">
+              {(() => {
+                const dataSource = member.education || member.expertise || member.responsibilities || member.researchActivities;
+                const items = typeof dataSource === 'object' && dataSource[language] ? dataSource[language] : dataSource;
+                return items.slice(0, 2).map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/50 border border-dark-gray-700/30 hover:border-orange-500/40 transition-all duration-300"
+                    whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
+                  >
+                    <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mt-2 flex-shrink-0" />
+                    <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
+                      {item}
+                    </p>
+                  </motion.div>
+                ));
+              })()}
+            </div>
           </div>
-          
-          {/* Show first 2 education entries as preview */}
-          <div className="space-y-3">
-            {(member.education[language] || member.education).slice(0, 2).map((edu, idx) => (
-              <motion.div
-                key={idx}
-                className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/50 border border-dark-gray-700/30 hover:border-orange-500/40 transition-all duration-300"
-                whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
-              >
-                <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mt-2 flex-shrink-0" />
-                <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
-                  {edu}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        )}
 
         {/* Professional Status Indicator */}
         <div className="flex justify-center">
