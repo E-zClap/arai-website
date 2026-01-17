@@ -224,16 +224,22 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         {/* Expandable Details Section */}
         <div className="border-t border-dark-gray-700/50 pt-6">
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsExpanded(prev => !prev);
+            }}
             className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
           >
             <div className="flex items-center space-x-3">
-              <motion.div
-                animate={{ rotate: isExpanded ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+              <div 
+                style={{
+                  transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.3s ease-in-out'
+                }}
               >
                 <ChevronDown size={20} className="text-orange-500" />
-              </motion.div>
+              </div>
               <span className="text-white font-semibold">
                 {language === 'EN' ? 'Full Profile' : '完全プロフィール'}
               </span>
@@ -241,15 +247,17 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
             <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
           </button>
 
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {isExpanded && (
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="mt-6 space-y-6 overflow-hidden"
+                key="expanded-content"
+                initial={{ opacity: 0, maxHeight: 0 }}
+                animate={{ opacity: 1, maxHeight: 2000 }}
+                exit={{ opacity: 0, maxHeight: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
               >
+                <div className="mt-6 space-y-6">
                 {/* Complete Education / Expertise / Responsibilities */}
                 {(() => {
                   const dataSource = member.education || member.expertise || member.responsibilities || member.researchActivities;
