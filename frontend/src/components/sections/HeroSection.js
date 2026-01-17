@@ -63,13 +63,54 @@ export const HeroSection = ({ language, isDark }) => {
             </span>
           </motion.div>
 
+          {/* Diamond Logo */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: { opacity: 1, scale: 1 }
+            }}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
+            className="flex justify-center mb-8"
+          >
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="relative"
+            >
+              <img 
+                src="/diam.svg" 
+                alt="Diamond NV Center" 
+                className="w-32 h-32 md:w-40 md:h-40 object-contain"
+                style={{
+                  filter: 'drop-shadow(0 8px 16px rgba(234, 88, 12, 0.5))'
+                }}
+              />
+              {/* Animated glow effect */}
+              <motion.div
+                className="absolute inset-0 blur-2xl opacity-40"
+                style={{
+                  background: 'radial-gradient(circle, rgba(234, 88, 12, 0.6) 0%, transparent 70%)'
+                }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+          </motion.div>
+
           {/* Enhanced Academic Title Hierarchy */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 }
             }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="space-y-8"
           >
             <div>
@@ -128,7 +169,7 @@ export const HeroSection = ({ language, isDark }) => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 }
             }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
             className="mt-16"
           >
             {/* Removed metrics display as requested */}
