@@ -195,12 +195,14 @@ export const JoinUsPage = ({ language, isDark }) => (
                 'Full research-cycle experience: theory → numerical simulation → setup/build → experiment → data analysis → interpretation → presentation',
                 'Top-level quantum understanding beyond standard coursework, connected directly to real measurements, devices, and physical limits',
                 'Hands-on build-and-test culture: instrumentation, coding, data handling, and reproducibility habits from day one',
-                'High-caliber lab environment through close interaction with motivated graduate students and postdocs'
+                'High-caliber lab environment through close interaction with motivated graduate students and postdocs',
+                'Opportunities to go overseas to pursue research or present work at international conferences'
               ] : [
                 '完全な研究サイクル経験：理論 → 数値シミュレーション → セットアップ/構築 → 実験 → データ分析 → 解釈 → プレゼンテーション',
                 '標準的なコースワークを超えたトップレベルの量子理解、実際の測定、デバイス、物理的限界に直接接続',
                 '実践的な構築とテストの文化：初日から計測、コーディング、データ処理、再現性の習慣',
-                'モチベーションの高い大学院生やポスドクとの緊密な交流を通じた高水準な研究室環境'
+                'モチベーションの高い大学院生やポスドクとの緊密な交流を通じた高水準な研究室環境',
+                '海外で研究を追求したり、国際会議で研究発表を行う機会'
               ]).map((item, idx) => (
                 <li key={idx} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
