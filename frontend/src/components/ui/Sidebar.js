@@ -320,26 +320,22 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             })}
           </nav>
 
-          {/* Premium Footer */}
+          {/* Compact Footer */}
           <motion.div 
-            className={`mt-auto p-8 border-t ${
+            className={`mt-auto p-4 border-t ${
               isDark ? 'border-dark-gray-700/50' : 'border-slate-200/50'
             }`}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <div className={`text-center text-sm ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-              <motion.div 
-                className="mb-3 font-medium"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
+            <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
+              <div className="mb-1">
                 {language === 'EN' 
                   ? `© ${new Date().getFullYear()} Quantum Informatics Group` 
                   : `© ${new Date().getFullYear()} 量子情報学グループ`
                 }
-              </motion.div>
+              </div>
               <div className="text-xs opacity-80">
                 {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
               </div>
