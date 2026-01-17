@@ -148,21 +148,21 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           >
             <div className="flex items-center space-x-4">
               <motion.div 
-                className="w-12 h-12 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-orange-600/30"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center p-2"
                 whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(30, 64, 175, 0.4)"
+                  scale: 1.08,
+                  rotate: 5
                 }}
-                animate={{
-                  boxShadow: [
-                    "0 10px 20px rgba(30, 64, 175, 0.2)",
-                    "0 15px 30px rgba(30, 64, 175, 0.3)",
-                    "0 10px 20px rgba(30, 64, 175, 0.2)"
-                  ]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                <FlaskConical size={24} className="text-white" />
+                <img 
+                  src="/diam.svg" 
+                  alt="Diamond Logo" 
+                  className="w-full h-full object-contain filter drop-shadow-lg"
+                  style={{
+                    filter: 'drop-shadow(0 4px 8px rgba(234, 88, 12, 0.4))'
+                  }}
+                />
               </motion.div>
               <div>
                 <motion.h1 
