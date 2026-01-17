@@ -57,7 +57,7 @@ export const JoinUsPage = ({ language, isDark }) => (
           isDark ? 'text-gray-300' : 'text-gray-600'
         }`}>
           {language === 'EN' 
-            ? "The Arai Group is driven by one guiding question: How can quantum science be transformed from a fragile laboratory curiosity into a shared intellectual and technological infrastructure for society? Our lab works at the intersection of fundamental physics, quantum devices, materials, and real-world applications—pushing quantum science toward robust, deployable, and impactful outcomes."
+            ? "The Arai Group is driven by one guiding question: How can quantum science be transformed from a fragile laboratory curiosity into a shared intellectual and technological infrastructure for society? Our lab works at the intersection of fundamental physics, quantum devices, materials, and real-world applications, pushing quantum science toward robust, deployable, and impactful outcomes."
             : "荒井グループは一つの指針となる質問に導かれています：量子科学を脆弱な研究室の好奇心から、社会のための共有された知的および技術的インフラへと変革するにはどうすればよいか？私たちの研究室は、基礎物理学、量子デバイス、材料、実世界の応用の交差点で活動し、堅牢で展開可能で影響力のある成果に向けて量子科学を推進しています。"
           }
         </p>
