@@ -7,29 +7,29 @@ export const researchData = [
       JP: "量子計測と機械学習"
     },
     overview: {
-      EN: "We combine cutting-edge machine learning with quantum measurement to build the next generation of intelligent quantum sensing systems. Rather than using ML as a general-purpose tool, we focus on where its impact is most significant: transforming complex quantum signals into calibrated physical insights, optimizing quantum control sequences, and creating adaptive measurement protocols that learn from data.",
-      JP: "最先端の機械学習と量子測定を組み合わせ、次世代のインテリジェント量子センシングシステムを構築します。MLを汎用ツールとして使用するのではなく、その影響が最も大きい領域に焦点を当てています：複雑な量子信号を校正された物理的洞察に変換し、量子制御シーケンスを最適化し、データから学習する適応的測定プロトコルを作成します。"
+      EN: "We develop advanced quantum measurement techniques and combine them with machine learning to push the boundaries of precision sensing. This theme integrates quantum control, nanoscale magnetometry, and data-driven modeling to transform quantum sensors from laboratory demonstrations into reliable, field-deployable measurement tools.",
+      JP: "先進的な量子測定技術を開発し、機械学習と組み合わせることで、精密センシングの限界を押し広げます。このテーマは、量子制御、ナノスケール磁気測定、データ駆動型モデリングを統合し、量子センサを実験室デモンストレーションから信頼性の高いフィールド展開可能な測定ツールに変換します。"
     },
     description: {
-      EN: "This flagship theme represents the core identity of our group: advancing quantum metrology through physics-informed machine learning and data-driven quantum control. We develop quantum metrology digital twins that predict sensor behavior under realistic conditions, design optimal measurement protocols using reinforcement learning and Bayesian optimization, and create robust estimators that turn noisy quantum signals into precise, uncertainty-quantified physical measurements. Our approach tightly integrates simulation, experiment, and deployment, continuously updating models with real sensor data from extreme and field environments.",
-      JP: "このフラッグシップテーマは私たちのグループの核となるアイデンティティを表しています：物理情報機械学習とデータ駆動量子制御を通じた量子計測の進歩。現実的な条件下でセンサ動作を予測する量子計測デジタルツインを開発し、強化学習とベイズ最適化を使用して最適な測定プロトコルを設計し、ノイズの多い量子信号を正確で不確実性定量化された物理測定に変換するロバスト推定器を作成します。私たちのアプローチはシミュレーション、実験、展開を緊密に統合し、極限環境やフィールド環境からの実際のセンサデータでモデルを継続的に更新します。"
+      EN: "This flagship theme represents the core identity of our group: building practical quantum metrology systems where measurement physics and intelligent algorithms work together. We focus on NV-center quantum sensors for magnetic field, temperature, and strain measurements at the nanoscale, while developing physics-informed machine learning frameworks that optimize protocols, calibrate sensors, and extract quantitative information from complex quantum signals. Our approach spans fundamental measurement theory, experimental implementation, and computational methods.",
+      JP: "このフラッグシップテーマは私たちのグループの核となるアイデンティティを表しています：測定物理学とインテリジェントアルゴリズムが協調する実用的な量子計測システムの構築。ナノスケールでの磁場、温度、歪み測定のためのNVセンター量子センサに焦点を当てながら、プロトコルを最適化し、センサを校正し、複雑な量子信号から定量的情報を抽出する物理情報機械学習フレームワークを開発します。私たちのアプローチは、基礎測定理論、実験実装、計算手法にわたります。"
     },
     exampleTopics: {
       EN: [
-        "Physics-informed neural networks for quantum spin dynamics and sensor response modeling",
-        "Reinforcement learning and optimal experimental design for adaptive quantum sensing",
-        "Bayesian inference and ML-based state estimation for NV-center metrology with uncertainty quantification",
-        "Digital twin frameworks coupling first-principles models with real measurement data",
-        "Automated calibration and drift compensation using domain adaptation and transfer learning",
-        "Surrogate simulation models for rapid protocol optimization (CPT/EIT/QND-inspired sequences)"
+        "Precision quantum sensing with NV centers: magnetic field imaging, thermometry, strain sensing",
+        "Optimal quantum control sequences and measurement protocols for enhanced sensitivity",
+        "Physics-informed ML models for sensor calibration and signal processing",
+        "Bayesian inference and uncertainty quantification for quantum measurements",
+        "Adaptive sensing strategies using real-time feedback and optimization",
+        "Integration of quantum metrology with real-world applications and field deployment"
       ],
       JP: [
-        "量子スピンダイナミクスとセンサ応答モデリングのための物理情報ニューラルネットワーク",
-        "適応量子センシングのための強化学習と最適実験設計",
-        "不確実性定量化を伴うNVセンター計測のためのベイズ推論とMLベース状態推定",
-        "第一原理モデルと実測データを結合するデジタルツインフレームワーク",
-        "ドメイン適応と転移学習を使用した自動校正とドリフト補償",
-        "迅速なプロトコル最適化のための代理シミュレーションモデル（CPT/EIT/QNDインスパイアシーケンス）"
+        "NVセンターを用いた精密量子センシング：磁場イメージング、温度測定、歪みセンシング",
+        "感度向上のための最適量子制御シーケンスと測定プロトコル",
+        "センサ校正と信号処理のための物理情報MLモデル",
+        "量子測定のためのベイズ推論と不確実性定量化",
+        "リアルタイムフィードバックと最適化を使用する適応センシング戦略",
+        "量子計測と実世界アプリケーションおよびフィールド展開の統合"
       ]
     },
     category: "Flagship Research Theme",
