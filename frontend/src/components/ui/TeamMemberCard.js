@@ -345,15 +345,12 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                         ));
                       })()}
                     </div>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* Achievements */}
                 {member.achievements && (
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+                  <div
                     className="p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-900/20 border border-orange-600/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
