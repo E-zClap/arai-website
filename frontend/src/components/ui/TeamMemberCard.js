@@ -290,16 +290,13 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                           </div>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })()}
 
                 {/* Research Interests */}
                 {member.researchInterests && (
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
+                  <div
                     className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
                   >
                     <div className="flex items-center space-x-2 mb-4">
