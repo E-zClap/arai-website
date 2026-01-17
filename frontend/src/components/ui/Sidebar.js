@@ -141,7 +141,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         >
           {/* Premium Academic Header */}
           <motion.div 
-            className="p-8 border-b border-dark-gray-700/30"
+            className="p-6 border-b border-dark-gray-700/30"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
