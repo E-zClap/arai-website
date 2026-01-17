@@ -418,8 +418,9 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                     >
                       {typeof member.contact === 'object' && member.contact[language] ? member.contact[language] : member.contact}
                     </a>
-                  </motion.div>
+                  </div>
                 )}
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
