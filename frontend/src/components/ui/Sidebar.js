@@ -141,12 +141,12 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
         >
           {/* Premium Academic Header */}
           <motion.div 
-            className="p-6 border-b border-dark-gray-700/30"
+            className="p-4 pt-4 border-b border-dark-gray-700/30"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 }}
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <motion.div 
                 className="w-[130px] h-[130px] rounded-2xl flex items-center justify-center p-2"
                 whileHover={{ 
