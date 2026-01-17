@@ -380,7 +380,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             </h3>
             <ul className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {(language === 'EN' ? [
-                'International research experience: collaborations, visits, joint projects, and research stays—regardless of nationality',
+                'International research experience: collaborations, visits, joint projects, and research stays, regardless of nationality',
                 'Top-journal-oriented research themes, structured to aim for decisive contributions rather than incremental publications',
                 'Career optionality beyond academia, including interaction with national research institutes and internship opportunities at deep-tech startups (Japan and abroad)',
                 'High-caliber research environment: daily interaction with some of the strongest students in Japan, and direct interaction with leading researchers from top international institutions'
