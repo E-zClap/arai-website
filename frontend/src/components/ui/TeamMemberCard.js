@@ -222,12 +222,10 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         </div>
 
         {/* Expandable Details Section */}
-        <motion.div className="border-t border-dark-gray-700/50 pt-6">
-          <motion.button
+        <div className="border-t border-dark-gray-700/50 pt-6">
+          <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
           >
             <div className="flex items-center space-x-3">
               <motion.div
@@ -241,7 +239,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               </span>
             </div>
             <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
-          </motion.button>
+          </button>
 
           <AnimatePresence>
             {isExpanded && (
