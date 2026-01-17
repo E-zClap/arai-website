@@ -481,12 +481,12 @@ export const JoinUsPage = ({ language, isDark }) => (
             <ul className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {(language === 'EN' ? [
                 'Strategic support for next careers, including PI-track positions in Japan and overseas academic markets',
-                'Strong grant-writing support: structure, narrative, and positioning for fellowships and major funding—not just proofreading',
+                'Strong grant-writing support: structure, narrative, and positioning for fellowships and major funding, not just proofreading',
                 'Hands-on exposure to lab and project management, including mentoring students, budgeting, resource allocation, and priority management',
                 'A high-output collaboration ecosystem: ambitious themes, strong domestic and international partners, and a student environment that supports top-level work'
               ] : [
                 '日本および海外の学術市場でのPIトラックポジションを含む、次のキャリアへの戦略的サポート',
-                '強力な助成金執筆サポート：フェローシップおよび主要資金調達のための構造、ナラティブ、ポジショニング—校正だけではない',
+                '強力な助成金執筆サポート：フェローシップおよび主要資金調達のための構造、ナラティブ、ポジショニング、校正だけではない',
                 '学生の指導、予算編成、資源配分、優先順位管理を含む、研究室およびプロジェクト管理への実践的な露出',
                 '高出力のコラボレーションエコシステム：野心的なテーマ、強力な国内外のパートナー、トップレベルの仕事をサポートする学生環境'
               ]).map((item, idx) => (
