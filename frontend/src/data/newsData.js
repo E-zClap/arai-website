@@ -1,14 +1,6 @@
 // Real News data from Professor Keigo Arai's laboratory website
+// Ordered by date: Most recent first
 export const newsData = [
-  {
-    date: "2025-07-18",
-    title: {
-      EN: "Our paper on \"Optically detected magnetic resonance of nitrogen-vacancy centers in microdiamonds inside nanopolycrystalline diamond anvil cell\" has been published in arXiv.",
-      JP: "「ナノ多結晶ダイヤモンドアンビルセル内のマイクロダイヤモンド中窒素空孔センターの光学的検出磁気共鳴」に関する論文がarXivに公開されました。"
-    },
-    link: "https://arxiv.org/abs/2507.13634",
-    tags: ["Publication", "Diamond NV", "High Pressure", "arXiv"]
-  },
   {
     date: "2025-12-01",
     title: {
@@ -35,6 +27,15 @@ export const newsData = [
     },
     link: "#",
     tags: ["Team", "Welcome", "Postdoctoral Researcher"]
+  },
+  {
+    date: "2025-07-18",
+    title: {
+      EN: "Our paper on \"Optically detected magnetic resonance of nitrogen-vacancy centers in microdiamonds inside nanopolycrystalline diamond anvil cell\" has been published in arXiv.",
+      JP: "「ナノ多結晶ダイヤモンドアンビルセル内のマイクロダイヤモンド中窒素空孔センターの光学的検出磁気共鳴」に関する論文がarXivに公開されました。"
+    },
+    link: "https://arxiv.org/abs/2507.13634",
+    tags: ["Publication", "Diamond NV", "High Pressure", "arXiv"]
   },
   {
     date: "2024-12-23",
