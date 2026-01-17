@@ -91,8 +91,8 @@ export const JoinUsPage = ({ language, isDark }) => (
         </h2>
         <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
           {language === 'EN'
-            ? "We are selective—not by credentials alone, but by how you think, act, and take responsibility. At the same time, we believe that ambitious people deserve an environment that genuinely accelerates them. Below, we describe who we are looking for—and what you gain by choosing the Arai Group—at each career stage."
-            : "私たちは選抜的です—資格だけでなく、あなたがどのように考え、行動し、責任を取るかによって。同時に、野心的な人々は彼らを真に加速させる環境に値すると信じています。以下では、各キャリア段階で私たちが求めている人物と、荒井グループを選ぶことで何を得られるかを説明します。"
+            ? "We are selective, not by credentials alone, but by how you think, act, and take responsibility. At the same time, we believe that ambitious people deserve an environment that genuinely accelerates them. Below, we describe who we are looking for and what you gain by choosing the Arai Group at each career stage."
+            : "私たちは選抜的です。資格だけでなく、あなたがどのように考え、行動し、責任を取るかによって。同時に、野心的な人々は彼らを真に加速させる環境に値すると信じています。以下では、各キャリア段階で私たちが求めている人物と、荒井グループを選ぶことで何を得られるかを説明します。"
           }
         </p>
       </motion.div>
