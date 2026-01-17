@@ -166,7 +166,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
               </motion.div>
               <div>
                 <motion.h1 
-                  className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}
+                  className={`text-base font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -174,7 +174,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
                 </motion.h1>
                 <motion.p 
-                  className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
+                  className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
