@@ -57,7 +57,14 @@ export const HeroSection = ({ language, isDark }) => {
                 : 'bg-white border-blue-200/50 text-blue-600 shadow-2xl backdrop-blur-sm'
             }`}
           >
-            <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full mr-4" />
+            <img 
+              src="/favicon-institute.ico" 
+              alt="Institute Logo" 
+              className="w-5 h-5 mr-4 object-contain"
+              style={{
+                filter: isDark ? 'brightness(1.2)' : 'brightness(1)'
+              }}
+            />
             <span className="text-sm font-medium tracking-wider uppercase">
               {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
             </span>
