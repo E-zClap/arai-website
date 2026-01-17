@@ -3,6 +3,44 @@ export const researchData = [
   {
     number: 1,
     title: {
+      EN: "Quantum Metrology & Machine Learning",
+      JP: "量子計測と機械学習"
+    },
+    overview: {
+      EN: "We combine cutting-edge machine learning with quantum measurement to build the next generation of intelligent quantum sensing systems. Rather than using ML as a general-purpose tool, we focus on where its impact is most significant: transforming complex quantum signals into calibrated physical insights, optimizing quantum control sequences, and creating adaptive measurement protocols that learn from data.",
+      JP: "最先端の機械学習と量子測定を組み合わせ、次世代のインテリジェント量子センシングシステムを構築します。MLを汎用ツールとして使用するのではなく、その影響が最も大きい領域に焦点を当てています：複雑な量子信号を校正された物理的洞察に変換し、量子制御シーケンスを最適化し、データから学習する適応的測定プロトコルを作成します。"
+    },
+    description: {
+      EN: "This flagship theme represents the core identity of our group: advancing quantum metrology through physics-informed machine learning and data-driven quantum control. We develop quantum metrology digital twins that predict sensor behavior under realistic conditions, design optimal measurement protocols using reinforcement learning and Bayesian optimization, and create robust estimators that turn noisy quantum signals into precise, uncertainty-quantified physical measurements. Our approach tightly integrates simulation, experiment, and deployment, continuously updating models with real sensor data from extreme and field environments.",
+      JP: "このフラッグシップテーマは私たちのグループの核となるアイデンティティを表しています：物理情報機械学習とデータ駆動量子制御を通じた量子計測の進歩。現実的な条件下でセンサ動作を予測する量子計測デジタルツインを開発し、強化学習とベイズ最適化を使用して最適な測定プロトコルを設計し、ノイズの多い量子信号を正確で不確実性定量化された物理測定に変換するロバスト推定器を作成します。私たちのアプローチはシミュレーション、実験、展開を緊密に統合し、極限環境やフィールド環境からの実際のセンサデータでモデルを継続的に更新します。"
+    },
+    exampleTopics: {
+      EN: [
+        "Physics-informed neural networks for quantum spin dynamics and sensor response modeling",
+        "Reinforcement learning and optimal experimental design for adaptive quantum sensing",
+        "Bayesian inference and ML-based state estimation for NV-center metrology with uncertainty quantification",
+        "Digital twin frameworks coupling first-principles models with real measurement data",
+        "Automated calibration and drift compensation using domain adaptation and transfer learning",
+        "Surrogate simulation models for rapid protocol optimization (CPT/EIT/QND-inspired sequences)"
+      ],
+      JP: [
+        "量子スピンダイナミクスとセンサ応答モデリングのための物理情報ニューラルネットワーク",
+        "適応量子センシングのための強化学習と最適実験設計",
+        "不確実性定量化を伴うNVセンター計測のためのベイズ推論とMLベース状態推定",
+        "第一原理モデルと実測データを結合するデジタルツインフレームワーク",
+        "ドメイン適応と転移学習を使用した自動校正とドリフト補償",
+        "迅速なプロトコル最適化のための代理シミュレーションモデル（CPT/EIT/QNDインスパイアシーケンス）"
+      ]
+    },
+    category: "Flagship Research Theme",
+    leadResearchers: {
+      EN: "Led by Eikichi Kimura, Risei Abe, and research team",
+      JP: "木村詠吉、阿部李星、研究チームが主導"
+    }
+  },
+  {
+    number: 2,
+    title: {
       EN: "Quantum Control & Measurement Dynamics",
       JP: "量子制御と測定ダイナミクス"
     },
@@ -29,7 +67,7 @@ export const researchData = [
     category: "Fundamental Quantum Physics"
   },
   {
-    number: 2,
+    number: 3,
     title: {
       EN: "Diamond Quantum Electronics",
       JP: "ダイヤモンド量子エレクトロニクス"
@@ -57,7 +95,7 @@ export const researchData = [
     category: "Quantum Materials & Devices"
   },
   {
-    number: 3,
+    number: 4,
     title: {
       EN: "Quantum Materials Sensing & Extreme-Condition Physics",
       JP: "量子材料センシングと極限条件物理学"
@@ -85,7 +123,7 @@ export const researchData = [
     category: "Condensed Matter Physics"
   },
   {
-    number: 4,
+    number: 5,
     title: {
       EN: "Quantum Environmental & Infrastructure Sensing",
       JP: "量子環境・インフラセンシング"
@@ -113,7 +151,7 @@ export const researchData = [
     category: "Applied Quantum Sensing"
   },
   {
-    number: 5,
+    number: 6,
     title: {
       EN: "Quantum Probability & Social Informatics",
       JP: "量子確率と社会情報学"
@@ -139,37 +177,5 @@ export const researchData = [
       ]
     },
     category: "Interdisciplinary Research"
-  },
-  {
-    number: 6,
-    title: {
-      EN: "Machine Learning for NV-Center Metrology & Simulation",
-      JP: "NVセンター計測とシミュレーションのための機械学習"
-    },
-    overview: {
-      EN: "To accelerate the translation of NV-center quantum sensing into reliable metrology, we develop machine-learning-driven simulation and inference workflows that couple first-principles / device-level models with data from real measurements. Our goal is to build \"quantum metrology digital twins\" that predict sensor behavior, optimize protocols, and turn complex NV signals into calibrated, uncertainty-aware physical estimates.",
-      JP: "NVセンター量子センシングを信頼性の高い計測に変換することを加速するために、第一原理/デバイスレベルモデルと実測データを結合する機械学習駆動のシミュレーションと推論ワークフローを開発しています。センサ動作を予測し、プロトコルを最適化し、複雑なNV信号を校正された不確実性認識物理推定に変換する「量子計測デジタルツイン」の構築を目指しています。"
-    },
-    description: {
-      EN: "This theme tightly links simulation → experiment → deployment: physics-guided ML produces fast surrogate models and robust estimators, while real sensor data continuously updates model validity, domain shift, and reliability under extreme and field conditions.",
-      JP: "このテーマはシミュレーション→実験→展開を緊密に結びつけます：物理学ガイドMLは高速代理モデルとロバスト推定器を生成し、実際のセンサデータはモデルの妥当性、ドメインシフト、極限およびフィールド条件下での信頼性を継続的に更新します。"
-    },
-    exampleTopics: {
-      EN: [
-        "Physics-informed and hybrid ML models for NV spin dynamics (Hamiltonian + noise + readout)",
-        "Surrogate simulation models for rapid protocol design (including CPT/EIT/QND-inspired sequences) and device optimization",
-        "Bayesian/ML state estimation for NV-based metrology (field, temperature, strain, pH/electrochemistry) with uncertainty quantification",
-        "Automated calibration and drift compensation using domain adaptation and self-supervised learning on long-term sensor logs",
-      ],
-      JP: [
-        "NVスピンダイナミクスのための物理情報および混合MLモデル（ハミルトニアン+ノイズ+読み出し）",
-        "迅速なプロトコル設計（CPT/EIT/QNDインスパイアシーケンスを含む）とデバイス最適化のための代理シミュレーションモデル",
-        "不確実性定量化を伴うNVベース計測（場、温度、歪み、pH/電気化学）のためのベイズ/ML状態推定",
-        "長期センサログに対するドメイン適応と自己教師あり学習を使用した自動校正とドリフト補償",
-        "適応センシングと測定ベースフィードバック制御のための強化学習/最適実験設計",
-        "推論アルゴリズムのロバストなトレーニングとベンチマークのための合成データ生成パイプライン（デジタルツイン+測定モデル）"
-      ]
-    },
-    category: "Computational Quantum Science"
   }
 ];
