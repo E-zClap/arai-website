@@ -433,7 +433,7 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </motion.article>
   );
