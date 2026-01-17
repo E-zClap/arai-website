@@ -774,14 +774,14 @@ export const JoinUsPage = ({ language, isDark }) => (
             { q: 'Do I need prior quantum experience?', a: 'Not necessarily. What matters most is your ability to learn fast, think clearly, and execute with integrity.' },
             { q: 'Can I explore before committing to a thesis topic?', a: 'Yes. We often start with a structured onboarding project to build research habits and identify a strong direction.' },
             { q: 'How much independence is expected?', a: 'Increasingly so with seniority. Undergraduates receive close guidance; PhD students and postdocs are expected to drive their own projects.' },
-            { q: 'How is progress evaluated?', a: 'By clarity of questions, quality of data, logic of interpretation, and concrete outputs—not by time spent in the lab.' },
+            { q: 'How is progress evaluated?', a: 'By clarity of questions, quality of data, logic of interpretation, and concrete outputs, not by time spent in the lab.' },
             { q: 'Is collaboration encouraged or competitive?', a: 'Collaboration is strongly encouraged. We value shared progress, transparent communication, and collective success.' },
             { q: 'What matters most for success here?', a: 'Ownership, honest data practices, and the will to deliver outcomes to both academia and society.' }
           ] : [
             { q: '事前の量子経験は必要ですか？', a: '必ずしも必要ではありません。最も重要なのは、速く学び、明確に考え、誠実に実行する能力です。' },
             { q: '論文トピックにコミットする前に探索できますか？', a: 'はい。研究習慣を構築し、強力な方向性を特定するために、構造化されたオンボーディングプロジェクトから始めることがよくあります。' },
             { q: 'どのくらいの独立性が期待されますか？', a: '年功序列とともに増加します。学部生は密接な指導を受けます；博士課程学生とポスドクは自分のプロジェクトを推進することが期待されます。' },
-            { q: '進捗はどのように評価されますか？', a: '質問の明確さ、データの質、解釈の論理、具体的な成果によって—研究室で過ごした時間ではありません。' },
+            { q: '進捗はどのように評価されますか？', a: '質問の明確さ、データの質、解釈の論理、具体的な成果によって、研究室で過ごした時間ではありません。' },
             { q: 'コラボレーションは奨励されますか、それとも競争的ですか？', a: 'コラボレーションは強く奨励されます。私たちは共有された進捗、透明なコミュニケーション、集団的成功を重視します。' },
             { q: 'ここでの成功に最も重要なことは何ですか？', a: 'オーナーシップ、正直なデータプラクティス、アカデミアと社会の両方に成果を提供する意志です。' }
           ]).map((faq, idx) => (
