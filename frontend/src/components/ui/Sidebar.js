@@ -148,7 +148,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           >
             <div className="flex items-center space-x-4">
               <motion.div 
-                className="w-20 h-20 rounded-2xl flex items-center justify-center p-2"
+                className="w-[120px] h-[120px] rounded-2xl flex items-center justify-center p-2"
                 whileHover={{ 
                   scale: 1.08,
                   rotate: 5
@@ -160,7 +160,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   alt="Diamond Logo" 
                   className="w-full h-full object-contain filter drop-shadow-lg"
                   style={{
-                    filter: 'drop-shadow(0 4px 8px rgba(234, 88, 12, 0.5))'
+                    filter: 'drop-shadow(0 6px 12px rgba(234, 88, 12, 0.6))'
                   }}
                 />
               </motion.div>
