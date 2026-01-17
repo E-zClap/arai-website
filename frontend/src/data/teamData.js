@@ -74,8 +74,8 @@ export const principalInvestigator = {
 export const staffAndPostdocs = [
   {
     name: {
-      EN: "Mahmood Sherjeel",
-      JP: "マフムード・シェルジール"
+      EN: "Baig Sherjeel Mahmood",
+      JP: "バイグ シャールジール マムード"
     },
     position: {
       EN: "Postdoctoral Researcher",
@@ -83,70 +83,39 @@ export const staffAndPostdocs = [
     },
     education: {
       EN: [
-        "Ph.D., Okayama University",
-        "Specialized in quantum physics and materials science",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "Ph.D. in Science and Engineering (Materials Science), National Institute for Materials Science (NIMS), jointly with Saitama University, Japan (2025)",
+        "M.S. in Electrical Engineering (Power), National University of Science and Technology (NUST) Islamabad, Pakistan (2019)",
+        "B.S. in Electrical Engineering (Power), University of Engineering and Technology (UET) Lahore, Pakistan (2014)"
       ],
       JP: [
-        "博士、岡山大学",
-        "量子物理学と材料科学の専門",
-        "学士（電気工学）、東京科学大学"
+        "博士（理工学（材料科学））、国立研究開発法人 物質・材料研究機構（NIMS）／埼玉大学（2025年）",
+        "理学修士（電気工学（電力））、National University of Science and Technology (NUST) Islamabad, Pakistan（2019年）",
+        "理学士（電気工学（電力））、University of Engineering and Technology (UET) Lahore, Pakistan（2014年）"
       ]
     },
-    researchFocus: {
-      EN: [
-        "Quantum sensing and measurement",
-        "Advanced materials characterization",
-        "Quantum control protocols",
-        "Nanoscale physics and applications"
-      ],
-      JP: [
-        "量子センシングと測定",
-        "先端材料特性評価",
-        "量子制御プロトコル",
-        "ナノスケール物理学と応用"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Sherjeel.jpg"
   },
   {
     name: {
       EN: "Masahiro Ohkuma",
-      JP: "大熊 正寛"
+      JP: "大隈 理央"
     },
     position: {
-      EN: "Postdoctoral Researcher",
-      JP: "博士研究員"
+      EN: "JSPS Postdoctoral Researcher",
+      JP: "学振特別研究員PD"
     },
     education: {
       EN: [
-        "Ph.D. in Applied Physics",
-        "M.S. in Engineering Physics, Institute of Science Tokyo",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "Ph.D. in Engineering, Kyushu Institute of Technology (2022)",
+        "M.S. in Engineering, Kyushu Institute of Technology (2019)",
+        "Bachelor in Engineering, Kyushu Institute of Technology (2017)"
       ],
       JP: [
-        "博士（応用物理学）",
-        "修士（工学物理学）、東京科学大学",
-        "学士（電気工学）、東京科学大学"
+        "博士（工学）、九州工業大学（2022年）",
+        "修士（工学）、九州工業大学（2019年）",
+        "学士（工学）、九州工業大学（2017年）"
       ]
     },
-    researchFocus: {
-      EN: [
-        "Quantum sensor network development",
-        "Distributed sensing protocols",
-        "Quantum communication in sensor networks",
-        "Advanced signal processing for quantum sensors"
-      ],
-      JP: [
-        "量子センサネットワーク開発",
-        "分散センシングプロトコル",
-        "センサネットワークにおける量子通信",
-        "量子センサの高度信号処理"
-      ]
-    },
-    publications: 8,
-    joinDate: "2021-10",
     image: "/team_images/Ohkuma.jpg"
   },
   {
@@ -155,28 +124,22 @@ export const staffAndPostdocs = [
       JP: "中川 豊信"
     },
     position: {
-      EN: "Senior Technical Support Specialist",
-      JP: "シニア技術サポート専門家"
+      EN: "Technical Support Staff",
+      JP: "技術支援員"
     },
     expertise: {
       EN: [
-        "Custom instrumentation design and fabrication",
-        "Ultra-low noise electronics development",
-        "Precision mechanical systems integration",
-        "Laboratory safety protocols and training",
-        "Equipment maintenance and optimization"
+        "Laboratory equipment support and maintenance",
+        "Experimental setup assistance",
+        "Technical operations coordination"
       ],
       JP: [
-        "カスタム計測器設計・製造",
-        "超低ノイズ電子機器開発",
-        "精密機械システム統合",
-        "実験室安全プロトコルと訓練",
-        "機器保守と最適化"
+        "実験室機器サポート・保守",
+        "実験セットアップ支援",
+        "技術運営調整"
       ]
     },
-    yearsOfExperience: 25,
-    joinDate: "2020-03",
-    image: "/team_images/Nakagawa.jpg"  // Will show personalized placeholder
+    image: "/team_images/Nakagawa.jpg"
   },
   {
     name: {
@@ -184,79 +147,93 @@ export const staffAndPostdocs = [
       JP: "吉川 俊明"
     },
     position: {
-      EN: "Technical Staff",
-      JP: "技術スタッフ"
+      EN: "Technical Support Staff",
+      JP: "技術支援員"
     },
     expertise: {
       EN: [
         "Laboratory equipment maintenance",
         "Experimental setup support",
-        "Technical consultation",
-        "Safety and compliance management"
+        "Technical consultation"
       ],
       JP: [
         "実験室機器保守",
         "実験セットアップ支援",
-        "技術コンサルティング",
-        "安全・コンプライアンス管理"
+        "技術コンサルティング"
       ]
     },
-    joinDate: "2022-04",
     image: "/team_images/Yoshikawa.jpg"
   },
   {
     name: {
       EN: "Yukata Anzai",
-      JP: "安西 豊"
+      JP: "安齋 裕"
     },
     position: {
-      EN: "Technical Staff",
-      JP: "技術スタッフ"
+      EN: "Technical Support Staff",
+      JP: "技術支援員"
     },
     expertise: {
       EN: [
         "Laboratory operations support",
         "Equipment calibration and testing",
-        "Data acquisition systems",
         "Technical documentation"
       ],
       JP: [
         "実験室運営支援",
         "機器校正と試験",
-        "データ取得システム",
         "技術文書作成"
       ]
     },
-    joinDate: "2023-01",
     image: "/team_images/Anzai.jpg"
   },
   {
     name: {
       EN: "Yasuko Shirasu",
-      JP: "白須 康子"
+      JP: "白須 靖子"
     },
     position: {
-      EN: "Administrative Coordinator",
-      JP: "管理コーディネータ"
+      EN: "Administrative Support Staff",
+      JP: "事務支援員"
     },
     responsibilities: {
       EN: [
-        "Daily laboratory operations coordination",
-        "Visitor and international student support",
-        "Equipment procurement and inventory management",
+        "Laboratory administration and coordination",
+        "Visitor and student support",
         "Meeting scheduling and event organization",
-        "Communication liaison between departments"
+        "Administrative documentation"
       ],
       JP: [
-        "日常実験室運営調整",
-        "訪問者・留学生サポート",
-        "機器調達・在庫管理",
+        "実験室管理・調整",
+        "訪問者・学生サポート",
         "会議調整・イベント組織",
-        "部門間コミュニケーション連絡"
+        "事務文書管理"
       ]
     },
-    joinDate: "2018-04",
     image: "/team_images/Shirasu.jpg"
+  },
+  {
+    name: {
+      EN: "Yoshie Yanagida",
+      JP: "柳田 良江"
+    },
+    position: {
+      EN: "Administrative Support Staff (On childcare leave)",
+      JP: "事務支援員（育児休職中）"
+    },
+    responsibilities: {
+      EN: [
+        "Administrative support (Currently on childcare leave)",
+        "Document management",
+        "Office coordination"
+      ],
+      JP: [
+        "事務支援（現在育児休職中）",
+        "文書管理",
+        "オフィス調整"
+      ]
+    },
+    image: "/team_images/Yanagida.jpg"
   }
 ];
 
@@ -265,7 +242,7 @@ export const students = [
   {
     name: {
       EN: "Eikichi Kimura",
-      JP: "木村 栄吉"
+      JP: "木村 詠吉"
     },
     position: {
       EN: "Ph.D. Student",
@@ -273,33 +250,16 @@ export const students = [
     },
     education: {
       EN: [
-        "Ph.D. in Quantum Informatics (ongoing)",
-        "M.S. in Electrical Engineering, Institute of Science Tokyo",
-        "Research Focus: 'Quantum sensor networks and distributed sensing'",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "Ph.D. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "M.Eng in Electrical and Electronic Engineering, Institute of Science Tokyo (2025)",
+        "B.Eng in Electrical and Electronic Engineering, Tokyo Institute of Technology (2023)"
       ],
       JP: [
-        "博士（量子インフォマティクス）履修中",
-        "修士（電気工学）、東京科学大学",
-        "研究テーマ：「量子センサネットワークと分散センシング」",
-        "学士（電気工学）、東京科学大学"
+        "博士課程（電気電子系）履修中、東京科学大学",
+        "修士（工学）（電気電子系）、東京科学大学（2025年）",
+        "学士（工学）（電気電子系）、東京工業大学（2023年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Distributed quantum sensing networks",
-        "Quantum communication protocols",
-        "Sensor fusion and data integration",
-        "Network optimization algorithms"
-      ],
-      JP: [
-        "分散量子センシングネットワーク",
-        "量子通信プロトコル",
-        "センサフュージョンとデータ統合",
-        "ネットワーク最適化アルゴリズム"
-      ]
-    },
-    joinDate: "2023-04",
     image: "/team_images/Kimura.jpg"
   },
   {
@@ -313,29 +273,14 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Quantum Engineering (ongoing)",
-        "Bachelor of Engineering, Free University of Brussels",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "Bachelor of Engineering, Free University of Brussels"
       ],
       JP: [
-        "修士（量子工学）履修中",
-        "工学士、ブリュッセル自由大学",
-        "学士（電気工学）、東京科学大学"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "工学士、Free University of Brussels"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Quantum sensing applications",
-        "Quantum control theory",
-        "International research collaboration"
-      ],
-      JP: [
-        "量子センシング応用",
-        "量子制御理論",
-        "国際研究協力"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Mustapha.jpg"
   },
   {
@@ -349,27 +294,14 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Quantum Engineering (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "B.Sc. in Physics, Department of Physics, Bandung Institute of Technology (2023)"
       ],
       JP: [
-        "修士（量子工学）履修中",
-        "学士（電気工学）、東京科学大学"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "理学士（物理学科）、Bandung Institute of Technology（2023年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Quantum sensing techniques",
-        "Materials characterization",
-        "Experimental quantum physics"
-      ],
-      JP: [
-        "量子センシング技術",
-        "材料特性評価",
-        "実験量子物理学"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Han.jpg"
   },
   {
@@ -378,32 +310,19 @@ export const students = [
       JP: "三ヶ尻 智明"
     },
     position: {
-      EN: "Master Student",
-      JP: "修士課程学生"
+      EN: "Undergraduate Student",
+      JP: "学部生"
     },
     education: {
       EN: [
-        "M.S. in Quantum Engineering (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "B.Eng in Electrical and Electronic Engineering (in progress), Institute of Science Tokyo",
+        "Expected graduation: March 2026"
       ],
       JP: [
-        "修士（量子工学）履修中",
-        "学士（電気工学）、東京科学大学"
+        "学士課程（電気電子系）履修中、東京科学大学",
+        "卒業予定：2026年3月"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Quantum measurement techniques",
-        "Signal processing",
-        "Quantum device development"
-      ],
-      JP: [
-        "量子測定技術",
-        "信号処理",
-        "量子デバイス開発"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Mikajiri.jpg"
   },
   {
@@ -417,35 +336,20 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Applied Physics (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo",
-        "Research Focus: 'Quantum sensor calibration techniques'"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "B.Eng in Electrical and Electronic Engineering, Institute of Science Tokyo (2025)"
       ],
       JP: [
-        "修士（応用物理学）履修中",
-        "学士（電気工学）、東京科学大学",
-        "研究テーマ：「量子センサ校正技術」"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "学士（工学）（電気電子系）、東京科学大学（2025年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Quantum sensor calibration",
-        "Precision measurement",
-        "Data analysis and optimization"
-      ],
-      JP: [
-        "量子センサ校正",
-        "精密測定",
-        "データ解析と最適化"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Tsuchiya.jpg"
   },
   {
     name: {
       EN: "Yuto Yamakawa",
-      JP: "山川 裕斗"
+      JP: "山川 優斗"
     },
     position: {
       EN: "Master Student",
@@ -453,35 +357,20 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Quantum Sensing (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo",
-        "Research Focus: 'Biological applications of quantum sensing'"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "Bachelor in Electrical and Electronic Engineering, Tokyo Institute of Technology (2024)"
       ],
       JP: [
-        "修士（量子センシング）履修中",
-        "学士（電気工学）、東京科学大学",
-        "研究テーマ：「量子センシングの生物学応用」"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "学士（電気電子系）、東京工業大学（2024年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Biological magnetic field sensing",
-        "Quantum sensors for medical diagnostics",
-        "Biocompatible quantum sensing platforms"
-      ],
-      JP: [
-        "生物学的磁場センシング",
-        "医療診断のための量子センサ",
-        "生体適合性量子センシングプラットフォーム"
-      ]
-    },
-    joinDate: "2024-04", 
     image: "/team_images/Yamakawa.jpg"
   },
   {
     name: {
       EN: "Haizen Cho",
-      JP: "周 海禅"
+      JP: "張 沛然"
     },
     position: {
       EN: "Master Student",
@@ -489,35 +378,20 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Quantum Engineering (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo",
-        "Research Focus: 'Quantum sensing in extreme environments'"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "Bachelor of Engineering, Faculty of Science and Technology, Department of Electrical Engineering, Tokyo University of Science (2024)"
       ],
       JP: [
-        "修士（量子工学）履修中",
-        "学士（電気工学）、東京科学大学",
-        "研究テーマ：「極限環境での量子センシング」"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "学士（工学）、創域理工学部　電気電子情報工学科、東京理科大学（2024年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "High-temperature quantum sensing",
-        "Radiation-resistant quantum sensors",
-        "Materials science quantum characterization"
-      ],
-      JP: [
-        "高温量子センシング",
-        "耐放射線量子センサ",
-        "材料科学量子特性評価"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Cho.jpg"
   },
   {
     name: {
       EN: "Risei Abe",
-      JP: "阿部 理生"
+      JP: "阿部 李星"
     },
     position: {
       EN: "Master Student",
@@ -525,99 +399,41 @@ export const students = [
     },
     education: {
       EN: [
-        "M.S. in Quantum Engineering (ongoing)",
-        "B.S. in Electrical Engineering, Institute of Science Tokyo"
+        "M.S. in Electrical and Electronic Engineering (ongoing), Institute of Science Tokyo",
+        "Department of Opto-Electronic System Engineering, Chitose Institute of Science and Technology (2025)"
       ],
       JP: [
-        "修士（量子工学）履修中",
-        "学士（電気工学）、東京科学大学"
+        "修士課程（電気電子系）履修中、東京科学大学",
+        "電子光工学科、公立千歳科学技術大学（2025年）"
       ]
     },
-    researchInterests: {
-      EN: [
-        "Quantum sensing methodologies",
-        "Experimental techniques",
-        "Data acquisition and processing"
-      ],
-      JP: [
-        "量子センシング方法論",
-        "実験技術",
-        "データ取得と処理"
-      ]
-    },
-    joinDate: "2024-04",
     image: "/team_images/Abe.jpg"
   },
   {
     name: {
       EN: "Masato Koga",
-      JP: "古賀 真人"
+      JP: "古賀 雅人"
     },
     position: {
-      EN: "Bachelor Student",
+      EN: "Undergraduate Student",
       JP: "学部生"
     },
     education: {
       EN: [
-        "B.S. in Electrical Engineering (ongoing)",
-        "Institute of Science Tokyo"
+        "B.Eng in Electrical and Electronic Engineering (in progress), Institute of Science Tokyo",
+        "Expected graduation: March 2026"
       ],
       JP: [
-        "学士（電気工学）履修中",
-        "東京科学大学"
+        "学士課程（電気電子系）履修中、東京科学大学",
+        "卒業予定：2026年3月"
       ]
     },
-    researchActivities: {
-      EN: [
-        "Laboratory fundamentals",
-        "Research methodology learning",
-        "Experimental support",
-        "Academic skill development"
-      ],
-      JP: [
-        "実験室基礎",
-        "研究方法論学習",
-        "実験サポート",
-        "学術スキル開発"
-      ]
-    },
-    joinDate: "2024-04",
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop"
+    image: "/team_images/Koga.jpg"
   }
 ];
 
 // Alumni data structure with former members
 export const alumni = [
-  {
-    name: {
-      EN: "Yu Saito",
-      JP: "斉藤 優"
-    },
-    position: {
-      EN: "Postdoctoral Researcher",
-      JP: "博士研究員"
-    },
-    period: {
-      EN: "2022-2024",
-      JP: "2022年-2024年"
-    },
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop"
-  },
-  {
-    name: {
-      EN: "Yoshie Yanagida",
-      JP: "柳田 良江"
-    },
-    position: {
-      EN: "Research Administration Manager",
-      JP: "研究管理マネージャー"
-    },
-    period: {
-      EN: "2019-2024",
-      JP: "2019年-2024年"
-    },
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
-  },
   {
     name: {
       EN: "Eisuke Oba",
@@ -628,25 +444,10 @@ export const alumni = [
       JP: "大学院生"
     },
     period: {
-      EN: "2023-2024",
-      JP: "2023年-2024年"
+      EN: "Former Member",
+      JP: "元メンバー"
     },
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-  },
-  {
-    name: {
-      EN: "Shuhei Ohyama",
-      JP: "大山 修平"
-    },
-    position: {
-      EN: "Graduate Student",
-      JP: "大学院生"
-    },
-    period: {
-      EN: "2024",
-      JP: "2024年"
-    },
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
   },
   {
     name: {
@@ -658,25 +459,55 @@ export const alumni = [
       JP: "YSEP学生"
     },
     period: {
-      EN: "2024",
-      JP: "2024年"
+      EN: "Former Member",
+      JP: "元メンバー"
     },
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop"
   },
   {
     name: {
       EN: "Ryuki Motonaga", 
-      JP: "本永 龍輝"
+      JP: "元永 龍希"
     },
     position: {
       EN: "Undergraduate Student",
       JP: "学部生"
     },
     period: {
-      EN: "2024",
-      JP: "2024年"
+      EN: "Former Member",
+      JP: "元メンバー"
     },
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
+  },
+  {
+    name: {
+      EN: "Shumpei Ohyama",
+      JP: "大山 隼平"
+    },
+    position: {
+      EN: "Graduate Student",
+      JP: "大学院生"
+    },
+    period: {
+      EN: "Former Member",
+      JP: "元メンバー"
+    },
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+  },
+  {
+    name: {
+      EN: "Yu Saito",
+      JP: "齋藤 佑"
+    },
+    position: {
+      EN: "Former Member",
+      JP: "元メンバー"
+    },
+    period: {
+      EN: "Former Member",
+      JP: "元メンバー"
+    },
+    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop"
   }
 ];
 
@@ -685,13 +516,13 @@ export const teamStatistics = {
   totalMembers: 1 + staffAndPostdocs.length + students.length,
   principalInvestigators: 1,
   postdoctralResearchers: staffAndPostdocs.filter(member => 
-    member.position.EN.includes("Postdoctoral")).length,
+    member.position.EN.includes("Postdoctoral") || member.position.EN.includes("JSPS")).length,
   technicalStaff: staffAndPostdocs.filter(member => 
     member.position.EN.includes("Technical") || 
     member.position.EN.includes("Administrative")).length,
   graduateStudents: students.filter(member => 
     member.position.EN.includes("Master") || member.position.EN.includes("Ph.D.")).length,
   undergraduateStudents: students.filter(member => 
-    member.position.EN.includes("Bachelor")).length,
+    member.position.EN.includes("Undergraduate")).length,
   alumniCount: alumni.length
 };
