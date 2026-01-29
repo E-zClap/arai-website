@@ -85,7 +85,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Develop equal-footing collaborations and researcher exchanges with leading institutions worldwide, so that Japan-originated themes and experimental capabilities can play central roles in international projects.",
-        JP: "世界の主要機関と対等な協力関係や研究者交流を構築し、日本発の研究テーマや実験能力が国際プロジェクトにおいて中心的役割を果たせるようにする。"
+        JP: "世界の主要機関と対等な共同研究体制や研究者交流を構築し、日本発の研究テーマや実験技術が国際プロジェクトにおいて中心的役割を果たせるようにします。"
       }
     },
     {
