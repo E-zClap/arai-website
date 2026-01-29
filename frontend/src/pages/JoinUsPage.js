@@ -385,10 +385,10 @@ export const JoinUsPage = ({ language, isDark }) => (
                 'Career optionality beyond academia, including interaction with national research institutes and internship opportunities at deep-tech startups (Japan and abroad)',
                 'High-caliber research environment: daily interaction with some of the strongest students in Japan, and direct interaction with leading researchers from top international institutions'
               ] : [
-                '国際的な研究経験：国籍を問わず、コラボレーション、訪問、共同プロジェクト、研究滞在',
-                'トップジャーナル指向の研究テーマ、段階的な出版ではなく決定的な貢献を目指すように構造化',
-                'アカデミアを超えたキャリアオプション、国立研究機関との交流やディープテックスタートアップでのインターンシップの機会（日本および海外）',
-                '高水準な研究環境：日本で最も強力な学生たちとの日常的な交流、トップ国際機関のリーディング研究者との直接的な交流'
+                '国際的な研究経験：国籍を問わず、共同研究、訪問、研究滞在',
+                'トップジャーナルを目指す研究テーマ：段階的な出版ではなく決定的な貢献を目指す構成',
+                'アカデミアを超えたキャリア選択肢：国立研究機関との交流やディープテックスタートアップでのインターンシップ機会（日本・海外）',
+                '高水準な研究環境：日本トップレベルの学生との日常的な交流、世界の主要機関の研究者との直接対話'
               ]).map((item, idx) => (
                 <li key={idx} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
