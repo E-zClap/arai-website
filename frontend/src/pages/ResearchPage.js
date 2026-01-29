@@ -6,12 +6,11 @@ import { Beaker, Cpu, Microscope, Waves, Users, Brain } from 'lucide-react';
 
 // Icon mapping for research themes
 const themeIcons = {
-  1: Waves,
-  2: Cpu,
-  3: Microscope,
-  4: Beaker,
-  5: Users,
-  6: Brain
+  1: Waves,    // Quantum Metrology, Control & Machine Learning (merged)
+  2: Cpu,      // Diamond Quantum Electronics
+  3: Microscope, // Quantum Materials Sensing & Extreme-Condition Physics
+  4: Beaker,   // Quantum Environmental & Infrastructure Sensing
+  5: Brain     // Quantum Probability & Social Informatics
 };
 
 // Enhanced Research Theme Card Component
