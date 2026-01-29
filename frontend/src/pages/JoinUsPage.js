@@ -485,10 +485,10 @@ export const JoinUsPage = ({ language, isDark }) => (
                 'Hands-on exposure to lab and project management, including mentoring students, budgeting, resource allocation, and priority management',
                 'A high-output collaboration ecosystem: ambitious themes, strong domestic and international partners, and a student environment that supports top-level work'
               ] : [
-                '日本および海外の学術市場でのPIトラックポジションを含む、次のキャリアへの戦略的サポート',
-                '強力な助成金執筆サポート：フェローシップおよび主要資金調達のための構造、ナラティブ、ポジショニング、校正だけではない',
-                '学生の指導、予算編成、資源配分、優先順位管理を含む、研究室およびプロジェクト管理への実践的な露出',
-                '高出力のコラボレーションエコシステム：野心的なテーマ、強力な国内外のパートナー、トップレベルの仕事をサポートする学生環境'
+                '次のキャリアへの戦略的サポート：日本・海外の学術市場におけるPI（Principal Investigator）ポジション獲得支援',
+                '強力な助成金申請支援：フェローシップや大型研究費獲得のための構成、ナラティブ、ポジショニング（単なる校正ではありません）',
+                '研究室・プロジェクト管理の実践経験：学生指導、予算管理、リソース配分、優先順位設定',
+                '高水準の共同研究エコシステム：野心的な研究テーマ、強力な国内外のパートナー、トップレベルの研究を支える学生環境'
               ]).map((item, idx) => (
                 <li key={idx} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
