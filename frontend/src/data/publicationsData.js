@@ -234,7 +234,7 @@ export const publicationsData = [
     doi: "10.1103/PhysRevLett.110.157601",
     abstract: {
       EN: "We investigate dressed-state polarization transfer mechanisms between bright and dark spins in diamond nitrogen-vacancy centers, providing insights into spin dynamics and coherence properties.",
-      JP: "ダイヤモンド窒素空孔センター中のブライトスピンとダークスピン間の修飾状態偏極移転メカニズムを調査し、スピンダイナミクスとコヒーレンス特性に関する洞察を提供します。"
+      JP: "ダイヤモンド窒素空孔センターにおけるブライトスピンとダークスピン間の修飾状態偏極移転メカニズムを調べ、スピンダイナミクスとコヒーレンス特性に関する知見を提供した。"
     },
     category: "Quantum Physics",
     type: "Peer-Reviewed",
