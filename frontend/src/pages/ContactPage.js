@@ -182,7 +182,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                   isDark ? 'border-orange-600/30' : 'border-orange-300/50'
                 } shadow-lg`}>
                   <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=139.5022%2C35.5401%2C139.5122%2C35.5471&layer=mapnik&marker=35.5436%2C139.5072"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=139.4820037%2C35.5107769%2C139.4870037%2C35.5147769&layer=mapnik&marker=35.5127769%2C139.4845037"
                     width="100%"
                     height="400"
                     style={{ border: 0 }}
@@ -190,7 +190,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-96"
-                    title={language === 'EN' ? 'Laboratory Location Map' : '研究室の場所マップ'}
+                    title={language === 'EN' ? 'Laboratory Location Map - G2 Building, Suzukakedai Campus' : '研究室の場所マップ - G2棟、すずかけ台キャンパス'}
                   />
                 </div>
                 
