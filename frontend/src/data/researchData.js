@@ -50,7 +50,7 @@ export const researchData = [
     },
     overview: {
       EN: "We pursue a platform mission: establishing diamond as technological infrastructure for quantum devices that remain functional in realistic and extreme environments. By integrating dopants, defects, and quantum spins into engineered architectures, we connect materials → devices → measurement in a single stack.",
-      JP: "プラットフォームミッション：現実的で極限的な環境で機能し続ける量子デバイスの技術インフラとしてダイヤモンドを確立すること。ドーパント、欠陥、量子スピンを工学的アーキテクチャに統合することで、材料→デバイス→測定を単一スタックで接続します。"
+      JP: "プラットフォームとしての使命：現実的かつ極限的な環境下でも機能する量子デバイスの技術基盤としてダイヤモンドを確立することです。ドーパント、欠陥、量子スピンを工学的に設計されたアーキテクチャに統合することで、材料・デバイス・測定を単一のスタックで結びつけます。"
     },
     description: {
       EN: "This theme embodies \"robustness over ideality\" by design: diamond-based quantum electronics can be engineered for high temperature, high pressure, and harsh chemical conditions, expanding where quantum systems can operate and what they can measure.",
