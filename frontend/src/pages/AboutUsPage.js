@@ -97,7 +97,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Work with companies, government, and local authorities to extract real-world issues for quantum technologies, and feed them back into our research agenda. As a publicly funded laboratory, we emphasize accountability and value creation for Japanese society and its citizens.",
-        JP: "企業、政府、地方自治体と協力して量子技術の実世界の課題を抽出し、それらを研究アジェンダにフィードバックします。公的資金による研究室として、日本社会とその市民に対する説明責任と価値創造を重視します。"
+        JP: "企業、政府、地方自治体と連携して量子技術に関する実社会の課題を抽出し、研究アジェンダに還元する。公的資金による研究室として、日本社会と市民に対する説明責任と価値創造を重視する。"
       }
     },
     {
