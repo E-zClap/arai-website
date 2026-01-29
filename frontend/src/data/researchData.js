@@ -110,7 +110,7 @@ export const researchData = [
     },
     description: {
       EN: "We focus on deployable, interpretable measurement protocols that connect quantum signals to actionable diagnostics for environment and infrastructure health.",
-      JP: "環境とインフラの健全性に対する実行可能な診断に量子信号を接続する、展開可能で解釈可能な測定プロトコルに焦点を当てています。"
+      JP: "環境とインフラの健全性評価のため、量子信号を実用的な診断情報に変換する、展開可能で解釈しやすい測定プロトコルの開発に注力しています。"
     },
     exampleTopics: {
       EN: [
