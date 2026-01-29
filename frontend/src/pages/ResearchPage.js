@@ -207,51 +207,94 @@ const ResearchThemeCard = ({ theme, index, language, isDark }) => {
   );
 };
 
-// Main Research Page Component
+// Premium Main Research Page Component
 export const ResearchPage = ({ language, isDark, researchData }) => (
-  <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
+  <div className={`min-h-screen py-28 px-6 relative overflow-hidden ${
     isDark ? 'bg-transparent' : 'bg-gray-50'
   }`}>
-    <QuantumParticles intensity={30} />
+    <QuantumParticles intensity={35} />
+    
+    {/* Premium Gradient Overlays */}
+    <div className="fixed inset-0 pointer-events-none">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+    </div>
     
     <div className="max-w-7xl mx-auto relative z-10">
-      {/* Header Section */}
+      {/* Premium Header Section */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="text-center mb-20"
       >
-        <motion.h1 
-          className={`text-5xl lg:text-7xl font-bold mb-8 ${
-            isDark ? 'text-white' : 'text-gray-900'
-          }`}
-          style={{ fontFamily: '"Inter", system-ui' }}
+        {/* Main Title with Gradient */}
+        <motion.div
+          className="relative inline-block mb-10"
+          whileHover={{ scale: 1.02 }}
         >
-          {language === 'EN' ? 'Research' : '研究'}
-        </motion.h1>
+          <motion.h1 
+            className="text-6xl lg:text-8xl font-black mb-6 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 bg-clip-text text-transparent"
+            style={{ fontFamily: '"Inter", system-ui', letterSpacing: '-0.02em' }}
+          >
+            {language === 'EN' ? 'Research' : '研究'}
+          </motion.h1>
+          
+          {/* Decorative Underline with Animation */}
+          <motion.div 
+            className="flex items-center justify-center gap-2"
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 'auto', opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+          >
+            <motion.div 
+              className="h-1.5 w-20 bg-gradient-to-r from-transparent via-orange-500 to-orange-600 rounded-full"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+              style={{ backgroundSize: '200% 100%' }}
+            />
+            <div className="w-3 h-3 rounded-full bg-orange-500 shadow-lg shadow-orange-500/50" />
+            <motion.div 
+              className="h-1.5 w-20 bg-gradient-to-r from-orange-600 via-blue-500 to-transparent rounded-full"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+              style={{ backgroundSize: '200% 100%' }}
+            />
+          </motion.div>
+        </motion.div>
         
+        {/* Premium Guiding Question Card */}
         <motion.div 
-          className="w-32 h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-blue-500 rounded-full mx-auto mb-10"
-          initial={{ width: 0 }}
-          animate={{ width: 128 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        />
-        
-        {/* Guiding Question */}
-        <motion.div 
-          className={`max-w-5xl mx-auto mb-8 p-8 rounded-2xl backdrop-blur-xl border ${
+          className={`max-w-6xl mx-auto mb-12 p-10 rounded-3xl backdrop-blur-2xl border-2 relative overflow-hidden group ${
             isDark
-              ? 'bg-dark-gray-900/40 border-orange-600/20'
-              : 'bg-white/60 border-orange-200/50'
-          }`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+              ? 'bg-gradient-to-br from-dark-gray-900/95 via-dark-gray-850/90 to-dark-gray-900/95 border-orange-600/40'
+              : 'bg-gradient-to-br from-white/95 via-orange-50/30 to-white/95 border-orange-300/50'
+          } shadow-2xl hover:shadow-orange-500/20 transition-all duration-500`}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          whileHover={{ scale: 1.01 }}
         >
-          <p className={`text-xl lg:text-2xl font-medium leading-relaxed italic ${
-            isDark ? 'text-orange-300' : 'text-orange-700'
-          }`} style={{ fontFamily: '"Inter", system-ui' }}>
+          {/* Animated Background Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-500/10 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+          
+          {/* Quote Icon */}
+          <motion.div
+            className={`inline-block p-4 rounded-2xl mb-6 bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg`}
+            whileHover={{ rotate: 360, scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Sparkles className="w-8 h-8 text-white" strokeWidth={2.5} />
+          </motion.div>
+          
+          <p className={`relative text-2xl lg:text-3xl font-bold leading-relaxed italic ${
+            isDark ? 'text-orange-200' : 'text-orange-800'
+          }`} style={{ fontFamily: '"Inter", system-ui', letterSpacing: '0.01em' }}>
             {language === 'EN'
               ? '"How can quantum science be transformed from a fragile laboratory curiosity into a shared intellectual and technological infrastructure for society?"'
               : '「量子科学を、脆弱な実験室の好奇心から、社会のための共有知的・技術的インフラへと変革するにはどうすればよいか？」'
@@ -259,53 +302,60 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
           </p>
         </motion.div>
         
-        {/* Mission Statement */}
-        <motion.p 
-          className={`text-lg lg:text-xl max-w-5xl mx-auto leading-relaxed mb-12 ${
-            isDark ? 'text-gray-300' : 'text-gray-700'
-          }`}
-          style={{ fontFamily: '"Inter", system-ui' }}
+        {/* Premium Mission Statement */}
+        <motion.div
+          className="max-w-5xl mx-auto space-y-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.8 }}
         >
-          {language === 'EN'
-            ? 'Guided by our Purpose (unlocking the potential of quantum science) and our Vision (extending how we describe and understand the world through quantum informatics), we pursue research that connects fundamental physics, quantum devices, materials, and societal applications.'
-            : '私たちの目的（量子科学の可能性を解き放つこと）と私たちのビジョン（量子情報学を通じて世界を記述し理解する方法を拡張すること）に導かれ、基礎物理学、量子デバイス、材料、社会応用を結びつける研究を追求しています。'
-          }
-        </motion.p>
-        
-        <motion.p
-          className={`text-base lg:text-lg font-semibold ${
-            isDark ? 'text-white' : 'text-gray-900'
-          }`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-        >
-          {language === 'EN'
-            ? 'Our activities are organized into the following six tightly connected themes.'
-            : '私たちの活動は、以下の6つの密接に関連したテーマに組織されています。'
-          }
-        </motion.p>
+          <p 
+            className={`text-xl lg:text-2xl leading-relaxed font-medium ${
+              isDark ? 'text-gray-200' : 'text-gray-800'
+            }`}
+            style={{ fontFamily: '"Inter", system-ui', lineHeight: '1.8' }}
+          >
+            {language === 'EN'
+              ? 'Guided by our Purpose (unlocking the potential of quantum science) and our Vision (extending how we describe and understand the world through quantum informatics), we pursue research that connects fundamental physics, quantum devices, materials, and societal applications.'
+              : '私たちの目的（量子科学の可能性を解き放つこと）と私たちのビジョン（量子情報学を通じて世界を記述し理解する方法を拡張すること）に導かれ、基礎物理学、量子デバイス、材料、社会応用を結びつける研究を追求しています。'
+            }
+          </p>
+          
+          {/* Theme Count Badge */}
+          <motion.div
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-orange-600/20 to-blue-600/20 backdrop-blur-xl border border-orange-500/30"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+            <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              {language === 'EN'
+                ? `${researchData.length} Interconnected Research Themes`
+                : `${researchData.length}つの相互接続された研究テーマ`
+              }
+            </p>
+          </motion.div>
+        </motion.div>
       </motion.div>
 
-      {/* NV Center Visualization */}
+      {/* Premium NV Center Visualization */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8, duration: 0.8 }}
-        className="mb-20"
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="mb-24"
       >
         <NVCenterVisualization language={language} isDark={isDark} />
       </motion.div>
 
-      {/* Research Themes */}
+      {/* Research Themes with Premium Spacing */}
       <motion.div 
-        className="space-y-8"
+        className="space-y-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 1.4 }}
       >
         {researchData.map((theme, index) => (
           <ResearchThemeCard
@@ -316,6 +366,28 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
             isDark={isDark}
           />
         ))}
+      </motion.div>
+      
+      {/* Bottom Call to Action */}
+      <motion.div
+        className="mt-24 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2 }}
+      >
+        <div className={`inline-flex items-center gap-3 px-8 py-4 rounded-full ${
+          isDark
+            ? 'bg-gradient-to-r from-orange-600/20 to-blue-600/20 border-2 border-orange-500/30'
+            : 'bg-gradient-to-r from-orange-100 to-blue-100 border-2 border-orange-300/50'
+        } backdrop-blur-xl`}>
+          <Sparkles className={`w-5 h-5 ${isDark ? 'text-orange-400' : 'text-orange-600'}`} />
+          <span className={`text-lg font-semibold ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
+            {language === 'EN' 
+              ? 'Transforming quantum science into societal infrastructure' 
+              : '量子科学を社会インフラに変革する'
+            }
+          </span>
+        </div>
       </motion.div>
     </div>
   </div>
