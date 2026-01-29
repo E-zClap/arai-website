@@ -71,7 +71,7 @@ export const researchData = [
     category: "Quantum Materials & Devices"
   },
   {
-    number: 4,
+    number: 3,
     title: {
       EN: "Quantum Materials Sensing & Extreme-Condition Physics",
       JP: "量子材料センシングと極限条件物理学"
