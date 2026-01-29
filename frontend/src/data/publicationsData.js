@@ -190,7 +190,7 @@ export const publicationsData = [
     doi: "10.1038/nnano.2015.171",
     abstract: {
       EN: "We demonstrate Fourier magnetic imaging with nanoscale resolution using diamond electronic spins, incorporating compressed sensing techniques for accelerated data acquisition and reconstruction.",
-      JP: "ダイヤモンド電子スピンを用いたナノスケール分解能でのフーリエ磁気イメージングを実証し、データ取得と再構成の加速のための圧縮センシング技術を組み込みます。"
+      JP: "ダイヤモンド電子スピンによりナノスケール分解能でのフーリエ磁気イメージングを実証した。圧縮センシング技術により、データ取得と再構成の高速化を実現する。"
     },
     category: "Nanoscale Imaging",
     type: "Peer-Reviewed",
