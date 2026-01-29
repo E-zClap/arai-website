@@ -58,7 +58,7 @@ export const publicationsData = [
     doi: "10.1038/s41534-023-00734-z",
     abstract: {
       EN: "We demonstrate controllable tunability of topological properties in diamond nitrogen-vacancy center systems, showing how Chern numbers can be manipulated through electronic-nuclear spin interactions for quantum information applications.",
-      JP: "ダイヤモンド窒素空孔センター系におけるトポロジカル特性の制御可能な調整を実証し、量子情報応用のために電子-核スピン相互作用によってチャーン数を操作できることを示します。"
+      JP: "ダイヤモンド窒素空孔センター系におけるトポロジカル特性の制御を実証し、電子-核スピン相互作用によってチャーン数を操作できることを示した。量子情報応用への展開が期待される。"
     },
     category: "Quantum Information",
     type: "Peer-Reviewed",
