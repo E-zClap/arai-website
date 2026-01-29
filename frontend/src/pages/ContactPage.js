@@ -197,7 +197,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                 {/* Map Controls */}
                 <div className="mt-4 flex gap-3 justify-center">
                   <a
-                    href="https://maps.google.com/?q=4259+Nagatsuta-cho,+Midori-ku,+Yokohama,+Kanagawa+226-8501,+Japan"
+                    href="https://www.google.com/maps/place/G2+Building,+Nagatsutach%C5%8D,+Midori+Ward,+Yokohama,+Kanagawa+226-0026/@35.512827,139.4840208,111m/data=!3m2!1e3!5s0x6018f88bbc801309:0x13d16913bdbd2a75!4m14!1m7!3m6!1s0x6018f531c8956e75:0xad027204cc33e6f9!2sTokyo+Institute+of+Technology+Suzukakedai+Campus!8m2!3d35.51438!4d139.4838937!16s%2Fm%2F0ctww6v!3m5!1s0x6018f8897dc07de1:0xa0e3e6a9e5a9b2fe!8m2!3d35.5127769!4d139.4845037!16s%2Fg%2F11c1fkct78"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
@@ -209,7 +209,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     {language === 'EN' ? 'Open in Google Maps' : 'Googleマップで開く'}
                   </a>
                   <a
-                    href="https://www.openstreetmap.org/?mlat=35.5436&mlon=139.5072#map=16/35.5436/139.5072"
+                    href="https://www.openstreetmap.org/?mlat=35.5127769&mlon=139.4845037#map=18/35.5127769/139.4845037"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
