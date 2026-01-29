@@ -30,11 +30,11 @@ export const AboutUsPage = ({ language, isDark }) => {
       icon: Eye,
       title: {
         EN: "Making the invisible visible through quantum sensing and treating quantum as resources",
-        JP: "量子センシングで見えないものを見えるようにし、量子をリソースとして扱う"
+        JP: "量子センシングで見えないものを可視化し、量子を資源として扱う"
       },
       description: {
         EN: "Use quantum sensing to measure spins, defects, nanoscale magnetic fields, chemical potentials, and extreme environments, thereby expanding the horizon of phenomena to which humanity has direct access. Regard entanglement, quantum correlations, and precision quantum measurements as new types of resources, not just phenomena, and design novel quantum applications in devices, networks, and information processing.",
-        JP: "量子センシングによりスピン、欠陥、ナノスケール磁場、化学ポテンシャル、極限環境を測定し、人類が直接アクセスできる現象の地平を拡大する。量子もつれ、量子相関、精密量子測定を単なる現象ではなく新たなリソースとして捉え、デバイス、ネットワーク、情報処理における革新的な量子応用を設計する。"
+        JP: "量子センシングを用いてスピン、欠陥、ナノスケール磁場、化学ポテンシャル、極限環境を測定し、人類が直接観測できる現象の範囲を拡大します。量子もつれ、量子相関、精密量子測定を単なる現象ではなく新しい種類の資源として位置づけ、デバイス、ネットワーク、情報処理における革新的な量子応用を設計します。"
       }
     },
     {
