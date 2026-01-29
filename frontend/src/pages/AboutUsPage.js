@@ -332,7 +332,7 @@ export const AboutUsPage = ({ language, isDark }) => {
             </h3>
             <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {language === 'EN'
-                ? 'We pursue this vision along three research directions:'
+                ? 'We pursue this vision along two research directions:'
                 : 'この ビジョンを3つの研究方向に沿って追求します：'
               }
             </p>
