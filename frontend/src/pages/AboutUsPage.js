@@ -287,13 +287,13 @@ export const AboutUsPage = ({ language, isDark }) => {
                 <p className="text-lg leading-relaxed">
                   {language === 'EN'
                     ? 'By advancing quantum sensing, quantum metrology, and quantum information processing, we aim to access "invisible" quantities and complexities that were previously out of reach.'
-                    : "量子センシング、量子計量学、量子情報処理を進歩させることにより、これまで手の届かなかった「見えない」量と複雑さにアクセスすることを目指しています。"
+                    : "量子センシング、量子計測、量子情報処理を発展させることで、これまで到達できなかった「見えない」量や複雑性へのアクセスを目指しています。"
                   }
                 </p>
                 <p className="text-lg leading-relaxed">
                   {language === 'EN'
                     ? "Our purpose is to turn quantum science from a niche for specialists into a shared intellectual and technological infrastructure for future society."
-                    : "私たちの目的は、量子科学を専門家のニッチから未来社会の共有の知的および技術的インフラストラクチャに変えることです。"
+                    : "私たちの目的は、量子科学を専門家の領域から、未来社会の共有された知的・技術的インフラストラクチャへと変えることです。"
                   }
                 </p>
               </div>
