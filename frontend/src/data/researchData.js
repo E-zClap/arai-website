@@ -127,7 +127,7 @@ export const researchData = [
     category: "Applied Quantum Sensing"
   },
   {
-    number: 6,
+    number: 5,
     title: {
       EN: "Quantum Probability & Social Informatics",
       JP: "量子確率と社会情報学"
