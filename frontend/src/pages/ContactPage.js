@@ -13,8 +13,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
         EN: "Email",
         JP: "メール"
       },
-      content: "arai@ee.e.titech.ac.jp",
-      link: "mailto:arai@ee.e.titech.ac.jp"
+      content: "arai.k.835f [at] m.isct.ac.jp",
+      link: "mailto:arai.k.835f@m.isct.ac.jp"
     },
     {
       icon: Phone,
@@ -22,8 +22,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
         EN: "Phone",
         JP: "電話"
       },
-      content: "+81-3-5734-3434",
-      link: "tel:+81-3-5734-3434"
+      content: "+81-45-924-5030",
+      link: "tel:+81-45-924-5030"
     },
     {
       icon: MapPin,
@@ -32,8 +32,8 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
         JP: "住所"
       },
       content: language === 'EN' 
-        ? "#1107 G2-7, 4259 Nagatsuta-cho, Midori-ku, Yokohama, Kanagawa 226-8501 JAPAN"
-        : "〒226-8501 神奈川県横浜市緑区長津田町4259 G2-7 #1107",
+        ? "Arai Lab. 5030 Post No. G2-7, 4259 Nagatsuta-cho, Midori-ku, Yokohama, Kanagawa 226-8501 JAPAN"
+        : "〒226-8501 神奈川県横浜市緑区長津田町4259 G2-7 荒井研究室 5030",
       link: null
     }
   ];
