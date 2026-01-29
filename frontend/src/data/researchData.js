@@ -138,7 +138,7 @@ export const researchData = [
     },
     description: {
       EN: "This theme contributes to intellectual infrastructure: a quantum-informatics-inspired framework for modeling decisions, organizations, and socio-economic systems, grounded in data and evaluated by predictive utility rather than analogy alone.",
-      JP: "このテーマは知的インフラに貢献します：意思決定、組織、社会経済システムをモデル化するための量子情報学にインスパイアされたフレームワーク。データに基づき、類推だけでなく予測効用によって評価されます。"
+      JP: "本テーマは知的インフラの構築に貢献します：意思決定、組織、社会経済システムをモデル化するための量子情報学に着想を得たフレームワークを、データに基づき、単なる類推ではなく予測的有用性によって評価します。"
     },
     exampleTopics: {
       EN: [
