@@ -67,7 +67,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           }`}>
             {language === 'EN' 
               ? "Get in touch with the Arai Group. For joining opportunities, please visit our Join Us page."
-              : "荒井研究室へのお問い合わせ。参加の機会については、Join Usページをご覧ください。"
+              : "荒井研究室へのお問い合わせ。参加機会については、参加ページをご覧ください。"
             }
           </p>
         </motion.div>
