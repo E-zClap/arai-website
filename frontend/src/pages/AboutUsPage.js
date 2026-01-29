@@ -121,7 +121,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       title: { EN: "Issue-Driven", JP: "課題駆動型" },
       description: {
         EN: "Start from the issue: define the key question and what will be decided by its answer before launching experiments, simulations, or analyses.",
-        JP: "課題から始める：実験、シミュレーション、または分析を開始する前に、主要な質問とその答えによって何が決定されるかを定義します。"
+        JP: "課題から始める：実験、シミュレーション、分析を開始する前に、核となる問いとその答えが何を決定するかを明確にする。"
       }
     },
     {
