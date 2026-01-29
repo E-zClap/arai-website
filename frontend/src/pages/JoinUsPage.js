@@ -92,7 +92,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
           {language === 'EN'
             ? "We are selective, not by credentials alone, but by how you think, act, and take responsibility. At the same time, we believe that ambitious people deserve an environment that genuinely accelerates them. Below, we describe who we are looking for and what you gain by choosing the Arai Group at each career stage."
-            : "私たちは選抜的です。資格だけでなく、あなたがどのように考え、行動し、責任を取るかによって。同時に、野心的な人々は彼らを真に加速させる環境に値すると信じています。以下では、各キャリア段階で私たちが求めている人物と、荒井グループを選ぶことで何を得られるかを説明します。"
+            : "私たちは選抜を行いますが、資格だけでなく、思考方法、行動、責任の取り方を重視します。同時に、高い志を持つ人々には、真に成長を促進する環境が必要だと考えています。以下では、各キャリア段階において私たちが求める人物像と、荒井グループを選ぶことで得られるものを説明します。"
           }
         </p>
       </motion.div>
