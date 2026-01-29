@@ -466,7 +466,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`font-semibold ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
               {language === 'EN'
                 ? 'A postdoc here is not extended technical labor. It is a transition to independence.'
-                : 'ここでのポスドクは延長された技術労働ではありません。独立への移行です。'
+                : 'ここでのポスドクは、技術労働の延長ではありません。独立した研究者への移行期間です。'
               }
             </p>
           </div>
