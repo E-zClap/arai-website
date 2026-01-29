@@ -67,7 +67,7 @@ export const JoinUsPage = ({ language, isDark }) => (
           <p className={`text-base italic ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             {language === 'EN'
               ? "We are a publicly funded research group. What ultimately matters is not internal activity, but what we deliver to science and society."
-              : "私たちは公的資金による研究グループです。最終的に重要なのは内部活動ではなく、科学と社会に何を提供するかです。"
+              : "私たちは公的資金による研究グループです。最終的に重要なのは内部活動ではなく、科学と社会に対して何を提供できるかです。"
             }
           </p>
         </div>
