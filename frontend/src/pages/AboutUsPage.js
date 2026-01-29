@@ -338,7 +338,7 @@ export const AboutUsPage = ({ language, isDark }) => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {visionDirections.map((direction, index) => (
               <motion.div
                 key={index}
