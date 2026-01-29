@@ -578,7 +578,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`mt-4 font-semibold ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
               {language === 'EN'
                 ? 'We strongly recommend contacting us in advance to discuss research fit before applying.'
-                : '申請前に研究の適合性について議論するため、事前にご連絡いただくことを強くお勧めします。'
+                : '申請前に研究の適合性について議論するため、事前にご連絡いただくことを強く推奨します。'
               }
             </p>
           </div>
