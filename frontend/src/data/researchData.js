@@ -54,7 +54,7 @@ export const researchData = [
     },
     description: {
       EN: "This theme embodies \"robustness over ideality\" by design: diamond-based quantum electronics can be engineered for high temperature, high pressure, and harsh chemical conditions, expanding where quantum systems can operate and what they can measure.",
-      JP: "このテーマは設計により「理想性よりも堅牢性」を体現しています：ダイヤモンドベースの量子エレクトロニクスは、高温、高圧、過酷な化学的条件に対応できるよう設計され、量子システムが動作できる場所と測定できる対象を拡大します。"
+      JP: "本テーマは「理想性よりも堅牢性」を設計理念としています。ダイヤモンドベースの量子エレクトロニクスは、高温・高圧・過酷な化学環境に対応できるよう設計されており、量子システムの適用範囲と測定対象を拡大します。"
     },
     exampleTopics: {
       EN: [
