@@ -133,7 +133,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {language === 'EN'
                 ? "We do not require top grades. We value research potential, integrity, and intellectual curiosity."
-                : "トップの成績は必要ありません。私たちは研究の可能性、誠実さ、知的好奇心を重視します。"
+                : "トップの成績は必須ではありません。研究の潜在能力、誠実さ、知的好奇心を重視します。"
               }
             </p>
             <div className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
