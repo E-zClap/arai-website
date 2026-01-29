@@ -78,7 +78,7 @@ export const researchData = [
     },
     overview: {
       EN: "Many quantum states of matter are \"invisible\" to conventional probes. We use quantum sensors to make the invisible visible by spatially resolving magnetic fields, currents, and spin order, turning quantum measurement into a direct window on quantum materials.",
-      JP: "多くの量子物質状態は従来のプローブでは「見えません」。磁場、電流、スピン秩序を空間的に解決することで、量子センサを使用して見えないものを見えるようにし、量子測定を量子材料への直接の窓に変えています。"
+      JP: "多くの物質の量子状態は、従来の測定手法では「見えません」。量子センサを用いて磁場、電流、スピン秩序を空間的に解析することで、見えないものを可視化し、量子測定を量子材料への直接的な観測窓に変えます。"
     },
     description: {
       EN: "Our scope spans superconductors, magnetic materials, and defect physics under extreme conditions. By visualizing phase behavior and local structure (rather than only bulk averages), we aim to extract design principles for new materials and guidelines for quantum devices that must function in real environments.",
