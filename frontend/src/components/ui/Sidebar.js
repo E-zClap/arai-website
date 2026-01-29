@@ -20,13 +20,13 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       id: 'home', 
       icon: FlaskConical, 
       label: { EN: 'Home', JP: 'ホーム' },
-      description: { EN: 'Laboratory Overview', JP: '研究室概要' }
+      description: { EN: 'Laboratory Overview', JP: '研究室について' }
     },
     { 
       id: 'about-us', 
       icon: Info, 
       label: { EN: 'About Us', JP: '私たちについて' },
-      description: { EN: 'Our Mission & Values', JP: 'ミッションと価値観' }
+      description: { EN: 'Our Mission & Values', JP: 'ミッションと理念' }
     },
     { 
       id: 'news', 
@@ -38,31 +38,31 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       id: 'research', 
       icon: FlaskConical, 
       label: { EN: 'Research', JP: '研究' },
-      description: { EN: 'Research Areas', JP: '研究分野' }
+      description: { EN: 'Research Areas', JP: '研究テーマ' }
     },
     { 
       id: 'publications', 
       icon: BookOpen, 
       label: { EN: 'Publications', JP: '論文' },
-      description: { EN: 'Academic Papers', JP: '学術論文' }
+      description: { EN: 'Academic Papers', JP: '研究業績' }
     },
     { 
       id: 'team', 
       icon: Users, 
       label: { EN: 'Team', JP: 'チーム' },
-      description: { EN: 'Research Team', JP: '研究チーム' }
+      description: { EN: 'Research Team', JP: 'メンバー' }
     },
     { 
       id: 'contact', 
       icon: Mail, 
       label: { EN: 'Contact', JP: 'お問い合わせ' },
-      description: { EN: 'Get in Touch', JP: 'お問い合わせ' }
+      description: { EN: 'Get in Touch', JP: '連絡先' }
     },
     { 
       id: 'join-us', 
       icon: UserPlus, 
       label: { EN: 'Join Us', JP: '参加' },
-      description: { EN: 'Opportunities', JP: '参加機会' }
+      description: { EN: 'Opportunities', JP: '募集情報' }
     }
   ];
 
