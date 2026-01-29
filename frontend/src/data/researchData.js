@@ -3,21 +3,23 @@ export const researchData = [
   {
     number: 1,
     title: {
-      EN: "Quantum Metrology & Machine Learning",
-      JP: "量子計測と機械学習"
+      EN: "Quantum Metrology, Control & Machine Learning",
+      JP: "量子計測、制御と機械学習"
     },
     overview: {
-      EN: "We develop advanced quantum measurement techniques and combine them with machine learning to push the boundaries of precision sensing. This theme integrates quantum control, nanoscale magnetometry, and data-driven modeling to transform quantum sensors from laboratory demonstrations into reliable, field-deployable measurement tools.",
-      JP: "先進的な量子測定技術を開発し、機械学習と組み合わせることで、精密センシングの限界を押し広げます。このテーマは、量子制御、ナノスケール磁気測定、データ駆動型モデリングを統合し、量子センサを実験室デモンストレーションから信頼性の高いフィールド展開可能な測定ツールに変換します。"
+      EN: "We develop advanced quantum measurement and control techniques combined with machine learning to push the boundaries of precision sensing. This flagship theme integrates quantum control theory, nanoscale magnetometry, and data-driven modeling to transform quantum sensors from laboratory demonstrations into reliable, field-deployable measurement tools, converting fragile quantum coherence into designable resources.",
+      JP: "先進的な量子測定と制御技術を開発し、機械学習と組み合わせることで、精密センシングの限界を押し広げます。このフラッグシップテーマは、量子制御理論、ナノスケール磁気測定、データ駆動型モデリングを統合し、量子センサを実験室デモンストレーションから信頼性の高いフィールド展開可能な測定ツールに変換し、脆弱な量子コヒーレンスを設計可能なリソースに変換します。"
     },
     description: {
-      EN: "This flagship theme represents the core identity of our group: building practical quantum metrology systems where measurement physics and intelligent algorithms work together. We focus on NV-center quantum sensors for magnetic field, temperature, and strain measurements at the nanoscale, while developing physics-informed machine learning frameworks that optimize protocols, calibrate sensors, and extract quantitative information from complex quantum signals. Our approach spans fundamental measurement theory, experimental implementation, and computational methods.",
-      JP: "このフラッグシップテーマは私たちのグループの核となるアイデンティティを表しています：測定物理学とインテリジェントアルゴリズムが協調する実用的な量子計測システムの構築。ナノスケールでの磁場、温度、歪み測定のためのNVセンター量子センサに焦点を当てながら、プロトコルを最適化し、センサを校正し、複雑な量子信号から定量的情報を抽出する物理情報機械学習フレームワークを開発します。私たちのアプローチは、基礎測定理論、実験実装、計算手法にわたります。"
+      EN: "This flagship theme represents the core identity of our group: building practical quantum metrology systems where measurement physics, quantum control, and intelligent algorithms work together. We focus on NV-center quantum sensors for magnetic field, temperature, and strain measurements at the nanoscale, while developing physics-informed machine learning frameworks that optimize protocols, calibrate sensors, and extract quantitative information from complex quantum signals. Key concepts include Coherent Population Trapping (CPT) and Electromagnetically Induced Transparency (EIT), which enable long-lived coherence and narrow spectral features even in dissipative environments. We also study Quantum Non-Demolition (QND) measurement and continuous measurement as foundations for precision metrology, feedback control, and quantum state estimation. Our approach spans fundamental measurement theory, quantum control dynamics, experimental implementation, and computational methods.",
+      JP: "このフラッグシップテーマは私たちのグループの核となるアイデンティティを表しています：測定物理学、量子制御、インテリジェントアルゴリズムが協調する実用的な量子計測システムの構築。ナノスケールでの磁場、温度、歪み測定のためのNVセンター量子センサに焦点を当てながら、プロトコルを最適化し、センサを校正し、複雑な量子信号から定量的情報を抽出する物理情報機械学習フレームワークを開発します。主要な概念には、散逸環境でも長寿命コヒーレンスと狭いスペクトル特性を可能にするコヒーレント集団トラッピング（CPT）と電磁誘導透明性（EIT）が含まれます。精密計測、フィードバック制御、量子状態推定の基礎として量子非破壊（QND）測定と連続測定も研究しています。私たちのアプローチは、基礎測定理論、量子制御ダイナミクス、実験実装、計算手法にわたります。"
     },
     exampleTopics: {
       EN: [
         "Precision quantum sensing with NV centers: magnetic field imaging, thermometry, strain sensing",
-        "Optimal quantum control sequences and measurement protocols for enhanced sensitivity",
+        "Coherent control and narrow-line spectroscopy using CPT and EIT",
+        "Optimal and robust quantum control sequences and measurement protocols for enhanced sensitivity",
+        "QND and continuous measurements with measurement-based feedback control",
         "Physics-informed ML models for sensor calibration and signal processing",
         "Bayesian inference and uncertainty quantification for quantum measurements",
         "Adaptive sensing strategies using real-time feedback and optimization",
@@ -25,7 +27,9 @@ export const researchData = [
       ],
       JP: [
         "NVセンターを用いた精密量子センシング：磁場イメージング、温度測定、歪みセンシング",
-        "感度向上のための最適量子制御シーケンスと測定プロトコル",
+        "CPTとEITを使用したコヒーレント制御と狭線スペクトロスコピー",
+        "感度向上のための最適かつロバストな量子制御シーケンスと測定プロトコル",
+        "測定ベースのフィードバック制御によるQNDおよび連続測定",
         "センサ校正と信号処理のための物理情報MLモデル",
         "量子測定のためのベイズ推論と不確実性定量化",
         "リアルタイムフィードバックと最適化を使用する適応センシング戦略",
@@ -37,34 +41,6 @@ export const researchData = [
       EN: "Led by Eikichi Kimura, Risei Abe, and research team",
       JP: "木村詠吉、阿部李星、研究チームが主導"
     }
-  },
-  {
-    number: 2,
-    title: {
-      EN: "Quantum Control & Measurement Dynamics",
-      JP: "量子制御と測定ダイナミクス"
-    },
-    overview: {
-      EN: "We develop a quantum informatics view of controlled quantum systems: how information is generated, filtered, and stabilized through control and measurement. Our goal is to convert fragile coherence into a designable resource for quantum sensing and quantum technologies.",
-      JP: "制御された量子システムの量子情報学的視点を開発：制御と測定を通じて情報がどのように生成、フィルタリング、安定化されるか。私たちの目標は、脆弱なコヒーレンスを量子センシングと量子技術のための設計可能なリソースに変換することです。"
-    },
-    description: {
-      EN: "Key concepts include Coherent Population Trapping (CPT) and Electromagnetically Induced Transparency (EIT), which enable long-lived coherence and narrow spectral features even in dissipative environments. We also study Quantum Non-Demolition (QND) measurement and continuous measurement as foundations for precision metrology, feedback control, and quantum state estimation, connecting measurement directly to information flow and engineering utility.",
-      JP: "主要な概念には、散逸環境でも長寿命コヒーレンスと狭いスペクトル特性を可能にするコヒーレント集団トラッピング（CPT）と電磁誘導透明性（EIT）が含まれます。精密計測、フィードバック制御、量子状態推定の基礎として量子非破壊（QND）測定と連続測定も研究し、測定を情報フローと工学的有用性に直接結びつけています。"
-    },
-    exampleTopics: {
-      EN: [
-        "Coherent control and narrow-line spectroscopy using CPT and EIT",
-        "Optimal and robust control of quantum sensors and qubits",
-        "QND and continuous measurements with measurement-based feedback control"
-      ],
-      JP: [
-        "CPTとEITを使用したコヒーレント制御と狭線スペクトロスコピー",
-        "量子センサとキュービットの最適かつロバストな制御",
-        "測定ベースのフィードバック制御によるQNDおよび連続測定"
-      ]
-    },
-    category: "Fundamental Quantum Physics"
   },
   {
     number: 3,
