@@ -99,7 +99,7 @@ export const researchData = [
     category: "Condensed Matter Physics"
   },
   {
-    number: 5,
+    number: 4,
     title: {
       EN: "Quantum Environmental & Infrastructure Sensing",
       JP: "量子環境・インフラセンシング"
