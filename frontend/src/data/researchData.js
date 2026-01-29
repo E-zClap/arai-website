@@ -106,7 +106,7 @@ export const researchData = [
     },
     overview: {
       EN: "This theme is where our Mission becomes explicit: translating quantum measurement into societal monitoring infrastructure. Many critical systems (oceans, underground environments, industrial components) fail silently until damage is advanced. Quantum sensors can detect early, subtle signatures that conventional tools miss.",
-      JP: "このテーマは私たちのミッションが明確になる場所です：量子測定を社会監視インフラに変換すること。多くの重要なシステム（海洋、地下環境、産業部品）は、損傷が進むまで静かに故障します。量子センサは、従来のツールが見逃す初期の微妙な兆候を検出できます。"
+      JP: "本テーマでは、私たちのミッションが明確になります：量子測定を社会の監視インフラに応用することです。多くの重要システム（海洋、地下環境、産業部品）は、損傷が深刻化するまで静かに劣化します。量子センサは、従来の手法では見逃されていた初期の微細な兆候を検出できます。"
     },
     description: {
       EN: "We focus on deployable, interpretable measurement protocols that connect quantum signals to actionable diagnostics for environment and infrastructure health.",
