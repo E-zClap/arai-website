@@ -29,23 +29,12 @@ export const AboutUsPage = ({ language, isDark }) => {
     {
       icon: Eye,
       title: {
-        EN: "Making the invisible visible through quantum sensing",
-        JP: "量子センシングで見えないものを見えるようにする"
+        EN: "Making the invisible visible through quantum sensing and treating quantum as resources",
+        JP: "量子センシングで見えないものを見えるようにし、量子をリソースとして扱う"
       },
       description: {
-        EN: "Use quantum sensing to measure spins, defects, nanoscale magnetic fields, chemical potentials, and extreme environments, thereby expanding the horizon of phenomena to which humanity has direct access.",
-        JP: "量子センシングを使用してスピン、欠陥、ナノスケールの磁場、化学ポテンシャル、および極限環境を測定し、人類が直接アクセスできる現象の地平を拡大します。"
-      }
-    },
-    {
-      icon: Network,
-      title: {
-        EN: "Treating quantum correlations and quantum metrology as resources",
-        JP: "量子相関と量子計量学をリソースとして扱う"
-      },
-      description: {
-        EN: "Regard entanglement, quantum correlations, and precision quantum measurements as new types of resources, not just phenomena, and design novel quantum applications in devices, networks, and information processing.",
-        JP: "エンタングルメント、量子相関、および精密量子測定を単なる現象ではなく新しいタイプのリソースとして扱い、デバイス、ネットワーク、および情報処理における新しい量子アプリケーションを設計します。"
+        EN: "Use quantum sensing to measure spins, defects, nanoscale magnetic fields, chemical potentials, and extreme environments, thereby expanding the horizon of phenomena to which humanity has direct access. Regard entanglement, quantum correlations, and precision quantum measurements as new types of resources, not just phenomena, and design novel quantum applications in devices, networks, and information processing.",
+        JP: "量子センシングを使用してスピン、欠陥、ナノスケールの磁場、化学ポテンシャル、および極限環境を測定し、人類が直接アクセスできる現象の地平を拡大します。エンタングルメント、量子相関、および精密量子測定を単なる現象ではなく新しいタイプのリソースとして扱い、デバイス、ネットワーク、および情報処理における新しい量子アプリケーションを設計します。"
       }
     },
     {
