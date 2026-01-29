@@ -36,7 +36,7 @@ export const publicationsData = [
     doi: "10.1103/PhysRevApplied.20.044089",
     abstract: {
       EN: "We demonstrate a pressure sensor based on a hybrid structure combining magnetostrictive layers with nitrogen-vacancy centers in diamond. This approach enables sensitive pressure measurements through magnetic field changes detected by quantum sensors.",
-      JP: "磁歪層とダイヤモンド中の窒素空孔センターを組み合わせたハイブリッド構造による圧力センサを実証します。このアプローチは量子センサによって検出される磁場変化を通じて高感度圧力測定を可能にします。"
+      JP: "磁歪層とダイヤモンド中の窒素空孔センターを組み合わせたハイブリッド構造による圧力センサを実証した。量子センサが検出する磁場変化を利用し、高感度な圧力測定が可能となる。"
     },
     category: "Quantum Sensing",
     type: "Peer-Reviewed",
