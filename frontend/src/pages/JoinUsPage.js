@@ -499,7 +499,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`mt-4 font-semibold ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
               {language === 'EN'
                 ? 'Our goal is simple: when you leave, you should be ready to operate as a PI.'
-                : '私たちの目標はシンプルです：あなたが去るとき、PIとして活動する準備ができているべきです。'
+                : '私たちの目標はシンプルです：研究室を離れるときには、独立した研究者として活動できる準備が整っているべきです。'
               }
             </p>
           </div>
