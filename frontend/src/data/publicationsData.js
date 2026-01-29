@@ -14,7 +14,7 @@ export const publicationsData = [
     doi: "10.1088/2399-6528/ad6ea6",
     abstract: {
       EN: "We present fast coherent control of nitrogen-14 nuclear spins associated with nitrogen-vacancy centers in diamond using dynamical decoupling techniques. Our approach enables rapid manipulation of nuclear spin states while maintaining high fidelity control for quantum sensing applications.",
-      JP: "動的デカップリング技術を用いたダイヤモンド中の窒素空孔センターに関連する窒素14核スピンの高速コヒーレント制御を提示します。私たちのアプローチは量子センシング応用において高い忠実度制御を維持しながら核スピン状態の迅速な操作を可能にします。"
+      JP: "動的デカップリング技術により、ダイヤモンド中の窒素空孔センターに関連する窒素14核スピンの高速コヒーレント制御を実現した。量子センシング応用において高精度制御を維持しながら、核スピン状態の高速操作が可能となる。"
     },
     category: "Quantum Control",
     type: "Peer-Reviewed",
