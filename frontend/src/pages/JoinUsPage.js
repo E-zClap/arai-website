@@ -543,7 +543,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {language === 'EN'
                 ? "Many international students join via the International Graduate Program (IGP) – Science and Engineering at Institute of Science Tokyo."
-                : "多くの留学生は、東京科学大学の国際大学院プログラム（IGP）– 理工学を通じて参加しています。"
+                : "多くの海外学生は、東京科学大学の国際大学院プログラム（IGP）– 理工学を通じて入学しています。"
               }
             </p>
             <ul className={`space-y-2 mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
