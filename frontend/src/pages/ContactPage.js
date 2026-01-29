@@ -161,14 +161,14 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
                     {language === 'EN' 
                       ? (
                           <div>
-                            <div>• JR Yokohama Line / Tokyu Den-en-toshi Line</div>
-                            <div className="ml-4">Nagatsuta Station (5 min walk)</div>
+                            <div>• Tokyu Den-en-toshi Line</div>
+                            <div className="ml-4">Suzukakedai Station (10 min walk)</div>
                           </div>
                         )
                       : (
                           <div>
-                            <div>• JR横浜線・東急田園都市線</div>
-                            <div className="ml-4">長津田駅より徒歩5分</div>
+                            <div>• 東急田園都市線</div>
+                            <div className="ml-4">すずかけ台駅より徒歩10分</div>
                           </div>
                         )
                     }
