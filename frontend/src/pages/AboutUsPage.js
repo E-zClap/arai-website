@@ -61,7 +61,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Create next-generation foundational technologies in quantum sensing, quantum metrology, quantum devices, and quantum information processing, by integrating experiment, theory, and data-driven methods. (Diamond quantum electronics is one of the core themes within this broader agenda.)",
-        JP: "実験、理論、データ駆動型手法を統合し、量子センシング、量子計測、量子デバイス、量子情報処理における次世代基盤技術を創出する（ダイヤモンド量子エレクトロニクスは本課題の中核テーマの一つ）。"
+        JP: "実験、理論、データ駆動型手法を統合し、量子センシング、量子計測、量子デバイス、量子情報処理における次世代基盤技術を創出します（ダイヤモンド量子エレクトロニクスは、この広範な研究課題における中核テーマの一つです）。"
       }
     },
     {
