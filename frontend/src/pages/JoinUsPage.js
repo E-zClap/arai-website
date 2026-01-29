@@ -366,7 +366,7 @@ export const JoinUsPage = ({ language, isDark }) => (
             <p className={`font-semibold ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
               {language === 'EN'
                 ? 'A PhD here is not about steady output. It is about producing signature, world-class results.'
-                : 'ここでの博士号は安定した成果についてではありません。署名的で世界クラスの結果を生み出すことです。'
+                : 'ここでの博士号は、着実な成果の積み重ねではありません。独自性のある世界クラスの成果を生み出すことを目指します。'
               }
             </p>
           </div>
