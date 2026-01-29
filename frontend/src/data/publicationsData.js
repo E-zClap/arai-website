@@ -168,7 +168,7 @@ export const publicationsData = [
     doi: "10.1038/s41534-017-0033-3",
     abstract: {
       EN: "We present a method for selective addressing of individual solid-state spins at the nanoscale using magnetic resonance frequency encoding, enabling scalable quantum sensing and information processing architectures.",
-      JP: "磁気共鳴周波数符号化を用いたナノスケールでの個別固体スピンの選択的アドレッシング方法を提示し、スケーラブルな量子センシングと情報処理アーキテクチャを可能にします。"
+      JP: "磁気共鳴周波数符号化によりナノスケールで個別の固体スピンを選択的にアドレッシングする手法を提示した。スケーラブルな量子センシングと情報処理アーキテクチャの実現が可能となる。"
     },
     category: "Quantum Information",
     type: "Peer-Reviewed",
