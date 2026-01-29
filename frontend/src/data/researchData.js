@@ -82,7 +82,7 @@ export const researchData = [
     },
     description: {
       EN: "Our scope spans superconductors, magnetic materials, and defect physics under extreme conditions. By visualizing phase behavior and local structure (rather than only bulk averages), we aim to extract design principles for new materials and guidelines for quantum devices that must function in real environments.",
-      JP: "私たちの範囲は、極限条件下での超伝導体、磁性材料、欠陥物理学に及びます。相挙動と局所構造を視覚化することで（バルク平均だけでなく）、新材料の設計原理と実環境で機能する必要がある量子デバイスのガイドラインを抽出することを目指しています。"
+      JP: "研究範囲は、極限条件下での超伝導体、磁性材料、欠陥物理学にわたります。相挙動と局所構造を可視化することで（バルク平均だけでなく）、新材料の設計原理と、実環境で機能する量子デバイスの指針を導き出すことを目指しています。"
     },
     exampleTopics: {
       EN: [
