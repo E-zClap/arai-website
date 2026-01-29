@@ -45,7 +45,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Apply quantum-native concepts (superposition, measurement, noise, feedback, and beyond) to cognition, economics, policy, and organizations, offering a quantum informatics perspective on complex social systems.",
-        JP: "重ね合わせ、測定、ノイズ、フィードバックなどの量子固有の概念を認知、経済、政策、組織に適用し、複雑な社会システムに対する量子情報学的視点を提供する。"
+        JP: "重ね合わせ、測定、ノイズ、フィードバックなどの量子固有の概念を認知、経済、政策、組織に適用し、複雑な社会システムに対する量子情報学的視点を提供します。"
       }
     }
   ];
