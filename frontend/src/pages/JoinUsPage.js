@@ -292,11 +292,11 @@ export const JoinUsPage = ({ language, isDark }) => (
                 'Cross-stack competence connecting physics, devices/materials, and data-driven methods within one coherent project',
                 'Opportunities to go overseas to pursue research or present work at international conferences and workshops'
               ] : [
-                'コンサルティングに着想を得たプロジェクト管理、課題定義、仮説、マイルストーン、KPIに基づく',
-                '出版レベルの研究スキル：図を論理に、論理をストーリーに、ストーリーを論文に変える',
-                '産業およびスタートアップとの直接的なインターフェース（日本および海外）：半導体および量子企業、ディープテックスタートアップ、スピンオフエコシステム',
-                '物理学、デバイス/材料、データ駆動型手法を1つのコヒーレントなプロジェクト内で接続するクロススタック能力',
-                '海外で研究を追求したり、国際会議やワークショップで研究発表を行う機会'
+                'コンサルティング手法に学んだプロジェクト管理：課題定義、仮説、マイルストーン、KPIに基づく',
+                '出版レベルの研究スキル：図を論理に、論理を物語に、物語を論文に変える',
+                '産業界やスタートアップとの直接的な連携（日本・海外）：半導体・量子企業、ディープテックスタートアップ、スピンオフエコシステム',
+                '物理学、デバイス・材料、データ駆動型手法を一つのプロジェクト内で統合する能力',
+                '海外での研究機会や国際会議・ワークショップでの発表機会'
               ]).map((item, idx) => (
                 <li key={idx} className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-3 mt-2 flex-shrink-0" />
