@@ -109,7 +109,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Create opportunities for children, students, citizens, and companies to experience the excitement and potential of quantum technologies in an accessible way, and to think about quantum as something directly relevant to their own future.",
-        JP: "子供、学生、市民、企業が量子技術の魅力と可能性を身近に体験し、量子を自分たちの未来に関わるものとして考えられる機会を創出する。"
+        JP: "子供、学生、市民、企業が量子技術の魅力と可能性を身近に体験し、量子を自分たちの未来に直接関わるものとして考えられる機会を創出します。"
       }
     }
   ];
