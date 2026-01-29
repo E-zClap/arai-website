@@ -134,7 +134,7 @@ export const researchData = [
     },
     overview: {
       EN: "To extend \"how we describe and understand the world\" beyond physical systems, we explore whether quantum probability provides a rigorous language for contextuality, order effects, and non-classical correlations in human judgment and social dynamics.",
-      JP: "物理システムを超えて「世界を記述し理解する方法」を拡張するために、量子確率が人間の判断と社会的ダイナミクスにおける文脈性、順序効果、非古典的相関の厳密な言語を提供するかどうかを探求しています。"
+      JP: "物理システムを超えて「世界を記述し理解する方法」を拡張するため、量子確率が人間の判断や社会動態における文脈依存性、順序効果、非古典的相関を厳密に記述する言語となり得るかを探求しています。"
     },
     description: {
       EN: "This theme contributes to intellectual infrastructure: a quantum-informatics-inspired framework for modeling decisions, organizations, and socio-economic systems, grounded in data and evaluated by predictive utility rather than analogy alone.",
