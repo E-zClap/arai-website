@@ -80,7 +80,7 @@ export const publicationsData = [
     doi: "10.1038/s41598-022-18106-x",
     abstract: {
       EN: "We demonstrate high-precision monitoring of charge/discharge currents in electric vehicle batteries using diamond quantum sensors, achieving robust measurements over a wide dynamic range for improved battery management systems.",
-      JP: "ダイヤモンド量子センサを用いた電気自動車バッテリの充放電電流の高精度監視を実証し、改善されたバッテリ管理システムのための広いダイナミックレンジでのロバスト測定を達成します。"
+      JP: "ダイヤモンド量子センサを用いて電気自動車バッテリの充放電電流を高精度で監視し、広いダイナミックレンジでロバストな測定を実現した。バッテリ管理システムの改善に貢献する。"
     },
     category: "Applied Quantum Sensing",
     type: "Peer-Reviewed",
