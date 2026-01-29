@@ -43,7 +43,7 @@ export const researchData = [
     }
   },
   {
-    number: 3,
+    number: 2,
     title: {
       EN: "Diamond Quantum Electronics",
       JP: "ダイヤモンド量子エレクトロニクス"
