@@ -102,7 +102,7 @@ export const publicationsData = [
     doi: "10.1038/s42005-022-00978-0",
     abstract: {
       EN: "We demonstrate millimeter-scale magnetocardiography measurements of living rats using diamond quantum sensors, opening new possibilities for non-invasive cardiac monitoring with high spatial and temporal resolution.",
-      JP: "ダイヤモンド量子センサを用いた生きたラットのミリメートルスケール心磁図測定を実証し、高い空間・時間分解能での非侵襲心臓モニタリングの新たな可能性を開きます。"
+      JP: "ダイヤモンド量子センサを用いて生体ラットのミリメートルスケール心磁図測定を実証した。高い空間・時間分解能を持つ非侵襲的な心臓モニタリングの新たな可能性を切り拓く。"
     },
     category: "Biomedical Sensing",
     type: "Peer-Reviewed",
