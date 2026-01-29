@@ -73,7 +73,7 @@ export const AboutUsPage = ({ language, isDark }) => {
       },
       description: {
         EN: "Design all projects around clear issues, hypotheses, and KPIs, and enable students and postdocs to own the entire cycle from hypothesis and experiment design to data analysis and storytelling, cultivating self-driven, professional researchers.",
-        JP: "すべてのプロジェクトを明確な課題、仮説、KPIを中心に設計し、学生とポスドクが仮説と実験設計からデータ分析とストーリーテリングまでの全サイクルを所有できるようにし、自主的で専門的な研究者を育成します。"
+        JP: "すべてのプロジェクトを明確な課題、仮説、KPIを中心に設計し、学生やポスドクが仮説・実験設計からデータ分析・ストーリーテリングまでの全サイクルを主体的に担えるようにすることで、自律的で専門性の高い研究者を育成する。"
       }
     },
     {
