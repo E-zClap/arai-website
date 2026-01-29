@@ -260,8 +260,8 @@ export const JoinUsPage = ({ language, isDark }) => (
                 'Can commit to improving English communication and scientific storytelling'
               ] : [
                 '目に見える、出版可能な成果を生み出したい',
-                '曖昧な活動よりも成果ベースの進捗を好む',
-                '英語コミュニケーションと科学的ストーリーテリングの向上に取り組める'
+                '曖昧な活動よりも成果に基づく進捗を好む',
+                '英語でのコミュニケーションと科学的な成果発信の向上に取り組める'
               ]).map((item, idx) => (
                 <li key={idx} className="flex items-start">
                   <CheckCircle2 className="text-orange-500 mr-2 mt-0.5 flex-shrink-0" size={18} />
