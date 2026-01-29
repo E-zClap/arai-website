@@ -223,7 +223,7 @@ export const AboutUsPage = ({ language, isDark }) => {
           }`}>
             {language === 'EN' 
               ? "We are a quantum informatics research group dedicated to transforming quantum science from a laboratory curiosity into a technological and intellectual infrastructure for society."
-              : "私たちは、量子科学を実験室の好奇心から社会の技術的および知的インフラストラクチャに変革することに専念する量子インフォマティクス研究グループです。"
+              : "私たちは、量子科学を研究室内の探求から社会の技術的・知的インフラストラクチャへと変革することを目指す量子インフォマティクス研究グループです。"
             }
           </p>
         </motion.div>
