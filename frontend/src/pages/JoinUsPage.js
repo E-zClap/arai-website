@@ -147,10 +147,10 @@ export const JoinUsPage = ({ language, isDark }) => (
                   'Like building, testing, and analyzing things',
                   'Care about reproducibility and intellectual honesty'
                 ] : [
-                  '根本的な質問をし、深い思考を楽しむ',
-                  '失敗を乗り越え、きれいな記録を保つ',
-                  '構築、テスト、分析が好き',
-                  '再現性と知的誠実さを大切にする'
+                  '根本的な問いを立て、深い思考を楽しむ',
+                  '失敗を乗り越え、正確な記録を保つ',
+                  '構築、テスト、分析を楽しむ',
+                  '再現性と知的誠実さを重視する'
                 ]).map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <CheckCircle2 className="text-orange-500 mr-2 mt-0.5 flex-shrink-0" size={18} />
