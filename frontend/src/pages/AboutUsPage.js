@@ -277,7 +277,7 @@ export const AboutUsPage = ({ language, isDark }) => {
               }`}>
                 {language === 'EN'
                   ? "To capture quantum properties that humanity has not yet fully harnessed, and to release their power to change how we see and shape the world."
-                  : "人類がまだ完全に活用していない量子特性を捉え、世界を見て形作る方法を変える力を解放すること。"
+                  : "人類がまだ十分に活用していない量子特性を捉え、世界の見方や形作り方を変える力を解き放つこと。"
                 }
               </p>
 
