@@ -334,7 +334,6 @@ export const AboutUsPage = ({ language, isDark }) => {
               {language === 'EN'
                 ? 'We pursue this vision along two research directions:'
                 : 'このビジョンを2つの研究方向に沿って追求しています：'
-                : 'この ビジョンを3つの研究方向に沿って追求します：'
               }
             </p>
           </div>
