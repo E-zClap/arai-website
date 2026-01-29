@@ -146,7 +146,7 @@ export const publicationsData = [
     doi: "10.1038/s41467-018-07489-z",
     abstract: {
       EN: "We demonstrate geometric phase magnetometry using solid-state spins in diamond, exploiting Berry phase accumulation for enhanced magnetic field sensing with improved sensitivity and robustness.",
-      JP: "ダイヤモンド中の固体スピンを用いた幾何学的位相磁気測定を実証し、改善された感度と堅牢性による強化された磁場センシングのためのベリー位相蓄積を活用します。"
+      JP: "ダイヤモンド中の固体スピンを用いた幾何学的位相磁気測定を実証した。ベリー位相の蓄積を活用することで、感度と堅牢性が向上した磁場センシングを実現する。"
     },
     category: "Quantum Sensing",
     type: "Peer-Reviewed",
