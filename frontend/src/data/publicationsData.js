@@ -124,7 +124,7 @@ export const publicationsData = [
     doi: "10.1063/5.0032499",
     abstract: {
       EN: "We present simultaneous temperature and magnetic field measurements using a fiber-coupled diamond quantum sensor system, enabling dual-parameter sensing with high precision for various applications.",
-      JP: "ファイバー結合ダイヤモンド量子センサシステムを用いた同時温度および磁場測定を提示し、様々な応用において高精度のデュアルパラメータセンシングを可能にします。"
+      JP: "ファイバー結合ダイヤモンド量子センサシステムによる温度と磁場の同時測定を実現した。高精度なデュアルパラメータセンシングにより、様々な応用が可能となる。"
     },
     category: "Quantum Sensing",
     type: "Peer-Reviewed",
