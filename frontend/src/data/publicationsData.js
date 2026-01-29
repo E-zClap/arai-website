@@ -212,7 +212,7 @@ export const publicationsData = [
     doi: "10.1038/nature12072",
     abstract: {
       EN: "We demonstrate optical magnetic imaging of living cells using diamond nitrogen-vacancy centers, enabling non-invasive observation of magnetic structures and processes in biological systems.",
-      JP: "ダイヤモンド窒素空孔センターを用いた生細胞の光学磁気イメージングを実証し、生物学的システムにおける磁気構造とプロセスの非侵襲観察を可能にします。"
+      JP: "ダイヤモンド窒素空孔センターにより生細胞の光学磁気イメージングを実証した。生体系における磁気構造とプロセスの非侵襲的な観察が可能となる。"
     },
     category: "Biomedical Imaging",
     type: "Peer-Reviewed",
