@@ -529,7 +529,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         <p className={`mb-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
           {language === 'EN'
             ? "We actively welcome international students and researchers."
-            : "留学生や研究者を積極的に歓迎します。"
+            : "海外からの学生や研究者を積極的に歓迎します。"
           }
         </p>
 
