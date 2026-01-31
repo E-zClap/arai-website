@@ -14,7 +14,7 @@ Allow: /static/js/
 Allow: /static/css/
 
 # Sitemap location
-Sitemap: https://aqig-lab.net/sitemap.xml
+Sitemap: https://qig-lab.net/sitemap.xml
 
 # Crawl-delay (optional - be gentle to the server)
 # Crawl-delay: 1
