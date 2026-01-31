@@ -3,6 +3,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { QuantumNetwork } from '../animations/QuantumNetwork';
 
 // Enhanced Professional Hero Section with Academic Hierarchy
+// Performance optimized: explicit dimensions to prevent CLS
 export const HeroSection = ({ language, isDark }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -20,6 +21,8 @@ export const HeroSection = ({ language, isDark }) => {
       className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
         isDark ? 'bg-transparent' : 'bg-gray-50'
       }`}
+      // Explicit min-height to prevent CLS
+      style={{ minHeight: '100vh', contain: 'layout' }}
     >
       {/* Enhanced Quantum Background - Reduced for performance */}
       <QuantumNetwork intensity={12} />
@@ -41,56 +44,65 @@ export const HeroSection = ({ language, isDark }) => {
             hidden: { opacity: 0 },
             visible: { opacity: 1 }
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }} // Reduced from 1s for faster LCP
           className="text-center"
         >
-          {/* Professional Institution Badge */}
+          {/* Professional Institution Badge - Fixed dimensions to prevent CLS */}
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 }
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 }
             }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }} // Reduced delays
             className={`inline-flex items-center px-8 py-4 rounded-3xl border mb-12 ${
               isDark 
                 ? 'backdrop-blur-2xl bg-dark-gray-900/60 border-blue-500/30 text-blue-400'
                 : 'bg-white border-blue-200/50 text-blue-600 shadow-2xl backdrop-blur-sm'
             }`}
+            style={{ minHeight: '60px' }} // Reserve space
           >
+            {/* Use a smaller PNG instead of 279KB ICO - explicit dimensions */}
             <img 
-              src="/favicon-institute.ico" 
+              src="/favicon-32.png" 
               alt="Institute Logo" 
+              width={20}
+              height={20}
               className="w-5 h-5 mr-4 object-contain"
               style={{
                 filter: isDark ? 'brightness(1.2)' : 'brightness(1)'
               }}
+              loading="eager" // Load immediately for hero
             />
             <span className="text-sm font-medium tracking-wider uppercase">
               {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
             </span>
           </motion.div>
 
-          {/* Diamond Logo */}
+          {/* Diamond Logo - Explicit dimensions to prevent CLS */}
           <motion.div
             variants={{
-              hidden: { opacity: 0, scale: 0.8 },
+              hidden: { opacity: 0, scale: 0.95 },
               visible: { opacity: 1, scale: 1 }
             }}
-            transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="flex justify-center mb-8"
+            style={{ minHeight: '160px' }} // Reserve space for image
           >
             <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.05 }} // Reduced from 1.1 for performance
               transition={{ type: "spring", stiffness: 300 }}
               className="relative"
             >
               <img 
                 src="/diam.svg" 
                 alt="Diamond NV Center" 
+                width={160}
+                height={160}
                 className="w-32 h-32 md:w-40 md:h-40 object-contain"
                 style={{
                   filter: 'drop-shadow(0 8px 16px rgba(234, 88, 12, 0.5))'
                 }}
+                loading="eager" // Load immediately for hero
               />
               {/* Animated glow effect */}
               <motion.div
@@ -111,14 +123,15 @@ export const HeroSection = ({ language, isDark }) => {
             </motion.div>
           </motion.div>
 
-          {/* Enhanced Academic Title Hierarchy */}
+          {/* Enhanced Academic Title Hierarchy - Reduced animations for performance */}
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 }
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 }
             }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="space-y-8"
+            style={{ minHeight: '300px' }} // Reserve space to prevent CLS
           >
             <div>
               <h1 className={`text-6xl lg:text-7xl font-bold mb-6 ${

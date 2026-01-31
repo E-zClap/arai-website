@@ -1,33 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import UI Components
+// Import UI Components - Sidebar and FloatingControls are essential, load immediately
 import { Sidebar } from './components/ui/Sidebar';
 import { FloatingControls } from './components/ui/FloatingControls';
-import { QuantumParticles } from './components/animations/QuantumParticles';
 
-// Import SEO Component
+// Lazy load heavy animation component for better initial load
+const QuantumParticles = lazy(() => 
+  import('./components/animations/QuantumParticles').then(module => ({ 
+    default: module.QuantumParticles 
+  }))
+);
+
+// Import SEO Component - Small, load immediately
 import { SEO } from './components/seo/SEO';
 
-// Import Page Components
-import { HomePage } from './pages/HomePage';
-import { NewsPage } from './pages/NewsPage';
-import { ResearchPage } from './pages/ResearchPage';
-import { PublicationsPage } from './pages/PublicationsPage';
-import { TeamPage } from './pages/TeamPage';
-import { ContactPage } from './pages/ContactPage';
-import { JoinUsPage } from './pages/JoinUsPage';
-import { AboutUsPage } from './pages/AboutUsPage';
-import { ProfilePage } from './pages/ProfilePage';
+// Lazy load Page Components for code splitting
+const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
+const NewsPage = lazy(() => import('./pages/NewsPage').then(m => ({ default: m.NewsPage })));
+const ResearchPage = lazy(() => import('./pages/ResearchPage').then(m => ({ default: m.ResearchPage })));
+const PublicationsPage = lazy(() => import('./pages/PublicationsPage').then(m => ({ default: m.PublicationsPage })));
+const TeamPage = lazy(() => import('./pages/TeamPage').then(m => ({ default: m.TeamPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
+const JoinUsPage = lazy(() => import('./pages/JoinUsPage').then(m => ({ default: m.JoinUsPage })));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(m => ({ default: m.AboutUsPage })));
+const ProfilePage = lazy(() => import('./pages/ProfilePage').then(m => ({ default: m.ProfilePage })));
 
-// Import Data
+// Import Data - These are small, keep synchronous
 import { newsData } from './data/newsData';
 import { researchData } from './data/researchData';
 import { publicationsData } from './data/publicationsData';
 import { principalInvestigator, staffAndPostdocs, students, alumni } from './data/teamData';
 import { keigoAraiProfile } from './data/profileData';
+
+// Loading fallback component - minimal to reduce LCP
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-pulse text-orange-500 text-xl">Loading...</div>
+  </div>
+);
 
 // Route to page mapping for sidebar active state
 const routeToPage = {
@@ -160,8 +173,10 @@ function App() {
         </>
       )}
       
-      {/* Background Particles - Reduced for better performance */}
-      <QuantumParticles intensity={15} />
+      {/* Background Particles - Lazy loaded and reduced for better performance */}
+      <Suspense fallback={null}>
+        <QuantumParticles intensity={10} />
+      </Suspense>
       
       {/* Sidebar */}
       <Sidebar 
@@ -181,89 +196,91 @@ function App() {
         setLanguage={setLanguage}
       />
 
-      {/* Main Content with URL-based Routing */}
+      {/* Main Content with URL-based Routing - Wrapped in Suspense for code splitting */}
       <main className={`transition-all duration-150 ${
         sidebarOpen ? 'lg:ml-80' : 'ml-0'
       }`}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
-          >
-            <Routes>
-              <Route path="/" element={
-                <>
-                  <SEO page="home" language={language} />
-                  <HomePage {...commonProps} newsData={newsData} />
-                </>
-              } />
-              <Route path="/about-us" element={
-                <>
-                  <SEO page="about-us" language={language} />
-                  <AboutUsPage {...commonProps} />
-                </>
-              } />
-              <Route path="/news" element={
-                <>
-                  <SEO page="news" language={language} />
-                  <NewsPage {...commonProps} newsData={newsData} />
-                </>
-              } />
-              <Route path="/research" element={
-                <>
-                  <SEO page="research" language={language} />
-                  <ResearchPage {...commonProps} researchData={researchData} />
-                </>
-              } />
-              <Route path="/publications" element={
-                <>
-                  <SEO page="publications" language={language} />
-                  <PublicationsPage {...commonProps} publicationsData={publicationsData} />
-                </>
-              } />
-              <Route path="/team" element={
-                <>
-                  <SEO page="team" language={language} />
-                  <TeamPage 
-                    {...commonProps}
-                    principalInvestigator={principalInvestigator}
-                    staffAndPostdocs={staffAndPostdocs}
-                    students={students}
-                    alumni={alumni}
-                  />
-                </>
-              } />
-              <Route path="/contact" element={
-                <>
-                  <SEO page="contact" language={language} />
-                  <ContactPage {...commonProps} />
-                </>
-              } />
-              <Route path="/join-us" element={
-                <>
-                  <SEO page="join-us" language={language} />
-                  <JoinUsPage {...commonProps} />
-                </>
-              } />
-              <Route path="/profile-keigo-arai" element={
-                <>
-                  <SEO page="profile-keigo-arai" language={language} />
-                  <ProfilePage {...commonProps} profileData={keigoAraiProfile} />
-                </>
-              } />
-              {/* 404 fallback - redirect to home */}
-              <Route path="*" element={
-                <>
-                  <SEO page="home" language={language} />
-                  <HomePage {...commonProps} newsData={newsData} />
-                </>
-              } />
-            </Routes>
-          </motion.div>
-        </AnimatePresence>
+        <Suspense fallback={<PageLoader />}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15, ease: 'easeOut' }}
+            >
+              <Routes>
+                <Route path="/" element={
+                  <>
+                    <SEO page="home" language={language} />
+                    <HomePage {...commonProps} newsData={newsData} />
+                  </>
+                } />
+                <Route path="/about-us" element={
+                  <>
+                    <SEO page="about-us" language={language} />
+                    <AboutUsPage {...commonProps} />
+                  </>
+                } />
+                <Route path="/news" element={
+                  <>
+                    <SEO page="news" language={language} />
+                    <NewsPage {...commonProps} newsData={newsData} />
+                  </>
+                } />
+                <Route path="/research" element={
+                  <>
+                    <SEO page="research" language={language} />
+                    <ResearchPage {...commonProps} researchData={researchData} />
+                  </>
+                } />
+                <Route path="/publications" element={
+                  <>
+                    <SEO page="publications" language={language} />
+                    <PublicationsPage {...commonProps} publicationsData={publicationsData} />
+                  </>
+                } />
+                <Route path="/team" element={
+                  <>
+                    <SEO page="team" language={language} />
+                    <TeamPage 
+                      {...commonProps}
+                      principalInvestigator={principalInvestigator}
+                      staffAndPostdocs={staffAndPostdocs}
+                      students={students}
+                      alumni={alumni}
+                    />
+                  </>
+                } />
+                <Route path="/contact" element={
+                  <>
+                    <SEO page="contact" language={language} />
+                    <ContactPage {...commonProps} />
+                  </>
+                } />
+                <Route path="/join-us" element={
+                  <>
+                    <SEO page="join-us" language={language} />
+                    <JoinUsPage {...commonProps} />
+                  </>
+                } />
+                <Route path="/profile-keigo-arai" element={
+                  <>
+                    <SEO page="profile-keigo-arai" language={language} />
+                    <ProfilePage {...commonProps} profileData={keigoAraiProfile} />
+                  </>
+                } />
+                {/* 404 fallback - redirect to home */}
+                <Route path="*" element={
+                  <>
+                    <SEO page="home" language={language} />
+                    <HomePage {...commonProps} newsData={newsData} />
+                  </>
+                } />
+              </Routes>
+            </motion.div>
+          </AnimatePresence>
+        </Suspense>
       </main>
     </div>
   );

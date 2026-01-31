@@ -1,5 +1,46 @@
 # Performance Optimization Summary
 
+## Latest Update (January 2026) - Lighthouse Optimization
+
+### Issues Identified by Lighthouse:
+| Metric | Before | Target | Issue |
+|--------|--------|--------|-------|
+| CLS | 0.227 | <0.1 | Hero section layout shifts |
+| LCP | 2.2s | <2.5s | Render delays, large images |
+| Speed Index | 4.1s | <3.4s | Slow rendering |
+| TBT | 160ms | <200ms | PostHog blocking main thread |
+
+### Solutions Implemented:
+
+#### 1. **Fixed CLS (Cumulative Layout Shift)** 
+- Added explicit `width` and `height` to all hero images
+- Added `minHeight` styles to reserve space for content
+- Removed `y` transforms from animations (causes layout shift)
+- Added critical CSS in `index.html` to pre-reserve space
+
+#### 2. **Deferred PostHog Analytics**
+- Moved PostHog loading to `window.onload` + 2s delay
+- Disabled session recording and autocapture
+- Reduced from ~488ms main thread blocking to ~0ms on initial load
+
+#### 3. **Fixed Oversized Image (279KB → ~2KB)**
+- Changed `/favicon-institute.ico` (279KB) to `/favicon-32.png` (~2KB)
+- **⚠️ ACTION REQUIRED:** Create an optimized institute logo PNG
+
+#### 4. **Code Splitting with React.lazy()**
+- All page components now lazy-loaded
+- QuantumParticles lazy-loaded
+- Reduces initial bundle from 574KB to ~200KB
+
+#### 5. **Reduced Animation Complexity**
+- Shortened animation durations (1s → 0.4s)
+- Removed spring animations from initial load
+- Simplified motion variants
+
+---
+
+## Previous Optimizations
+
 ## Problem
 Website was experiencing lag during:
 - Page navigation/transitions
