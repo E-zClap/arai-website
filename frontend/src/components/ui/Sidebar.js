@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Users, 
@@ -15,51 +16,61 @@ import {
 
 // Ultra-Professional Sidebar with Premium Academic Design
 export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language, isDark }) => {
+  const location = useLocation();
+  
   const navigationItems = [
     { 
       id: 'home', 
+      path: '/',
       icon: FlaskConical, 
       label: { EN: 'Home', JP: 'ホーム' },
       description: { EN: 'Laboratory Overview', JP: '研究室について' }
     },
     { 
       id: 'about-us', 
+      path: '/about-us',
       icon: Info, 
       label: { EN: 'About Us', JP: '私たちについて' },
       description: { EN: 'Our Mission & Values', JP: 'ミッションと理念' }
     },
     { 
       id: 'news', 
+      path: '/news',
       icon: BookOpen, 
       label: { EN: 'News', JP: 'ニュース' },
       description: { EN: 'Latest Updates', JP: '最新情報' }
     },
     { 
       id: 'research', 
+      path: '/research',
       icon: FlaskConical, 
       label: { EN: 'Research', JP: '研究' },
       description: { EN: 'Research Areas', JP: '研究テーマ' }
     },
     { 
       id: 'publications', 
+      path: '/publications',
       icon: BookOpen, 
       label: { EN: 'Publications', JP: '論文' },
       description: { EN: 'Academic Papers', JP: '研究業績' }
     },
     { 
       id: 'team', 
+      path: '/team',
       icon: Users, 
       label: { EN: 'Team', JP: 'チーム' },
       description: { EN: 'Research Team', JP: 'メンバー' }
     },
     { 
       id: 'contact', 
+      path: '/contact',
       icon: Mail, 
       label: { EN: 'Contact', JP: 'お問い合わせ' },
       description: { EN: 'Get in Touch', JP: '連絡先' }
     },
     { 
       id: 'join-us', 
+      path: '/join-us',
       icon: UserPlus, 
       label: { EN: 'Join Us', JP: '参加' },
       description: { EN: 'Opportunities', JP: '募集情報' }
@@ -219,22 +230,22 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             </motion.div>
           </motion.div>
 
-          {/* Premium Navigation with Advanced Design */}
-          <nav className="p-6 space-y-3 flex-1 overflow-y-auto">
+          {/* Premium Navigation with Advanced Design - SEO-friendly with real <a> links */}
+          <nav className="p-6 space-y-3 flex-1 overflow-y-auto" aria-label="Main navigation">
             {navigationItems.map((item, index) => {
               const Icon = item.icon;
               const isActive = currentPage === item.id;
               
               return (
-                <motion.button
+                <Link
                   key={item.id}
+                  to={item.path}
                   onClick={() => {
-                    setCurrentPage(item.id);
                     if (window.innerWidth < 1024) {
                       setIsOpen(false);
                     }
                   }}
-                  className={`w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
+                  className={`block w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
                     isActive
                       ? (isDark 
                           ? 'bg-gradient-to-r from-orange-600/40 to-orange-500/30 border-2 border-orange-400/50 text-orange-200 shadow-2xl shadow-orange-500/20' 
@@ -243,14 +254,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                           ? 'hover:bg-dark-gray-850/70 text-slate-300 hover:text-white hover:border-dark-gray-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-black/20' 
                           : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
                   }`}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 * (index + 1) }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    x: 4
-                  }}
-                  whileTap={{ scale: 0.98 }}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {/* Advanced Active Indicator */}
                   {isActive && (
@@ -315,7 +319,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       <ChevronRight size={18} />
                     </motion.div>
                   </div>
-                </motion.button>
+                </Link>
               );
             })}
           </nav>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,9 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sidebar } from './components/ui/Sidebar';
 import { FloatingControls } from './components/ui/FloatingControls';
 import { QuantumParticles } from './components/animations/QuantumParticles';
-
-// Import SEO Component
-import { SEO } from './components/seo/SEO';
 
 // Import Page Components
 import { HomePage } from './pages/HomePage';
@@ -29,47 +25,11 @@ import { publicationsData } from './data/publicationsData';
 import { principalInvestigator, staffAndPostdocs, students, alumni } from './data/teamData';
 import { keigoAraiProfile } from './data/profileData';
 
-// Route to page mapping for sidebar active state
-const routeToPage = {
-  '/': 'home',
-  '/about-us': 'about-us',
-  '/news': 'news',
-  '/research': 'research',
-  '/publications': 'publications',
-  '/team': 'team',
-  '/contact': 'contact',
-  '/join-us': 'join-us',
-  '/profile-keigo-arai': 'profile-keigo-arai'
-};
-
-// Page to route mapping for navigation
-const pageToRoute = {
-  'home': '/',
-  'about-us': '/about-us',
-  'news': '/news',
-  'research': '/research',
-  'publications': '/publications',
-  'team': '/team',
-  'contact': '/contact',
-  'join-us': '/join-us',
-  'profile-keigo-arai': '/profile-keigo-arai'
-};
-
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState('home');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
   const [language, setLanguage] = useState('EN');
-
-  // Get current page from URL
-  const currentPage = routeToPage[location.pathname] || 'home';
-
-  // Navigation function that uses React Router
-  const setCurrentPage = (page) => {
-    const route = pageToRoute[page] || '/';
-    navigate(route);
-  };
 
   // Set sidebar to be open by default on desktop
   useEffect(() => {
@@ -87,10 +47,68 @@ function App() {
   // Scroll to top when page changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [currentPage]);
 
-  // Common props for all pages
-  const commonProps = { language, isDark, setCurrentPage };
+  // Page rendering logic
+  const renderPage = () => {
+    const commonProps = { language, isDark, setCurrentPage };
+    
+    switch (currentPage) {
+      case 'home':
+        return (
+          <HomePage 
+            {...commonProps}
+            newsData={newsData}
+          />
+        );
+      case 'news':
+        return (
+          <NewsPage 
+            {...commonProps}
+            newsData={newsData}
+          />
+        );
+      case 'research':
+        return (
+          <ResearchPage 
+            {...commonProps}
+            researchData={researchData}
+          />
+        );
+      case 'publications':
+        return (
+          <PublicationsPage 
+            {...commonProps}
+            publicationsData={publicationsData}
+          />
+        );
+      case 'team':
+        return (
+          <TeamPage 
+            {...commonProps}
+            principalInvestigator={principalInvestigator}
+            staffAndPostdocs={staffAndPostdocs}
+            students={students}
+            alumni={alumni}
+          />
+        );
+      case 'contact':
+        return <ContactPage {...commonProps} />;
+      case 'join-us':
+        return <JoinUsPage {...commonProps} />;
+      case 'about-us':
+        return <AboutUsPage {...commonProps} />;
+      case 'profile-keigo-arai':
+        return (
+          <ProfilePage 
+            {...commonProps}
+            profileData={keigoAraiProfile}
+          />
+        );
+      default:
+        return <HomePage {...commonProps} newsData={newsData} />;
+    }
+  };
 
   return (
     <div 
@@ -181,87 +199,19 @@ function App() {
         setLanguage={setLanguage}
       />
 
-      {/* Main Content with URL-based Routing */}
+      {/* Main Content */}
       <main className={`transition-all duration-150 ${
         sidebarOpen ? 'lg:ml-80' : 'ml-0'
       }`}>
         <AnimatePresence mode="wait">
           <motion.div
-            key={location.pathname}
+            key={currentPage}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
           >
-            <Routes>
-              <Route path="/" element={
-                <>
-                  <SEO page="home" language={language} />
-                  <HomePage {...commonProps} newsData={newsData} />
-                </>
-              } />
-              <Route path="/about-us" element={
-                <>
-                  <SEO page="about-us" language={language} />
-                  <AboutUsPage {...commonProps} />
-                </>
-              } />
-              <Route path="/news" element={
-                <>
-                  <SEO page="news" language={language} />
-                  <NewsPage {...commonProps} newsData={newsData} />
-                </>
-              } />
-              <Route path="/research" element={
-                <>
-                  <SEO page="research" language={language} />
-                  <ResearchPage {...commonProps} researchData={researchData} />
-                </>
-              } />
-              <Route path="/publications" element={
-                <>
-                  <SEO page="publications" language={language} />
-                  <PublicationsPage {...commonProps} publicationsData={publicationsData} />
-                </>
-              } />
-              <Route path="/team" element={
-                <>
-                  <SEO page="team" language={language} />
-                  <TeamPage 
-                    {...commonProps}
-                    principalInvestigator={principalInvestigator}
-                    staffAndPostdocs={staffAndPostdocs}
-                    students={students}
-                    alumni={alumni}
-                  />
-                </>
-              } />
-              <Route path="/contact" element={
-                <>
-                  <SEO page="contact" language={language} />
-                  <ContactPage {...commonProps} />
-                </>
-              } />
-              <Route path="/join-us" element={
-                <>
-                  <SEO page="join-us" language={language} />
-                  <JoinUsPage {...commonProps} />
-                </>
-              } />
-              <Route path="/profile-keigo-arai" element={
-                <>
-                  <SEO page="profile-keigo-arai" language={language} />
-                  <ProfilePage {...commonProps} profileData={keigoAraiProfile} />
-                </>
-              } />
-              {/* 404 fallback - redirect to home */}
-              <Route path="*" element={
-                <>
-                  <SEO page="home" language={language} />
-                  <HomePage {...commonProps} newsData={newsData} />
-                </>
-              } />
-            </Routes>
+            {renderPage()}
           </motion.div>
         </AnimatePresence>
       </main>

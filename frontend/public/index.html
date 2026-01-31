@@ -2,30 +2,109 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        
+        <!-- Primary Meta Tags -->
+        <title>Quantum Informatics Group | Arai's Laboratory | Institute of Science Tokyo</title>
+        <meta name="title" content="Quantum Informatics Group | Arai's Laboratory | Institute of Science Tokyo" />
+        <meta name="description" content="Quantum Informatics Group at Institute of Science Tokyo. Research in diamond NV centers, quantum sensing, and quantum metrology led by Dr. Keigo Arai." />
+        <meta name="keywords" content="quantum informatics, NV centers, diamond, quantum sensing, quantum metrology, Tokyo Tech, Institute of Science Tokyo, Keigo Arai" />
+        <meta name="author" content="Quantum Informatics Group" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- Viewport & Mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ea580c" />
+        
+        <!-- Canonical URL - Update with your actual domain -->
+        <link rel="canonical" href="https://arai-lab.org/" />
+        
+        <!-- Favicon & Icons -->
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/diam.svg" />
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ea580c" />
-        <meta name="description" content="Quantum Informatics Group - Diamond NV Centers & Quantum Metrology | Institute of Science Tokyo" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://arai-lab.org/" />
+        <meta property="og:title" content="Quantum Informatics Group | Institute of Science Tokyo" />
+        <meta property="og:description" content="Research in diamond NV centers, quantum sensing, and quantum metrology led by Dr. Keigo Arai at Institute of Science Tokyo." />
+        <meta property="og:image" content="https://arai-lab.org/og-image.png" />
+        <meta property="og:site_name" content="Quantum Informatics Group" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="ja_JP" />
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://arai-lab.org/" />
+        <meta name="twitter:title" content="Quantum Informatics Group | Institute of Science Tokyo" />
+        <meta name="twitter:description" content="Research in diamond NV centers, quantum sensing, and quantum metrology led by Dr. Keigo Arai." />
+        <meta name="twitter:image" content="https://arai-lab.org/og-image.png" />
+        
+        <!-- Structured Data - Organization (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ResearchOrganization",
+            "name": "Quantum Informatics Group",
+            "alternateName": "量子情報学グループ",
+            "url": "https://arai-lab.org",
+            "logo": "https://arai-lab.org/diam.svg",
+            "description": "Quantum Informatics Group at Institute of Science Tokyo. Research in diamond NV centers, quantum sensing, and quantum metrology.",
+            "parentOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "Institute of Science Tokyo",
+                "alternateName": "東京科学大学",
+                "url": "https://www.titech.ac.jp"
+            },
+            "department": {
+                "@type": "Organization",
+                "name": "Department of Electrical & Electronic Engineering"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "JP",
+                "addressLocality": "Tokyo"
+            },
+            "knowsAbout": [
+                "Quantum Sensing",
+                "NV Centers",
+                "Diamond Defects",
+                "Quantum Metrology",
+                "Nanoscale NMR"
+            ]
+        }
+        </script>
+        
+        <!-- Structured Data - WebSite (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Quantum Informatics Group",
+            "url": "https://arai-lab.org",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://arai-lab.org/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+        </script>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Quantum Informatics Group | Arai's Laboratory | Institute of Science Tokyo</title>
+        <!-- Preconnect to external resources for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
     <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <!-- Noscript fallback for SEO - provides basic content when JS is disabled -->
+        <noscript>
+            <div style="padding: 20px; font-family: system-ui, sans-serif;">
+                <h1>Quantum Informatics Group</h1>
+                <p>Arai Laboratory at Institute of Science Tokyo</p>
+                <p>Research in diamond NV centers, quantum sensing, and quantum metrology.</p>
+                <p>Please enable JavaScript to use the full website functionality.</p>
+            </div>
+        </noscript>
         <div id="root"></div>
         <!--
       This HTML file is a template.
