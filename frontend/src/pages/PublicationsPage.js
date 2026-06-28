@@ -212,14 +212,15 @@ export const PublicationsPage = ({ language, isDark, publicationsData = [] }) =>
           <div className="relative mb-6">
             <motion.input
               type="text"
+              aria-label={language === 'EN' ? 'Search publications' : '論文を検索'}
               placeholder={language === 'EN' ? 'Search publications...' : '論文を検索...'}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className={`w-full p-5 pl-14 rounded-2xl border transition-all duration-300 text-lg ${
-                isDark 
+                isDark
                   ? 'bg-dark-gray-850/50 border-dark-gray-700/40 text-white placeholder-slate-400 focus:border-orange-500/60'
                   : 'bg-white/80 border-slate-300/40 text-slate-900 placeholder-slate-500 focus:border-orange-500/60'
-              } focus:outline-none focus:ring-0`}
+              } focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500`}
               whileFocus={{ scale: 1.01 }}
             />
             <Search size={24} className={`absolute left-5 top-1/2 transform -translate-y-1/2 ${

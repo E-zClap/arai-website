@@ -1,20 +1,14 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import './App.css';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { fetchNews, fetchPublications, fetchTeam } from './api/content';
 import { RequireAuth } from './pages/admin/RequireAuth';
+import { usePerformanceSettings } from './hooks/usePerformanceSettings';
 
 // Import UI Components - Sidebar and FloatingControls are essential, load immediately
 import { Sidebar } from './components/ui/Sidebar';
 import { FloatingControls } from './components/ui/FloatingControls';
-
-// Lazy load heavy animation component for better initial load
-const QuantumParticles = lazy(() => 
-  import('./components/animations/QuantumParticles').then(module => ({ 
-    default: module.QuantumParticles 
-  }))
-);
 
 // Import SEO Component - Small, load immediately
 import { SEO } from './components/seo/SEO';
@@ -29,6 +23,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ defaul
 const JoinUsPage = lazy(() => import('./pages/JoinUsPage').then(m => ({ default: m.JoinUsPage })));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(m => ({ default: m.AboutUsPage })));
 const ProfilePage = lazy(() => import('./pages/ProfilePage').then(m => ({ default: m.ProfilePage })));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 // Lazy load Admin pages - only fetched when visiting /admin
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin').then(m => ({ default: m.AdminLogin })));
@@ -77,9 +72,20 @@ const pageToRoute = {
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
-  const [language, setLanguage] = useState('EN');
+  const perf = usePerformanceSettings();
+
+  // Language is reflected in the URL (?lang=ja) so Japanese has a crawlable
+  // URL and we can emit hreflang alternates for SEO.
+  const language = searchParams.get('lang') === 'ja' ? 'JP' : 'EN';
+  const setLanguage = (lang) => {
+    const next = new URLSearchParams(searchParams);
+    if (lang === 'JP') next.set('lang', 'ja');
+    else next.delete('lang');
+    setSearchParams(next, { replace: true });
+  };
 
   // Live content from the API, seeded with the bundled static data so the site
   // always renders instantly and still works if the API is unavailable.
@@ -171,7 +177,8 @@ function App() {
   }
 
   return (
-    <div 
+    <MotionConfig reducedMotion="user">
+    <div
       className={`min-h-screen transition-colors duration-300 ${
         isDark ? 'text-white' : 'bg-gray-50 text-gray-900'
       }`}
@@ -181,8 +188,15 @@ function App() {
           : undefined
       }}
     >
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-orange-600 focus:px-4 focus:py-2 focus:font-medium focus:text-white"
+      >
+        Skip to content
+      </a>
+
       {/* Sophisticated Scientific Background Layers */}
-      {isDark && (
+      {isDark && perf.enableBackgroundEffects && (
         <>
           {/* Layer 1: Animated Gradient Mesh */}
           <div className="fixed inset-0 opacity-40 pointer-events-none">
@@ -238,11 +252,6 @@ function App() {
         </>
       )}
       
-      {/* Background Particles - Lazy loaded and reduced for better performance */}
-      <Suspense fallback={null}>
-        <QuantumParticles intensity={10} />
-      </Suspense>
-      
       {/* Sidebar */}
       <Sidebar 
         currentPage={currentPage}
@@ -262,9 +271,13 @@ function App() {
       />
 
       {/* Main Content with URL-based Routing - Wrapped in Suspense for code splitting */}
-      <main className={`transition-all duration-150 ${
-        sidebarOpen ? 'lg:ml-80' : 'ml-0'
-      }`}>
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={`outline-none transition-all duration-150 ${
+          sidebarOpen ? 'lg:ml-80' : 'ml-0'
+        }`}
+      >
         <Suspense fallback={<PageLoader />}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -335,19 +348,15 @@ function App() {
                     <ProfilePage {...commonProps} profileData={keigoAraiProfile} />
                   </>
                 } />
-                {/* 404 fallback - redirect to home */}
-                <Route path="*" element={
-                  <>
-                    <SEO page="home" language={language} />
-                    <HomePage {...commonProps} newsData={content.news} />
-                  </>
-                } />
+                {/* 404 — distinct noindex page, not a soft-200 homepage */}
+                <Route path="*" element={<NotFoundPage {...commonProps} />} />
               </Routes>
             </motion.div>
           </AnimatePresence>
         </Suspense>
       </main>
     </div>
+    </MotionConfig>
   );
 }
 

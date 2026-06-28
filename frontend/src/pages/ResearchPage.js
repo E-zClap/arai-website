@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import { QuantumField } from '../components/animations/QuantumField';
 import { NVCenterVisualization } from '../components/visualizations/NVCenterVisualization';
 import { Beaker, Cpu, Microscope, Waves, Users, Brain, ChevronDown, Sparkles } from 'lucide-react';
 
@@ -212,7 +212,7 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
   <div className={`min-h-screen py-28 px-6 relative overflow-hidden ${
     isDark ? 'bg-transparent' : 'bg-gray-50'
   }`}>
-    <QuantumParticles intensity={35} />
+    <QuantumField density={0.6} />
     
     {/* Premium Gradient Overlays */}
     <div className="fixed inset-0 pointer-events-none">

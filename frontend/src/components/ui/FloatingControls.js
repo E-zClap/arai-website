@@ -16,12 +16,12 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
         } border backdrop-blur-xl flex items-center justify-center`}
         whileHover={{ scale: 1.05, rotate: 15 }}
         whileTap={{ scale: 0.95 }}
-        title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+        aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
       >
         {isDark ? (
-          <Sun size={18} className="group-hover:rotate-45 transition-transform duration-300" />
+          <Sun aria-hidden="true" size={18} className="group-hover:rotate-45 transition-transform duration-300" />
         ) : (
-          <Moon size={18} className="group-hover:-rotate-12 transition-transform duration-300" />
+          <Moon aria-hidden="true" size={18} className="group-hover:-rotate-12 transition-transform duration-300" />
         )}
       </motion.button>
 
@@ -35,10 +35,10 @@ export const FloatingControls = ({ isDark, setIsDark, language, setLanguage }) =
         } border backdrop-blur-xl flex items-center justify-center`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        title={`Switch to ${language === 'EN' ? 'Japanese' : 'English'}`}
+        aria-label={`Switch to ${language === 'EN' ? 'Japanese' : 'English'}`}
       >
         <div className="flex flex-col items-center">
-          <Globe size={14} className="mb-0.5 group-hover:rotate-180 transition-transform duration-500" />
+          <Globe aria-hidden="true" size={14} className="mb-0.5 group-hover:rotate-180 transition-transform duration-500" />
           <span className="text-xs font-bold tracking-wider">{language}</span>
         </div>
       </motion.button>

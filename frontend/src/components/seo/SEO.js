@@ -147,34 +147,30 @@ export const SEO = ({
   const title = customTitle || pageConfig.title[language] || pageConfig.title.EN;
   const description = customDescription || pageConfig.description[language] || pageConfig.description.EN;
   const image = customImage || SITE_CONFIG.defaultImage;
-  const url = `${SITE_CONFIG.baseUrl}/${page === 'home' ? '' : page}`;
-  const canonicalUrl = url.replace(/\/$/, ''); // Remove trailing slash
+  // Home keeps its trailing slash; sub-pages have none. Japanese gets a real
+  // crawlable URL via ?lang=ja so hreflang alternates are valid.
+  const path = page === 'home' ? '/' : `/${page}`;
+  const enUrl = `${SITE_CONFIG.baseUrl}${path}`;
+  const jaUrl = `${enUrl}?lang=ja`;
+  const url = language === 'JP' ? jaUrl : enUrl;
+  const canonicalUrl = url; // self-referential, language-specific canonical
 
-  // Organization structured data (JSON-LD)
-  const organizationSchema = {
+  // Person structured data for the PI profile page. The Organization JSON-LD is
+  // declared once, statically, in public/index.html to avoid duplication.
+  const personSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ResearchOrganization',
-    name: SITE_CONFIG.siteName,
-    alternateName: SITE_CONFIG.siteNameJP,
-    url: SITE_CONFIG.baseUrl,
-    logo: `${SITE_CONFIG.baseUrl}/diam.svg`,
-    description: PAGE_SEO.home.description.EN,
-    parentOrganization: {
+    '@type': 'Person',
+    name: 'Keigo Arai',
+    alternateName: '荒井 慧悟',
+    jobTitle: 'Associate Professor & Principal Investigator',
+    worksFor: {
       '@type': 'EducationalOrganization',
       name: SITE_CONFIG.organization.name,
-      alternateName: SITE_CONFIG.organization.nameJP,
       url: SITE_CONFIG.organization.url
     },
-    department: {
-      '@type': 'Organization',
-      name: SITE_CONFIG.organization.department,
-      alternateName: SITE_CONFIG.organization.departmentJP
-    },
-    sameAs: [
-      // Add social media URLs here when available
-      // 'https://twitter.com/arailab',
-      // 'https://www.linkedin.com/company/arailab'
-    ]
+    affiliation: SITE_CONFIG.siteName,
+    url: `${SITE_CONFIG.baseUrl}/profile-keigo-arai`,
+    sameAs: ['https://keigoarai.net']
   };
 
   // BreadcrumbList structured data
@@ -229,7 +225,12 @@ export const SEO = ({
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
-      
+
+      {/* hreflang alternates (bilingual EN/JP) */}
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="ja" href={jaUrl} />
+      <link rel="alternate" hrefLang="x-default" href={enUrl} />
+
       {/* Robots */}
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
@@ -243,6 +244,9 @@ export const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={`${SITE_CONFIG.baseUrl}${image}`} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={`${SITE_CONFIG.siteName} — Institute of Science Tokyo`} />
       <meta property="og:site_name" content={SITE_CONFIG.siteName} />
       <meta property="og:locale" content={language === 'JP' ? 'ja_JP' : 'en_US'} />
       {language === 'EN' && <meta property="og:locale:alternate" content="ja_JP" />}
@@ -267,16 +271,18 @@ export const SEO = ({
         </>
       )}
       
-      {/* Structured Data - JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
+      {/* Structured Data - JSON-LD (Organization is declared once in index.html) */}
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
       </script>
       <script type="application/ld+json">
         {JSON.stringify(webPageSchema)}
       </script>
+      {page === 'profile-keigo-arai' && (
+        <script type="application/ld+json">
+          {JSON.stringify(personSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

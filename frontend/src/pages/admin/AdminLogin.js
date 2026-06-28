@@ -67,8 +67,8 @@ export const AdminLogin = () => {
             {loading ? 'Signing in…' : 'Sign in'}
           </Button>
         </form>
-        <p className="text-center text-neutral-600 text-sm mt-6">
-          <a href="/" className="hover:text-neutral-400">← Back to website</a>
+        <p className="text-center text-neutral-400 text-sm mt-6">
+          <a href="/" className="hover:text-neutral-200">← Back to website</a>
         </p>
       </div>
     </div>

@@ -2,252 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Dark Gray/Black Theme with Orange Accents + Blue Highlights */
+/* Typography: Inter (variable, latin) is self-hosted and declared via @font-face
+ * in public/index.html so it gets a stable, preloadable URL. Japanese falls back
+ * to system JP fonts. */
+
 :root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif;
+
   /* Primary Colors - Orange Accents */
-  --color-primary: #ea580c;           /* Vibrant Orange */
-  --color-secondary: #f97316;         /* Orange */
-  --color-accent: #fb923c;            /* Lighter Orange */
-  
+  --color-primary: #ea580c;
+  --color-secondary: #f97316;
+  --color-accent: #fb923c;
+
   /* Blue Accent Colors (subtle highlights) */
-  --color-blue-accent: #3b82f6;       /* Dark-Light Blue */
-  --color-blue-light: #60a5fa;        /* Light Blue */
-  --color-blue-dark: #2563eb;         /* Darker Blue */
-  
-  /* Dark Gray/Black Backgrounds - Lighter version */
-  --color-dark-primary: #1a1a1a;      /* Dark Background (lighter) */
-  --color-dark-secondary: #202020;    /* Very Dark Gray (lighter) */
-  --color-dark-surface: #262626;      /* Dark Gray Surface (lighter) */
-  --color-dark-elevated: #303030;     /* Elevated Surface (lighter) */
-  
+  --color-blue-accent: #3b82f6;
+  --color-blue-light: #60a5fa;
+  --color-blue-dark: #2563eb;
+
+  /* Dark Gray/Black Backgrounds */
+  --color-dark-primary: #1a1a1a;
+  --color-dark-secondary: #202020;
+  --color-dark-surface: #262626;
+  --color-dark-elevated: #303030;
+
   /* Light Mode Colors */
-  --color-primary-light: #f97316;
-  --color-secondary-light: #fb923c;
   --color-background-light: #f8fafc;
   --color-surface-light: #ffffff;
   --color-text-light: #1e293b;
-  
-  /* Dark Mode Colors */
-  --color-primary-dark: #ea580c;
-  --color-secondary-dark: #f97316;
-  --color-background-dark: #1a1a1a;     /* Dark background (lighter) */
-  --color-surface-dark: #262626;        /* Dark gray surface (lighter) */
-  --color-text-dark: #f8fafc;
-  
-  /* Gradient Colors */
+
+  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #ea580c, #f97316);
   --gradient-secondary: linear-gradient(135deg, #f97316, #fb923c);
   --gradient-accent: linear-gradient(135deg, #fb923c, #fdba74);
-  --gradient-dark-subtle: linear-gradient(135deg, #262626, #303030);
-  
-  /* Shadow Colors */
+
+  /* Shadows */
   --shadow-primary: rgba(234, 88, 12, 0.3);
-  --shadow-secondary: rgba(249, 115, 22, 0.3);
-  --shadow-accent: rgba(251, 146, 60, 0.3);
-  --shadow-dark: rgba(0, 0, 0, 0.5);
   --shadow-blue: rgba(59, 130, 246, 0.2);
 }
 
-/* Dark theme overrides */
 .dark {
   --color-primary: #f97316;
   --color-secondary: #fb923c;
   --color-accent: #fdba74;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Tighter, more intentional display typography */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+h1 {
+  letter-spacing: -0.03em;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Custom scrollbar styling to match orange theme */
+/* ------------------------------------------------------------------ *
+ * Accessibility: honour reduced-motion globally (safety net beyond
+ * framer-motion's MotionConfig), and keep focus always visible.
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Diamond-lattice motif — a subtle through-line used behind sections.
+ * ------------------------------------------------------------------ */
+.lattice-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f97316' stroke-opacity='0.5' stroke-width='1'%3E%3Cpath d='M22 2 L42 22 L22 42 L2 22 Z'/%3E%3Cpath d='M22 14 L30 22 L22 30 L14 22 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 44px 44px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Orange scrollbar + selection (brand-consistent)
+ * ------------------------------------------------------------------ */
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
-
 ::-webkit-scrollbar-track {
-    background: rgba(38, 38, 38, 0.5);
-    border-radius: 6px;
+  background: rgba(38, 38, 38, 0.5);
+  border-radius: 6px;
 }
-
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #ea580c, #f97316);
-    border-radius: 6px;
-    border: 2px solid rgba(38, 38, 38, 0.5);
+  background: linear-gradient(180deg, #ea580c, #f97316);
+  border-radius: 6px;
+  border: 2px solid rgba(38, 38, 38, 0.5);
 }
-
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #f97316, #fb923c);
+  background: linear-gradient(180deg, #f97316, #fb923c);
 }
-
-/* Firefox scrollbar styling */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #ea580c rgba(38, 38, 38, 0.5);
+  scrollbar-width: thin;
+  scrollbar-color: #ea580c rgba(38, 38, 38, 0.5);
 }
 
-/* Dark mode scrollbar adjustments */
-.dark ::-webkit-scrollbar-track {
-    background: rgba(26, 26, 26, 0.8);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    border: 2px solid rgba(26, 26, 26, 0.8);
-}
-
-/* Hide scrollbar when content fits (no overflow needed) */
-.scrollbar-hide-when-not-needed {
-    overflow-y: auto;
-}
-
-.scrollbar-hide-when-not-needed::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-.scrollbar-hide-when-not-needed:hover::-webkit-scrollbar {
-    width: 12px;
-}
-
-.scrollbar-hide-when-not-needed:hover::-webkit-scrollbar-track {
-    background: rgba(38, 38, 38, 0.5);
-    border-radius: 6px;
-}
-
-.scrollbar-hide-when-not-needed:hover::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #ea580c, #f97316);
-    border-radius: 6px;
-    border: 2px solid rgba(38, 38, 38, 0.5);
-}
-
-/* For Firefox - hide thin scrollbar until hover */
-.scrollbar-hide-when-not-needed {
-    scrollbar-width: none;
-}
-
-.scrollbar-hide-when-not-needed:hover {
-    scrollbar-width: thin;
-    scrollbar-color: #ea580c rgba(38, 38, 38, 0.5);
-}
-
-/* Custom text selection colors to match orange theme */
 ::selection {
-    background-color: rgba(234, 88, 12, 0.25); /* Vibrant orange with transparency */
-    color: #0f172a; /* Dark slate for better contrast */
-    text-shadow: none; /* Remove text shadow on selection */
+  background-color: rgba(234, 88, 12, 0.35);
+  color: #f8fafc;
+  text-shadow: none;
 }
-
 ::-moz-selection {
-    background-color: rgba(234, 88, 12, 0.25); /* Vibrant orange with transparency */
-    color: #0f172a; /* Dark slate for better contrast */
-    text-shadow: none; /* Remove text shadow on selection */
+  background-color: rgba(234, 88, 12, 0.35);
+  color: #f8fafc;
+  text-shadow: none;
 }
 
-/* Dark mode text selection */
-.dark ::selection,
-[data-theme="dark"] ::selection {
-    background-color: rgba(234, 88, 12, 0.35); /* More visible for dark mode */
-    color: #f8fafc; /* Light text for dark backgrounds */
-    text-shadow: none; /* Remove text shadow on selection */
-}
-
-.dark ::-moz-selection,
-[data-theme="dark"] ::-moz-selection {
-    background-color: rgba(234, 88, 12, 0.35); /* More visible for dark mode */
-    color: #f8fafc; /* Light text for dark backgrounds */
-    text-shadow: none; /* Remove text shadow on selection */
-}
-
-/* Sophisticated Background Animations for Quantum Lab */
+/* Background gradient animation (used by the App-level background) */
 @keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
-}
-
 .animate-gradient-shift {
   animation: gradient-shift 20s ease infinite;
 }
 
-
-/* Utility classes for the new color system */
+/* Theme utility classes mapped to the CSS variables */
 @layer utilities {
-  .bg-theme-primary {
-    background-color: var(--color-primary);
-  }
-  
-  .bg-theme-secondary {
-    background-color: var(--color-secondary);
-  }
-  
-  .bg-theme-dark {
-    background-color: var(--color-dark-primary);
-  }
-  
-  .bg-theme-surface {
-    background-color: var(--color-dark-surface);
-  }
-  
-  .text-theme-primary {
-    color: var(--color-primary);
-  }
-  
-  .text-theme-secondary {
-    color: var(--color-secondary);
-  }
-  
-  .border-theme-primary {
-    border-color: var(--color-primary);
-  }
-  
-  .gradient-theme-primary {
-    background: var(--gradient-primary);
-  }
-  
-  .gradient-theme-secondary {
-    background: var(--gradient-secondary);
-  }
-  
-  .gradient-dark-subtle {
-    background: var(--gradient-dark-subtle);
-  }
-  
-  .text-blue-accent {
-    color: var(--color-blue-accent);
-  }
-  
-  .border-blue-accent {
-    border-color: var(--color-blue-accent);
-  }
-  
-  .bg-blue-accent {
-    background-color: var(--color-blue-accent);
-  }
-  
-  .shadow-blue-glow {
-    box-shadow: 0 0 10px var(--shadow-blue);
-  }
+  .bg-theme-primary { background-color: var(--color-primary); }
+  .bg-theme-surface { background-color: var(--color-dark-surface); }
+  .text-theme-primary { color: var(--color-primary); }
+  .border-theme-primary { border-color: var(--color-primary); }
+  .gradient-theme-primary { background: var(--gradient-primary); }
+  .text-blue-accent { color: var(--color-blue-accent); }
+  .border-blue-accent { border-color: var(--color-blue-accent); }
+  .bg-blue-accent { background-color: var(--color-blue-accent); }
 }

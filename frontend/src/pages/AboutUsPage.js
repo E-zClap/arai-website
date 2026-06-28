@@ -20,7 +20,7 @@ import {
   Shield,
   Battery
 } from 'lucide-react';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import { QuantumField } from '../components/animations/QuantumField';
 
 // About Us Page Component
 export const AboutUsPage = ({ language, isDark }) => {
@@ -183,7 +183,7 @@ export const AboutUsPage = ({ language, isDark }) => {
           ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
           : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
       }`} />
-      <QuantumParticles intensity={30} />
+      <QuantumField density={0.6} />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Hero Section */}

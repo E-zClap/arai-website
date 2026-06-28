@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import { QuantumField } from '../components/animations/QuantumField';
 import { ContactCard } from '../components/ui/ContactCard';
 
 // Contact Page Component
@@ -47,7 +47,7 @@ export const ContactPage = ({ language, isDark, setCurrentPage }) => {
           ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
           : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
       }`} />
-      <QuantumParticles intensity={30} />
+      <QuantumField density={0.6} />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div

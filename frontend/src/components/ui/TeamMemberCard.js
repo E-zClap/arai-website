@@ -52,10 +52,14 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
       <div className="relative h-80 bg-cover bg-center overflow-hidden">
         {member.image && !member.image.includes('unsplash.com') ? (
           <>
-            <motion.img 
-              src={member.image} 
+            <motion.img
+              src={member.image}
               alt={`${(member.name && typeof member.name === 'object' ? member.name[language] || member.name.EN : member.name) || 'Team Member'} - ${(member.position && typeof member.position === 'object' ? member.position[language] || member.position.EN : member.position) || 'Position'}`}
               className="w-full h-full object-cover"
+              width={384}
+              height={320}
+              loading="lazy"
+              decoding="async"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.8 }}
               onError={(e) => {

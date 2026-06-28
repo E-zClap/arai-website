@@ -82,24 +82,28 @@
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Quantum Informatics Group",
+            "alternateName": "量子情報学グループ",
             "url": "https://qig-lab.net",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://qig-lab.net/?search={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
+            "inLanguage": ["en", "ja"]
         }
         </script>
 
-        <!-- Preconnect to external resources for performance -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        
+        <!-- Self-hosted Inter (variable, latin) — preload the one file -->
+        <link rel="preload" href="%PUBLIC_URL%/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+
         <!-- Preload critical assets to improve LCP -->
         <link rel="preload" href="%PUBLIC_URL%/diam.svg" as="image" type="image/svg+xml" />
         
         <!-- Critical CSS to prevent CLS (Cumulative Layout Shift) -->
         <style>
+            /* Self-hosted Inter (variable) */
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 100 900;
+                font-display: swap;
+                src: url('%PUBLIC_URL%/fonts/inter-var-latin.woff2') format('woff2');
+            }
             /* Reserve space for hero section to prevent layout shift */
             #root {
                 min-height: 100vh;

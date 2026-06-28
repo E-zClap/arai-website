@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { QuantumField } from '../components/animations/QuantumField';
 import { NewsCard } from '../components/ui/NewsCard';
-import { Sparkles, TrendingUp, ChevronDown } from 'lucide-react';
+import { Sparkles, TrendingUp } from 'lucide-react';
 
 // Premium News Page Component
 export const NewsPage = ({ language, isDark, newsData }) => {
-  const [expandedYear, setExpandedYear] = useState(null);
-  
-  // Group news by year
-  const newsByYear = newsData.reduce((acc, news) => {
-    const year = new Date(news.date).getFullYear();
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(news);
-    return acc;
-  }, {});
-  
-  const years = Object.keys(newsByYear).sort((a, b) => b - a);
-  const featuredNews = newsData[0]; // Most recent news as featured
-  const regularNews = newsData.slice(1);
+  // Sort by date so the newest item is featured regardless of API ordering.
+  const sorted = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const featuredNews = sorted[0];
+  const regularNews = sorted.slice(1);
   
   return (
     <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
@@ -35,7 +26,7 @@ export const NewsPage = ({ language, isDark, newsData }) => {
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       
-      <QuantumParticles intensity={30} />
+      <QuantumField density={0.6} />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Premium Header Section */}
@@ -101,9 +92,9 @@ export const NewsPage = ({ language, isDark, newsData }) => {
         {/* Regular News Grid */}
         <div className="grid gap-8">
           {regularNews.map((news, index) => (
-            <NewsCard 
-              key={index} 
-              news={news} 
+            <NewsCard
+              key={news.id ?? index}
+              news={news}
               index={index + 1} 
               language={language} 
               isDark={isDark}

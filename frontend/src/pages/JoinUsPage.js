@@ -17,7 +17,7 @@ import {
   Lightbulb,
   CheckCircle2
 } from 'lucide-react';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import { QuantumField } from '../components/animations/QuantumField';
 
 // Join Us Page Component
 export const JoinUsPage = ({ language, isDark }) => (
@@ -29,7 +29,7 @@ export const JoinUsPage = ({ language, isDark }) => (
         ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
         : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
     }`} />
-    <QuantumParticles intensity={30} />
+    <QuantumField density={0.6} />
     
     <div className="max-w-5xl mx-auto relative z-10">
       {/* Hero Section */}

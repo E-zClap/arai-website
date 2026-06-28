@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { QuantumParticles } from '../components/animations/QuantumParticles';
+import { QuantumField } from '../components/animations/QuantumField';
 import { TeamMemberCard } from '../components/ui/TeamMemberCard';
 import { AlumniCard } from '../components/ui/AlumniCard';
 
@@ -14,7 +14,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
         : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
     }`} />
-    <QuantumParticles intensity={30} />
+    <QuantumField density={0.6} />
     
     <div className="max-w-6xl mx-auto relative z-10">
       <motion.div
@@ -53,7 +53,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         </h2>
         <div className="flex justify-center mb-12">
           <div className="max-w-md">
-            <TeamMemberCard member={principalInvestigator} index={0} language={language} setCurrentPage={setCurrentPage} />
+            <TeamMemberCard member={principalInvestigator} index={0} language={language} isDark={isDark} setCurrentPage={setCurrentPage} />
           </div>
         </div>
       </motion.div>
@@ -72,7 +72,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {staffAndPostdocs.map((member, index) => (
-            <TeamMemberCard key={index} member={member} index={index} language={language} setCurrentPage={setCurrentPage} />
+            <TeamMemberCard key={member.id ?? index} member={member} index={index} language={language} isDark={isDark} setCurrentPage={setCurrentPage} />
           ))}
         </div>
       </motion.div>
@@ -91,7 +91,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {students.map((member, index) => (
-            <TeamMemberCard key={index} member={member} index={index} language={language} setCurrentPage={setCurrentPage} />
+            <TeamMemberCard key={member.id ?? index} member={member} index={index} language={language} isDark={isDark} setCurrentPage={setCurrentPage} />
           ))}
         </div>
       </motion.div>
@@ -111,7 +111,7 @@ export const TeamPage = ({ language, isDark, principalInvestigator, staffAndPost
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {alumni.map((member, index) => (
-              <AlumniCard key={index} member={member} index={index} language={language} />
+              <AlumniCard key={member.id ?? index} member={member} index={index} language={language} isDark={isDark} />
             ))}
           </div>
         </motion.div>

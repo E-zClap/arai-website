@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // Small set of reusable, theme-consistent admin form controls.
 
@@ -24,7 +24,7 @@ export const Textarea = ({ label, rows = 3, hint, ...props }) => (
       {...props}
       className="w-full px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-700 text-neutral-100 placeholder-neutral-500 focus:outline-none focus:border-orange-500 transition-colors resize-y"
     />
-    {hint && <p className="text-xs text-neutral-500 mt-1">{hint}</p>}
+    {hint && <p className="text-xs text-neutral-400 mt-1">{hint}</p>}
   </div>
 );
 
@@ -55,26 +55,50 @@ export const Button = ({ variant = 'primary', className = '', ...props }) => {
   );
 };
 
-export const Modal = ({ title, onClose, children, footer }) => (
-  <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-4 sm:p-8">
-    <div className="w-full max-w-3xl rounded-2xl bg-neutral-800 border border-neutral-700 shadow-2xl my-4">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-700 sticky top-0 bg-neutral-800 rounded-t-2xl">
-        <h3 className="text-lg font-semibold text-neutral-100">{title}</h3>
-        <button
-          onClick={onClose}
-          className="text-neutral-400 hover:text-neutral-100 text-2xl leading-none"
-          aria-label="Close"
-        >
-          ×
-        </button>
+export const Modal = ({ title, onClose, children, footer }) => {
+  const ref = useRef(null);
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    ref.current?.focus();
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-4 sm:p-8"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div
+        ref={ref}
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
+        tabIndex={-1}
+        className="w-full max-w-3xl rounded-2xl bg-neutral-800 border border-neutral-700 shadow-2xl my-4 outline-none"
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-700 sticky top-0 bg-neutral-800 rounded-t-2xl">
+          <h3 className="text-lg font-semibold text-neutral-100">{title}</h3>
+          <button
+            onClick={onClose}
+            className="text-neutral-400 hover:text-neutral-100 text-2xl leading-none"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+        <div className="px-6 py-5 space-y-4">{children}</div>
+        {footer && (
+          <div className="flex justify-end gap-3 px-6 py-4 border-t border-neutral-700">{footer}</div>
+        )}
       </div>
-      <div className="px-6 py-5 space-y-4">{children}</div>
-      {footer && (
-        <div className="flex justify-end gap-3 px-6 py-4 border-t border-neutral-700">{footer}</div>
-      )}
     </div>
-  </div>
-);
+  );
+};
 
 // Helpers for converting between newline text and string arrays.
 export const linesToArray = (text) =>

@@ -82,6 +82,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       {/* Enhanced Mobile Menu Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={isOpen}
+        aria-controls="primary-sidebar"
         className={`fixed top-6 left-6 z-50 lg:hidden p-4 rounded-2xl transition-all duration-300 backdrop-blur-2xl border ${
           isDark 
             ? 'bg-dark-gray-900/90 text-white border-orange-600/30 shadow-2xl shadow-orange-600/10' 
@@ -133,8 +136,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       {/* Ultra-Professional Sidebar */}
       <AnimatePresence>
         <motion.div
+          id="primary-sidebar"
           initial={{ x: -400, opacity: 0 }}
-          animate={{ 
+          animate={{
             x: isOpen ? 0 : -400,
             opacity: isOpen ? 1 : 0
           }}
@@ -166,9 +170,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <img 
-                  src="/diam.svg" 
-                  alt="Diamond Logo" 
+                <img
+                  src="/diam.svg"
+                  alt="Quantum Informatics Group — diamond NV-center logo"
                   className="w-full h-full object-contain filter drop-shadow-lg"
                   style={{
                     filter: 'drop-shadow(0 6px 12px rgba(234, 88, 12, 0.6))'
@@ -176,14 +180,14 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 />
               </motion.div>
               <div>
-                <motion.h1 
+                <motion.p
                   className={`text-base font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
                   {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
-                </motion.h1>
+                </motion.p>
                 <motion.p 
                   className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
                   initial={{ x: -10, opacity: 0 }}
@@ -301,9 +305,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                         {item.label[language]}
                       </div>
                       <div className={`text-sm mt-1 ${
-                        isActive 
+                        isActive
                           ? (isDark ? 'text-orange-200' : 'text-orange-600')
-                          : (isDark ? 'text-slate-500' : 'text-slate-500')
+                          : (isDark ? 'text-slate-400' : 'text-slate-500')
                       }`}>
                         {item.description[language]}
                       </div>
@@ -333,7 +337,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
+            <div className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
               <div className="mb-1">
                 {language === 'EN' 
                   ? `© ${new Date().getFullYear()} Quantum Informatics Group` 

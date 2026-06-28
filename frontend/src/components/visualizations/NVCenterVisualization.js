@@ -97,9 +97,10 @@ export const NVCenterVisualization = ({ language, isDark }) => {
         <div className="h-96 md:h-[500px] lg:h-[600px]">
           <iframe
             src={nvCenterUrl}
-            title="NV Center Visualization"
+            title="Interactive 3D nitrogen-vacancy center in diamond"
+            loading="lazy"
             className="w-full h-full border-0 rounded-xl"
-            style={{ 
+            style={{
               minHeight: '400px'
             }}
           />

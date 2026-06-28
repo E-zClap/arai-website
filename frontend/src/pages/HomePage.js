@@ -6,7 +6,7 @@ import { RecentNewsSection } from '../components/sections/RecentNewsSection';
 // Home Page Component - Optimized with React.memo
 export const HomePage = React.memo(({ language, isDark, newsData, setCurrentPage }) => (
   <div className={isDark ? 'bg-black' : 'bg-gray-50'}>
-    <HeroSection language={language} isDark={isDark} />
+    <HeroSection language={language} isDark={isDark} setCurrentPage={setCurrentPage} />
     <MissionSection language={language} isDark={isDark} />
     <RecentNewsSection 
       language={language} 

@@ -1,79 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Home Page -->
+
   <url>
     <loc>https://qig-lab.net/</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/?lang=jp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/"/>
   </url>
-  
-  <!-- About Us -->
+
   <url>
     <loc>https://qig-lab.net/about-us</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/about-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/about-us?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/about-us"/>
   </url>
-  
-  <!-- News -->
+
   <url>
     <loc>https://qig-lab.net/news</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/news"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/news?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/news"/>
   </url>
-  
-  <!-- Research -->
+
   <url>
     <loc>https://qig-lab.net/research</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/research"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/research?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/research"/>
   </url>
-  
-  <!-- Publications -->
+
   <url>
     <loc>https://qig-lab.net/publications</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/publications"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/publications?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/publications"/>
   </url>
-  
-  <!-- Team -->
+
   <url>
     <loc>https://qig-lab.net/team</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/team"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/team?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/team"/>
   </url>
-  
-  <!-- Contact -->
+
   <url>
     <loc>https://qig-lab.net/contact</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/contact"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/contact?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/contact"/>
   </url>
-  
-  <!-- Join Us -->
+
   <url>
     <loc>https://qig-lab.net/join-us</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/join-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/join-us?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/join-us"/>
   </url>
-  
-  <!-- Profile: Dr. Keigo Arai -->
+
   <url>
     <loc>https://qig-lab.net/profile-keigo-arai</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qig-lab.net/profile-keigo-arai"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://qig-lab.net/profile-keigo-arai?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qig-lab.net/profile-keigo-arai"/>
   </url>
-  
+
 </urlset>

@@ -31,14 +31,7 @@ export const usePerformanceSettings = () => {
     if (prefersReducedMotion) performanceScore *= 0.2;
     if (prefersReducedData) performanceScore *= 0.5;
     if (isSlowConnection) performanceScore *= 0.4;
-    
-    // Battery API check (if available)
-    if (navigator.getBattery) {
-      navigator.getBattery().then(battery => {
-        if (battery.level < 0.2) performanceScore *= 0.6; // Battery saver mode
-      });
-    }
-    
+
     return {
       // Device characteristics
       isMobile,
@@ -67,19 +60,6 @@ export const usePerformanceSettings = () => {
       // Animation settings
       animationDuration: performanceScore > 0.8 ? 1 : performanceScore > 0.6 ? 0.7 : 0.5,
       frameRate: performanceScore > 0.8 ? 60 : performanceScore > 0.6 ? 30 : 20,
-      
-      // Debug info (remove in production)
-      debug: {
-        performanceScore: Math.round(performanceScore * 100) / 100,
-        reasons: [
-          isMobile && 'Mobile device detected',
-          hardwareConcurrency < 4 && `Low CPU cores: ${hardwareConcurrency}`,
-          deviceMemory < 4 && `Low RAM: ${deviceMemory}GB`,
-          prefersReducedMotion && 'User prefers reduced motion',
-          prefersReducedData && 'User prefers reduced data',
-          isSlowConnection && 'Slow network connection',
-        ].filter(Boolean)
-      }
     };
   }, []); // Empty dependency array as these values shouldn't change during session
 };

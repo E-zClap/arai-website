@@ -1,197 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #a855f7, #3b82f6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #9333ea, #2563eb);
-}
-
-/* Global styles */
-* {
-  box-sizing: border-box;
-}
+/* App-level styles. Global tokens, typography, scrollbar, selection and the
+   reduced-motion safety net live in index.css. */
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background: #000000;
   color: #ffffff;
-  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-/* Custom utilities */
+/* Brand text gradient (orange) */
 .text-gradient {
-  background: linear-gradient(45deg, #a855f7, #3b82f6);
+  background: linear-gradient(45deg, #ea580c, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Frosted glass surface */
 .glass-effect {
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(234, 88, 12, 0.2);
 }
 
-/* Animation keyframes */
+/* Animation keyframes still referenced by the brand chrome */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
-
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(234, 88, 12, 0.55); }
 }
-
 @keyframes quantum-spin {
-  from {
-    transform: rotate(0deg) scale(1);
-  }
-  to {
-    transform: rotate(360deg) scale(1.1);
-  }
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1.1); }
 }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-quantum-spin { animation: quantum-spin 8s linear infinite; }
 
-/* Utility classes */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.animate-quantum-spin {
-  animation: quantum-spin 8s linear infinite;
-}
-
-/* Custom gradient backgrounds */
-.quantum-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.quantum-gradient-2 {
-  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
-}
-
-/* Responsive text sizing */
+/* Responsive display-text sizing */
 @media (max-width: 640px) {
-  .text-6xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-  
-  .text-5xl {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  }
-  
-  .text-4xl {
-    font-size: 2rem;
-    line-height: 1.1;
-  }
+  .text-6xl { font-size: 3rem; line-height: 1; }
+  .text-5xl { font-size: 2.5rem; line-height: 1.1; }
+  .text-4xl { font-size: 2rem; line-height: 1.1; }
 }
 
-/* Smooth transitions */
-* {
-  transition: all 0.2s ease-out;
-}
-
+/* Scope transitions to interactive elements (avoid a global `* { transition }`
+   footgun that animates layout on every change). */
 button, a, .interactive-element {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s ease;
 }
 
-/* Focus states for accessibility */
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #a855f7;
-  outline-offset: 2px;
-}
-
-/* Loading states */
+/* Loading shimmer */
 @keyframes shimmer {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
 }
-
 .shimmer {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   background-size: 200px 100%;
   animation: shimmer 2s infinite;
-}
-
-/* Quantum particle effects */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #a855f7, #3b82f6);
-  animation: particle-float 6s ease-in-out infinite;
-}
-
-@keyframes particle-float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.3;
-  }
-  33% {
-    transform: translateY(-10px) rotate(120deg);
-    opacity: 0.8;
-  }
-  66% {
-    transform: translateY(10px) rotate(240deg);
-    opacity: 0.5;
-  }
-}
-
-/* Network connection lines */
-.connection-line {
-  stroke: url(#connection-gradient);
-  stroke-width: 1;
-  opacity: 0.4;
-  animation: connection-pulse 4s ease-in-out infinite;
-}
-
-@keyframes connection-pulse {
-  0%, 100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.6;
-  }
 }
