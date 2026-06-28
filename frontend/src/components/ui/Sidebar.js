@@ -1,0 +1,352 @@
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Users, 
+  UserPlus, 
+  BookOpen, 
+  FlaskConical, 
+  Mail, 
+  ExternalLink,
+  Menu,
+  X,
+  ChevronRight,
+  Info
+} from 'lucide-react';
+
+// Ultra-Professional Sidebar with Premium Academic Design
+export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, language, isDark }) => {
+  const location = useLocation();
+  
+  const navigationItems = [
+    { 
+      id: 'home', 
+      path: '/',
+      icon: FlaskConical, 
+      label: { EN: 'Home', JP: 'ホーム' },
+      description: { EN: 'Laboratory Overview', JP: '研究室について' }
+    },
+    { 
+      id: 'about-us', 
+      path: '/about-us',
+      icon: Info, 
+      label: { EN: 'About Us', JP: '私たちについて' },
+      description: { EN: 'Our Mission & Values', JP: 'ミッションと理念' }
+    },
+    { 
+      id: 'news', 
+      path: '/news',
+      icon: BookOpen, 
+      label: { EN: 'News', JP: 'ニュース' },
+      description: { EN: 'Latest Updates', JP: '最新情報' }
+    },
+    { 
+      id: 'research', 
+      path: '/research',
+      icon: FlaskConical, 
+      label: { EN: 'Research', JP: '研究' },
+      description: { EN: 'Research Areas', JP: '研究テーマ' }
+    },
+    { 
+      id: 'publications', 
+      path: '/publications',
+      icon: BookOpen, 
+      label: { EN: 'Publications', JP: '論文' },
+      description: { EN: 'Academic Papers', JP: '研究業績' }
+    },
+    { 
+      id: 'team', 
+      path: '/team',
+      icon: Users, 
+      label: { EN: 'Team', JP: 'チーム' },
+      description: { EN: 'Research Team', JP: 'メンバー' }
+    },
+    { 
+      id: 'contact', 
+      path: '/contact',
+      icon: Mail, 
+      label: { EN: 'Contact', JP: 'お問い合わせ' },
+      description: { EN: 'Get in Touch', JP: '連絡先' }
+    },
+    { 
+      id: 'join-us', 
+      path: '/join-us',
+      icon: UserPlus, 
+      label: { EN: 'Join Us', JP: '参加' },
+      description: { EN: 'Opportunities', JP: '募集情報' }
+    }
+  ];
+
+  return (
+    <>
+      {/* Enhanced Mobile Menu Button */}
+      <motion.button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`fixed top-6 left-6 z-50 lg:hidden p-4 rounded-2xl transition-all duration-300 backdrop-blur-2xl border ${
+          isDark 
+            ? 'bg-dark-gray-900/90 text-white border-orange-600/30 shadow-2xl shadow-orange-600/10' 
+            : 'bg-white/90 text-slate-800 shadow-2xl border-orange-200/50'
+        }`}
+        whileHover={{ scale: 1.05, rotate: 5 }}
+        whileTap={{ scale: 0.95 }}
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        <AnimatePresence mode="wait">
+          {isOpen ? (
+            <motion.div
+              key="close"
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: 90 }}
+              transition={{ duration: 0.2 }}
+            >
+              <X size={24} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              initial={{ opacity: 0, rotate: 90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: -90 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Menu size={24} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
+
+      {/* Enhanced Backdrop with Blur Effect */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Ultra-Professional Sidebar */}
+      <AnimatePresence>
+        <motion.div
+          initial={{ x: -400, opacity: 0 }}
+          animate={{ 
+            x: isOpen ? 0 : -400,
+            opacity: isOpen ? 1 : 0
+          }}
+          transition={{ 
+            type: "spring", 
+            damping: 30, 
+            stiffness: 300,
+            opacity: { duration: 0.2 }
+          }}
+          className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 lg:opacity-100 flex flex-col ${
+            isDark 
+              ? 'bg-dark-gray-925/95 backdrop-blur-3xl border-r border-orange-500/20 shadow-2xl shadow-orange-500/5' 
+              : 'bg-white/95 backdrop-blur-3xl border-r border-orange-200/50 shadow-2xl'
+          }`}
+        >
+          {/* Premium Academic Header */}
+          <motion.div 
+            className="p-4 pt-4 border-b border-dark-gray-700/30"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="flex items-center space-x-3">
+              <motion.div 
+                className="w-[130px] h-[130px] rounded-2xl flex items-center justify-center p-2"
+                whileHover={{ 
+                  scale: 1.08,
+                  rotate: 5
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img 
+                  src="/diam.svg" 
+                  alt="Diamond Logo" 
+                  className="w-full h-full object-contain filter drop-shadow-lg"
+                  style={{
+                    filter: 'drop-shadow(0 6px 12px rgba(234, 88, 12, 0.6))'
+                  }}
+                />
+              </motion.div>
+              <div>
+                <motion.h1 
+                  className={`text-base font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
+                </motion.h1>
+                <motion.p 
+                  className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
+                </motion.p>
+              </div>
+            </div>
+            
+            {/* Premium Institution Information */}
+            <motion.div 
+              className={`mt-4 p-4 rounded-2xl border backdrop-blur-sm ${
+                isDark 
+                  ? 'bg-dark-gray-850/50 border-dark-gray-700/50 shadow-xl shadow-black/20' 
+                  : 'bg-slate-50/80 border-slate-200/50 shadow-lg'
+              }`}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-orange-300' : 'text-orange-700'}`}>
+                {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
+              </div>
+              <motion.a 
+                href="https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-xs flex items-center gap-2 group ${
+                  isDark ? 'text-slate-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                } transition-all duration-300`}
+                whileHover={{ x: 2 }}
+              >
+                {language === 'EN' ? 'Department of Electrical & Electronic Engineering' : '電気電子系'}
+                <motion.div
+                  animate={{ x: [0, 3, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <ExternalLink size={12} />
+                </motion.div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Premium Navigation with Advanced Design - SEO-friendly with real <a> links */}
+          <nav className="p-6 space-y-3 flex-1 overflow-y-auto" aria-label="Main navigation">
+            {navigationItems.map((item, index) => {
+              const Icon = item.icon;
+              const isActive = currentPage === item.id;
+              
+              return (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  onClick={() => {
+                    if (window.innerWidth < 1024) {
+                      setIsOpen(false);
+                    }
+                  }}
+                  className={`block w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
+                    isActive
+                      ? (isDark 
+                          ? 'bg-gradient-to-r from-orange-600/40 to-orange-500/30 border-2 border-orange-400/50 text-orange-200 shadow-2xl shadow-orange-500/20' 
+                          : 'bg-gradient-to-r from-orange-50 to-orange-50 border-2 border-orange-300/60 text-orange-800 shadow-xl')
+                      : (isDark 
+                          ? 'hover:bg-dark-gray-850/70 text-slate-300 hover:text-white hover:border-dark-gray-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-black/20' 
+                          : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {/* Advanced Active Indicator */}
+                  {isActive && (
+                    <motion.div
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-orange-400 via-orange-400 to-orange-500 rounded-r-full shadow-lg shadow-orange-400/50"
+                      layoutId="activeIndicator"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  
+                  {/* Hover Effect Background */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-500/10 opacity-0 rounded-2xl"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  
+                  <div className="flex items-center space-x-4 relative z-10">
+                    <motion.div 
+                      className={`p-3 rounded-2xl transition-all duration-300 ${
+                        isActive 
+                          ? 'bg-gradient-to-r from-orange-500 to-orange-500 text-white shadow-2xl shadow-orange-500/30' 
+                          : (isDark 
+                              ? 'bg-dark-gray-800/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
+                              : 'bg-slate-100 group-hover:bg-slate-200 text-slate-600 group-hover:text-slate-700')
+                      }`}
+                      whileHover={{ rotate: 5 }}
+                      animate={isActive ? {
+                        boxShadow: [
+                          "0 10px 20px rgba(30, 64, 175, 0.3)",
+                          "0 15px 30px rgba(79, 70, 229, 0.4)",
+                          "0 10px 20px rgba(30, 64, 175, 0.3)"
+                        ]
+                      } : {}}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <Icon size={20} />
+                    </motion.div>
+                    
+                    <div className="flex-1">
+                      <div className="font-bold text-base tracking-wide">
+                        {item.label[language]}
+                      </div>
+                      <div className={`text-sm mt-1 ${
+                        isActive 
+                          ? (isDark ? 'text-orange-200' : 'text-orange-600')
+                          : (isDark ? 'text-slate-500' : 'text-slate-500')
+                      }`}>
+                        {item.description[language]}
+                      </div>
+                    </div>
+                    
+                    <motion.div
+                      className={`opacity-0 group-hover:opacity-100 transition-opacity ${
+                        isActive ? 'opacity-100' : ''
+                      }`}
+                      animate={isActive ? { x: [0, 3, 0] } : {}}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <ChevronRight size={18} />
+                    </motion.div>
+                  </div>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Compact Footer */}
+          <motion.div 
+            className={`mt-auto p-4 border-t ${
+              isDark ? 'border-dark-gray-700/50' : 'border-slate-200/50'
+            }`}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className={`text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
+              <div className="mb-1">
+                {language === 'EN' 
+                  ? `© ${new Date().getFullYear()} Quantum Informatics Group` 
+                  : `© ${new Date().getFullYear()} 量子情報学グループ`
+                }
+              </div>
+              <div className="text-xs opacity-80">
+                {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+    </>
+  );
+};

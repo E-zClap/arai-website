@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="246" viewBox="0 0 308 246">
+  <defs>
+    <!-- MORE pronounced gradient: bottom-right -> top-left -->
+    <linearGradient id="gemGrad" gradientUnits="userSpaceOnUse" x1="308" y1="246" x2="0" y2="0">
+      <stop offset="0%"   stop-color="#fff2a8"/>
+      <stop offset="30%"  stop-color="#ffb35a"/>
+      <stop offset="60%"  stop-color="#ff6a2a"/>
+      <stop offset="100%" stop-color="#7a2400"/>
+    </linearGradient>
+
+    <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.7" />
+    </filter>
+
+    <filter id="nodeGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="7.5" />
+    </filter>
+  </defs>
+
+  <!-- soft glow (behind) -->
+  <g filter="url(#lineGlow)"
+     stroke="url(#gemGrad)"
+     stroke-width="9"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     opacity="0.33"
+     fill="none">
+    <line x1="84.446" y1="31.495" x2="203.801" y2="31.482"/>
+    <line x1="18.218" y1="98.500" x2="84.446" y2="31.495"/>
+    <line x1="203.801" y1="31.482" x2="269.981" y2="99.305"/>
+    <line x1="18.218" y1="98.500" x2="269.981" y2="99.305"/>
+    <line x1="84.446" y1="31.495" x2="83.329" y2="99.472"/>
+    <line x1="203.801" y1="31.482" x2="206.856" y2="100.041"/>
+    <line x1="84.446" y1="31.495" x2="206.856" y2="100.041"/>
+    <line x1="203.801" y1="31.482" x2="83.329" y2="99.472"/>
+    <line x1="18.218" y1="98.500" x2="145.809" y2="228.306"/>
+    <line x1="269.981" y1="99.305" x2="145.809" y2="228.306"/>
+    <line x1="83.329" y1="99.472" x2="145.809" y2="228.306"/>
+    <line x1="206.856" y1="100.041" x2="145.809" y2="228.306"/>
+    <line x1="83.329" y1="99.472" x2="174.311" y2="199.863"/>
+    <line x1="206.856" y1="100.041" x2="116.111" y2="198.950"/>
+  </g>
+
+  <!-- crisp strokes (front) -->
+  <g stroke="url(#gemGrad)"
+     stroke-width="4.8"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     fill="none">
+    <line x1="84.446" y1="31.495" x2="203.801" y2="31.482"/>
+    <line x1="18.218" y1="98.500" x2="84.446" y2="31.495"/>
+    <line x1="203.801" y1="31.482" x2="269.981" y2="99.305"/>
+    <line x1="18.218" y1="98.500" x2="269.981" y2="99.305"/>
+    <line x1="84.446" y1="31.495" x2="83.329" y2="99.472"/>
+    <line x1="203.801" y1="31.482" x2="206.856" y2="100.041"/>
+    <line x1="84.446" y1="31.495" x2="206.856" y2="100.041"/>
+    <line x1="203.801" y1="31.482" x2="83.329" y2="99.472"/>
+    <line x1="18.218" y1="98.500" x2="145.809" y2="228.306"/>
+    <line x1="269.981" y1="99.305" x2="145.809" y2="228.306"/>
+    <line x1="83.329" y1="99.472" x2="145.809" y2="228.306"/>
+    <line x1="206.856" y1="100.041" x2="145.809" y2="228.306"/>
+    <line x1="83.329" y1="99.472" x2="174.311" y2="199.863"/>
+    <line x1="206.856" y1="100.041" x2="116.111" y2="198.950"/>
+  </g>
+
+  <!-- shiny glow on the most-right node -->
+  <circle cx="269.981" cy="99.305" r="15"
+          fill="url(#gemGrad)" opacity="0.70" filter="url(#nodeGlow)"/>
+
+  <!-- nodes -->
+  <g fill="url(#gemGrad)">
+    <circle cx="203.801" cy="31.482" r="8.4"/>
+    <circle cx="84.446" cy="31.495" r="8.4"/>
+    <circle cx="18.218" cy="98.500" r="8.4"/>
+    <circle cx="83.329" cy="99.472" r="8.4"/>
+    <circle cx="206.856" cy="100.041" r="8.4"/>
+    <circle cx="269.981" cy="99.305" r="8.4"/>
+    <circle cx="144.676" cy="167.021" r="8.4"/>
+    <circle cx="116.111" cy="198.950" r="8.4"/>
+    <circle cx="174.311" cy="199.863" r="8.4"/>
+    <circle cx="145.809" cy="228.306" r="8.4"/>
+  </g>
+</svg>

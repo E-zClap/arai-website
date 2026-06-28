@@ -1,0 +1,28 @@
+# Robots.txt for Quantum Informatics Group Website
+# https://qig-lab.net (update with actual domain)
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any exist)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of JavaScript and CSS files (important for React apps!)
+Allow: /static/js/
+Allow: /static/css/
+
+# Sitemap location
+Sitemap: https://qig-lab.net/sitemap.xml
+
+# Crawl-delay (optional - be gentle to the server)
+# Crawl-delay: 1
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /

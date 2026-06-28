@@ -1,0 +1,201 @@
+import React, { useRef } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { QuantumNetwork } from '../animations/QuantumNetwork';
+
+// Enhanced Professional Hero Section with Academic Hierarchy
+// Performance optimized: explicit dimensions to prevent CLS
+export const HeroSection = ({ language, isDark }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
+
+  return (
+    <section 
+      ref={ref}
+      className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
+        isDark ? 'bg-transparent' : 'bg-gray-50'
+      }`}
+      // Explicit min-height to prevent CLS
+      style={{ minHeight: '100vh', contain: 'layout' }}
+    >
+      {/* Enhanced Quantum Background - Reduced for performance */}
+      <QuantumNetwork intensity={12} />
+      
+      {/* Elegant Radial Overlay for Hero Section */}
+      {isDark && (
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)',
+          }}></div>
+        </div>
+      )}
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <motion.div
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
+          transition={{ duration: 0.5 }} // Reduced from 1s for faster LCP
+          className="text-center"
+        >
+          {/* Professional Institution Badge - Fixed dimensions to prevent CLS */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 }
+            }}
+            transition={{ duration: 0.4, delay: 0.1 }} // Reduced delays
+            className={`inline-flex items-center px-8 py-4 rounded-3xl border mb-12 ${
+              isDark 
+                ? 'backdrop-blur-2xl bg-dark-gray-900/60 border-blue-500/30 text-blue-400'
+                : 'bg-white border-blue-200/50 text-blue-600 shadow-2xl backdrop-blur-sm'
+            }`}
+            style={{ minHeight: '60px' }} // Reserve space
+          >
+            {/* Use a smaller PNG instead of 279KB ICO - explicit dimensions */}
+            <img 
+              src="/favicon-32.png" 
+              alt="Institute Logo" 
+              width={20}
+              height={20}
+              className="w-5 h-5 mr-4 object-contain"
+              style={{
+                filter: isDark ? 'brightness(1.2)' : 'brightness(1)'
+              }}
+              loading="eager" // Load immediately for hero
+            />
+            <span className="text-sm font-medium tracking-wider uppercase">
+              {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
+            </span>
+          </motion.div>
+
+          {/* Diamond Logo - Explicit dimensions to prevent CLS */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 },
+              visible: { opacity: 1, scale: 1 }
+            }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="flex justify-center mb-8"
+            style={{ minHeight: '160px' }} // Reserve space for image
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }} // Reduced from 1.1 for performance
+              transition={{ type: "spring", stiffness: 300 }}
+              className="relative"
+            >
+              <img 
+                src="/diam.svg" 
+                alt="Diamond NV Center" 
+                width={160}
+                height={160}
+                className="w-32 h-32 md:w-40 md:h-40 object-contain"
+                style={{
+                  filter: 'drop-shadow(0 8px 16px rgba(234, 88, 12, 0.5))'
+                }}
+                loading="eager" // Load immediately for hero
+              />
+              {/* Animated glow effect */}
+              <motion.div
+                className="absolute inset-0 blur-2xl opacity-40"
+                style={{
+                  background: 'radial-gradient(circle, rgba(234, 88, 12, 0.6) 0%, transparent 70%)'
+                }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Enhanced Academic Title Hierarchy - Reduced animations for performance */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 }
+            }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="space-y-8"
+            style={{ minHeight: '300px' }} // Reserve space to prevent CLS
+          >
+            <div>
+              <h1 className={`text-6xl lg:text-7xl font-bold mb-6 ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+                {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
+              </h1>
+              
+              {/* Professional Academic Subtitle */}
+              <div className={`text-3xl lg:text-4xl font-light mb-8 ${
+                isDark ? 'text-slate-300' : 'text-slate-600'
+              }`} style={{ fontFamily: '"Inter", system-ui' }}>
+                <span className="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent font-semibold">
+                  {language === 'EN' ? 'Diamond NV Centers' : 'ダイヤモンドNVセンター'}
+                </span>
+                {language === 'EN' ? ' & Quantum Metrology' : ' & 量子計測'}
+              </div>
+            </div>
+
+            {/* Enhanced Scientific Focus Statement */}
+            <div className={`max-w-4xl mx-auto text-xl lg:text-2xl leading-relaxed ${
+              isDark ? 'text-slate-200' : 'text-slate-700'
+            }`} style={{ fontFamily: '"Inter", system-ui' }}>
+              <p className="mb-6">
+                {language === 'EN' 
+                  ? 'Pioneering the frontier of quantum sensing technologies through diamond nitrogen-vacancy centers, integrated with advanced computational informatics to drive scientific innovation and practical applications.'
+                  : 'ダイヤモンド窒素空孔センターを通じた量子センシング技術の最前線を開拓し、先進的な計算情報学と統合して科学革新と実用的応用を推進しています。'
+                }
+              </p>
+              
+              {/* Professional Research Emphasis with Different Styling */}
+              <div className={`inline-flex items-center px-8 py-4 rounded-full border-2 ${
+                isDark 
+                  ? 'bg-gradient-to-r from-orange-900/40 to-orange-900/40 border-orange-400/50' 
+                  : 'bg-gradient-to-r from-orange-50/80 to-orange-50/80 border-orange-400/60 shadow-xl'
+              }`}>
+                <div className={`w-3 h-3 rounded-full mr-4 animate-pulse ${
+                  isDark ? 'bg-gradient-to-r from-orange-400 to-orange-400' : 'bg-gradient-to-r from-orange-600 to-orange-500'
+                }`} />
+                <span className={`text-xl font-bold tracking-wide ${
+                  isDark ? 'text-orange-100' : 'text-orange-800'
+                }`}>
+                  {language === 'EN' ? 'Quantum Transformation Research' : '量子変革研究'}
+                </span>
+                <div className={`w-3 h-3 rounded-full ml-4 animate-pulse ${
+                  isDark ? 'bg-gradient-to-r from-orange-400 to-orange-400' : 'bg-gradient-to-r from-orange-500 to-orange-600'
+                }`} style={{ animationDelay: '0.5s' }} />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Enhanced Professional Action Area */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-16"
+          >
+            {/* Removed metrics display as requested */}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
