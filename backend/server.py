@@ -1,5 +1,6 @@
-# Compatibility file - imports the refactored application
-from main import app
+"""Backwards-compatible entrypoint.
 
-# This allows the supervisor to continue using server:app
-# while the actual application logic is now in main.py
+The application now lives in the ``app`` package (FastAPI + MySQL). This shim
+keeps the old ``server:app`` import path working, e.g. ``uvicorn server:app``.
+"""
+from app.main import app  # noqa: F401
