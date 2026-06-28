@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Users, 
-  UserPlus, 
-  BookOpen, 
-  FlaskConical, 
-  Mail, 
-  ExternalLink,
+import {
+  Users,
+  UserPlus,
+  FlaskConical,
+  Mail,
   Menu,
   X,
-  ChevronRight,
-  Info
+  Info,
+  Home,
+  Newspaper,
+  FileText
 } from 'lucide-react';
 
 // Ultra-Professional Sidebar with Premium Academic Design
@@ -20,9 +20,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
   
   const navigationItems = [
     { 
-      id: 'home', 
+      id: 'home',
       path: '/',
-      icon: FlaskConical, 
+      icon: Home,
       label: { EN: 'Home', JP: 'ホーム' },
       description: { EN: 'Laboratory Overview', JP: '研究室について' }
     },
@@ -34,9 +34,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       description: { EN: 'Our Mission & Values', JP: 'ミッションと理念' }
     },
     { 
-      id: 'news', 
+      id: 'news',
       path: '/news',
-      icon: BookOpen, 
+      icon: Newspaper,
       label: { EN: 'News', JP: 'ニュース' },
       description: { EN: 'Latest Updates', JP: '最新情報' }
     },
@@ -48,9 +48,9 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
       description: { EN: 'Research Areas', JP: '研究テーマ' }
     },
     { 
-      id: 'publications', 
+      id: 'publications',
       path: '/publications',
-      icon: BookOpen, 
+      icon: FileText,
       label: { EN: 'Publications', JP: '論文' },
       description: { EN: 'Academic Papers', JP: '研究業績' }
     },
@@ -150,7 +150,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
           }}
           className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 lg:opacity-100 flex flex-col ${
             isDark
-              ? 'bg-[#0c0d11]/95 backdrop-blur-xl border-r border-white/10'
+              ? 'bg-gradient-to-b from-[#0e0f14]/95 to-[#0a0b0e]/95 backdrop-blur-xl border-r border-white/[0.08]'
               : 'bg-white/95 backdrop-blur-xl border-r border-slate-200'
           }`}
         >
@@ -163,7 +163,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                 width={44}
                 height={44}
                 className="w-11 h-11 object-contain"
-                style={{ filter: 'drop-shadow(0 4px 10px rgba(234, 88, 12, 0.4))' }}
+                style={{ filter: 'drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5))' }}
               />
               <div>
                 <p className={`text-sm font-semibold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
@@ -191,7 +191,7 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
 
           {/* Premium Navigation with Advanced Design - SEO-friendly with real <a> links */}
           <nav className="px-4 py-4 space-y-1 flex-1 overflow-y-auto" aria-label="Main navigation">
-            {navigationItems.map((item, index) => {
+            {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = currentPage === item.id;
               
@@ -204,11 +204,13 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       setIsOpen(false);
                     }
                   }}
-                  className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors ${
+                  className={`group relative flex items-center gap-3.5 rounded-lg px-3.5 py-2.5 transition-all duration-200 ${
                     isActive
-                      ? (isDark ? 'bg-orange-500/10 text-white' : 'bg-orange-50 text-slate-900')
+                      ? (isDark
+                          ? 'bg-white/[0.06] text-white ring-1 ring-inset ring-white/10'
+                          : 'bg-slate-100 text-slate-900 ring-1 ring-inset ring-slate-200')
                       : (isDark
-                          ? 'text-slate-400 hover:bg-white/5 hover:text-white'
+                          ? 'text-slate-400 hover:bg-white/[0.04] hover:text-slate-100'
                           : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900')
                   }`}
                   aria-current={isActive ? 'page' : undefined}
@@ -216,36 +218,21 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                   {isActive && (
                     <motion.span
                       layoutId="activeIndicator"
-                      className="absolute left-0 top-1/2 h-7 w-[3px] -translate-y-1/2 rounded-r-full bg-orange-500"
+                      className="absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-r-full bg-orange-500"
                     />
                   )}
-                  <span
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+                  <Icon
+                    size={18}
+                    strokeWidth={2}
+                    className={`shrink-0 transition-colors ${
                       isActive
-                        ? 'bg-orange-500/15 text-orange-400'
+                        ? 'text-orange-400'
                         : isDark
-                        ? 'bg-white/5 text-slate-400 group-hover:text-white'
-                        : 'bg-slate-100 text-slate-500 group-hover:text-slate-700'
-                    }`}
-                  >
-                    <Icon size={18} />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-medium">{item.label[language]}</span>
-                    <span
-                      className={`block text-xs ${
-                        isActive ? (isDark ? 'text-orange-300/80' : 'text-orange-600') : 'text-slate-500'
-                      }`}
-                    >
-                      {item.description[language]}
-                    </span>
-                  </span>
-                  <ChevronRight
-                    size={16}
-                    className={`shrink-0 transition-opacity ${
-                      isActive ? 'text-orange-400 opacity-100' : 'text-slate-500 opacity-0 group-hover:opacity-100'
+                        ? 'text-slate-500 group-hover:text-slate-300'
+                        : 'text-slate-400 group-hover:text-slate-600'
                     }`}
                   />
+                  <span className="text-[15px] font-medium tracking-tight">{item.label[language]}</span>
                 </Link>
               );
             })}
