@@ -346,3 +346,41 @@ function calculateHIndex(publications) {
   }
   return hIndex;
 }
+
+// Fixed category definitions (label.EN must match a publication's `category`).
+const CATEGORY_DEFS = [
+  { id: "all", label: { EN: "All Publications", JP: "すべての論文" } },
+  { id: "quantum-sensing", label: { EN: "Quantum Sensing", JP: "量子センシング" } },
+  { id: "quantum-control", label: { EN: "Quantum Control", JP: "量子制御" } },
+  { id: "quantum-information", label: { EN: "Quantum Information", JP: "量子情報" } },
+  { id: "applied-quantum-sensing", label: { EN: "Applied Quantum Sensing", JP: "応用量子センシング" } },
+  { id: "biomedical-sensing", label: { EN: "Biomedical Sensing", JP: "生体医学センシング" } },
+  { id: "biomedical-imaging", label: { EN: "Biomedical Imaging", JP: "生体医学イメージング" } },
+  { id: "nanoscale-imaging", label: { EN: "Nanoscale Imaging", JP: "ナノスケールイメージング" } },
+  { id: "quantum-physics", label: { EN: "Quantum Physics", JP: "量子物理学" } },
+  { id: "review", label: { EN: "Review Articles", JP: "レビュー論文" } },
+];
+
+// Build the category list (with live counts) from any publications array.
+export function getPublicationCategories(pubs = []) {
+  return CATEGORY_DEFS.map((def) => ({
+    ...def,
+    count:
+      def.id === "all"
+        ? pubs.length
+        : pubs.filter((p) => p.category === def.label.EN).length,
+  }));
+}
+
+// Compute the metrics dashboard numbers from any publications array.
+export function getPublicationMetrics(pubs = []) {
+  const totalCitations = pubs.reduce((total, pub) => total + (pub.citations || 0), 0);
+  return {
+    totalPublications: pubs.length,
+    totalCitations,
+    highImpactPapers: pubs.filter((p) => p.impact === "Very High").length,
+    recentPublications: pubs.filter((p) => parseInt(p.year) >= 2020).length,
+    averageCitations: pubs.length ? Math.round(totalCitations / pubs.length) : 0,
+    hIndex: calculateHIndex(pubs),
+  };
+}

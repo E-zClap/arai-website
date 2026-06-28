@@ -1,7 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { fetchNews, fetchPublications, fetchTeam } from './api/content';
+import { RequireAuth } from './pages/admin/RequireAuth';
 
 // Import UI Components - Sidebar and FloatingControls are essential, load immediately
 import { Sidebar } from './components/ui/Sidebar';
@@ -27,6 +29,10 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ defaul
 const JoinUsPage = lazy(() => import('./pages/JoinUsPage').then(m => ({ default: m.JoinUsPage })));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage').then(m => ({ default: m.AboutUsPage })));
 const ProfilePage = lazy(() => import('./pages/ProfilePage').then(m => ({ default: m.ProfilePage })));
+
+// Lazy load Admin pages - only fetched when visiting /admin
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin').then(m => ({ default: m.AdminLogin })));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard').then(m => ({ default: m.AdminDashboard })));
 
 // Import Data - These are small, keep synchronous
 import { newsData } from './data/newsData';
@@ -75,6 +81,45 @@ function App() {
   const [isDark, setIsDark] = useState(true);
   const [language, setLanguage] = useState('EN');
 
+  // Live content from the API, seeded with the bundled static data so the site
+  // always renders instantly and still works if the API is unavailable.
+  const [content, setContent] = useState({
+    news: newsData,
+    publications: publicationsData,
+    team: { principalInvestigator, staffAndPostdocs, students, alumni },
+  });
+
+  useEffect(() => {
+    let active = true;
+    Promise.allSettled([fetchNews(), fetchPublications(), fetchTeam()]).then(
+      ([n, p, t]) => {
+        if (!active) return;
+        setContent((prev) => ({
+          news:
+            n.status === 'fulfilled' && Array.isArray(n.value) && n.value.length
+              ? n.value
+              : prev.news,
+          publications:
+            p.status === 'fulfilled' && Array.isArray(p.value) && p.value.length
+              ? p.value
+              : prev.publications,
+          team:
+            t.status === 'fulfilled' && t.value && t.value.principalInvestigator
+              ? {
+                  principalInvestigator: t.value.principalInvestigator,
+                  staffAndPostdocs: t.value.staffAndPostdocs || [],
+                  students: t.value.students || [],
+                  alumni: t.value.alumni || [],
+                }
+              : prev.team,
+        }));
+      }
+    );
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // Get current page from URL
   const currentPage = routeToPage[location.pathname] || 'home';
 
@@ -104,6 +149,26 @@ function App() {
 
   // Common props for all pages
   const commonProps = { language, isDark, setCurrentPage };
+
+  // Admin area is a self-contained app (no public sidebar / SEO chrome).
+  if (location.pathname.startsWith('/admin')) {
+    return (
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <RequireAuth>
+                <AdminDashboard />
+              </RequireAuth>
+            }
+          />
+          <Route path="/admin/*" element={<Navigate to="/admin" replace />} />
+        </Routes>
+      </Suspense>
+    );
+  }
 
   return (
     <div 
@@ -213,7 +278,7 @@ function App() {
                 <Route path="/" element={
                   <>
                     <SEO page="home" language={language} />
-                    <HomePage {...commonProps} newsData={newsData} />
+                    <HomePage {...commonProps} newsData={content.news} />
                   </>
                 } />
                 <Route path="/about-us" element={
@@ -225,7 +290,7 @@ function App() {
                 <Route path="/news" element={
                   <>
                     <SEO page="news" language={language} />
-                    <NewsPage {...commonProps} newsData={newsData} />
+                    <NewsPage {...commonProps} newsData={content.news} />
                   </>
                 } />
                 <Route path="/research" element={
@@ -237,18 +302,18 @@ function App() {
                 <Route path="/publications" element={
                   <>
                     <SEO page="publications" language={language} />
-                    <PublicationsPage {...commonProps} publicationsData={publicationsData} />
+                    <PublicationsPage {...commonProps} publicationsData={content.publications} />
                   </>
                 } />
                 <Route path="/team" element={
                   <>
                     <SEO page="team" language={language} />
-                    <TeamPage 
+                    <TeamPage
                       {...commonProps}
-                      principalInvestigator={principalInvestigator}
-                      staffAndPostdocs={staffAndPostdocs}
-                      students={students}
-                      alumni={alumni}
+                      principalInvestigator={content.team.principalInvestigator}
+                      staffAndPostdocs={content.team.staffAndPostdocs}
+                      students={content.team.students}
+                      alumni={content.team.alumni}
                     />
                   </>
                 } />
@@ -274,7 +339,7 @@ function App() {
                 <Route path="*" element={
                   <>
                     <SEO page="home" language={language} />
-                    <HomePage {...commonProps} newsData={newsData} />
+                    <HomePage {...commonProps} newsData={content.news} />
                   </>
                 } />
               </Routes>

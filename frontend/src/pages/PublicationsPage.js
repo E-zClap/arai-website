@@ -12,21 +12,31 @@ import {
   X
 } from 'lucide-react';
 import { PublicationCard } from '../components/ui/PublicationCard';
-import { publicationsData, publicationCategories, publicationMetrics } from '../data/publicationsData';
+import { getPublicationCategories, getPublicationMetrics } from '../data/publicationsData';
 
 // Ultra-Professional Publications Page with Advanced Filtering
-export const PublicationsPage = ({ language, isDark }) => {
+export const PublicationsPage = ({ language, isDark, publicationsData = [] }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedImpact, setSelectedImpact] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  // Categories (with counts) and headline metrics derived from the live data.
+  const publicationCategories = useMemo(
+    () => getPublicationCategories(publicationsData),
+    [publicationsData]
+  );
+  const publicationMetrics = useMemo(
+    () => getPublicationMetrics(publicationsData),
+    [publicationsData]
+  );
+
   // Get unique years from publications
   const years = useMemo(() => {
     const yearSet = new Set(publicationsData.map(pub => pub.year));
     return Array.from(yearSet).sort((a, b) => b - a);
-  }, []);
+  }, [publicationsData]);
 
   // Filter publications based on search and filters
   const filteredPublications = useMemo(() => {
@@ -46,7 +56,7 @@ export const PublicationsPage = ({ language, isDark }) => {
 
       return matchesSearch && matchesCategory && matchesYear && matchesImpact;
     });
-  }, [searchTerm, selectedCategory, selectedYear, selectedImpact]);
+  }, [searchTerm, selectedCategory, selectedYear, selectedImpact, publicationsData, publicationCategories]);
 
   const clearFilters = () => {
     setSearchTerm('');
