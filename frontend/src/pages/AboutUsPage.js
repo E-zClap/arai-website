@@ -183,7 +183,7 @@ export const AboutUsPage = ({ language, isDark }) => {
           ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
           : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
       }`} />
-      <QuantumField density={0.6} />
+      <QuantumField density={0.9} />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Hero Section */}

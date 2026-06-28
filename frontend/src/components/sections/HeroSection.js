@@ -26,7 +26,7 @@ export const HeroSection = ({ language, isDark, setCurrentPage }) => {
       style={{ minHeight: '100vh', contain: 'layout' }}
     >
       {/* Interactive signature field (pointer-reactive, perf/reduced-motion aware) */}
-      <QuantumField density={1.1} interactive className={isDark ? 'opacity-90' : 'opacity-60'} />
+      <QuantumField density={1.5} interactive className={isDark ? 'opacity-100' : 'opacity-70'} />
 
       {/* Elegant radial overlay */}
       {isDark && (
@@ -61,11 +61,11 @@ export const HeroSection = ({ language, isDark, setCurrentPage }) => {
             style={{ minHeight: '44px' }}
           >
             <img
-              src="/favicon-32.png"
+              src={isDark ? '/science-tokyo-white.png' : '/science-tokyo-navy.png'}
               alt="Institute of Science Tokyo"
-              width={18}
-              height={18}
-              className="w-[18px] h-[18px] object-contain"
+              width={22}
+              height={22}
+              className="w-[22px] h-[22px] object-contain"
               loading="eager"
             />
             <span className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase">

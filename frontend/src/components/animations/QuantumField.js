@@ -36,33 +36,39 @@ export const QuantumField = ({
     let raf = 0;
     let running = true;
     const pointer = { x: -9999, y: -9999, active: false };
+    // Measure the parent (page container) and cap the canvas to ~1.4 viewports
+    // tall, so very long pages don't create a huge, expensive full-page canvas.
+    const measureEl = canvas.parentElement || canvas;
 
     const ORANGE = 'rgba(249, 115, 22, ALPHA)';
     const BLUE = 'rgba(59, 130, 246, ALPHA)';
 
     const resize = () => {
-      const rect = canvas.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
+      const rect = measureEl.getBoundingClientRect();
+      const vh = window.innerHeight || 800;
+      width = rect.width || measureEl.clientWidth || window.innerWidth || 1200;
+      height = Math.min(rect.height || vh, Math.round(vh * 1.4));
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
       canvas.width = Math.max(1, Math.floor(width * dpr));
       canvas.height = Math.max(1, Math.floor(height * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // Node count scales with area, density and device capability.
       const area = width * height;
-      const base = Math.round((area / 26000) * density * perf.performanceScore);
-      const count = Math.max(8, Math.min(reduced ? 26 : 90, base));
+      const base = Math.round((area / 21000) * density * perf.performanceScore);
+      const count = Math.max(10, Math.min(reduced ? 30 : 110, base));
       nodes = new Array(count).fill(0).map(() => ({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.25,
-        r: Math.random() * 1.6 + 1.1,
+        r: Math.random() * 2 + 1.5,
         blue: Math.random() > 0.62,
       }));
     };
 
-    const LINK_DIST = 130;
+    const LINK_DIST = 150;
 
     const frame = () => {
       ctx.clearRect(0, 0, width, height);
@@ -76,9 +82,9 @@ export const QuantumField = ({
           const dy = a.y - b.y;
           const dist = Math.hypot(dx, dy);
           if (dist < LINK_DIST) {
-            const alpha = (1 - dist / LINK_DIST) * 0.22;
+            const alpha = (1 - dist / LINK_DIST) * 0.4;
             ctx.strokeStyle = ORANGE.replace('ALPHA', alpha.toFixed(3));
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 1.2;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -126,7 +132,14 @@ export const QuantumField = ({
           n.x = Math.max(0, Math.min(width, n.x));
           n.y = Math.max(0, Math.min(height, n.y));
         }
-        ctx.fillStyle = (n.blue ? BLUE : ORANGE).replace('ALPHA', '0.9');
+        const col = n.blue ? BLUE : ORANGE;
+        // soft halo for a luminous "quantum" glow + visibility
+        ctx.fillStyle = col.replace('ALPHA', '0.18');
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r * 2.8, 0, Math.PI * 2);
+        ctx.fill();
+        // bright core
+        ctx.fillStyle = col.replace('ALPHA', '1');
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
@@ -164,7 +177,7 @@ export const QuantumField = ({
       resize();
       if (reduced) frame(); // redraw a static frame on resize
     });
-    ro.observe(canvas);
+    ro.observe(measureEl);
 
     // Pause when tab hidden or component scrolled out of view.
     const onVisibility = () => (document.hidden ? stop() : !reduced && start());
@@ -201,7 +214,11 @@ export const QuantumField = ({
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className={`absolute inset-0 h-full w-full pointer-events-none ${className}`}
+      style={{
+        maskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, #000 78%, transparent 100%)',
+      }}
+      className={`absolute top-0 left-0 pointer-events-none ${className}`}
     />
   );
 };

@@ -212,7 +212,7 @@ export const ResearchPage = ({ language, isDark, researchData }) => (
   <div className={`min-h-screen py-28 px-6 relative overflow-hidden ${
     isDark ? 'bg-transparent' : 'bg-gray-50'
   }`}>
-    <QuantumField density={0.6} />
+    <QuantumField density={0.9} />
     
     {/* Premium Gradient Overlays */}
     <div className="fixed inset-0 pointer-events-none">
