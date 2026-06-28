@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { QuantumField } from '../components/animations/QuantumField';
 import { NVCenterVisualization } from '../components/visualizations/NVCenterVisualization';
 import { PageHeader } from '../components/ui/PageHeader';
-import { Beaker, Cpu, Microscope, Waves, Brain, ChevronDown, Sparkles } from 'lucide-react';
+import { Beaker, Cpu, Microscope, Waves, Brain, Sparkles } from 'lucide-react';
 
 // Icon mapping for research themes
 const themeIcons = {
@@ -14,145 +14,90 @@ const themeIcons = {
   5: Brain     // Quantum Probability & Social Informatics
 };
 
-// Refined research theme card: hairline-bordered surface, precise orange accent
+// Editorial research-theme block: large index numeral, single accent icon,
+// topics shown in a clean two-column list (no hide-and-seek expander).
 const ResearchThemeCard = ({ theme, index, language, isDark }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const Icon = themeIcons[theme.number] || Beaker;
+  const topics = theme.exampleTopics[language] || [];
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.5, delay: Math.min(index, 3) * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={`group relative rounded-2xl border p-7 sm:p-10 transition-colors ${
+        isDark
+          ? 'bg-white/[0.03] border-white/10 hover:border-white/20'
+          : 'bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
+      }`}
     >
-      {/* Main Card Container */}
-      <div
-        className={`relative rounded-2xl border transition-colors ${
-          isDark
-            ? 'bg-white/[0.03] border-white/10 hover:border-white/20'
-            : 'bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
-        }`}
-      >
-        <div className="p-6 sm:p-8">
-          {/* Header Section */}
-          <div className="flex items-start justify-between gap-4 mb-6">
-            <div className="flex items-center gap-4">
-              {/* Number Badge */}
-              <div
-                className={`flex items-center justify-center w-12 h-12 rounded-xl text-lg font-semibold ${
-                  isDark
-                    ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30'
-                    : 'bg-orange-50 text-orange-600 border border-orange-200'
-                }`}
-              >
-                {theme.number}
-              </div>
-
-              {/* Icon */}
-              <div
-                className={`flex items-center justify-center w-12 h-12 rounded-xl ${
-                  isDark ? 'bg-white/5 border border-white/10' : 'bg-slate-50 border border-slate-200'
-                }`}
-              >
-                <Icon className={`w-6 h-6 ${isDark ? 'text-slate-300' : 'text-slate-700'}`} strokeWidth={2} />
-              </div>
-            </div>
-
-            {/* Category Chip */}
-            <span
-              className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
-                isDark
-                  ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30'
-                  : 'bg-orange-50 text-orange-700 border border-orange-200'
-              }`}
-            >
-              {theme.category}
-            </span>
+      <div className="flex flex-col gap-6 sm:flex-row sm:gap-9">
+        {/* Index + icon rail */}
+        <div className="flex shrink-0 items-center gap-4 sm:flex-col sm:items-start sm:gap-4">
+          <span
+            className={`text-5xl font-bold leading-none tabular-nums sm:text-6xl ${
+              isDark ? 'text-white/[0.08]' : 'text-slate-900/[0.07]'
+            }`}
+          >
+            {String(theme.number).padStart(2, '0')}
+          </span>
+          <div
+            className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+              isDark
+                ? 'border border-orange-500/30 bg-orange-500/10 text-orange-400'
+                : 'border border-orange-200 bg-orange-50 text-orange-600'
+            }`}
+          >
+            <Icon className="h-5 w-5" strokeWidth={2} />
           </div>
+        </div>
 
-          {/* Title */}
+        {/* Content */}
+        <div className="min-w-0 flex-1">
+          <p className="mb-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">
+            {theme.category}
+          </p>
           <h3
-            className={`text-lg sm:text-xl font-semibold tracking-tight mb-4 ${
+            className={`text-2xl font-semibold leading-snug tracking-tight sm:text-[28px] ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}
           >
             {theme.title[language]}
           </h3>
-
-          {/* Lead Researchers (if exists) */}
           {theme.leadResearchers && (
-            <div className={`flex items-center gap-2 mb-5 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-              <Sparkles className="w-4 h-4 text-orange-500" />
-              <span className="text-sm font-medium">{theme.leadResearchers[language]}</span>
-            </div>
+            <p className={`mt-3 flex items-center gap-2 text-sm ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
+              <span className="h-1 w-1 rounded-full bg-orange-500" />
+              {theme.leadResearchers[language]}
+            </p>
           )}
-
-          {/* Overview */}
-          <p className={`text-base leading-relaxed mb-5 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+          <p className={`mt-5 text-[17px] leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
             {theme.overview[language]}
           </p>
-
-          {/* Description */}
-          <p className={`text-base leading-relaxed mb-8 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+          <p className={`mt-4 text-base leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             {theme.description[language]}
           </p>
 
-          {/* Example Topics Section with Expand/Collapse */}
-          <div className={`border-t pt-6 ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className={`flex items-center justify-between w-full text-left mb-2 transition-colors ${
-                isDark ? 'text-orange-400 hover:text-orange-300' : 'text-orange-600 hover:text-orange-700'
-              }`}
-            >
-              <h4 className="text-sm font-semibold uppercase tracking-wider flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                {language === 'EN' ? 'Research Topics' : '研究トピック'}
-                <span className={`text-xs font-normal ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
-                  ({theme.exampleTopics[language].length})
-                </span>
-              </h4>
-              <motion.div
-                animate={{ rotate: isExpanded ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ChevronDown className="w-5 h-5" />
-              </motion.div>
-            </button>
-
-            <AnimatePresence>
-              {isExpanded && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="overflow-hidden"
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 pt-4">
-                    {theme.exampleTopics[language].map((topic, idx) => (
-                      <div
-                        key={idx}
-                        className={`flex items-start gap-3 p-4 rounded-xl border transition-colors ${
-                          isDark
-                            ? 'bg-white/[0.02] border-white/10 hover:border-white/20'
-                            : 'bg-slate-50 border-slate-200 hover:border-slate-300'
-                        }`}
-                      >
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
-                        <span className={`text-sm leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                          {topic}
-                        </span>
-                      </div>
-                    ))}
+          {topics.length > 0 && (
+            <div className={`mt-7 border-t pt-6 ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
+              <p className={`mb-4 text-xs font-semibold uppercase tracking-[0.18em] ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
+                {language === 'EN' ? 'Selected topics' : '主な研究トピック'}
+              </p>
+              <div className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+                {topics.map((topic, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-orange-500" />
+                    <span className={`text-sm leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                      {topic}
+                    </span>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

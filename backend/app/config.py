@@ -27,6 +27,10 @@ class Settings(BaseSettings):
     upload_url_prefix: str = "/uploads"
     max_upload_mb: int = 8
 
+    # OpenAlex publication auto-sync (Prof. Keigo Arai)
+    openalex_author_id: str = "A5026665424"
+    openalex_mailto: str = "admin@qig-lab.net"
+
     @property
     def cors_origin_list(self) -> list[str]:
         value = (self.cors_origins or "").strip()

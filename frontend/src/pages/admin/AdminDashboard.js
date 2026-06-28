@@ -8,6 +8,7 @@ import {
   deleteNews,
   adminListPublications,
   deletePublication,
+  syncPublications,
   adminListTeam,
   deleteMember,
 } from '../../api/admin';
@@ -32,6 +33,8 @@ export const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(null); // { item } or { item: null } for new
   const [showPassword, setShowPassword] = useState(false);
+  const [syncing, setSyncing] = useState(false);
+  const [syncMsg, setSyncMsg] = useState('');
 
   useEffect(() => {
     me().then((d) => setUsername(d.username)).catch(() => {});
@@ -71,6 +74,20 @@ export const AdminDashboard = () => {
   const onSaved = () => {
     setEditing(null);
     load();
+  };
+
+  const doSync = async () => {
+    setSyncing(true);
+    setSyncMsg('');
+    try {
+      const r = await syncPublications();
+      setSyncMsg(`OpenAlex: ${r.added} added, ${r.updated} updated (${r.total} total).`);
+      load();
+    } catch (err) {
+      setSyncMsg(err?.response?.data?.detail || 'Sync failed.');
+    } finally {
+      setSyncing(false);
+    }
   };
 
   const renderForm = () => {
@@ -116,9 +133,21 @@ export const AdminDashboard = () => {
           ))}
         </div>
 
-        <div className="flex justify-between items-center mb-4">
-          <p className="text-neutral-400 text-sm">{loading ? 'Loading…' : `${rows.length} item(s)`}</p>
-          <Button onClick={() => setEditing({ item: null })}>+ Add {tab === 'news' ? 'news' : tab === 'publications' ? 'publication' : 'member'}</Button>
+        <div className="flex flex-wrap justify-between items-center gap-3 mb-4">
+          <p className="text-neutral-400 text-sm">
+            {loading ? 'Loading…' : `${rows.length} item(s)`}
+            {syncMsg && <span className="ml-3 text-orange-400">{syncMsg}</span>}
+          </p>
+          <div className="flex items-center gap-2">
+            {tab === 'publications' && (
+              <Button variant="secondary" onClick={doSync} disabled={syncing}>
+                {syncing ? 'Syncing…' : 'Sync from OpenAlex'}
+              </Button>
+            )}
+            <Button onClick={() => setEditing({ item: null })}>
+              + Add {tab === 'news' ? 'news' : tab === 'publications' ? 'publication' : 'member'}
+            </Button>
+          </div>
         </div>
 
         {/* List */}

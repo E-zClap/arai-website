@@ -75,8 +75,6 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         ) : (
           <ProfilePlaceholder name={member.name} position={member.position} size="large" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/40 to-transparent" />
-
         {/* Professional Status Badge */}
         <div className="absolute top-4 right-4">
           <div className="bg-orange-500/10 backdrop-blur-md rounded-full px-3 py-1 border border-orange-500/30">
@@ -89,37 +87,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
           </div>
         </div>
 
-        {/* Join Date, Period, or Academic Status */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="bg-white/[0.06] backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
-            <div className="flex items-center justify-between">
-              {(member.joinDate || member.period) && (
-                <div className="flex items-center space-x-2">
-                  <Calendar size={14} className="text-orange-500" />
-                  <span className="text-slate-300 text-sm font-medium">
-                    {member.period ?
-                      (typeof member.period === 'object' ? member.period[language] || member.period.EN : member.period) :
-                      `${language === 'EN' ? 'Since' : '着任'} ${member.joinDate}`
-                    }
-                  </span>
-                </div>
-              )}
-              {(member.publications || member.yearsOfExperience) && (
-                <div className="flex items-center space-x-2">
-                  <BookOpen size={14} className="text-orange-500" />
-                  <span className="text-slate-300 text-sm font-medium">
-                    {member.publications ?
-                      `${member.publications} ${language === 'EN' ? 'Publications' : '論文'}` :
-                      `${member.yearsOfExperience} ${language === 'EN' ? 'Years' : '年間'}`
-                    }
-                  </span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
       </div>
-      
+
       {/* Enhanced Content Section */}
       <div className="p-6 space-y-6">
         {/* Name and Title */}

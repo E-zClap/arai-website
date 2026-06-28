@@ -7,8 +7,18 @@ from ..deps import get_current_admin
 from ..models import Publication
 from ..schemas import PublicationIn
 from ..serializers import publication_to_dict
+from ..services.openalex import sync_publications
 
 router = APIRouter(prefix="/api/publications", tags=["publications"])
+
+
+@router.post("/sync", dependencies=[Depends(get_current_admin)])
+def sync_from_openalex(db: Session = Depends(get_db)):
+    """Import/refresh Prof. Arai's publications from OpenAlex (admin only)."""
+    try:
+        return sync_publications(db)
+    except Exception as exc:  # network / parsing issues
+        raise HTTPException(status_code=502, detail=f"OpenAlex sync failed: {exc}")
 
 
 def _apply(p: Publication, payload: PublicationIn) -> None:
