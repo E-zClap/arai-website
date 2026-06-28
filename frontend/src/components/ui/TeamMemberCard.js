@@ -45,8 +45,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         type: "spring",
         stiffness: 100
       }}
-      className="bg-dark-gray-900/80 backdrop-blur-2xl rounded-3xl overflow-hidden border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
-      whileHover={{ y: -10, scale: 1.02 }}
+      className="bg-white/[0.03] rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-colors duration-300 group"
+      whileHover={{ y: -4 }}
     >
       {/* Premium Image Section */}
       <div className="relative h-80 bg-cover bg-center overflow-hidden">
@@ -60,8 +60,8 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               height={320}
               loading="lazy"
               decoding="async"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.6 }}
               onError={(e) => {
                 // Hide image and show placeholder on error
                 e.target.style.display = 'none';
@@ -75,32 +75,29 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         ) : (
           <ProfilePlaceholder name={member.name} position={member.position} size="large" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
-        
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/40 to-transparent" />
+
         {/* Professional Status Badge */}
-        <motion.div 
-          className="absolute top-6 right-6"
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="bg-gradient-to-r from-orange-600/90 to-orange-500/90 backdrop-blur-xl rounded-2xl px-4 py-2 border border-white/20 shadow-2xl">
-            <span className="text-white text-xs font-bold tracking-wider">
-              {member.position && typeof member.position === 'object' ? 
-                (member.position[language] || member.position.EN) : 
+        <div className="absolute top-4 right-4">
+          <div className="bg-orange-500/10 backdrop-blur-md rounded-full px-3 py-1 border border-orange-500/30">
+            <span className="text-orange-400 text-xs font-semibold tracking-wide">
+              {member.position && typeof member.position === 'object' ?
+                (member.position[language] || member.position.EN) :
                 (member.position || 'Team Member')
               }
             </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Join Date, Period, or Academic Status */}
-        <div className="absolute bottom-6 left-6 right-6">
-          <div className="bg-dark-gray-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-orange-500/30">
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="bg-white/[0.06] backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
             <div className="flex items-center justify-between">
               {(member.joinDate || member.period) && (
                 <div className="flex items-center space-x-2">
                   <Calendar size={14} className="text-orange-500" />
-                  <span className="text-orange-300 text-sm font-medium">
-                    {member.period ? 
+                  <span className="text-slate-300 text-sm font-medium">
+                    {member.period ?
                       (typeof member.period === 'object' ? member.period[language] || member.period.EN : member.period) :
                       `${language === 'EN' ? 'Since' : '着任'} ${member.joinDate}`
                     }
@@ -109,9 +106,9 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
               )}
               {(member.publications || member.yearsOfExperience) && (
                 <div className="flex items-center space-x-2">
-                  <BookOpen size={14} className="text-orange-400" />
-                  <span className="text-orange-300 text-sm font-medium">
-                    {member.publications ? 
+                  <BookOpen size={14} className="text-orange-500" />
+                  <span className="text-slate-300 text-sm font-medium">
+                    {member.publications ?
                       `${member.publications} ${language === 'EN' ? 'Publications' : '論文'}` :
                       `${member.yearsOfExperience} ${language === 'EN' ? 'Years' : '年間'}`
                     }
@@ -124,41 +121,33 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
       </div>
       
       {/* Enhanced Content Section */}
-      <div className="p-8 space-y-6">
+      <div className="p-6 space-y-6">
         {/* Name and Title */}
         <div className="text-center space-y-3">
           {isKeigoArai && setCurrentPage ? (
-            <motion.button
+            <button
               onClick={handleNameClick}
-              className="group text-2xl font-bold text-orange-300 hover:text-orange-200 transition-all duration-500 cursor-pointer flex items-center justify-center gap-3"
+              className="group/name text-lg sm:text-xl font-semibold tracking-tight text-white hover:text-orange-400 transition-colors duration-300 cursor-pointer inline-flex items-center justify-center gap-2"
               style={{ fontFamily: '"Inter", system-ui' }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
-              <span className="border-b-2 border-orange-500/50 group-hover:border-orange-300 pb-1">
-                {member.name && typeof member.name === 'object' ? 
-                  (member.name[language] || member.name.EN) : 
+              <span>
+                {member.name && typeof member.name === 'object' ?
+                  (member.name[language] || member.name.EN) :
                   (member.name || 'Team Member')
                 }
               </span>
-              <motion.div
-                animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <ExternalLink size={20} className="opacity-70 group-hover:opacity-100 transition-opacity" />
-              </motion.div>
-            </motion.button>
+              <ExternalLink size={16} className="text-orange-500 opacity-70 group-hover/name:opacity-100 transition-opacity" />
+            </button>
           ) : (
-            <motion.h3 
-              className="text-2xl font-bold text-white"
+            <h3
+              className="text-lg sm:text-xl font-semibold tracking-tight text-white"
               style={{ fontFamily: '"Inter", system-ui' }}
-              whileHover={{ scale: 1.02 }}
             >
-              {member.name && typeof member.name === 'object' ? 
-                (member.name[language] || member.name.EN) : 
+              {member.name && typeof member.name === 'object' ?
+                (member.name[language] || member.name.EN) :
                 (member.name || 'Team Member')
               }
-            </motion.h3>
+            </h3>
           )}
         </div>
         
@@ -166,9 +155,9 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
         {(member.education || member.expertise || member.responsibilities || member.researchActivities) && (
           <div className="space-y-4">
             <div className="flex items-center space-x-2 mb-3">
-              <GraduationCap size={18} className="text-orange-500" />
-              <h4 className="text-sm font-semibold text-slate-300 tracking-wider uppercase">
-                {member.education 
+              <GraduationCap size={16} className="text-orange-500" />
+              <h4 className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em]">
+                {member.education
                   ? (language === 'EN' ? 'Academic Background' : '学術的背景')
                   : member.expertise
                   ? (language === 'EN' ? 'Expertise' : '専門知識')
@@ -178,23 +167,22 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 }
               </h4>
             </div>
-            
+
             {/* Show first 2 entries as preview */}
             <div className="space-y-3">
               {(() => {
                 const dataSource = member.education || member.expertise || member.responsibilities || member.researchActivities;
                 const items = typeof dataSource === 'object' && dataSource[language] ? dataSource[language] : dataSource;
                 return items.slice(0, 2).map((item, idx) => (
-                  <motion.div
+                  <div
                     key={idx}
-                    className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/50 border border-dark-gray-700/30 hover:border-orange-500/40 transition-all duration-300"
-                    whileHover={{ scale: 1.01, backgroundColor: "rgba(30, 64, 175, 0.05)" }}
+                    className="flex items-start space-x-3 p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors duration-300"
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
+                    <p className="text-slate-400 text-sm leading-relaxed" style={{ fontFamily: '"Inter", system-ui' }}>
                       {item}
                     </p>
-                  </motion.div>
+                  </div>
                 ));
               })()}
             </div>
@@ -203,52 +191,38 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
 
         {/* Professional Status Indicator */}
         <div className="flex justify-center">
-          <motion.div 
-            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-slate-800/60 to-slate-700/40 rounded-full border border-dark-gray-600/40"
-            animate={{
-              boxShadow: [
-                "0 0 20px rgba(20, 184, 166, 0.1)",
-                "0 0 30px rgba(20, 184, 166, 0.2)",
-                "0 0 20px rgba(20, 184, 166, 0.1)"
-              ]
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <motion.div 
-              className="w-2.5 h-2.5 bg-orange-400 rounded-full mr-3"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-slate-300 text-sm font-medium">
+          <div className="inline-flex items-center px-3 py-1.5 bg-orange-500/10 rounded-full border border-orange-500/30">
+            <div className="w-2 h-2 bg-orange-500 rounded-full mr-2.5" />
+            <span className="text-orange-400 text-xs font-semibold tracking-wide">
               {language === 'EN' ? 'Active Researcher' : 'アクティブ研究者'}
             </span>
-          </motion.div>
+          </div>
         </div>
 
         {/* Expandable Details Section */}
-        <div className="border-t border-dark-gray-700/50 pt-6">
+        <div className="border-t border-white/10 pt-6">
           <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               setIsExpanded(prev => !prev);
             }}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
+            className="w-full flex items-center justify-between p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors duration-300 group/toggle"
           >
             <div className="flex items-center space-x-3">
-              <div 
+              <div
                 style={{
                   transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                   transition: 'transform 0.3s ease-in-out'
                 }}
               >
-                <ChevronDown size={20} className="text-orange-500" />
+                <ChevronDown size={18} className="text-orange-500" />
               </div>
-              <span className="text-white font-semibold">
+              <span className="text-white text-sm font-semibold">
                 {language === 'EN' ? 'Full Profile' : '完全プロフィール'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
+            <ChevronRight size={18} className="text-slate-500 group-hover/toggle:text-orange-500 transition-colors" />
           </button>
 
           <AnimatePresence mode="wait">
@@ -271,12 +245,12 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                   
                   return (
                     <div
-                      className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                      className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                     >
                       <div className="flex items-center space-x-2 mb-4">
                         <GraduationCap size={18} className="text-orange-500" />
-                        <h4 className="text-lg font-semibold text-white">
-                          {member.education 
+                        <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
+                          {member.education
                             ? (language === 'EN' ? 'Complete Education' : '完全な教育歴')
                             : member.expertise
                             ? (language === 'EN' ? 'Complete Expertise' : '完全な専門知識')
@@ -288,9 +262,9 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                       </div>
                       <div className="space-y-3">
                         {items.slice(2).map((item, idx) => (
-                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-dark-gray-850/40 border border-dark-gray-700/30">
-                            <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
-                            <p className="text-slate-300 text-sm leading-relaxed">{item}</p>
+                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-white/[0.02] border border-white/10">
+                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
+                            <p className="text-slate-400 text-sm leading-relaxed">{item}</p>
                           </div>
                         ))}
                       </div>
@@ -301,23 +275,23 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 {/* Research Interests */}
                 {member.researchInterests && (
                   <div
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Target size={18} className="text-orange-400" />
-                      <h4 className="text-lg font-semibold text-white">
+                      <Target size={18} className="text-orange-500" />
+                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
                         {language === 'EN' ? 'Research Interests' : '研究関心'}
                       </h4>
                     </div>
                     <div className="grid gap-2">
                       {(() => {
-                        const interests = typeof member.researchInterests === 'object' && member.researchInterests[language] 
-                          ? member.researchInterests[language] 
+                        const interests = typeof member.researchInterests === 'object' && member.researchInterests[language]
+                          ? member.researchInterests[language]
                           : member.researchInterests;
                         return interests.map((interest, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-dark-gray-800/30">
-                            <div className="w-1.5 h-1.5 bg-orange-400 rounded-full" />
-                            <span className="text-slate-300 text-sm">{interest}</span>
+                          <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-white/[0.02]">
+                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                            <span className="text-slate-400 text-sm">{interest}</span>
                           </div>
                         ));
                       })()}
@@ -328,23 +302,23 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 {/* Research Focus */}
                 {member.researchFocus && (
                   <div
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Target size={18} className="text-yellow-400" />
-                      <h4 className="text-lg font-semibold text-white">
+                      <Target size={18} className="text-orange-500" />
+                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
                         {language === 'EN' ? 'Research Focus' : '研究焦点'}
                       </h4>
                     </div>
                     <div className="grid gap-2">
                       {(() => {
-                        const focus = typeof member.researchFocus === 'object' && member.researchFocus[language] 
-                          ? member.researchFocus[language] 
+                        const focus = typeof member.researchFocus === 'object' && member.researchFocus[language]
+                          ? member.researchFocus[language]
                           : member.researchFocus;
                         return focus.map((item, idx) => (
-                          <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-dark-gray-800/30">
-                            <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full" />
-                            <span className="text-slate-300 text-sm">{item}</span>
+                          <div key={idx} className="flex items-center space-x-2 p-2 rounded-lg bg-white/[0.02]">
+                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                            <span className="text-slate-400 text-sm">{item}</span>
                           </div>
                         ));
                       })()}
@@ -355,23 +329,23 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 {/* Achievements */}
                 {member.achievements && (
                   <div
-                    className="p-6 rounded-2xl bg-gradient-to-br from-orange-900/20 to-orange-900/20 border border-orange-600/30"
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                   >
                     <div className="flex items-center space-x-2 mb-4">
                       <Award size={18} className="text-orange-500" />
-                      <h4 className="text-lg font-semibold text-white">
+                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
                         {language === 'EN' ? 'Achievements' : '業績'}
                       </h4>
                     </div>
                     <div className="grid gap-3">
                       {(() => {
-                        const achievements = typeof member.achievements === 'object' && member.achievements[language] 
-                          ? member.achievements[language] 
+                        const achievements = typeof member.achievements === 'object' && member.achievements[language]
+                          ? member.achievements[language]
                           : member.achievements;
                         return achievements.map((achievement, idx) => (
-                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-orange-900/20 border border-orange-600/20">
+                          <div key={idx} className="flex items-start space-x-3 p-3 rounded-xl bg-white/[0.02] border border-white/10">
                             <Award size={16} className="text-orange-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-slate-200 text-sm leading-relaxed">{achievement}</span>
+                            <span className="text-slate-300 text-sm leading-relaxed">{achievement}</span>
                           </div>
                         ));
                       })()}
@@ -382,21 +356,21 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 {/* Skills */}
                 {member.skills && (
                   <div
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <User size={18} className="text-orange-400" />
-                      <h4 className="text-lg font-semibold text-white">
+                      <User size={18} className="text-orange-500" />
+                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
                         {language === 'EN' ? 'Skills & Expertise' : 'スキル・専門性'}
                       </h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {(() => {
-                        const skills = typeof member.skills === 'object' && member.skills[language] 
-                          ? member.skills[language] 
+                        const skills = typeof member.skills === 'object' && member.skills[language]
+                          ? member.skills[language]
                           : member.skills;
                         return skills.map((skill, idx) => (
-                          <span key={idx} className="px-3 py-1.5 bg-orange-900/30 text-orange-300 text-xs rounded-full border border-orange-600/30">
+                          <span key={idx} className="px-3 py-1.5 bg-orange-500/10 text-orange-400 text-xs font-medium rounded-full border border-orange-500/30">
                             {skill}
                           </span>
                         ));
@@ -408,17 +382,17 @@ export const TeamMemberCard = ({ member, index, language, setCurrentPage }) => {
                 {/* Contact Information */}
                 {member.contact && (
                   <div
-                    className="p-6 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30"
+                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10"
                   >
                     <div className="flex items-center space-x-2 mb-4">
-                      <Mail size={18} className="text-orange-400" />
-                      <h4 className="text-lg font-semibold text-white">
+                      <Mail size={18} className="text-orange-500" />
+                      <h4 className="text-lg sm:text-xl font-semibold tracking-tight text-white">
                         {language === 'EN' ? 'Contact' : '連絡先'}
                       </h4>
                     </div>
-                    <a 
+                    <a
                       href={`mailto:${typeof member.contact === 'object' && member.contact[language] ? member.contact[language] : member.contact}`}
-                      className="text-orange-400 hover:text-orange-300 transition-colors text-sm"
+                      className="text-orange-500 hover:text-orange-400 transition-colors text-sm"
                     >
                       {typeof member.contact === 'object' && member.contact[language] ? member.contact[language] : member.contact}
                     </a>

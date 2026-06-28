@@ -9,6 +9,7 @@ import { usePerformanceSettings } from './hooks/usePerformanceSettings';
 // Import UI Components - Sidebar and FloatingControls are essential, load immediately
 import { Sidebar } from './components/ui/Sidebar';
 import { FloatingControls } from './components/ui/FloatingControls';
+import { Footer } from './components/ui/Footer';
 
 // Import SEO Component - Small, load immediately
 import { SEO } from './components/seo/SEO';
@@ -183,9 +184,9 @@ function App() {
         isDark ? 'text-white' : 'bg-gray-50 text-gray-900'
       }`}
       style={{
-        background: isDark 
-          ? 'linear-gradient(135deg, #0a0a0a 0%, #0f1a2e 25%, #0d1117 50%, #1a1a1a 75%, #0a0a0a 100%)'
-          : undefined
+        background: isDark
+          ? 'radial-gradient(1100px 520px at 82% -8%, rgba(234,88,12,0.07), transparent 60%), #0a0a0c'
+          : '#f7f8fa'
       }}
     >
       <a
@@ -195,61 +196,15 @@ function App() {
         Skip to content
       </a>
 
-      {/* Sophisticated Scientific Background Layers */}
-      {isDark && perf.enableBackgroundEffects && (
-        <>
-          {/* Layer 1: Animated Gradient Mesh */}
-          <div className="fixed inset-0 opacity-40 pointer-events-none">
-            <div 
-              className="absolute inset-0 animate-gradient-shift"
-              style={{
-                background: 'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(234, 88, 12, 0.12) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%)',
-                backgroundSize: '200% 200%',
-                animation: 'gradient-shift 20s ease infinite'
-              }}
-            />
-          </div>
-          
-          {/* Layer 2: Hexagonal Diamond Lattice Pattern */}
-          <div className="fixed inset-0 opacity-[0.03] pointer-events-none">
-            <div 
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: '60px 60px'
-              }}
-            />
-          </div>
-          
-          {/* Layer 3: Subtle Quantum Grid */}
-          <div className="fixed inset-0 opacity-[0.02] pointer-events-none">
-            <div 
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'linear-gradient(rgba(234, 88, 12, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.3) 1px, transparent 1px)',
-                backgroundSize: '100px 100px'
-              }}
-            />
-          </div>
-          
-          {/* Layer 4: Radial Glow Effects */}
-          <div className="fixed inset-0 opacity-20 pointer-events-none">
-            <div 
-              className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%)',
-                animation: 'pulse-glow 8s ease-in-out infinite'
-              }}
-            />
-            <div 
-              className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl"
-              style={{
-                background: 'radial-gradient(circle, rgba(234, 88, 12, 0.3) 0%, transparent 70%)',
-                animation: 'pulse-glow 10s ease-in-out infinite reverse'
-              }}
-            />
-          </div>
-        </>
+      {/* Single subtle, static diamond-lattice texture (no animation, no glow) */}
+      {isDark && (
+        <div
+          className="fixed inset-0 pointer-events-none opacity-[0.022]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}
+        />
       )}
       
       {/* Sidebar */}
@@ -355,6 +310,9 @@ function App() {
           </AnimatePresence>
         </Suspense>
       </main>
+      <div className={sidebarOpen ? 'lg:ml-80 transition-all duration-150' : 'ml-0'}>
+        <Footer isDark={isDark} language={language} setCurrentPage={setCurrentPage} />
+      </div>
     </div>
     </MotionConfig>
   );

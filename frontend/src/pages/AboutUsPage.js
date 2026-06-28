@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Target, 
-  Eye, 
-  Compass, 
-  Users, 
-  Lightbulb, 
+import {
+  Target,
+  Eye,
+  Compass,
+  Users,
+  Lightbulb,
   TrendingUp,
   Heart,
   Microscope,
@@ -21,6 +21,7 @@ import {
   Battery
 } from 'lucide-react';
 import { QuantumField } from '../components/animations/QuantumField';
+import { PageHeader } from '../components/ui/PageHeader';
 
 // About Us Page Component
 export const AboutUsPage = ({ language, isDark }) => {
@@ -174,163 +175,104 @@ export const AboutUsPage = ({ language, isDark }) => {
     }
   ];
 
+  // Refined Dark surfaces
+  const cardSurface = isDark
+    ? 'bg-white/[0.03] border border-white/10 hover:border-white/20'
+    : 'bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300';
+  const panelSurface = isDark
+    ? 'bg-white/[0.03] border border-white/10'
+    : 'bg-white border border-slate-200 shadow-sm';
+  const headingColor = isDark ? 'text-white' : 'text-slate-900';
+  const bodyColor = isDark ? 'text-slate-400' : 'text-slate-600';
+  const eyebrowClass = 'text-orange-500 text-xs font-semibold uppercase tracking-[0.22em] mb-3';
+  const iconChip = isDark ? 'bg-orange-500/10' : 'bg-orange-100';
+
   return (
-    <div className={`min-h-screen py-24 px-6 relative overflow-hidden ${
-      isDark ? 'bg-dark-gray-950' : 'bg-gray-50'
-    }`}>
-      <div className={`absolute inset-0 ${
-        isDark 
-          ? 'bg-gradient-to-br from-slate-900/20 via-transparent to-orange-900/20'
-          : 'bg-gradient-to-br from-slate-100/40 via-transparent to-orange-100/40'
-      }`} />
+    <div className="relative min-h-screen overflow-hidden">
       <QuantumField density={0.9} />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block mb-6"
-          >
-            <div className={`px-6 py-2 rounded-full border backdrop-blur-sm ${
-              isDark 
-                ? 'bg-orange-600/10 border-orange-600/30 text-orange-400' 
-                : 'bg-orange-100 border-orange-300 text-orange-700'
-            }`}>
-              <span className="font-semibold">
-                {language === 'EN' ? 'About Our Laboratory' : '私たちの研究室について'}
-              </span>
-            </div>
-          </motion.div>
-          
-          <h1 className={`text-6xl md:text-7xl font-bold mb-6 ${
-            isDark ? 'text-white' : 'text-gray-800'
-          }`}>
-            <span className="bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
-              {language === 'EN' ? 'Who We Are' : '私たちについて'}
-            </span>
-          </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto mb-8" />
-          <p className={`text-xl max-w-4xl mx-auto leading-relaxed ${
-            isDark ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            {language === 'EN' 
-              ? "We are a quantum informatics research group dedicated to transforming quantum science from a laboratory curiosity into a technological and intellectual infrastructure for society."
-              : "私たちは、量子科学を研究室内の探求から社会の技術的・知的インフラストラクチャへと変革することを目指す量子インフォマティクス研究グループです。"
-            }
-          </p>
-        </motion.div>
+
+      <div className="max-w-4xl mx-auto px-6 py-28 sm:py-32 relative z-10">
+        {/* Page Header */}
+        <PageHeader
+          isDark={isDark}
+          eyebrow={language === 'EN' ? 'Who we are' : '私たちについて'}
+          title={language === 'EN' ? 'About Us' : '私たちについて'}
+          subtitle={language === 'EN'
+            ? "We are a quantum informatics research group dedicated to transforming quantum science from a laboratory curiosity into a technological and intellectual infrastructure for society."
+            : "私たちは、量子科学を研究室内の探求から社会の技術的・知的インフラストラクチャへと変革することを目指す量子インフォマティクス研究グループです。"
+          }
+        />
 
         {/* Purpose Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-20"
         >
-          <div className="flex items-center mb-8">
-            <Target className="text-orange-600 mr-4" size={40} />
-            <h2 className={`text-4xl font-bold ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
-              {language === 'EN' ? 'Purpose – Why we exist' : '目的 – 私たちが存在する理由'}
+          <p className={eyebrowClass}>{language === 'EN' ? 'Purpose' : '目的'}</p>
+          <div className="flex items-center gap-3 mb-8">
+            <Target className="text-orange-500" size={24} />
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight ${headingColor}`}>
+              {language === 'EN' ? 'Why we exist' : '私たちが存在する理由'}
             </h2>
           </div>
 
-          <div className={`backdrop-blur-lg rounded-3xl p-10 border relative overflow-hidden ${
-            isDark 
-              ? 'bg-gradient-to-br from-orange-950/30 via-dark-gray-950/40 to-dark-gray-950/40 border-orange-600/30'
-              : 'bg-white/70 border-orange-300/30 shadow-2xl'
-          }`}>
-            <motion.div
-              className="absolute top-0 right-0 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            
-            <div className="relative z-10">
-              <h3 className={`text-3xl font-bold mb-6 ${
-                isDark ? 'text-orange-400' : 'text-orange-600'
-              }`}>
-                {language === 'EN' 
-                  ? 'Unlocking the potential of quantum science.'
-                  : '量子科学の可能性を解き放つ。'
-                }
-              </h3>
-              
-              <p className={`text-xl leading-relaxed mb-6 ${
-                isDark ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+          <div className={`rounded-2xl p-8 ${panelSurface}`}>
+            <h3 className="text-lg sm:text-xl font-semibold tracking-tight mb-5 text-orange-500">
+              {language === 'EN'
+                ? 'Unlocking the potential of quantum science.'
+                : '量子科学の可能性を解き放つ。'
+              }
+            </h3>
+
+            <p className={`text-base leading-relaxed mb-6 ${headingColor}`}>
+              {language === 'EN'
+                ? "To capture quantum properties that humanity has not yet fully harnessed, and to release their power to change how we see and shape the world."
+                : "人類がまだ十分に活用していない量子特性を捉え、世界の見方や形作り方を変える力を解き放つこと。"
+              }
+            </p>
+
+            <div className={`pl-6 border-l-2 border-orange-500/30 space-y-4 ${bodyColor}`}>
+              <p className="text-base leading-relaxed">
                 {language === 'EN'
-                  ? "To capture quantum properties that humanity has not yet fully harnessed, and to release their power to change how we see and shape the world."
-                  : "人類がまだ十分に活用していない量子特性を捉え、世界の見方や形作り方を変える力を解き放つこと。"
+                  ? 'By advancing quantum sensing, quantum metrology, and quantum information processing, we aim to access "invisible" quantities and complexities that were previously out of reach.'
+                  : "量子センシング、量子計測、量子情報処理を発展させることで、これまで到達できなかった「見えない」量や複雑性へのアクセスを目指しています。"
                 }
               </p>
-
-              <div className={`pl-6 border-l-4 border-orange-600 space-y-4 ${
-                isDark ? 'text-gray-300' : 'text-gray-600'
-              }`}>
-                <p className="text-lg leading-relaxed">
-                  {language === 'EN'
-                    ? 'By advancing quantum sensing, quantum metrology, and quantum information processing, we aim to access "invisible" quantities and complexities that were previously out of reach.'
-                    : "量子センシング、量子計測、量子情報処理を発展させることで、これまで到達できなかった「見えない」量や複雑性へのアクセスを目指しています。"
-                  }
-                </p>
-                <p className="text-lg leading-relaxed">
-                  {language === 'EN'
-                    ? "Our purpose is to turn quantum science from a niche for specialists into a shared intellectual and technological infrastructure for future society."
-                    : "私たちの目的は、量子科学を専門家の領域から、未来社会の共有された知的・技術的インフラストラクチャへと変えることです。"
-                  }
-                </p>
-              </div>
+              <p className="text-base leading-relaxed">
+                {language === 'EN'
+                  ? "Our purpose is to turn quantum science from a niche for specialists into a shared intellectual and technological infrastructure for future society."
+                  : "私たちの目的は、量子科学を専門家の領域から、未来社会の共有された知的・技術的インフラストラクチャへと変えることです。"
+                }
+              </p>
             </div>
           </div>
         </motion.div>
 
         {/* Vision Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-20"
         >
-          <div className="flex items-center mb-8">
-            <Eye className="text-orange-600 mr-4" size={40} />
-            <h2 className={`text-4xl font-bold ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
-              {language === 'EN' ? 'Vision – Where we want to go' : 'ビジョン – 私たちが目指す場所'}
+          <p className={eyebrowClass}>{language === 'EN' ? 'Vision' : 'ビジョン'}</p>
+          <div className="flex items-center gap-3 mb-8">
+            <Eye className="text-orange-500" size={24} />
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight ${headingColor}`}>
+              {language === 'EN' ? 'Where we want to go' : '私たちが目指す場所'}
             </h2>
           </div>
 
-          <div className={`backdrop-blur-lg rounded-3xl p-10 border mb-10 ${
-            isDark 
-              ? 'bg-dark-gray-950/40 border-orange-600/20'
-              : 'bg-white/70 border-orange-300/30 shadow-xl'
-          }`}>
-            <h3 className={`text-2xl font-semibold mb-4 ${
-              isDark ? 'text-orange-300' : 'text-orange-700'
-            }`}>
+          <div className={`rounded-2xl p-8 mb-8 ${panelSurface}`}>
+            <h3 className={`text-lg sm:text-xl font-semibold tracking-tight mb-4 ${headingColor}`}>
               {language === 'EN'
                 ? 'To extend how we describe and understand the world, from a quantum informatics perspective.'
                 : '量子インフォマティクスの視点から、世界を記述し理解する方法を拡張すること。'
               }
             </h3>
-            <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-base leading-relaxed ${bodyColor}`}>
               {language === 'EN'
                 ? 'We pursue this vision along two research directions:'
                 : 'このビジョンを2つの研究方向に沿って追求しています：'
@@ -338,36 +280,24 @@ export const AboutUsPage = ({ language, isDark }) => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {visionDirections.map((direction, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className={`backdrop-blur-lg rounded-3xl p-8 border group hover:scale-105 transition-all duration-300 ${
-                  isDark 
-                    ? 'bg-dark-gray-950/40 border-orange-600/20 hover:border-orange-600/40 hover:shadow-2xl hover:shadow-orange-600/10'
-                    : 'bg-white/70 border-orange-300/30 hover:border-orange-400/50 shadow-xl hover:shadow-2xl'
-                }`}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                className={`rounded-2xl p-6 transition-colors ${cardSurface}`}
               >
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
-                  isDark 
-                    ? 'bg-orange-600/10 group-hover:bg-orange-600/20' 
-                    : 'bg-orange-100 group-hover:bg-orange-200'
-                }`}>
-                  <direction.icon className="text-orange-600" size={32} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${iconChip}`}>
+                  <direction.icon className="text-orange-500" size={24} />
                 </div>
-                
-                <h4 className={`text-xl font-semibold mb-4 ${
-                  isDark ? 'text-white' : 'text-gray-800'
-                }`}>
+
+                <h4 className={`text-lg font-semibold tracking-tight mb-3 ${headingColor}`}>
                   {direction.title[language]}
                 </h4>
-                
-                <p className={`leading-relaxed ${
-                  isDark ? 'text-gray-300' : 'text-gray-600'
-                }`}>
+
+                <p className={`text-base leading-relaxed ${bodyColor}`}>
                   {direction.description[language]}
                 </p>
               </motion.div>
@@ -377,34 +307,27 @@ export const AboutUsPage = ({ language, isDark }) => {
 
         {/* Mission Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-20"
         >
-          <div className="flex items-center mb-8">
-            <Compass className="text-orange-600 mr-4" size={40} />
-            <h2 className={`text-4xl font-bold ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
-              {language === 'EN' ? 'Mission – What we do' : 'ミッション – 私たちが行うこと'}
+          <p className={eyebrowClass}>{language === 'EN' ? 'Mission' : 'ミッション'}</p>
+          <div className="flex items-center gap-3 mb-8">
+            <Compass className="text-orange-500" size={24} />
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight ${headingColor}`}>
+              {language === 'EN' ? 'What we do' : '私たちが行うこと'}
             </h2>
           </div>
 
-          <div className={`backdrop-blur-lg rounded-3xl p-10 border mb-10 ${
-            isDark 
-              ? 'bg-dark-gray-950/40 border-orange-600/20'
-              : 'bg-white/70 border-orange-300/30 shadow-xl'
-          }`}>
-            <h3 className={`text-2xl font-semibold mb-4 ${
-              isDark ? 'text-orange-300' : 'text-orange-700'
-            }`}>
+          <div className={`rounded-2xl p-8 mb-8 ${panelSurface}`}>
+            <h3 className={`text-lg sm:text-xl font-semibold tracking-tight mb-4 ${headingColor}`}>
               {language === 'EN'
                 ? 'To practice research and education in quantum informatics that help lead the next-generation society.'
                 : '次世代社会をリードするための量子インフォマティクスの研究と教育を実践すること。'
               }
             </h3>
-            <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-base leading-relaxed ${bodyColor}`}>
               {language === 'EN'
                 ? 'We translate this mission into five lines of action:'
                 : 'このミッションを5つの行動方針に展開します：'
@@ -412,41 +335,29 @@ export const AboutUsPage = ({ language, isDark }) => {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             {missionActions.map((action, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                className={`backdrop-blur-lg rounded-3xl p-8 border group hover:scale-[1.02] transition-all duration-300 ${
-                  isDark 
-                    ? 'bg-dark-gray-950/40 border-orange-600/20 hover:border-orange-600/40 hover:shadow-2xl hover:shadow-orange-600/10'
-                    : 'bg-white/70 border-orange-300/30 hover:border-orange-400/50 shadow-xl hover:shadow-2xl'
-                }`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
+                className={`rounded-2xl p-6 transition-colors ${cardSurface}`}
               >
-                <div className="flex items-start gap-6">
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold ${
-                    isDark 
-                      ? 'bg-gradient-to-br from-orange-600 to-orange-500 text-white shadow-lg shadow-orange-600/30' 
-                      : 'bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-lg'
-                  }`}>
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-semibold bg-orange-500/10 text-orange-500">
                     {action.number}
                   </div>
-                  
+
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <action.icon className="text-orange-600" size={28} />
-                      <h4 className={`text-xl font-semibold ${
-                        isDark ? 'text-white' : 'text-gray-800'
-                      }`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <action.icon className="text-orange-500" size={22} />
+                      <h4 className={`text-lg font-semibold tracking-tight ${headingColor}`}>
                         {action.title[language]}
                       </h4>
                     </div>
-                    
-                    <p className={`leading-relaxed ${
-                      isDark ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
+
+                    <p className={`text-base leading-relaxed ${bodyColor}`}>
                       {action.description[language]}
                     </p>
                   </div>
@@ -458,26 +369,21 @@ export const AboutUsPage = ({ language, isDark }) => {
 
         {/* Values Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
           className="mb-20"
         >
-          <div className="flex items-center mb-8">
-            <Heart className="text-orange-600 mr-4" size={40} />
-            <h2 className={`text-4xl font-bold ${
-              isDark ? 'text-white' : 'text-gray-800'
-            }`}>
-              {language === 'EN' ? 'Values – How we behave' : '価値観 – 私たちの行動規範'}
+          <p className={eyebrowClass}>{language === 'EN' ? 'Values' : '価値観'}</p>
+          <div className="flex items-center gap-3 mb-8">
+            <Heart className="text-orange-500" size={24} />
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight ${headingColor}`}>
+              {language === 'EN' ? 'How we behave' : '私たちの行動規範'}
             </h2>
           </div>
 
-          <div className={`backdrop-blur-lg rounded-3xl p-10 border mb-10 ${
-            isDark 
-              ? 'bg-dark-gray-950/40 border-orange-600/20'
-              : 'bg-white/70 border-orange-300/30 shadow-xl'
-          }`}>
-            <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className={`rounded-2xl p-8 mb-8 ${panelSurface}`}>
+            <p className={`text-base leading-relaxed ${bodyColor}`}>
               {language === 'EN'
                 ? 'We commit to the following seven values as our code of conduct:'
                 : '次の7つの価値観を行動規範として約束します：'
@@ -489,32 +395,20 @@ export const AboutUsPage = ({ language, isDark }) => {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 + index * 0.05 }}
-                className={`backdrop-blur-lg rounded-3xl p-6 border group hover:scale-105 transition-all duration-300 ${
-                  isDark 
-                    ? 'bg-dark-gray-950/40 border-orange-600/20 hover:border-orange-600/40 hover:shadow-2xl hover:shadow-orange-600/10'
-                    : 'bg-white/70 border-orange-300/30 hover:border-orange-400/50 shadow-xl hover:shadow-2xl'
-                }`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.3 + index * 0.05 }}
+                className={`rounded-2xl p-6 transition-colors ${cardSurface}`}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${
-                  isDark 
-                    ? 'bg-orange-600/10 group-hover:bg-orange-600/20' 
-                    : 'bg-orange-100 group-hover:bg-orange-200'
-                }`}>
-                  <value.icon className="text-orange-600" size={28} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconChip}`}>
+                  <value.icon className="text-orange-500" size={22} />
                 </div>
-                
-                <h4 className={`text-lg font-semibold mb-3 ${
-                  isDark ? 'text-white' : 'text-gray-800'
-                }`}>
+
+                <h4 className={`text-lg font-semibold tracking-tight mb-3 ${headingColor}`}>
                   {value.title[language]}
                 </h4>
-                
-                <p className={`text-sm leading-relaxed ${
-                  isDark ? 'text-gray-300' : 'text-gray-600'
-                }`}>
+
+                <p className={`text-sm leading-relaxed ${bodyColor}`}>
                   {value.description[language]}
                 </p>
               </motion.div>
@@ -524,19 +418,13 @@ export const AboutUsPage = ({ language, isDark }) => {
 
         {/* Closing Statement */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className={`backdrop-blur-lg rounded-3xl p-10 border text-center ${
-            isDark 
-              ? 'bg-gradient-to-br from-orange-950/30 via-dark-gray-950/40 to-dark-gray-950/40 border-orange-600/30'
-              : 'bg-white/70 border-orange-300/30 shadow-2xl'
-          }`}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className={`rounded-2xl p-8 ${panelSurface}`}
         >
-          <Lightbulb className="text-orange-600 mx-auto mb-6" size={48} />
-          <p className={`text-xl leading-relaxed ${
-            isDark ? 'text-gray-200' : 'text-gray-700'
-          }`}>
+          <Lightbulb className="text-orange-500 mb-5" size={28} />
+          <p className={`text-base leading-relaxed ${headingColor}`}>
             {language === 'EN'
               ? "Together, we are building a future where quantum science serves as a foundation for understanding and shaping our world."
               : "私たちは共に、量子科学が世界を理解し形作るための基盤となる未来を築いています。"

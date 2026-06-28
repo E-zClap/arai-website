@@ -10,10 +10,10 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
 
   return (
     <section className={`py-24 px-8 ${
-      isDark ? 'bg-dark-gray-900/30' : 'bg-white/95'
+      isDark ? 'bg-white/[0.02]' : 'bg-white/95'
     }`}>
       <div className="max-w-7xl mx-auto">
-        {/* Enhanced Section Header */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,29 +21,23 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
-            isDark 
-              ? 'backdrop-blur-sm bg-dark-gray-850/60 border-dark-gray-600/30 text-slate-300'
-              : 'bg-slate-50 border-slate-200/50 text-slate-700 shadow-lg'
-          }`}>
-            <BookOpen className="mr-3" size={20} />
-            <span className="text-sm font-medium tracking-wider uppercase">
-              {language === 'EN' ? 'LATEST UPDATES' : '最新情報'}
+          <div className="inline-flex items-center gap-2 mb-5">
+            <BookOpen className="text-orange-500" size={16} />
+            <span className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em]">
+              {language === 'EN' ? 'Latest Updates' : '最新情報'}
             </span>
           </div>
 
-          <h2 className={`text-5xl font-bold mb-6 ${
+          <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight mb-5 ${
             isDark ? 'text-white' : 'text-slate-900'
           }`} style={{ fontFamily: '"Inter", system-ui' }}>
             {language === 'EN' ? 'Recent News' : '最新ニュース'}
           </h2>
-          
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto rounded-full mb-6" />
-          
-          <p className={`text-xl max-w-2xl mx-auto ${
-            isDark ? 'text-slate-300' : 'text-slate-600'
+
+          <p className={`text-base leading-relaxed max-w-2xl mx-auto ${
+            isDark ? 'text-slate-400' : 'text-slate-600'
           }`}>
-            {language === 'EN' 
+            {language === 'EN'
               ? "Stay updated with the latest breakthroughs, publications, and achievements from our quantum sensing research laboratory."
               : "量子センシング研究室の最新の突破、出版物、成果をご確認ください。"
             }
@@ -63,7 +57,7 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
           ))}
         </div>
 
-        {/* Enhanced View All News Button */}
+        {/* View All News Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,16 +67,12 @@ export const RecentNewsSection = ({ language, isDark, newsData, setCurrentPage }
         >
           <button
             onClick={() => setCurrentPage('news')}
-            className={`group inline-flex items-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ${
-              isDark 
-                ? 'bg-gradient-to-r from-orange-600 to-orange-500 text-white hover:from-orange-500 hover:to-orange-400 shadow-lg hover:shadow-orange-500/25'
-                : 'bg-gradient-to-r from-orange-600 to-orange-500 text-white hover:from-orange-700 hover:to-orange-600 shadow-lg hover:shadow-xl'
-            }`}
+            className="group inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition-colors"
           >
             <span>{language === 'EN' ? 'View All News' : 'すべてのニュースを見る'}</span>
-            <ChevronDown 
-              size={20} 
-              className="ml-2 group-hover:translate-y-1 transition-transform duration-300 rotate-[-90deg]" 
+            <ChevronDown
+              size={18}
+              className="group-hover:translate-y-0.5 transition-transform duration-300 rotate-[-90deg]"
             />
           </button>
         </motion.div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { PageHeader } from '../components/ui/PageHeader';
 
 // Profile Page Component for Team Members
 export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) => {
@@ -8,12 +9,12 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-800'}`}>
+          <h1 className={`text-2xl sm:text-3xl font-semibold tracking-tight mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
             {language === 'EN' ? 'Profile not found' : 'プロフィールが見つかりません'}
           </h1>
           <button
             onClick={() => setCurrentPage('team')}
-            className="px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl"
+            className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition-colors"
           >
             {language === 'EN' ? 'Back to Team' : 'チームに戻る'}
           </button>
@@ -22,69 +23,70 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
     );
   }
 
+  const cardClass = isDark
+    ? 'bg-white/[0.03] border border-white/10'
+    : 'bg-white border border-slate-200 shadow-sm';
+
   return (
-    <div className="min-h-screen py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen overflow-hidden">
+      <div className="max-w-4xl mx-auto px-6 py-28 sm:py-32 relative z-10">
         {/* Back Button */}
         <motion.button
           onClick={() => setCurrentPage('team')}
-          className={`mb-8 inline-flex items-center px-4 py-2 rounded-xl transition-all duration-300 ${
-            isDark 
-              ? 'bg-dark-gray-850/50 text-slate-300 hover:bg-dark-gray-800/50 hover:text-white'
-              : 'bg-white/70 text-slate-600 hover:bg-white hover:text-slate-800'
+          className={`mb-10 inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition-colors ${
+            isDark
+              ? 'border-white/15 bg-white/5 hover:bg-white/10 text-white'
+              : 'border-slate-300 bg-white hover:bg-slate-50 text-slate-800'
           }`}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <ArrowLeft size={18} className="mr-2" />
+          <ArrowLeft size={16} />
           {language === 'EN' ? 'Back to Team' : 'チームに戻る'}
         </motion.button>
 
-        {/* Header Section */}
+        <PageHeader
+          isDark={isDark}
+          eyebrow={language === 'EN' ? 'Principal investigator' : '主任研究者'}
+          title={profileData.name[language]}
+          subtitle={profileData.position[language]}
+        />
+
+        {/* Profile Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
-            isDark 
-              ? 'bg-black/40 border-teal-500/20'
-              : 'bg-white/70 border-teal-300/30 shadow-xl'
-          }`}
+          transition={{ duration: 0.5 }}
+          className={`rounded-2xl p-6 sm:p-8 mb-12 ${cardClass}`}
         >
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
             {/* Profile Image */}
             <div className="flex-shrink-0">
-              <div className="relative w-64 h-64 rounded-2xl overflow-hidden border-4 border-teal-500/30">
-                <img 
-                  src={profileData.image} 
+              <div className="relative w-56 h-56 rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src={profileData.image}
                   alt={profileData.name[language]}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent" />
               </div>
             </div>
-            
+
             {/* Profile Info */}
             <div className="flex-1 text-center lg:text-left">
-              <h1 className={`text-4xl font-bold mb-4 ${
-                isDark ? 'text-white' : 'text-slate-900'
-              }`}>
-                {profileData.name[language]}
-              </h1>
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600/20 to-cyan-600/20 rounded-full border border-teal-500/30 mb-6">
-                <div className="w-2 h-2 bg-teal-400 rounded-full mr-2" />
-                <span className="text-teal-300 font-medium">
+              <div className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 border border-orange-500/30 px-3 py-1 mb-6">
+                <span className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
+                <span className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em]">
                   {profileData.position[language]}
                 </span>
               </div>
-              
-              <div className={`space-y-2 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+
+              <div className={`space-y-2 leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 {profileData.education[language].map((edu, idx) => (
                   <div key={idx} className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 flex-shrink-0" />
                     <span>{edu}</span>
                   </div>
                 ))}
@@ -96,58 +98,55 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
         {/* Career Timeline */}
         {profileData.careerTimeline && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
-              isDark 
-                ? 'bg-black/40 border-teal-500/20'
-                : 'bg-white/70 border-teal-300/30 shadow-xl'
-            }`}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-12"
           >
-            <h2 className={`text-3xl font-bold mb-8 ${
+            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+              {language === 'EN' ? 'Career' : 'キャリア'}
+            </p>
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight mb-8 ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}>
               {language === 'EN' ? 'Career Timeline' : 'キャリア・タイムライン'}
             </h2>
-            
-            <div className="space-y-6">
-              {profileData.careerTimeline[language].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * idx }}
-                  className={`flex gap-6 p-6 rounded-2xl border ${
-                    isDark 
-                      ? 'bg-dark-gray-850/40 border-dark-gray-700/50' 
-                      : 'bg-slate-50/80 border-slate-200/50'
-                  }`}
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
-                        {item.year.split('-')[0]}
-                      </span>
+
+            {/* Thin orange spine timeline */}
+            <div className="relative pl-8">
+              <div className="absolute left-2 top-1 bottom-1 w-px bg-orange-500/30" />
+              <div className="space-y-5">
+                {profileData.careerTimeline[language].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.05 * idx }}
+                    className="relative"
+                  >
+                    {/* Spine node */}
+                    <div className="absolute -left-[26px] top-6 w-2.5 h-2.5 rounded-full bg-orange-500 ring-4 ring-orange-500/10" />
+                    <div className={`rounded-2xl p-6 transition-colors ${cardClass} ${isDark ? 'hover:border-white/20' : 'hover:border-slate-300'}`}>
+                      <div className="flex items-baseline justify-between gap-4 mb-2">
+                        <h3 className={`text-lg sm:text-xl font-semibold tracking-tight ${
+                          isDark ? 'text-white' : 'text-slate-900'
+                        }`}>
+                          {item.position}
+                        </h3>
+                        <span className="flex-shrink-0 text-sm font-semibold text-orange-500">
+                          {item.year}
+                        </span>
+                      </div>
+                      <p className={`text-sm font-medium mb-2 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                        {item.institution}
+                      </p>
+                      <p className={`text-base leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                        {item.description}
+                      </p>
                     </div>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h4 className={`text-xl font-semibold mb-2 ${
-                      isDark ? 'text-white' : 'text-slate-900'
-                    }`}>
-                      {item.position}
-                    </h4>
-                    <p className="text-teal-500 mb-2 font-medium">{item.institution}</p>
-                    <p className={`${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-                      {item.description}
-                    </p>
-                    <div className="mt-3 text-sm text-slate-400">
-                      {item.year}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
@@ -155,45 +154,38 @@ export const ProfilePage = ({ profileData, language, isDark, setCurrentPage }) =
         {/* Research Evolution */}
         {profileData.researchEvolution && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className={`backdrop-blur-lg rounded-3xl p-8 border mb-12 ${
-              isDark 
-                ? 'bg-black/40 border-teal-500/20'
-                : 'bg-white/70 border-teal-300/30 shadow-xl'
-            }`}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-12"
           >
-            <h2 className={`text-3xl font-bold mb-8 ${
+            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+              {language === 'EN' ? 'Research' : '研究'}
+            </p>
+            <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight mb-8 ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}>
               {language === 'EN' ? 'Research Evolution' : '研究の発展'}
             </h2>
-            
-            <div className="space-y-6">
+
+            <div className="space-y-5">
               {profileData.researchEvolution[language].map((item, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * idx }}
-                  className={`p-6 rounded-2xl border ${
-                    isDark 
-                      ? 'bg-dark-gray-850/40 border-dark-gray-700/50' 
-                      : 'bg-slate-50/80 border-slate-200/50'
-                  }`}
+                  transition={{ duration: 0.4, delay: 0.05 * idx }}
+                  className={`rounded-2xl p-6 transition-colors ${cardClass} ${isDark ? 'hover:border-white/20' : 'hover:border-slate-300'}`}
                 >
-                  <h4 className={`text-lg font-semibold mb-3 ${
-                    isDark ? 'text-teal-300' : 'text-teal-700'
+                  <h3 className={`text-lg sm:text-xl font-semibold tracking-tight mb-2 ${
+                    isDark ? 'text-white' : 'text-slate-900'
                   }`}>
                     {item.period}
-                  </h4>
-                  <div className={`text-sm font-medium mb-2 ${
-                    isDark ? 'text-cyan-400' : 'text-cyan-600'
-                  }`}>
+                  </h3>
+                  <div className="text-orange-500 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
                     {item.focus}
                   </div>
-                  <p className={`${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                  <p className={`text-base leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                     {item.description}
                   </p>
                 </motion.div>

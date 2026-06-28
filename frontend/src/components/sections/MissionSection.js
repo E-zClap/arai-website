@@ -20,28 +20,28 @@ export const MissionSection = ({ language, isDark }) => {
   };
 
   const keyPrinciples = [
-    { 
+    {
       title: { EN: 'Quantum Sensing Excellence', JP: '量子センシング最適化' },
       icon: Microscope,
-      description: { 
+      description: {
         EN: 'Pioneering high-precision quantum measurement technologies',
         JP: '高精度量子測定技術の先駆的研究'
       },
       color: 'from-orange-600 to-orange-500'
     },
-    { 
+    {
       title: { EN: 'Computational Integration', JP: '計算統合' },
       icon: Laptop,
-      description: { 
+      description: {
         EN: 'Advanced informatics and quantum computing convergence',
         JP: '先進情報学と量子コンピューティングの融合'
       },
       color: 'from-orange-500 to-orange-500'
     },
-    { 
+    {
       title: { EN: 'Transformative Innovation', JP: '変革的イノベーション' },
       icon: Zap,
-      description: { 
+      description: {
         EN: 'Revolutionary applications across multiple scientific domains',
         JP: '複数の科学領域における革新的応用'
       },
@@ -50,32 +50,32 @@ export const MissionSection = ({ language, isDark }) => {
   ];
 
   const researchTopics = [
-    { 
+    {
       title: { EN: 'Diamond NV Centers', JP: 'ダイヤモンドNVセンター' },
       icon: Diamond,
       color: 'from-orange-700 to-orange-700'
     },
-    { 
+    {
       title: { EN: 'Quantum Magnetometry', JP: '量子磁気測定' },
       icon: Magnet,
       color: 'from-orange-700 to-orange-600'
     },
-    { 
+    {
       title: { EN: 'Biomedical Applications', JP: '生体医学応用' },
       icon: Dna,
       color: 'from-orange-600 to-orange-700'
     },
-    { 
+    {
       title: { EN: 'Material Characterization', JP: '材料特性解析' },
       icon: TestTube,
       color: 'from-orange-700 to-orange-700'
     },
-    { 
+    {
       title: { EN: 'Quantum Informatics', JP: '量子インフォマティクス' },
       icon: Laptop,
       color: 'from-orange-700 to-orange-700'
     },
-    { 
+    {
       title: { EN: 'Quantum Computing', JP: '量子コンピューティング' },
       icon: Zap,
       color: 'from-orange-800 to-orange-800'
@@ -83,16 +83,9 @@ export const MissionSection = ({ language, isDark }) => {
   ];
 
   return (
-    <section className={`py-32 px-8 relative overflow-hidden ${
-      isDark 
-        ? 'bg-gradient-to-br from-slate-900/20 via-slate-800/10 to-slate-900/30' 
-        : 'bg-gradient-to-br from-slate-50/60 via-white/80 to-slate-100/70'
+    <section className={`py-32 px-8 relative ${
+      isDark ? '' : 'bg-slate-50'
     }`} ref={ref}>
-      
-      {/* Simplified Background Pattern for Better Performance */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-orange-500/20"></div>
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Academic Header */}
@@ -106,23 +99,18 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className={`inline-flex items-center px-6 py-3 rounded-2xl border mb-8 ${
-            isDark 
-              ? 'backdrop-blur-sm bg-dark-gray-900/60 border-orange-600/30 text-orange-300'
-              : 'bg-white border-orange-200/50 text-orange-700 shadow-lg'
-          }`}>
-            <FlaskConical className="mr-3" size={20} />
-            <span className="text-sm font-medium tracking-wider uppercase">
-              {language === 'EN' ? 'RESEARCH MISSION' : '研究ミッション'}
+          <div className="inline-flex items-center gap-2 mb-5 text-orange-500 text-xs font-semibold uppercase tracking-[0.22em]">
+            <FlaskConical size={16} />
+            <span>
+              {language === 'EN' ? 'Research Mission' : '研究ミッション'}
             </span>
           </div>
-          
-          <h2 className={`text-6xl font-bold mb-8 ${
+
+          <h2 className={`text-2xl sm:text-3xl font-semibold tracking-tight ${
             isDark ? 'text-white' : 'text-slate-900'
           }`} style={{ fontFamily: '"Inter", system-ui' }}>
             {language === 'EN' ? 'Our Scientific Mission' : '私たちの科学的使命'}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-500 mx-auto rounded-full" />
         </motion.div>
 
         {/* Enhanced Mission Content with Academic Layout */}
@@ -137,17 +125,17 @@ export const MissionSection = ({ language, isDark }) => {
             }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className={`backdrop-blur-xl rounded-3xl p-10 border ${
-              isDark 
-                ? 'bg-dark-gray-900/60 border-orange-600/20' 
-                : 'bg-white/90 border-orange-200/30 shadow-2xl'
+            <div className={`rounded-2xl p-8 border transition-colors ${
+              isDark
+                ? 'bg-white/[0.03] border-white/10 hover:border-white/20'
+                : 'bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
             }`}>
-              <div className={`text-lg md:text-xl leading-relaxed mb-8 ${
-                isDark ? 'text-slate-200' : 'text-slate-700'
+              <div className={`text-base leading-relaxed mb-8 ${
+                isDark ? 'text-slate-400' : 'text-slate-600'
               }`} style={{ fontFamily: '"Inter", system-ui' }}>
                 {missionText[language]}
               </div>
-              
+
               {/* Key Principles Grid */}
               <div className="grid md:grid-cols-3 gap-6">
                 {keyPrinciples.map((principle, index) => {
@@ -158,16 +146,16 @@ export const MissionSection = ({ language, isDark }) => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                      className={`flex flex-col items-center text-center space-y-4 p-6 rounded-2xl ${
-                        isDark ? 'bg-dark-gray-850/40' : 'bg-slate-50/80'
+                      className={`flex flex-col items-center text-center space-y-4 p-6 rounded-2xl border ${
+                        isDark ? 'bg-white/[0.03] border-white/10' : 'bg-slate-50 border-slate-200'
                       }`}
                     >
-                      <div className={`p-4 rounded-xl bg-gradient-to-r ${principle.color}`}>
-                        <IconComponent className="text-white" size={28} />
+                      <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/30">
+                        <IconComponent className="text-orange-500" size={24} />
                       </div>
                       <div>
-                        <h4 className={`font-semibold text-lg mb-2 ${
-                          isDark ? 'text-white' : 'text-slate-800'
+                        <h4 className={`font-semibold text-lg sm:text-xl tracking-tight mb-2 ${
+                          isDark ? 'text-white' : 'text-slate-900'
                         }`}>
                           {principle.title[language]}
                         </h4>
@@ -194,12 +182,12 @@ export const MissionSection = ({ language, isDark }) => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
         >
-          <h3 className={`text-3xl font-bold mb-12 ${
-            isDark ? 'text-white' : 'text-slate-800'
+          <h3 className={`text-lg sm:text-xl font-semibold tracking-tight mb-12 ${
+            isDark ? 'text-white' : 'text-slate-900'
           }`}>
             {language === 'EN' ? 'Research Excellence Areas' : '研究卓越分野'}
           </h3>
-          
+
           {/* Professional Grid Layout for Research Areas */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {researchTopics.map((topic, index) => {
@@ -210,32 +198,31 @@ export const MissionSection = ({ language, isDark }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                  className={`group p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                    isDark 
-                      ? 'bg-dark-gray-900/60 border-dark-gray-700/50 hover:border-orange-400/50 hover:bg-dark-gray-850/70'
-                      : 'bg-white/80 border-slate-200/50 hover:border-orange-300/70 hover:bg-white/95 shadow-lg hover:shadow-xl'
+                  className={`group p-6 rounded-2xl border transition-colors ${
+                    isDark
+                      ? 'bg-white/[0.03] border-white/10 hover:border-white/20'
+                      : 'bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
                   }`}
-                  whileHover={{ scale: 1.02 }}
                 >
                   {/* Icon Section */}
                   <div className="flex justify-center mb-4">
-                    <div className={`p-4 rounded-xl bg-gradient-to-r ${topic.color} shadow-lg group-hover:shadow-orange-500/30 transition-all duration-300`}>
-                      <IconComponent size={28} className="text-white" />
+                    <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/30">
+                      <IconComponent size={24} className="text-orange-500" />
                     </div>
                   </div>
-                  
+
                   {/* Research Area Title */}
-                  <h4 className={`text-lg font-semibold mb-2 ${
-                    isDark ? 'text-white group-hover:text-orange-300' : 'text-slate-800 group-hover:text-orange-700'
-                  } transition-colors`}>
+                  <h4 className={`text-lg font-semibold tracking-tight mb-2 ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}>
                     {topic.title[language]}
                   </h4>
-                  
+
                   {/* Professional Status Indicator */}
                   <div className="flex items-center justify-center space-x-2 pt-2">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full" />
                     <span className={`text-xs font-medium ${
-                      isDark ? 'text-slate-400' : 'text-slate-500'
+                      isDark ? 'text-slate-500' : 'text-slate-500'
                     }`}>
                       {language === 'EN' ? 'Active Research' : 'アクティブ研究'}
                     </span>
@@ -244,34 +231,32 @@ export const MissionSection = ({ language, isDark }) => {
               );
             })}
           </div>
-          
+
           {/* Professional Research Statement */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className={`mt-12 p-8 rounded-3xl border backdrop-blur-xl ${
-              isDark 
-                ? 'bg-dark-gray-900/40 border-orange-600/20'
-                : 'bg-white/70 border-orange-200/30 shadow-xl'
+            className={`mt-12 p-8 rounded-2xl border ${
+              isDark
+                ? 'bg-white/[0.03] border-white/10'
+                : 'bg-white border-slate-200 shadow-sm'
             }`}
           >
-            <p className={`text-lg italic font-light ${
-              isDark ? 'text-slate-300' : 'text-slate-600'
+            <p className={`text-base leading-relaxed italic ${
+              isDark ? 'text-slate-400' : 'text-slate-600'
             }`} style={{ fontFamily: '"Inter", system-ui' }}>
-              {language === 'EN' 
+              {language === 'EN'
                 ? '"Advancing the frontiers of quantum science through interdisciplinary excellence and innovative research methodologies."'
                 : '「学際的な卓越性と革新的な研究手法を通じて量子科学の最前線を推進する。」'
               }
             </p>
-            <div className="mt-4 flex items-center justify-center space-x-4">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-orange-600" />
-              <span className={`text-sm font-medium ${
-                isDark ? 'text-orange-400' : 'text-orange-600'
-              }`}>
+            <div className="mt-4 flex items-center justify-center space-x-3">
+              <div className="w-8 h-px bg-orange-500/40" />
+              <span className="text-sm font-medium text-orange-500">
                 {language === 'EN' ? 'Arai Laboratory' : '荒井研究室'}
               </span>
-              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-orange-600" />
+              <div className="w-8 h-px bg-orange-500/40" />
             </div>
           </motion.div>
         </motion.div>

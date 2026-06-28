@@ -149,93 +149,48 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
             opacity: { duration: 0.2 }
           }}
           className={`fixed left-0 top-0 h-full w-80 z-40 lg:translate-x-0 lg:opacity-100 flex flex-col ${
-            isDark 
-              ? 'bg-dark-gray-925/95 backdrop-blur-3xl border-r border-orange-500/20 shadow-2xl shadow-orange-500/5' 
-              : 'bg-white/95 backdrop-blur-3xl border-r border-orange-200/50 shadow-2xl'
+            isDark
+              ? 'bg-[#0c0d11]/95 backdrop-blur-xl border-r border-white/10'
+              : 'bg-white/95 backdrop-blur-xl border-r border-slate-200'
           }`}
         >
-          {/* Premium Academic Header */}
-          <motion.div 
-            className="p-4 pt-4 border-b border-dark-gray-700/30"
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            <div className="flex items-center space-x-3">
-              <motion.div 
-                className="w-[130px] h-[130px] rounded-2xl flex items-center justify-center p-2"
-                whileHover={{ 
-                  scale: 1.08,
-                  rotate: 5
-                }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <img
-                  src="/diam.svg"
-                  alt="Quantum Informatics Group — diamond NV-center logo"
-                  className="w-full h-full object-contain filter drop-shadow-lg"
-                  style={{
-                    filter: 'drop-shadow(0 6px 12px rgba(234, 88, 12, 0.6))'
-                  }}
-                />
-              </motion.div>
+          {/* Header */}
+          <div className={`p-6 border-b ${isDark ? 'border-white/10' : 'border-slate-200'}`}>
+            <div className="flex items-center gap-3">
+              <img
+                src="/diam.svg"
+                alt="Quantum Informatics Group — diamond NV-center logo"
+                width={44}
+                height={44}
+                className="w-11 h-11 object-contain"
+                style={{ filter: 'drop-shadow(0 4px 10px rgba(234, 88, 12, 0.4))' }}
+              />
               <div>
-                <motion.p
-                  className={`text-base font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  {language === 'EN' ? "Quantum Informatics Group" : '量子情報学グループ'}
-                </motion.p>
-                <motion.p 
-                  className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600'}`}
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
+                <p className={`text-sm font-semibold leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                  {language === 'EN' ? 'Quantum Informatics Group' : '量子情報学グループ'}
+                </p>
+                <p className={`mt-0.5 text-xs ${isDark ? 'text-slate-500' : 'text-slate-500'}`}>
                   {language === 'EN' ? 'Quantum Sensing' : '量子センシング'}
-                </motion.p>
+                </p>
               </div>
             </div>
-            
-            {/* Premium Institution Information */}
-            <motion.div 
-              className={`mt-4 p-4 rounded-2xl border backdrop-blur-sm ${
-                isDark 
-                  ? 'bg-dark-gray-850/50 border-dark-gray-700/50 shadow-xl shadow-black/20' 
-                  : 'bg-slate-50/80 border-slate-200/50 shadow-lg'
-              }`}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              whileHover={{ scale: 1.02 }}
+            <a
+              href="https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 block"
             >
-              <div className={`text-sm font-semibold mb-2 ${isDark ? 'text-orange-300' : 'text-orange-700'}`}>
+              <span className="text-orange-500 text-xs font-semibold uppercase tracking-[0.15em]">
                 {language === 'EN' ? 'Institute of Science Tokyo' : '東京科学大学'}
-              </div>
-              <motion.a 
-                href="https://www.titech.ac.jp/english/academics/schools/school-of-engineering/electrical-and-electronic-engineering"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-xs flex items-center gap-2 group ${
-                  isDark ? 'text-slate-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                } transition-all duration-300`}
-                whileHover={{ x: 2 }}
-              >
-                {language === 'EN' ? 'Department of Electrical & Electronic Engineering' : '電気電子系'}
-                <motion.div
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <ExternalLink size={12} />
-                </motion.div>
-              </motion.a>
-            </motion.div>
-          </motion.div>
+              </span>
+              <span className={`mt-1 block text-xs ${isDark ? 'text-slate-500 hover:text-slate-300' : 'text-slate-500 hover:text-slate-700'} transition-colors`}>
+                {language === 'EN' ? 'Dept. of Electrical & Electronic Engineering' : '電気電子系'}
+              </span>
+            </a>
+          </div>
 
           {/* Premium Navigation with Advanced Design - SEO-friendly with real <a> links */}
-          <nav className="p-6 space-y-3 flex-1 overflow-y-auto" aria-label="Main navigation">
+          <nav className="px-4 py-4 space-y-1 flex-1 overflow-y-auto" aria-label="Main navigation">
             {navigationItems.map((item, index) => {
               const Icon = item.icon;
               const isActive = currentPage === item.id;
@@ -249,80 +204,48 @@ export const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, langua
                       setIsOpen(false);
                     }
                   }}
-                  className={`block w-full text-left p-5 rounded-2xl transition-all duration-300 group relative overflow-hidden ${
+                  className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors ${
                     isActive
-                      ? (isDark 
-                          ? 'bg-gradient-to-r from-orange-600/40 to-orange-500/30 border-2 border-orange-400/50 text-orange-200 shadow-2xl shadow-orange-500/20' 
-                          : 'bg-gradient-to-r from-orange-50 to-orange-50 border-2 border-orange-300/60 text-orange-800 shadow-xl')
-                      : (isDark 
-                          ? 'hover:bg-dark-gray-850/70 text-slate-300 hover:text-white hover:border-dark-gray-600/60 border-2 border-transparent hover:shadow-xl hover:shadow-black/20' 
-                          : 'hover:bg-slate-50/90 text-slate-600 hover:text-slate-800 hover:border-slate-300/60 border-2 border-transparent hover:shadow-lg')
+                      ? (isDark ? 'bg-orange-500/10 text-white' : 'bg-orange-50 text-slate-900')
+                      : (isDark
+                          ? 'text-slate-400 hover:bg-white/5 hover:text-white'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900')
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
-                  {/* Advanced Active Indicator */}
                   {isActive && (
-                    <motion.div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-gradient-to-b from-orange-400 via-orange-400 to-orange-500 rounded-r-full shadow-lg shadow-orange-400/50"
+                    <motion.span
                       layoutId="activeIndicator"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      className="absolute left-0 top-1/2 h-7 w-[3px] -translate-y-1/2 rounded-r-full bg-orange-500"
                     />
                   )}
-                  
-                  {/* Hover Effect Background */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-500/10 opacity-0 rounded-2xl"
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
+                  <span
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+                      isActive
+                        ? 'bg-orange-500/15 text-orange-400'
+                        : isDark
+                        ? 'bg-white/5 text-slate-400 group-hover:text-white'
+                        : 'bg-slate-100 text-slate-500 group-hover:text-slate-700'
+                    }`}
+                  >
+                    <Icon size={18} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-medium">{item.label[language]}</span>
+                    <span
+                      className={`block text-xs ${
+                        isActive ? (isDark ? 'text-orange-300/80' : 'text-orange-600') : 'text-slate-500'
+                      }`}
+                    >
+                      {item.description[language]}
+                    </span>
+                  </span>
+                  <ChevronRight
+                    size={16}
+                    className={`shrink-0 transition-opacity ${
+                      isActive ? 'text-orange-400 opacity-100' : 'text-slate-500 opacity-0 group-hover:opacity-100'
+                    }`}
                   />
-                  
-                  <div className="flex items-center space-x-4 relative z-10">
-                    <motion.div 
-                      className={`p-3 rounded-2xl transition-all duration-300 ${
-                        isActive 
-                          ? 'bg-gradient-to-r from-orange-500 to-orange-500 text-white shadow-2xl shadow-orange-500/30' 
-                          : (isDark 
-                              ? 'bg-dark-gray-800/60 group-hover:bg-slate-600/80 text-slate-300 group-hover:text-white' 
-                              : 'bg-slate-100 group-hover:bg-slate-200 text-slate-600 group-hover:text-slate-700')
-                      }`}
-                      whileHover={{ rotate: 5 }}
-                      animate={isActive ? {
-                        boxShadow: [
-                          "0 10px 20px rgba(30, 64, 175, 0.3)",
-                          "0 15px 30px rgba(79, 70, 229, 0.4)",
-                          "0 10px 20px rgba(30, 64, 175, 0.3)"
-                        ]
-                      } : {}}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <Icon size={20} />
-                    </motion.div>
-                    
-                    <div className="flex-1">
-                      <div className="font-bold text-base tracking-wide">
-                        {item.label[language]}
-                      </div>
-                      <div className={`text-sm mt-1 ${
-                        isActive
-                          ? (isDark ? 'text-orange-200' : 'text-orange-600')
-                          : (isDark ? 'text-slate-400' : 'text-slate-500')
-                      }`}>
-                        {item.description[language]}
-                      </div>
-                    </div>
-                    
-                    <motion.div
-                      className={`opacity-0 group-hover:opacity-100 transition-opacity ${
-                        isActive ? 'opacity-100' : ''
-                      }`}
-                      animate={isActive ? { x: [0, 3, 0] } : {}}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      <ChevronRight size={18} />
-                    </motion.div>
-                  </div>
                 </Link>
               );
             })}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ExternalLink, 
-  ChevronDown, 
-  ChevronRight, 
-  BookOpen, 
-  Users, 
+import {
+  ExternalLink,
+  ChevronDown,
+  ChevronRight,
+  BookOpen,
+  Users,
   Calendar,
   Award,
   Quote,
@@ -31,114 +31,80 @@ export const PublicationCard = ({ publication, index, language }) => {
   const getTypeIcon = (type) => {
     switch (type) {
       case 'Peer-Reviewed':
-        return <Award size={16} className="text-orange-400" />;
+        return <Award size={14} className="text-orange-500" />;
       case 'Preprint':
-        return <FileText size={16} className="text-orange-400" />;
+        return <FileText size={14} className="text-orange-500" />;
       default:
-        return <BookOpen size={16} className="text-slate-400" />;
+        return <BookOpen size={14} className="text-slate-400" />;
     }
   };
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.7, 
-        delay: index * 0.1,
-        type: "spring",
-        stiffness: 100
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.08,
+        ease: "easeOut"
       }}
-      className="bg-dark-gray-900/80 backdrop-blur-2xl rounded-3xl p-8 border border-orange-600/20 hover:border-orange-500/50 transition-all duration-700 group shadow-2xl hover:shadow-orange-500/20"
-      whileHover={{ y: -5, scale: 1.01 }}
+      className="bg-white/[0.03] rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors duration-300 group"
     >
       {/* Publication Header */}
-      <div className="flex items-start justify-between mb-6">
-        <div className="flex items-center space-x-4">
-          {/* Publication Type Badge */}
-          <motion.div 
-            className={`flex items-center space-x-2 px-4 py-2 rounded-2xl bg-gradient-to-r ${getImpactColor(publication.impact)} shadow-lg`}
-            whileHover={{ scale: 1.05 }}
-            animate={{
-              boxShadow: [
-                "0 5px 15px rgba(30, 64, 175, 0.3)",
-                "0 8px 25px rgba(30, 64, 175, 0.4)",
-                "0 5px 15px rgba(30, 64, 175, 0.3)"
-              ]
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
+      <div className="flex items-start justify-between gap-4 mb-6">
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Publication Type Chip */}
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-500 text-xs font-semibold">
             {getTypeIcon(publication.type)}
-            <span className="text-white text-sm font-bold">
-              {publication.type}
-            </span>
-          </motion.div>
+            {publication.type}
+          </span>
 
-          {/* Impact Level */}
-          <motion.div 
-            className="px-3 py-1.5 rounded-xl bg-dark-gray-850/50 border border-dark-gray-700/40"
-            whileHover={{ backgroundColor: "rgba(30, 64, 175, 0.1)" }}
-          >
-            <div className="flex items-center space-x-2">
-              <TrendingUp size={14} className="text-orange-500" />
-              <span className="text-orange-300 text-xs font-medium">
-                {publication.impact} Impact
-              </span>
-            </div>
-          </motion.div>
+          {/* Impact Level Chip */}
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold">
+            <TrendingUp size={12} className="text-orange-500" />
+            {publication.impact} Impact
+          </span>
         </div>
 
-        {/* Citation Count with subtle blue accent */}
-        <motion.div 
-          className="text-center p-3 rounded-2xl bg-dark-gray-850/40 border border-blue-accent/20"
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.1)", borderColor: "rgba(59, 130, 246, 0.4)" }}
-          animate={{
-            boxShadow: [
-              "0 0 0px rgba(59, 130, 246, 0.0)",
-              "0 0 10px rgba(59, 130, 246, 0.2)",
-              "0 0 0px rgba(59, 130, 246, 0.0)"
-            ]
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
-        >
-          <div className="text-orange-400 font-bold text-lg">{publication.citations}</div>
-          <div className="text-slate-400 text-xs">
+        {/* Citation Count */}
+        <div className="text-center px-4 py-2 rounded-xl bg-white/5 border border-white/10 flex-shrink-0">
+          <div className="text-white font-semibold text-lg leading-tight">{publication.citations}</div>
+          <div className="text-slate-500 text-xs">
             {language === 'EN' ? 'Citations' : '引用'}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Publication Title */}
-      <motion.h3 
-        className="text-xl font-bold text-white mb-4 leading-relaxed group-hover:text-orange-300 transition-colors duration-500"
+      <h3
+        className="text-lg sm:text-xl font-semibold tracking-tight text-white mb-5 leading-snug"
         style={{ fontFamily: '"Inter", system-ui' }}
-        whileHover={{ x: 5 }}
       >
         {publication.title[language] || publication.title}
-      </motion.h3>
+      </h3>
 
       {/* Publication Details */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
         {/* Authors */}
-        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30">
-          <Users size={18} className="text-orange-500 mt-1 flex-shrink-0" />
+        <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/10">
+          <Users size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
           <div>
-            <div className="text-sm font-semibold text-slate-300 mb-1">
+            <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
               {language === 'EN' ? 'Authors' : '著者'}
             </div>
-            <div className="text-slate-400 text-sm">{publication.authors}</div>
+            <div className="text-slate-400 text-sm leading-relaxed">{publication.authors}</div>
           </div>
         </div>
 
         {/* Journal & Year */}
-        <div className="flex items-start space-x-3 p-4 rounded-2xl bg-dark-gray-850/40 border border-dark-gray-700/30">
-          <Calendar size={18} className="text-orange-400 mt-1 flex-shrink-0" />
+        <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/10">
+          <Calendar size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
           <div>
-            <div className="text-sm font-semibold text-slate-300 mb-1">
+            <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">
               {language === 'EN' ? 'Publication' : '出版'}
             </div>
-            <div className="text-slate-400 text-sm">
-              {publication.journal} ({publication.year})
+            <div className="text-slate-400 text-sm leading-relaxed">
+              {publication.journal} · {publication.year}
             </div>
           </div>
         </div>
@@ -146,14 +112,14 @@ export const PublicationCard = ({ publication, index, language }) => {
 
       {/* Journal Details */}
       {(publication.volume || publication.pages) && (
-        <div className="flex items-center space-x-6 mb-6 p-4 rounded-2xl bg-dark-gray-850/30 border border-dark-gray-700/20">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5 p-4 rounded-2xl bg-white/[0.02] border border-white/10">
           {publication.volume && (
             <div className="text-sm">
-              <span className="text-slate-400">Vol.</span>
+              <span className="text-slate-500">Vol.</span>
               <span className="text-slate-300 font-medium ml-1">{publication.volume}</span>
               {publication.issue && (
                 <>
-                  <span className="text-slate-400 ml-2">Issue</span>
+                  <span className="text-slate-500 ml-2">Issue</span>
                   <span className="text-slate-300 font-medium ml-1">{publication.issue}</span>
                 </>
               )}
@@ -161,13 +127,13 @@ export const PublicationCard = ({ publication, index, language }) => {
           )}
           {publication.pages && (
             <div className="text-sm">
-              <span className="text-slate-400">Pages:</span>
+              <span className="text-slate-500">Pages:</span>
               <span className="text-slate-300 font-medium ml-1">{publication.pages}</span>
             </div>
           )}
           {publication.doi && (
             <div className="text-sm">
-              <span className="text-slate-400">DOI:</span>
+              <span className="text-slate-500">DOI:</span>
               <span className="text-slate-300 font-medium ml-1 font-mono text-xs">{publication.doi}</span>
             </div>
           )}
@@ -175,54 +141,47 @@ export const PublicationCard = ({ publication, index, language }) => {
       )}
 
       {/* Category & Link */}
-      <div className="flex items-center justify-between mb-6">
-        <motion.span 
-          className="px-4 py-2 bg-gradient-to-r from-orange-900/40 to-orange-900/40 text-orange-300 rounded-full text-sm font-medium border border-orange-600/30"
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(30, 64, 175, 0.2)" }}
-        >
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+        <span className="inline-flex items-center px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-500 text-xs font-semibold">
           {publication.category}
-        </motion.span>
+        </span>
 
         {publication.link && publication.link !== '#' && (
-          <motion.a
+          <a
             href={publication.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-dark-gray-850/50 hover:bg-orange-600/20 rounded-2xl border border-dark-gray-700/40 hover:border-orange-500/50 transition-all duration-300"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors"
           >
-            <span className="text-slate-300 text-sm font-medium">
+            <span>
               {language === 'EN' ? 'View Paper' : '論文を見る'}
             </span>
             <ExternalLink size={16} className="text-orange-500" />
-          </motion.a>
+          </a>
         )}
       </div>
 
       {/* Expandable Abstract Section */}
       {publication.abstract && (
-        <motion.div className="border-t border-dark-gray-700/50 pt-6">
-          <motion.button
+        <div className="border-t border-white/10 pt-5">
+          <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-800/50 to-slate-700/30 border border-dark-gray-600/30 hover:border-orange-500/40 transition-all duration-300 group"
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
+            className="w-full flex items-center justify-between gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-white/20 transition-colors group/abstract"
           >
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center gap-3">
               <motion.div
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <ChevronDown size={20} className="text-orange-500" />
+                <ChevronDown size={18} className="text-orange-500" />
               </motion.div>
-              <Quote size={18} className="text-orange-400" />
-              <span className="text-white font-semibold">
+              <Quote size={16} className="text-orange-500" />
+              <span className="text-white text-sm font-semibold">
                 {language === 'EN' ? 'Abstract' : '要約'}
               </span>
             </div>
-            <ChevronRight size={18} className="text-slate-400 group-hover:text-orange-500 transition-colors" />
-          </motion.button>
+            <ChevronRight size={16} className="text-slate-500 group-hover/abstract:text-orange-500 transition-colors" />
+          </button>
 
           <AnimatePresence>
             {isExpanded && (
@@ -230,36 +189,23 @@ export const PublicationCard = ({ publication, index, language }) => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="mt-6 overflow-hidden"
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="overflow-hidden"
               >
-                <motion.div
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-slate-800/60 to-slate-800/40 border border-dark-gray-700/40"
-                >
-                  <div className="flex items-start space-x-4">
-                    <motion.div
-                      animate={{ 
-                        opacity: [0.5, 1, 0.5],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    >
-                      <Quote size={24} className="text-orange-500 flex-shrink-0 mt-1" />
-                    </motion.div>
+                <div className="mt-4 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
+                  <div className="flex items-start gap-4">
+                    <Quote size={20} className="text-orange-500 flex-shrink-0 mt-0.5" />
                     <div className="flex-1">
-                      <p className="text-slate-300 leading-relaxed text-sm italic">
+                      <p className="text-slate-400 leading-relaxed text-sm">
                         {publication.abstract[language] || publication.abstract}
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       )}
     </motion.article>
   );
