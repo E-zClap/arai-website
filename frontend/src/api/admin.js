@@ -27,6 +27,13 @@ export const updatePublication = (id, data) => api.put(`/publications/${id}`, da
 export const deletePublication = (id) => api.delete(`/publications/${id}`).then((r) => r.data);
 
 // ---- Team ----
+export const uploadTeamImage = (file) => {
+  const fd = new FormData();
+  fd.append('file', file);
+  return api
+    .post('/team/upload-image', fd, { headers: { 'Content-Type': 'multipart/form-data' } })
+    .then((r) => r.data);
+};
 export const adminListTeam = () => api.get('/team/all').then((r) => r.data);
 export const createMember = (data) => api.post('/team', data).then((r) => r.data);
 export const updateMember = (id, data) => api.put(`/team/${id}`, data).then((r) => r.data);

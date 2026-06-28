@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createMember, updateMember } from '../../api/admin';
+import { createMember, updateMember, uploadTeamImage } from '../../api/admin';
 import { Modal, Input, Textarea, Select, Button, Label, linesToArray, arrayToLines } from './widgets';
 
 const CATEGORIES = [
@@ -44,7 +44,24 @@ export const TeamMemberForm = ({ item, onClose, onSaved }) => {
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+  const [uploading, setUploading] = useState(false);
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  const onPickImage = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setError('');
+    setUploading(true);
+    try {
+      const { url } = await uploadTeamImage(file);
+      setForm((f) => ({ ...f, image: url }));
+    } catch (err) {
+      setError(err?.response?.data?.detail || 'Image upload failed.');
+    } finally {
+      setUploading(false);
+      e.target.value = ''; // allow re-selecting the same file
+    }
+  };
 
   const submit = async () => {
     setError('');
@@ -118,12 +135,45 @@ export const TeamMemberForm = ({ item, onClose, onSaved }) => {
         <Input label="Position (English)" value={form.positionEN} onChange={set('positionEN')} />
         <Input label="Position (Japanese)" value={form.positionJP} onChange={set('positionJP')} />
       </div>
-      <Input
-        label="Image URL"
-        value={form.image}
-        onChange={set('image')}
-        placeholder="/team_images/Name.jpg or https://…"
-      />
+      <div>
+        <Label>Photo</Label>
+        <div className="flex items-start gap-4">
+          <div className="w-24 h-24 rounded-lg overflow-hidden bg-neutral-900 border border-neutral-700 flex items-center justify-center shrink-0">
+            {form.image ? (
+              <img
+                src={form.image}
+                alt="preview"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            ) : (
+              <span className="text-neutral-600 text-xs text-center px-2">No image</span>
+            )}
+          </div>
+          <div className="flex-1 space-y-2">
+            <label className="inline-block">
+              <span className="px-4 py-2 rounded-lg bg-neutral-700 hover:bg-neutral-600 text-neutral-100 font-medium cursor-pointer inline-block">
+                {uploading ? 'Uploading…' : 'Upload photo'}
+              </span>
+              <input
+                type="file"
+                accept="image/png,image/jpeg,image/webp,image/gif"
+                className="hidden"
+                onChange={onPickImage}
+                disabled={uploading}
+              />
+            </label>
+            <Input
+              label="…or image URL / path"
+              value={form.image}
+              onChange={set('image')}
+              placeholder="/team_images/Name.jpg or https://…"
+            />
+          </div>
+        </div>
+      </div>
 
       {form.category === 'alumni' && (
         <div className="grid grid-cols-2 gap-4">

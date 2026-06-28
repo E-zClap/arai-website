@@ -50,6 +50,9 @@ JWT_EXPIRE_MINUTES=720
 ADMIN_USERNAME=${ADMIN_USER}
 ADMIN_PASSWORD=${ADMIN_PASS}
 CORS_ORIGINS=*
+UPLOAD_DIR=/var/www/arai-uploads
+UPLOAD_URL_PREFIX=/uploads
+MAX_UPLOAD_MB=8
 ENV
   chmod 600 "$BACKEND/.env"
   echo "    created backend/.env"
@@ -59,29 +62,51 @@ else
   echo "    backend/.env already exists - left untouched"
 fi
 
-echo "==> [4/5] Install systemd service"
+echo "==> [4/6] Install systemd service"
 sudo cp "$ROOT/deploy/arai-api.service" /etc/systemd/system/arai-api.service
 sudo systemctl daemon-reload
 sudo systemctl enable arai-api
 
-echo "==> [5/5] Add nginx /api/ proxy block (if not already present)"
-if [ -f "$SITE_AVAIL" ] && ! sudo grep -q "location /api/" "$SITE_AVAIL"; then
-  sudo python3 - "$SITE_AVAIL" "$ROOT/deploy/nginx-api-location.conf" <<'PY'
-import sys, re
-site, snippet = sys.argv[1], sys.argv[2]
-block = "".join(l for l in open(snippet) if not l.lstrip().startswith("#")).strip()
+echo "==> [5/6] Create persistent uploads directory (survives deploys)"
+sudo mkdir -p /var/www/arai-uploads
+sudo chown ubuntu:ubuntu /var/www/arai-uploads
+sudo chmod 755 /var/www/arai-uploads
+
+echo "==> [6/6] Add nginx /api/ and /uploads/ location blocks (if missing)"
+add_nginx_block() {  # $1 = grep marker, $2 = block text
+  if [ -f "$SITE_AVAIL" ] && ! sudo grep -q "$1" "$SITE_AVAIL"; then
+    sudo python3 - "$SITE_AVAIL" "$2" <<'PY'
+import sys
+site, block = sys.argv[1], sys.argv[2]
 block = "\n".join(("    " + l if l.strip() else l) for l in block.splitlines())
-content = open(site).read()
-# insert before the first 'location / {' that is inside the ssl server block
-idx = content.index("location / {")
-content = content[:idx] + block + "\n\n    " + content[idx:]
-open(site, "w").write(content)
-print("    inserted /api/ proxy block")
+c = open(site).read()
+i = c.index("location / {")
+open(site, "w").write(c[:i] + block + "\n\n    " + c[i:])
 PY
-  sudo nginx -t
-else
-  echo "    /api/ proxy already present (or site config missing) - skipped"
-fi
+    echo "    inserted: $1"
+  else
+    echo "    already present (or site missing): $1"
+  fi
+}
+
+add_nginx_block "location /api/" 'location /api/ {
+    proxy_pass http://127.0.0.1:8000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_read_timeout 60s;
+}'
+
+add_nginx_block "location /uploads/" 'location /uploads/ {
+    alias /var/www/arai-uploads/;
+    access_log off;
+    expires 30d;
+    add_header Cache-Control "public";
+}'
+
+[ -f "$SITE_AVAIL" ] && sudo nginx -t
 
 echo
 echo "Bootstrap complete. Now run:  ./deploy.sh"

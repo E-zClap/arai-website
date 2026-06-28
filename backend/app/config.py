@@ -20,6 +20,13 @@ class Settings(BaseSettings):
     # CORS: comma separated origins, or "*"
     cors_origins: str = "*"
 
+    # Uploaded images. On the server this is a persistent directory served by
+    # nginx (NOT inside the build dir that deploy.sh wipes), e.g.
+    # /var/www/arai-uploads served at /uploads/.
+    upload_dir: str = "uploads"
+    upload_url_prefix: str = "/uploads"
+    max_upload_mb: int = 8
+
     @property
     def cors_origin_list(self) -> list[str]:
         value = (self.cors_origins or "").strip()

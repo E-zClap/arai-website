@@ -83,5 +83,10 @@ login.
 - All content is bilingual (EN/JP); each form has both fields.
 - Team member detail sections (Education, Expertise, Responsibilities, Research
   Interests, Achievements) take one item per line.
+- **Member photos** can be uploaded in the Team form (or you can paste a URL).
+  Uploads are stored on the server in `/var/www/arai-uploads/` (created by
+  `server_setup.sh`) and served by nginx at `/uploads/`. This directory lives
+  *outside* the build dir that `deploy.sh` wipes, so photos persist across
+  deploys. Consider including it in any backup job.
 - Research areas are still bundled in the frontend (`data/researchData.js`) and
   were intentionally not moved to the database.
