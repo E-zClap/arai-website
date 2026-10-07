@@ -60,6 +60,7 @@ class PublicationIn(BaseModel):
     impact: str = ""
     link: str = ""
     sort_order: int = 0
+    is_active: bool = True
 
 
 # ---- team ----

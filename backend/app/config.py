@@ -30,6 +30,8 @@ class Settings(BaseSettings):
     # OpenAlex publication auto-sync (Prof. Keigo Arai)
     openalex_author_id: str = "A5026665424"
     openalex_mailto: str = "admin@qig-lab.net"
+    # Works published before this year are someone else with the same name.
+    openalex_min_year: int = 2010
 
     @property
     def cors_origin_list(self) -> list[str]:

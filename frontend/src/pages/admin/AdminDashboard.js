@@ -63,7 +63,11 @@ export const AdminDashboard = () => {
   };
 
   const onDelete = async (id) => {
-    if (!window.confirm('Delete this item? This cannot be undone.')) return;
+    const warning =
+      tab === 'publications'
+        ? 'Delete this publication? This cannot be undone, and a paper from OpenAlex will come back on the next sync. To remove it for good, edit it and untick "Show on website" instead.'
+        : 'Delete this item? This cannot be undone.';
+    if (!window.confirm(warning)) return;
     const deleter =
       tab === 'news' ? deleteNews : tab === 'publications' ? deletePublication : deleteMember;
     await deleter(id);
@@ -165,12 +169,20 @@ export const AdminDashboard = () => {
                   </>
                 )}
                 {tab === 'publications' && (
-                  <>
+                  <div className={row.is_active === false ? 'opacity-50' : ''}>
                     <div className="truncate text-neutral-200">{row.title?.EN}</div>
-                    <div className="text-xs text-neutral-500">
-                      {row.journal} {row.year ? `· ${row.year}` : ''} {row.category ? `· ${row.category}` : ''}
+                    <div className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-500">
+                      {row.is_active === false && (
+                        <span className="rounded-full bg-neutral-700 px-2 py-0.5 text-neutral-300">Hidden</span>
+                      )}
+                      {row.preprint && (
+                        <span className="rounded-full bg-orange-500/15 px-2 py-0.5 text-orange-300">Preprint</span>
+                      )}
+                      <span>
+                        {row.journal} {row.year ? `· ${row.year}` : ''} {row.category ? `· ${row.category}` : ''}
+                      </span>
                     </div>
-                  </>
+                  </div>
                 )}
                 {tab === 'team' && (
                   <>

@@ -29,6 +29,8 @@ def publication_to_dict(p: Publication) -> dict:
         "citations": p.citations or 0,
         "impact": p.impact or "",
         "link": p.link or "",
+        "sort_order": p.sort_order or 0,
+        "is_active": bool(p.is_active),
     }
 
 

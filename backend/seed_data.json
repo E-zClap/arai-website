@@ -246,7 +246,7 @@
       "issue": "3",
       "year": 2024,
       "pages": "035002",
-      "doi": "10.1088/2399-6528/ad6ea6",
+      "doi": "10.1088/2399-6528/ad2b8b",
       "abstract": {
         "EN": "We present fast coherent control of nitrogen-14 nuclear spins associated with nitrogen-vacancy centers in diamond using dynamical decoupling techniques. Our approach enables rapid manipulation of nuclear spin states while maintaining high fidelity control for quantum sensing applications.",
         "JP": "動的デカップリング技術により、ダイヤモンド中の窒素空孔センターに関連する窒素14核スピンの高速コヒーレント制御を実現した。量子センシング応用において高精度制御を維持しながら、核スピン状態の高速操作が可能となる。"
@@ -255,7 +255,7 @@
       "type": "Peer-Reviewed",
       "citations": 2,
       "impact": "High",
-      "link": "https://iopscience.iop.org/article/10.1088/2399-6528/ad6ea6"
+      "link": "https://iopscience.iop.org/article/10.1088/2399-6528/ad2b8b"
     },
     {
       "title": {
@@ -264,11 +264,11 @@
       },
       "authors": "R. Kitagawa, S. Nagata, K. Arai, K. Mizuno, T. Tsuji, I. Fujisaki, S. Urashita, T. Kohashi, Y. Takamura, T. Iwasaki, S. Nakagawa, M. Hatano",
       "journal": "Physical Review Applied",
-      "volume": "20",
+      "volume": "19",
       "issue": "4",
       "year": 2023,
       "pages": "044089",
-      "doi": "10.1103/PhysRevApplied.20.044089",
+      "doi": "10.1103/PhysRevApplied.19.044089",
       "abstract": {
         "EN": "We demonstrate a pressure sensor based on a hybrid structure combining magnetostrictive layers with nitrogen-vacancy centers in diamond. This approach enables sensitive pressure measurements through magnetic field changes detected by quantum sensors.",
         "JP": "磁歪層とダイヤモンド中の窒素空孔センターを組み合わせたハイブリッド構造による圧力センサを実証した。量子センサが検出する磁場変化を利用し、高感度な圧力測定が可能となる。"
@@ -277,7 +277,7 @@
       "type": "Peer-Reviewed",
       "citations": 3,
       "impact": "High",
-      "link": "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.20.044089"
+      "link": "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.19.044089"
     },
     {
       "title": {
@@ -290,7 +290,7 @@
       "issue": "1",
       "year": 2023,
       "pages": "66",
-      "doi": "10.1038/s41534-023-00734-z",
+      "doi": "10.1038/s41534-023-00732-6",
       "abstract": {
         "EN": "We demonstrate controllable tunability of topological properties in diamond nitrogen-vacancy center systems, showing how Chern numbers can be manipulated through electronic-nuclear spin interactions for quantum information applications.",
         "JP": "ダイヤモンド窒素空孔センター系におけるトポロジカル特性の制御を実証し、電子-核スピン相互作用によってチャーン数を操作できることを示した。量子情報応用への展開が期待される。"
@@ -299,7 +299,7 @@
       "type": "Peer-Reviewed",
       "citations": 4,
       "impact": "High",
-      "link": "https://www.nature.com/articles/s41534-023-00734-z"
+      "link": "https://www.nature.com/articles/s41534-023-00732-6"
     },
     {
       "title": {
@@ -356,7 +356,7 @@
       "issue": "3",
       "year": 2021,
       "pages": "034001",
-      "doi": "10.1063/5.0032499",
+      "doi": "10.1063/5.0031502",
       "abstract": {
         "EN": "We present simultaneous temperature and magnetic field measurements using a fiber-coupled diamond quantum sensor system, enabling dual-parameter sensing with high precision for various applications.",
         "JP": "ファイバー結合ダイヤモンド量子センサシステムによる温度と磁場の同時測定を実現した。高精度なデュアルパラメータセンシングにより、様々な応用が可能となる。"
@@ -365,7 +365,7 @@
       "type": "Peer-Reviewed",
       "citations": 15,
       "impact": "High",
-      "link": "https://aip.scitation.org/doi/10.1063/5.0032499"
+      "link": "https://doi.org/10.1063/5.0031502"
     },
     {
       "title": {

@@ -21,7 +21,7 @@ export const updateNews = (id, data) => api.put(`/news/${id}`, data).then((r) =>
 export const deleteNews = (id) => api.delete(`/news/${id}`).then((r) => r.data);
 
 // ---- Publications ----
-export const adminListPublications = () => api.get('/publications').then((r) => r.data);
+export const adminListPublications = () => api.get('/publications/all').then((r) => r.data);
 export const syncPublications = () => api.post('/publications/sync').then((r) => r.data);
 export const createPublication = (data) => api.post('/publications', data).then((r) => r.data);
 export const updatePublication = (id, data) => api.put(`/publications/${id}`, data).then((r) => r.data);

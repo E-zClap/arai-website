@@ -6,8 +6,8 @@ from ..database import get_db
 from ..deps import get_current_admin
 from ..models import Publication
 from ..schemas import PublicationIn
-from ..serializers import publication_to_dict
 from ..services.openalex import sync_publications
+from ..services.publications import admin_publications, public_publications, to_dict
 
 router = APIRouter(prefix="/api/publications", tags=["publications"])
 
@@ -39,16 +39,19 @@ def _apply(p: Publication, payload: PublicationIn) -> None:
     p.impact = payload.impact
     p.link = payload.link
     p.sort_order = payload.sort_order
+    p.is_active = payload.is_active
 
 
 @router.get("")
 def list_publications(db: Session = Depends(get_db)):
-    rows = (
-        db.query(Publication)
-        .order_by(Publication.sort_order.asc(), Publication.id.asc())
-        .all()
-    )
-    return [publication_to_dict(p) for p in rows]
+    """Public list: visible rows only, preprints merged into their journal version."""
+    return public_publications(db.query(Publication).all())
+
+
+@router.get("/all", dependencies=[Depends(get_current_admin)])
+def list_all_publications(db: Session = Depends(get_db)):
+    """Admin list: every row, hidden ones and merged preprints included."""
+    return admin_publications(db.query(Publication).all())
 
 
 @router.post("", dependencies=[Depends(get_current_admin)])
@@ -58,7 +61,7 @@ def create_publication(payload: PublicationIn, db: Session = Depends(get_db)):
     db.add(p)
     db.commit()
     db.refresh(p)
-    return publication_to_dict(p)
+    return to_dict(p)
 
 
 @router.put("/{pub_id}", dependencies=[Depends(get_current_admin)])
@@ -69,7 +72,7 @@ def update_publication(pub_id: int, payload: PublicationIn, db: Session = Depend
     _apply(p, payload)
     db.commit()
     db.refresh(p)
-    return publication_to_dict(p)
+    return to_dict(p)
 
 
 @router.delete("/{pub_id}", dependencies=[Depends(get_current_admin)])

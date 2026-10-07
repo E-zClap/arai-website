@@ -3,6 +3,7 @@ import { createPublication, updatePublication } from '../../api/admin';
 import { Modal, Input, Textarea, Select, Button } from './widgets';
 
 const IMPACT_OPTIONS = ['', 'Very High', 'High', 'Medium', 'Low'];
+const TYPE_OPTIONS = ['Peer-Reviewed', 'Preprint', 'Review', 'Book Chapter', 'Conference Abstract'];
 
 export const PublicationForm = ({ item, onClose, onSaved }) => {
   const [form, setForm] = useState({
@@ -23,6 +24,7 @@ export const PublicationForm = ({ item, onClose, onSaved }) => {
     impact: item?.impact || '',
     link: item?.link || '',
     sort_order: item?.sort_order != null ? String(item.sort_order) : '0',
+    is_active: item?.is_active ?? true,
   });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -51,6 +53,7 @@ export const PublicationForm = ({ item, onClose, onSaved }) => {
       impact: form.impact,
       link: form.link,
       sort_order: parseInt(form.sort_order, 10) || 0,
+      is_active: form.is_active,
     };
     try {
       if (item?.id) await updatePublication(item.id, payload);
@@ -87,7 +90,11 @@ export const PublicationForm = ({ item, onClose, onSaved }) => {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <Input label="Category" value={form.category} onChange={set('category')} placeholder="Quantum Sensing" />
-        <Input label="Type" value={form.type} onChange={set('type')} placeholder="Peer-Reviewed" />
+        <Select label="Type" value={form.type} onChange={set('type')}>
+          {(TYPE_OPTIONS.includes(form.type) ? TYPE_OPTIONS : [...TYPE_OPTIONS, form.type]).map((o) => (
+            <option key={o} value={o}>{o}</option>
+          ))}
+        </Select>
         <Input label="Citations" value={form.citations} onChange={set('citations')} />
         <Select label="Impact" value={form.impact} onChange={set('impact')}>
           {IMPACT_OPTIONS.map((o) => (
@@ -98,7 +105,25 @@ export const PublicationForm = ({ item, onClose, onSaved }) => {
       <Input label="Link" value={form.link} onChange={set('link')} placeholder="https://doi.org/…" />
       <Textarea label="Abstract (English)" rows={3} value={form.abstractEN} onChange={set('abstractEN')} />
       <Textarea label="Abstract (Japanese)" rows={3} value={form.abstractJP} onChange={set('abstractJP')} />
-      <Input label="Display order (lower = first)" value={form.sort_order} onChange={set('sort_order')} />
+      <Input
+        label="Sort key: YYYYMM, newer first within a year (e.g. 202403)"
+        value={form.sort_order}
+        onChange={set('sort_order')}
+      />
+      <label className="flex items-start gap-3 rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2.5 text-sm text-neutral-200">
+        <input
+          type="checkbox"
+          checked={form.is_active}
+          onChange={(e) => setForm({ ...form, is_active: e.target.checked })}
+          className="mt-0.5 h-4 w-4 accent-orange-500"
+        />
+        <span>
+          Show on website
+          <span className="block text-xs text-neutral-500">
+            Untick to hide a wrong or duplicate paper. Hidden papers stay hidden: the OpenAlex sync never re-imports them.
+          </span>
+        </span>
+      </label>
     </Modal>
   );
 };

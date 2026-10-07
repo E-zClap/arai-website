@@ -3,7 +3,8 @@
 OpenAlex is a free, open scholarly catalog (no API key needed). We fetch the
 works for a single author id and upsert them by DOI so the lab's publication
 list stays current automatically — while never overwriting the manually curated
-entries (on a match we only refresh the citation count).
+entries (on a match we only refresh the citation count). A DOI that is already
+in the table, even on a row the admin has hidden, is never imported again.
 """
 import json
 import logging
@@ -12,21 +13,11 @@ import urllib.request
 
 from ..config import settings
 from ..models import Publication
+from .publications import clean_title, normalize_doi
 
 logger = logging.getLogger("arai.openalex")
 
 OPENALEX_WORKS = "https://api.openalex.org/works"
-
-
-def _normalize_doi(doi: str | None) -> str:
-    if not doi:
-        return ""
-    return (
-        doi.strip().lower()
-        .replace("https://doi.org/", "")
-        .replace("http://doi.org/", "")
-        .replace("doi.org/", "")
-    )
 
 
 def _reconstruct_abstract(inverted_index: dict | None) -> str:
@@ -52,9 +43,9 @@ def _impact_from_citations(c: int) -> str:
 
 
 # OpenAlex sometimes merges different people with the same name into one author
-# profile. Keep only works whose topics clearly belong to this lab's field
-# (quantum sensing / diamond NV / physics), which filters out the unrelated
-# "Keigo Arai" papers (e.g. plant phenotyping) attributed to the same id.
+# profile. Works whose topics belong to this lab's field (quantum sensing /
+# diamond NV / physics) are kept; the unrelated "Keigo Arai" papers (e.g. plant
+# phenotyping) attributed to the same id are not (see _select_works).
 RELEVANT_KEYWORDS = (
     "quantum", "diamond", "nitrogen-vacancy", "nv center", "magneto", "magnetic",
     "spin", "qubit", "coherence", "decoherence", "physic", "condensed matter",
@@ -68,7 +59,8 @@ EXCLUDE_KEYWORDS = (
 )
 
 
-def _is_relevant(work: dict) -> bool:
+def _topics(work: dict) -> tuple[bool, bool]:
+    """(on-topic for the lab, marked as the unrelated Keigo Arai's field)."""
     has_rel = has_excl = False
     for c in work.get("concepts") or []:
         name = (c.get("display_name") or "").lower()
@@ -77,7 +69,39 @@ def _is_relevant(work: dict) -> bool:
             has_rel = True
         if score >= 0.3 and any(k in name for k in EXCLUDE_KEYWORDS):
             has_excl = True
-    return has_rel and not has_excl
+    return has_rel, has_excl
+
+
+def _coauthors(work: dict, author_id: str) -> set[str]:
+    ids = {
+        ((a.get("author") or {}).get("id") or "").rsplit("/", 1)[-1]
+        for a in work.get("authorships") or []
+    }
+    return ids - {author_id, ""}
+
+
+def _select_works(works: list[dict], author_id: str) -> list[dict]:
+    """Keep the works that are really this Keigo Arai's.
+
+    Other researchers with the same name published decades before this lab
+    existed (1950s fibre science, 1980s robotics), so anything before
+    OPENALEX_MIN_YEAR is dropped. Of the rest, on-topic works are kept, and an
+    off-topic one (e.g. a lab member's ML paper) only if it shares a co-author
+    with the on-topic works: a namesake in another field never does.
+    """
+    on_topic, off_topic = [], []
+    for w in works:
+        if not (w.get("title") and w.get("doi") and w.get("publication_year")):
+            continue
+        if w.get("type") not in {"article", "review", "preprint", "book-chapter", "letter"}:
+            continue
+        if w["publication_year"] < settings.openalex_min_year:
+            continue
+        rel, excl = _topics(w)
+        if not excl:
+            (on_topic if rel else off_topic).append(w)
+    network = set().union(*(_coauthors(w, author_id) for w in on_topic))
+    return on_topic + [w for w in off_topic if _coauthors(w, author_id) & network]
 
 
 def _pages(biblio: dict) -> str:
@@ -86,6 +110,28 @@ def _pages(biblio: dict) -> str:
     if first and last and first != last:
         return f"{first}-{last}"
     return first or last or ""
+
+
+def _work_type(work: dict) -> str:
+    # OpenAlex sometimes types an arXiv record as "article"; 10.48550 is arXiv's DOI prefix.
+    if work.get("type") == "preprint" or normalize_doi(work.get("doi")).startswith("10.48550/"):
+        return "Preprint"
+    kind = work.get("type") or ""
+    return {
+        "article": "Peer-Reviewed",
+        "letter": "Peer-Reviewed",
+        "review": "Review",
+        "book-chapter": "Book Chapter",
+    }.get(kind, kind.title())
+
+
+def _sort_order(work: dict) -> int:
+    """YYYYMM from the publication date, matching the curated rows' convention."""
+    date = work.get("publication_date") or ""
+    try:
+        return int(date[:4]) * 100 + int(date[5:7])
+    except ValueError:
+        return (work.get("publication_year") or 0) * 100
 
 
 def fetch_works(author_id: str) -> list[dict]:
@@ -102,8 +148,8 @@ def fetch_works(author_id: str) -> list[dict]:
     return data.get("results", [])
 
 
-def _map_work(work: dict, sort_order: int) -> dict:
-    title = (work.get("title") or "").strip()
+def _map_work(work: dict) -> dict:
+    title = clean_title(work.get("title"))
     authors = ", ".join(
         a["author"]["display_name"]
         for a in work.get("authorships", [])
@@ -126,15 +172,15 @@ def _map_work(work: dict, sort_order: int) -> dict:
         "issue": str(biblio.get("issue") or ""),
         "pages": _pages(biblio),
         "year": work.get("publication_year"),
-        "doi": _normalize_doi(work.get("doi")),
+        "doi": normalize_doi(work.get("doi")),
         "abstract_en": abstract,
         "abstract_jp": abstract,
         "category": "",
-        "type": "Peer-Reviewed" if work.get("type") == "article" else (work.get("type") or "").title(),
+        "type": _work_type(work),
         "citations": citations,
         "impact": _impact_from_citations(citations),
         "link": link,
-        "sort_order": sort_order,
+        "sort_order": _sort_order(work),
     }
 
 
@@ -145,22 +191,11 @@ def sync_publications(db) -> dict:
 
     # Existing publications keyed by normalized DOI (to update, not duplicate).
     existing = db.query(Publication).all()
-    by_doi = {_normalize_doi(p.doi): p for p in existing if _normalize_doi(p.doi)}
-
-    # New synced items go after the curated ones, newest first.
-    base_order = max([p.sort_order for p in existing], default=0) + 1
-    candidates = [
-        w for w in works
-        if w.get("title") and w.get("doi") and w.get("publication_year")
-        and w.get("type") in {"article", "review", "preprint", "book-chapter", "letter"}
-        and _is_relevant(w)
-    ]
-    candidates.sort(key=lambda w: w.get("publication_year") or 0, reverse=True)
+    by_doi = {normalize_doi(p.doi): p for p in existing if normalize_doi(p.doi)}
 
     added = updated = 0
-    order = base_order
-    for work in candidates:
-        doi = _normalize_doi(work.get("doi"))
+    for work in _select_works(works, author_id):
+        doi = normalize_doi(work.get("doi"))
         if doi in by_doi:
             # Preserve curated fields; just refresh the citation count + impact.
             pub = by_doi[doi]
@@ -171,9 +206,7 @@ def sync_publications(db) -> dict:
                     pub.impact = _impact_from_citations(new_cites)
                 updated += 1
             continue
-        fields = _map_work(work, order)
-        order += 1
-        pub = Publication(**fields)
+        pub = Publication(**_map_work(work))
         db.add(pub)
         by_doi[doi] = pub
         added += 1
