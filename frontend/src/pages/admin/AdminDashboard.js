@@ -7,14 +7,13 @@ import {
   adminListNews,
   deleteNews,
   adminListPublications,
-  deletePublication,
+  setPublicationVisible,
   syncPublications,
   adminListTeam,
   deleteMember,
 } from '../../api/admin';
 import { Button, Modal, Input } from './widgets';
 import { NewsForm } from './NewsForm';
-import { PublicationForm } from './PublicationForm';
 import { TeamMemberForm } from './TeamMemberForm';
 
 const TABS = [
@@ -24,6 +23,7 @@ const TABS = [
 ];
 
 const CATEGORY_LABEL = { pi: 'PI', staff: 'Staff', student: 'Student', alumni: 'Alumni' };
+const RESEARCHMAP = 'https://researchmap.jp/keigoarai';
 
 export const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -63,14 +63,13 @@ export const AdminDashboard = () => {
   };
 
   const onDelete = async (id) => {
-    const warning =
-      tab === 'publications'
-        ? 'Delete this publication? This cannot be undone, and a paper from OpenAlex will come back on the next sync. To remove it for good, edit it and untick "Show on website" instead.'
-        : 'Delete this item? This cannot be undone.';
-    if (!window.confirm(warning)) return;
-    const deleter =
-      tab === 'news' ? deleteNews : tab === 'publications' ? deletePublication : deleteMember;
-    await deleter(id);
+    if (!window.confirm('Delete this item? This cannot be undone.')) return;
+    await (tab === 'news' ? deleteNews : deleteMember)(id);
+    load();
+  };
+
+  const toggleVisible = async (row) => {
+    await setPublicationVisible(row.id, row.is_active === false);
     load();
   };
 
@@ -85,7 +84,7 @@ export const AdminDashboard = () => {
     setSyncMsg('');
     try {
       const r = await syncPublications();
-      setSyncMsg(`OpenAlex: ${r.added} added, ${r.updated} updated (${r.total} total).`);
+      setSyncMsg(`researchmap: ${r.added} added, ${r.updated} updated, ${r.removed} removed (${r.total} entries).`);
       load();
     } catch (err) {
       setSyncMsg(err?.response?.data?.detail || 'Sync failed.');
@@ -98,7 +97,6 @@ export const AdminDashboard = () => {
     if (!editing) return null;
     const props = { item: editing.item, onClose: closeForm, onSaved };
     if (tab === 'news') return <NewsForm {...props} />;
-    if (tab === 'publications') return <PublicationForm {...props} />;
     return <TeamMemberForm {...props} />;
   };
 
@@ -145,14 +143,29 @@ export const AdminDashboard = () => {
           <div className="flex items-center gap-2">
             {tab === 'publications' && (
               <Button variant="secondary" onClick={doSync} disabled={syncing}>
-                {syncing ? 'Syncing…' : 'Sync from OpenAlex'}
+                {syncing ? 'Syncing…' : 'Sync from researchmap'}
               </Button>
             )}
-            <Button onClick={() => setEditing({ item: null })}>
-              + Add {tab === 'news' ? 'news' : tab === 'publications' ? 'publication' : 'member'}
-            </Button>
+            {tab !== 'publications' && (
+              <Button onClick={() => setEditing({ item: null })}>+ Add {tab === 'news' ? 'news' : 'member'}</Button>
+            )}
           </div>
         </div>
+
+        {tab === 'publications' && (
+          <p className="mb-4 rounded-xl border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm leading-relaxed text-neutral-400">
+            Publications mirror Prof. Arai&apos;s researchmap:{' '}
+            <a href={`${RESEARCHMAP}/published_papers`} target="_blank" rel="noreferrer" className="text-orange-400 hover:text-orange-300">
+              published papers
+            </a>{' '}
+            and{' '}
+            <a href={`${RESEARCHMAP}/misc`} target="_blank" rel="noreferrer" className="text-orange-400 hover:text-orange-300">
+              misc (preprints)
+            </a>
+            . To add or change a paper, edit it on researchmap, then press Sync (the site also syncs every night). Hide only
+            removes an entry from this website.
+          </p>
+        )}
 
         {/* List */}
         <div className="rounded-xl border border-neutral-800 overflow-hidden">
@@ -175,8 +188,11 @@ export const AdminDashboard = () => {
                       {row.is_active === false && (
                         <span className="rounded-full bg-neutral-700 px-2 py-0.5 text-neutral-300">Hidden</span>
                       )}
-                      {row.preprint && (
+                      {row.kind === 'preprint' && (
                         <span className="rounded-full bg-orange-500/15 px-2 py-0.5 text-orange-300">Preprint</span>
+                      )}
+                      {row.kind === 'other' && (
+                        <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-sky-300">Other</span>
                       )}
                       <span>
                         {row.journal} {row.year ? `· ${row.year}` : ''} {row.category ? `· ${row.category}` : ''}
@@ -197,8 +213,16 @@ export const AdminDashboard = () => {
                 )}
               </div>
               <div className="flex items-center gap-2 shrink-0">
-                <Button variant="secondary" onClick={() => setEditing({ item: row })}>Edit</Button>
-                <Button variant="danger" onClick={() => onDelete(row.id)}>Delete</Button>
+                {tab === 'publications' ? (
+                  <Button variant="secondary" onClick={() => toggleVisible(row)}>
+                    {row.is_active === false ? 'Show' : 'Hide'}
+                  </Button>
+                ) : (
+                  <>
+                    <Button variant="secondary" onClick={() => setEditing({ item: row })}>Edit</Button>
+                    <Button variant="danger" onClick={() => onDelete(row.id)}>Delete</Button>
+                  </>
+                )}
               </div>
             </div>
           ))}

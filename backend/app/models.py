@@ -63,6 +63,11 @@ class Publication(Base):
     link = Column(String(512), nullable=False, default="")
     sort_order = Column(Integer, nullable=False, default=0, index=True)
     is_active = Column(Boolean, nullable=False, default=True)
+    # Where the row comes from: "researchmap" rows mirror Prof. Arai's
+    # researchmap entries (source_id = "published_papers/<id>" or "misc/<id>").
+    source = Column(String(20), nullable=False, default="")
+    source_id = Column(String(100), nullable=False, default="")
+    arxiv_id = Column(String(30), nullable=False, default="")
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

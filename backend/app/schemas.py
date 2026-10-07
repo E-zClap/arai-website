@@ -43,26 +43,6 @@ class NewsIn(BaseModel):
     tags: list[str] = Field(default_factory=list)
 
 
-# ---- publications ----
-class PublicationIn(BaseModel):
-    title: LangText
-    authors: str = ""
-    journal: str = ""
-    volume: str = ""
-    issue: str = ""
-    pages: str = ""
-    year: int | None = None
-    doi: str = ""
-    abstract: LangText = Field(default_factory=LangText)
-    category: str = ""
-    type: str = "Peer-Reviewed"
-    citations: int = 0
-    impact: str = ""
-    link: str = ""
-    sort_order: int = 0
-    is_active: bool = True
-
-
 # ---- team ----
 class TeamMemberIn(BaseModel):
     # allow extra so future detail keys don't break the API

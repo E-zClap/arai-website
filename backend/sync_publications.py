@@ -3,12 +3,12 @@
 From the backend/ directory with the venv active:
     ./venv/bin/python sync_publications.py
 
-Fetches Prof. Arai's works from OpenAlex and upserts them by DOI without
-overwriting manually curated entries (only refreshes citation counts).
+Mirrors Prof. Arai's researchmap publication lists (published papers + misc)
+into the database; see app/services/researchmap.py.
 """
 from app.bootstrap import init_db
 from app.database import SessionLocal
-from app.services.openalex import sync_publications
+from app.services.researchmap import sync_publications
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
     db = SessionLocal()
     try:
         result = sync_publications(db)
-        print(f"OpenAlex sync: {result}")
+        print(f"researchmap sync: {result}")
     finally:
         db.close()
 

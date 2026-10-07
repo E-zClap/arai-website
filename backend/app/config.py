@@ -27,11 +27,8 @@ class Settings(BaseSettings):
     upload_url_prefix: str = "/uploads"
     max_upload_mb: int = 8
 
-    # OpenAlex publication auto-sync (Prof. Keigo Arai)
-    openalex_author_id: str = "A5026665424"
-    openalex_mailto: str = "admin@qig-lab.net"
-    # Works published before this year are someone else with the same name.
-    openalex_min_year: int = 2010
+    # Publications mirror Prof. Arai's researchmap profile (researchmap.jp/<permalink>).
+    researchmap_permalink: str = "keigoarai"
 
     @property
     def cors_origin_list(self) -> list[str]:

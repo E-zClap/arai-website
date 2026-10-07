@@ -1,6 +1,9 @@
 """Shared publication logic: preprint detection, title cleanup, and building
 the public list (hidden rows removed, each preprint folded into its published
-version, duplicate entries dropped)."""
+version, duplicate entries dropped).
+
+Every entry has a `kind`: "published" (researchmap published_papers),
+"preprint", or "other" (non-preprint items of researchmap's misc list)."""
 import difflib
 import html
 import re
@@ -63,18 +66,26 @@ def sort_key(p: Publication):
     return (-(p.year or 0), -(p.sort_order or 0), -p.id)
 
 
+def kind(p: Publication) -> str:
+    if is_preprint(p):
+        return "preprint"
+    return "other" if (p.source_id or "").startswith("misc/") else "published"
+
+
 def to_dict(p: Publication) -> dict:
-    return {**publication_to_dict(p), "preprint": is_preprint(p)}
+    d = {**publication_to_dict(p), "kind": kind(p), "preprint": is_preprint(p)}
+    if p.arxiv_id and d["kind"] != "preprint":
+        d["preprint_link"] = f"https://arxiv.org/abs/{p.arxiv_id}"
+    return d
 
 
 def admin_publications(rows: list[Publication]) -> list[dict]:
-    """Every row, hidden ones included, in display order."""
-    return [to_dict(p) for p in sorted(rows, key=sort_key)]
+    """The researchmap mirror, hidden rows included, in display order."""
+    return [to_dict(p) for p in sorted((p for p in rows if p.source == "researchmap"), key=sort_key)]
 
 
 def public_publications(rows: list[Publication]) -> list[dict]:
-    # Oldest rows win ties: those are the hand-curated entries (JP titles,
-    # equal-contribution marks), synced copies came later.
+    # Lowest id wins a tie between duplicates (the first imported copy).
     rows = sorted((p for p in rows if p.is_active), key=lambda p: p.id)
 
     published: list[Publication] = []
@@ -93,7 +104,7 @@ def public_publications(rows: list[Publication]) -> list[dict]:
         published.append(p)
 
     out = {p.id: to_dict(p) for p in published}
-    pub_titles = [(p.id, _title_key(p.title_en)) for p in published]
+    pub_titles = [(p.id, _title_key(p.title_en)) for p in published if kind(p) == "published"]
     for pre in preprints:
         key = _title_key(pre.title_en)
         best_id, best = None, 0.0

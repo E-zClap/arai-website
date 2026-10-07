@@ -20,12 +20,11 @@ export const createNews = (data) => api.post('/news', data).then((r) => r.data);
 export const updateNews = (id, data) => api.put(`/news/${id}`, data).then((r) => r.data);
 export const deleteNews = (id) => api.delete(`/news/${id}`).then((r) => r.data);
 
-// ---- Publications ----
+// ---- Publications (mirrored from researchmap; the admin can only sync and show/hide) ----
 export const adminListPublications = () => api.get('/publications/all').then((r) => r.data);
 export const syncPublications = () => api.post('/publications/sync').then((r) => r.data);
-export const createPublication = (data) => api.post('/publications', data).then((r) => r.data);
-export const updatePublication = (id, data) => api.put(`/publications/${id}`, data).then((r) => r.data);
-export const deletePublication = (id) => api.delete(`/publications/${id}`).then((r) => r.data);
+export const setPublicationVisible = (id, isActive) =>
+  api.patch(`/publications/${id}`, { is_active: isActive }).then((r) => r.data);
 
 // ---- Team ----
 export const uploadTeamImage = (file) => {

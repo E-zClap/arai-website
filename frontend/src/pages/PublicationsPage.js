@@ -1,10 +1,31 @@
 import React, { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Search, X } from 'lucide-react';
+import { ArrowUpRight, Search, X } from 'lucide-react';
 import { QuantumField } from '../components/animations/QuantumField';
-import { PublicationEntry, isPreprint } from '../components/ui/PublicationEntry';
+import { PublicationEntry, kindOf } from '../components/ui/PublicationEntry';
 import { PageHeader } from '../components/ui/PageHeader';
+
+const RESEARCHMAP = 'https://researchmap.jp/keigoarai';
+
+// The list mirrors Prof. Arai's researchmap: published_papers -> Published,
+// misc -> Preprints (and Other for the non-preprint items there).
+const TABS = [
+  { id: 'published', kind: 'published', EN: 'Published', JP: '査読付き論文', unit: ['paper', 'papers'] },
+  { id: 'preprints', kind: 'preprint', EN: 'Preprints', JP: 'プレプリント', unit: ['preprint', 'preprints'] },
+  { id: 'other', kind: 'other', EN: 'Other', JP: 'その他', unit: ['item', 'items'] },
+];
+
+const NOTES = {
+  preprints: {
+    EN: 'Preprints are shared before peer review. Once a paper is published it moves to Published, with a link to its arXiv version.',
+    JP: 'プレプリントは査読前に公開された論文です。出版後は「査読付き論文」に移り、arXiv版へのリンクが付きます。',
+  },
+  other: {
+    EN: 'Review articles, conference proceedings and other writing.',
+    JP: '解説記事・学会予稿など。',
+  },
+};
 
 const matches = (p, term) =>
   [p.title && p.title.EN, p.title && p.title.JP, p.authors, p.journal, p.doi, p.year && String(p.year)].some((v) =>
@@ -26,51 +47,47 @@ const byYear = (items) => {
 const numbered = (list) =>
   [...list].sort((a, b) => (b.year || 0) - (a.year || 0)).map((p, i, all) => ({ p, n: all.length - i }));
 
-// Publications: published papers and preprints on separate tabs, each an
-// academic list grouped by year.
+// Publications: published papers, preprints and other writing on separate
+// tabs, each an academic list grouped by year.
 export const PublicationsPage = ({ language, isDark, publicationsData = [] }) => {
   const en = language === 'EN';
+  const lang = en ? 'EN' : 'JP';
   const [q, setQ] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
-  const view = searchParams.get('view') === 'preprints' ? 'preprints' : 'published';
+
+  const lists = useMemo(
+    () => Object.fromEntries(TABS.map((t) => [t.id, numbered(publicationsData.filter((p) => kindOf(p) === t.kind))])),
+    [publicationsData]
+  );
+  const tabs = TABS.filter((t) => t.id !== 'other' || lists.other.length > 0);
+  const requested = searchParams.get('view');
+  const view = tabs.some((t) => t.id === requested) ? requested : 'published';
+  const current = tabs.find((t) => t.id === view);
 
   const setView = (next) => {
     const params = new URLSearchParams(searchParams);
-    if (next === 'preprints') params.set('view', 'preprints');
-    else params.delete('view');
+    if (next === 'published') params.delete('view');
+    else params.set('view', next);
     setSearchParams(params, { replace: true });
   };
 
-  const lists = useMemo(
-    () => ({
-      published: numbered(publicationsData.filter((p) => !isPreprint(p))),
-      preprints: numbered(publicationsData.filter(isPreprint)),
-    }),
-    [publicationsData]
-  );
-
   const term = q.trim().toLowerCase();
   const visible = useMemo(
-    () => ({
-      published: term ? lists.published.filter(({ p }) => matches(p, term)) : lists.published,
-      preprints: term ? lists.preprints.filter(({ p }) => matches(p, term)) : lists.preprints,
-    }),
+    () =>
+      Object.fromEntries(
+        Object.entries(lists).map(([id, list]) => [id, term ? list.filter(({ p }) => matches(p, term)) : list])
+      ),
     [lists, term]
   );
   const groups = useMemo(() => byYear(visible[view]), [visible, view]);
+  const elsewhere = tabs.find((t) => t.id !== view && visible[t.id].length > 0);
   const equalContribution = visible[view].some(({ p }) => (p.authors || '').includes('*'));
-
-  const tabs = [
-    { id: 'published', label: en ? 'Published' : '査読付き論文' },
-    { id: 'preprints', label: en ? 'Preprints' : 'プレプリント' },
-  ];
-  const other = tabs.find((t) => t.id !== view);
-  const unit = (n) =>
-    en ? `${n} ${view === 'preprints' ? 'preprint' : 'paper'}${n === 1 ? '' : 's'}` : `${n}件`;
+  const unit = (n) => (en ? `${n} ${current.unit[n === 1 ? 0 : 1]}` : `${n}件`);
 
   const panel = isDark
     ? 'border-white/10 bg-[#0c0c0f]/85 divide-white/[0.06]'
     : 'border-slate-200 bg-white divide-slate-100';
+  const sourceLink = 'inline-flex items-center gap-0.5 text-orange-400 transition-colors hover:text-orange-300';
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -102,7 +119,7 @@ export const PublicationsPage = ({ language, isDark, publicationsData = [] }) =>
                   role="tab"
                   aria-selected={active}
                   onClick={() => setView(t.id)}
-                  className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors sm:px-4 ${
                     active
                       ? isDark
                         ? 'bg-white/[0.08] text-white'
@@ -112,7 +129,7 @@ export const PublicationsPage = ({ language, isDark, publicationsData = [] }) =>
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  {t.label}
+                  {t[lang]}
                   <span className={`tabular-nums text-xs ${active ? 'text-orange-400' : 'text-slate-500'}`}>
                     {visible[t.id].length}
                   </span>
@@ -145,13 +162,7 @@ export const PublicationsPage = ({ language, isDark, publicationsData = [] }) =>
           </div>
         </div>
 
-        {view === 'preprints' && (
-          <p className="-mt-4 mb-10 max-w-2xl text-sm leading-relaxed text-slate-500">
-            {en
-              ? 'Preprints are shared before peer review. Once a paper is published it moves to Published, with a link to its arXiv version.'
-              : 'プレプリントは査読前に公開された論文です。出版後は「査読付き論文」に移り、arXiv版へのリンクが付きます。'}
-          </p>
-        )}
+        {NOTES[view] && <p className="-mt-4 mb-10 max-w-2xl text-sm leading-relaxed text-slate-500">{NOTES[view][lang]}</p>}
 
         <motion.div
           key={view}
@@ -182,25 +193,37 @@ export const PublicationsPage = ({ language, isDark, publicationsData = [] }) =>
               <p>
                 {term
                   ? en
-                    ? `No ${view === 'preprints' ? 'preprints' : 'papers'} match “${q.trim()}”.`
+                    ? `No ${current.unit[1]} match “${q.trim()}”.`
                     : `「${q.trim()}」に一致する論文はありません。`
                   : en
                   ? 'Nothing here yet.'
                   : 'まだありません。'}
               </p>
-              {term && visible[other.id].length > 0 && (
-                <button onClick={() => setView(other.id)} className="mt-3 font-medium text-orange-400 hover:text-orange-300">
+              {term && elsewhere && (
+                <button onClick={() => setView(elsewhere.id)} className="mt-3 font-medium text-orange-400 hover:text-orange-300">
                   {en
-                    ? `Show ${visible[other.id].length} in ${other.label} →`
-                    : `${other.label}の${visible[other.id].length}件を表示 →`}
+                    ? `Show ${visible[elsewhere.id].length} in ${elsewhere.EN} →`
+                    : `${elsewhere.JP}の${visible[elsewhere.id].length}件を表示 →`}
                 </button>
               )}
             </div>
           )}
 
-          {equalContribution && (
-            <p className="text-xs text-slate-500 md:pl-[9rem]">{en ? '* Equal contribution' : '* 同等貢献'}</p>
-          )}
+          <div className="space-y-2 text-xs text-slate-500 md:pl-[9rem]">
+            {equalContribution && <p>{en ? '* Equal contribution' : '* 同等貢献'}</p>}
+            <p>
+              {en ? 'Source: researchmap — ' : '出典: researchmap — '}
+              <a href={`${RESEARCHMAP}/published_papers`} target="_blank" rel="noopener noreferrer" className={sourceLink}>
+                {en ? 'published papers' : '論文'}
+                <ArrowUpRight size={12} />
+              </a>
+              {' · '}
+              <a href={`${RESEARCHMAP}/misc`} target="_blank" rel="noopener noreferrer" className={sourceLink}>
+                {en ? 'misc & preprints' : 'MISC・プレプリント'}
+                <ArrowUpRight size={12} />
+              </a>
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>

@@ -4,13 +4,17 @@ import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
 const PREPRINT_VENUE = /arxiv|biorxiv|medrxiv|chemrxiv|techrxiv|research square|ssrn/i;
 const ARXIV_ID = /arxiv[./:](?:org\/abs\/)?(\d{4}\.\d{4,5})/i;
-// Prof. Arai as he appears in author lists: "K. Arai", "K. Arai*", "Keigo Arai".
-const PI_NAME = /((?:K\.\s?|Keigo\s)Arai\*?)/;
+// Prof. Arai as he appears in author lists: "K. Arai", "K. Arai*", "Keigo Arai",
+// "ARAI Keigo", "荒井 慧悟".
+const PI_NAME = /((?:K\.\s?|Keigo\s)Arai\*?|ARAI\s+Keigo|荒井\s?慧悟)/;
 
-// The API flags preprints; the bundled fallback data does not, so infer it.
-export const isPreprint = (p) =>
-  p.preprint ??
-  (/preprint/i.test(p.type || '') || /^10\.48550\/arxiv/i.test(p.doi || '') || PREPRINT_VENUE.test(p.journal || ''));
+// "published" | "preprint" | "other". The API sends it; the bundled fallback
+// data does not, so infer it there.
+export const kindOf = (p) =>
+  p.kind ??
+  (/preprint/i.test(p.type || '') || /^10\.48550\/arxiv/i.test(p.doi || '') || PREPRINT_VENUE.test(p.journal || '')
+    ? 'preprint'
+    : 'published');
 
 const arxivId = (...values) => {
   for (const v of values) {
@@ -55,7 +59,7 @@ export const PublicationEntry = ({ publication: p, number, language, isDark = tr
 
   const title = (p.title && (p.title[language] || p.title.EN)) || '';
   const abstract = (p.abstract && (p.abstract[language] || p.abstract.EN)) || '';
-  const preprint = isPreprint(p);
+  const preprint = kindOf(p) === 'preprint';
   const ownArxiv = preprint ? arxivId(p.doi, p.link) : '';
   const linkedArxiv = arxivId(p.preprint_link);
   const paperUrl = ownArxiv
@@ -112,7 +116,7 @@ export const PublicationEntry = ({ publication: p, number, language, isDark = tr
           <div className="mt-4 flex flex-wrap items-center gap-2">
             {paperUrl && (
               <Pill href={paperUrl} isDark={isDark}>
-                {ownArxiv ? 'arXiv' : en ? 'Journal' : '論文'}
+                {ownArxiv ? 'arXiv' : kindOf(p) === 'other' ? (en ? 'Link' : 'リンク') : en ? 'Journal' : '論文'}
               </Pill>
             )}
             {ownArxiv && (
